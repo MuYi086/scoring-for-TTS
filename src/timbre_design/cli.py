@@ -8,10 +8,20 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from timbre_design.assets import (
+    DEFAULT_ASSET_ROOT,
+    DEFAULT_SAMPLE_TEXT,
+    VoiceAssetBundle,
+    convert_wav_to_mp3,
+    synthesize_voice_asset,
+    voice_asset_paths,
+    write_voice_asset_bundle,
+)
 from timbre_design.casting import build_voice_casting
 from timbre_design.controls import render_voxcpm2_prompt
-from timbre_design.library import load_voice_library
+from timbre_design.library import VoiceLibrary, load_voice_library
 from timbre_design.matcher import CharacterProfile, load_character_profiles, match_voice
+from timbre_design.models import Voice
 from timbre_design.voxcpm import synthesize_with_voxcpm2
 
 
@@ -72,6 +82,22 @@ def build_parser() -> argparse.ArgumentParser:
     synth.add_argument("--output-wav", type=Path, required=True)
     synth.add_argument("--command", help="覆盖 TIMBRE_VOXCPM2_COMMAND")
     synth.set_defaults(func=cmd_synthesize)
+
+    assets = subparsers.add_parser("assets", help="生成一音色一目录的试听资产")
+    assets.add_argument("--output-dir", type=Path, default=DEFAULT_ASSET_ROOT)
+    assets.add_argument("--voice-id", action="append", dest="voice_ids", help="指定音色；可重复")
+    assets.add_argument("--group", help="按 group 过滤")
+    assets.add_argument("--species", help="按 species 过滤")
+    assets.add_argument("--gender", help="按 gender 过滤")
+    assets.add_argument("--limit", type=int, help="限制生成数量")
+    assets.add_argument("--text-file", type=Path, help="试听文本；默认使用内置短句")
+    assets.add_argument("--synthesize", action="store_true", help="调用 VoxCPM2 生成 sample.wav")
+    assets.add_argument("--mp3", action="store_true", help="生成或转换 sample.mp3")
+    assets.add_argument("--command", help="覆盖 TIMBRE_VOXCPM2_COMMAND")
+    assets.add_argument("--mp3-command", help="覆盖 TIMBRE_AUDIO_CONVERT_COMMAND")
+    assets.add_argument("--no-overwrite", action="store_true", help="保留已有元数据文件")
+    assets.add_argument("--json", action="store_true")
+    assets.set_defaults(func=cmd_assets)
     return parser
 
 
@@ -94,7 +120,11 @@ def cmd_validate(args: argparse.Namespace) -> None:
 
 def cmd_list(args: argparse.Namespace) -> None:
     library = load_voice_library(args.library)
-    voices = library.filter(group=args.group, species=args.species, gender=args.gender)[: args.limit]
+    voices = library.filter(
+        group=args.group,
+        species=args.species,
+        gender=args.gender,
+    )[: args.limit]
     if args.json:
         print(json.dumps([voice.to_dict() for voice in voices], ensure_ascii=False, indent=2))
         return
@@ -138,7 +168,10 @@ def cmd_cast(args: argparse.Namespace) -> None:
         dedicated_limit=args.dedicated_limit,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(casting, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    args.output.write_text(
+        json.dumps(casting, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     print(f"已写入 {args.output}")
 
 
@@ -153,6 +186,55 @@ def cmd_synthesize(args: argparse.Namespace) -> None:
         output_wav=args.output_wav,
     )
     print(f"已生成 {args.output_wav}")
+
+
+def cmd_assets(args: argparse.Namespace) -> None:
+    library = load_voice_library(args.library)
+    voices = _select_asset_voices(args, library)
+    if not voices:
+        raise ValueError("没有匹配到需要生成资产的音色")
+    sample_text = (
+        args.text_file.read_text(encoding="utf-8") if args.text_file else DEFAULT_SAMPLE_TEXT
+    )
+    overwrite = not args.no_overwrite
+    results: list[VoiceAssetBundle] = []
+    for voice in voices:
+        if args.synthesize:
+            bundle = synthesize_voice_asset(
+                voice,
+                args.output_dir,
+                sample_text=sample_text,
+                command=args.command,
+                make_mp3=args.mp3,
+                mp3_command=args.mp3_command,
+                overwrite=overwrite,
+            )
+        else:
+            bundle = write_voice_asset_bundle(
+                voice,
+                args.output_dir,
+                sample_text=sample_text,
+                overwrite=overwrite,
+            )
+            if args.mp3:
+                paths = voice_asset_paths(args.output_dir, voice.voice_id)
+                convert_wav_to_mp3(
+                    paths.wav,
+                    paths.mp3,
+                    command=args.mp3_command,
+                    voice_id=voice.voice_id,
+                )
+                bundle = VoiceAssetBundle(
+                    voice_id=bundle.voice_id,
+                    paths=bundle.paths,
+                    files=(*bundle.files, paths.mp3),
+                )
+        results.append(bundle)
+    if args.json:
+        print(json.dumps([bundle.to_dict() for bundle in results], ensure_ascii=False, indent=2))
+        return
+    for bundle in results:
+        print(f"已生成 {bundle.voice_id}\t{bundle.directory}")
 
 
 def _load_single_character(args: argparse.Namespace) -> CharacterProfile:
@@ -177,3 +259,13 @@ def _load_single_character(args: argparse.Namespace) -> CharacterProfile:
 def _read_json(path: Path) -> Any:
     with path.open("r", encoding="utf-8") as file:
         return json.load(file)
+
+
+def _select_asset_voices(args: argparse.Namespace, library: VoiceLibrary) -> list[Voice]:
+    if args.voice_ids:
+        voices = [library.get(voice_id) for voice_id in args.voice_ids]
+    else:
+        voices = library.filter(group=args.group, species=args.species, gender=args.gender)
+    if args.limit is not None:
+        voices = voices[: args.limit]
+    return voices
