@@ -7,6 +7,12 @@ from typing import Any
 
 from timbre_design.library import VoiceLibrary
 from timbre_design.models import JsonDict, Voice
+from timbre_design.spatial import (
+    SPATIAL_ROLE_TAGS,
+    SPATIAL_SCENE_KEYWORDS,
+    scene_matches_voice,
+    spatial_scene_score,
+)
 
 AGE_ALIASES = {
     "child": {"child", "children", "儿童", "男孩", "女孩"},
@@ -27,11 +33,11 @@ GENDER_ALIASES = {
 }
 
 SPECIES_KEYWORDS = {
-    "robot": {"robot", "机器人", "ai", "AI", "系统", "机械"},
+    "robot": {"robot", "机器人", "ai", "AI", "系统", "机械", "头显", "VR", "AR"},
     "spirit": {"spirit", "幽灵", "神谕", "精灵", "鬼", "神秘", "古神"},
     "creature": {"creature", "怪物", "动物", "狐狸", "猫", "熊", "牛", "拟人"},
     "nonhuman": {"nonhuman", "非人", "高维", "宇宙"},
-    "human_fx": {"电话", "广播", "收音机", "梦境", "电子"},
+    "human_fx": {"电话", "广播", "收音机", "梦境", "电子", "无线电", "车机", "任务提示"},
 }
 
 ROLE_KEYWORDS = {
@@ -42,6 +48,7 @@ ROLE_KEYWORDS = {
     "comic": {"喜剧", "滑稽", "机灵", "顽皮", "comic"},
     "kids": {"儿童", "童话", "睡前", "kids", "fairy"},
     "mystery": {"悬疑", "侦探", "神秘", "mystery", "detective"},
+    **SPATIAL_SCENE_KEYWORDS,
     "robot": SPECIES_KEYWORDS["robot"],
     "creature": SPECIES_KEYWORDS["creature"],
 }
@@ -162,6 +169,10 @@ def _score_voice(character: CharacterProfile, voice: Voice) -> MatchResult:
     score += 0.15 * style_score
     if style_score >= 0.5:
         reasons.append("style")
+    spatial_score = spatial_scene_score(set(_derived_role_tags(character)), voice)
+    score += 0.24 * spatial_score
+    if spatial_score >= 0.75:
+        reasons.append("spatial_scene")
     penalty = _constraint_penalty(character, voice)
     score -= penalty
     if penalty:
@@ -170,7 +181,15 @@ def _score_voice(character: CharacterProfile, voice: Voice) -> MatchResult:
 
 
 def _candidate_allowed(character: CharacterProfile, voice: Voice) -> bool:
+    role_tags = set(_derived_role_tags(character))
+    spatial_role_tags = role_tags & SPATIAL_ROLE_TAGS
+    if voice.group == "spatial":
+        return bool(spatial_role_tags) and any(
+            scene_matches_voice(scene, voice) for scene in spatial_role_tags
+        )
     if _is_narrator(character):
+        if role_tags & SPATIAL_ROLE_TAGS:
+            return voice.group in {"narrator", "spatial"}
         return voice.group == "narrator"
     if character.species == "human" and voice.profile.species not in {"human", "human_fx"}:
         return False

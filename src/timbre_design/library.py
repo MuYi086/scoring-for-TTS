@@ -8,8 +8,9 @@ from pathlib import Path
 from typing import Iterable
 
 from timbre_design.models import JsonDict, Voice, VoiceLibraryManifest
+from timbre_design.spatial import SPATIAL_ROLE_TAGS, voice_primary_spatial_scene
 
-BUNDLED_LIBRARY = "voices_v2_96.json"
+BUNDLED_LIBRARY = "voices_v2_106.json"
 
 
 class VoiceLibrary:
@@ -54,6 +55,23 @@ class VoiceLibrary:
                 errors.append(f"{voice.voice_id} 缺少 fit_roles")
             if not voice.timbre_tags:
                 errors.append(f"{voice.voice_id} 缺少 style_tags.timbre")
+        spatial_voices = [voice for voice in self.voices if voice.group == "spatial"]
+        if spatial_voices:
+            covered = {
+                scene
+                for voice in spatial_voices
+                if (scene := voice_primary_spatial_scene(voice)) is not None
+            }
+            invalid = [
+                voice.voice_id
+                for voice in spatial_voices
+                if voice_primary_spatial_scene(voice) is None
+            ]
+            if invalid:
+                errors.append("spatial 音色缺少高价值场景标签：" + "、".join(invalid))
+            missing = sorted(SPATIAL_ROLE_TAGS - covered)
+            if missing:
+                errors.append("spatial 音色未覆盖高价值场景：" + "、".join(missing))
         return errors
 
     def require_valid(self) -> None:

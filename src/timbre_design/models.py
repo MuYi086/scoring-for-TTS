@@ -106,8 +106,7 @@ class Voice:
             self.profile.gender,
             self.profile.age_band,
             self.profile.species,
-            *self.timbre_tags,
-            *self.emotion_biases,
+            *_flatten_text(self.style_tags),
             *self.fit_roles,
             str(self.constraints.get("notes", "")),
         ]
@@ -125,6 +124,22 @@ class Voice:
         data["fit_roles"] = list(self.fit_roles)
         data["constraints"] = dict(self.constraints)
         return data
+
+
+def _flatten_text(value: Any) -> tuple[str, ...]:
+    if isinstance(value, dict):
+        parts: list[str] = []
+        for item in value.values():
+            parts.extend(_flatten_text(item))
+        return tuple(parts)
+    if isinstance(value, (list, tuple, set)):
+        parts = []
+        for item in value:
+            parts.extend(_flatten_text(item))
+        return tuple(parts)
+    if value is None:
+        return ()
+    return (str(value),)
 
 
 @dataclass(frozen=True)

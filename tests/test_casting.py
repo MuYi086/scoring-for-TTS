@@ -49,3 +49,27 @@ def test_build_voice_casting_is_audio3d_compatible_payload() -> None:
         controls["emotion"] for controls in casting["voice_controls"].values()
     } <= allowed_emotions
     json.dumps(casting, ensure_ascii=False)
+
+
+def test_build_voice_casting_exports_spatial_placement_for_high_value_scene() -> None:
+    library = load_voice_library()
+    characters = [
+        CharacterProfile(
+            character_id="vehicle_guide",
+            display_name="车载座舱导航",
+            gender_group="neutral",
+            age_group="adult",
+            species="human",
+            appearance_count=80,
+            dialogue_count=40,
+            frequency_class="high_frequency",
+            voice_style_hint="车载座舱导航，前方定位，低疲劳。",
+        )
+    ]
+
+    casting = build_voice_casting(characters, library)
+    voice_id = casting["high_frequency_slots"]["vehicle_guide"]
+
+    assert voice_id in casting["spatial_placements"]
+    assert casting["spatial_placements"][voice_id]["scene"] == "vehicle"
+    assert casting["spatial_placements"][voice_id]["source_mode"] == "dry_voice_stem"

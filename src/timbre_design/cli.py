@@ -37,7 +37,7 @@ def main(argv: list[str] | None = None) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="timbre-design")
-    parser.add_argument("--library", type=Path, help="音色库 JSON；默认使用内置 voices_v2_96.json")
+    parser.add_argument("--library", type=Path, help="音色库 JSON；默认使用内置 voices_v2_106.json")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     validate = subparsers.add_parser("validate", help="校验音色库")

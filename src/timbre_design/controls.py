@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from timbre_design.models import JsonDict, Voice
+from timbre_design.spatial import default_spatial_placement_for_voice, voice_primary_spatial_scene
 
 
 @dataclass(frozen=True)
@@ -110,6 +111,15 @@ EMOTION_MAP = {
     "eerie": "tense",
     "threatening": "tense",
     "ominous": "tense",
+    "intimate": "whispering",
+    "soothing": "calm",
+    "guiding": "calm",
+    "focused": "serious",
+    "immersive": "serious",
+    "alert": "tense",
+    "urgent": "tense",
+    "tactical": "tense",
+    "brisk": "bright",
     "weak": "sad",
     "fragile": "sad",
 }
@@ -122,15 +132,17 @@ def default_controls_for_voice(voice: Voice) -> VoiceControls:
     style = _default_style(voice)
     rhythm = "steady" if speed < 0.96 else "natural"
     pause = "long_form" if voice.group == "narrator" or speed < 0.92 else "normal"
+    stability = 0.92 if voice.group == "narrator" else 0.86
+    exaggeration = 0.08 if voice.group == "narrator" else 0.14
     if voice.profile.species in {"robot", "human_fx"}:
         style = "system_voice"
         rhythm = "steady"
     elif voice.group == "special":
         style = "special_effect_voice"
         rhythm = "dramatic"
-    stability = 0.92 if voice.group == "narrator" else 0.86
-    exaggeration = 0.08 if voice.group == "narrator" else 0.14
-    if voice.profile.species not in {"human", "human_fx"}:
+    if voice.group == "spatial":
+        style, rhythm, pause, stability, exaggeration = _spatial_control_defaults(voice)
+    if voice.profile.species not in {"human", "human_fx"} and voice.group != "spatial":
         exaggeration = 0.18
     return VoiceControls(
         speed=speed,
@@ -144,6 +156,21 @@ def default_controls_for_voice(voice: Voice) -> VoiceControls:
         similarity_boost=0.8,
         style_exaggeration=exaggeration,
     )
+
+
+def _spatial_control_defaults(voice: Voice) -> tuple[str, str, str, float, float]:
+    scene = voice_primary_spatial_scene(voice)
+    if scene == "asmr":
+        return "character_dialogue", "steady", "long_form", 0.9, 0.06
+    if scene in {"vehicle", "vr_ar", "game"}:
+        return "system_voice", "steady", "compact", 0.9, 0.08
+    if scene == "theater":
+        return "supporting_dialogue", "dramatic", "dramatic", 0.86, 0.13
+    if scene == "battle":
+        return "special_effect_voice", "dramatic", "compact", 0.84, 0.18
+    if scene == "adventure":
+        return "supporting_dialogue", "natural", "normal", 0.86, 0.12
+    return "special_effect_voice", "dramatic", "normal", 0.86, 0.14
 
 
 def render_voxcpm2_prompt(
@@ -172,6 +199,7 @@ def render_voxcpm2_prompt(
         ),
         f"声音质感：{timbre}；默认语气：{emotion}；适配角色：{roles}。",
         context_part + "要求普通话发音清晰，近场干净录音，无背景音乐，无明显房间混响。",
+        _render_spatial_source_sentence(voice),
         _render_control_sentence(controls),
     ]
     if constraints:
@@ -180,6 +208,18 @@ def render_voxcpm2_prompt(
         parts.append(f"禁忌说明：{notes}")
     parts.append("同一 voice_id 在整本书中保持音色稳定，避免漂移。")
     return " ".join(part for part in parts if part)
+
+
+def _render_spatial_source_sentence(voice: Voice) -> str:
+    placement = default_spatial_placement_for_voice(voice)
+    if placement is None:
+        return ""
+    return (
+        "空间音频源要求：只合成干净人声干声，不把声像、距离、移动、混响、无线电"
+        "或车厢空间感烘焙进 TTS；这些由后处理完成。"
+        f"建议场景={placement['scene']}，mode={placement['mode']}，"
+        f"azimuth={placement['azimuth_deg']}deg，distance={placement['distance_m']}m。"
+    )
 
 
 def _render_control_sentence(controls: VoiceControls) -> str:

@@ -4,7 +4,7 @@
 
 ## 当前能力
 
-- 内置 `voices_v2_96.json`：96 个中文音色，覆盖旁白、常规人物、功能角色、机器人/非人等特殊音色。
+- 内置 `voices_v2_106.json`：106 个中文音色，覆盖旁白、常规人物、功能角色、机器人/非人、空间音频场景等特殊音色。
 - 校验音色库结构、数量、重复 `voice_id` 和基础字段。
 - 根据角色的性别、年龄、物种/类型、性格和音色提示匹配音色。
 - 渲染 VoxCPM2 控制提示，输出稳定的 `voice_description`。
@@ -12,11 +12,18 @@
 - 可通过本地命令模板调用 VoxCPM2 生成样例音频。
 - 可按“一音色一目录”导出试听资产：`voice.json`、`sample.txt`、`sample.voice.txt`、`sample.controls.json`、`README.md`，并可进一步生成 `sample.wav` / `sample.mp3`。
 
+## 空间音频取舍
+
+空间音色只覆盖空间音频边际收益最高的场景：ASMR/睡前近耳、车载座舱、VR/AR 引导、沉浸式剧场、战场远端通讯、户外移动探险、游戏化互动音频。普通角色、知识课、财经、历史、播客等内容继续使用常规音色，不默认消耗 `spatial` 分组。
+
+实现上，TTS 只负责生成稳定、干净的人声源；声像、距离、移动、车厢/剧场/无线电等空间化效果由下游后处理完成。`voice-casting.json` 会为命中的空间音色输出 `spatial_placements`，供 `audio-3d-sdd` 或其他渲染链路消费。
+
 ## 项目维护方式
 
 当前仓库适合继续作为轻量 Python 包维护，不需要引入 Web 框架或重型任务框架。推荐分工是：
 
-- `src/timbre_design/data/voices_v2_96.json` 作为音色库唯一源数据，负责锁定每个 `voice_id` 的结构化描述。
+- `src/timbre_design/data/voices_v2_106.json` 作为音色库唯一源数据，负责锁定每个 `voice_id` 的结构化描述。
+- `src/timbre_design/spatial.py` 作为高价值空间场景、关键词和默认摆位的单一事实来源。
 - `src/timbre_design/` 维护校验、匹配、提示词渲染、角色映射、资产生成等可测试逻辑。
 - `samples/generated/<voice_id>/` 存放派生试听资产；音频文件体积较大，默认不纳入 git。
 

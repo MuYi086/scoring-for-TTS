@@ -23,3 +23,15 @@ def test_default_controls_derive_narrator_style() -> None:
     assert controls.style == "audiobook_narration"
     assert controls.speed < 1.0
     assert controls.pause_profile == "long_form"
+
+
+def test_spatial_prompt_keeps_tts_as_dry_source() -> None:
+    voice = load_voice_library().get("v_zh_spatial_099")
+
+    prompt = render_voxcpm2_prompt(voice)
+    controls = default_controls_for_voice(voice)
+
+    assert "空间音频源要求" in prompt
+    assert "spatialize_after_tts" not in prompt
+    assert controls.style == "system_voice"
+    assert controls.pause_profile == "compact"

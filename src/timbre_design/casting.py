@@ -6,6 +6,7 @@ from timbre_design.controls import default_controls_for_voice, render_voxcpm2_pr
 from timbre_design.library import VoiceLibrary
 from timbre_design.matcher import CharacterProfile, match_voice
 from timbre_design.models import JsonDict, Voice
+from timbre_design.spatial import default_spatial_placement_for_voice
 
 LOW_FREQUENCY_GROUPS = (
     "青年男",
@@ -85,12 +86,18 @@ def build_voice_casting(
         "旁白": narrator.voice_id,
     }
     voice_descriptions = {
-        voice_id: render_voxcpm2_prompt(voice) for voice_id, voice in sorted(selected_voices.items())
+        voice_id: render_voxcpm2_prompt(voice)
+        for voice_id, voice in sorted(selected_voices.items())
     }
     voice_controls = {
         voice_id: default_controls_for_voice(voice).to_dict()
         for voice_id, voice in sorted(selected_voices.items())
     }
+    spatial_placements: dict[str, JsonDict] = {}
+    for voice_id, voice in sorted(selected_voices.items()):
+        placement = default_spatial_placement_for_voice(voice)
+        if placement is not None:
+            spatial_placements[voice_id] = placement
     return {
         "schema_version": "1.3-timbre-design",
         "provider": provider,
@@ -100,7 +107,7 @@ def build_voice_casting(
         "fallback_slots": fallback_slots,
         "voice_descriptions": voice_descriptions,
         "voice_controls": voice_controls,
-        "spatial_placements": {},
+        "spatial_placements": spatial_placements,
         "provider_voice_ids": {voice_id: voice_id for voice_id in sorted(selected_voices)},
         "degradation_notes": degradation_notes,
     }
@@ -124,7 +131,11 @@ def low_frequency_group(gender_group: str, age_group: str) -> str:
     return "群像"
 
 
-def fallback_speaker_slot(confidence: float, gender_hint: str | None, threshold: float = 0.6) -> str | None:
+def fallback_speaker_slot(
+    confidence: float,
+    gender_hint: str | None,
+    threshold: float = 0.6,
+) -> str | None:
     if confidence >= threshold:
         return None
     if gender_hint == "male":
