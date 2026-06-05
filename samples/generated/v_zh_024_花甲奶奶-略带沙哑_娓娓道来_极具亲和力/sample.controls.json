@@ -1,0 +1,23 @@
+{
+  "speed": 0.94,
+  "pitch_semitones": -0.7,
+  "volume_gain_db": 0.0,
+  "emotion": "neutral",
+  "emotion_intensity": 0.75,
+  "style": "character_dialogue",
+  "style_degree": 1.0,
+  "rhythm": "steady",
+  "pause_profile": "normal",
+  "stability": 0.86,
+  "similarity_boost": 0.8,
+  "style_exaggeration": 0.14,
+  "use_speaker_boost": true,
+  "provider_overrides": {
+    "voxcpm2": {
+      "cfg_value": 2.0,
+      "inference_timesteps": 10,
+      "normalize": false,
+      "source": "samples/generated/v_zh_024_花甲奶奶-略带沙哑_娓娓道来_极具亲和力/voice.json"
+    }
+  }
+}

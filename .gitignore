@@ -20,8 +20,6 @@ env/
 # Local runtime outputs
 work/
 outputs/
-*.voice.txt
-*.controls.json
 
 # Secrets and local config
 .env
