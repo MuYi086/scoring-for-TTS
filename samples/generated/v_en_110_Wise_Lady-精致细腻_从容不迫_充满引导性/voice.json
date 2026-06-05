@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_110",
+  "display_name": "Wise Lady",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321486373072",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 34,
+    "global_index": 110
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "精致细腻",
+      "从容不迫",
+      "充满引导性"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "medium",
+    "emotion_bias": [
+      "authoritative"
+    ]
+  },
+  "fit_roles": [
+    "沉浸式游戏旁白",
+    "高端展厅讲解或智能管家语音交互"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个优雅知性的女声。其声线精致细腻且富有磁性，说话节奏从容不迫、吐字清晰。整体风格冷静且充满引导性，给人一种值得信赖的权威感，非常适合用于沉浸式游戏旁白、高端展厅讲解或智能管家语音交互等场景。",
+  "voxcpm2_control": "英语-英音女声，口音：未标注。声音定位：精致细腻、从容不迫、充满引导性。这是一个优雅知性的女声。其声线精致细腻且富有磁性，说话节奏从容不迫、吐字清晰。整体风格冷静且充满引导性，给人一种值得信赖的权威感，非常适合用于沉浸式游戏旁白、高端展厅讲解或智能管家语音交互等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

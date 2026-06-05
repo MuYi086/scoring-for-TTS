@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_152",
+  "display_name": "Intellect Woman",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340459",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 76,
+    "global_index": 152
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "带有质感",
+      "咬字清晰",
+      "英伦叙事感"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "播客介绍",
+    "有声书旁白或文化类纪录片"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个知性干练的女声。其声线清晰悦耳且带有质感，说话节奏流畅自然、咬字清晰。整体风格优雅且具有说服力，自带一种极强的英伦叙事感，非常适合用于播客介绍、有声书旁白或文化类纪录片等场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：带有质感、咬字清晰、英伦叙事感。这是一个知性干练的女声。其声线清晰悦耳且带有质感，说话节奏流畅自然、咬字清晰。整体风格优雅且具有说服力，自带一种极强的英伦叙事感，非常适合用于播客介绍、有声书旁白或文化类纪录片等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_zh_052",
+  "display_name": "广播记者",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816315109",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 52,
+    "global_index": 52
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "清晰",
+      "浑厚",
+      "沉稳"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "calm",
+      "professional"
+    ]
+  },
+  "fit_roles": [
+    "突发新闻快讯和现场报道",
+    "以及交通路况播报",
+    "财经简报和信息公告"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个清脆、紧迫且专业的新闻工作者声音，表达客观中立。非常适合用于突发新闻快讯和现场报道，以及交通路况播报、财经简报和信息公告等场景。",
+  "voxcpm2_control": "中文-普通话男声，口音：标准口音。声音定位：清晰、浑厚、沉稳。这是一个清脆、紧迫且专业的新闻工作者声音，表达客观中立。非常适合用于突发新闻快讯和现场报道，以及交通路况播报、财经简报和信息公告等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

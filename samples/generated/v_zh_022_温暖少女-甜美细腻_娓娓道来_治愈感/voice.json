@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_zh_022",
+  "display_name": "温暖少女",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "226869000163472",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 22,
+    "global_index": 22
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "child",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "甜美细腻",
+      "娓娓道来",
+      "治愈感"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "gentle",
+      "friendly",
+      "healing"
+    ]
+  },
+  "fit_roles": [
+    "都市言情小说",
+    "情感电台独白或生活类游戏角色的演绎"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个年轻温柔的女声。其声线甜美细腻且自带暖意，说话语气亲切自然、娓娓道来。整体风格充满了邻家女孩般的治愈感，能够准确传达出体贴与细腻的情绪，非常适合用于都市言情小说、情感电台独白或生活类游戏角色的演绎。",
+  "voxcpm2_control": "中文-普通话女声，口音：标准口音。声音定位：甜美细腻、娓娓道来、治愈感。这是一个年轻温柔的女声。其声线甜美细腻且自带暖意，说话语气亲切自然、娓娓道来。整体风格充满了邻家女孩般的治愈感，能够准确传达出体贴与细腻的情绪，非常适合用于都市言情小说、情感电台独白或生活类游戏角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

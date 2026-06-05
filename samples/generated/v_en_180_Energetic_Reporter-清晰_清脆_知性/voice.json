@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_en_180",
+  "display_name": "Energetic Reporter",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816315078",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 104,
+    "global_index": 180
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "清晰",
+      "清脆",
+      "知性"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "authoritative"
+    ]
+  },
+  "fit_roles": [
+    "新闻快讯",
+    "天气预报和市场简报",
+    "以及纪录片旁白",
+    "紧急通知和新闻发布会"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个犀利、快节奏且具有权威感的声音，极具典型的新闻广播特质。非常适合用于新闻快讯、天气预报和市场简报，以及纪录片旁白、紧急通知和新闻发布会等场景。",
+  "voxcpm2_control": "英语男声，口音：标准口音。声音定位：清晰、清脆、知性。这是一个犀利、快节奏且具有权威感的声音，极具典型的新闻广播特质。非常适合用于新闻快讯、天气预报和市场简报，以及纪录片旁白、紧急通知和新闻发布会等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

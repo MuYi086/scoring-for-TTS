@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_zh_062",
+  "display_name": "可爱女孩",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "226869000163488",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 62,
+    "global_index": 62
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "child",
+    "species": "human",
+    "locale": "zh-HK",
+    "language": "中文-粤语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "稚嫩甜美",
+      "灵动自然",
+      "纯真"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "儿童广播剧和有声绘本类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以稚嫩甜美的音质和灵动自然的节奏为特征，极具辨识度。它能准确传达纯真、纠结的情绪，是儿童广播剧和有声绘本类项目的理想选择，特别是针对小女孩角色的演绎。",
+  "voxcpm2_control": "中文-粤语女声，口音：标准口音。声音定位：稚嫩甜美、灵动自然、纯真。该音色以稚嫩甜美的音质和灵动自然的节奏为特征，极具辨识度。它能准确传达纯真、纠结的情绪，是儿童广播剧和有声绘本类项目的理想选择，特别是针对小女孩角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

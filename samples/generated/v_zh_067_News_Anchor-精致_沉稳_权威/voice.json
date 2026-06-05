@@ -1,0 +1,47 @@
+{
+  "voice_id": "v_zh_067",
+  "display_name": "News Anchor",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816458454",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 67,
+    "global_index": 67
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "zh-HK",
+    "language": "中文-粤语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "精致",
+      "沉稳",
+      "权威"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "calm",
+      "authoritative",
+      "serious",
+      "professional"
+    ]
+  },
+  "fit_roles": [
+    "国际新闻播报",
+    "政治纪录片和正式的企业通告",
+    "以及历史旁白",
+    "深度调查报道和法律或政府简报"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个专业、严肃且极具权威感的女声，具有富有节奏且正式的新闻主播韵律。非常适合用于国际新闻播报、政治纪录片和正式的企业通告，以及历史旁白、深度调查报道和法律或政府简报等场景。",
+  "voxcpm2_control": "中文-粤语女声，口音：标准口音。声音定位：精致、沉稳、权威。这是一个专业、严肃且极具权威感的女声，具有富有节奏且正式的新闻主播韵律。非常适合用于国际新闻播报、政治纪录片和正式的企业通告，以及历史旁白、深度调查报道和法律或政府简报等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

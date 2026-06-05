@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_158",
+  "display_name": "Honest Man",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340455",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 82,
+    "global_index": 158
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "明朗坚定",
+      "抑扬顿挫",
+      "富有号召力"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "confident"
+    ]
+  },
+  "fit_roles": [
+    "公益演讲",
+    "人文纪录片或国际会议宣传"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个真挚有力的青年男声。其声线明朗坚定且极具辨识度，说话节奏抑扬顿挫、极具感染力。整体风格自信且富有号召力，非常适合用于公益演讲、人文纪录片或国际会议宣传等场景。",
+  "voxcpm2_control": "英语男声，口音：未标注。声音定位：明朗坚定、抑扬顿挫、富有号召力。这是一个真挚有力的青年男声。其声线明朗坚定且极具辨识度，说话节奏抑扬顿挫、极具感染力。整体风格自信且富有号召力，非常适合用于公益演讲、人文纪录片或国际会议宣传等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

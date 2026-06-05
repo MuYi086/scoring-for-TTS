@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_134",
+  "display_name": "Female Narrator",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340431",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 58,
+    "global_index": 134
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "声线明亮",
+      "节奏急促",
+      "泼辣直爽"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "一个充满活力的女声"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的女声。其声线明亮且带有显著的苏格兰口音，说话节奏急促、富有张力。整体风格泼辣直爽，能准确传达兴奋、焦急与挑衅的情绪，是动作游戏和冒险题材作品的理想选择，特别是针对热血女猎人角色的演绎。",
+  "voxcpm2_control": "英语-英音女声，口音：未标注。声音定位：声线明亮、节奏急促、泼辣直爽。这是一个充满活力的女声。其声线明亮且带有显著的苏格兰口音，说话节奏急促、富有张力。整体风格泼辣直爽，能准确传达兴奋、焦急与挑衅的情绪，是动作游戏和冒险题材作品的理想选择，特别是针对热血女猎人角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

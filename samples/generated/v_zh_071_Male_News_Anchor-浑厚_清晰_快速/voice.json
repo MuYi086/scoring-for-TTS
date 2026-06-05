@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_zh_071",
+  "display_name": "Male News Anchor",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816458453",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 71,
+    "global_index": 71
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "zh-HK",
+    "language": "中文-粤语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "浑厚",
+      "清晰",
+      "快速"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "突发新闻快讯",
+    "紧急通知和具有压迫感的纪录片旁白",
+    "以及调查报告",
+    "健康与安全简报和激烈的电影预告片"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个沉重、急切且极度专注的男声，具有快节奏且富有韵律的新闻播报感。非常适合用于突发新闻快讯、紧急通知和具有压迫感的纪录片旁白，以及调查报告、健康与安全简报和激烈的电影预告片等场景。",
+  "voxcpm2_control": "中文-粤语男声，口音：标准口音。声音定位：浑厚、清晰、快速。这是一个沉重、急切且极度专注的男声，具有快节奏且富有韵律的新闻播报感。非常适合用于突发新闻快讯、紧急通知和具有压迫感的纪录片旁白，以及调查报告、健康与安全简报和激烈的电影预告片等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

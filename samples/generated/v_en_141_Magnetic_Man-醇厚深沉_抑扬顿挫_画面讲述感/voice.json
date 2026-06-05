@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_141",
+  "display_name": "Magnetic Man",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340468",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 65,
+    "global_index": 141
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "醇厚深沉",
+      "抑扬顿挫",
+      "画面讲述感"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "奇幻有声书",
+    "冒险类游戏旁白或充满悬念的广播剧"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力且极具表现力的男声。其声线醇厚深沉又不失清脆质感，说话节奏抑扬顿挫、字字清晰。整体风格生动且引人入胜，自带一种极强的画面讲述感，非常适合用于奇幻有声书、冒险类游戏旁白或充满悬念的广播剧等场景。",
+  "voxcpm2_control": "英语-英音男声，口音：未标注。声音定位：醇厚深沉、抑扬顿挫、画面讲述感。这是一个充满活力且极具表现力的男声。其声线醇厚深沉又不失清脆质感，说话节奏抑扬顿挫、字字清晰。整体风格生动且引人入胜，自带一种极强的画面讲述感，非常适合用于奇幻有声书、冒险类游戏旁白或充满悬念的广播剧等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

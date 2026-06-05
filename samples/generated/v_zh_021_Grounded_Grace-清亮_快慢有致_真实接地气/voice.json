@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_zh_021",
+  "display_name": "Grounded Grace",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355950482047174",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 21,
+    "global_index": 21
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮",
+      "快慢有致",
+      "真实接地气"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "natural"
+    ]
+  },
+  "fit_roles": [
+    "现代都市剧",
+    "播客与社媒中的个人观点分享或朋友闲聊场景"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个直率自然的青年女声。其声线清亮且极具生活气息，说话节奏快慢有致、带有明显的倾诉感。整体风格真实接地气，能够准确传达吐槽、无奈或坦诚交流的情绪，非常适合用于现代都市剧、播客与社媒中的个人观点分享或朋友闲聊场景。",
+  "voxcpm2_control": "中文-普通话女声，口音：标准口音。声音定位：清亮、快慢有致、真实接地气。这是一个直率自然的青年女声。其声线清亮且极具生活气息，说话节奏快慢有致、带有明显的倾诉感。整体风格真实接地气，能够准确传达吐槽、无奈或坦诚交流的情绪，非常适合用于现代都市剧、播客与社媒中的个人观点分享或朋友闲聊场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

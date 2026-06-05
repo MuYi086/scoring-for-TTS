@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_100",
+  "display_name": "Friendly Guy",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340452",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 24,
+    "global_index": 100
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮",
+      "清晰精准",
+      "温和恭敬"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "乙女游戏",
+    "动漫配音或角色扮演类有声读物"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个彬彬有礼的青年男声。其声线清亮且略带鼻音，咬字清晰精准，语调温和恭敬，透着一种显而易见的忠诚感。整体风格极具戏剧张力，让人联想到动漫或游戏中那种忠诚管家或贴身护卫的形象，非常适合用于乙女游戏、动漫配音或角色扮演类有声读物。",
+  "voxcpm2_control": "英语-美音男声，口音：未标注。声音定位：清亮、清晰精准、温和恭敬。这是一个彬彬有礼的青年男声。其声线清亮且略带鼻音，咬字清晰精准，语调温和恭敬，透着一种显而易见的忠诚感。整体风格极具戏剧张力，让人联想到动漫或游戏中那种忠诚管家或贴身护卫的形象，非常适合用于乙女游戏、动漫配音或角色扮演类有声读物。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

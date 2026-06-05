@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_193",
+  "display_name": "Movie Commentator",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816315088",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 117,
+    "global_index": 193
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "低沉",
+      "粗糙",
+      "庄重"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "serious"
+    ]
+  },
+  "fit_roles": [
+    "影评和严肃的预告片解析",
+    "以及戏剧性回顾",
+    "视频杂谈和悬疑旁白"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个低沉、富有质感且严肃的声音，带着一种迷人的稳重感。非常适合用于影评和严肃的预告片解析，以及戏剧性回顾、视频杂谈和悬疑旁白等场景。",
+  "voxcpm2_control": "英语男声，口音：标准口音。声音定位：低沉、粗糙、庄重。这是一个低沉、富有质感且严肃的声音，带着一种迷人的稳重感。非常适合用于影评和严肃的预告片解析，以及戏剧性回顾、视频杂谈和悬疑旁白等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

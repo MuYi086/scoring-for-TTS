@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_zh_005",
+  "display_name": "嚣张小姐",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "227505945505984",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 5,
+    "global_index": 5
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "teen",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "娇俏明亮",
+      "灵动跳跃",
+      "傲娇自信"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "confident",
+      "proud"
+    ]
+  },
+  "fit_roles": [
+    "国漫动画和二次元游戏类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以娇俏明亮的音质和灵动跳跃的节奏为特征，极具辨识度。它能准确传达傲娇自信甚至带有一丝调侃的情绪，是国漫动画和二次元游戏类项目的理想选择，特别是针对那些性格张扬的鬼马少女角色的演绎。",
+  "voxcpm2_control": "中文-普通话女声，口音：标准口音。声音定位：娇俏明亮、灵动跳跃、傲娇自信。该音色以娇俏明亮的音质和灵动跳跃的节奏为特征，极具辨识度。它能准确传达傲娇自信甚至带有一丝调侃的情绪，是国漫动画和二次元游戏类项目的理想选择，特别是针对那些性格张扬的鬼马少女角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

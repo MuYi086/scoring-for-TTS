@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_zh_029",
+  "display_name": "真诚青年",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "226869000163478",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 29,
+    "global_index": 29
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "清澈干净",
+      "娓娓道来",
+      "具有治愈感"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "gentle",
+      "healing"
+    ]
+  },
+  "fit_roles": [
+    "情感陪伴类应用",
+    "女性向游戏或现代都市题材的有声书",
+    "能够完美契合温柔学长或贴心挚友的设定"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个年轻温润的男声。其声线清澈干净且略带磁性，说话节奏自然舒缓、娓娓道来。整体风格真诚且具有治愈感，给人一种亲密无间的陪伴感。推荐用于情感陪伴类应用、女性向游戏或现代都市题材的有声书，能够完美契合温柔学长或贴心挚友的设定。",
+  "voxcpm2_control": "中文-普通话男声，口音：标准口音。声音定位：清澈干净、娓娓道来、具有治愈感。这是一个年轻温润的男声。其声线清澈干净且略带磁性，说话节奏自然舒缓、娓娓道来。整体风格真诚且具有治愈感，给人一种亲密无间的陪伴感。推荐用于情感陪伴类应用、女性向游戏或现代都市题材的有声书，能够完美契合温柔学长或贴心挚友的设定。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

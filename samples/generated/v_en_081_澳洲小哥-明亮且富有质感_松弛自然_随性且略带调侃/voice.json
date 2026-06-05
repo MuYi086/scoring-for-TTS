@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_081",
+  "display_name": "澳洲小哥",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "226869000163492",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 5,
+    "global_index": 81
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "明亮且富有质感",
+      "松弛自然",
+      "随性且略带调侃"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "社交媒体视频",
+    "现代生活类广告或轻松脱口秀"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的男声。其声线明亮且富有质感，说话节奏松弛自然。整体风格随性且略带调侃，非常适合用于社交媒体视频、现代生活类广告或轻松脱口秀等场景。",
+  "voxcpm2_control": "英语男声，口音：未标注。声音定位：明亮且富有质感、松弛自然、随性且略带调侃。这是一个充满活力的男声。其声线明亮且富有质感，说话节奏松弛自然。整体风格随性且略带调侃，非常适合用于社交媒体视频、现代生活类广告或轻松脱口秀等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

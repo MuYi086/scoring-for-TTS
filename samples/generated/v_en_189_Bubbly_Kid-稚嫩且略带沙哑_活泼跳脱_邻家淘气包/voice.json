@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_189",
+  "display_name": "Bubbly Kid",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340417",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 113,
+    "global_index": 189
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "child",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "稚嫩且略带沙哑",
+      "活泼跳脱",
+      "邻家淘气包"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "趣味动画和儿童教育软件类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以稚嫩且略带沙哑的音质和活泼跳脱的节奏为特征，极具辨识度。它能准确传达天真、调皮且充满好奇的情绪，是趣味动画和儿童教育软件类项目的理想选择，特别是针对邻家淘气包角色的演绎。",
+  "voxcpm2_control": "英语-英音女声，口音：未标注。声音定位：稚嫩且略带沙哑、活泼跳脱、邻家淘气包。该音色以稚嫩且略带沙哑的音质和活泼跳脱的节奏为特征，极具辨识度。它能准确传达天真、调皮且充满好奇的情绪，是趣味动画和儿童教育软件类项目的理想选择，特别是针对邻家淘气包角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_129",
+  "display_name": "Lovely Lady",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340465",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 53,
+    "global_index": 129
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "略带沙哑",
+      "干脆利落",
+      "风格豪迈"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "medium",
+    "emotion_bias": [
+      "friendly",
+      "confident"
+    ]
+  },
+  "fit_roles": [
+    "游戏中的女战士角色",
+    "冒险题材的旁白或展现独立女性形象的有声剧"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满力量感的御姐音。其声线略带沙哑且富有磁性，透着一种成熟女性的坚毅与豪爽。说话节奏干脆利落、自信满满，既能展现出统领全局的霸气，又不失大姐姐般的亲切与爽朗。整体风格豪迈且极具感染力，非常适合用于游戏中的女战士角色、冒险题材的旁白或展现独立女性形象的有声剧。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：略带沙哑、干脆利落、风格豪迈。这是一个充满力量感的御姐音。其声线略带沙哑且富有磁性，透着一种成熟女性的坚毅与豪爽。说话节奏干脆利落、自信满满，既能展现出统领全局的霸气，又不失大姐姐般的亲切与爽朗。整体风格豪迈且极具感染力，非常适合用于游戏中的女战士角色、冒险题材的旁白或展现独立女性形象的有声剧。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

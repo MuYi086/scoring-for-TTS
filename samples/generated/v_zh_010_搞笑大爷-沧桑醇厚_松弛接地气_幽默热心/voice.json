@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_zh_010",
+  "display_name": "搞笑大爷",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "226869000163464",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 10,
+    "global_index": 10
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "senior",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "中国-北方"
+  },
+  "style_tags": {
+    "timbre": [
+      "沧桑醇厚",
+      "松弛接地气",
+      "幽默热心"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "humorous",
+      "confident"
+    ]
+  },
+  "fit_roles": [
+    "生活类广告和广播剧项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以沧桑醇厚且略带沙哑的音质和松弛接地气的节奏为特征，极具辨识度与生活质感。它能准确传达自信、幽默且热心的情绪，是生活类广告和广播剧项目的理想选择，特别是针对晨练大爷或老顽童角色的演绎。",
+  "voxcpm2_control": "中文-普通话男声，口音：中国-北方。声音定位：沧桑醇厚、松弛接地气、幽默热心。该音色以沧桑醇厚且略带沙哑的音质和松弛接地气的节奏为特征，极具辨识度与生活质感。它能准确传达自信、幽默且热心的情绪，是生活类广告和广播剧项目的理想选择，特别是针对晨练大爷或老顽童角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

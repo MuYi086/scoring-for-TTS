@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_zh_033",
+  "display_name": "软软女孩",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "286339866161296",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 33,
+    "global_index": 33
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "child",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "甜美软糯",
+      "轻快自然",
+      "亲切活泼"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "medium",
+    "emotion_bias": [
+      "friendly"
+    ]
+  },
+  "fit_roles": [
+    "校园恋爱游戏和现代言情广播剧类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以甜美软糯的音质和轻快自然的节奏为特征，极具辨识度。它带有明显的台湾腔调，语调上扬且自带撒娇感，整体风格亲切活泼，是校园恋爱游戏和现代言情广播剧类项目的理想选择，特别是针对邻家学妹角色的演绎。",
+  "voxcpm2_control": "中文-普通话女声，口音：未标注。声音定位：甜美软糯、轻快自然、亲切活泼。该音色以甜美软糯的音质和轻快自然的节奏为特征，极具辨识度。它带有明显的台湾腔调，语调上扬且自带撒娇感，整体风格亲切活泼，是校园恋爱游戏和现代言情广播剧类项目的理想选择，特别是针对邻家学妹角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

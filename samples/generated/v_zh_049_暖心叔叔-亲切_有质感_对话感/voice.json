@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_zh_049",
+  "display_name": "暖心叔叔",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816315104",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 49,
+    "global_index": 49
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "middle_aged",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "中国-北方"
+  },
+  "style_tags": {
+    "timbre": [
+      "亲切",
+      "有质感",
+      "对话感"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "friendly"
+    ]
+  },
+  "fit_roles": [
+    "公益广告和面向家庭的品牌宣传",
+    "以及建议专栏",
+    "保险广告和社区服务视频"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个值得信赖、温和的中年人嗓音，给人一种安全和熟悉的感觉。非常适合用于公益广告和面向家庭的品牌宣传，以及建议专栏、保险广告和社区服务视频等场景。",
+  "voxcpm2_control": "中文-普通话男声，口音：中国-北方。声音定位：亲切、有质感、对话感。这是一个值得信赖、温和的中年人嗓音，给人一种安全和熟悉的感觉。非常适合用于公益广告和面向家庭的品牌宣传，以及建议专栏、保险广告和社区服务视频等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

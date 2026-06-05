@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_149",
+  "display_name": "Patient Man",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340473",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 73,
+    "global_index": 149
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "温暖醇厚",
+      "娓娓道来",
+      "循循善诱"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "知识科普",
+    "长篇有声读物或教育类纪录片旁白"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个成熟知性的男声。其声线温暖醇厚，说话节奏舒缓从容、娓娓道来。整体风格极具亲和力与说服力，给人一种循循善诱的感觉，非常适合用于知识科普、长篇有声读物或教育类纪录片旁白等场景。",
+  "voxcpm2_control": "英语-英音男声，口音：未标注。声音定位：温暖醇厚、娓娓道来、循循善诱。这是一个成熟知性的男声。其声线温暖醇厚，说话节奏舒缓从容、娓娓道来。整体风格极具亲和力与说服力，给人一种循循善诱的感觉，非常适合用于知识科普、长篇有声读物或教育类纪录片旁白等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

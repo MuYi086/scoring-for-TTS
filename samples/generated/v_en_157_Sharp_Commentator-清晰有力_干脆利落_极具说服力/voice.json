@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_157",
+  "display_name": "Sharp Commentator",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321486373058",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 81,
+    "global_index": 157
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清晰有力",
+      "干脆利落",
+      "极具说服力"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "confident"
+    ]
+  },
+  "fit_roles": [
+    "观点输出类播客",
+    "在线教育课程或企业培训宣讲"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个自信犀利的女声。其声线清晰有力且富有质感，说话节奏抑扬顿挫、干脆利落。整体风格知性且极具说服力，自带一种强烈的现场演讲感，非常适合用于观点输出类播客、在线教育课程或企业培训宣讲等场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：清晰有力、干脆利落、极具说服力。这是一个自信犀利的女声。其声线清晰有力且富有质感，说话节奏抑扬顿挫、干脆利落。整体风格知性且极具说服力，自带一种强烈的现场演讲感，非常适合用于观点输出类播客、在线教育课程或企业培训宣讲等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_en_190",
+  "display_name": "Instructive Proffesor",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816315085",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 114,
+    "global_index": 190
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "有质感",
+      "从容",
+      "沉稳"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "calm",
+      "authoritative"
+    ]
+  },
+  "fit_roles": [
+    "学术讲座和深度教育视频",
+    "以及企业合规培训",
+    "博物馆语音导览和技术解说"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个博学、干练且节奏稳健的声音，自带一种令人安心的权威感。非常适合用于学术讲座和深度教育视频，以及企业合规培训、博物馆语音导览和技术解说等场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：有质感、从容、沉稳。这是一个博学、干练且节奏稳健的声音，自带一种令人安心的权威感。非常适合用于学术讲座和深度教育视频，以及企业合规培训、博物馆语音导览和技术解说等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_183",
+  "display_name": "Friendly Paige",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340429",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 107,
+    "global_index": 183
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮",
+      "轻快干脆",
+      "邻家大姐姐感"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "enthusiastic",
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "美妆生活类的社交媒体短视频",
+    "轻松的播客节目或针对年轻群体的经验分享场景"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的年轻女声。其声线清亮且极具亲和力，说话节奏轻快干脆、语速较快，给人一种如同邻家大姐姐般热情直率的感觉。整体风格自然真诚且富有感染力，非常适合用于美妆生活类的社交媒体短视频、轻松的播客节目或针对年轻群体的经验分享场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：清亮、轻快干脆、邻家大姐姐感。这是一个充满活力的年轻女声。其声线清亮且极具亲和力，说话节奏轻快干脆、语速较快，给人一种如同邻家大姐姐般热情直率的感觉。整体风格自然真诚且富有感染力，非常适合用于美妆生活类的社交媒体短视频、轻松的播客节目或针对年轻群体的经验分享场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

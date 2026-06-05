@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_zh_015",
+  "display_name": "Reflective Ryan",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355950482047171",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 15,
+    "global_index": 15
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮干净",
+      "轻松自然",
+      "邻家朋友"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "播客访谈",
+    "科技数码评测或现代生活Vlog"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的青年男声。其声线清亮干净且具有极强的亲和力，说话节奏轻松自然、如同邻家朋友般的闲聊。整体风格真诚且略带探究感，非常适合用于播客访谈、科技数码评测或现代生活Vlog等场景，能够完美诠释好奇采访者的角色。",
+  "voxcpm2_control": "中文-普通话男声，口音：标准口音。声音定位：清亮干净、轻松自然、邻家朋友。这是一个充满活力的青年男声。其声线清亮干净且具有极强的亲和力，说话节奏轻松自然、如同邻家朋友般的闲聊。整体风格真诚且略带探究感，非常适合用于播客访谈、科技数码评测或现代生活Vlog等场景，能够完美诠释好奇采访者的角色。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

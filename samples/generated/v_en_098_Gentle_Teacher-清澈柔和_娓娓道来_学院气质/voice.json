@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_098",
+  "display_name": "Gentle Teacher",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340453",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 22,
+    "global_index": 98
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清澈柔和",
+      "娓娓道来",
+      "学院气质"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "在线教育课程",
+    "有声小说朗读或人文纪录片旁白"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个温文尔雅的青年男声。其声线清澈柔和且带有知性的质感，说话节奏从容不迫、娓娓道来。整体风格绅士且富有亲和力，自带一种优雅的英伦学院气质，非常适合用于在线教育课程、有声小说朗读或人文纪录片旁白等场景。",
+  "voxcpm2_control": "英语-美音男声，口音：未标注。声音定位：清澈柔和、娓娓道来、学院气质。这是一个温文尔雅的青年男声。其声线清澈柔和且带有知性的质感，说话节奏从容不迫、娓娓道来。整体风格绅士且富有亲和力，自带一种优雅的英伦学院气质，非常适合用于在线教育课程、有声小说朗读或人文纪录片旁白等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

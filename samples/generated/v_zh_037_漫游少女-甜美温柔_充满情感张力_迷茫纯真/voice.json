@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_zh_037",
+  "display_name": "漫游少女",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340423",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 37,
+    "global_index": 37
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "teen",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "甜美温柔",
+      "充满情感张力",
+      "迷茫纯真"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "gentle"
+    ]
+  },
+  "fit_roles": [
+    "二次元游戏和奇幻广播剧类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以甜美温柔的音质和充满情感张力的节奏为特征，极具辨识度。它能准确传达迷茫、纯真以及略带忧伤的情绪，是二次元游戏和奇幻广播剧类项目的理想选择，特别是针对拥有复杂内心戏的异世界少女角色的演绎。",
+  "voxcpm2_control": "中文-普通话女声，口音：标准口音。声音定位：甜美温柔、充满情感张力、迷茫纯真。该音色以甜美温柔的音质和充满情感张力的节奏为特征，极具辨识度。它能准确传达迷茫、纯真以及略带忧伤的情绪，是二次元游戏和奇幻广播剧类项目的理想选择，特别是针对拥有复杂内心戏的异世界少女角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

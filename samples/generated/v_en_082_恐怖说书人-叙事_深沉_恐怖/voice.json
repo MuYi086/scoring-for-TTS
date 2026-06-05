@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_082",
+  "display_name": "恐怖说书人",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "365615561994386",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 6,
+    "global_index": 82
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "叙事",
+      "深沉",
+      "恐怖"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "horror"
+    ]
+  },
+  "fit_roles": [
+    "洛夫克拉夫特式（克苏鲁风格）故事叙述和恐怖游戏旁白"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这款声音具有恐惧、急促且阴森的特质，能够传递出深层的心理恐怖感。它是洛夫克拉夫特式（克苏鲁风格）故事叙述和恐怖游戏旁白的理想选择。同时也非常适用于戏剧演播、悬疑预告片以及紧张激烈的角色扮演场景。",
+  "voxcpm2_control": "英语男声，口音：标准口音。声音定位：叙事、深沉、恐怖。这款声音具有恐惧、急促且阴森的特质，能够传递出深层的心理恐怖感。它是洛夫克拉夫特式（克苏鲁风格）故事叙述和恐怖游戏旁白的理想选择。同时也非常适用于戏剧演播、悬疑预告片以及紧张激烈的角色扮演场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

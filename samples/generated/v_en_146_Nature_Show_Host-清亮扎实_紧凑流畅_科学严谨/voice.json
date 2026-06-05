@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_146",
+  "display_name": "Nature Show Host",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340467",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 70,
+    "global_index": 146
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮扎实",
+      "紧凑流畅",
+      "科学严谨"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "medium",
+    "emotion_bias": [
+      "energetic",
+      "professional"
+    ]
+  },
+  "fit_roles": [
+    "科普短片",
+    "商业广告或教育类视频的旁白解说"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个专业干练的青年男声。其声线清亮扎实且富有穿透力，说话节奏紧凑流畅、逻辑清晰。整体风格科学严谨又不失活力，给人一种知识渊博且充满说服力的感觉，非常适合用于科普短片、商业广告或教育类视频的旁白解说。",
+  "voxcpm2_control": "英语-英音男声，口音：未标注。声音定位：清亮扎实、紧凑流畅、科学严谨。这是一个专业干练的青年男声。其声线清亮扎实且富有穿透力，说话节奏紧凑流畅、逻辑清晰。整体风格科学严谨又不失活力，给人一种知识渊博且充满说服力的感觉，非常适合用于科普短片、商业广告或教育类视频的旁白解说。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

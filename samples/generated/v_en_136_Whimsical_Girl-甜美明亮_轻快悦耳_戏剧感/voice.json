@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_136",
+  "display_name": "Whimsical Girl",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321486373070",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 60,
+    "global_index": 136
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "teen",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "甜美明亮",
+      "轻快悦耳",
+      "戏剧感"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "奇幻有声书",
+    "卡通动画角色配音或游戏中的精灵少女"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的年轻女声。其声线甜美明亮且富有张力，说话节奏轻快悦耳、抑扬顿挫。整体风格极具戏剧感和表现力，能自如地在调皮与深情之间切换，给人一种如同置身童话般的画面感，非常适合用于奇幻有声书、卡通动画角色配音或游戏中的精灵少女等场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：甜美明亮、轻快悦耳、戏剧感。这是一个充满活力的年轻女声。其声线甜美明亮且富有张力，说话节奏轻快悦耳、抑扬顿挫。整体风格极具戏剧感和表现力，能自如地在调皮与深情之间切换，给人一种如同置身童话般的画面感，非常适合用于奇幻有声书、卡通动画角色配音或游戏中的精灵少女等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,45 @@
+{
+  "voice_id": "v_zh_065",
+  "display_name": "Objective Narrator",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816458456",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 65,
+    "global_index": 65
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "zh-HK",
+    "language": "中文-粤语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "沉稳",
+      "精准",
+      "咬字清晰"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "calm",
+      "serious"
+    ]
+  },
+  "fit_roles": [
+    "新闻分析",
+    "纪录片旁白和教育内容",
+    "以及企业简报",
+    "博物馆语音导览和严肃的调查新闻"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个平稳、客观且清晰的男声，具有富有节奏且克制的新闻播报感。非常适合用于新闻分析、纪录片旁白和教育内容，以及企业简报、博物馆语音导览和严肃的调查新闻等场景。",
+  "voxcpm2_control": "中文-粤语男声，口音：标准口音。声音定位：沉稳、精准、咬字清晰。这是一个平稳、客观且清晰的男声，具有富有节奏且克制的新闻播报感。非常适合用于新闻分析、纪录片旁白和教育内容，以及企业简报、博物馆语音导览和严肃的调查新闻等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

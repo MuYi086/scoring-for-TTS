@@ -1,0 +1,44 @@
+{
+  "voice_id": "v_zh_074",
+  "display_name": "Serious Commentator",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816458460",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 74,
+    "global_index": 74
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "zh-HK",
+    "language": "中文-粤语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮",
+      "知性",
+      "浑厚"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "政治分析片段",
+    "批判性调查报告和主观性社论播客",
+    "以及关于治理的历史纪录片",
+    "法律简报和正式的社会政治辩论"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个严厉、克制且带有一丝怀疑态度的男声，具有富有节奏和分析性的新闻评论语调。非常适合用于政治分析片段、批判性调查报告和主观性社论播客，以及关于治理的历史纪录片、法律简报和正式的社会政治辩论等场景。",
+  "voxcpm2_control": "中文-粤语男声，口音：标准口音。声音定位：清亮、知性、浑厚。这是一个严厉、克制且带有一丝怀疑态度的男声，具有富有节奏和分析性的新闻评论语调。非常适合用于政治分析片段、批判性调查报告和主观性社论播客，以及关于治理的历史纪录片、法律简报和正式的社会政治辩论等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

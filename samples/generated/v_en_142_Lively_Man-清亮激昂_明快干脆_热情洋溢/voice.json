@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_142",
+  "display_name": "Lively Man",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340463",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 66,
+    "global_index": 142
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮激昂",
+      "明快干脆",
+      "热情洋溢"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "enthusiastic",
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "体育赛事解说",
+    "科技快讯或短视频旁白"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的青年男声。其声线清亮激昂且具有极强的穿透力，说话节奏明快干脆、抑扬顿挫。整体风格热情洋溢且富有感染力，自带一种高能的解说氛围，非常适合用于体育赛事解说、科技快讯或短视频旁白等场景。",
+  "voxcpm2_control": "英语-美音男声，口音：未标注。声音定位：清亮激昂、明快干脆、热情洋溢。这是一个充满活力的青年男声。其声线清亮激昂且具有极强的穿透力，说话节奏明快干脆、抑扬顿挫。整体风格热情洋溢且富有感染力，自带一种高能的解说氛围，非常适合用于体育赛事解说、科技快讯或短视频旁白等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_181",
+  "display_name": "Relatable Riley",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340428",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 105,
+    "global_index": 181
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "年轻清脆",
+      "急促快嘴",
+      "直率坦诚"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic",
+      "natural"
+    ]
+  },
+  "fit_roles": [
+    "社交媒体短视频",
+    "生活类播客或现代都市题材的独白场景"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力且极具生活气息的年轻女声。其声线年轻清脆，带有明显的现代口语特征，说话节奏急促快嘴、如同连珠炮般密集，同时也夹杂着真实的思考停顿。整体风格直率坦诚且毫无距离感，仿佛身边的闺蜜在分享私密话题，非常适合用于社交媒体短视频、生活类播客或现代都市题材的独白场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：年轻清脆、急促快嘴、直率坦诚。这是一个充满活力且极具生活气息的年轻女声。其声线年轻清脆，带有明显的现代口语特征，说话节奏急促快嘴、如同连珠炮般密集，同时也夹杂着真实的思考停顿。整体风格直率坦诚且毫无距离感，仿佛身边的闺蜜在分享私密话题，非常适合用于社交媒体短视频、生活类播客或现代都市题材的独白场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,46 @@
+{
+  "voice_id": "v_en_085",
+  "display_name": "Captivating Female",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340436",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 9,
+    "global_index": 85
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "明亮",
+      "吐字清晰",
+      "饱含热情"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "enthusiastic",
+      "energetic",
+      "confident",
+      "professional"
+    ]
+  },
+  "fit_roles": [
+    "科普短片",
+    "科技产品介绍或教育类节目的解说",
+    "能够完美胜任知识分享者的角色"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的青年女声。其声线明亮且富有穿透力，自带一种自信昂扬的气场。说话节奏轻快流畅，吐字清晰有力，语调中饱含热情与感染力，仿佛在兴致勃勃地分享新知。整体风格兼具专业感与亲和力，极具吸引听众注意力的特质，非常适合用于科普短片、科技产品介绍或教育类节目的解说，能够完美胜任知识分享者的角色。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：明亮、吐字清晰、饱含热情。这是一个充满活力的青年女声。其声线明亮且富有穿透力，自带一种自信昂扬的气场。说话节奏轻快流畅，吐字清晰有力，语调中饱含热情与感染力，仿佛在兴致勃勃地分享新知。整体风格兼具专业感与亲和力，极具吸引听众注意力的特质，非常适合用于科普短片、科技产品介绍或教育类节目的解说，能够完美胜任知识分享者的角色。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

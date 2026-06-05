@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_096",
+  "display_name": "Playful Girl",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340476",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 20,
+    "global_index": 96
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "teen",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清脆高亢",
+      "急促活泼",
+      "元气满满"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic",
+      "confident"
+    ]
+  },
+  "fit_roles": [
+    "二次元游戏和动漫配音类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以清脆高亢的音质和急促活泼的节奏为特征，极具辨识度。它能准确传达自信、元气满满的情绪，是二次元游戏和动漫配音类项目的理想选择，特别是针对活力少女角色的演绎。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：清脆高亢、急促活泼、元气满满。该音色以清脆高亢的音质和急促活泼的节奏为特征，极具辨识度。它能准确传达自信、元气满满的情绪，是二次元游戏和动漫配音类项目的理想选择，特别是针对活力少女角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

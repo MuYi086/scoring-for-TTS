@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_088",
+  "display_name": "Calm Woman",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340435",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 12,
+    "global_index": 88
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "middle_aged",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "温润清晰",
+      "娓娓道来",
+      "沉稳引导"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "calm"
+    ]
+  },
+  "fit_roles": [
+    "哲学类有声书朗读",
+    "人文纪录片旁白或深度教育科普"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个知性优雅的中年女声。其声线温润清晰且富有质感，说话节奏舒缓从容、娓娓道来。整体风格沉稳且具有引导性，给人一种充满智慧且令人安心的听感，非常适合用于哲学类有声书朗读、人文纪录片旁白或深度教育科普等场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：温润清晰、娓娓道来、沉稳引导。这是一个知性优雅的中年女声。其声线温润清晰且富有质感，说话节奏舒缓从容、娓娓道来。整体风格沉稳且具有引导性，给人一种充满智慧且令人安心的听感，非常适合用于哲学类有声书朗读、人文纪录片旁白或深度教育科普等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_094",
+  "display_name": "Husky MetalHead",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340456",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 18,
+    "global_index": 94
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "creature",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "粗砺嘶哑",
+      "激烈",
+      "狂野躁动"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "重金属歌曲演绎",
+    "动作游戏战斗音效或反派怪物角色的配音"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个极具爆发力的男声。其声线粗砺嘶哑，带有浓重的金属核咆哮质感，发音节奏激烈且充满攻击性。整体风格狂野躁动，给人一种黑暗、宣泄的感觉，非常适合用于重金属歌曲演绎、动作游戏战斗音效或反派怪物角色的配音。",
+  "voxcpm2_control": "英语-美音男声，口音：未标注。声音定位：粗砺嘶哑、激烈、狂野躁动。这是一个极具爆发力的男声。其声线粗砺嘶哑，带有浓重的金属核咆哮质感，发音节奏激烈且充满攻击性。整体风格狂野躁动，给人一种黑暗、宣泄的感觉，非常适合用于重金属歌曲演绎、动作游戏战斗音效或反派怪物角色的配音。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

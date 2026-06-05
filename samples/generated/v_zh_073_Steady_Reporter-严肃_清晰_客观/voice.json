@@ -1,0 +1,45 @@
+{
+  "voice_id": "v_zh_073",
+  "display_name": "Steady Reporter",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "375511816458461",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 73,
+    "global_index": 73
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "zh-HK",
+    "language": "中文-粤语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "严肃",
+      "清晰",
+      "客观"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "serious",
+      "professional"
+    ]
+  },
+  "fit_roles": [
+    "每日新闻摘要",
+    "企业旁白和教育简报",
+    "以及教学辅导",
+    "严肃的纪录片配音和公益公告"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个平稳、专业且清晰的男声，具有克制且富有节奏的新闻播报感。非常适合用于每日新闻摘要、企业旁白和教育简报，以及教学辅导、严肃的纪录片配音和公益公告等场景。",
+  "voxcpm2_control": "中文-粤语男声，口音：标准口音。声音定位：严肃、清晰、客观。这是一个平稳、专业且清晰的男声，具有克制且富有节奏的新闻播报感。非常适合用于每日新闻摘要、企业旁白和教育简报，以及教学辅导、严肃的纪录片配音和公益公告等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

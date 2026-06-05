@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_144",
+  "display_name": "Steady Women",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321486373060",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 68,
+    "global_index": 144
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "明亮清晰",
+      "紧凑有力",
+      "客观专业"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "authoritative",
+      "professional"
+    ]
+  },
+  "fit_roles": [
+    "即时新闻播报",
+    "时事评论或财经资讯速递"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个成熟干练的女声。其声线明亮清晰且富有职业质感，说话节奏紧凑有力、抑扬顿挫。整体风格客观专业，自带一种权威的媒体感，非常适合用于即时新闻播报、时事评论或财经资讯速递等场景。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：明亮清晰、紧凑有力、客观专业。这是一个成熟干练的女声。其声线明亮清晰且富有职业质感，说话节奏紧凑有力、抑扬顿挫。整体风格客观专业，自带一种权威的媒体感，非常适合用于即时新闻播报、时事评论或财经资讯速递等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_084",
+  "display_name": "广告旁白",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "365615561994393",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 8,
+    "global_index": 84
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "快速",
+      "说服力",
+      "生动"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "典型的重磅商业广告风格"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这款声音具有强势、高能且极具冲击力的投射感，是典型的重磅商业广告风格。它是紧急活动推广和限时优惠广告的理想选择。同时也非常适用于高燃宣传片、电台广播广告以及充满活力的开场。",
+  "voxcpm2_control": "英语男声，口音：标准口音。声音定位：快速、说服力、生动。这款声音具有强势、高能且极具冲击力的投射感，是典型的重磅商业广告风格。它是紧急活动推广和限时优惠广告的理想选择。同时也非常适用于高燃宣传片、电台广播广告以及充满活力的开场。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_151",
+  "display_name": "Explanatory Man",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340449",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 75,
+    "global_index": 151
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "young_adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "明朗清晰",
+      "自然流畅",
+      "邻家科普达人感"
+    ],
+    "pace_default": "medium",
+    "energy": "high",
+    "emotion_bias": [
+      "energetic"
+    ]
+  },
+  "fit_roles": [
+    "趣味科普视频",
+    "社交媒体解说或现代风格的在线教育课程"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满活力的青年男声。其声线明朗清晰且具有亲和力，说话节奏自然流畅、语调上扬，像是在与朋友热切地交谈。整体风格兼具知识性与趣味性，给人一种邻家科普达人的感觉，非常适合用于趣味科普视频、社交媒体解说或现代风格的在线教育课程等场景。",
+  "voxcpm2_control": "英语-美音男声，口音：未标注。声音定位：明朗清晰、自然流畅、邻家科普达人感。这是一个充满活力的青年男声。其声线明朗清晰且具有亲和力，说话节奏自然流畅、语调上扬，像是在与朋友热切地交谈。整体风格兼具知识性与趣味性，给人一种邻家科普达人的感觉，非常适合用于趣味科普视频、社交媒体解说或现代风格的在线教育课程等场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

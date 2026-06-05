@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_en_161",
+  "display_name": "Movie Narrator",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321486373089",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 85,
+    "global_index": 161
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "middle_aged",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "深沉厚重",
+      "抑扬顿挫",
+      "电影预告片氛围"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "电影宣传片",
+    "史诗游戏开场或悬疑有声书等高燃场景"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满戏剧张力的中年男声。其声线深沉厚重且极具穿透力，说话节奏抑扬顿挫、悬念感十足。整体风格宏大史诗且扣人心弦，自带一种强烈的电影预告片氛围，非常适合用于电影宣传片、史诗游戏开场或悬疑有声书等高燃场景。",
+  "voxcpm2_control": "英语-美音男声，口音：未标注。声音定位：深沉厚重、抑扬顿挫、电影预告片氛围。这是一个充满戏剧张力的中年男声。其声线深沉厚重且极具穿透力，说话节奏抑扬顿挫、悬念感十足。整体风格宏大史诗且扣人心弦，自带一种强烈的电影预告片氛围，非常适合用于电影宣传片、史诗游戏开场或悬疑有声书等高燃场景。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

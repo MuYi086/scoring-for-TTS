@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_119",
+  "display_name": "Decent Boy",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340443",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 43,
+    "global_index": 119
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "teen",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "略带沙哑",
+      "随性自然",
+      "少年心气"
+    ],
+    "pace_default": "medium",
+    "energy": "medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "一个年轻青涩的英式男声"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个年轻青涩的英式男声。其声线略带沙哑与气声，说话节奏随性自然、带有一种生活化的含糊感。整体风格真挚且极具少年心气，能准确传达出沮丧、妥协或吐槽的情绪，是广播剧和奇幻题材影视的理想选择，特别是针对有着成长的烦恼的少年角色的演绎。",
+  "voxcpm2_control": "英语男声，口音：未标注。声音定位：略带沙哑、随性自然、少年心气。这是一个年轻青涩的英式男声。其声线略带沙哑与气声，说话节奏随性自然、带有一种生活化的含糊感。整体风格真挚且极具少年心气，能准确传达出沮丧、妥协或吐槽的情绪，是广播剧和奇幻题材影视的理想选择，特别是针对有着成长的烦恼的少年角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

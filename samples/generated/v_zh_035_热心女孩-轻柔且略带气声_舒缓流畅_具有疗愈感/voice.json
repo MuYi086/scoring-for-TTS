@@ -1,0 +1,42 @@
+{
+  "voice_id": "v_zh_035",
+  "display_name": "热心女孩",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340427",
+    "catalog": "中英音色表.md",
+    "section": "中文音色",
+    "section_index": 35,
+    "global_index": 35
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "child",
+    "species": "human",
+    "locale": "zh-CN",
+    "language": "中文-普通话",
+    "accent": "标准口音"
+  },
+  "style_tags": {
+    "timbre": [
+      "轻柔且略带气声",
+      "舒缓流畅",
+      "具有疗愈感"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "gentle"
+    ]
+  },
+  "fit_roles": [
+    "二次元游戏",
+    "广播剧或动漫剧情"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个温柔细腻的年轻女声。其声线轻柔且略带气声，说话节奏舒缓流畅、娓娓道来。整体风格深情且具有疗愈感，能够完美演绎出角色内心的关切与哀伤，非常适合用于二次元游戏、广播剧或动漫剧情等场景，特别是针对深情少女角色的演绎。",
+  "voxcpm2_control": "中文-普通话女声，口音：标准口音。声音定位：轻柔且略带气声、舒缓流畅、具有疗愈感。这是一个温柔细腻的年轻女声。其声线轻柔且略带气声，说话节奏舒缓流畅、娓娓道来。整体风格深情且具有疗愈感，能够完美演绎出角色内心的关切与哀伤，非常适合用于二次元游戏、广播剧或动漫剧情等场景，特别是针对深情少女角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

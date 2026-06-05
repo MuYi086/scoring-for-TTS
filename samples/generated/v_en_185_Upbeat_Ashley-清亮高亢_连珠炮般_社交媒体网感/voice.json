@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_185",
+  "display_name": "Upbeat Ashley",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321486373091",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 109,
+    "global_index": 185
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-US",
+    "language": "英语-美音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "清亮高亢",
+      "连珠炮般",
+      "社交媒体网感"
+    ],
+    "pace_default": "medium_fast",
+    "energy": "high",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "美妆生活类Vlog和播客类项目"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "该音色以清亮高亢的音质和连珠炮般的快节奏为特征，极具辨识度。它能准确传达亢奋激动的情绪，自带一种极强的社交媒体网感，是美妆生活类Vlog和播客类项目的理想选择，特别是针对话痨型博主角色的演绎。",
+  "voxcpm2_control": "英语-美音女声，口音：未标注。声音定位：清亮高亢、连珠炮般、社交媒体网感。该音色以清亮高亢的音质和连珠炮般的快节奏为特征，极具辨识度。它能准确传达亢奋激动的情绪，自带一种极强的社交媒体网感，是美妆生活类Vlog和播客类项目的理想选择，特别是针对话痨型博主角色的演绎。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

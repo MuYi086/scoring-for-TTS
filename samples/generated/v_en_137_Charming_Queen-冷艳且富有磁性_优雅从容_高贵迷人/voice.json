@@ -1,0 +1,43 @@
+{
+  "voice_id": "v_en_137",
+  "display_name": "Charming Queen",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340438",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 61,
+    "global_index": 137
+  },
+  "profile": {
+    "gender": "female",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en",
+    "language": "英语",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "冷艳且富有磁性",
+      "优雅从容",
+      "高贵迷人"
+    ],
+    "pace_default": "medium_slow",
+    "energy": "medium",
+    "emotion_bias": [
+      "mysterious"
+    ]
+  },
+  "fit_roles": [
+    "游戏与RPG中的反派角色",
+    "史诗电影预告或情感广播剧",
+    "能够完美契合冷酷御姐或魅惑女王的设定"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个极具辨识度的成熟女声。其声线冷艳且富有磁性，夹带明显的法式口音，说话节奏优雅从容、透着一丝慵懒与丝滑。整体风格高贵迷人且充满神秘感，自带一种危险的诱惑力，非常适合用于游戏与RPG中的反派角色、史诗电影预告或情感广播剧，能够完美契合冷酷御姐或魅惑女王的设定。",
+  "voxcpm2_control": "英语女声，口音：未标注。声音定位：冷艳且富有磁性、优雅从容、高贵迷人。这是一个极具辨识度的成熟女声。其声线冷艳且富有磁性，夹带明显的法式口音，说话节奏优雅从容、透着一丝慵懒与丝滑。整体风格高贵迷人且充满神秘感，自带一种危险的诱惑力，非常适合用于游戏与RPG中的反派角色、史诗电影预告或情感广播剧，能够完美契合冷酷御姐或魅惑女王的设定。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}

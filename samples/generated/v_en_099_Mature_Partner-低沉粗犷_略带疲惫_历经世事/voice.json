@@ -1,0 +1,41 @@
+{
+  "voice_id": "v_en_099",
+  "display_name": "Mature Partner",
+  "source": {
+    "provider": "MiniMax",
+    "voice_id": "355321180340471",
+    "catalog": "中英音色表.md",
+    "section": "英文音色",
+    "section_index": 23,
+    "global_index": 99
+  },
+  "profile": {
+    "gender": "male",
+    "age_band": "adult",
+    "species": "human",
+    "locale": "en-GB",
+    "language": "英语-英音",
+    "accent": "未标注"
+  },
+  "style_tags": {
+    "timbre": [
+      "低沉粗犷",
+      "略带疲惫",
+      "历经世事"
+    ],
+    "pace_default": "medium",
+    "energy": "low_medium",
+    "emotion_bias": [
+      "neutral"
+    ]
+  },
+  "fit_roles": [
+    "一个充满故事感的成熟男声"
+  ],
+  "constraints": {
+    "not_good_for": [],
+    "notes": "根据中英音色表自动生成，需用试听音频做最终听感复核。"
+  },
+  "description": "这是一个充满故事感的成熟男声。其声线低沉粗犷且带有明显的颗粒感，独特的苏格兰口音赋予了极高的辨识度。说话语气略带疲惫与沧桑，给人一种历经世事的感觉。这种音色非常适合演绎奇幻游戏中的矮人战士、悬疑剧中的硬汉侦探或有声书中性格倔强的大叔角色。",
+  "voxcpm2_control": "英语-英音男声，口音：未标注。声音定位：低沉粗犷、略带疲惫、历经世事。这是一个充满故事感的成熟男声。其声线低沉粗犷且带有明显的颗粒感，独特的苏格兰口音赋予了极高的辨识度。说话语气略带疲惫与沧桑，给人一种历经世事的感觉。这种音色非常适合演绎奇幻游戏中的矮人战士、悬疑剧中的硬汉侦探或有声书中性格倔强的大叔角色。合成时保持吐字清晰、节奏稳定、角色一致；不要偏离原始声音定位。"
+}
