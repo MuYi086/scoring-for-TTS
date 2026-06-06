@@ -1,0 +1,58 @@
+{
+  "voice_name": "Female Actor - 清脆明亮,抑扬顿挫,戏剧感染力",
+  "voice_id": "355321486373061",
+  "uniq_id": "English_Steady_Female_5",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "女",
+    "青年",
+    "广播剧",
+    "有声书与小说",
+    "纪录片"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清脆明亮"
+    },
+    {
+      "category": 6,
+      "name": "抑扬顿挫"
+    },
+    {
+      "category": 6,
+      "name": "戏剧感染力"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    }
+  ],
+  "description": "这是一个充满活力的青年女声。其声线清脆明亮且极具穿透力，说话节奏抑扬顿挫、咬字清晰精准。整体风格带有浓厚的戏剧感染力，仿佛一位在舞台上生动演绎的讲述者，非常适合用于英式有声书朗读、儿童故事演播或文学作品旁白等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/a91d7e05-5a83-430e-ae08-8f5526e5c1bb.mp3"
+}

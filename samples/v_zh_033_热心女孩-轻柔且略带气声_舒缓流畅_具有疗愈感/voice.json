@@ -1,0 +1,63 @@
+{
+  "voice_name": "热心女孩 - 轻柔且略带气声,舒缓流畅,具有疗愈感",
+  "voice_id": "355321180340427",
+  "uniq_id": "Chinese (Mandarin)_Warm_HeartedGirl",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 6,
+      "name": "轻柔且略带气声"
+    },
+    {
+      "category": 6,
+      "name": "舒缓流畅"
+    },
+    {
+      "category": 6,
+      "name": "具有疗愈感"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    }
+  ],
+  "description": "这是一个温柔细腻的年轻女声。其声线轻柔且略带气声，说话节奏舒缓流畅、娓娓道来。整体风格深情且具有疗愈感，能够完美演绎出角色内心的关切与哀伤，非常适合用于二次元游戏、广播剧或动漫剧情等场景，特别是针对深情少女角色的演绎。",
+  "sample_audio": "https://cdn.hailuoai.com/hailuo-video-web/public_assets/7312628a-5af7-491a-8bc9-67b82d23471f.wav"
+}

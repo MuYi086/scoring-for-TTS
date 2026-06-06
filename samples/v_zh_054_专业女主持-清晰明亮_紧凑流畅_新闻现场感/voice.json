@@ -1,0 +1,63 @@
+{
+  "voice_name": "专业女主持 - 清晰明亮,紧凑流畅,新闻现场感",
+  "voice_id": "226869000163484",
+  "uniq_id": "Cantonese_ProfessionalHost（F)",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "女",
+    "青年",
+    "纪录片",
+    "广告与预告",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清晰明亮"
+    },
+    {
+      "category": 6,
+      "name": "紧凑流畅"
+    },
+    {
+      "category": 6,
+      "name": "新闻现场感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个干练专业的女声。其声线清晰明亮且字正腔圆，说话节奏紧凑流畅、掷地有声。整体风格端庄严肃且客观冷静，自带一种强烈的新闻现场感，非常适合用于粤语新闻播报、财经快讯或严肃的社会纪实类节目。",
+  "sample_audio": "https://filecdn.minimax.chat/public/84589766-c651-477b-b320-36b89599f953.mp3"
+}

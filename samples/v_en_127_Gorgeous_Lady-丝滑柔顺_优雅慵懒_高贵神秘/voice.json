@@ -1,0 +1,63 @@
+{
+  "voice_name": "Gorgeous Lady - 丝滑柔顺,优雅慵懒,高贵神秘",
+  "voice_id": "355321180340454",
+  "uniq_id": "English_GorgeousLady",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "丝滑柔顺"
+    },
+    {
+      "category": 6,
+      "name": "优雅慵懒"
+    },
+    {
+      "category": 6,
+      "name": "高贵神秘"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是专为角色演绎设计的青年女性音色。其声线丝滑柔顺且略带气声，语调优雅慵懒、张弛有度。整体风格高贵神秘，给人一种从容不迫且略带戏谑的感觉，非常适合用于奇幻游戏配音、动漫御姐角色或有声小说中，能够完美契合高冷女神或腹黑角色的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/d1905f05-71c1-41a8-9082-4c1811b748bc.mp3"
+}

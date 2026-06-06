@@ -1,0 +1,58 @@
+{
+  "voice_name": "善良女声 - 略带沙哑,抑扬顿挫,极具画面感",
+  "voice_id": "355321180340420",
+  "uniq_id": "Cantonese_Narrator",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "男",
+    "中年",
+    "有声书与小说",
+    "纪录片",
+    "在线教育"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "抑扬顿挫"
+    },
+    {
+      "category": 6,
+      "name": "极具画面感"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    }
+  ],
+  "description": "这是一个成熟老练的男声。其声线略带沙哑且富有质感，说话节奏抑扬顿挫、绘声绘色。整体风格生动且极具画面感，带有一种经典的粤语讲古韵味，非常适合用于自然纪录片解说、广播故事讲述或人文历史类节目的旁白场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/22e29cb0-0f5a-443a-9fa9-a32dabd55cf9.mp3"
+}

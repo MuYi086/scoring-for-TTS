@@ -1,0 +1,58 @@
+{
+  "voice_name": "Lovely Girl - 稚嫩甜美,自然舒缓,纯真乖巧",
+  "voice_id": "355321180340464",
+  "uniq_id": "English_LovelyGirl",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "女",
+    "儿童",
+    "动漫与动画",
+    "广告与预告",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "稚嫩甜美"
+    },
+    {
+      "category": 6,
+      "name": "自然舒缓"
+    },
+    {
+      "category": 6,
+      "name": "纯真乖巧"
+    },
+    {
+      "category": 4,
+      "name": "儿童"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "该音色以稚嫩甜美的音质和自然舒缓的节奏为特征，极具辨识度。它能准确传达纯真、乖巧的情绪，是卡通动画和儿童有声书类项目的理想选择，特别是针对聪慧小女孩角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/3587254e-c16e-4ca4-8799-a9539919fb6e.mp3"
+}

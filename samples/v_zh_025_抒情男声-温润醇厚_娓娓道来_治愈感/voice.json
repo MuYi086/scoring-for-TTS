@@ -1,0 +1,58 @@
+{
+  "voice_name": "抒情男声 - 温润醇厚,娓娓道来,治愈感",
+  "voice_id": "226869000163476",
+  "uniq_id": "Chinese (Mandarin)_Lyrical_Voice",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "中年",
+    "有声书与小说",
+    "纪录片",
+    "在线教育"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "温润醇厚"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "治愈感"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    }
+  ],
+  "description": "这是一个成熟儒雅的男声。其声线温润醇厚，略带一丝岁月的沉淀感，说话节奏舒缓从容、娓娓道来。整体风格极具文学气息与治愈感，仿佛一位历经世事的老友在耳畔低语，非常适合用于文学散文朗诵、深夜情感电台或文化类纪录片解说，能够完美演绎看透红尘的智者形象。",
+  "sample_audio": "https://filecdn.minimax.chat/public/950e53ff-98f1-4342-8c99-424f72569211.mp3"
+}

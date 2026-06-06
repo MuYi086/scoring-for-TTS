@@ -1,0 +1,58 @@
+{
+  "voice_name": "沉稳高管 - 低沉厚实,磁性,从容不迫",
+  "voice_id": "226869000163456",
+  "uniq_id": "Chinese (Mandarin)_Reliable_Executive",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "青年",
+    "在线教育",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "低沉厚实"
+    },
+    {
+      "category": 6,
+      "name": "磁性"
+    },
+    {
+      "category": 6,
+      "name": "从容不迫"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个沉稳干练的男声。其声线低沉厚实且自带磁性，说话节奏从容不迫、条理清晰。整体风格既展现了职场精英的果断权威，又透露出成熟男性的可靠与包容，非常适合用于都市职场剧、有声小说中的高管角色或高端商务解说等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/89956d48-f0d7-49c7-98a0-4dfb1aee0dbe.mp3"
+}

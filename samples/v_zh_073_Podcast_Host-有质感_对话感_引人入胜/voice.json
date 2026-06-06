@@ -1,0 +1,53 @@
+{
+  "voice_name": "Podcast Host - 有质感,对话感,引人入胜",
+  "voice_id": "375511816458457",
+  "uniq_id": "Cantonese_podcast_host_vv2",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "男",
+    "中年",
+    "播客与社媒",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "有质感"
+    },
+    {
+      "category": 6,
+      "name": "对话感"
+    },
+    {
+      "category": 6,
+      "name": "引人入胜"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个平滑、坚定且极具修辞感染力的男声，带有对话式和辩论式的播客语调。非常适合用于观点类脱口秀、社会政治辩论和分析型音频杂谈，以及电台谈话片段、具有煽动性的旁白和对话式教育内容等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/048b617f-e1f8-422c-89fb-fdbc6e303675.mp3"
+}

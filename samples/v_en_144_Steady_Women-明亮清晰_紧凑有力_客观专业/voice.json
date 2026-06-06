@@ -1,0 +1,58 @@
+{
+  "voice_name": "Steady Women - 明亮清晰,紧凑有力,客观专业",
+  "voice_id": "355321486373060",
+  "uniq_id": "English_Steady_Female_1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "纪录片",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "明亮清晰"
+    },
+    {
+      "category": 6,
+      "name": "紧凑有力"
+    },
+    {
+      "category": 6,
+      "name": "客观专业"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个成熟干练的女声。其声线明亮清晰且富有职业质感，说话节奏紧凑有力、抑扬顿挫。整体风格客观专业，自带一种权威的媒体感，非常适合用于即时新闻播报、时事评论或财经资讯速递等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/de8a1520-4a64-474c-82a6-8bed6bf19a16.mp3"
+}

@@ -1,0 +1,68 @@
+{
+  "voice_name": "傲娇御姐 - 低沉沙哑,慵懒舒缓,性感撩人",
+  "voice_id": "226869000163459",
+  "uniq_id": "Chinese (Mandarin)_Mature_Woman",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "低沉沙哑"
+    },
+    {
+      "category": 6,
+      "name": "慵懒舒缓"
+    },
+    {
+      "category": 6,
+      "name": "性感撩人"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个极具风情的成熟女声。其声线低沉沙哑且带有迷人的气声，说话节奏慵懒舒缓、漫不经心。整体风格性感撩人且略带神秘感，能准确传达自信、妩媚的情绪，是广播剧和游戏配音类项目的理想选择，特别是针对美艳反派或成熟御姐角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/63e8ebff-5a36-488d-b6e2-87f6a1094f2a.mp3"
+}

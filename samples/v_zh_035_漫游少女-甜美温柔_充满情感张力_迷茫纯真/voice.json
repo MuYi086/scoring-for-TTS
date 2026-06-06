@@ -1,0 +1,63 @@
+{
+  "voice_name": "漫游少女 - 甜美温柔,充满情感张力,迷茫纯真",
+  "voice_id": "355321180340423",
+  "uniq_id": "Chinese (Mandarin)_ExplorativeGirl",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "儿童",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "甜美温柔"
+    },
+    {
+      "category": 6,
+      "name": "充满情感张力"
+    },
+    {
+      "category": 6,
+      "name": "迷茫纯真"
+    },
+    {
+      "category": 4,
+      "name": "儿童"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    }
+  ],
+  "description": "该音色以甜美温柔的音质和充满情感张力的节奏为特征，极具辨识度。它能准确传达迷茫、纯真以及略带忧伤的情绪，是二次元游戏和奇幻广播剧类项目的理想选择，特别是针对拥有复杂内心戏的异世界少女角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/cac1b20e-bbae-4468-a17b-69cbcbc4610d.mp3"
+}

@@ -1,0 +1,53 @@
+{
+  "voice_name": "沉稳主播 - 语速轻快,沉着,分析感",
+  "voice_id": "375511816315093",
+  "uniq_id": "Chinese_calm_streamer_vv1",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "语速轻快"
+    },
+    {
+      "category": 6,
+      "name": "沉着"
+    },
+    {
+      "category": 6,
+      "name": "分析感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个平滑、沉稳且治愈的声音，节奏轻松舒缓。非常适合用于冥想应用和助眠故事，以及深夜电台主持、令人平静的解说视频和健康养生内容等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/cc9e67c9-4dcf-41f9-a7e0-bb309e81ae59.mp3"
+}

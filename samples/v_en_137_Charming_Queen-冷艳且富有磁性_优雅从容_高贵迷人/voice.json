@@ -1,0 +1,73 @@
+{
+  "voice_name": "Charming Queen - 冷艳且富有磁性,优雅从容,高贵迷人",
+  "voice_id": "355321180340438",
+  "uniq_id": "English_CharmingQueen",
+  "tag_list": [
+    "英语",
+    "英语-英格兰口音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "角色配音",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英格兰口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "冷艳且富有磁性"
+    },
+    {
+      "category": 6,
+      "name": "优雅从容"
+    },
+    {
+      "category": 6,
+      "name": "高贵迷人"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个极具辨识度的成熟女声。其声线冷艳且富有磁性，夹带明显的法式口音，说话节奏优雅从容、透着一丝慵懒与丝滑。整体风格高贵迷人且充满神秘感，自带一种危险的诱惑力，非常适合用于游戏与RPG中的反派角色、史诗电影预告或情感广播剧，能够完美契合冷酷御姐或魅惑女王的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/c57e42b2-94b1-4d93-8896-e3ebc4de9895.mp3"
+}

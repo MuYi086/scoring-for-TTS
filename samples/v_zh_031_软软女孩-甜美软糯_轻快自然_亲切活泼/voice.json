@@ -1,0 +1,63 @@
+{
+  "voice_name": "软软女孩 - 甜美软糯,轻快自然,亲切活泼",
+  "voice_id": "286339866161296",
+  "uniq_id": "Chinese (Mandarin)_Soft_Girl",
+  "tag_list": [
+    "中文-普通话",
+    "中国台湾口音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "有声书与小说",
+    "角色配音",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "中国台湾口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "甜美软糯"
+    },
+    {
+      "category": 6,
+      "name": "轻快自然"
+    },
+    {
+      "category": 6,
+      "name": "亲切活泼"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "该音色以甜美软糯的音质和轻快自然的节奏为特征，极具辨识度。它带有明显的台湾腔调，语调上扬且自带撒娇感，整体风格亲切活泼，是校园恋爱游戏和现代言情广播剧类项目的理想选择，特别是针对邻家学妹角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/224ffb61-a2bb-4184-acf7-78ddf49d8cfd.mp3"
+}

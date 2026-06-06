@@ -1,0 +1,53 @@
+{
+  "voice_name": "Male News Anchor - 浑厚,清晰,快速",
+  "voice_id": "375511816458453",
+  "uniq_id": "Cantonese_Male_news_anchor_vv2",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "男",
+    "中年",
+    "纪录片",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "浑厚"
+    },
+    {
+      "category": 6,
+      "name": "清晰"
+    },
+    {
+      "category": 6,
+      "name": "快速"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个沉重、急切且极度专注的男声，具有快节奏且富有韵律的新闻播报感。非常适合用于突发新闻快讯、紧急通知和具有压迫感的纪录片旁白，以及调查报告、健康与安全简报和激烈的电影预告片等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/2055ee8b-fb25-424c-b8cb-e2baf971e520.mp3"
+}

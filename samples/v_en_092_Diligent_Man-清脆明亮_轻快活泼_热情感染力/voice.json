@@ -1,0 +1,62 @@
+{
+  "voice_name": "Diligent Man - 清脆明亮,轻快活泼,热情感染力",
+  "voice_id": "226869000163493",
+  "uniq_id": "English_Diligent_Man",
+  "tag_list": [
+    "英语",
+    "英语-印度口音",
+    "男",
+    "青年",
+    "在线教育",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-印度口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清脆明亮"
+    },
+    {
+      "category": 6,
+      "name": "轻快活泼"
+    },
+    {
+      "category": 6,
+      "name": "热情感染力"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    },
+    {
+      "category": 9,
+      "name": "recommend"
+    }
+  ],
+  "description": "这是一个充满活力的青年男声。其声线清脆明亮且极具穿透力，说话节奏轻快活泼、富有动感。整体风格热情且具有极强的感染力，非常适合用于播客节目、商业广告或社交媒体视频等场景，特别是针对年轻听众的快节奏资讯演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/138731f9-b186-44f0-be5b-31efad0a7c74.mp3"
+}

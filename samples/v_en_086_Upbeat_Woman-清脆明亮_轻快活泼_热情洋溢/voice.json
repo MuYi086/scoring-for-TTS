@@ -1,0 +1,62 @@
+{
+  "voice_name": "Upbeat Woman - 清脆明亮,轻快活泼,热情洋溢",
+  "voice_id": "355321486373068",
+  "uniq_id": "English_Upbeat_Woman",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "在线教育",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清脆明亮"
+    },
+    {
+      "category": 6,
+      "name": "轻快活泼"
+    },
+    {
+      "category": 6,
+      "name": "热情洋溢"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    },
+    {
+      "category": 9,
+      "name": "recommend"
+    }
+  ],
+  "description": "这是一个充满活力的女声。其音色清脆明亮，语速轻快活泼且富有极强的节奏感。整体风格热情洋溢，极具感染力，能够准确传达出积极向上的情绪并牢牢抓住听众的注意力。这种声音非常适合用于趣味科普短片、青少年在线教育课程或快节奏的商业广告，能完美塑造出一位热心开朗解说员的形象。",
+  "sample_audio": "https://filecdn.minimax.chat/public/276e324d-da2e-47b3-a950-fba2419ca702.mp3"
+}

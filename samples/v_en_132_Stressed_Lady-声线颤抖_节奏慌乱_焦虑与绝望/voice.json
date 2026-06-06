@@ -1,0 +1,68 @@
+{
+  "voice_name": "Stressed Lady  - 声线颤抖,节奏慌乱,焦虑与绝望",
+  "voice_id": "355321486373063",
+  "uniq_id": "English_StressedLady",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "纪录片",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "声线颤抖"
+    },
+    {
+      "category": 6,
+      "name": "节奏慌乱"
+    },
+    {
+      "category": 6,
+      "name": "焦虑与绝望"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个极具情绪张力的青年女声。其声线颤抖且伴有急促的气息，说话节奏慌乱无措、断断续续。整体风格充满了焦虑与绝望的临场感，生动传达出濒临崩溃的心理状态，非常适合用于生存恐怖游戏、悬疑广播剧或影视作品中，完美契合落难女子或绝境求生者的角色设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/dcb5572d-c2be-4a41-8be3-f2688cec6255.mp3"
+}

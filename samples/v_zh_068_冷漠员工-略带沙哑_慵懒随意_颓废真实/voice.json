@@ -1,0 +1,58 @@
+{
+  "voice_name": "冷漠员工 - 略带沙哑,慵懒随意,颓废真实",
+  "voice_id": "355321180340419",
+  "uniq_id": "Cantonese_IndifferentStaff",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "男",
+    "青年",
+    "广播剧",
+    "角色配音",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "慵懒随意"
+    },
+    {
+      "category": 6,
+      "name": "颓废真实"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    }
+  ],
+  "description": "这是一个充满市井气息的中年男声。其声线略带沙哑与疲惫，说话节奏慵懒随意、带有明显的抱怨口吻。整体风格颓废且真实，精准传达出职场老油条的无奈与冷漠情绪，非常适合用于社会写实类广播剧、讽刺短片旁白或职场吐槽类节目的演绎，能够完美契合看透世事的消极员工设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/9686682c-3fc8-45f0-bd88-2a4692e1f63e.mp3"
+}

@@ -1,0 +1,63 @@
+{
+  "voice_name": "温暖少女 - 甜美细腻,娓娓道来,治愈感",
+  "voice_id": "226869000163472",
+  "uniq_id": "Chinese (Mandarin)_Warm_Girl",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画"
+  ],
+  "tag_items": [
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 6,
+      "name": "甜美细腻"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "治愈感"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    }
+  ],
+  "description": "这是一个年轻温柔的女声。其声线甜美细腻且自带暖意，说话语气亲切自然、娓娓道来。整体风格充满了邻家女孩般的治愈感，能够准确传达出体贴与细腻的情绪，非常适合用于都市言情小说、情感电台独白或生活类游戏角色的演绎。",
+  "sample_audio": "https://cdn.hailuoai.com/hailuo-video-web/public_assets/2f57c24e-4cb2-4a9c-8a70-b0d5501e0b80.wav"
+}

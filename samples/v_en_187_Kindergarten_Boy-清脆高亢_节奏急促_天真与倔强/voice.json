@@ -1,0 +1,53 @@
+{
+  "voice_name": "Kindergarten Boy - 清脆高亢,节奏急促,天真与倔强",
+  "voice_id": "355321180340418",
+  "uniq_id": "BritishChild_male_1_v1",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "男",
+    "儿童",
+    "广播剧",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清脆高亢"
+    },
+    {
+      "category": 6,
+      "name": "节奏急促"
+    },
+    {
+      "category": 6,
+      "name": "天真与倔强"
+    },
+    {
+      "category": 4,
+      "name": "儿童"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    }
+  ],
+  "description": "这是一个稚嫩且极具辨识度的男童声。其音色清脆高亢，带有明显的奶气，说话节奏急促而充满活力。整体风格生动且富有情绪感染力，能准确传达出孩子特有的天真与倔强，非常适合用于卡通动画、儿童有声绘本或教育类项目中关于淘气小男孩角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/297b78da-cc86-428b-8acd-11d5f299a46d.mp3"
+}

@@ -1,0 +1,53 @@
+{
+  "voice_name": "Wise Lady - 精致细腻,从容不迫,充满引导性",
+  "voice_id": "355321486373072",
+  "uniq_id": "English_Wiselady",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "女",
+    "中年",
+    "广播剧",
+    "在线教育"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "精致细腻"
+    },
+    {
+      "category": 6,
+      "name": "从容不迫"
+    },
+    {
+      "category": 6,
+      "name": "充满引导性"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    }
+  ],
+  "description": "这是一个优雅知性的女声。其声线精致细腻且富有磁性，说话节奏从容不迫、吐字清晰。整体风格冷静且充满引导性，给人一种值得信赖的权威感，非常适合用于沉浸式游戏旁白、高端展厅讲解或智能管家语音交互等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/4fbf75e3-345a-4eea-9efa-359f3a4ad2e2.mp3"
+}

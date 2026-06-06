@@ -1,0 +1,53 @@
+{
+  "voice_name": "Engaging Podcaster - 有质感,浑厚,流畅",
+  "voice_id": "375511816315080",
+  "uniq_id": "Enlish_engaging_podcaster_vv1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "中年",
+    "播客与社媒",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "有质感"
+    },
+    {
+      "category": 6,
+      "name": "浑厚"
+    },
+    {
+      "category": 6,
+      "name": "流畅"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    }
+  ],
+  "description": "这是一个温暖、友善且中气十足的“早间电台”声线，自带一种天然的熟悉感。非常适合用于访谈类节目和大众娱乐播客，以及本地商业广告、宣传片和社区公告等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/fdf783ca-e1a0-45eb-bd8f-5d4867a75424.mp3"
+}

@@ -1,0 +1,63 @@
+{
+  "voice_name": "热心大婶 - 高昂明亮,碎碎念,生活气息",
+  "voice_id": "226869000163462",
+  "uniq_id": "Chinese (Mandarin)_Kind-hearted_Antie",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "中年",
+    "广播剧",
+    "广告与预告",
+    "在线教育",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "高昂明亮"
+    },
+    {
+      "category": 6,
+      "name": "碎碎念"
+    },
+    {
+      "category": 6,
+      "name": "生活气息"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "该音色以高昂明亮的音质和碎碎念般的快节奏为特征，极具生活气息。它能准确传达热情、关切乃至有些唠叨的情绪，是生活类广播剧和市井题材作品的理想选择，特别是针对热心邻居大婶角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/5d6b6bf7-1f2e-464d-ad18-aa04221b1cf1.mp3"
+}

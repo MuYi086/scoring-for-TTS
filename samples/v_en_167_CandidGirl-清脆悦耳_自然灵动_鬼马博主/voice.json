@@ -1,0 +1,58 @@
+{
+  "voice_name": "CandidGirl - 清脆悦耳,自然灵动,鬼马博主",
+  "voice_id": "355321486373078",
+  "uniq_id": "moss_audio_19dbb103-7350-11f0-ad20-f2bc95e89150",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "有声书与小说",
+    "纪录片",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清脆悦耳"
+    },
+    {
+      "category": 6,
+      "name": "自然灵动"
+    },
+    {
+      "category": 6,
+      "name": "鬼马博主"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个极具表现力的青年女声。其声线清脆悦耳，说话节奏自然灵动、反应敏捷，带有明显的对话感。整体风格幽默风趣且充满生活气息，能够通过语气的转折精准演绎出从疑惑到恍然大悟的情绪变化，非常适合用于社交媒体短视频、趣味英语教学或现代情景喜剧，生动塑造出一位鬼马博主的形象。",
+  "sample_audio": "https://filecdn.minimax.chat/public/03adddd4-4965-4050-a97e-6dc26400fef9.mp3"
+}

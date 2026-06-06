@@ -1,0 +1,58 @@
+{
+  "voice_name": "Persuasive Man - 明亮干练,快速流畅,极具说服力",
+  "voice_id": "355321180340475",
+  "uniq_id": "English_Persuasive_Man",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "在线教育",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "明亮干练"
+    },
+    {
+      "category": 6,
+      "name": "快速流畅"
+    },
+    {
+      "category": 6,
+      "name": "极具说服力"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个充满自信的青年男声。其声线明亮干练且富有穿透力，说话节奏快速流畅、逻辑清晰。整体风格极具说服力与现代感，非常适合用于科技产品介绍、营销视频旁白或在线教程解说等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/ceba70ae-5f0a-4bc7-9fcd-4f78c03e0727.mp3"
+}

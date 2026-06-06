@@ -1,0 +1,62 @@
+{
+  "voice_name": "Male Debater - 沙哑沧桑,随意松散,故事氛围感",
+  "voice_id": "355321180340442",
+  "uniq_id": "English_Debator",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "中年",
+    "游戏与RPG",
+    "广播剧",
+    "动漫与动画"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "沙哑沧桑"
+    },
+    {
+      "category": 6,
+      "name": "随意松散"
+    },
+    {
+      "category": 6,
+      "name": "故事氛围感"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 9,
+      "name": "recommend"
+    }
+  ],
+  "description": "这是一个粗犷且极具辨识度的男声。其声线沙哑沧桑，带有明显的颗粒感，说话节奏随意松散，语调夸张且充满戏剧张力。它能准确传达狡黠、贪婪的情绪，自带一种浓厚的故事氛围感，是游戏配音和广播剧类项目的理想选择，特别是针对海盗船长或狡猾反派角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/d39ad502-1b25-4e28-aaea-df5f04023043.mp3"
+}

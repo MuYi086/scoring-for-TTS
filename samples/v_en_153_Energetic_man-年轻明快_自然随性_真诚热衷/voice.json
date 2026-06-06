@@ -1,0 +1,48 @@
+{
+  "voice_name": "Energetic man - 年轻明快,自然随性,真诚热衷",
+  "voice_id": "355321180340448",
+  "uniq_id": "English_energetic_male_1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "年轻明快"
+    },
+    {
+      "category": 6,
+      "name": "自然随性"
+    },
+    {
+      "category": 6,
+      "name": "真诚热衷"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "该音色以年轻明快的音质和自然随性的节奏为特征，极具辨识度。它能准确传达真诚、热衷的情绪，是播客与社媒和动漫解说类项目的理想选择，特别是针对二次元评论员或潮流博主角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/85237d38-3b9d-40bc-b11d-f650192632e4.mp3"
+}

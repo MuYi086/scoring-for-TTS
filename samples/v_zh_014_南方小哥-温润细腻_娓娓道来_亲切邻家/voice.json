@@ -1,0 +1,68 @@
+{
+  "voice_name": "南方小哥 - 温润细腻,娓娓道来,亲切邻家",
+  "voice_id": "226869000163469",
+  "uniq_id": "Chinese (Mandarin)_Southern_Young_Man",
+  "tag_list": [
+    "中文-普通话",
+    "中国-南方",
+    "男",
+    "青年",
+    "动漫与动画",
+    "纪录片",
+    "广告与预告",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "中国-南方"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "温润细腻"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "亲切邻家"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个极具生活气息的青年男声。其声线温润细腻，说话节奏舒缓随性、娓娓道来，带有一种典型的南方松弛感。整体风格亲切邻家，仿佛就在耳边闲聊，非常适合用于生活随笔、治愈系独白或旅游Vlog配音，能够完美契合文艺青年的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/8ccda6d6-227f-4f6a-b988-cdc5e54e4169.mp3"
+}

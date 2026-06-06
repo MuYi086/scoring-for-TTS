@@ -1,0 +1,68 @@
+{
+  "voice_name": "Reserved Young Man - 温润清朗,舒缓柔和,书卷少年感",
+  "voice_id": "355321180340477",
+  "uniq_id": "English_ReservedYoungMan",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "温润清朗"
+    },
+    {
+      "category": 6,
+      "name": "舒缓柔和"
+    },
+    {
+      "category": 6,
+      "name": "书卷少年感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个性格内敛的青年男声。其声线温润清朗，带有一丝少年特有的青涩感，说话节奏舒缓柔和，语气中透着谦逊与礼貌。整体风格真挚且略带忧郁，给人一种极具亲和力的书卷少年感，非常适合用于二次元游戏角色配音、深情的内心独白或有声小说中温柔男配角的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/9aede1a4-71b8-4e4f-b15e-3e714dfbb0bc.mp3"
+}

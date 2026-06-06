@@ -1,0 +1,58 @@
+{
+  "voice_name": "Aussie Buddy - 沙哑,从容,对话感",
+  "voice_id": "375511816315073",
+  "uniq_id": "English_aussie_buddy_vv2",
+  "tag_list": [
+    "英语",
+    "英语-澳洲口音",
+    "男",
+    "青年",
+    "在线教育",
+    "纪录片",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-澳洲口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "沙哑"
+    },
+    {
+      "category": 6,
+      "name": "从容"
+    },
+    {
+      "category": 6,
+      "name": "对话感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个温暖、慵懒且带有友善澳洲口音的声音。其声线自然放松，非常适合用于旅行Vlog和休闲风格的品牌宣传，以及非正式解说视频、角色配音和亲切的客服问候等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/0a80014f-bfdd-4d9b-97f8-92bd9c73c5fb.mp3"
+}

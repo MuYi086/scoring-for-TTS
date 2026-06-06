@@ -1,0 +1,53 @@
+{
+  "voice_name": "说书爷爷 - 沙哑,鼻音,引人入胜",
+  "voice_id": "375511816315107",
+  "uniq_id": "Chinese_radient_storyteller_vv1",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "老年",
+    "有声书与小说",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "沙哑"
+    },
+    {
+      "category": 6,
+      "name": "鼻音"
+    },
+    {
+      "category": 6,
+      "name": "引人入胜"
+    },
+    {
+      "category": 4,
+      "name": "老年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个光彩照人、极具表现力且迷人的声音，情感连接力极强。非常适合用于言情有声书和感人的文学朗读，以及诗歌朗诵、情感类品牌故事和文化纪录片等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/8df1b509-8a93-43ca-8429-afbe5f515b2e.mp3"
+}

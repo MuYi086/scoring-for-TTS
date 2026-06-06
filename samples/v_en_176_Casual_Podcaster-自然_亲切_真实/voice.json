@@ -1,0 +1,53 @@
+{
+  "voice_name": "Casual Podcaster - 自然,亲切,真实",
+  "voice_id": "375511816315075",
+  "uniq_id": "English_causual_podcast_vv1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "中年",
+    "播客与社媒",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "自然"
+    },
+    {
+      "category": 6,
+      "name": "亲切"
+    },
+    {
+      "category": 6,
+      "name": "真实"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个流畅、健谈且充满现代感的无口音声音。其整体风格自然平滑，非常适合用于生活方式播客和科技产品测评，以及电台脱口秀、YouTube旁白和博客转音频等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/5fb72a25-34cf-4f28-99f0-f63d890ee19b.mp3"
+}

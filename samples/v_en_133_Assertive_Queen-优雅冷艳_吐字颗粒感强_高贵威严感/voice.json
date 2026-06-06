@@ -1,0 +1,58 @@
+{
+  "voice_name": "Assertive Queen - 优雅冷艳,吐字颗粒感强,高贵威严感",
+  "voice_id": "355321180340432",
+  "uniq_id": "English_AssertiveQueen",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "优雅冷艳"
+    },
+    {
+      "category": 6,
+      "name": "吐字颗粒感强"
+    },
+    {
+      "category": 6,
+      "name": "高贵威严感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一位充满自信且气场强大的青年女声。其声线优雅冷艳，音质清晰透亮，说话语调拿捏得当，吐字颗粒感强，自带一种高贵与威严感。整体风格既具有职场女性的干练，又不失贵族的傲气，非常适合演绎游戏中的女王、御姐型角色，或用于时尚商业广告及有声书的旁白。",
+  "sample_audio": "https://filecdn.minimax.chat/public/7dc81561-78f9-4883-9eb9-c0b574922665.mp3"
+}

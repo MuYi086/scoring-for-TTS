@@ -1,0 +1,73 @@
+{
+  "voice_name": "Confident Woman - 明亮有力,坚定流畅,风格干练",
+  "voice_id": "355321180340440",
+  "uniq_id": "English_ConfidentWoman",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "广告与预告",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "明亮有力"
+    },
+    {
+      "category": 6,
+      "name": "坚定流畅"
+    },
+    {
+      "category": 6,
+      "name": "风格干练"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个充满自信且清晰的成年女声。其声线明亮有力且富有质感，说话节奏坚定流畅、抑扬顿挫。整体风格干练且极具感染力，能够准确传达出独立坚毅的情绪，非常适合用于有声书朗读、纪录片旁白或影视剧中坚强女性角色的配音场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/54d82dac-3830-4839-90f6-e45d64a2ac4e.mp3"
+}

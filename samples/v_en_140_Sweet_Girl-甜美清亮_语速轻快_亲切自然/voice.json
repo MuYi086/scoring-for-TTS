@@ -1,0 +1,68 @@
+{
+  "voice_name": "Sweet Girl - 甜美清亮,语速轻快,亲切自然",
+  "voice_id": "355321486373065",
+  "uniq_id": "English_Sweet_Female_4",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "有声书与小说",
+    "纪录片",
+    "在线教育",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "甜美清亮"
+    },
+    {
+      "category": 6,
+      "name": "语速轻快"
+    },
+    {
+      "category": 6,
+      "name": "亲切自然"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个充满朝气的青年女声。其声线甜美清亮，说话节奏轻快活泼且十分流畅。整体风格亲切自然，洋溢着青春的气息，非常适合用于校园题材的有声书、英语教学听力材料或轻松的播客节目，能够完美演绎活泼开朗的学生角色。",
+  "sample_audio": "https://filecdn.minimax.chat/public/1a9b04ae-80d9-43ab-8074-c92d87b63139.mp3"
+}

@@ -1,0 +1,68 @@
+{
+  "voice_name": "Trustworthy Man - 厚实沙哑,舒缓自然,真诚亲和",
+  "voice_id": "355321486373067",
+  "uniq_id": "English_Trustworth_Man",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "中年",
+    "广播剧",
+    "有声书与小说",
+    "广告与预告",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "厚实沙哑"
+    },
+    {
+      "category": 6,
+      "name": "舒缓自然"
+    },
+    {
+      "category": 6,
+      "name": "真诚亲和"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个成熟稳重的男声。其声线厚实沙哑且富有磁性，说话节奏舒缓自然、娓娓道来。整体风格真诚亲和且令人信赖，给人一种如沐春风的安抚感，非常适合用于情感类广告、生活哲理播客或有声书旁白等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/ad0c2c4f-080b-42ab-bbe8-f1f205199c5d.mp3"
+}

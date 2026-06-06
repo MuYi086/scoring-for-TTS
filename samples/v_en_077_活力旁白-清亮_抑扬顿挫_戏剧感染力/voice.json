@@ -1,0 +1,58 @@
+{
+  "voice_name": "活力旁白 - 清亮,抑扬顿挫,戏剧感染力",
+  "voice_id": "258951953674432",
+  "uniq_id": "English_expressive_narrator",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清亮"
+    },
+    {
+      "category": 6,
+      "name": "抑扬顿挫"
+    },
+    {
+      "category": 6,
+      "name": "戏剧感染力"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    }
+  ],
+  "description": "这是一个充满活力的男声。其声线清亮且富有张力，说话节奏抑扬顿挫、起伏明显。整体风格生动且极具戏剧感染力，非常适合用于冒险小说演播、儿童读物旁白或趣味科普视频等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/cff00b95-e45b-42b7-9ee2-50bbb0532bcd.mp3"
+}

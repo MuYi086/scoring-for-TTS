@@ -1,0 +1,48 @@
+{
+  "voice_name": "Peaceful Lady - 轻柔且略带气声,娓娓道来,宁静且极具治愈感",
+  "voice_id": "355321486373090",
+  "uniq_id": "peace_and_ease",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "有声书与小说"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "轻柔且略带气声"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "宁静且极具治愈感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    }
+  ],
+  "description": "这是一个温柔舒缓的年轻女声。其声线轻柔且略带气声，音质纯净温暖，说话节奏舒缓流畅、娓娓道来，仿佛在与听众进行一场私密的对话。整体风格宁静且极具治愈感，能够完美传达出一种沉浸于自然的松弛状态，非常适合用于冥想引导、自然类纪录片旁白或情感治愈类有声读物等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/c402254e-8767-4533-acf9-161a993a7289.mp3"
+}

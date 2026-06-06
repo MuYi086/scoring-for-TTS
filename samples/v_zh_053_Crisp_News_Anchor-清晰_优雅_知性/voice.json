@@ -1,0 +1,48 @@
+{
+  "voice_name": "Crisp News Anchor - 清晰,优雅,知性",
+  "voice_id": "375511816458449",
+  "uniq_id": "Cantonese_crisp_news_anchor_vv2",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "女",
+    "青年",
+    "旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清晰"
+    },
+    {
+      "category": 6,
+      "name": "优雅"
+    },
+    {
+      "category": 6,
+      "name": "知性"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "旁白"
+    }
+  ],
+  "description": "这是一个专业、清晰且干练的女声，具有干脆、富有节奏感且极具权威的新闻播报韵律。非常适合用于财经新闻播报、企业宣讲和教育内容，以及自动电话系统、严肃纪录片旁白和教学辅导等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/741a5a4b-f42a-4a9b-ae83-3954d097ab73.mp3"
+}

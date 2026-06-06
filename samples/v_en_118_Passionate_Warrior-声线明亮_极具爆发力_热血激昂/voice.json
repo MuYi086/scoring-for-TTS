@@ -1,0 +1,58 @@
+{
+  "voice_name": "Passionate Warrior - 声线明亮,极具爆发力,热血激昂",
+  "voice_id": "355321180340472",
+  "uniq_id": "English_PassionateWarrior",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "声线明亮"
+    },
+    {
+      "category": 6,
+      "name": "极具爆发力"
+    },
+    {
+      "category": 6,
+      "name": "热血激昂"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个充满活力且自信昂扬的青年男声。其声线明亮中带有一丝张力，说话节奏紧凑多变、极具爆发力。整体风格热血激昂，能够准确传达出战斗前的渴望与无畏的情绪，非常适合用于热血动漫主角、RPG游戏中的战士角色或冒险故事的精彩演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/ccb5d195-a501-49ea-a441-f18a98f539b0.mp3"
+}

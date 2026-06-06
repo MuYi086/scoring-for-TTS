@@ -1,0 +1,68 @@
+{
+  "voice_name": "Comedian - 明亮高亢,抑扬顿挫,夸张诙谐",
+  "voice_id": "355321180340439",
+  "uniq_id": "English_Comedian",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "男",
+    "青年",
+    "有声书与小说",
+    "动漫与动画",
+    "广告与预告",
+    "在线教育",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "明亮高亢"
+    },
+    {
+      "category": 6,
+      "name": "抑扬顿挫"
+    },
+    {
+      "category": 6,
+      "name": "夸张诙谐"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个充满活力且极具表现力的男声。其声线明亮高亢，带有独特的英式韵味，说话节奏抑扬顿挫、像唱歌一样富有跳跃感。整体风格夸张诙谐，能准确传达出调皮、乐观的情绪，自带一种极强的戏剧张力，是卡通动画配音和儿童有声书的完美选择，特别适合演绎那些古灵精怪的滑稽角色。",
+  "sample_audio": "https://filecdn.minimax.chat/public/6c6df450-b1dc-406f-a80d-855372edbd4b.mp3"
+}

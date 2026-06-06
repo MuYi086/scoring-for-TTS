@@ -1,0 +1,58 @@
+{
+  "voice_name": "Exciting Actor - 快速,充满活力,随性",
+  "voice_id": "375511816315081",
+  "uniq_id": "English_exciting_actor_vv1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "广播剧",
+    "有声书与小说",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "快速"
+    },
+    {
+      "category": 6,
+      "name": "充满活力"
+    },
+    {
+      "category": 6,
+      "name": "随性"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个生动、戏剧化且表现力极宽广的声音。非常适合用于角色塑造、动画配音和娱乐内容，以及电子游戏语音、戏剧性广告和舞台剧朗读等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/334d352e-a15b-46dd-be89-6468841b5d20.mp3"
+}

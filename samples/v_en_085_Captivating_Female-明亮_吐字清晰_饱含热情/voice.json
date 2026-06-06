@@ -1,0 +1,62 @@
+{
+  "voice_name": "Captivating Female - 明亮,吐字清晰,饱含热情",
+  "voice_id": "355321180340436",
+  "uniq_id": "English_captivating_female1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "纪录片",
+    "在线教育",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "明亮"
+    },
+    {
+      "category": 6,
+      "name": "吐字清晰"
+    },
+    {
+      "category": 6,
+      "name": "饱含热情"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 9,
+      "name": "recommend"
+    }
+  ],
+  "description": "这是一个充满活力的青年女声。其声线明亮且富有穿透力，自带一种自信昂扬的气场。说话节奏轻快流畅，吐字清晰有力，语调中饱含热情与感染力，仿佛在兴致勃勃地分享新知。整体风格兼具专业感与亲和力，极具吸引听众注意力的特质，非常适合用于科普短片、科技产品介绍或教育类节目的解说，能够完美胜任知识分享者的角色。",
+  "sample_audio": "https://filecdn.minimax.chat/public/079722fd-7937-4c4e-991b-c4c2241ca3fc.mp3"
+}

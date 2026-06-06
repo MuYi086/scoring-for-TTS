@@ -1,0 +1,63 @@
+{
+  "voice_name": "Determined Man - 清亮刚毅,果断有力,少年英雄感",
+  "voice_id": "355321180340447",
+  "uniq_id": "English_DeterminedMan",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清亮刚毅"
+    },
+    {
+      "category": 6,
+      "name": "果断有力"
+    },
+    {
+      "category": 6,
+      "name": "少年英雄感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "该音色以清亮刚毅的音质和果断有力的节奏为特征，极具辨识度。它能准确传达自信坚韧的情绪，是热血动漫和玄幻广播剧类项目的理想选择，特别是针对少年英雄角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/1b9eb538-691c-4b3b-a093-2a0ad57c4611.mp3"
+}

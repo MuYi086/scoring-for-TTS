@@ -1,0 +1,53 @@
+{
+  "voice_name": "Serious Commentator - 清亮,知性,浑厚",
+  "voice_id": "375511816458460",
+  "uniq_id": "Cantonese_serious_commentator_vv2",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "男",
+    "中年",
+    "企业宣传与旁白",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清亮"
+    },
+    {
+      "category": 6,
+      "name": "知性"
+    },
+    {
+      "category": 6,
+      "name": "浑厚"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个严厉、克制且带有一丝怀疑态度的男声，具有富有节奏和分析性的新闻评论语调。非常适合用于政治分析片段、批判性调查报告和主观性社论播客，以及关于治理的历史纪录片、法律简报和正式的社会政治辩论等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/57335c8a-32ea-475f-a198-b0de7fa1b126.mp3"
+}

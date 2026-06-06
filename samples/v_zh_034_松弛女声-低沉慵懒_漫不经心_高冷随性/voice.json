@@ -1,0 +1,63 @@
+{
+  "voice_name": "松弛女声 - 低沉慵懒,漫不经心,高冷随性",
+  "voice_id": "355321180340425",
+  "uniq_id": "Chinese (Mandarin)_Laid_BackGirl",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "低沉慵懒"
+    },
+    {
+      "category": 6,
+      "name": "漫不经心"
+    },
+    {
+      "category": 6,
+      "name": "高冷随性"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个充满个性的青年女声。其声线低沉慵懒且略带沙哑，说话节奏拖沓舒缓、漫不经心。整体风格高冷且随性，自带一种提不起劲的厌世感，非常适合用于动漫游戏配音、广播剧或角色扮演类项目，能够完美契合毒舌女仆或颓废少女的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/f2a75e16-5b1c-4306-a48f-b6ddffe05d31.mp3"
+}

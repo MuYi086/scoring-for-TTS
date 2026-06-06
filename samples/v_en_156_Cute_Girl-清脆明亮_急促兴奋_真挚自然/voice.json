@@ -1,0 +1,58 @@
+{
+  "voice_name": "Cute Girl - 清脆明亮,急促兴奋,真挚自然",
+  "voice_id": "355321180340441",
+  "uniq_id": "English_Cute_Girl",
+  "tag_list": [
+    "英语",
+    "英语-拉美/西语口音",
+    "男",
+    "儿童",
+    "游戏与RPG",
+    "广告与预告",
+    "广播剧"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-拉美/西语口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清脆明亮"
+    },
+    {
+      "category": 6,
+      "name": "急促兴奋"
+    },
+    {
+      "category": 6,
+      "name": "真挚自然"
+    },
+    {
+      "category": 4,
+      "name": "儿童"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    }
+  ],
+  "description": "这是一个充满朝气的男童声。其声线清脆明亮，音质纯净且富有感染力，说话节奏急促兴奋，仿佛迫不及待地想要分享心中的秘密与热忱。整体风格真挚自然，带有一种强烈的动画电影画面感，能够准确传达出纯真与执着的情绪，非常适合用于动画电影主角、儿童冒险故事或励志题材的角色配音。",
+  "sample_audio": "https://filecdn.minimax.chat/public/36bdc78a-5c82-41ca-83c6-84455c55310f.mp3"
+}

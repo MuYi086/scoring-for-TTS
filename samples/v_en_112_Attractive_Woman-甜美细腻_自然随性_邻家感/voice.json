@@ -1,0 +1,63 @@
+{
+  "voice_name": "Attractive Woman - 甜美细腻,自然随性,邻家感",
+  "voice_id": "355321180340433",
+  "uniq_id": "English_AttractiveGirl",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "广播剧",
+    "角色配音",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "甜美细腻"
+    },
+    {
+      "category": 6,
+      "name": "自然随性"
+    },
+    {
+      "category": 6,
+      "name": "邻家感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个年轻且充满现代感的时尚女声。其声线甜美细腻，略带一丝轻盈的气声，说话节奏自然随性、如同日常交谈般亲切。整体风格真实且极具邻家感，能够准确传达出分享与倾诉的情绪，非常适合用于个人访谈、生活Vlog旁白或社交媒体分享等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/4cfbfd88-dbd0-4cd5-bdaf-b822ac1fc4ea.mp3"
+}

@@ -1,0 +1,53 @@
+{
+  "voice_name": "温柔学姐 - 温婉柔和,娓娓道来,亲切且富有感染力",
+  "voice_id": "226869000163479",
+  "uniq_id": "Chinese (Mandarin)_Gentle_Senior",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "有声书与小说",
+    "纪录片"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "温婉柔和"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "亲切且富有感染力"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    }
+  ],
+  "description": "这是一个温柔知性的女声。其声线温婉柔和且略带磁性，说话节奏娓娓道来、语调舒缓。整体风格亲切且富有感染力，给人一种如沐春风的感觉，非常适合用于治愈系有声读物、情感电台节目或知识科普类视频等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/e70ebd5e-5491-401c-9ba9-c93d1a81a136.mp3"
+}

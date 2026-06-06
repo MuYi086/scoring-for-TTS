@@ -1,0 +1,58 @@
+{
+  "voice_name": "Strong-Willed Boy - 略带沙哑,紧凑有力,热血动漫主角感",
+  "voice_id": "355321486373064",
+  "uniq_id": "English_Strong-WilledBoy",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "动漫与动画",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "紧凑有力"
+    },
+    {
+      "category": 6,
+      "name": "热血动漫主角感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    }
+  ],
+  "description": "该音色以略带沙哑的颗粒质感和紧凑有力的节奏为特征，极具辨识度。它能准确传达坚毅、笃定的情绪，自带一种热血动漫主角的氛围，是二次元游戏和冒险类动画项目的理想选择，特别是针对意志坚定的年轻战士角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/9cb25390-f45f-49f9-b3ae-27da7024fe5d.mp3"
+}

@@ -1,0 +1,62 @@
+{
+  "voice_name": "Imposing Queen - 清冷高贵,抑扬顿挫,富有史诗感",
+  "voice_id": "355321180340457",
+  "uniq_id": "English_ImposingManner",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清冷高贵"
+    },
+    {
+      "category": 6,
+      "name": "抑扬顿挫"
+    },
+    {
+      "category": 6,
+      "name": "富有史诗感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 9,
+      "name": "recommend"
+    }
+  ],
+  "description": "这是一个冷静坚定的年轻女声。其声线清冷高贵且充满张力，说话节奏抑扬顿挫、极具威严。整体风格傲气凛然且富有史诗感，非常适合用于史诗奇幻剧、电影独白或大女主角色配音等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/fb237421-d9bb-4618-b483-36acfa4f348e.mp3"
+}

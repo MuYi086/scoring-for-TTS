@@ -1,0 +1,58 @@
+{
+  "voice_name": "Lovely Lady - 略带沙哑,干脆利落,风格豪迈",
+  "voice_id": "355321180340465",
+  "uniq_id": "English_LovelyLady",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "动漫与动画"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "干脆利落"
+    },
+    {
+      "category": 6,
+      "name": "风格豪迈"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    }
+  ],
+  "description": "这是一个充满力量感的御姐音。其声线略带沙哑且富有磁性，透着一种成熟女性的坚毅与豪爽。说话节奏干脆利落、自信满满，既能展现出统领全局的霸气，又不失大姐姐般的亲切与爽朗。整体风格豪迈且极具感染力，非常适合用于游戏中的女战士角色、冒险题材的旁白或展现独立女性形象的有声剧。",
+  "sample_audio": "https://filecdn.minimax.chat/public/ede30a65-0a30-440d-ac96-61ab4c2ae3b6.mp3"
+}

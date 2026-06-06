@@ -1,0 +1,53 @@
+{
+  "voice_name": "电台主持 - 低沉,沉稳,沉浸式",
+  "voice_id": "375511816315108",
+  "uniq_id": "Chinese_radio_host_male_vv1",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "中年",
+    "广播剧",
+    "有声书与小说"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "低沉"
+    },
+    {
+      "category": 6,
+      "name": "沉稳"
+    },
+    {
+      "category": 6,
+      "name": "沉浸式"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    }
+  ],
+  "description": "这是一个浑厚、平滑且极具磁性的广播级声音，语调控制完美。非常适合用于播客开场和深夜电台节目，以及正式活动主持、访谈秀和高端产品广告等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/602152a1-d1ec-45b2-b854-3337d13f4f78.mp3"
+}

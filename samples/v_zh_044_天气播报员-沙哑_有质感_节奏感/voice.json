@@ -1,0 +1,53 @@
+{
+  "voice_name": "天气播报员 - 沙哑,有质感,节奏感",
+  "voice_id": "375511816315111",
+  "uniq_id": "Chinese_weather_forecaster_vv1",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "中年",
+    "有声书与小说",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "沙哑"
+    },
+    {
+      "category": 6,
+      "name": "有质感"
+    },
+    {
+      "category": 6,
+      "name": "节奏感"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个明亮、清晰且信息量极大的声音，表现出友善且专业的态度。非常适合用于气象更新和每日预报，以及旅行建议、公共交通广播和早间新闻片段等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/a588190d-1623-4dc2-a1e9-b46d9bdd70d2.mp3"
+}

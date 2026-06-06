@@ -1,0 +1,68 @@
+{
+  "voice_name": "Decent Young Man - 清亮磁性,慵懒随性,戏谑",
+  "voice_id": "355321180340444",
+  "uniq_id": "English_DecentYoungMan",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "男",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清亮磁性"
+    },
+    {
+      "category": 6,
+      "name": "慵懒随性"
+    },
+    {
+      "category": 6,
+      "name": "戏谑"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个充满魅力的男声。其声线清亮磁性且略带笑意，说话节奏慵懒随性、松弛有度。整体风格自信且带有几分戏谑，非常适合用于乙女游戏、动漫角色配音或广播剧等场景，能够完美契合那些看似玩世不恭实则深藏不露的痞帅青年设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/eac29cdc-bec9-423f-89aa-c2b32a6bb690.mp3"
+}

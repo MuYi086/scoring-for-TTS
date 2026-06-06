@@ -1,0 +1,63 @@
+{
+  "voice_name": "Sentimental Lady - 华丽高贵,抑扬顿挫,傲慢威严",
+  "voice_id": "355321486373056",
+  "uniq_id": "English_SentimentalLady",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "女",
+    "中年",
+    "游戏与RPG",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "华丽高贵"
+    },
+    {
+      "category": 6,
+      "name": "抑扬顿挫"
+    },
+    {
+      "category": 6,
+      "name": "傲慢威严"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个充满戏剧张力的成熟女声。其声线华丽高贵，带有明显的英式贵族腔调，语调中透着一种浑然天成的傲慢与威严。说话节奏抑扬顿挫，情感表达丰富且夸张，给人一种身居高位的统治者或苛刻贵妇的感觉。这种极具辨识度的声音非常适合用于奇幻题材的游戏角色配音，尤其是演绎那些性格古怪的女王、专横的贵族夫人或具有魔法背景的神秘女性角色。",
+  "sample_audio": "https://filecdn.minimax.chat/public/bc3d302e-0c54-457b-aa91-746324393b75.mp3"
+}

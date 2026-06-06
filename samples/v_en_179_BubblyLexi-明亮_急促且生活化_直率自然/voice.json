@@ -1,0 +1,53 @@
+{
+  "voice_name": "BubblyLexi - 明亮,急促且生活化,直率自然",
+  "voice_id": "355321486373081",
+  "uniq_id": "moss_audio_62ca20b0-7380-11f0-99be-fe40dd2a5fe8",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "广告与预告",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "明亮"
+    },
+    {
+      "category": 6,
+      "name": "急促且生活化"
+    },
+    {
+      "category": 6,
+      "name": "直率自然"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个充满活力的年轻女声。其声线明亮且略带沙哑质感，说话节奏急促且生活化，极具现代感。整体风格直率自然，自带一种强烈的网感和倾诉欲，非常适合用于社交媒体视频、Vlog旁白或美妆生活类播客等场景，能够完美契合邻家女孩或美妆博主的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/bdcc1976-0525-4b48-b15c-fd75c1be4fea.mp3"
+}

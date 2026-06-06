@@ -1,0 +1,68 @@
+{
+  "voice_name": "Abbess - 略带沙哑,节奏急促,充满决心",
+  "voice_id": "355321180340430",
+  "uniq_id": "English_Abbess",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "广告与预告",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "节奏急促"
+    },
+    {
+      "category": 6,
+      "name": "充满决心"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个充满张力且情绪饱满的青年女声。其声线略带沙哑与气声，质感真实且富有穿透力，说话节奏急促有力、情感爆发性强。整体风格紧迫且充满决心，极具戏剧张力，非常适合用于动作游戏角色、科幻影视配音或末世题材的有声剧，能够完美演绎身处危机中的坚毅女性形象。",
+  "sample_audio": "https://filecdn.minimax.chat/public/92747d7e-7487-471f-8653-6e7dbf3117b6.mp3"
+}

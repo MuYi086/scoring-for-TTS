@@ -1,0 +1,53 @@
+{
+  "voice_name": "清爽女声 - 清晰,对话感,深思",
+  "voice_id": "375511816315098",
+  "uniq_id": "Chinese_crisp_podcaster_vv1",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "播客与社媒",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清晰"
+    },
+    {
+      "category": 6,
+      "name": "对话感"
+    },
+    {
+      "category": 6,
+      "name": "深思"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个清脆、现代且极具辨识度的声音，发音清晰明亮。非常适合用于科技测评和访谈类播客，以及充满活力的电台广告、社交媒体内容和快节奏的信息科普视频等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/10c29511-dbf4-4cb0-aedb-3ab3198d4d19.mp3"
+}

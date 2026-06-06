@@ -1,0 +1,63 @@
+{
+  "voice_name": "花甲奶奶 - 略带沙哑,娓娓道来,极具亲和力",
+  "voice_id": "226869000163473",
+  "uniq_id": "Chinese (Mandarin)_Kind-hearted_Elder",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "老年",
+    "广播剧",
+    "动漫与动画",
+    "角色配音",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "极具亲和力"
+    },
+    {
+      "category": 4,
+      "name": "老年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    }
+  ],
+  "description": "这是一个充满阅历的老年女声。其声线略带沙哑且饱含温情，说话节奏慢条斯理、娓娓道来。整体风格慈爱且极具亲和力，非常适合用于家庭题材的广播剧、感人的广告独白或有声书等场景，能够完美演绎慈祥奶奶的角色。",
+  "sample_audio": "https://filecdn.minimax.chat/public/60b54ed4-aebe-44fb-a963-1a0d8350a7b9.mp3"
+}

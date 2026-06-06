@@ -1,0 +1,53 @@
+{
+  "voice_name": "活力讲师 - 清晰,流畅,知性",
+  "voice_id": "375511816315096",
+  "uniq_id": "Chinese_casual_instructor_vv2",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "青年",
+    "在线教育",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清晰"
+    },
+    {
+      "category": 6,
+      "name": "流畅"
+    },
+    {
+      "category": 6,
+      "name": "知性"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个充满活力、清晰且极具吸引力的声音，感觉就像同龄人之间的教学指导。非常适合用于在线课程和DIY教程，以及教育类YouTube频道、语言学习应用和新员工入职视频等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/7fe3fda1-79a3-43c1-9780-bb0cc7f8b1ee.mp3"
+}

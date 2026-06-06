@@ -1,0 +1,63 @@
+{
+  "voice_name": "Bubbly Kid - 稚嫩且略带沙哑,活泼跳脱,邻家淘气包",
+  "voice_id": "355321180340417",
+  "uniq_id": "BritishChild_female_1_v1",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "女",
+    "儿童",
+    "有声书与小说",
+    "动漫与动画",
+    "在线教育",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "稚嫩且略带沙哑"
+    },
+    {
+      "category": 6,
+      "name": "活泼跳脱"
+    },
+    {
+      "category": 6,
+      "name": "邻家淘气包"
+    },
+    {
+      "category": 4,
+      "name": "儿童"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "该音色以稚嫩且略带沙哑的音质和活泼跳脱的节奏为特征，极具辨识度。它能准确传达天真、调皮且充满好奇的情绪，是趣味动画和儿童教育软件类项目的理想选择，特别是针对邻家淘气包角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/f421a6dc-2d11-4062-ab13-f92ffa0bbd2a.mp3"
+}

@@ -1,0 +1,53 @@
+{
+  "voice_name": "Southern Dude - 沙哑粗犷,慵懒随性,西部风情",
+  "voice_id": "355321486373077",
+  "uniq_id": "moss_audio_076697ad-7144-11f0-a447-9613c873494c",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "中年",
+    "企业宣传与旁白",
+    "在线教育"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "沙哑粗犷"
+    },
+    {
+      "category": 6,
+      "name": "慵懒随性"
+    },
+    {
+      "category": 6,
+      "name": "西部风情"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    }
+  ],
+  "description": "该音色以沙哑粗犷的音质和慵懒随性的节奏为特征，极具辨识度。它自带一种浓厚的西部风情，能准确传达幽默豁达的情绪，是西部题材游戏和个性化广播剧类项目的理想选择，特别是针对美国南方牛仔或老练大叔角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/3b85813d-0d15-4963-84c9-9dd25e9fd89a.mp3"
+}

@@ -1,0 +1,53 @@
+{
+  "voice_name": "UnderstatedCamden - 质朴松弛,娓娓道来,真实访谈感",
+  "voice_id": "355321486373079",
+  "uniq_id": "moss_audio_4f4172f4-737b-11f0-9540-7ef9b4b62566",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "企业宣传与旁白",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "质朴松弛"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "真实访谈感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    }
+  ],
+  "description": "这是一个随和自然的青年男声。其声线略带沙哑且质朴松弛，说话节奏流畅自然、如同在娓娓道来。整体风格亲切且接地气，自带一种极强的真实访谈感，非常适合用于播客对谈、个人经历分享或生活类纪录片旁白等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/7048bf5f-32e0-4dc7-9652-8d40ee09b63e.mp3"
+}

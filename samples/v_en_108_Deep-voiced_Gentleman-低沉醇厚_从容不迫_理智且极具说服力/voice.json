@@ -1,0 +1,58 @@
+{
+  "voice_name": "Deep-voiced Gentleman - 低沉醇厚,从容不迫,理智且极具说服力",
+  "voice_id": "355321180340446",
+  "uniq_id": "English_Deep-VoicedGentleman",
+  "tag_list": [
+    "英语",
+    "英语-英音",
+    "男",
+    "中年",
+    "广播剧",
+    "有声书与小说",
+    "纪录片"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-英音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "低沉醇厚"
+    },
+    {
+      "category": 6,
+      "name": "从容不迫"
+    },
+    {
+      "category": 6,
+      "name": "理智且极具说服力"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "纪录片"
+    }
+  ],
+  "description": "这是一个成熟稳重的男声。其声线低沉醇厚，说话节奏从容不迫。整体风格理智且极具说服力，非常适合用于策略游戏角色、史诗纪录片旁白或科技产品介绍等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/8c54a381-344f-403f-b74e-b2a31a59c7dc.mp3"
+}

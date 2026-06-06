@@ -1,0 +1,72 @@
+{
+  "voice_name": "Friendly Neighbor - 清脆明亮,干练轻快,元气满满",
+  "voice_id": "355321180340451",
+  "uniq_id": "English_FriendlyNeighbor",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "广播剧",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清脆明亮"
+    },
+    {
+      "category": 6,
+      "name": "干练轻快"
+    },
+    {
+      "category": 6,
+      "name": "元气满满"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 9,
+      "name": "recommend"
+    }
+  ],
+  "description": "该音色以清脆明亮的音质和干练轻快的节奏为特征，极具辨识度。它能准确传达自信的情绪，给人一种元气满满的感觉，是二次元游戏和美漫动画类项目的理想选择，特别是针对机灵少女角色的演绎。",
+  "sample_audio": "https://filecdn.minimax.chat/public/2f9e9e00-8fe8-4401-bc8e-2df01f3e489b.mp3"
+}

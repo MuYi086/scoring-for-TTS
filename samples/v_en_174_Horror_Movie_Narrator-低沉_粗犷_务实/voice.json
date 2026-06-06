@@ -1,0 +1,58 @@
+{
+  "voice_name": "Horror Movie Narrator - 低沉,粗犷,务实",
+  "voice_id": "375511816315084",
+  "uniq_id": "Eglish_horror_movie_narrator_vv1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "中年",
+    "播客与社媒",
+    "角色配音",
+    "广播剧"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "低沉"
+    },
+    {
+      "category": 6,
+      "name": "粗犷"
+    },
+    {
+      "category": 6,
+      "name": "务实"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    }
+  ],
+  "description": "这是一个低沉、沙哑且带有不祥共鸣的声音。其声线极具厚度，非常适合用于电影预告片和悬疑故事讲述，以及恐怖游戏旁白、真实犯罪播客和强烈的戏剧性开场等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/f4cd3a94-13f8-47d4-803c-00f2fafa26b3.mp3"
+}

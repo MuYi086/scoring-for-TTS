@@ -1,0 +1,58 @@
+{
+  "voice_name": "播报男声 - 清澈干净,自然流畅,邻家大哥哥",
+  "voice_id": "226869000163467",
+  "uniq_id": "Chinese (Mandarin)_Male_Announcer",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "青年",
+    "在线教育",
+    "播客与社媒",
+    "企业宣传与旁白"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "清澈干净"
+    },
+    {
+      "category": 6,
+      "name": "自然流畅"
+    },
+    {
+      "category": 6,
+      "name": "邻家大哥哥"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    }
+  ],
+  "description": "这是一个充满朝气的青年男声。其声线清澈干净且温暖，说话节奏自然流畅、娓娓道来。整体风格亲切且富有治愈感，自带一种邻家大哥哥般的信赖感，非常适合用于有声小说朗读、情感电台节目或在线教育课程等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/404e2907-45c7-4468-b9bb-1d8ea1504cc8.mp3"
+}

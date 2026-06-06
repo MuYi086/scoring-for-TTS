@@ -1,0 +1,53 @@
+{
+  "voice_name": "温暖闺蜜 - 温柔清亮,舒缓且充满关切,亲切自然",
+  "voice_id": "226869000163466",
+  "uniq_id": "Chinese (Mandarin)_Warm_Bestie",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "青年",
+    "广告与预告",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 6,
+      "name": "温柔清亮"
+    },
+    {
+      "category": 6,
+      "name": "舒缓且充满关切"
+    },
+    {
+      "category": 6,
+      "name": "亲切自然"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个极具疗愈感的年轻女声。其声线温柔清亮，说话节奏舒缓且充满关切，仿佛是在耳边轻声细语。整体风格亲切自然，给人一种如沐春风的温暖感觉，非常适合用于情感陪伴类电台、治愈系有声读物或现代都市广播剧，能够完美契合知心闺蜜的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/b3130fbd-3cd3-47f1-aa77-bd742625a379.wav"
+}

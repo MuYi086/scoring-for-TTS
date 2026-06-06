@@ -1,0 +1,48 @@
+{
+  "voice_name": "Cheerful Chloe - 明亮活力,语速轻快,亲切真实",
+  "voice_id": "355950482047180",
+  "uniq_id": "socialmedia_female_2_v1",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "明亮活力"
+    },
+    {
+      "category": 6,
+      "name": "语速轻快"
+    },
+    {
+      "category": 6,
+      "name": "亲切真实"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "该音色是一个充满活力的青年女声。其声线明亮且富有感染力，说话节奏轻快活泼、随性自然，带有一种邻家女孩般的亲切感。整体风格真实且接地气，极具生活气息，非常适合用于社交媒体短视频、产品评测或休闲类广告等场景，能够完美演绎热情分享者的形象。",
+  "sample_audio": "https://filecdn.minimax.chat/public/014ad713-e76e-401c-99b6-38653171a646.mp3"
+}

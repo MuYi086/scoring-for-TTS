@@ -1,0 +1,53 @@
+{
+  "voice_name": "Professional Reporter - 精准,客观,明亮",
+  "voice_id": "375511816458458",
+  "uniq_id": "Cantonese_professional_reporter_vv2",
+  "tag_list": [
+    "中文-粤语",
+    "标准口音",
+    "女",
+    "中年",
+    "企业宣传与旁白",
+    "在线教育"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-粤语"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "精准"
+    },
+    {
+      "category": 6,
+      "name": "客观"
+    },
+    {
+      "category": 6,
+      "name": "明亮"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "企业宣传与旁白"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    }
+  ],
+  "description": "这是一个干练、平稳且专业的女性声音，具有富有节奏且陈述事实的新闻播报感。非常适合用于商业新闻片段、财务报告和企业简报，以及教学旁白、专业培训模块和信息量极大的公益公告等场景。",
+  "sample_audio": "https://cdn.hailuoai.video/open-hailuo-video-web/public_assets/77afb86d-2cc4-4149-8c2e-e1174fa849d4.mp3"
+}

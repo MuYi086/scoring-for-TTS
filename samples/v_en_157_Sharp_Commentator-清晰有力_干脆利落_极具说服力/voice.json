@@ -1,0 +1,53 @@
+{
+  "voice_name": "Sharp Commentator - 清晰有力,干脆利落,极具说服力",
+  "voice_id": "355321486373058",
+  "uniq_id": "English_Sharp_Commentator",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "中年",
+    "在线教育",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "清晰有力"
+    },
+    {
+      "category": 6,
+      "name": "干脆利落"
+    },
+    {
+      "category": 6,
+      "name": "极具说服力"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个自信犀利的女声。其声线清晰有力且富有质感，说话节奏抑扬顿挫、干脆利落。整体风格知性且极具说服力，自带一种强烈的现场演讲感，非常适合用于观点输出类播客、在线教育课程或企业培训宣讲等场景。",
+  "sample_audio": "https://filecdn.minimax.chat/public/83113d94-e704-483f-abc6-c8d88be0b321.mp3"
+}

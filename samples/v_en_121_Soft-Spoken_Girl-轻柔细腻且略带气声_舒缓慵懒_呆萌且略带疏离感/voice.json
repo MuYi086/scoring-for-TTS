@@ -1,0 +1,63 @@
+{
+  "voice_name": "Soft-Spoken Girl - 轻柔细腻且略带气声,舒缓慵懒,呆萌且略带疏离感",
+  "voice_id": "355321486373059",
+  "uniq_id": "English_Soft-spokenGirl",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "游戏与RPG",
+    "有声书与小说",
+    "动漫与动画",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "轻柔细腻且略带气声"
+    },
+    {
+      "category": 6,
+      "name": "舒缓慵懒"
+    },
+    {
+      "category": 6,
+      "name": "呆萌且略带疏离感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "游戏与RPG"
+    },
+    {
+      "category": 8,
+      "name": "有声书与小说"
+    },
+    {
+      "category": 8,
+      "name": "动漫与动画"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "这是一个稚嫩的年轻女声。其声线轻柔细腻且略带气声，说话节奏舒缓慵懒、断断续续。整体风格呆萌且略带疏离感，给人一种惹人怜爱的虚弱印象，极具二次元画面感。非常适合用于动漫游戏角色配音、二次元广播剧或治愈系独白等场景，能够完美契合呆萌少女或病娇角色的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/1f117e17-dfee-4d71-a103-0083c10d425c.mp3"
+}

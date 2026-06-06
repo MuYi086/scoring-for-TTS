@@ -1,0 +1,48 @@
+{
+  "voice_name": "Whispering girl - 细腻柔软,缓慢亲切,极致的松弛感",
+  "voice_id": "355321486373071",
+  "uniq_id": "English_Whispering_girl_v3",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "女",
+    "青年",
+    "角色配音"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 6,
+      "name": "细腻柔软"
+    },
+    {
+      "category": 6,
+      "name": "缓慢亲切"
+    },
+    {
+      "category": 6,
+      "name": "极致的松弛感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "角色配音"
+    }
+  ],
+  "description": "专为疗愈与助眠内容设计的年轻女性音色。声音细腻柔软且充满气声，语调缓慢亲切，给人一种极致的松弛感与安抚力。推荐用于沉浸式角色扮演或深夜助眠节目，能够完美契合温柔陪伴者的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/7b813583-ad6f-446b-9035-d130be56075f.mp3"
+}

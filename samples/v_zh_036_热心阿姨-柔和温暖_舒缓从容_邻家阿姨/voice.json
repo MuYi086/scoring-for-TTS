@@ -1,0 +1,53 @@
+{
+  "voice_name": "热心阿姨 - 柔和温暖,舒缓从容,邻家阿姨",
+  "voice_id": "355321180340426",
+  "uniq_id": "Chinese (Mandarin)_Warm-HeartedAunt",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "女",
+    "中年",
+    "广播剧",
+    "广告与预告"
+  ],
+  "tag_items": [
+    {
+      "category": 3,
+      "name": "女"
+    },
+    {
+      "category": 4,
+      "name": "中年"
+    },
+    {
+      "category": 6,
+      "name": "柔和温暖"
+    },
+    {
+      "category": 6,
+      "name": "舒缓从容"
+    },
+    {
+      "category": 6,
+      "name": "邻家阿姨"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    }
+  ],
+  "description": "这是一个温和亲切的中年女声。其声线柔和温暖，充满了浓厚的生活气息，说话节奏舒缓从容，语调中透着一种长辈特有的宽容与耐心。整体风格极具亲和力，像是一位善解人意的邻家阿姨正在娓娓道来，非常适合用于家庭伦理剧、亲子教育类内容或有声小说中慈爱长辈角色的演绎。",
+  "sample_audio": "https://cdn.hailuoai.com/hailuo-video-web/public_assets/c046cfb3-5ed0-4ff9-9047-8d9e449a91a5.wav"
+}

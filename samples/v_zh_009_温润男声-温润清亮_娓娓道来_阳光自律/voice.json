@@ -1,0 +1,58 @@
+{
+  "voice_name": "温润男声 - 温润清亮,娓娓道来,阳光自律",
+  "voice_id": "226869000163465",
+  "uniq_id": "Chinese (Mandarin)_Gentleman",
+  "tag_list": [
+    "中文-普通话",
+    "标准口音",
+    "男",
+    "青年",
+    "广播剧",
+    "广告与预告",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "中文-普通话"
+    },
+    {
+      "category": 2,
+      "name": "标准口音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "温润清亮"
+    },
+    {
+      "category": 6,
+      "name": "娓娓道来"
+    },
+    {
+      "category": 6,
+      "name": "阳光自律"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "广播剧"
+    },
+    {
+      "category": 8,
+      "name": "广告与预告"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个清新干净的青年男声。其声线温润清亮且充满朝气，说话节奏真诚自然、娓娓道来。整体风格礼貌且极具亲和力，给人一种阳光自律、积极向上的感觉。推荐用于现代都市言情小说、青年成长类播客或校园题材广播剧，能够完美契合奋斗青年或正直学长的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/774c0855-9d02-4074-b9da-d859754c9040.mp3"
+}

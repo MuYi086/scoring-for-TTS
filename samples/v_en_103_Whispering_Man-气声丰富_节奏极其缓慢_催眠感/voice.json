@@ -1,0 +1,53 @@
+{
+  "voice_name": "Whispering Man - 气声丰富,节奏极其缓慢,催眠感",
+  "voice_id": "355321486373106",
+  "uniq_id": "whisper_man",
+  "tag_list": [
+    "英语",
+    "英语-美音",
+    "男",
+    "青年",
+    "在线教育",
+    "播客与社媒"
+  ],
+  "tag_items": [
+    {
+      "category": 1,
+      "name": "英语"
+    },
+    {
+      "category": 2,
+      "name": "英语-美音"
+    },
+    {
+      "category": 3,
+      "name": "男"
+    },
+    {
+      "category": 6,
+      "name": "气声丰富"
+    },
+    {
+      "category": 6,
+      "name": "节奏极其缓慢"
+    },
+    {
+      "category": 6,
+      "name": "催眠感"
+    },
+    {
+      "category": 4,
+      "name": "青年"
+    },
+    {
+      "category": 8,
+      "name": "在线教育"
+    },
+    {
+      "category": 8,
+      "name": "播客与社媒"
+    }
+  ],
+  "description": "这是一个专为沉浸式体验设计的中年男声。其声线采用了极具特色的低语耳语，气声丰富且贴耳，说话节奏极其缓慢、字斟句酌。整体风格神秘、安抚且带有强烈的催眠感，非常适合用于ASMR助眠、悬疑故事讲述或深夜沉浸式阅读等场景，能够完美契合神秘讲述者的设定。",
+  "sample_audio": "https://filecdn.minimax.chat/public/ae5774cf-c42d-4668-add2-0990cff38661.mp3"
+}
