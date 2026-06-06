@@ -1,23 +1,24 @@
 {
-  "speed": 1.0,
-  "pitch_semitones": -0.7,
+  "speed": 0.85,
+  "pitch_semitones": -1.0,
   "volume_gain_db": 0.0,
-  "emotion": "bright",
-  "emotion_intensity": 0.75,
+  "emotion": "warm",
+  "emotion_intensity": 0.5,
   "style": "character_dialogue",
-  "style_degree": 1.0,
+  "style_degree": 0.65,
   "rhythm": "natural",
-  "pause_profile": "normal",
-  "stability": 0.86,
-  "similarity_boost": 0.8,
-  "style_exaggeration": 0.14,
-  "use_speaker_boost": true,
+  "pause_profile": "long_form",
+  "stability": 0.7,
+  "similarity_boost": 0.88,
+  "style_exaggeration": 0.16,
+  "use_speaker_boost": false,
   "provider_overrides": {
     "voxcpm2": {
-      "cfg_value": 2.0,
-      "inference_timesteps": 10,
+      "cfg_value": 1.45,
+      "inference_timesteps": 12,
       "normalize": false,
-      "source": "samples/generated/v_zh_010_搞笑大爷-沧桑醇厚_松弛接地气_幽默热心/voice.json"
+      "source": "samples/generated/v_zh_010_搞笑大爷-沧桑醇厚_松弛接地气_幽默热心/voice.json",
+      "prompt_intent": "平衡 sample.2.wav 的年长沧桑音色和 sample.wav 的慢速、松弛、生活化语气；避免亮嗓、年轻化和标准播报腔。"
     }
   }
 }

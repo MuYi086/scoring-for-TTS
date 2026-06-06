@@ -22,11 +22,15 @@
 
 匹配、角色分配、VoxCPM2 控制提示和生成资产必须保留可追踪信息。涉及角色匹配质量、人工复核、低置信度兜底或空间音频摆位的变更，应输出清晰理由并配套测试。
 
-### 4. 一音色一目录 (One Voice per Directory)
+### 4. 本地模型优先 (Local Model First)
+
+本项目所有音频生成和合成必须使用本机 ModelScope 下载的 VoxCPM2 模型目录：`/persistent/home/muyi086/modelscope/VoxCPM2`。调用 `voxcpm`、项目脚本或其他 TTS（文本转语音）入口时，必须显式传入该目录作为 `--model-path` 或等价模型路径配置，并优先使用 `--local-files-only` 或等价离线选项，避免走默认远端模型、Hugging Face 下载或其他缓存模型。若因调试需要临时使用其他模型路径，必须在任务说明和结果总结中明确标注原因、路径和影响范围。
+
+### 5. 一音色一目录 (One Voice per Directory)
 
 每个音色的试听资产维护在 `samples/generated/<voice_id>/`。目录应包含 `voice.json`、`README.md`、`sample.txt`、`sample.voice.txt`、`sample.controls.json`，并在合成后包含 `sample.wav` 或 `sample.mp3`。大体积音频进入提交前必须明确确认。
 
-### 5. 轻量、可测试、少依赖 (Lightweight and Testable)
+### 6. 轻量、可测试、少依赖 (Lightweight and Testable)
 
 本项目保持轻量 Python 包形态。新增逻辑优先写成可测试的小函数，避免引入 Web 框架、重型任务框架或不必要依赖。影响匹配、校验、资产生成、控制提示或导出格式的改动必须补充 pytest（Python 测试框架）用例。
 
