@@ -1,5 +1,3 @@
-1. 先修复 CosyVoice3（最容易，效果最明显）
-pip uninstall cosyvoice
-git clone --recursive https://github.com/FunAudioLLM/CosyVoice.git
-2. 调试 Qwen3-TTS（需要提供 24kHz 参考音频）
-先完成1和2，参考音频在`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`,然后读取`task1.md`并完成里面的任务
+这个音频能正常播放`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/test_cosyvoice3.wav`
+但是长音频你合成的`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/CosyVoice3_第一章.wav`就是在说叽里咕噜的语言，听不懂那种，也不是中文，时长是13分10s，时长对不上，正常语速应该是应该是8分9s左右
+帮我分析问题并修复

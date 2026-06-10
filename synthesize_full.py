@@ -25,7 +25,8 @@ COSYVOICE3_OUTPUT = os.path.join(OUTPUT_DIR, "CosyVoice3_第一章.wav")
 REF_TEXT = "您好，很高兴能为您提供配音服务，选择您感兴趣的音色，让我们一起开启声音创作的奇幻之旅吧。"
 
 # CosyVoice3 的 prompt_text (需要 <|endofprompt|> 标记)
-PROMPT_TEXT = "You are a helpful assistant.<|endofprompt|>希望您以后能够做得比我还好。"
+# 注意：必须与测试脚本保持一致，不能随意改动
+PROMPT_TEXT = "You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。"
 
 
 def read_text(filepath):
