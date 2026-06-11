@@ -1,1 +1,0 @@
-"""Bundled voice library assets."""
