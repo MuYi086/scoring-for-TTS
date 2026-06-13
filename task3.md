@@ -1,4 +1,7 @@
-plan模式:
-你先阅读文档: `https://platform.xiaomimimo.com/docs/zh-CN/usage-guide/speech-synthesis-v2.5`
-然后阅读`samples\v_zh_046_电台主持-低沉_沉稳_沉浸式`，
-我的需求是给你`samples\v_zh_046_电台主持-低沉_沉稳_沉浸式\第一章.md`和参考音频`samples\v_zh_046_电台主持-低沉_沉稳_沉浸式\sample.wav`，然后你使用mimo的tts合成`第一章.wav`到该目录下。应该选用mimo-v2.5-tts还是mimo-v2.5-tts-voiceclone，这俩个合成音频的音色和给定参考的`sample.wav`相似度是多少，详细对比一下
+帮我在`scripts`目录完成一个脚本，命名为`tts_local_${模型名缩写}.py`。
+脚本使用指定的模型完成克隆，当前指定的模型地址为: `/home/muyi086/hf-mirror/FunAudioLLM/Fun-CosyVoice3-0.5B-2512`,
+参考音频使用`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`,
+要合成的文本是`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/第一章.md`,
+输出合成后的音频wav到该目录,统计合成所需的时间t，和音频频率k
+命名为`${模型名}_${t}_${k}khz.wav`
+最后把以上安装对应tts运行环境所需的软件和过程总结后输出到scripts目录中，命名为`tts_${模型名}_安装指南.md`
