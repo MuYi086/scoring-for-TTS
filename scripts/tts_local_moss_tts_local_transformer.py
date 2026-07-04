@@ -2,7 +2,7 @@
 Use local MOSS-TTS-Local-Transformer to clone a reference voice and synthesize text.
 
 Default output:
-samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/MOSS-TTS-Local-Transformer_${t}_${k}khz.wav
+samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/MOSS-TTS-Local-Transformer-v1.5_${t}_${k}khz.wav
 
 Usage:
   python scripts/tts_local_moss_tts_local_transformer.py
@@ -24,8 +24,9 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer")
-DEFAULT_CODEC_PATH = "OpenMOSS-Team/MOSS-Audio-Tokenizer"
+MODEL_PATH = Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5")
+LOCAL_CODEC_PATH = Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer-v2")
+DEFAULT_CODEC_MODEL_ID = "OpenMOSS-Team/MOSS-Audio-Tokenizer-v2"
 SAMPLE_DIR = REPO_ROOT / "samples/v_zh_046_电台主持-低沉_沉稳_沉浸式"
 TEXT_FILE = SAMPLE_DIR / "第一章.md"
 REF_AUDIO = SAMPLE_DIR / "sample.wav"
@@ -36,7 +37,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model-path", type=Path, default=MODEL_PATH, help="MOSS-TTS-Local-Transformer model path")
     parser.add_argument(
         "--codec-path",
-        default=DEFAULT_CODEC_PATH,
+        default=str(LOCAL_CODEC_PATH if LOCAL_CODEC_PATH.exists() else DEFAULT_CODEC_MODEL_ID),
         help=(
             "MOSS audio tokenizer path or HF model id. "
             "Use a local path for fully offline runs; default follows the official processor."
@@ -45,16 +46,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--text-file", type=Path, default=TEXT_FILE, help="Text/Markdown file to synthesize")
     parser.add_argument("--ref-audio", type=Path, default=REF_AUDIO, help="Reference audio for voice cloning")
     parser.add_argument("--output-dir", type=Path, default=SAMPLE_DIR, help="Directory for output wav")
-    parser.add_argument("--language", default="zh", help="Language hint passed to the MOSS processor")
+    parser.add_argument("--language", default="Chinese", help="Language hint passed to the MOSS processor")
     parser.add_argument("--instruction", default=None, help="Optional style instruction passed to the MOSS processor")
     parser.add_argument("--quality", default=None, help="Optional quality hint passed to the MOSS processor")
     parser.add_argument("--tokens", type=int, default=None, help="Expected audio token count; 1s is about 12.5 tokens")
     parser.add_argument("--max-new-tokens", type=int, default=4096, help="Maximum generated audio tokens")
-    parser.add_argument("--n-vq-for-inference", type=int, default=32, help="RVQ depth; official local recommendation is 32")
-    parser.add_argument("--audio-temperature", type=float, default=1.0, help="Audio token sampling temperature")
-    parser.add_argument("--audio-top-p", type=float, default=0.95, help="Audio token nucleus sampling cutoff")
-    parser.add_argument("--audio-top-k", type=int, default=50, help="Audio token top-k sampling cutoff")
-    parser.add_argument("--audio-repetition-penalty", type=float, default=1.1, help="Audio repetition penalty")
+    parser.add_argument(
+        "--n-vq-for-inference",
+        type=int,
+        default=None,
+        help="RVQ depth. Defaults to the model config; MOSS-TTS-Local-Transformer-v1.5 requires 12.",
+    )
+    parser.add_argument("--audio-temperature", type=float, default=1.7, help="Audio token sampling temperature")
+    parser.add_argument("--audio-top-p", type=float, default=0.8, help="Audio token nucleus sampling cutoff")
+    parser.add_argument("--audio-top-k", type=int, default=25, help="Audio token top-k sampling cutoff")
+    parser.add_argument("--audio-repetition-penalty", type=float, default=1.0, help="Audio repetition penalty")
     parser.add_argument("--text-temperature", type=float, default=None, help="Optional text layer sampling temperature")
     parser.add_argument("--text-top-p", type=float, default=None, help="Optional text layer nucleus sampling cutoff")
     parser.add_argument("--text-top-k", type=int, default=None, help="Optional text layer top-k sampling cutoff")
@@ -172,16 +178,23 @@ def patch_autocast_enabled_device_arg(torch) -> None:
     original = torch.is_autocast_enabled
     try:
         original("cuda")
-        return
     except TypeError:
-        pass
+        def is_autocast_enabled_compat(device_type=None):
+            if device_type == "cpu" and hasattr(torch, "is_autocast_cpu_enabled"):
+                return torch.is_autocast_cpu_enabled()
+            return original()
 
-    def is_autocast_enabled_compat(device_type=None):
-        if device_type == "cpu" and hasattr(torch, "is_autocast_cpu_enabled"):
-            return torch.is_autocast_cpu_enabled()
-        return original()
+        torch.is_autocast_enabled = is_autocast_enabled_compat
 
-    torch.is_autocast_enabled = is_autocast_enabled_compat
+    if not hasattr(torch, "get_autocast_dtype"):
+        def get_autocast_dtype_compat(device_type=None):
+            if device_type == "cpu" and hasattr(torch, "get_autocast_cpu_dtype"):
+                return torch.get_autocast_cpu_dtype()
+            if hasattr(torch, "get_autocast_gpu_dtype"):
+                return torch.get_autocast_gpu_dtype()
+            return torch.float32
+
+        torch.get_autocast_dtype = get_autocast_dtype_compat
 
 
 def khz_from_sample_rate(sample_rate: int) -> str:
@@ -195,20 +208,33 @@ def elapsed_label(seconds: float) -> str:
 
 def collect_audio(decoded_messages, torch):
     waveforms = []
+    channels = None
     for message in decoded_messages:
         if message is None:
             continue
         for audio in message.audio_codes_list:
             if isinstance(audio, torch.Tensor):
-                waveforms.append(audio.to(torch.float32).cpu())
+                waveform = audio.to(torch.float32).cpu()
+                if waveform.ndim == 1:
+                    waveform = waveform.unsqueeze(0)
+                if waveform.ndim != 2:
+                    raise RuntimeError(f"Decoded audio must be [samples] or [channels, samples], got {tuple(waveform.shape)}.")
+                if channels is None:
+                    channels = int(waveform.shape[0])
+                elif int(waveform.shape[0]) != channels:
+                    raise RuntimeError("MOSS-TTS returned decoded audio with inconsistent channel counts.")
+                waveforms.append(waveform)
 
     if not waveforms:
         raise RuntimeError("MOSS-TTS returned no decoded audio.")
 
-    return torch.cat(waveforms, dim=-1).unsqueeze(0)
+    return torch.cat(waveforms, dim=-1)
 
 
 def synthesize(args: argparse.Namespace) -> Path:
+    os.environ.setdefault("TQDM_DISABLE", "1")
+    os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
+
     AutoModel, AutoProcessor, torch, torchaudio = import_runtime()
 
     model_path = require_path(args.model_path, "model path")
@@ -260,27 +286,36 @@ def synthesize(args: argparse.Namespace) -> Path:
         model_path,
         trust_remote_code=True,
         attn_implementation=attn_implementation,
-        torch_dtype=dtype,
+        dtype=dtype,
         local_files_only=args.local_files_only,
     ).to(device)
     model.eval()
 
     input_ids = batch["input_ids"].to(device)
     attention_mask = batch["attention_mask"].to(device)
+    generation_kwargs = {
+        "max_new_tokens": args.max_new_tokens,
+        "audio_temperature": args.audio_temperature,
+        "audio_top_p": args.audio_top_p,
+        "audio_top_k": args.audio_top_k,
+        "audio_repetition_penalty": args.audio_repetition_penalty,
+    }
+    if args.n_vq_for_inference is not None:
+        generation_kwargs["n_vq_for_inference"] = args.n_vq_for_inference
+    if args.text_temperature is not None:
+        generation_kwargs["text_temperature"] = args.text_temperature
+    if args.text_top_p is not None:
+        generation_kwargs["text_top_p"] = args.text_top_p
+    if args.text_top_k is not None:
+        generation_kwargs["text_top_k"] = args.text_top_k
+    if args.text_repetition_penalty is not None:
+        generation_kwargs["text_repetition_penalty"] = args.text_repetition_penalty
+
     with torch.no_grad():
         outputs = model.generate(
             input_ids=input_ids,
             attention_mask=attention_mask,
-            max_new_tokens=args.max_new_tokens,
-            text_temperature=args.text_temperature,
-            text_top_p=args.text_top_p,
-            text_top_k=args.text_top_k,
-            text_repetition_penalty=args.text_repetition_penalty,
-            audio_temperature=args.audio_temperature,
-            audio_top_p=args.audio_top_p,
-            audio_top_k=args.audio_top_k,
-            audio_repetition_penalty=args.audio_repetition_penalty,
-            n_vq_for_inference=args.n_vq_for_inference,
+            **generation_kwargs,
         )
         waveform = collect_audio(processor.decode(outputs), torch)
 
