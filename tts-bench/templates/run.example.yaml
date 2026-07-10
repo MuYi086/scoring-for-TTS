@@ -1,0 +1,27 @@
+# 复制为 tts-bench/runs/<run_id>/run.yaml 后再填写。
+# 不要在此文件写入 API Key、绝对机器路径或未脱敏的用户信息。
+schema_version: "1.0"
+run_id: "20260711-qwen3-tts-r01"
+created_at: "2026-07-11T00:00:00+08:00"
+
+model:
+  id: "Qwen3-TTS-12Hz-1.7B-Base"
+  version: "填写权重版本或提交号"
+  inference_script: "modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py"
+
+inputs:
+  manifest: "tts-bench/manifests/cases-YYYY-MM-vN.jsonl"
+  split: "development"
+
+provenance:
+  config_snapshot: "tts-bench/runs/20260711-qwen3-tts-r01/config.snapshot.yaml"
+  model_revision: "填写模型权重修订号"
+  git_commit: "填写本仓库提交号；未提交时注明 dirty"
+
+evaluator_plan:
+  wavlm: true
+  asr: true
+  tts_prism_7b: true
+  listener_review: true
+
+notes: "记录会影响可比性的参数，例如参考音频长度、随机种子、分段策略和采样参数。"

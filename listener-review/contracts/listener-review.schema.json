@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Listener Review Record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "blind_id",
+    "case_id",
+    "rater_id",
+    "completed_at",
+    "valid"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "blind_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_-]*$"},
+    "case_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "rater_id": {"type": "string", "minLength": 1},
+    "completed_at": {"type": "string", "format": "date-time"},
+    "valid": {"type": "boolean"},
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "naturalness",
+        "timbre_similarity",
+        "intelligibility",
+        "style_appropriateness",
+        "artifact_absence"
+      ],
+      "properties": {
+        "naturalness": {"type": "integer", "minimum": 1, "maximum": 5},
+        "timbre_similarity": {"type": "integer", "minimum": 1, "maximum": 5},
+        "intelligibility": {"type": "integer", "minimum": 1, "maximum": 5},
+        "style_appropriateness": {"type": "integer", "minimum": 1, "maximum": 5},
+        "artifact_absence": {"type": "integer", "minimum": 1, "maximum": 5}
+      }
+    },
+    "comment": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"valid": {"const": true}}},
+      "then": {"required": ["scores"]}
+    }
+  ]
+}

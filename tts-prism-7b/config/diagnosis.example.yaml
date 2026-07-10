@@ -1,0 +1,19 @@
+# 仅为待填写的评价器配置；本仓库不提供启动脚本。
+schema_version: "1.0"
+evaluator: "tts-prism-7b"
+model_id: "xiaomi-research/TTS-PRISM-7B"
+model_revision: "填写下载的权重修订号"
+model_path: "tts-prism-7b/models/TTS-PRISM-7B"
+audio_tokenizer_id: "XiaomiMiMo/MiMo-Audio-Tokenizer"
+audio_tokenizer_revision: "填写下载的 tokenizer 修订号"
+audio_tokenizer_path: "tts-prism-7b/models/MiMo-Audio-Tokenizer"
+
+input_contract:
+  source: "tts-bench/runs/<run_id>/synthesis.jsonl"
+  language: "zh-CN"
+  preserve_raw_response: true
+  preprocessing_id: "填写官方推理实际采用的音频预处理"
+
+output:
+  record_path: "tts-prism-7b/outputs/<run_id>/diagnosis.jsonl"
+  raw_response_path: "tts-prism-7b/outputs/<run_id>/raw/"

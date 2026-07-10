@@ -1,0 +1,19 @@
+# 仅为待填写的评价器配置；本仓库不提供启动脚本。
+schema_version: "1.0"
+evaluator: "asr"
+evaluator_id: "填写 ASR 模型 ID"
+evaluator_version: "填写权重修订号与解码参数摘要"
+model_path: "asr/models/<model-directory>"
+language: "zh-CN"
+
+input_contract:
+  source: "tts-bench/runs/<run_id>/synthesis.jsonl"
+  use_target_text_from_manifest: true
+  preserve_raw_transcript: true
+
+normalization:
+  profile: "asr/normalization/zh-v1.md"
+  profile_id: "zh-v1"
+
+output:
+  record_path: "asr/outputs/<run_id>/transcription.jsonl"

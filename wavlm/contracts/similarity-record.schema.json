@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WavLM Speaker Similarity Record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "case_id",
+    "evaluator",
+    "evaluator_version",
+    "reference_audio",
+    "synthesized_audio",
+    "preprocessing",
+    "cosine_similarity"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "case_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "evaluator": {"const": "wavlm"},
+    "evaluator_version": {"type": "string", "minLength": 1},
+    "reference_audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "synthesized_audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "preprocessing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sample_rate_hz", "channels"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "sample_rate_hz": {"const": 16000},
+        "channels": {"const": 1},
+        "trim_silence": {"type": "boolean"}
+      }
+    },
+    "cosine_similarity": {"type": "number", "minimum": -1, "maximum": 1}
+  }
+}

@@ -1,0 +1,2 @@
+blind_id,case_id,audio_path,reference_audio_path,display_order
+B001,zh_clone_short_001,tts-bench/runs/<run_id>/audio/zh_clone_short_001.wav,tts-bench/datasets/audio/zh_clone_short_001.wav,1

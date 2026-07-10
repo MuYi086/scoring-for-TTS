@@ -21,6 +21,19 @@ env/
 work/
 outputs/
 
+# TTS benchmark local assets and derived audio (large, machine-specific)
+tts-bench/datasets/audio/
+tts-bench/runs/*/audio/
+tts-bench/runs/*/derived/
+tts-prism-7b/models/*
+!tts-prism-7b/models/README.md
+wavlm/models/*
+!wavlm/models/README.md
+asr/models/*
+!asr/models/README.md
+listener-review/private-mapping/*
+!listener-review/private-mapping/README.md
+
 # Secrets and local config
 .env
 .env.*

@@ -1,0 +1,2 @@
+blind_id,case_id,rater_id,completed_at,naturalness,timbre_similarity,intelligibility,style_appropriateness,artifact_absence,valid,comment
+B001,zh_clone_short_001,rater_anon_01,2026-07-11T00:00:00+08:00,4,4,5,4,4,true,"第二句结尾略显平直。"

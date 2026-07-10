@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASR Transcription Record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "case_id",
+    "evaluator",
+    "evaluator_version",
+    "audio",
+    "reference_text",
+    "hypothesis_raw",
+    "normalization_id",
+    "reference_normalized",
+    "hypothesis_normalized",
+    "cer"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "case_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "evaluator": {"const": "asr"},
+    "evaluator_version": {"type": "string", "minLength": 1},
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "reference_text": {"type": "string", "minLength": 1},
+    "hypothesis_raw": {"type": "string"},
+    "normalization_id": {"type": "string", "minLength": 1},
+    "reference_normalized": {"type": "string", "minLength": 1},
+    "hypothesis_normalized": {"type": "string"},
+    "cer": {"type": "number", "minimum": 0},
+    "wer": {"type": "number", "minimum": 0}
+  }
+}
