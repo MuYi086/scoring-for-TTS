@@ -1,0 +1,2 @@
+你先阅读`~/github/TTS-and-VoiceDesign`目录下start.sh以及目录内tts提供的api脚本。当前项目modelScript漏了omnivoice和indextts的py和安装指南。
+你再阅读start.sh以及引用的各自tts模型脚本说阐述的环境和软件，总结后再当前项目modelScript补全omnivpice和indextts的py和安装指南，从第一性原理出发
