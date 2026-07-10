@@ -1,0 +1,2 @@
+新建modelScript目录，然后整理scripts目录，
+将scripts内tts脚本和其指南或者配置说明一起迁入modelScript目录.scripts/__pycache__是否有用，无用帮我删除。另外要确认脚本目录内没有泄露云模型的api key，比如mimo。

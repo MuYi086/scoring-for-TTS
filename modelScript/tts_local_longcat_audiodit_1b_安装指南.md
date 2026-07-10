@@ -1,16 +1,18 @@
 # LongCat-AudioDiT-1B 本地 TTS 环境安装指南
 
-本文记录 `scripts/tts_local_longcat_audiodit_1b.py` 运行 `LongCat-AudioDiT-1B` 所需的软件、安装过程和运行方式。
+本文记录 `modelScript/tts_local_longcat_audiodit_1b.py` 运行 `LongCat-AudioDiT-1B` 所需的软件、安装过程和运行方式。
 
 ## 目标
 
-- 模型路径：`/home/muyi086/hf-mirror/meituan-longcat/LongCat-AudioDiT-1B`
+- 模型路径：`/path/to/LongCat-AudioDiT-1B`
 - conda 环境名：`longcat_audiodit`
 - Python 版本：建议 `3.10`
-- 官方源码目录：建议 `/home/muyi086/github/LongCat-AudioDiT`
-- 运行脚本：`scripts/tts_local_longcat_audiodit_1b.py`
+- 官方源码目录：建议 `/path/to/LongCat-AudioDiT`
+- 运行脚本：`modelScript/tts_local_longcat_audiodit_1b.py`
 - 默认参考音频：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`
 - 默认合成文本：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/第一章.md`
+
+运行前设置 `LONGCAT_AUDIODIT_MODEL_PATH=/path/to/LongCat-AudioDiT-1B`，或在命令中通过 `--model-path /path/to/LongCat-AudioDiT-1B` 单次指定模型目录。
 
 ## 1. 创建独立 conda 环境
 
@@ -39,7 +41,7 @@ conda activate longcat_audiodit
 官方模型卡说明需要 `audiodit` 包注册 `AudioDiTModel`，该包位于官方 GitHub 仓库中。建议把源码单独放在仓库外部：
 
 ```bash
-git clone https://github.com/meituan-longcat/LongCat-AudioDiT /home/muyi086/github/LongCat-AudioDiT
+git clone https://github.com/meituan-longcat/LongCat-AudioDiT /path/to/LongCat-AudioDiT
 ```
 
 如果已经克隆过，后续运行脚本时只需要把该目录加入 `PYTHONPATH`，或者传给脚本的 `--repo-path`。
@@ -64,7 +66,7 @@ einops>=0.8.0
 ```bash
 conda activate longcat_audiodit
 python -m pip install --upgrade pip
-python -m pip install -r /home/muyi086/github/LongCat-AudioDiT/requirements.txt
+python -m pip install -r /path/to/LongCat-AudioDiT/requirements.txt
 ```
 
 说明：
@@ -80,20 +82,20 @@ python -m pip install -r /home/muyi086/github/LongCat-AudioDiT/requirements.txt
 本机本轮实测使用 `huggingface_hub.snapshot_download()` 下载 tokenizer 相关文件：
 
 ```bash
-conda run -n longcat_audiodit python -c "from huggingface_hub import snapshot_download; snapshot_download('google/umt5-base', local_dir='/home/muyi086/hf-mirror/google/umt5-base', allow_patterns=['*.json','*.model','*.txt','tokenizer*','spiece.model'])"
+conda run -n longcat_audiodit python -c "from huggingface_hub import snapshot_download; snapshot_download('google/umt5-base', local_dir='/path/to/umt5-base', allow_patterns=['*.json','*.model','*.txt','tokenizer*','spiece.model'])"
 ```
 
 离线运行脚本时传入：
 
 ```bash
---tokenizer-path /home/muyi086/hf-mirror/google/umt5-base --local-files-only
+--tokenizer-path /path/to/umt5-base --local-files-only
 ```
 
 ## 5. 验证环境导入
 
 ```bash
 conda activate longcat_audiodit
-PYTHONPATH=/home/muyi086/github/LongCat-AudioDiT \
+PYTHONPATH=/path/to/LongCat-AudioDiT \
 python -c "import torch, soundfile, audiodit; from audiodit import AudioDiTModel; from transformers import AutoTokenizer; print('torch', torch.__version__, 'cuda', torch.cuda.is_available()); print('AudioDiTModel import ok')"
 ```
 
@@ -116,24 +118,24 @@ cd ~/github/timbre-design
 在线或已有 Hugging Face tokenizer 缓存时：
 
 ```bash
-PYTHONPATH=/home/muyi086/github/LongCat-AudioDiT \
-python scripts/tts_local_longcat_audiodit_1b.py \
-  --repo-path /home/muyi086/github/LongCat-AudioDiT
+PYTHONPATH=/path/to/LongCat-AudioDiT \
+python modelScript/tts_local_longcat_audiodit_1b.py \
+  --repo-path /path/to/LongCat-AudioDiT
 ```
 
 完全离线运行时：
 
 ```bash
-PYTHONPATH=/home/muyi086/github/LongCat-AudioDiT \
-python scripts/tts_local_longcat_audiodit_1b.py \
-  --repo-path /home/muyi086/github/LongCat-AudioDiT \
-  --tokenizer-path /home/muyi086/hf-mirror/google/umt5-base \
+PYTHONPATH=/path/to/LongCat-AudioDiT \
+python modelScript/tts_local_longcat_audiodit_1b.py \
+  --repo-path /path/to/LongCat-AudioDiT \
+  --tokenizer-path /path/to/umt5-base \
   --local-files-only
 ```
 
 脚本默认会：
 
-- 加载本地模型 `/home/muyi086/hf-mirror/meituan-longcat/LongCat-AudioDiT-1B`；
+- 加载本地模型 `/path/to/LongCat-AudioDiT-1B`；
 - 使用 `sample.wav` 作为 voice cloning（声音克隆）参考音频；
 - 读取 `第一章.md` 作为合成文本；
 - 强制使用 CUDA GPU 推理；
@@ -152,16 +154,16 @@ python scripts/tts_local_longcat_audiodit_1b.py \
 当前样例目录只有 `sample.wav`，没有试听音频对应转写文本。脚本默认使用一段通用中文短句作为兜底，方便验证 GPU 推理链路；如果后续补齐 `sample.wav` 的准确转写，建议改用：
 
 ```bash
-PYTHONPATH=/home/muyi086/github/LongCat-AudioDiT \
-python scripts/tts_local_longcat_audiodit_1b.py \
-  --repo-path /home/muyi086/github/LongCat-AudioDiT \
+PYTHONPATH=/path/to/LongCat-AudioDiT \
+python modelScript/tts_local_longcat_audiodit_1b.py \
+  --repo-path /path/to/LongCat-AudioDiT \
   --prompt-text-file samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample_transcript.txt
 ```
 
 也可以直接传入文本：
 
 ```bash
-python scripts/tts_local_longcat_audiodit_1b.py \
+python modelScript/tts_local_longcat_audiodit_1b.py \
   --prompt-text "这里填写 sample.wav 对应的准确文本"
 ```
 
@@ -170,7 +172,7 @@ python scripts/tts_local_longcat_audiodit_1b.py \
 调整分块和段间静音：
 
 ```bash
-python scripts/tts_local_longcat_audiodit_1b.py \
+python modelScript/tts_local_longcat_audiodit_1b.py \
   --max-chars-per-chunk 90 \
   --pause-ms 250
 ```
@@ -178,7 +180,7 @@ python scripts/tts_local_longcat_audiodit_1b.py \
 调整推理步数和引导强度：
 
 ```bash
-python scripts/tts_local_longcat_audiodit_1b.py \
+python modelScript/tts_local_longcat_audiodit_1b.py \
   --nfe 16 \
   --guidance-method apg \
   --guidance-strength 4.0
@@ -187,7 +189,7 @@ python scripts/tts_local_longcat_audiodit_1b.py \
 控制时长估算：
 
 ```bash
-python scripts/tts_local_longcat_audiodit_1b.py --duration-scale 1.05
+python modelScript/tts_local_longcat_audiodit_1b.py --duration-scale 1.05
 ```
 
 说明：
@@ -203,9 +205,9 @@ python scripts/tts_local_longcat_audiodit_1b.py --duration-scale 1.05
 本轮实测命令：
 
 ```bash
-conda run -n longcat_audiodit python scripts/tts_local_longcat_audiodit_1b.py \
+conda run -n longcat_audiodit python modelScript/tts_local_longcat_audiodit_1b.py \
   --repo-path /tmp/LongCat-AudioDiT \
-  --tokenizer-path /home/muyi086/hf-mirror/google/umt5-base \
+  --tokenizer-path /path/to/umt5-base \
   --local-files-only
 ```
 
@@ -242,8 +244,8 @@ conda run -n longcat_audiodit python -c "import soundfile as sf; p='samples/v_zh
 处理：
 
 ```bash
-git clone https://github.com/meituan-longcat/LongCat-AudioDiT /home/muyi086/github/LongCat-AudioDiT
-PYTHONPATH=/home/muyi086/github/LongCat-AudioDiT python scripts/tts_local_longcat_audiodit_1b.py --repo-path /home/muyi086/github/LongCat-AudioDiT
+git clone https://github.com/meituan-longcat/LongCat-AudioDiT /path/to/LongCat-AudioDiT
+PYTHONPATH=/path/to/LongCat-AudioDiT python modelScript/tts_local_longcat_audiodit_1b.py --repo-path /path/to/LongCat-AudioDiT
 ```
 
 ### tokenizer 无法离线加载

@@ -1,15 +1,17 @@
 # Qwen3-TTS-12Hz-1.7B-Base 本地 TTS 环境安装指南
 
-本文记录 `scripts/tts_local_qwen3_tts_12hz_1_7b_base.py` 运行 `Qwen3-TTS-12Hz-1.7B-Base` 所需的软件、安装过程和运行方式。
+本文记录 `modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py` 运行 `Qwen3-TTS-12Hz-1.7B-Base` 所需的软件、安装过程和运行方式。
 
 ## 目标
 
-- 模型路径：`/home/muyi086/hf-mirror/Qwen/Qwen3-TTS-12Hz-1.7B-Base`
+- 模型路径：`/path/to/Qwen3-TTS-12Hz-1.7B-Base`
 - conda 环境名：`qwen3-tts`
 - Python 版本：`3.12`
-- 运行脚本：`scripts/tts_local_qwen3_tts_12hz_1_7b_base.py`
+- 运行脚本：`modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py`
 - 默认参考音频：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`
 - 默认合成文本：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/第一章.md`
+
+运行前设置 `QWEN3_TTS_MODEL_PATH=/path/to/Qwen3-TTS-12Hz-1.7B-Base`，或在命令中通过 `--model-path /path/to/Qwen3-TTS-12Hz-1.7B-Base` 单次指定模型目录。
 
 ## 1. 创建独立 conda 环境
 
@@ -85,20 +87,20 @@ Warning: flash-attn is not installed.
 ```bash
 conda activate qwen3-tts
 cd ~/github/timbre-design
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py --local-files-only
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py --local-files-only
 ```
 
 本机未安装 `flash-attn` 时建议显式使用：
 
 ```bash
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py \
   --local-files-only \
   --attn-implementation sdpa
 ```
 
 脚本默认会：
 
-- 加载本地模型 `/home/muyi086/hf-mirror/Qwen/Qwen3-TTS-12Hz-1.7B-Base`；
+- 加载本地模型 `/path/to/Qwen3-TTS-12Hz-1.7B-Base`；
 - 使用 `sample.wav` 作为克隆参考音频；
 - 读取 `第一章.md` 作为合成文本；
 - 强制使用 CUDA GPU 推理；
@@ -133,7 +135,7 @@ size: 3.7M
 如果后续补齐参考文本，运行：
 
 ```bash
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py \
   --local-files-only \
   --ref-text-file samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample_transcript.txt
 ```
@@ -141,7 +143,7 @@ python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
 或者直接传入短文本：
 
 ```bash
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py \
   --local-files-only \
   --ref-text "这里填写 sample.wav 对应的准确文本"
 ```
@@ -151,7 +153,7 @@ python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
 调整分块长度：
 
 ```bash
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py \
   --local-files-only \
   --max-chars-per-chunk 120 \
   --pause-ms 250
@@ -160,7 +162,7 @@ python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
 使用更保守的注意力后端和精度：
 
 ```bash
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py \
   --local-files-only \
   --attn-implementation sdpa \
   --dtype float32
@@ -210,7 +212,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 `flash-attn` 是可选加速依赖。安装失败时可以跳过，并在运行脚本时显式使用：
 
 ```bash
-python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py \
+python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py \
   --local-files-only \
   --attn-implementation sdpa
 ```

@@ -5,10 +5,10 @@ Default output:
 samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/MOSS-TTS-Local-Transformer-v1.5_${t}_${k}khz.wav
 
 Usage:
-  python scripts/tts_local_moss_tts_local_transformer.py
+  python modelScript/tts_local_moss_tts_local_transformer.py
 
 If the audio tokenizer is stored locally:
-  python scripts/tts_local_moss_tts_local_transformer.py --codec-path /path/to/MOSS-Audio-Tokenizer
+  python modelScript/tts_local_moss_tts_local_transformer.py --codec-path /path/to/MOSS-Audio-Tokenizer
 """
 
 from __future__ import annotations
@@ -24,8 +24,12 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5")
-LOCAL_CODEC_PATH = Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer-v2")
+MODEL_PATH = Path(
+    os.environ.get("MOSS_TTS_MODEL_PATH", "/path/to/MOSS-TTS-Local-Transformer-v1.5")
+)
+LOCAL_CODEC_PATH = Path(
+    os.environ.get("MOSS_AUDIO_TOKENIZER_PATH", "/path/to/MOSS-Audio-Tokenizer-v2")
+)
 DEFAULT_CODEC_MODEL_ID = "OpenMOSS-Team/MOSS-Audio-Tokenizer-v2"
 SAMPLE_DIR = REPO_ROOT / "samples/v_zh_046_电台主持-低沉_沉稳_沉浸式"
 TEXT_FILE = SAMPLE_DIR / "第一章.md"

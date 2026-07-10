@@ -6,7 +6,7 @@ samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/mimo-v2.5-tts-voiceclone_$
 
 Usage:
   export MIMO_API_KEY=...
-  python scripts/tts_cloud_mimo.py
+  python modelScript/tts_cloud_mimo.py
 """
 
 from __future__ import annotations

@@ -1,15 +1,17 @@
 # dots.tts-base 本地 TTS 环境安装指南
 
-本文记录 `scripts/tts_local_dots_tts_base.py` 运行 `dots.tts-base` 所需的软件、安装过程和运行方式。
+本文记录 `modelScript/tts_local_dots_tts_base.py` 运行 `dots.tts-base` 所需的软件、安装过程和运行方式。
 
 ## 目标
 
-- 模型路径：`/home/muyi086/hf-mirror/rednote-hilab/dots.tts-base`
+- 模型路径：`/path/to/dots.tts-base`
 - conda 环境名：`dots_tts`
 - Python 版本：`3.10`
-- 运行脚本：`scripts/tts_local_dots_tts_base.py`
+- 运行脚本：`modelScript/tts_local_dots_tts_base.py`
 - 默认参考音频：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`
 - 默认合成文本：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/第一章.md`
+
+运行前设置 `DOTS_TTS_MODEL_PATH=/path/to/dots.tts-base`，或在命令中通过 `--model-path /path/to/dots.tts-base` 单次指定模型目录。
 
 ## 1. 创建独立 conda 环境
 
@@ -92,7 +94,7 @@ safetensors==0.8.0rc0
 
 - 当前脚本使用 `dots_tts.runtime.DotsTtsRuntime`，不是 Web UI，不需要启动 Gradio 服务。
 - `dots.tts-base` 是 2B 参数模型，脚本要求 CUDA GPU 推理；如果 `torch.cuda.is_available()` 为 `False`，脚本会直接退出。
-- 模型目录已经在本机 `/home/muyi086/hf-mirror/rednote-hilab/dots.tts-base`，运行脚本时建议加 `--local-files-only` 禁止远端下载。
+- 模型目录已经在本机 `/path/to/dots.tts-base`，运行脚本时建议加 `--local-files-only` 禁止远端下载。
 
 ## 3. 验证环境导入
 
@@ -110,7 +112,7 @@ DotsTtsRuntime import ok
 ## 4. 验证模型初始化
 
 ```bash
-conda run -n dots_tts python -c "from dots_tts.runtime import DotsTtsRuntime; r=DotsTtsRuntime.from_pretrained('/home/muyi086/hf-mirror/rednote-hilab/dots.tts-base', precision='bfloat16', max_generate_length=500); print('sample_rate', r.sample_rate)"
+conda run -n dots_tts python -c "from dots_tts.runtime import DotsTtsRuntime; r=DotsTtsRuntime.from_pretrained('/path/to/dots.tts-base', precision='bfloat16', max_generate_length=500); print('sample_rate', r.sample_rate)"
 ```
 
 期望采样率为：
@@ -124,12 +126,12 @@ sample_rate 48000
 ```bash
 conda activate dots_tts
 cd ~/github/timbre-design
-python scripts/tts_local_dots_tts_base.py --local-files-only
+python modelScript/tts_local_dots_tts_base.py --local-files-only
 ```
 
 脚本默认会：
 
-- 加载本地模型 `/home/muyi086/hf-mirror/rednote-hilab/dots.tts-base`；
+- 加载本地模型 `/path/to/dots.tts-base`；
 - 使用 `sample.wav` 作为克隆参考音频；
 - 读取 `第一章.md` 作为合成文本；
 - 强制使用 CUDA GPU 推理；
@@ -162,7 +164,7 @@ size: 7.9M
 当前样例目录只有 `sample.wav`，没有试听音频对应转写文本。脚本默认使用一段通用中文参考文本，方便本地验证推理链路；如果后续补齐 `sample.wav` 的准确转写，建议改用：
 
 ```bash
-python scripts/tts_local_dots_tts_base.py \
+python modelScript/tts_local_dots_tts_base.py \
   --local-files-only \
   --prompt-text-file samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample_transcript.txt
 ```
@@ -170,7 +172,7 @@ python scripts/tts_local_dots_tts_base.py \
 如果只想使用参考音频，不传转写文本：
 
 ```bash
-python scripts/tts_local_dots_tts_base.py \
+python modelScript/tts_local_dots_tts_base.py \
   --local-files-only \
   --prompt-text ""
 ```
@@ -180,7 +182,7 @@ python scripts/tts_local_dots_tts_base.py \
 提升质量但降低速度：
 
 ```bash
-python scripts/tts_local_dots_tts_base.py \
+python modelScript/tts_local_dots_tts_base.py \
   --local-files-only \
   --num-steps 32
 ```
@@ -188,7 +190,7 @@ python scripts/tts_local_dots_tts_base.py \
 调整分块和段间静音：
 
 ```bash
-python scripts/tts_local_dots_tts_base.py \
+python modelScript/tts_local_dots_tts_base.py \
   --local-files-only \
   --max-chars-per-chunk 120 \
   --pause-ms 250
@@ -237,7 +239,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 说明参考音频加转写文本占用的音频 patch 已经超过 `--max-generate-length`。可以缩短参考音频，或提高上限：
 
 ```bash
-python scripts/tts_local_dots_tts_base.py \
+python modelScript/tts_local_dots_tts_base.py \
   --local-files-only \
   --max-generate-length 800
 ```
@@ -247,7 +249,7 @@ python scripts/tts_local_dots_tts_base.py \
 优先降低单段文本长度：
 
 ```bash
-python scripts/tts_local_dots_tts_base.py \
+python modelScript/tts_local_dots_tts_base.py \
   --local-files-only \
   --max-chars-per-chunk 80
 ```

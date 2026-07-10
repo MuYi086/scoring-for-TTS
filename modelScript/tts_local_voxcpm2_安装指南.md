@@ -1,19 +1,19 @@
 # VoxCPM2 本地 TTS 环境安装指南
 
-本文记录 `scripts/tts_local_voxcpm2.py` 运行 `VoxCPM2` 所需的软件、安装过程和运行方式。
+本文记录 `modelScript/tts_local_voxcpm2.py` 运行 `VoxCPM2` 所需的软件、安装过程和运行方式。
 
 ## 目标
 
-- TTS（文本转语音）模型路径：`/home/muyi086/hf-mirror/openbmb/VoxCPM2`
+- TTS（文本转语音）模型路径：`/path/to/VoxCPM2`
 - conda 环境名：`voxcpm2`
 - Python 版本：`3.10`
-- 运行脚本：`scripts/tts_local_voxcpm2.py`
+- 运行脚本：`modelScript/tts_local_voxcpm2.py`
 - 默认参考音频：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`
 - 默认合成文本：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/第一章.md`
 - 默认输出：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/VoxCPM2_${t}_${k}khz.wav`
 - 本机实测输出：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/VoxCPM2_72.45s_48khz.wav`
 
-说明：项目宪章默认要求 VoxCPM2 使用 `/persistent/home/muyi086/modelscope/VoxCPM2`。本任务明确指定 `/home/muyi086/hf-mirror/openbmb/VoxCPM2`，因此脚本默认按本次任务路径运行；如果要回到宪章默认路径，可通过 `--model-path /persistent/home/muyi086/modelscope/VoxCPM2` 覆盖。
+脚本不依赖某一台开发机的固定模型目录。运行前可设置 `VOXCPM2_MODEL_PATH=/path/to/VoxCPM2`，也可通过 `--model-path /path/to/VoxCPM2` 单次指定。
 
 ## 1. 创建独立 conda 环境
 
@@ -80,7 +80,7 @@ VoxCPM import ok
 ## 4. 验证模型初始化
 
 ```bash
-conda run -n voxcpm2 python -c "from voxcpm import VoxCPM; m=VoxCPM.from_pretrained('/home/muyi086/hf-mirror/openbmb/VoxCPM2', load_denoiser=False, local_files_only=True, optimize=False); print('sample_rate', m.tts_model.sample_rate)"
+conda run -n voxcpm2 python -c "from voxcpm import VoxCPM; m=VoxCPM.from_pretrained('/path/to/VoxCPM2', load_denoiser=False, local_files_only=True, optimize=False); print('sample_rate', m.tts_model.sample_rate)"
 ```
 
 模型卡说明 VoxCPM2 输出 `48kHz` 音频；脚本会从 `model.tts_model.sample_rate` 读取实际采样率，并写入输出文件名。
@@ -89,13 +89,13 @@ conda run -n voxcpm2 python -c "from voxcpm import VoxCPM; m=VoxCPM.from_pretrai
 
 ```bash
 conda activate voxcpm2
-cd /home/muyi086/github/timbre-design
-python scripts/tts_local_voxcpm2.py --local-files-only
+cd /path/to/timbre-design
+python modelScript/tts_local_voxcpm2.py --local-files-only
 ```
 
 脚本默认会：
 
-- 加载本地模型 `/home/muyi086/hf-mirror/openbmb/VoxCPM2`；
+- 加载本地模型 `/path/to/VoxCPM2`；
 - 使用 `sample.wav` 作为克隆参考音频；
 - 读取 `第一章.md` 作为合成文本；
 - 强制使用 CUDA GPU 推理；
@@ -131,7 +131,7 @@ model.generate(text=..., reference_wav_path="sample.wav")
 如果后续补齐 `sample.wav` 的逐字文本，可使用 ultimate cloning（高保真克隆）模式：
 
 ```bash
-python scripts/tts_local_voxcpm2.py \
+python modelScript/tts_local_voxcpm2.py \
   --local-files-only \
   --prompt-text-file samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample_transcript.txt
 ```
@@ -139,7 +139,7 @@ python scripts/tts_local_voxcpm2.py \
 或直接传入文本：
 
 ```bash
-python scripts/tts_local_voxcpm2.py \
+python modelScript/tts_local_voxcpm2.py \
   --local-files-only \
   --prompt-text "这里填写 sample.wav 对应的准确文本"
 ```
@@ -149,7 +149,7 @@ python scripts/tts_local_voxcpm2.py \
 调整分块长度和段间静音：
 
 ```bash
-python scripts/tts_local_voxcpm2.py \
+python modelScript/tts_local_voxcpm2.py \
   --local-files-only \
   --max-chars-per-chunk 120 \
   --pause-ms 250
@@ -160,7 +160,7 @@ python scripts/tts_local_voxcpm2.py \
 调整风格控制：
 
 ```bash
-python scripts/tts_local_voxcpm2.py \
+python modelScript/tts_local_voxcpm2.py \
   --local-files-only \
   --style-prompt "低沉、沉稳、克制，像深夜电台主持一样叙述。"
 ```
@@ -168,7 +168,7 @@ python scripts/tts_local_voxcpm2.py \
 关闭风格前缀：
 
 ```bash
-python scripts/tts_local_voxcpm2.py \
+python modelScript/tts_local_voxcpm2.py \
   --local-files-only \
   --style-prompt ""
 ```
@@ -259,7 +259,7 @@ tokenization_voxcpm2.py
 降低单块长度：
 
 ```bash
-python scripts/tts_local_voxcpm2.py --local-files-only --max-chars-per-chunk 80
+python modelScript/tts_local_voxcpm2.py --local-files-only --max-chars-per-chunk 80
 ```
 
 VoxCPM2 模型卡也提示长文本或高表现力输入可能偶发不稳定，必要时可生成 1 到 3 次后人工选择。

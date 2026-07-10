@@ -1,18 +1,20 @@
 # MOSS-TTS-Local-Transformer 本地 TTS 环境安装指南
 
-本文记录 `scripts/tts_local_moss_tts_local_transformer.py` 运行 `MOSS-TTS-Local-Transformer` 所需的软件、安装过程和当前注意事项。
+本文记录 `modelScript/tts_local_moss_tts_local_transformer.py` 运行 `MOSS-TTS-Local-Transformer` 所需的软件、安装过程和当前注意事项。
 
 ## 目标
 
-- TTS（文本转语音）模型路径：`/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer`
+- TTS（文本转语音）模型路径：`/path/to/MOSS-TTS-Local-Transformer`
 - 参考音频：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/sample.wav`
 - 合成文本：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/第一章.md`
-- 运行脚本：`scripts/tts_local_moss_tts_local_transformer.py`
+- 运行脚本：`modelScript/tts_local_moss_tts_local_transformer.py`
 - 默认输出：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/MOSS-TTS-Local-Transformer_${t}_${k}khz.wav`
 - 本机实测环境：`moss-tts-py310`
 - 本机实测输出：`samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/MOSS-TTS-Local-Transformer_178.47s_24khz.wav`
 
 说明：该模型会通过 processor（处理器）调用 `MOSS-Audio-Tokenizer` 作为 codec（音频 tokenizer）。如果本机没有本地 codec 目录，默认 `--codec-path OpenMOSS-Team/MOSS-Audio-Tokenizer` 会按 Hugging Face（模型托管平台）模型 ID 解析；需要完全离线运行时，应先把该 codec 下载到本机并显式传入 `--codec-path /path/to/MOSS-Audio-Tokenizer`。
+
+运行前可设置 `MOSS_TTS_MODEL_PATH=/path/to/MOSS-TTS-Local-Transformer-v1.5`。完全离线运行时，另设置 `MOSS_AUDIO_TOKENIZER_PATH=/path/to/MOSS-Audio-Tokenizer-v2`。
 
 ## 1. 创建 conda 环境
 
@@ -43,8 +45,8 @@ conda create -n moss-tts-py310 --clone cosyvoice -y
 
 ```bash
 cd ~/github
-git clone https://github.com/OpenMOSS/MOSS-TTS.git /home/muyi086/github/MOSS-TTS
-cd /home/muyi086/github/MOSS-TTS
+git clone https://github.com/OpenMOSS/MOSS-TTS.git /path/to/MOSS-TTS
+cd /path/to/MOSS-TTS
 pip install --extra-index-url https://download.pytorch.org/whl/cu128 -e .
 ```
 
@@ -81,7 +83,7 @@ transformers 5.0.0
 FlashAttention 2（高效注意力实现）可降低显存占用并提升速度，但只适用于支持的 CUDA GPU。可选安装：
 
 ```bash
-cd /home/muyi086/github/MOSS-TTS
+cd /path/to/MOSS-TTS
 MAX_JOBS=4 pip install --extra-index-url https://download.pytorch.org/whl/cu128 -e ".[flash-attn]"
 ```
 
@@ -92,7 +94,7 @@ MAX_JOBS=4 pip install --extra-index-url https://download.pytorch.org/whl/cu128 
 当前任务指定的模型目录已经是：
 
 ```bash
-ls /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer
+ls /path/to/MOSS-TTS-Local-Transformer
 ```
 
 还需要准备 codec：
@@ -100,11 +102,11 @@ ls /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer
 ```bash
 # 下载到本地镜像目录：
 conda run -n moss-tts-py310 hf download OpenMOSS-Team/MOSS-Audio-Tokenizer \
-  --local-dir /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer
+  --local-dir /path/to/MOSS-Audio-Tokenizer
 
 # 完全离线运行时使用本地 codec：
-python scripts/tts_local_moss_tts_local_transformer.py \
-  --codec-path /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer \
+python modelScript/tts_local_moss_tts_local_transformer.py \
+  --codec-path /path/to/MOSS-Audio-Tokenizer \
   --local-files-only
 ```
 
@@ -126,8 +128,8 @@ conda run -n moss-tts python -c "import importlib.util; print(importlib.util.fin
 
 ```bash
 conda activate moss-tts
-cd /home/muyi086/github/timbre-design
-python scripts/tts_local_moss_tts_local_transformer.py
+cd /path/to/timbre-design
+python modelScript/tts_local_moss_tts_local_transformer.py
 ```
 
 本机实测必须在可访问 GPU 的非沙箱环境中运行。沙箱内 `nvidia-smi` 会报 GPU access blocked（GPU 访问被系统阻止），但非沙箱下 GPU 正常可见：
@@ -140,16 +142,16 @@ NVIDIA GeForce RTX 4070 Ti SUPER
 
 ```bash
 env HF_HOME=/tmp/hf-moss TRANSFORMERS_CACHE=/tmp/hf-moss/transformers TQDM_DISABLE=1 \
-  conda run -n moss-tts-py310 python scripts/tts_local_moss_tts_local_transformer.py \
-  --codec-path /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer \
+  conda run -n moss-tts-py310 python modelScript/tts_local_moss_tts_local_transformer.py \
+  --codec-path /path/to/MOSS-Audio-Tokenizer \
   --local-files-only
 ```
 
 常用参数：
 
 ```bash
-python scripts/tts_local_moss_tts_local_transformer.py \
-  --model-path /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer \
+python modelScript/tts_local_moss_tts_local_transformer.py \
+  --model-path /path/to/MOSS-TTS-Local-Transformer \
   --codec-path OpenMOSS-Team/MOSS-Audio-Tokenizer \
   --max-new-tokens 4096 \
   --n-vq-for-inference 32 \
@@ -201,7 +203,7 @@ size: 7534160 bytes
 
 ```bash
 conda activate moss-tts
-cd /home/muyi086/github/MOSS-TTS
+cd /path/to/MOSS-TTS
 pip install --extra-index-url https://download.pytorch.org/whl/cu128 -e .
 ```
 
@@ -211,7 +213,7 @@ pip install --extra-index-url https://download.pytorch.org/whl/cu128 -e .
 
 ```bash
 conda activate moss-tts
-cd /home/muyi086/github/MOSS-TTS
+cd /path/to/MOSS-TTS
 pip install --extra-index-url https://download.pytorch.org/whl/cu128 -e .
 ```
 
@@ -230,14 +232,14 @@ pip install --extra-index-url https://download.pytorch.org/whl/cu128 -e .
 现象可能是 `OSError`、`Repository Not Found` 或 `local_files_only` 相关报错。处理：
 
 ```bash
-python scripts/tts_local_moss_tts_local_transformer.py --codec-path OpenMOSS-Team/MOSS-Audio-Tokenizer
+python modelScript/tts_local_moss_tts_local_transformer.py --codec-path OpenMOSS-Team/MOSS-Audio-Tokenizer
 ```
 
 如果需要离线：
 
 ```bash
-python scripts/tts_local_moss_tts_local_transformer.py \
-  --codec-path /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer \
+python modelScript/tts_local_moss_tts_local_transformer.py \
+  --codec-path /path/to/MOSS-Audio-Tokenizer \
   --local-files-only
 ```
 
@@ -250,7 +252,7 @@ python scripts/tts_local_moss_tts_local_transformer.py \
 可尝试：
 
 ```bash
-python scripts/tts_local_moss_tts_local_transformer.py \
+python modelScript/tts_local_moss_tts_local_transformer.py \
   --n-vq-for-inference 16 \
   --max-new-tokens 2048
 ```
@@ -262,7 +264,7 @@ python scripts/tts_local_moss_tts_local_transformer.py \
 该模型约 1.7B 参数，正式 TTS 合成必须使用 CUDA GPU。脚本不提供 CPU 合成路径；如果沙箱内 GPU 被阻止，应在非沙箱环境运行：
 
 ```bash
-python scripts/tts_local_moss_tts_local_transformer.py \
-  --codec-path /home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer \
+python modelScript/tts_local_moss_tts_local_transformer.py \
+  --codec-path /path/to/MOSS-Audio-Tokenizer \
   --local-files-only
 ```

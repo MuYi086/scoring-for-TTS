@@ -1,6 +1,6 @@
 # MiMo 云端 TTS 配置说明
 
-本文记录 `scripts/tts_cloud_mimo.py` 的运行配置。脚本用于调用 MiMo-V2.5-TTS
+本文记录 `modelScript/tts_cloud_mimo.py` 的运行配置。脚本用于调用 MiMo-V2.5-TTS
 系列云端 API，复用本仓库现有公版书样例文本和参考音频，默认执行 voiceclone（声音克隆）合成。
 
 ## 运行前配置
@@ -16,7 +16,7 @@ export MIMO_API_KEY="你的 MiMo API Key"
 也可以在命令行中临时传入：
 
 ```bash
-python scripts/tts_cloud_mimo.py --api-key "你的 MiMo API Key"
+python modelScript/tts_cloud_mimo.py --api-key "你的 MiMo API Key"
 ```
 
 不要把 API Key 写入脚本或提交到仓库。
@@ -24,8 +24,8 @@ python scripts/tts_cloud_mimo.py --api-key "你的 MiMo API Key"
 ## 默认运行
 
 ```bash
-cd /home/muyi086/github/timbre-design
-python scripts/tts_cloud_mimo.py
+cd /path/to/timbre-design
+python modelScript/tts_cloud_mimo.py
 ```
 
 默认行为：
@@ -42,7 +42,7 @@ python scripts/tts_cloud_mimo.py
 使用内置音色：
 
 ```bash
-python scripts/tts_cloud_mimo.py \
+python modelScript/tts_cloud_mimo.py \
   --model mimo-v2.5-tts \
   --voice 冰糖
 ```
@@ -50,7 +50,7 @@ python scripts/tts_cloud_mimo.py \
 使用声音设计：
 
 ```bash
-python scripts/tts_cloud_mimo.py \
+python modelScript/tts_cloud_mimo.py \
   --model mimo-v2.5-tts-voicedesign \
   --instruction "一位中年男性，说标准普通话，嗓音低沉有磁性，像纪录片旁白。"
 ```
@@ -58,7 +58,7 @@ python scripts/tts_cloud_mimo.py \
 检查请求摘要但不调用云端 API：
 
 ```bash
-python scripts/tts_cloud_mimo.py --dry-run
+python modelScript/tts_cloud_mimo.py --dry-run
 ```
 
 ## 注意事项

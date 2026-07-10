@@ -6,7 +6,7 @@ samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/LongCat-AudioDiT-1B_${t}_$
 
 Usage:
   PYTHONPATH=/path/to/LongCat-AudioDiT \
-    python scripts/tts_local_longcat_audiodit_1b.py --local-files-only
+    python modelScript/tts_local_longcat_audiodit_1b.py --local-files-only
 
 The official LongCat repository provides the audiodit package but does not need
 to live inside this repository. Pass --repo-path or set PYTHONPATH so Python can
@@ -25,13 +25,13 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = Path("/home/muyi086/hf-mirror/meituan-longcat/LongCat-AudioDiT-1B")
+MODEL_PATH = Path(os.environ.get("LONGCAT_AUDIODIT_MODEL_PATH", "/path/to/LongCat-AudioDiT-1B"))
 SAMPLE_DIR = REPO_ROOT / "samples/v_zh_046_电台主持-低沉_沉稳_沉浸式"
 TEXT_FILE = SAMPLE_DIR / "第一章.md"
 REF_AUDIO = SAMPLE_DIR / "sample.wav"
 DEFAULT_PROMPT_TEXT = "您好，很高兴能为您提供配音服务。选择您感兴趣的音色，让我们一起开启声音创作的奇幻之旅吧。"
 DEFAULT_REPO_CANDIDATES = (
-    Path("/home/muyi086/github/LongCat-AudioDiT"),
+    Path("/path/to/LongCat-AudioDiT"),
     Path("/tmp/LongCat-AudioDiT"),
 )
 

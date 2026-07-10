@@ -5,7 +5,7 @@ Default output:
 samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/Qwen3-TTS-12Hz-1.7B-Base_${t}_${k}khz.wav
 
 Usage:
-  python scripts/tts_local_qwen3_tts_12hz_1_7b_base.py
+  python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py
 
 The Base model supports higher-quality cloning when a reference transcript is
 provided. If --ref-text/--ref-text-file is omitted, this script falls back to
@@ -24,7 +24,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = Path("/home/muyi086/hf-mirror/Qwen/Qwen3-TTS-12Hz-1.7B-Base")
+MODEL_PATH = Path(os.environ.get("QWEN3_TTS_MODEL_PATH", "/path/to/Qwen3-TTS-12Hz-1.7B-Base"))
 SAMPLE_DIR = REPO_ROOT / "samples/v_zh_046_电台主持-低沉_沉稳_沉浸式"
 TEXT_FILE = SAMPLE_DIR / "第一章.md"
 REF_AUDIO = SAMPLE_DIR / "sample.wav"

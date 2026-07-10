@@ -5,7 +5,7 @@ Default output:
 samples/v_zh_046_电台主持-低沉_沉稳_沉浸式/dots.tts-base_${t}_${k}khz.wav
 
 Usage:
-  python scripts/tts_local_dots_tts_base.py --local-files-only
+  python modelScript/tts_local_dots_tts_base.py --local-files-only
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = Path("/home/muyi086/hf-mirror/rednote-hilab/dots.tts-base")
+MODEL_PATH = Path(os.environ.get("DOTS_TTS_MODEL_PATH", "/path/to/dots.tts-base"))
 SAMPLE_DIR = REPO_ROOT / "samples/v_zh_046_电台主持-低沉_沉稳_沉浸式"
 TEXT_FILE = SAMPLE_DIR / "第一章.md"
 REF_AUDIO = SAMPLE_DIR / "sample.wav"
