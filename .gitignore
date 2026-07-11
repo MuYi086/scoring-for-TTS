@@ -25,6 +25,11 @@ outputs/
 tts-bench/datasets/audio/
 tts-bench/runs/*/audio/
 tts-bench/runs/*/derived/
+cloneData/*.wav
+cloneData/*.part
+cloneData/indextts2/.runtime_cache/
+cloneData/*/.runtime_cache/
+cloneData/*/.tmp/
 wavlm/models/*
 !wavlm/models/README.md
 asr/models/*
