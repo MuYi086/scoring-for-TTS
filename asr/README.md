@@ -13,4 +13,4 @@
 3. 中文默认比较去除空白后的字符序列。数字、英文、专名和标点的转换政策必须写在 `normalization/zh-v1.md`；没有明确规则时保留原样，不能事后为某模型改写。
 4. 每次更换 ASR 模型、解码参数或规范化版本，必须视为不同评价器版本，不能和旧结果混合求平均。
 
-逐样本结果写在 `asr/outputs/<run_id>/transcription.jsonl`，字段见 [`contracts/transcription-record.schema.json`](contracts/transcription-record.schema.json)。本目录不提供下载或执行脚本。
+一键评估时，逐样本转写和 CER 与其他客观指标一起写入 `tts-bench/reports/automated-*/per_case.jsonl`，并汇总到 `model_summary.csv`。字段约定见 [`contracts/transcription-record.schema.json`](contracts/transcription-record.schema.json)；默认入口为 [`../tts-bench/scripts/run_automated_evaluation.py`](../tts-bench/scripts/run_automated_evaluation.py)。

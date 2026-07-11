@@ -25,12 +25,12 @@ outputs/
 tts-bench/datasets/audio/
 tts-bench/runs/*/audio/
 tts-bench/runs/*/derived/
-tts-prism-7b/models/*
-!tts-prism-7b/models/README.md
 wavlm/models/*
 !wavlm/models/README.md
 asr/models/*
 !asr/models/README.md
+utmosv2/models/*
+!utmosv2/models/README.md
 listener-review/private-mapping/*
 !listener-review/private-mapping/README.md
 

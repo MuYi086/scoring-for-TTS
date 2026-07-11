@@ -19,9 +19,7 @@ provenance:
   git_commit: "填写本仓库提交号；未提交时注明 dirty"
 
 evaluator_plan:
-  wavlm: true
-  asr: true
-  tts_prism_7b: true
-  listener_review: true
+  automated_evaluation: true
+  personal_prosody_review: "独立记录，不进入 configured_score"
 
 notes: "记录会影响可比性的参数，例如参考音频长度、随机种子、分段策略和采样参数。"

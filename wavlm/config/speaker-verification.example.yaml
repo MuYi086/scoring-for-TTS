@@ -1,9 +1,9 @@
 # 仅为待填写的评价器配置；本仓库不提供启动脚本。
 schema_version: "1.0"
 evaluator: "wavlm"
-evaluator_id: "wavlm-large-speaker-verification"
+evaluator_id: "microsoft/wavlm-base-sv"
 evaluator_version: "填写检查点修订号"
-checkpoint_path: "wavlm/models/<checkpoint-directory>"
+checkpoint_path: "wavlm/models/microsoft--wavlm-base-sv"
 
 input_contract:
   sample_rate_hz: 16000

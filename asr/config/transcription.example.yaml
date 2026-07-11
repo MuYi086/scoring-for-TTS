@@ -1,9 +1,9 @@
 # 仅为待填写的评价器配置；本仓库不提供启动脚本。
 schema_version: "1.0"
 evaluator: "asr"
-evaluator_id: "填写 ASR 模型 ID"
-evaluator_version: "填写权重修订号与解码参数摘要"
-model_path: "asr/models/<model-directory>"
+evaluator_id: "openai/whisper-large-v3-turbo"
+evaluator_version: "填写缓存权重修订号与解码参数摘要"
+model_path: "asr/models/models--openai--whisper-large-v3-turbo"
 language: "zh-CN"
 
 input_contract:

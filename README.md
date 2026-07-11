@@ -8,7 +8,7 @@
 - [`tts-bench/`](tts-bench/)：基准样本清单、一次实验的运行记录、结果契约与汇总模板。
 - [`wavlm/`](wavlm/)：说话人验证用的音色相似度（SIM）评价器边界与记录格式。
 - [`asr/`](asr/)：自动语音识别（ASR）用的文本忠实度、字错误率（CER）评价器边界与记录格式。
-- [`tts-prism-7b/`](tts-prism-7b/)：TTS-PRISM-7B 的 12 维可解释语音诊断边界与记录格式。
-- [`listener-review/`](listener-review/)：人工盲听与主观评分材料。
+- [`utmosv2/`](utmosv2/)：合成语音自然度 MOS（平均主观意见分）预测器的安装与结果约定。
+- [`listener-review/`](listener-review/)：仅供个人复核停顿、语气和情绪的独立试听材料，不进入自动总分。
 
-当前仅提供目录、数据契约、模板和手工步骤；不包含模型权重、音频样本、密钥或自动评估启动脚本。
+对已经登记的合成结果，可用 [`tts-bench/scripts/run_automated_evaluation.py`](tts-bench/scripts/run_automated_evaluation.py) 一次评估全部运行，并生成逐样本 JSONL、模型汇总 CSV 和透明的配置化排名。它不合成音频，也不包含模型权重、音频样本或密钥。

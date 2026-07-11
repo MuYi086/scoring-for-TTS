@@ -23,10 +23,6 @@
 
 ## 输入与输出
 
-输入音频均由 `tts-bench/runs/<run_id>/` 的合成记录定位，不复制到本目录。逐样本输出写入：
+输入音频均由 `tts-bench/runs/<run_id>/` 的合成记录定位，不复制到本目录。一键评估时，逐样本 WavLM 结果与 ASR、UTMOSv2 等结果一起写入 `tts-bench/reports/automated-*/per_case.jsonl`，并汇总到 `model_summary.csv`。
 
-```text
-wavlm/outputs/<run_id>/similarity.jsonl
-```
-
-每一行遵循 [`contracts/similarity-record.schema.json`](contracts/similarity-record.schema.json)，并在 `tts-bench/runs/<run_id>/metrics/` 写一条指向该文件的通用指标记录。手工步骤见 [`../评估步骤指南.md`](../评估步骤指南.md)。
+[`contracts/similarity-record.schema.json`](contracts/similarity-record.schema.json) 保留为人工接入其他 WavLM 实现时的字段约定；本项目的默认入口见 [`../tts-bench/scripts/run_automated_evaluation.py`](../tts-bench/scripts/run_automated_evaluation.py)。

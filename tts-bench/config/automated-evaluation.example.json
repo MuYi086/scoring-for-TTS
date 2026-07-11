@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "enabled_metrics": [
+    "audio_health",
+    "wavlm",
+    "asr",
+    "utmosv2"
+  ],
+  "audio_health": {
+    "clipping_threshold": 0.999,
+    "description": "仅检查可客观检测的削波与响度；不把静音或语速当作质量缺陷。"
+  },
+  "wavlm": {
+    "model_id": "microsoft/wavlm-base-sv",
+    "device": "cuda",
+    "sample_rate_hz": 16000,
+    "window_seconds": 5.0
+  },
+  "asr": {
+    "model_id": "openai/whisper-large-v3-turbo",
+    "device": "cuda",
+    "language": "zh",
+    "task": "transcribe"
+  },
+  "ranking": {
+    "description": "configured_score 仅用于同一校准配置内的排序，不是人类主观 MOS，也不包含停顿、语气与情绪。",
+    "weights": {
+      "asr_cer": 0.3,
+      "speaker_similarity": 0.3,
+      "utmosv2": 0.25,
+      "speaker_stability": 0.1,
+      "audio_health": 0.05
+    },
+    "normalizers": {
+      "asr_cer": {"lower": 0.0, "upper": 0.2},
+      "speaker_similarity": {"lower": 0.3, "upper": 0.9},
+      "utmosv2": {"lower": 1.0, "upper": 5.0},
+      "speaker_stability": {"lower": 0.3, "upper": 0.9},
+      "audio_health": {"lower": 0.0, "upper": 0.01}
+    }
+  }
+}

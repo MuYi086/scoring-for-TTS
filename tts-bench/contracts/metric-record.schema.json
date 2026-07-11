@@ -16,7 +16,7 @@
     "schema_version": {"const": "1.0"},
     "run_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
     "case_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
-    "evaluator": {"enum": ["wavlm", "asr", "tts-prism-7b", "listener-review"]},
+    "evaluator": {"enum": ["wavlm", "asr", "utmosv2", "audio-health", "listener-review"]},
     "evaluator_version": {"type": "string", "minLength": 1},
     "source_audio_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "result_path": {"type": "string", "minLength": 1},
