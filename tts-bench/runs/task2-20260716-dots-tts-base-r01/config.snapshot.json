@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "model_id": "dots.tts-base",
+  "model_version": "rednote-hilab/dots.tts-base local snapshot（未提供权重修订号）",
+  "runner": "cloneData/dots_tts_base/test_clone_dots_tts_base.py",
+  "source_script": "modelScript/tts_local_dots_tts_base.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/dots.tts-base_<人物>.wav",
+  "parameters": {
+    "precision": "bfloat16",
+    "seed": 42,
+    "num_steps": 10,
+    "guidance_scale": 1.2,
+    "speaker_scale": 1.5,
+    "reference_transcript": true
+  }
+}

@@ -12,6 +12,8 @@ import argparse
 import csv
 import json
 import math
+import os
+import re
 import sys
 import unicodedata
 from collections import defaultdict
@@ -104,6 +106,18 @@ def project_relative_path(path: Path) -> str:
         return str(path.relative_to(PROJECT_ROOT))
     except ValueError:
         return str(path)
+
+
+def resolve_mirrored_model(model_id: str) -> str:
+    """优先从 HF_MIRROR_ROOT 解析模型，并在缺失时拒绝隐式下载。"""
+
+    mirror_root = os.environ.get("HF_MIRROR_ROOT")
+    if not mirror_root:
+        return model_id
+    candidate = Path(mirror_root).expanduser().resolve() / model_id
+    if not candidate.exists():
+        raise RuntimeError(f"HF_MIRROR_ROOT 中找不到评价模型：{candidate}")
+    return str(candidate)
 
 
 def read_jsonl(path: Path) -> Iterable[dict[str, Any]]:
@@ -305,6 +319,21 @@ def audio_health(path: Path, config: dict[str, Any]) -> dict[str, float]:
     }
 
 
+def fixed_windows(waveform: Any, window_samples: int) -> list[Any]:
+    """按固定长度分窗；末尾不足一窗时从结尾反向取满，避免超短尾窗。"""
+
+    if window_samples < 1:
+        raise ValueError("window_samples 必须大于 0")
+    sample_count = len(waveform)
+    if sample_count <= window_samples:
+        return [waveform]
+    starts = list(range(0, sample_count - window_samples + 1, window_samples))
+    final_start = sample_count - window_samples
+    if starts[-1] != final_start:
+        starts.append(final_start)
+    return [waveform[start : start + window_samples] for start in starts]
+
+
 class WavLMSpeakerEvaluator:
     """用说话人验证版本的 WavLM 计算音色相似度与分窗稳定度。"""
 
@@ -322,13 +351,14 @@ class WavLMSpeakerEvaluator:
         self.device = requested_device
         self.sample_rate_hz = int(config["sample_rate_hz"])
         model_id = str(config["model_id"])
+        model_source = resolve_mirrored_model(model_id)
         local_files_only = not allow_model_download
         try:
             self.feature_extractor = AutoFeatureExtractor.from_pretrained(
-                model_id, local_files_only=local_files_only
+                model_source, local_files_only=local_files_only
             )
             self.model = AutoModelForAudioXVector.from_pretrained(
-                model_id, local_files_only=local_files_only
+                model_source, local_files_only=local_files_only
             ).to(self.device)
         except OSError as exc:
             mode = "本地缓存" if local_files_only else "下载或加载"
@@ -359,7 +389,7 @@ class WavLMSpeakerEvaluator:
         synthesis, _ = load_mono_audio(synthesis_path, self.sample_rate_hz)
         reference_embedding = self.embedding(reference)
         window_samples = max(1, round(window_seconds * self.sample_rate_hz))
-        windows = [synthesis[start : start + window_samples] for start in range(0, len(synthesis), window_samples)]
+        windows = fixed_windows(synthesis, window_samples)
         scores = [float(self.torch.dot(reference_embedding, self.embedding(window))) for window in windows if len(window)]
         if not scores:
             raise ValueError("无法从合成音频取得稳定度窗口")
@@ -386,12 +416,13 @@ class WhisperAsrEvaluator:
         if config["device"] == "cuda" and device < 0:
             raise RuntimeError("配置要求 CUDA，但当前 PyTorch 未检测到可用 CUDA。")
         model_id = str(config["model_id"])
+        model_source = resolve_mirrored_model(model_id)
         try:
             self.pipeline = pipeline(
                 "automatic-speech-recognition",
-                model=model_id,
+                model=model_source,
                 device=device,
-                model_kwargs={"local_files_only": not allow_model_download},
+                local_files_only=not allow_model_download,
             )
         except Exception as exc:  # transformers 的异常类型随版本变化。
             mode = "本地缓存" if not allow_model_download else "下载或加载"
@@ -409,17 +440,69 @@ class WhisperAsrEvaluator:
         return text
 
 
+class SenseVoiceAsrEvaluator:
+    """使用本地 SenseVoiceSmall 产生中文转写。"""
+
+    def __init__(self, config: dict[str, Any]):
+        try:
+            from funasr import AutoModel
+        except ImportError as exc:
+            raise RuntimeError("SenseVoice 依赖缺失：需要 funasr。") from exc
+        model_id = str(config["model_id"])
+        model_source = resolve_mirrored_model(model_id)
+        try:
+            self.model = AutoModel(
+                model=model_source,
+                disable_update=True,
+                device=str(config["device"]),
+            )
+        except Exception as exc:
+            raise RuntimeError(f"无法加载本地 SenseVoice 模型 {model_source}：{exc}") from exc
+        self.language = str(config.get("language", "zh"))
+
+    def transcribe(self, audio_path: Path) -> str:
+        result = self.model.generate(
+            input=str(audio_path),
+            cache={},
+            language=self.language,
+            use_itn=True,
+            batch_size_s=60,
+        )
+        if not isinstance(result, list) or not result or not isinstance(result[0], dict):
+            raise RuntimeError("SenseVoice 未返回逐音频结果")
+        text = result[0].get("text")
+        if not isinstance(text, str):
+            raise RuntimeError("SenseVoice 未返回 text 字段")
+        return re.sub(r"<\|[^|]+\|>", "", text).strip()
+
+
+def build_asr_evaluator(config: dict[str, Any], allow_model_download: bool) -> Any:
+    """按冻结配置创建 ASR 评价器。"""
+
+    backend = str(config.get("backend", "whisper"))
+    if backend == "whisper":
+        return WhisperAsrEvaluator(config, allow_model_download)
+    if backend == "sensevoice":
+        return SenseVoiceAsrEvaluator(config)
+    raise ValueError(f"不支持的 ASR backend：{backend}")
+
+
 class UtmosV2Evaluator:
     """调用 UTMOSv2 的预训练自然度预测器。"""
 
-    def __init__(self) -> None:
+    def __init__(self, config: dict[str, Any]) -> None:
         try:
             import utmosv2
         except ImportError as exc:
             raise RuntimeError(
                 "UTMOSv2 未安装。请先按 utmosv2/安装与使用说明.md 安装，再运行全量评估。"
             ) from exc
-        self.model = utmosv2.create_model(pretrained=True)
+        checkpoint_id = str(config["checkpoint_id"])
+        checkpoint_path = resolve_mirrored_model(checkpoint_id)
+        self.model = utmosv2.create_model(
+            pretrained=True,
+            checkpoint_path=checkpoint_path,
+        )
 
     def predict(self, audio_path: Path) -> float:
         score = self.model.predict(input_path=str(audio_path))
@@ -481,7 +564,7 @@ def evaluate_sample(
         try:
             evaluator = evaluators.get("asr")
             if evaluator is None:
-                evaluator = WhisperAsrEvaluator(config["asr"], allow_model_download)
+                evaluator = build_asr_evaluator(config["asr"], allow_model_download)
                 evaluators["asr"] = evaluator
             hypothesis_raw = evaluator.transcribe(sample.audio_path)
             reference_normalized = normalize_zh_v1(sample.target_text)
@@ -501,7 +584,7 @@ def evaluate_sample(
         try:
             evaluator = evaluators.get("utmosv2")
             if evaluator is None:
-                evaluator = UtmosV2Evaluator()
+                evaluator = UtmosV2Evaluator(config["utmosv2"])
                 evaluators["utmosv2"] = evaluator
             result["metrics"]["utmosv2"] = {"predicted_mos": evaluator.predict(sample.audio_path)}
         except Exception as exc:

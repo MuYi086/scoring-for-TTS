@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "model_id": "IndexTTS2",
+  "model_version": "IndexTeam/IndexTTS-2 local snapshot（未提供权重修订号）",
+  "runner": "cloneData/indextts2/test_clone_indextts2.py",
+  "source_script": "modelScript/tts_local_indextts2.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/IndexTTS2_<人物>.wav",
+  "parameters": {
+    "emo_alpha": 0.6,
+    "num_beams": 1,
+    "use_fp16": true,
+    "interval_silence_ms": 200,
+    "max_text_tokens_per_segment": 120
+  }
+}

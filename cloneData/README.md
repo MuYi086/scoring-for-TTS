@@ -17,4 +17,6 @@
 
 所有本地模型输出统一到 `cloneData/` 根目录，文件名为 `<模型名>_<人物>.wav`。在真实运行前可附加 `--dry-run` 做纯本地预检；如果需要重测并覆盖同名文件，附加 `--overwrite`。
 
+本地 Hugging Face 模型统一从 `HF_MIRROR_ROOT` 读取，默认目录为 `~/hf-mirror`。LongCat 与 IndexTTS2 需要的官方源码默认从仓库同级的 `TTS-and-VoiceDesign/api/vendor` 定位；目录布局不同时设置 `TTS_VENDOR_ROOT`。脚本和文档不保存机器专属绝对路径。
+
 MiMo 是云端模型，没有可用的本地 conda 推理运行时；它的测试脚本直接调用官方云端接口，不经过本地后端，运行前需要在环境中设置 `MIMO_API_KEY`。不得将该密钥写入仓库或脚本。

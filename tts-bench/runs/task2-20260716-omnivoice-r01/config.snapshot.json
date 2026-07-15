@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "model_id": "OmniVoice",
+  "model_version": "k2-fsa/OmniVoice local snapshot（未提供权重修订号）",
+  "runner": "cloneData/omnivoice/test_clone_omnivoice.py",
+  "source_script": "modelScript/tts_local_omnivoice.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/OmniVoice_<人物>.wav",
+  "parameters": {
+    "local_files_only": true,
+    "reference_transcript": true
+  }
+}

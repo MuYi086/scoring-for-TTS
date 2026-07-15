@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "model_id": "mimo-v2.5-tts-voiceclone",
+  "model_version": "MiMo 云端 API（2026-07-16）",
+  "runner": "cloneData/mimo/test_clone_mimo.py",
+  "source_script": "modelScript/tts_cloud_mimo.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/mimo-v2.5-tts-voiceclone_<人物>.wav",
+  "parameters": {
+    "base_url": "https://api.xiaomimimo.com/v1",
+    "instruction": "",
+    "audio_format": "wav"
+  }
+}

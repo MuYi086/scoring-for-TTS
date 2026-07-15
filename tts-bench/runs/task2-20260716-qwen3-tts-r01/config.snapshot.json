@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "model_id": "Qwen3-TTS-12Hz-1.7B-Base",
+  "model_version": "Qwen/Qwen3-TTS-12Hz-1.7B-Base local snapshot（未提供权重修订号）",
+  "runner": "cloneData/qwen3_tts_12hz_1_7b_base/test_clone_qwen3_tts_12hz_1_7b_base.py",
+  "source_script": "modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/Qwen3-TTS-12Hz-1.7B-Base_<人物>.wav",
+  "parameters": {
+    "dtype": "auto（CUDA 上 bfloat16）",
+    "attention": "sdpa",
+    "max_new_tokens": 2048,
+    "reference_transcript": true
+  }
+}

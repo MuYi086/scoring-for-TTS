@@ -18,16 +18,18 @@
     "window_policy": "固定 5 秒；不足一窗的尾部从音频末尾反向取满，允许与前窗重叠。"
   },
   "asr": {
-    "model_id": "openai/whisper-large-v3-turbo",
+    "backend": "sensevoice",
+    "model_id": "FunAudioLLM/SenseVoiceSmall",
     "device": "cuda",
     "language": "zh",
-    "task": "transcribe"
+    "task": "transcribe",
+    "description": "使用 hf-mirror 中的本地 SenseVoiceSmall，原始标签在 CER 规范化前移除。"
   },
   "utmosv2": {
     "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth"
   },
   "ranking": {
-    "description": "configured_score 仅用于同一校准配置内的排序，不是人类主观 MOS，也不包含停顿、语气与情绪。",
+    "description": "configured_score 仅用于同一校准配置内的排序，不是人类主观 MOS，也不包含停顿、语气与情绪。本次沿用示例归一化区间，仅作同批相对比较。",
     "weights": {
       "asr_cer": 0.3,
       "speaker_similarity": 0.3,

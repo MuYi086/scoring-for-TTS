@@ -31,6 +31,15 @@ tts-bench/
 
 在完成各模型的合成并登记 `synthesis.jsonl` 后，先复制 `config/automated-evaluation.example.json` 为 `config/automated-evaluation.json`，按校准集调整归一化区间和权重；再一次评估全部运行：
 
+评价模型统一从 `HF_MIRROR_ROOT` 指向的本地 `hf-mirror` 目录解析。为保证全程离线且缓存也落在该目录，可先设置：
+
+```bash
+export HF_MIRROR_ROOT=~/hf-mirror
+export HF_HOME=~/hf-mirror/huggingface-cache
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
+```
+
 ```bash
 conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
   --runs-root tts-bench/runs \

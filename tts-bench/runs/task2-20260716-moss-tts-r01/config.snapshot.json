@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "model_id": "MOSS-TTS-Local-Transformer-v1.5",
+  "model_version": "OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5 local snapshot（未提供权重修订号）",
+  "runner": "cloneData/moss_tts_local_transformer/test_clone_moss_tts_local_transformer.py",
+  "source_script": "modelScript/tts_local_moss_tts_local_transformer.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/MOSS-TTS-Local-Transformer-v1.5_<人物>.wav",
+  "parameters": {
+    "codec": "OpenMOSS-Team/MOSS-Audio-Tokenizer-v2",
+    "dtype": "bfloat16",
+    "attention": "sdpa"
+  }
+}

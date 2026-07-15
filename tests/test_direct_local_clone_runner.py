@@ -43,6 +43,22 @@ def test_local_models_have_a_direct_script_environment_and_local_model_path() ->
         assert spec.model_path.is_absolute()
 
 
+def test_local_model_and_vendor_roots_are_configurable(monkeypatch, tmp_path: Path) -> None:
+    mirror_root = tmp_path / "hf-mirror"
+    vendor_root = tmp_path / "vendor"
+    monkeypatch.setenv("HF_MIRROR_ROOT", str(mirror_root))
+    monkeypatch.setenv("TTS_VENDOR_ROOT", str(vendor_root))
+
+    _, runner = load_runner()
+
+    assert runner.MODEL_SPECS["dots_tts_base"].model_path == (
+        mirror_root / "rednote-hilab/dots.tts-base"
+    )
+    longcat = runner.MODEL_SPECS["longcat_audiodit_1b"]
+    assert vendor_root / "LongCat-AudioDiT" in longcat.required_paths
+    assert mirror_root / "google/umt5-base" in longcat.required_paths
+
+
 def test_local_command_uses_reference_and_staging_output_without_http() -> None:
     support, runner = load_runner()
     spec = runner.MODEL_SPECS["qwen3_tts_12hz_1_7b_base"]

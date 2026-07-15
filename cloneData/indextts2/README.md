@@ -15,7 +15,7 @@ cloneData/indextts2_见习魔法师.wav
 ## 手工执行前检查
 
 1. 确认仓库内 `testData/mimo_旁白.wav`、`testData/mimo_小公主.wav`、`testData/mimo_见习魔法师.wav` 存在。脚本会自动定位仓库根目录，不依赖 `/testData` 系统目录。
-2. 确认本地模型目录 `/home/muyi086/hf-mirror/IndexTeam/IndexTTS-2`、官方源码目录 `/home/muyi086/github/TTS-and-VoiceDesign/api/vendor/index-tts` 均完整。
+2. 确认本地模型目录 `<HF_MIRROR_ROOT>/IndexTeam/IndexTTS-2`、官方源码目录 `<TTS_VENDOR_ROOT>/index-tts` 均完整。脚本默认使用 `~/hf-mirror`，并从仓库同级的 `TTS-and-VoiceDesign/api/vendor` 定位官方源码；其他布局可通过同名环境变量覆盖。
 3. 从项目根目录执行：
 
 ```bash

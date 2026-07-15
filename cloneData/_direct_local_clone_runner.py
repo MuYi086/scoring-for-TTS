@@ -9,6 +9,7 @@ conda 环境启动本模块；每个角色由一个独立子进程执行原生�
 from __future__ import annotations
 
 import argparse
+import os
 import shlex
 import subprocess
 import sys
@@ -17,6 +18,12 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from _clone_test_support import CASES, OUTPUT_ROOT, REPO_ROOT, CloneCase, selected_cases
+
+
+HF_MIRROR_ROOT = Path(os.environ.get("HF_MIRROR_ROOT", Path.home() / "hf-mirror")).expanduser()
+TTS_VENDOR_ROOT = Path(
+    os.environ.get("TTS_VENDOR_ROOT", REPO_ROOT.parent / "TTS-and-VoiceDesign/api/vendor")
+).expanduser()
 
 
 @dataclass(frozen=True)
@@ -40,7 +47,7 @@ MODEL_SPECS = {
         model_name="dots.tts-base",
         conda_env="dots_tts",
         source_script=REPO_ROOT / "modelScript/tts_local_dots_tts_base.py",
-        model_path=Path("/home/muyi086/hf-mirror/rednote-hilab/dots.tts-base"),
+        model_path=HF_MIRROR_ROOT / "rednote-hilab/dots.tts-base",
         extra_args=("--local-files-only",),
         reference_text_option="--prompt-text",
     ),
@@ -49,7 +56,7 @@ MODEL_SPECS = {
         model_name="Qwen3-TTS-12Hz-1.7B-Base",
         conda_env="qwen3-tts",
         source_script=REPO_ROOT / "modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py",
-        model_path=Path("/home/muyi086/hf-mirror/Qwen/Qwen3-TTS-12Hz-1.7B-Base"),
+        model_path=HF_MIRROR_ROOT / "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
         extra_args=("--attn-implementation", "sdpa", "--local-files-only"),
         reference_text_option="--ref-text",
     ),
@@ -58,7 +65,7 @@ MODEL_SPECS = {
         model_name="VoxCPM2",
         conda_env="voxcpm2",
         source_script=REPO_ROOT / "modelScript/tts_local_voxcpm2.py",
-        model_path=Path("/home/muyi086/hf-mirror/openbmb/VoxCPM2"),
+        model_path=HF_MIRROR_ROOT / "openbmb/VoxCPM2",
         extra_args=("--style-prompt", "", "--local-files-only"),
         reference_text_option="--prompt-text",
     ),
@@ -67,30 +74,30 @@ MODEL_SPECS = {
         model_name="MOSS-TTS-Local-Transformer-v1.5",
         conda_env="moss-tts-py310",
         source_script=REPO_ROOT / "modelScript/tts_local_moss_tts_local_transformer.py",
-        model_path=Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5"),
+        model_path=HF_MIRROR_ROOT / "OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5",
         extra_args=(
             "--codec-path",
-            "/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer-v2",
+            str(HF_MIRROR_ROOT / "OpenMOSS-Team/MOSS-Audio-Tokenizer-v2"),
             "--local-files-only",
         ),
-        required_paths=(Path("/home/muyi086/hf-mirror/OpenMOSS-Team/MOSS-Audio-Tokenizer-v2"),),
+        required_paths=(HF_MIRROR_ROOT / "OpenMOSS-Team/MOSS-Audio-Tokenizer-v2",),
     ),
     "longcat_audiodit_1b": LocalModelSpec(
         slug="longcat_audiodit_1b",
         model_name="LongCat-AudioDiT-1B",
         conda_env="longcat_audiodit",
         source_script=REPO_ROOT / "modelScript/tts_local_longcat_audiodit_1b.py",
-        model_path=Path("/home/muyi086/hf-mirror/meituan-longcat/LongCat-AudioDiT-1B"),
+        model_path=HF_MIRROR_ROOT / "meituan-longcat/LongCat-AudioDiT-1B",
         extra_args=(
             "--repo-path",
-            "/home/muyi086/github/TTS-and-VoiceDesign/api/vendor/LongCat-AudioDiT",
+            str(TTS_VENDOR_ROOT / "LongCat-AudioDiT"),
             "--tokenizer-path",
-            "/home/muyi086/hf-mirror/google/umt5-base",
+            str(HF_MIRROR_ROOT / "google/umt5-base"),
             "--local-files-only",
         ),
         required_paths=(
-            Path("/home/muyi086/github/TTS-and-VoiceDesign/api/vendor/LongCat-AudioDiT"),
-            Path("/home/muyi086/hf-mirror/google/umt5-base"),
+            TTS_VENDOR_ROOT / "LongCat-AudioDiT",
+            HF_MIRROR_ROOT / "google/umt5-base",
         ),
         reference_text_option="--prompt-text",
     ),
@@ -99,7 +106,7 @@ MODEL_SPECS = {
         model_name="OmniVoice",
         conda_env="omnivoice",
         source_script=REPO_ROOT / "modelScript/tts_local_omnivoice.py",
-        model_path=Path("/home/muyi086/hf-mirror/k2-fsa/OmniVoice"),
+        model_path=HF_MIRROR_ROOT / "k2-fsa/OmniVoice",
         extra_args=("--local-files-only",),
         supports_exact_output=True,
         reference_text_option="--ref-text",

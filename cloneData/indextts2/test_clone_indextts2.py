@@ -21,13 +21,17 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "cloneData"
+DEFAULT_HF_MIRROR_ROOT = Path(
+    os.environ.get("HF_MIRROR_ROOT", Path.home() / "hf-mirror")
+).expanduser()
+DEFAULT_TTS_VENDOR_ROOT = Path(
+    os.environ.get("TTS_VENDOR_ROOT", REPO_ROOT.parent / "TTS-and-VoiceDesign/api/vendor")
+).expanduser()
 DEFAULT_MODEL_PATH = Path(
-    os.environ.get("INDEXTTS_MODEL_PATH", "/home/muyi086/hf-mirror/IndexTeam/IndexTTS-2")
+    os.environ.get("INDEXTTS_MODEL_PATH", DEFAULT_HF_MIRROR_ROOT / "IndexTeam/IndexTTS-2")
 )
 DEFAULT_CODE_PATH = Path(
-    os.environ.get(
-        "INDEXTTS_CODE_PATH", "/home/muyi086/github/TTS-and-VoiceDesign/api/vendor/index-tts"
-    )
+    os.environ.get("INDEXTTS_CODE_PATH", DEFAULT_TTS_VENDOR_ROOT / "index-tts")
 )
 DEFAULT_RUNTIME_CACHE_DIR = REPO_ROOT / "cloneData" / "indextts2" / ".runtime_cache"
 REQUIRED_MODEL_FILES = (

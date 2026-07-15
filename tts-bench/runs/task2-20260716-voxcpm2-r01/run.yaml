@@ -1,0 +1,23 @@
+schema_version: "1.0"
+run_id: "task2-20260716-voxcpm2-r01"
+created_at: "2026-07-16T00:00:00+08:00"
+
+model:
+  id: "VoxCPM2"
+  version: "openbmb/VoxCPM2 local snapshot（未提供权重修订号）"
+  inference_script: "cloneData/voxcpm2/test_clone_voxcpm2.py"
+
+inputs:
+  manifest: "tts-bench/manifests/task2-2026-07-16-v1.jsonl"
+  split: "development"
+
+provenance:
+  config_snapshot: "tts-bench/runs/task2-20260716-voxcpm2-r01/config.snapshot.json"
+  model_revision: "未提供"
+  git_commit: "042a06d + task2 工作区修改"
+
+evaluator_plan:
+  automated_evaluation: true
+  personal_prosody_review: "未执行；不进入 configured_score"
+
+notes: "三角色集中克隆；参考音频、目标文本与其他模型保持一致。"

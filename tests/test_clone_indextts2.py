@@ -35,6 +35,18 @@ def test_fixed_cases_preserve_task_text_vectors_and_output_names() -> None:
         "indextts2_小公主.wav",
         "indextts2_见习魔法师.wav",
     ]
+
+
+def test_model_and_source_roots_are_configurable(monkeypatch, tmp_path: Path) -> None:
+    mirror_root = tmp_path / "hf-mirror"
+    vendor_root = tmp_path / "vendor"
+    monkeypatch.setenv("HF_MIRROR_ROOT", str(mirror_root))
+    monkeypatch.setenv("TTS_VENDOR_ROOT", str(vendor_root))
+
+    script = load_script()
+
+    assert script.DEFAULT_MODEL_PATH == mirror_root / "IndexTeam/IndexTTS-2"
+    assert script.DEFAULT_CODE_PATH == vendor_root / "index-tts"
     assert [case.reference_audio.as_posix() for case in script.CASES] == [
         (ROOT / "testData/mimo_旁白.wav").as_posix(),
         (ROOT / "testData/mimo_小公主.wav").as_posix(),

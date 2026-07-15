@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "model_id": "LongCat-AudioDiT-1B",
+  "model_version": "meituan-longcat/LongCat-AudioDiT-1B local snapshot（未提供权重修订号）",
+  "runner": "cloneData/longcat_audiodit_1b/test_clone_longcat_audiodit_1b.py",
+  "source_script": "modelScript/tts_local_longcat_audiodit_1b.py",
+  "manifest": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "output_pattern": "cloneData/LongCat-AudioDiT-1B_<人物>.wav",
+  "parameters": {
+    "nfe": 16,
+    "guidance_method": "apg",
+    "guidance_strength": 4,
+    "vae_dtype": "float16",
+    "reference_transcript": true
+  }
+}

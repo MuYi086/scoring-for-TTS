@@ -1,0 +1,77 @@
+{
+  "allow_model_download": false,
+  "config": {
+    "asr": {
+      "backend": "sensevoice",
+      "description": "使用 hf-mirror 中的本地 SenseVoiceSmall，原始标签在 CER 规范化前移除。",
+      "device": "cuda",
+      "language": "zh",
+      "model_id": "FunAudioLLM/SenseVoiceSmall",
+      "task": "transcribe"
+    },
+    "audio_health": {
+      "clipping_threshold": 0.999,
+      "description": "仅检查可客观检测的削波与响度；不把静音或语速当作质量缺陷。"
+    },
+    "enabled_metrics": [
+      "audio_health",
+      "wavlm",
+      "asr",
+      "utmosv2"
+    ],
+    "ranking": {
+      "description": "configured_score 仅用于同一校准配置内的排序，不是人类主观 MOS，也不包含停顿、语气与情绪。本次沿用示例归一化区间，仅作同批相对比较。",
+      "normalizers": {
+        "asr_cer": {
+          "lower": 0.0,
+          "upper": 0.2
+        },
+        "audio_health": {
+          "lower": 0.0,
+          "upper": 0.01
+        },
+        "speaker_similarity": {
+          "lower": 0.3,
+          "upper": 0.9
+        },
+        "speaker_stability": {
+          "lower": 0.3,
+          "upper": 0.9
+        },
+        "utmosv2": {
+          "lower": 1.0,
+          "upper": 5.0
+        }
+      },
+      "weights": {
+        "asr_cer": 0.3,
+        "audio_health": 0.05,
+        "speaker_similarity": 0.3,
+        "speaker_stability": 0.1,
+        "utmosv2": 0.25
+      }
+    },
+    "schema_version": "1.0",
+    "utmosv2": {
+      "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth"
+    },
+    "wavlm": {
+      "device": "cuda",
+      "model_id": "microsoft/wavlm-base-sv",
+      "sample_rate_hz": 16000,
+      "window_policy": "固定 5 秒；不足一窗的尾部从音频末尾反向取满，允许与前窗重叠。",
+      "window_seconds": 5.0
+    }
+  },
+  "created_at": "2026-07-15T16:42:15.551988+00:00",
+  "input_error_count": 0,
+  "runs_root": "tts-bench/runs",
+  "sample_count": 24,
+  "schema_version": "1.0",
+  "selected_metrics": [
+    "asr",
+    "audio_health",
+    "utmosv2",
+    "wavlm"
+  ]
+}
