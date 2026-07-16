@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "local_models": [
+    {
+      "model_id": "FunAudioLLM/SenseVoiceSmall",
+      "revision": "716d31dbfd64b40152f3399a720890b005ffaf90",
+      "marker": "model.pt"
+    },
+    {
+      "model_id": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "marker": "model.safetensors"
+    },
+    {
+      "model_id": "microsoft/wavlm-base-sv",
+      "revision": "0a23162ffc49adcf42bdf836a00cb2eb45af3601",
+      "marker": "pytorch_model.bin"
+    },
+    {
+      "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "revision": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+      "marker": "embedding_model.ckpt"
+    }
+  ],
+  "cached_models": [
+    {
+      "model_id": "facebook/wav2vec2-base",
+      "revision": "0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8"
+    }
+  ],
+  "files": [
+    {
+      "path": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+      "sha256": "c8149d988e4bbf3f347e6966b5d769de347a5f8c59ffca1dc4bd4bf5b8585e57"
+    },
+    {
+      "path": "NISQA/weights/nisqa_tts.tar",
+      "sha256": "c556a954cd9536360b4fe6f524ad432816509cd22f436f345b281a7851360656"
+    }
+  ],
+  "git_repositories": [
+    {
+      "path": "NISQA",
+      "url": "https://github.com/gabrielmittag/NISQA.git",
+      "revision": "fe84f0f252abec382b24367d5b22498a7ce34dbb"
+    }
+  ]
+}

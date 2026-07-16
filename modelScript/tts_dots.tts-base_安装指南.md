@@ -125,7 +125,7 @@ sample_rate 48000
 
 ```bash
 conda activate dots_tts
-cd ~/github/timbre-design
+cd ~/github/scoring-for-TTS
 python modelScript/tts_local_dots_tts_base.py --local-files-only
 ```
 

@@ -24,7 +24,7 @@ python modelScript/tts_cloud_mimo.py --api-key "你的 MiMo API Key"
 ## 默认运行
 
 ```bash
-cd /path/to/timbre-design
+cd /path/to/scoring-for-TTS
 python modelScript/tts_cloud_mimo.py
 ```
 

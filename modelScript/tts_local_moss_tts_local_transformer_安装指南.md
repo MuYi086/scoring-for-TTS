@@ -128,7 +128,7 @@ conda run -n moss-tts python -c "import importlib.util; print(importlib.util.fin
 
 ```bash
 conda activate moss-tts
-cd /path/to/timbre-design
+cd /path/to/scoring-for-TTS
 python modelScript/tts_local_moss_tts_local_transformer.py
 ```
 

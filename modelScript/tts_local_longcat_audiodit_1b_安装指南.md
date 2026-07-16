@@ -112,7 +112,7 @@ AudioDiTModel import ok
 
 ```bash
 conda activate longcat_audiodit
-cd ~/github/timbre-design
+cd ~/github/scoring-for-TTS
 ```
 
 在线或已有 Hugging Face tokenizer 缓存时：

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
@@ -504,7 +505,7 @@ def render_quality_report(
     return "\n".join(lines)
 
 
-def build_reports(results_dir: Path) -> dict[str, str]:
+def build_reports(results_dir: Path, results_link: str | None = None) -> dict[str, str]:
     audio_rows = read_jsonl(results_dir / "per_audio.jsonl")
     similarity_rows = read_jsonl(results_dir / "speaker_similarity.jsonl")
     calibration_rows = read_jsonl(results_dir / "speaker_calibration.jsonl")
@@ -513,7 +514,7 @@ def build_reports(results_dir: Path) -> dict[str, str]:
     except FileNotFoundError as exc:
         raise ValueError(f"找不到原始结果：{results_dir / 'run_metadata.json'}") from exc
     validate_results(audio_rows, similarity_rows, calibration_rows, metadata)
-    results_link = results_dir.name
+    results_link = results_link or results_dir.name
     return {
         "cer": render_cer_report(audio_rows, results_link),
         "sim": render_similarity_report(similarity_rows, calibration_rows, results_link),
@@ -523,8 +524,11 @@ def build_reports(results_dir: Path) -> dict[str, str]:
 
 def main() -> int:
     args = parse_args()
-    reports = build_reports(args.results_dir)
     args.reports_dir.mkdir(parents=True, exist_ok=True)
+    results_link = Path(
+        os.path.relpath(args.results_dir.resolve(), start=args.reports_dir.resolve())
+    ).as_posix()
+    reports = build_reports(args.results_dir, results_link)
     for report_id, content in reports.items():
         path = args.reports_dir / REPORT_FILENAMES[report_id]
         path.write_text(content, encoding="utf-8")

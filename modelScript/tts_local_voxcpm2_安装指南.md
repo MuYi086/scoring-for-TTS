@@ -89,7 +89,7 @@ conda run -n voxcpm2 python -c "from voxcpm import VoxCPM; m=VoxCPM.from_pretrai
 
 ```bash
 conda activate voxcpm2
-cd /path/to/timbre-design
+cd /path/to/scoring-for-TTS
 python modelScript/tts_local_voxcpm2.py --local-files-only
 ```
 

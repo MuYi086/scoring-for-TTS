@@ -86,7 +86,7 @@ Warning: flash-attn is not installed.
 
 ```bash
 conda activate qwen3-tts
-cd ~/github/timbre-design
+cd ~/github/scoring-for-TTS
 python modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py --local-files-only
 ```
 

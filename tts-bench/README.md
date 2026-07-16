@@ -59,18 +59,35 @@ conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
 
 需要降低单一评价器偏差时，使用 `neutral-evaluation-v2.json` 的六后端流程。它分别运行 SenseVoice CER、Whisper CER、WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2 和 NISQA-TTS，不计算跨指标加权总分；CER 与自然度包含原始参考音频基线，说话人相似度包含同说话人分段和跨角色校准对照。
 
+新电脑的完整环境与权重准备以 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 为准。基础环境、Python 依赖和冻结评价资产分别在 `environment/` 与 `config/evaluation-assets-v2.json`。
+
+正式运行前先检查包版本、CUDA、权重、24 条克隆 WAV 和登记哈希：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_setup.py \
+  --strict-versions
+```
+
+仓库已经包含历史报告；每次复测必须指定新的输出目录：
+
 ```bash
 HF_MIRROR_ROOT=~/hf-mirror \
 HF_HOME=~/hf-mirror/huggingface-cache \
 HF_HUB_OFFLINE=1 \
 TRANSFORMERS_OFFLINE=1 \
-conda run -n audio_eval python tts-bench/scripts/run_neutral_evaluation_v2.py --strict
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v2.py \
+  --output-dir tts-bench/reports/replay-YYYYMMDDTHHMMSSZ \
+  --strict
 ```
 
 评测按后端逐项落盘。中断后使用相同输出目录增加 `--resume`，并可通过 `--metrics` 只重跑指定后端。全部覆盖完整后生成三份报告：
 
 ```bash
-python tts-bench/scripts/generate_neutral_v2_reports.py
+python tts-bench/scripts/generate_neutral_v2_reports.py \
+  --results-dir tts-bench/reports/replay-YYYYMMDDTHHMMSSZ \
+  --reports-dir tts-bench/reports/replay-YYYYMMDDTHHMMSSZ/reports
 ```
 
 V2 原始结果包括 `per_audio.jsonl`、`speaker_similarity.jsonl`、`speaker_calibration.jsonl` 和 `run_metadata.json`。UTMOSv2 固定随机种子并对每条音频做五次裁剪平均，避免默认单次随机裁剪造成批次漂移。

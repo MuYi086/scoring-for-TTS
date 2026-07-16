@@ -44,3 +44,14 @@ def test_current_complete_results_render_all_requested_reports() -> None:
     assert "不把二者平均成一个总分" in reports["cer"]
     assert "校准对照" in reports["sim"]
     assert "5 次裁剪" in reports["quality"]
+
+
+def test_custom_results_link_is_used_for_evidence_links() -> None:
+    script = load_script()
+    reports = script.build_reports(
+        ROOT / "tts-bench/reports/task3-2026-07-16-v2",
+        results_link="../raw/task3-v2",
+    )
+
+    assert "(../raw/task3-v2/per_audio.jsonl)" in reports["cer"]
+    assert "(../raw/task3-v2/speaker_similarity.jsonl)" in reports["sim"]

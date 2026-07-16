@@ -80,7 +80,7 @@ IndexTTS2 import ok
 
 ```bash
 cd /path/to/index-tts
-uv run python /path/to/timbre-design/modelScript/tts_local_indextts2.py \
+uv run python /path/to/scoring-for-TTS/modelScript/tts_local_indextts2.py \
   --model-path /path/to/IndexTTS-2 \
   --code-path /path/to/index-tts \
   --local-files-only
@@ -102,7 +102,7 @@ python modelScript/tts_local_indextts2.py \
 仅使用音色参考时：
 
 ```bash
-uv run python /path/to/timbre-design/modelScript/tts_local_indextts2.py \
+uv run python /path/to/scoring-for-TTS/modelScript/tts_local_indextts2.py \
   --model-path /path/to/IndexTTS-2 \
   --code-path /path/to/index-tts \
   --ref-audio /path/to/speaker.wav
@@ -111,7 +111,7 @@ uv run python /path/to/timbre-design/modelScript/tts_local_indextts2.py \
 使用另一段音频提供情感，但保留 `--ref-audio` 的音色：
 
 ```bash
-uv run python /path/to/timbre-design/modelScript/tts_local_indextts2.py \
+uv run python /path/to/scoring-for-TTS/modelScript/tts_local_indextts2.py \
   --model-path /path/to/IndexTTS-2 \
   --code-path /path/to/index-tts \
   --ref-audio /path/to/speaker.wav \
@@ -122,7 +122,7 @@ uv run python /path/to/timbre-design/modelScript/tts_local_indextts2.py \
 使用文本情感描述：
 
 ```bash
-uv run python /path/to/timbre-design/modelScript/tts_local_indextts2.py \
+uv run python /path/to/scoring-for-TTS/modelScript/tts_local_indextts2.py \
   --model-path /path/to/IndexTTS-2 \
   --code-path /path/to/index-tts \
   --emo-text "语气紧张、急促，但发音清晰"
