@@ -1,0 +1,96 @@
+{
+  "audio_count": 27,
+  "calibration_pair_count": 6,
+  "config": {
+    "case_labels": {
+      "task2_apprentice_mage": "见习魔法师",
+      "task2_narrator": "旁白",
+      "task2_princess": "小公主"
+    },
+    "expected_model_count": 8,
+    "manifest_path": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+    "nisqa": {
+      "batch_size": 8,
+      "checkpoint_path": "weights/nisqa_tts.tar",
+      "device": "cpu",
+      "model_name": "NISQA-TTS v1.0",
+      "repository_id": "NISQA"
+    },
+    "policy": {
+      "normalization_id": "zh-v1",
+      "ranking": "各后端独立报告原始值和名次，不跨量纲加权，不设置未经校准的通过阈值。",
+      "reference_baseline": "CER 与自然度同时评价三条原始参考音频；说话人相似度另设同说话人分段与跨角色原始音频校准对照。"
+    },
+    "schema_version": "2.0",
+    "sensevoice": {
+      "device": "cuda",
+      "language": "zh",
+      "model_id": "FunAudioLLM/SenseVoiceSmall"
+    },
+    "speechbrain_ecapa": {
+      "device": "cuda",
+      "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "sample_rate_hz": 16000
+    },
+    "utmosv2": {
+      "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+      "device": "cuda:0",
+      "inference_seed": 20260716,
+      "num_repetitions": 5,
+      "remove_silent_section": true
+    },
+    "wavlm": {
+      "device": "cuda",
+      "model_id": "microsoft/wavlm-base-sv",
+      "sample_rate_hz": 16000
+    },
+    "whisper": {
+      "device": "cuda",
+      "language": "zh",
+      "model_id": "openai/whisper-large-v3-turbo",
+      "task": "transcribe"
+    }
+  },
+  "coverage": {
+    "nisqa": {
+      "complete": 27,
+      "expected": 27
+    },
+    "sensevoice_cer": {
+      "complete": 27,
+      "expected": 27
+    },
+    "speechbrain_ecapa_sim": {
+      "complete": 30,
+      "expected": 30
+    },
+    "utmosv2": {
+      "complete": 27,
+      "expected": 27
+    },
+    "wavlm_sim": {
+      "complete": 30,
+      "expected": 30
+    },
+    "whisper_cer": {
+      "complete": 27,
+      "expected": 27
+    }
+  },
+  "cross_metric_weighted_score": false,
+  "offline": true,
+  "package_versions": {
+    "funasr": "1.3.9",
+    "speechbrain": "1.1.0",
+    "torch": "2.12.0",
+    "torchaudio": "2.11.0",
+    "transformers": "5.12.0",
+    "utmosv2": "1.3.1.dev0"
+  },
+  "schema_version": "2.0",
+  "selected_metrics_this_invocation": [
+    "utmosv2"
+  ],
+  "synthesis_pair_count": 24,
+  "updated_at": "2026-07-16T13:49:36.225127+00:00"
+}

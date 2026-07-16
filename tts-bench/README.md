@@ -55,6 +55,26 @@ conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
 
 `configured_score` 是将预先冻结的归一化区间与权重应用到同一批结果的排序工具，不是人类主观 MOS；个人对停顿、语气和情绪的试听记录不参与它。
 
+## V2 双后端中立评测
+
+需要降低单一评价器偏差时，使用 `neutral-evaluation-v2.json` 的六后端流程。它分别运行 SenseVoice CER、Whisper CER、WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2 和 NISQA-TTS，不计算跨指标加权总分；CER 与自然度包含原始参考音频基线，说话人相似度包含同说话人分段和跨角色校准对照。
+
+```bash
+HF_MIRROR_ROOT=~/hf-mirror \
+HF_HOME=~/hf-mirror/huggingface-cache \
+HF_HUB_OFFLINE=1 \
+TRANSFORMERS_OFFLINE=1 \
+conda run -n audio_eval python tts-bench/scripts/run_neutral_evaluation_v2.py --strict
+```
+
+评测按后端逐项落盘。中断后使用相同输出目录增加 `--resume`，并可通过 `--metrics` 只重跑指定后端。全部覆盖完整后生成三份报告：
+
+```bash
+python tts-bench/scripts/generate_neutral_v2_reports.py
+```
+
+V2 原始结果包括 `per_audio.jsonl`、`speaker_similarity.jsonl`、`speaker_calibration.jsonl` 和 `run_metadata.json`。UTMOSv2 固定随机种子并对每条音频做五次裁剪平均，避免默认单次随机裁剪造成批次漂移。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。

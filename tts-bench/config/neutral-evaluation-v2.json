@@ -1,0 +1,50 @@
+{
+  "schema_version": "2.0",
+  "manifest_path": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "expected_model_count": 8,
+  "case_labels": {
+    "task2_narrator": "旁白",
+    "task2_princess": "小公主",
+    "task2_apprentice_mage": "见习魔法师"
+  },
+  "sensevoice": {
+    "model_id": "FunAudioLLM/SenseVoiceSmall",
+    "device": "cuda",
+    "language": "zh"
+  },
+  "whisper": {
+    "model_id": "openai/whisper-large-v3-turbo",
+    "device": "cuda",
+    "language": "zh",
+    "task": "transcribe"
+  },
+  "wavlm": {
+    "model_id": "microsoft/wavlm-base-sv",
+    "device": "cuda",
+    "sample_rate_hz": 16000
+  },
+  "speechbrain_ecapa": {
+    "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+    "device": "cuda",
+    "sample_rate_hz": 16000
+  },
+  "utmosv2": {
+    "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+    "device": "cuda:0",
+    "inference_seed": 20260716,
+    "num_repetitions": 5,
+    "remove_silent_section": true
+  },
+  "nisqa": {
+    "repository_id": "NISQA",
+    "checkpoint_path": "weights/nisqa_tts.tar",
+    "device": "cpu",
+    "batch_size": 8,
+    "model_name": "NISQA-TTS v1.0"
+  },
+  "policy": {
+    "normalization_id": "zh-v1",
+    "ranking": "各后端独立报告原始值和名次，不跨量纲加权，不设置未经校准的通过阈值。",
+    "reference_baseline": "CER 与自然度同时评价三条原始参考音频；说话人相似度另设同说话人分段与跨角色原始音频校准对照。"
+  }
+}

@@ -409,7 +409,7 @@ class WhisperAsrEvaluator:
     def __init__(self, config: dict[str, Any], allow_model_download: bool):
         try:
             import torch
-            from transformers import pipeline
+            from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
         except ImportError as exc:
             raise RuntimeError("ASR 依赖缺失：需要 transformers、torch。") from exc
         device = 0 if config["device"] == "cuda" and torch.cuda.is_available() else -1
@@ -418,11 +418,21 @@ class WhisperAsrEvaluator:
         model_id = str(config["model_id"])
         model_source = resolve_mirrored_model(model_id)
         try:
+            local_files_only = not allow_model_download
+            model = AutoModelForSpeechSeq2Seq.from_pretrained(
+                model_source,
+                local_files_only=local_files_only,
+            )
+            processor = AutoProcessor.from_pretrained(
+                model_source,
+                local_files_only=local_files_only,
+            )
             self.pipeline = pipeline(
                 "automatic-speech-recognition",
-                model=model_source,
+                model=model,
+                tokenizer=processor.tokenizer,
+                feature_extractor=processor.feature_extractor,
                 device=device,
-                local_files_only=not allow_model_download,
             )
         except Exception as exc:  # transformers 的异常类型随版本变化。
             mode = "本地缓存" if not allow_model_download else "下载或加载"
@@ -503,9 +513,32 @@ class UtmosV2Evaluator:
             pretrained=True,
             checkpoint_path=checkpoint_path,
         )
+        self.device = str(config.get("device", "cuda:0"))
+        self.inference_seed = int(config.get("inference_seed", 42))
+        self.num_repetitions = int(config.get("num_repetitions", 1))
+        self.remove_silent_section = bool(config.get("remove_silent_section", True))
+        if self.num_repetitions < 1:
+            raise ValueError("UTMOSv2 num_repetitions 必须大于 0")
 
     def predict(self, audio_path: Path) -> float:
-        score = self.model.predict(input_path=str(audio_path))
+        try:
+            import numpy as np
+            import torch
+        except ImportError as exc:
+            raise RuntimeError("UTMOSv2 推理需要 numpy、torch。") from exc
+        if self.device.startswith("cuda") and not torch.cuda.is_available():
+            raise RuntimeError("配置要求 CUDA，但当前 PyTorch 未检测到可用 CUDA。")
+        np.random.seed(self.inference_seed)
+        torch.manual_seed(self.inference_seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(self.inference_seed)
+        score = self.model.predict(
+            input_path=str(audio_path),
+            device=self.device,
+            num_repetitions=self.num_repetitions,
+            remove_silent_section=self.remove_silent_section,
+            verbose=False,
+        )
         return float(score.item() if hasattr(score, "item") else score)
 
 

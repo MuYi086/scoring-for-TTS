@@ -21,13 +21,31 @@ def load_script():
     return module
 
 
-def test_whisper_pipeline_receives_local_files_only_as_top_level_option(monkeypatch) -> None:
+def test_whisper_loads_model_and_processor_offline_before_building_pipeline(monkeypatch) -> None:
     script = load_script()
     captured: dict[str, object] = {}
 
     fake_torch = ModuleType("torch")
     fake_torch.cuda = type("FakeCuda", (), {"is_available": staticmethod(lambda: False)})()
     fake_transformers = ModuleType("transformers")
+    fake_model = object()
+    fake_processor = type(
+        "FakeProcessor",
+        (),
+        {"tokenizer": object(), "feature_extractor": object()},
+    )()
+
+    class FakeAutoModel:
+        @staticmethod
+        def from_pretrained(source: str, **kwargs):
+            captured["model_load"] = (source, kwargs)
+            return fake_model
+
+    class FakeAutoProcessor:
+        @staticmethod
+        def from_pretrained(source: str, **kwargs):
+            captured["processor_load"] = (source, kwargs)
+            return fake_processor
 
     def fake_pipeline(task: str, **kwargs):
         captured["task"] = task
@@ -35,6 +53,8 @@ def test_whisper_pipeline_receives_local_files_only_as_top_level_option(monkeypa
         return object()
 
     fake_transformers.pipeline = fake_pipeline
+    fake_transformers.AutoModelForSpeechSeq2Seq = FakeAutoModel
+    fake_transformers.AutoProcessor = FakeAutoProcessor
     monkeypatch.setitem(sys.modules, "torch", fake_torch)
     monkeypatch.setitem(sys.modules, "transformers", fake_transformers)
 
@@ -49,8 +69,18 @@ def test_whisper_pipeline_receives_local_files_only_as_top_level_option(monkeypa
     )
 
     assert captured["task"] == "automatic-speech-recognition"
-    assert captured["local_files_only"] is True
-    assert "model_kwargs" not in captured
+    assert captured["model_load"] == (
+        "openai/whisper-large-v3-turbo",
+        {"local_files_only": True},
+    )
+    assert captured["processor_load"] == (
+        "openai/whisper-large-v3-turbo",
+        {"local_files_only": True},
+    )
+    assert captured["model"] is fake_model
+    assert captured["tokenizer"] is fake_processor.tokenizer
+    assert captured["feature_extractor"] is fake_processor.feature_extractor
+    assert "local_files_only" not in captured
 
 
 def test_mirror_root_resolves_local_models_and_rejects_missing(monkeypatch, tmp_path: Path) -> None:
@@ -79,18 +109,38 @@ def test_utmosv2_uses_the_mirrored_checkpoint(monkeypatch, tmp_path: Path) -> No
 
     fake_utmosv2 = ModuleType("utmosv2")
 
+    class FakeModel:
+        def predict(self, **kwargs):
+            captured["predict"] = kwargs
+            return 3.5
+
     def fake_create_model(**kwargs):
         captured.update(kwargs)
-        return object()
+        return FakeModel()
 
     fake_utmosv2.create_model = fake_create_model
     monkeypatch.setitem(sys.modules, "utmosv2", fake_utmosv2)
 
-    script.UtmosV2Evaluator(
-        {"checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth"}
+    evaluator = script.UtmosV2Evaluator(
+        {
+            "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+            "device": "cpu",
+            "inference_seed": 123,
+            "num_repetitions": 5,
+            "remove_silent_section": False,
+        }
     )
 
     assert captured == {"pretrained": True, "checkpoint_path": str(checkpoint)}
+
+    assert evaluator.predict(tmp_path / "sample.wav") == 3.5
+    assert captured["predict"] == {
+        "input_path": str(tmp_path / "sample.wav"),
+        "device": "cpu",
+        "num_repetitions": 5,
+        "remove_silent_section": False,
+        "verbose": False,
+    }
 
 
 def test_sensevoice_uses_mirror_and_removes_control_tags(monkeypatch, tmp_path: Path) -> None:
