@@ -1,6 +1,6 @@
 # TTS 与音色设计评估工作区
 
-本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。当前推荐的 V2 中立流程使用六个独立后端，不把不同量纲强行合成一个总分：
+本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口与 Task 4 V3 专项评测均使用六个独立后端，不把不同量纲强行合成一个总分：
 
 - SenseVoice CER + Whisper CER；
 - WavLM SIM + SpeechBrain ECAPA SIM；
@@ -29,7 +29,27 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/*.wav`，也不包含 `hf-mirror` 权重。只执行 `git clone` 不能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/*.wav` 与 `cloneData/audio_v3/*.wav`，也不包含 `hf-mirror` 权重。只执行 `git clone` 不能直接开始评测。
+
+## Task 4 V3 复测
+
+V3 使用旁白、小公主、辰南三角色的 24 条克隆音频，输入记录与 V2 隔离在 `tts-bench/runs-v3/`。恢复 `cloneData/audio_v3/*.wav` 后，先用 V3 配置预检，再使用新输出目录运行：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_setup.py \
+  --runs-root tts-bench/runs-v3 \
+  --config tts-bench/config/neutral-evaluation-v3.json \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v3.py \
+  --output-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+完整的 V2/V3 权重、音频迁移、断点续跑与报告命令见 [`docs/跨电脑复测指南.md`](docs/跨电脑复测指南.md)。
 
 ## 目录入口
 

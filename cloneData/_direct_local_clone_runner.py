@@ -17,7 +17,7 @@ import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
-from _clone_test_support import CASES, OUTPUT_ROOT, REPO_ROOT, CloneCase, selected_cases
+from _clone_test_support import CASES, OUTPUT_ROOT, REPO_ROOT, CloneCase
 
 
 HF_MIRROR_ROOT = Path(os.environ.get("HF_MIRROR_ROOT", Path.home() / "hf-mirror")).expanduser()
@@ -114,14 +114,17 @@ MODEL_SPECS = {
 }
 
 
-def parse_args(spec: LocalModelSpec) -> argparse.Namespace:
+def parse_args(
+    spec: LocalModelSpec,
+    cases: tuple[CloneCase, ...] = CASES,
+) -> argparse.Namespace:
     """解析每个模型测试脚本共享的选择与安全参数。"""
 
     parser = argparse.ArgumentParser(description=f"{spec.model_name} 三角色本地克隆测试")
     parser.add_argument("--model-path", type=Path, default=spec.model_path, help="本地模型目录")
     parser.add_argument(
         "--character",
-        choices=[case.character for case in CASES],
+        choices=[case.character for case in cases],
         action="append",
         help="只测试指定角色；可重复传入。默认测试全部。",
     )
@@ -140,10 +143,26 @@ def require_paths(spec: LocalModelSpec, model_path: Path, cases: tuple[CloneCase
         raise FileNotFoundError("本地资产不存在：" + "；".join(missing))
 
 
-def output_path(spec: LocalModelSpec, case: CloneCase) -> Path:
+def selected_cases(
+    cases: tuple[CloneCase, ...],
+    characters: list[str] | None,
+) -> tuple[CloneCase, ...]:
+    """按声明顺序返回用户选择的角色；未选择时返回全部。"""
+
+    if not characters:
+        return cases
+    requested = set(characters)
+    return tuple(case for case in cases if case.character in requested)
+
+
+def output_path(
+    spec: LocalModelSpec,
+    case: CloneCase,
+    output_root: Path = OUTPUT_ROOT,
+) -> Path:
     """返回项目约定的模型加人物输出文件名。"""
 
-    return OUTPUT_ROOT / f"{spec.model_name}_{case.character}.wav"
+    return output_root / f"{spec.model_name}_{case.character}.wav"
 
 
 def command_for_case(
@@ -152,6 +171,7 @@ def command_for_case(
     case: CloneCase,
     text_path: Path,
     staging_dir: Path,
+    output_root: Path = OUTPUT_ROOT,
 ) -> list[str]:
     """构造原生模型 CLI 命令，不经任何中间服务。"""
 
@@ -171,7 +191,7 @@ def command_for_case(
     if spec.supports_exact_output:
         command.extend(("--output", str(staging_dir / "generated.wav")))
         if spec.slug == "omnivoice":
-            command.extend(("--runtime-cache-dir", str(OUTPUT_ROOT / spec.slug / ".runtime_cache")))
+            command.extend(("--runtime-cache-dir", str(output_root / ".runtime_cache" / spec.slug)))
     else:
         command.extend(("--output-dir", str(staging_dir)))
     return command
@@ -186,15 +206,19 @@ def generated_wav(staging_dir: Path) -> Path:
     return candidates[0]
 
 
-def run(spec: LocalModelSpec) -> int:
+def run(
+    spec: LocalModelSpec,
+    cases: tuple[CloneCase, ...] = CASES,
+    output_root: Path = OUTPUT_ROOT,
+) -> int:
     """执行一个本地模型的三角色集中克隆。"""
 
-    args = parse_args(spec)
-    cases = selected_cases(args.character)
+    args = parse_args(spec, cases)
+    cases = selected_cases(cases, args.character)
     model_path = args.model_path.expanduser().resolve()
     try:
         require_paths(spec, model_path, cases)
-        destinations = [output_path(spec, case) for case in cases]
+        destinations = [output_path(spec, case, output_root) for case in cases]
         if not args.overwrite:
             existing = [str(path) for path in destinations if path.exists()]
             if existing:
@@ -208,15 +232,22 @@ def run(spec: LocalModelSpec) -> int:
                 )
             return 0
 
-        OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
-        temporary_root = OUTPUT_ROOT / spec.slug / ".tmp"
+        output_root.mkdir(parents=True, exist_ok=True)
+        temporary_root = output_root / ".tmp" / spec.slug
         temporary_root.mkdir(parents=True, exist_ok=True)
         for case, destination in zip(cases, destinations, strict=True):
             with tempfile.TemporaryDirectory(prefix=f"{case.character}-", dir=temporary_root) as temporary:
                 staging_dir = Path(temporary)
                 text_path = staging_dir / "text.txt"
                 text_path.write_text(case.text + "\n", encoding="utf-8")
-                command = command_for_case(spec, model_path, case, text_path, staging_dir)
+                command = command_for_case(
+                    spec,
+                    model_path,
+                    case,
+                    text_path,
+                    staging_dir,
+                    output_root,
+                )
                 print(f"开始：{spec.model_name} / {case.character}")
                 print(f"命令：{shlex.join(command)}")
                 subprocess.run(command, cwd=REPO_ROOT, check=True)

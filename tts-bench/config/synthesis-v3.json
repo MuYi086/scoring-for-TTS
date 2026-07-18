@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "manifest": "tts-bench/manifests/task4-2026-07-19-v3.jsonl",
+  "output_root": "cloneData/audio_v3",
+  "reference_transcript": "SenseVoice 转写后按三段同模板录音校正",
+  "gpu_release": "通用本地模型每角色独立子进程；IndexTTS2 在 finally 中删除模型并清理 CUDA 缓存",
+  "models": {
+    "dots.tts-base": {
+      "runner": "cloneData/dots_tts_base/test_clone_dots_tts_base_v3.py",
+      "source_script": "modelScript/tts_local_dots_tts_base.py",
+      "version": "rednote-hilab/dots.tts-base local snapshot（未提供权重修订号）",
+      "parameters": {"precision": "bfloat16", "seed": 42, "num_steps": 10, "guidance_scale": 1.2, "speaker_scale": 1.5}
+    },
+    "IndexTTS2": {
+      "runner": "cloneData/indextts2/test_clone_indextts2_v3.py",
+      "source_script": "modelScript/tts_local_indextts2.py",
+      "version": "IndexTeam/IndexTTS-2 local snapshot（未提供权重修订号）",
+      "parameters": {"emo_alpha": 0.6, "num_beams": 1, "use_fp16": true, "emotion_vectors": "按 task4.md 逐角色冻结"}
+    },
+    "LongCat-AudioDiT-1B": {
+      "runner": "cloneData/longcat_audiodit_1b/test_clone_longcat_audiodit_1b_v3.py",
+      "source_script": "modelScript/tts_local_longcat_audiodit_1b.py",
+      "version": "meituan-longcat/LongCat-AudioDiT-1B local snapshot（未提供权重修订号）",
+      "parameters": {"nfe": 16, "guidance_method": "apg", "guidance_strength": 4.0, "vae_dtype": "float16"}
+    },
+    "mimo-v2.5-tts-voiceclone": {
+      "runner": "cloneData/mimo/test_clone_mimo_v3.py",
+      "source_script": "modelScript/tts_cloud_mimo.py",
+      "version": "MiMo 云端 API（2026-07-19）",
+      "parameters": {"base_url": "https://api.xiaomimimo.com/v1", "instruction": "", "audio_format": "wav"}
+    },
+    "MOSS-TTS-Local-Transformer-v1.5": {
+      "runner": "cloneData/moss_tts_local_transformer/test_clone_moss_tts_local_transformer_v3.py",
+      "source_script": "modelScript/tts_local_moss_tts_local_transformer.py",
+      "version": "OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5 local snapshot（未提供权重修订号）",
+      "parameters": {"codec": "OpenMOSS-Team/MOSS-Audio-Tokenizer-v2", "dtype": "bfloat16", "attention": "sdpa"}
+    },
+    "OmniVoice": {
+      "runner": "cloneData/omnivoice/test_clone_omnivoice_v3.py",
+      "source_script": "modelScript/tts_local_omnivoice.py",
+      "version": "k2-fsa/OmniVoice local snapshot（未提供权重修订号）",
+      "parameters": {"dtype": "float16", "seed": 42, "num_step": 32, "guidance_scale": 2.0}
+    },
+    "Qwen3-TTS-12Hz-1.7B-Base": {
+      "runner": "cloneData/qwen3_tts_12hz_1_7b_base/test_clone_qwen3_tts_12hz_1_7b_base_v3.py",
+      "source_script": "modelScript/tts_local_qwen3_tts_12hz_1_7b_base.py",
+      "version": "Qwen/Qwen3-TTS-12Hz-1.7B-Base local snapshot（未提供权重修订号）",
+      "parameters": {"dtype": "bfloat16", "attention": "sdpa", "max_new_tokens": 2048}
+    },
+    "VoxCPM2": {
+      "runner": "cloneData/voxcpm2/test_clone_voxcpm2_v3.py",
+      "source_script": "modelScript/tts_local_voxcpm2.py",
+      "version": "openbmb/VoxCPM2 local snapshot（未提供权重修订号）",
+      "parameters": {"cfg_value": 2.0, "inference_timesteps": 10, "seed": 20260614, "style_prompt": ""}
+    }
+  }
+}

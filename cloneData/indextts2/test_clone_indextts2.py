@@ -90,14 +90,17 @@ CASES = (
 )
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(
+    cases: tuple[CloneCase, ...] = CASES,
+    default_output_dir: Path = DEFAULT_OUTPUT_DIR,
+) -> argparse.Namespace:
     """解析直接推理的模型与输出参数。"""
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-path", type=Path, default=DEFAULT_MODEL_PATH, help="IndexTTS-2 本地权重目录")
     parser.add_argument("--code-path", type=Path, default=DEFAULT_CODE_PATH, help="index-tts 官方源码目录")
     parser.add_argument("--config-path", type=Path, default=None, help="默认使用 <model-path>/config.yaml")
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="输出目录，默认 cloneData/")
+    parser.add_argument("--output-dir", type=Path, default=default_output_dir, help="输出目录")
     parser.add_argument("--runtime-cache-dir", type=Path, default=DEFAULT_RUNTIME_CACHE_DIR)
     parser.add_argument("--device", default=os.environ.get("INDEXTTS_DEVICE") or None)
     parser.add_argument("--emo-alpha", type=float, default=0.6, help="情感向量混合强度，沿用原服务的 0.6")
@@ -106,7 +109,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--allow-cpu", action="store_true", help="明确允许极慢 CPU 推理")
     parser.add_argument(
         "--character",
-        choices=[case.character for case in CASES],
+        choices=[case.character for case in cases],
         action="append",
         help="只克隆指定角色；重复传入可选择多个。默认全部。",
     )
@@ -114,13 +117,16 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def selected_cases(characters: list[str] | None) -> tuple[CloneCase, ...]:
+def selected_cases(
+    characters: list[str] | None,
+    cases: tuple[CloneCase, ...] = CASES,
+) -> tuple[CloneCase, ...]:
     """按固定声明顺序过滤角色。"""
 
     if not characters:
-        return CASES
+        return cases
     requested = set(characters)
-    return tuple(case for case in CASES if case.character in requested)
+    return tuple(case for case in cases if case.character in requested)
 
 
 def prepare_environment(runtime_cache_dir: Path) -> None:
@@ -302,11 +308,14 @@ def run_cases(args: argparse.Namespace, cases: tuple[CloneCase, ...]) -> int:
         print("IndexTTS2 已卸载，已请求释放 CUDA 缓存。")
 
 
-def main() -> int:
+def main(
+    cases: tuple[CloneCase, ...] = CASES,
+    default_output_dir: Path = DEFAULT_OUTPUT_DIR,
+) -> int:
     """运行命令行入口。"""
 
-    args = parse_args()
-    cases = selected_cases(args.character)
+    args = parse_args(cases, default_output_dir)
+    cases = selected_cases(args.character, cases)
     try:
         if args.dry_run:
             preflight(args, cases)

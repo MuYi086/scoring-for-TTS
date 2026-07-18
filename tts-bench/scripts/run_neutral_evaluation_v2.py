@@ -575,8 +575,9 @@ def save_state(
     )
 
 
-def main() -> int:
-    args = parse_args()
+def run(args: argparse.Namespace) -> int:
+    """使用已解析参数执行一次六后端评测。"""
+
     config = load_json(args.config)
     validate_config(config)
     selected_metrics = list(dict.fromkeys(args.metrics))
@@ -654,6 +655,10 @@ def main() -> int:
         print(f"以下后端结果不完整：{', '.join(incomplete_selected)}", file=sys.stderr)
         return 2
     return 0
+
+
+def main() -> int:
+    return run(parse_args())
 
 
 if __name__ == "__main__":

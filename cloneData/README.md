@@ -20,3 +20,15 @@
 本地 Hugging Face 模型统一从 `HF_MIRROR_ROOT` 读取，默认目录为 `~/hf-mirror`。LongCat 与 IndexTTS2 需要的官方源码默认从仓库同级的 `TTS-and-VoiceDesign/api/vendor` 定位；目录布局不同时设置 `TTS_VENDOR_ROOT`。脚本和文档不保存机器专属绝对路径。
 
 MiMo 是云端模型，没有可用的本地 conda 推理运行时；它的测试脚本直接调用官方云端接口，不经过本地后端，运行前需要在环境中设置 `MIMO_API_KEY`。不得将该密钥写入仓库或脚本。
+
+## Task 4 V3 用例
+
+V3 脚本名称统一带 `_v3`，使用 `testData/mimo_<人物>_v3.wav` 三段参考音频，角色为旁白、小公主和辰南。所有输出写入 `cloneData/audio_v3/`，命名为 `<模型名>_<人物>.wav`，不会覆盖上一轮音频。
+
+本地模型使用对应的 `run_clone_*_v3.sh`；MiMo 使用：
+
+```bash
+python cloneData/mimo/test_clone_mimo_v3.py
+```
+
+每个通用本地模型的角色都在独立子进程中生成，完成后子进程退出；IndexTTS2 在一次加载中串行完成三个角色，并在 `finally` 中删除模型对象和清理 CUDA 缓存。两种路径都不会让模型常驻显存。运行前可加 `--dry-run`预检，重跑通用脚本或 MiMo 时需加 `--overwrite`。

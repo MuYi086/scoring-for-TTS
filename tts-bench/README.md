@@ -12,6 +12,7 @@ tts-bench/
 ├── manifests/       # 冻结的 case 清单，JSON Lines（每行一个样本）
 ├── reports/         # 可提交的汇总报告与决策记录
 ├── runs/            # 每次模型运行的可追溯证据；其中音频不提交
+├── runs-v3/         # Task 4 V3 独立的八模型合成记录
 ├── scripts/         # 一键批量客观评估入口
 └── templates/       # 新建运行和汇总时复制的模板
 ```
@@ -91,6 +92,36 @@ python tts-bench/scripts/generate_neutral_v2_reports.py \
 ```
 
 V2 原始结果包括 `per_audio.jsonl`、`speaker_similarity.jsonl`、`speaker_calibration.jsonl` 和 `run_metadata.json`。UTMOSv2 固定随机种子并对每条音频做五次裁剪平均，避免默认单次随机裁剪造成批次漂移。
+
+## Task 4 V3 中立评测
+
+V3 沿用同一套六后端和 `evaluation-assets-v2.json` 冻结权重，但参考音频、目标文本、角色与合成记录全部独立。评测输入是 `runs-v3/` 登记的 8 模型 × 3 角色矩阵，对应本地音频位于 `cloneData/audio_v3/`。
+
+正式评分前必须预检：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_setup.py \
+  --runs-root tts-bench/runs-v3 \
+  --config tts-bench/config/neutral-evaluation-v3.json \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+```
+
+每次复测使用新的输出目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v3.py \
+  --output-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ \
+  --strict
+
+python tts-bench/scripts/generate_neutral_v3_reports.py \
+  --results-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ \
+  --reports-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ/reports
+```
+
+断点续跑仅能对同一次未完成运行的相同目录使用 `--resume`。三份报告分别保留双 CER、双 SIM 和双自然度后端的原始值与独立名次，不计算跨量纲总分。
 
 ## 新建一次合成运行
 
