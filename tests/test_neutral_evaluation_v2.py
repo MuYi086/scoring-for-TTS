@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 from pathlib import Path
 from types import ModuleType
@@ -39,8 +40,8 @@ def test_calibration_contains_three_positive_and_three_negative_pairs() -> None:
     script = load_script()
     references = [
         make_audio(script, "reference:a", "a", "旁白"),
-        make_audio(script, "reference:b", "b", "小公主"),
-        make_audio(script, "reference:c", "c", "见习魔法师"),
+        make_audio(script, "reference:b", "b", "辰南"),
+        make_audio(script, "reference:c", "c", "小公主"),
     ]
 
     rows = script.build_calibration_records(references)
@@ -90,6 +91,21 @@ def test_metric_coverage_counts_audio_and_similarity_backends_separately() -> No
     assert coverage["nisqa"] == {"complete": 1, "expected": 2}
     assert coverage["wavlm_sim"] == {"complete": 2, "expected": 2}
     assert coverage["speechbrain_ecapa_sim"] == {"complete": 1, "expected": 2}
+
+
+def test_v2_config_and_entry_defaults_are_isolated(monkeypatch) -> None:
+    config = json.loads(
+        (ROOT / "tts-bench/config/neutral-evaluation-v2.json").read_text(encoding="utf-8")
+    )
+    assert config["expected_model_count"] == 8
+    assert set(config["case_labels"].values()) == {"旁白", "辰南", "小公主"}
+    assert config["manifest_path"] == "tts-bench/manifests/task3-2026-07-19-v2.jsonl"
+
+    script = load_script()
+    monkeypatch.setattr(sys, "argv", ["run_neutral_evaluation_v2.py"])
+    args = script.parse_args()
+    assert args.runs_root == ROOT / "tts-bench/runs-v2"
+    assert args.output_dir == ROOT / "tts-bench/reports/task3-2026-07-19-v2-r02"
 
 
 def test_speechbrain_uses_local_override_instead_of_remote_pretrainer(monkeypatch) -> None:

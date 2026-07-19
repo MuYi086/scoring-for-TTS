@@ -111,7 +111,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--runs-root",
         type=Path,
-        default=PROJECT_ROOT / "tts-bench" / "runs",
+        default=PROJECT_ROOT / "tts-bench" / "runs-v2",
         help="包含多个 <run_id>/synthesis.jsonl 的目录。",
     )
     parser.add_argument(
@@ -123,7 +123,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=PROJECT_ROOT / "tts-bench" / "reports" / "task3-2026-07-16-v2",
+        default=PROJECT_ROOT / "tts-bench" / "reports" / "task3-2026-07-19-v2-r02",
         help="原始结果目录。",
     )
     parser.add_argument(

@@ -38,18 +38,21 @@ def test_dense_ranks_keep_ties_and_metric_direction() -> None:
 
 def test_current_complete_results_render_all_requested_reports() -> None:
     script = load_script()
-    reports = script.build_reports(ROOT / "tts-bench/reports/task3-2026-07-16-v2")
+    reports = script.build_reports(ROOT / "tts-bench/reports/task3-2026-07-19-v2-r02")
 
     assert set(reports) == {"cer", "sim", "quality"}
     assert "不把二者平均成一个总分" in reports["cer"]
     assert "校准对照" in reports["sim"]
     assert "5 次裁剪" in reports["quality"]
+    assert "辰南" in reports["cer"] and "辰南" in reports["sim"] and "辰南" in reports["quality"]
+    assert "**7/8** 与 **4/8**" in reports["quality"]
+    assert "全部克隆模型的宏平均都低于" not in reports["quality"]
 
 
 def test_custom_results_link_is_used_for_evidence_links() -> None:
     script = load_script()
     reports = script.build_reports(
-        ROOT / "tts-bench/reports/task3-2026-07-16-v2",
+        ROOT / "tts-bench/reports/task3-2026-07-19-v2-r02",
         results_link="../raw/task3-v2",
     )
 

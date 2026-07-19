@@ -11,7 +11,8 @@ tts-bench/
 ├── config/          # 自动评价器、阈值、归一化区间和权重的冻结配置
 ├── manifests/       # 冻结的 case 清单，JSON Lines（每行一个样本）
 ├── reports/         # 可提交的汇总报告与决策记录
-├── runs/            # 每次模型运行的可追溯证据；其中音频不提交
+├── runs/            # 历史 V1 合成记录；其中音频不提交
+├── runs-v2/         # Task 3 V2 独立的八模型合成记录
 ├── runs-v3/         # Task 4 V3 独立的八模型合成记录
 ├── scripts/         # 一键批量客观评估入口
 └── templates/       # 新建运行和汇总时复制的模板
@@ -58,7 +59,7 @@ conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
 
 ## V2 双后端中立评测
 
-需要降低单一评价器偏差时，使用 `neutral-evaluation-v2.json` 的六后端流程。它分别运行 SenseVoice CER、Whisper CER、WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2 和 NISQA-TTS，不计算跨指标加权总分；CER 与自然度包含原始参考音频基线，说话人相似度包含同说话人分段和跨角色校准对照。
+当前 V2 使用旁白、辰南、小公主三角色，冻结清单为 `manifests/task3-2026-07-19-v2.jsonl`，合成记录和音频分别位于 `runs-v2/` 与 `../cloneData/audio_v2/`。`neutral-evaluation-v2.json` 的六后端流程分别运行 SenseVoice CER、Whisper CER、WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2 和 NISQA-TTS，不计算跨指标加权总分；CER 与自然度包含原始参考音频基线，说话人相似度包含同说话人分段和跨角色校准对照。
 
 新电脑的完整环境与权重准备以 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 为准。基础环境、Python 依赖和冻结评价资产分别在 `environment/` 与 `config/evaluation-assets-v2.json`。
 
@@ -67,6 +68,9 @@ conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
 ```bash
 conda run --no-capture-output -n audio_eval \
   python tts-bench/scripts/check_neutral_evaluation_setup.py \
+  --runs-root tts-bench/runs-v2 \
+  --config tts-bench/config/neutral-evaluation-v2.json \
+  --assets tts-bench/config/evaluation-assets-v2.json \
   --strict-versions
 ```
 
@@ -79,7 +83,8 @@ HF_HUB_OFFLINE=1 \
 TRANSFORMERS_OFFLINE=1 \
 conda run --no-capture-output -n audio_eval \
   python tts-bench/scripts/run_neutral_evaluation_v2.py \
-  --output-dir tts-bench/reports/replay-YYYYMMDDTHHMMSSZ \
+  --runs-root tts-bench/runs-v2 \
+  --output-dir tts-bench/reports/replay-v2-YYYYMMDDTHHMMSSZ \
   --strict
 ```
 

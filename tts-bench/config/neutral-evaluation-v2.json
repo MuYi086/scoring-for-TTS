@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
-  "manifest_path": "tts-bench/manifests/task2-2026-07-16-v1.jsonl",
+  "manifest_path": "tts-bench/manifests/task3-2026-07-19-v2.jsonl",
   "expected_model_count": 8,
   "case_labels": {
-    "task2_narrator": "旁白",
-    "task2_princess": "小公主",
-    "task2_apprentice_mage": "见习魔法师"
+    "task3_v2_narrator": "旁白",
+    "task3_v2_chennan": "辰南",
+    "task3_v2_princess": "小公主"
   },
   "sensevoice": {
     "model_id": "FunAudioLLM/SenseVoiceSmall",
@@ -31,7 +31,7 @@
   "utmosv2": {
     "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
     "device": "cuda:0",
-    "inference_seed": 20260716,
+    "inference_seed": 20260719,
     "num_repetitions": 5,
     "remove_silent_section": true
   },
@@ -45,6 +45,6 @@
   "policy": {
     "normalization_id": "zh-v1",
     "ranking": "各后端独立报告原始值和名次，不跨量纲加权，不设置未经校准的通过阈值。",
-    "reference_baseline": "CER 与自然度同时评价三条原始参考音频；说话人相似度另设同说话人分段与跨角色原始音频校准对照。"
+    "reference_baseline": "CER 与自然度同时评价三条 V2 原始参考音频；说话人相似度另设同说话人分段与跨角色原始音频校准对照。"
   }
 }

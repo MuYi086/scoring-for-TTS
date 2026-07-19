@@ -59,7 +59,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--runs-root",
         type=Path,
-        default=PROJECT_ROOT / "tts-bench" / "runs",
+        default=PROJECT_ROOT / "tts-bench" / "runs-v2",
     )
     parser.add_argument(
         "--config",

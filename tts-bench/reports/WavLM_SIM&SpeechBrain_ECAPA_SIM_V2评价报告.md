@@ -4,10 +4,10 @@
 
 本次将 24 条克隆音频逐一与同角色原始参考音频比较，并使用两个独立说话人表征后端计算余弦相似度。另加入 3 个同说话人前后半段对照和 3 个跨角色原始音频对照。两个后端各 30/30 完成，相似度越高越好。
 
-- WavLM 宏平均最高的是**dots.tts-base**：**0.9530**。
-- SpeechBrain ECAPA 宏平均最高的是**VoxCPM2**：**0.7959**。
-- 两套独立名次的 Spearman 秩相关为 **-0.167**；领先模型不同，不能把某一个后端当作唯一事实。
-- WavLM 的跨角色最高对照是“旁白原始音频 ↔ 见习魔法师原始音频”：**0.9429**，已经接近部分克隆对得分，说明本批数据不能使用未经校准的统一 WavLM 阈值。
+- WavLM 宏平均最高的是**OmniVoice**：**0.9837**。
+- SpeechBrain ECAPA 宏平均最高的是**LongCat-AudioDiT-1B**：**0.8520**。
+- 两套独立名次的 Spearman 秩相关为 **0.905**；领先模型不同，不能把某一个后端当作唯一事实。
+- WavLM 的跨角色最高对照是“旁白原始音频 ↔ 辰南原始音频”：**0.8718**，已经接近部分克隆对得分，说明本批数据不能使用未经校准的统一 WavLM 阈值。
 
 ## 模型宏平均
 
@@ -15,14 +15,14 @@
 
 | 模型 | WavLM SIM ↑ | 名次 | SpeechBrain ECAPA SIM ↑ | 名次 |
 | --- | ---: | ---: | ---: | ---: |
-| dots.tts-base | 0.9530 | 1 | 0.6859 | 8 |
-| IndexTTS2 | 0.9169 | 8 | 0.7635 | 5 |
-| LongCat-AudioDiT-1B | 0.9414 | 5 | 0.7948 | 2 |
-| mimo-v2.5-tts-voiceclone | 0.9429 | 4 | 0.7900 | 3 |
-| MOSS-TTS-Local-Transformer-v1.5 | 0.9327 | 6 | 0.7121 | 7 |
-| OmniVoice | 0.9205 | 7 | 0.7816 | 4 |
-| Qwen3-TTS-12Hz-1.7B-Base | 0.9496 | 2 | 0.7410 | 6 |
-| VoxCPM2 | 0.9461 | 3 | 0.7959 | 1 |
+| dots.tts-base | 0.9734 | 5 | 0.8025 | 5 |
+| IndexTTS2 | 0.9529 | 8 | 0.7984 | 6 |
+| LongCat-AudioDiT-1B | 0.9791 | 2 | 0.8520 | 1 |
+| mimo-v2.5-tts-voiceclone | 0.9738 | 4 | 0.8438 | 4 |
+| MOSS-TTS-Local-Transformer-v1.5 | 0.9613 | 7 | 0.7503 | 8 |
+| OmniVoice | 0.9837 | 1 | 0.8482 | 2 |
+| Qwen3-TTS-12Hz-1.7B-Base | 0.9645 | 6 | 0.7879 | 7 |
+| VoxCPM2 | 0.9779 | 3 | 0.8479 | 3 |
 
 ## 校准对照
 
@@ -30,49 +30,49 @@
 
 | 对照 | 类型 | WavLM SIM ↑ | SpeechBrain ECAPA SIM ↑ |
 | --- | --- | ---: | ---: |
-| 旁白原始音频前半段 ↔ 后半段 | 同说话人分段 | 0.9853 | 0.8369 |
-| 小公主原始音频前半段 ↔ 后半段 | 同说话人分段 | 0.9763 | 0.8423 |
-| 见习魔法师原始音频前半段 ↔ 后半段 | 同说话人分段 | 0.9847 | 0.8949 |
-| 旁白原始音频 ↔ 小公主原始音频 | 跨角色原始音频 | 0.6133 | 0.3039 |
-| 旁白原始音频 ↔ 见习魔法师原始音频 | 跨角色原始音频 | 0.9429 | 0.6354 |
-| 小公主原始音频 ↔ 见习魔法师原始音频 | 跨角色原始音频 | 0.7306 | 0.3216 |
-| 同说话人分段均值 | 汇总 | **0.9821** | **0.8580** |
-| 跨角色原始音频均值 | 汇总 | **0.7623** | **0.4203** |
+| 旁白原始音频前半段 ↔ 后半段 | 同说话人分段 | 0.9625 | 0.8420 |
+| 辰南原始音频前半段 ↔ 后半段 | 同说话人分段 | 0.9873 | 0.8300 |
+| 小公主原始音频前半段 ↔ 后半段 | 同说话人分段 | 0.9922 | 0.9036 |
+| 旁白原始音频 ↔ 辰南原始音频 | 跨角色原始音频 | 0.8718 | 0.5244 |
+| 旁白原始音频 ↔ 小公主原始音频 | 跨角色原始音频 | 0.4379 | 0.1841 |
+| 辰南原始音频 ↔ 小公主原始音频 | 跨角色原始音频 | 0.6021 | 0.2944 |
+| 同说话人分段均值 | 汇总 | **0.9806** | **0.8585** |
+| 跨角色原始音频均值 | 汇总 | **0.6373** | **0.3343** |
 
 ## 逐角色结果
 
 | 模型 | 角色 | WavLM SIM ↑ | SpeechBrain ECAPA SIM ↑ |
 | --- | --- | ---: | ---: |
-| dots.tts-base | 旁白 | 0.9812 | 0.7298 |
-| dots.tts-base | 小公主 | 0.9437 | 0.6281 |
-| dots.tts-base | 见习魔法师 | 0.9342 | 0.6998 |
-| IndexTTS2 | 旁白 | 0.9504 | 0.8756 |
-| IndexTTS2 | 小公主 | 0.8416 | 0.7110 |
-| IndexTTS2 | 见习魔法师 | 0.9586 | 0.7040 |
-| LongCat-AudioDiT-1B | 旁白 | 0.9637 | 0.8701 |
-| LongCat-AudioDiT-1B | 小公主 | 0.8948 | 0.6752 |
-| LongCat-AudioDiT-1B | 见习魔法师 | 0.9656 | 0.8392 |
-| mimo-v2.5-tts-voiceclone | 旁白 | 0.9374 | 0.8277 |
-| mimo-v2.5-tts-voiceclone | 小公主 | 0.9378 | 0.7478 |
-| mimo-v2.5-tts-voiceclone | 见习魔法师 | 0.9536 | 0.7946 |
-| MOSS-TTS-Local-Transformer-v1.5 | 旁白 | 0.9266 | 0.7147 |
-| MOSS-TTS-Local-Transformer-v1.5 | 小公主 | 0.9033 | 0.7151 |
-| MOSS-TTS-Local-Transformer-v1.5 | 见习魔法师 | 0.9683 | 0.7065 |
-| OmniVoice | 旁白 | 0.9622 | 0.8282 |
-| OmniVoice | 小公主 | 0.8242 | 0.7104 |
-| OmniVoice | 见习魔法师 | 0.9752 | 0.8062 |
-| Qwen3-TTS-12Hz-1.7B-Base | 旁白 | 0.9317 | 0.7680 |
-| Qwen3-TTS-12Hz-1.7B-Base | 小公主 | 0.9594 | 0.6957 |
-| Qwen3-TTS-12Hz-1.7B-Base | 见习魔法师 | 0.9576 | 0.7593 |
-| VoxCPM2 | 旁白 | 0.9779 | 0.8954 |
-| VoxCPM2 | 小公主 | 0.8929 | 0.6366 |
-| VoxCPM2 | 见习魔法师 | 0.9676 | 0.8557 |
+| dots.tts-base | 旁白 | 0.9872 | 0.7907 |
+| dots.tts-base | 辰南 | 0.9444 | 0.6995 |
+| dots.tts-base | 小公主 | 0.9887 | 0.9171 |
+| IndexTTS2 | 旁白 | 0.9797 | 0.8281 |
+| IndexTTS2 | 辰南 | 0.8899 | 0.6683 |
+| IndexTTS2 | 小公主 | 0.9892 | 0.8987 |
+| LongCat-AudioDiT-1B | 旁白 | 0.9760 | 0.7828 |
+| LongCat-AudioDiT-1B | 辰南 | 0.9741 | 0.8557 |
+| LongCat-AudioDiT-1B | 小公主 | 0.9872 | 0.9175 |
+| mimo-v2.5-tts-voiceclone | 旁白 | 0.9833 | 0.8701 |
+| mimo-v2.5-tts-voiceclone | 辰南 | 0.9550 | 0.7579 |
+| mimo-v2.5-tts-voiceclone | 小公主 | 0.9832 | 0.9034 |
+| MOSS-TTS-Local-Transformer-v1.5 | 旁白 | 0.9449 | 0.7304 |
+| MOSS-TTS-Local-Transformer-v1.5 | 辰南 | 0.9559 | 0.6744 |
+| MOSS-TTS-Local-Transformer-v1.5 | 小公主 | 0.9832 | 0.8459 |
+| OmniVoice | 旁白 | 0.9796 | 0.8422 |
+| OmniVoice | 辰南 | 0.9813 | 0.8127 |
+| OmniVoice | 小公主 | 0.9903 | 0.8896 |
+| Qwen3-TTS-12Hz-1.7B-Base | 旁白 | 0.9631 | 0.6847 |
+| Qwen3-TTS-12Hz-1.7B-Base | 辰南 | 0.9455 | 0.8149 |
+| Qwen3-TTS-12Hz-1.7B-Base | 小公主 | 0.9849 | 0.8640 |
+| VoxCPM2 | 旁白 | 0.9842 | 0.8218 |
+| VoxCPM2 | 辰南 | 0.9697 | 0.8248 |
+| VoxCPM2 | 小公主 | 0.9798 | 0.8970 |
 
 ## 结果解读
 
-WavLM 更偏好 dots.tts-base 与 Qwen3-TTS；ECAPA 更偏好 VoxCPM2、LongCat 和 MiMo。IndexTTS2 在 WavLM 宏平均中最低，但在 ECAPA 中居中；dots.tts-base 则从 WavLM 第一降到 ECAPA 最后。这不是计算错误，而是两个检查点的训练数据、嵌入空间和对音高、韵律、录音条件的敏感性不同。
+两个检查点的训练数据、嵌入空间，以及对音高、韵律和录音条件的敏感性不同，因此模型在两套后端中的相对次序可能变化。这种差异应作为模型选择的不确定性，而不是计算错误。
 
-尤其是旁白与见习魔法师都是男性声线，WavLM 对这两个原始角色给出 0.9429 的高跨角色分。因此报告只陈述同一后端内的相对次序，不把 SIM 解释为‘同一人概率’，也不设置通过线。
+跨角色原始音频对照显示，本批样本的高相似分并不天然等于同一说话人。因此报告只陈述同一后端内的相对次序，不把 SIM 解释为‘同一人概率’，也不设置通过线。
 
 ## 适用边界
 
@@ -80,7 +80,7 @@ WavLM 更偏好 dots.tts-base 与 Qwen3-TTS；ECAPA 更偏好 VoxCPM2、LongCat 
 
 ## 可追溯证据
 
-- 24 个克隆对：[`speaker_similarity.jsonl`](task3-2026-07-16-v2/speaker_similarity.jsonl)
-- 6 个校准对：[`speaker_calibration.jsonl`](task3-2026-07-16-v2/speaker_calibration.jsonl)
-- 完整覆盖与软件版本：[`run_metadata.json`](task3-2026-07-16-v2/run_metadata.json)
+- 24 个克隆对：[`speaker_similarity.jsonl`](task3-2026-07-19-v2-r02/speaker_similarity.jsonl)
+- 6 个校准对：[`speaker_calibration.jsonl`](task3-2026-07-19-v2-r02/speaker_calibration.jsonl)
+- 完整覆盖与软件版本：[`run_metadata.json`](task3-2026-07-19-v2-r02/run_metadata.json)
 - 冻结配置：[`neutral-evaluation-v2.json`](../config/neutral-evaluation-v2.json)

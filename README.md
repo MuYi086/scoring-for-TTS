@@ -17,7 +17,7 @@ conda env create -f tts-bench/environment/audio-eval-base.yml
 conda activate audio_eval
 ```
 
-然后按指南安装与 GPU 匹配的 PyTorch、执行 `audio-eval-requirements.txt`、下载 `evaluation-assets-v2.json` 中冻结的评价模型，并从旧电脑或外部制品库恢复 `cloneData/*.wav`。
+然后按指南安装与 GPU 匹配的 PyTorch、执行 `audio-eval-requirements.txt`、下载 `evaluation-assets-v2.json` 中冻结的评价模型，并从旧电脑或外部制品库恢复 `cloneData/audio_v2/*.wav`。
 
 正式运行前先做一键预检：
 
@@ -29,7 +29,25 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/*.wav` 与 `cloneData/audio_v3/*.wav`，也不包含 `hf-mirror` 权重。只执行 `git clone` 不能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav` 与 `cloneData/audio_v3/*.wav`，也不包含 `hf-mirror` 权重。只执行 `git clone` 不能直接开始评测。
+
+## Task 3 V2 复测
+
+当前 V2 使用旁白、辰南、小公主三角色的 24 条克隆音频，输入记录位于 `tts-bench/runs-v2/`，本地音频位于 `cloneData/audio_v2/`。八模型合成入口、固定台词和 IndexTTS2 情感向量见 [`cloneData/README.md`](cloneData/README.md)。恢复音频后先严格预检，再为本次复测创建新输出目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_setup.py \
+  --runs-root tts-bench/runs-v2 \
+  --config tts-bench/config/neutral-evaluation-v2.json \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v2.py \
+  --output-dir tts-bench/reports/replay-v2-YYYYMMDDTHHMMSSZ \
+  --strict
+```
 
 ## Task 4 V3 复测
 

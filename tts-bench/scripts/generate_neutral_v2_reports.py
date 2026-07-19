@@ -13,7 +13,7 @@ from typing import Any, Iterable
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_RESULTS = PROJECT_ROOT / "tts-bench" / "reports" / "task3-2026-07-16-v2"
+DEFAULT_RESULTS = PROJECT_ROOT / "tts-bench" / "reports" / "task3-2026-07-19-v2-r02"
 DEFAULT_REPORTS = PROJECT_ROOT / "tts-bench" / "reports"
 
 REPORT_FILENAMES = {
@@ -21,7 +21,7 @@ REPORT_FILENAMES = {
     "sim": "WavLM_SIM&SpeechBrain_ECAPA_SIM_V2评价报告.md",
     "quality": "UTMOSv2&NISQA_V2评价报告.md",
 }
-ROLE_ORDER = {"旁白": 0, "小公主": 1, "见习魔法师": 2}
+ROLE_ORDER = {"旁白": 0, "辰南": 1, "小公主": 2}
 
 
 def parse_args() -> argparse.Namespace:
@@ -147,7 +147,6 @@ def render_cer_report(
     )
     sense_transcript = largest_gap["metrics"]["sensevoice_cer"]["hypothesis_raw"]
     whisper_transcript = largest_gap["metrics"]["whisper_cer"]["hypothesis_raw"]
-    apprentice_rows = [row for row in syntheses if row["role"] == "见习魔法师"]
 
     lines = [
         "# SenseVoice CER 与 Whisper CER V2 评价报告",
@@ -158,12 +157,11 @@ def render_cer_report(
         "并对 3 条原始参考音频使用各自冻结转写计算基线。27 条音频在两个后端均成功，"
         "没有缺失项。CER（字符错误率）越低越好。",
         "",
-        f"- SenseVoice 宏平均 CER 最低为 **{sense_best:.4f}**，由{format_models(sense_leaders)}并列取得。",
+        f"- SenseVoice 宏平均 CER 最低为 **{sense_best:.4f}**，对应{format_models(sense_leaders)}。",
         f"- Whisper 宏平均 CER 最低的是{format_models(whisper_leaders)}，为 **{whisper_best:.4f}**。",
         "- 两个后端没有给出完全相同的排序，因此本报告不把二者平均成一个总分，也不宣布单一‘总冠军’。",
-        f"- 见习魔法师句中的‘烈火仙莲’在两个后端对 8 个模型均产生至少一个同音或近音字错误；"
-        f"该角色双后端非零样本为 {sum(metric_value(row, 'sensevoice_cer') > 0 for row in apprentice_rows)}/8 "
-        f"和 {sum(metric_value(row, 'whisper_cer') > 0 for row in apprentice_rows)}/8。",
+        f"- 逐样本后端差异最大的是 **{largest_gap['model_id']} / {largest_gap['role']}**，"
+        f"绝对差为 **{abs(metric_value(largest_gap, 'sensevoice_cer') - metric_value(largest_gap, 'whisper_cer')):.4f}**。",
         "",
         "## 模型宏平均",
         "",
@@ -228,12 +226,12 @@ def render_cer_report(
             "",
             "两侧统一使用 `zh-v1`：Unicode NFKC（兼容等价规范化）、小写化、删除空白和标点；"
             "不做繁简转换，也不把 `123` 与‘一二三’视为等价。因此原始参考音频中的数字读法会抬高 Whisper CER，"
-            "IndexTTS2 的繁体转写也会按不同字符计错。保留这些原始行为是为了避免针对本批结果临时改规则；"
+            "繁简体差异也会按不同字符计错。保留这些原始行为是为了避免针对本批结果临时改规则；"
             "正式长期榜单应预先冻结包含繁简与数字读法转换的新版规范化配置。",
             "",
             "## 适用边界",
             "",
-            "本批只有三个短句。CER 同时测量 TTS 可懂度与 ASR 偏差，不能评价音色、自然度、停顿和情绪；"
+            "本批只有三个固定目标文本。CER 同时测量 TTS 可懂度与 ASR 偏差，不能评价音色、自然度、停顿和情绪；"
             "同音专名尤其容易受语言模型消歧影响。选型前应扩充文本，并人工复核两个后端均报错的片段。",
             "",
             "## 可追溯证据",
@@ -241,7 +239,7 @@ def render_cer_report(
             f"- 逐音频原始结果：[`per_audio.jsonl`]({results_link}/per_audio.jsonl)",
             f"- 完整覆盖与软件版本：[`run_metadata.json`]({results_link}/run_metadata.json)",
             "- 冻结配置：[`neutral-evaluation-v2.json`](../config/neutral-evaluation-v2.json)",
-            "- 评测清单：[`task2-2026-07-16-v1.jsonl`](../manifests/task2-2026-07-16-v1.jsonl)",
+            "- 评测清单：[`task3-2026-07-19-v2.jsonl`](../manifests/task3-2026-07-19-v2.jsonl)",
             "",
         ]
     )
@@ -360,11 +358,10 @@ def render_similarity_report(
             "",
             "## 结果解读",
             "",
-            "WavLM 更偏好 dots.tts-base 与 Qwen3-TTS；ECAPA 更偏好 VoxCPM2、LongCat 和 MiMo。"
-            "IndexTTS2 在 WavLM 宏平均中最低，但在 ECAPA 中居中；dots.tts-base 则从 WavLM 第一降到 ECAPA 最后。"
-            "这不是计算错误，而是两个检查点的训练数据、嵌入空间和对音高、韵律、录音条件的敏感性不同。",
+            "两个检查点的训练数据、嵌入空间，以及对音高、韵律和录音条件的敏感性不同，"
+            "因此模型在两套后端中的相对次序可能变化。这种差异应作为模型选择的不确定性，而不是计算错误。",
             "",
-            "尤其是旁白与见习魔法师都是男性声线，WavLM 对这两个原始角色给出 0.9429 的高跨角色分。"
+            "跨角色原始音频对照显示，本批样本的高相似分并不天然等于同一说话人。"
             "因此报告只陈述同一后端内的相对次序，不把 SIM 解释为‘同一人概率’，也不设置通过线。",
             "",
             "## 适用边界",
@@ -395,6 +392,10 @@ def render_quality_report(
     reference_means = {
         metric: mean(metric_value(row, metric) for row in references) for metric in metrics
     }
+    above_reference_counts = {
+        metric: sum(value > reference_means[metric] for value in means[metric].values())
+        for metric in metrics
+    }
     deltas: dict[str, dict[str, float]] = {metric: {} for metric in metrics}
     for metric in metrics:
         grouped: dict[str, list[float]] = defaultdict(list)
@@ -417,12 +418,11 @@ def render_quality_report(
         "",
         f"- UTMOSv2 宏平均最高的是{format_models(utmos_leaders)}：**{utmos_best:.4f}**。",
         f"- NISQA-TTS 宏平均最高的是{format_models(nisqa_leaders)}：**{nisqa_best:.4f}**。",
-        f"- 两个后端的领先模型不同；LongCat 在 NISQA-TTS 第"
-        f"{ranks['nisqa']['LongCat-AudioDiT-1B']}、UTMOSv2 第"
-        f"{ranks['utmosv2']['LongCat-AudioDiT-1B']}，显示自然度结论明显依赖评价器。",
+        "- 两个后端的领先模型和独立名次可能不同，显示自然度结论依赖评价器；本报告不计算跨后端总分。",
         f"- 原始参考音频宏平均为 UTMOSv2 **{reference_means['utmosv2']:.4f}**、"
-        f"NISQA-TTS **{reference_means['nisqa']:.4f}**。NISQA-TTS 对全部克隆模型的宏平均都低于原始基线，"
-        "而 UTMOSv2 并非如此，不能把任一预测器当成人工 MOS。",
+        f"NISQA-TTS **{reference_means['nisqa']:.4f}**；克隆模型中分别有 "
+        f"**{above_reference_counts['utmosv2']}/8** 与 **{above_reference_counts['nisqa']}/8** 的宏平均高于对应原始基线。"
+        "原始音频和目标句并非同文本，该对照只作本批锚点，不能把任一预测器当成人工 MOS。",
         "",
         "## 模型宏平均与同角色基线差",
         "",
@@ -482,7 +482,7 @@ def render_quality_report(
             "## 可复现策略与解释边界",
             "",
             "UTMOSv2 的推理数据管线会随机截取音频；默认单次预测会随随机状态漂移。V2 配置将随机种子冻结为 "
-            "`20260716`，每条音频执行 5 次裁剪并取模型内置平均，静音移除保持开启。"
+            "`20260719`，每条音频执行 5 次裁剪并取模型内置平均，静音移除保持开启。"
             "NISQA 使用面向合成语音的 `nisqa_tts.tar`（NISQA-TTS v1.0），本批离线整批推理。",
             "",
             "MOS 预测器的绝对值没有在本数据集上用真人评分重新校准；NISQA-TTS 的模型领域是合成语音，"
@@ -514,6 +514,9 @@ def build_reports(results_dir: Path, results_link: str | None = None) -> dict[st
     except FileNotFoundError as exc:
         raise ValueError(f"找不到原始结果：{results_dir / 'run_metadata.json'}") from exc
     validate_results(audio_rows, similarity_rows, calibration_rows, metadata)
+    roles = {row["role"] for row in [*audio_rows, *similarity_rows]}
+    if roles != set(ROLE_ORDER):
+        raise ValueError(f"V2 结果角色应为 {sorted(ROLE_ORDER)}，实际为 {sorted(roles)}")
     results_link = results_link or results_dir.name
     return {
         "cer": render_cer_report(audio_rows, results_link),

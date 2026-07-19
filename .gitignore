@@ -26,6 +26,7 @@ tts-bench/datasets/audio/
 tts-bench/runs/*/audio/
 tts-bench/runs/*/derived/
 cloneData/*.wav
+cloneData/audio_v2/*.wav
 cloneData/audio_v3/*.wav
 cloneData/*.part
 cloneData/indextts2/.runtime_cache/
