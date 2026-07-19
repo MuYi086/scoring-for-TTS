@@ -27,7 +27,7 @@ def test_v3_config_freezes_eight_models_and_three_requested_roles() -> None:
     config = json.loads((ROOT / "tts-bench/config/neutral-evaluation-v3.json").read_text(encoding="utf-8"))
 
     assert config["expected_model_count"] == 8
-    assert set(config["case_labels"].values()) == {"旁白", "小公主", "辰南"}
+    assert set(config["case_labels"].values()) == {"旁白", "小公主", "三皇子"}
     assert config["manifest_path"] == "tts-bench/manifests/task4-2026-07-19-v3.jsonl"
     assert config["utmosv2"]["num_repetitions"] == 5
 
@@ -40,18 +40,19 @@ def test_v3_entry_defaults_are_isolated_from_v2(monkeypatch) -> None:
 
     assert args.runs_root == ROOT / "tts-bench/runs-v3"
     assert args.config == ROOT / "tts-bench/config/neutral-evaluation-v3.json"
-    assert args.output_dir == ROOT / "tts-bench/reports/task4-2026-07-19-v3"
+    assert args.output_dir == ROOT / "tts-bench/reports/task4-2026-07-19-v3-r02"
 
 
 def test_v3_report_names_and_role_order_are_frozen() -> None:
     script = load_module("generate_neutral_v3_reports_test", SCRIPTS / "generate_neutral_v3_reports.py")
 
+    assert script.DEFAULT_RESULTS == ROOT / "tts-bench/reports/task4-2026-07-19-v3-r02"
     assert script.REPORT_FILENAMES == {
         "cer": "SenseVoice_CER&Whisper_CER_V3评价报告.md",
         "sim": "WavLM_SIM&SpeechBrain_ECAPA_SIM_V3评价报告.md",
         "quality": "UTMOSv2&NISQA_V3评价报告.md",
     }
-    assert script.ROLE_ORDER == {"旁白": 0, "小公主": 1, "辰南": 2}
+    assert script.ROLE_ORDER == {"旁白": 0, "小公主": 1, "三皇子": 2}
 
 
 def test_v3_rank_correlation_uses_both_independent_rankings() -> None:
@@ -64,10 +65,10 @@ def test_v3_rank_correlation_uses_both_independent_rankings() -> None:
 def test_complete_v3_results_render_three_reports_without_cross_metric_score() -> None:
     script = load_module("generate_neutral_v3_reports_complete", SCRIPTS / "generate_neutral_v3_reports.py")
 
-    reports = script.build_reports(ROOT / "tts-bench/reports/task4-2026-07-19-v3")
+    reports = script.build_reports(ROOT / "tts-bench/reports/task4-2026-07-19-v3-r02")
 
     assert set(reports) == {"cer", "sim", "quality"}
     assert "不将 CER 简单平均为总分" in reports["cer"]
     assert "原始音频校准对照" in reports["sim"]
     assert "不跨量纲加权" in reports["quality"]
-    assert "辰南" in reports["cer"] and "辰南" in reports["sim"] and "辰南" in reports["quality"]
+    assert "三皇子" in reports["cer"] and "三皇子" in reports["sim"] and "三皇子" in reports["quality"]

@@ -33,7 +33,7 @@ conda run --no-capture-output -n audio_eval \
 
 ## Task 4 V3 复测
 
-V3 使用旁白、小公主、辰南三角色的 24 条克隆音频，输入记录与 V2 隔离在 `tts-bench/runs-v3/`。恢复 `cloneData/audio_v3/*.wav` 后，先用 V3 配置预检，再使用新输出目录运行：
+V3 使用旁白、小公主、三皇子三角色的 24 条克隆音频，输入记录与 V2 隔离在 `tts-bench/runs-v3/`。恢复 `cloneData/audio_v3/*.wav` 后，先用 V3 配置预检，再使用新输出目录运行：
 
 ```bash
 conda run --no-capture-output -n audio_eval \

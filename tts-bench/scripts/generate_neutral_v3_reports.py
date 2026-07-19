@@ -31,14 +31,14 @@ from generate_neutral_v2_reports import (
 )
 
 
-DEFAULT_RESULTS = PROJECT_ROOT / "tts-bench" / "reports" / "task4-2026-07-19-v3"
+DEFAULT_RESULTS = PROJECT_ROOT / "tts-bench" / "reports" / "task4-2026-07-19-v3-r02"
 DEFAULT_REPORTS = PROJECT_ROOT / "tts-bench" / "reports"
 REPORT_FILENAMES = {
     "cer": "SenseVoice_CER&Whisper_CER_V3评价报告.md",
     "sim": "WavLM_SIM&SpeechBrain_ECAPA_SIM_V3评价报告.md",
     "quality": "UTMOSv2&NISQA_V3评价报告.md",
 }
-ROLE_ORDER = {"旁白": 0, "小公主": 1, "辰南": 2}
+ROLE_ORDER = {"旁白": 0, "小公主": 1, "三皇子": 2}
 
 
 def parse_args() -> argparse.Namespace:
@@ -319,7 +319,7 @@ def build_reports(results_dir: Path, results_link: str | None = None) -> dict[st
         raise ValueError(f"找不到原始结果：{results_dir / 'run_metadata.json'}") from exc
     validate_results(audio_rows, similarity_rows, calibration_rows, metadata)
     if set(metadata.get("config", {}).get("case_labels", {}).values()) != set(ROLE_ORDER):
-        raise ValueError("原始结果不是旁白、小公主、辰南三角色 V3 矩阵")
+        raise ValueError("原始结果不是旁白、小公主、三皇子三角色 V3 矩阵")
     results_link = results_link or results_dir.name
     return {
         "cer": render_cer_report(audio_rows, results_link),

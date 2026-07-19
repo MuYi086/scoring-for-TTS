@@ -5,7 +5,7 @@
   "case_labels": {
     "task4_v3_narrator": "旁白",
     "task4_v3_princess": "小公主",
-    "task4_v3_chennan": "辰南"
+    "task4_v3_third_prince": "三皇子"
   },
   "sensevoice": {"model_id": "FunAudioLLM/SenseVoiceSmall", "device": "cuda", "language": "zh"},
   "whisper": {"model_id": "openai/whisper-large-v3-turbo", "device": "cuda", "language": "zh", "task": "transcribe"},

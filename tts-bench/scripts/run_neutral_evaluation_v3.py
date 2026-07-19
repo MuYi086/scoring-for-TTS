@@ -33,7 +33,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=PROJECT_ROOT / "tts-bench" / "reports" / "task4-2026-07-19-v3",
+        default=PROJECT_ROOT / "tts-bench" / "reports" / "task4-2026-07-19-v3-r02",
         help="V3 原始评测结果目录。",
     )
     parser.add_argument(

@@ -32,11 +32,19 @@ def test_v3_cases_freeze_references_transcripts_and_target_texts() -> None:
     support, _ = load_support_and_runner()
     cases = {case.character: case for case in support.CASES}
 
-    assert set(cases) == {"旁白", "小公主", "辰南"}
+    assert set(cases) == {"旁白", "小公主", "三皇子"}
     assert cases["旁白"].reference_audio == ROOT / "testData/mimo_旁白_v3.wav"
-    assert cases["小公主"].text == "认识，当然认识。"
-    assert cases["辰南"].text == "请公主殿下责罚。"
-    assert cases["辰南"].reference_text.startswith("我是辰南，")
+    assert cases["旁白"].text == "小公主恶狠狠的盯着他，其中的意思再明显不过，威胁兼恐吓让他配合。"
+    assert cases["小公主"].text == (
+        "他是从我宫内带出来的小太监，本来是出来伺候我的，没想到遇上远古巨人时，"
+        "他第一个就跑了。小李子你没想到会这么快见到我吧？"
+    )
+    assert cases["三皇子"].text == (
+        "这个人在路上一直鬼鬼祟祟地跟在我们后面，后来被我的手下抓住了，"
+        "公主殿下认识这个人吗？"
+    )
+    assert cases["三皇子"].reference_audio == ROOT / "testData/mimo_三皇子_v3.wav"
+    assert cases["三皇子"].reference_text.startswith("我是三皇子，")
     assert all("声线校准测试" in case.reference_text for case in support.CASES)
 
 
@@ -72,8 +80,8 @@ def test_v3_indextts2_preserves_task_emotion_vectors() -> None:
 
     cases = {case.character: case for case in script.CASES}
     assert cases["旁白"].emotion_vector == (0, 0, 0, 0, 0, 0, 0, 0.5)
-    assert cases["小公主"].emotion_vector == (0, 0.5, 0, 0, 0, 0, 0, 0)
-    assert cases["辰南"].emotion_vector == (0, 0, 0, 0, 0, 0.35, 0, 0)
+    assert cases["小公主"].emotion_vector == (0, 0, 0, 0, 0.75, 0, 0, 0)
+    assert cases["三皇子"].emotion_vector == (0, 0, 0, 0, 0, 0, 0, 0.35)
     assert script.OUTPUT_ROOT == ROOT / "cloneData/audio_v3"
 
 
