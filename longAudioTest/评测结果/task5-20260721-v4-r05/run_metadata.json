@@ -1,0 +1,203 @@
+{
+  "active_model_id_this_invocation": "VoxCPM2",
+  "audio_count": 13,
+  "calibration_pair_count": 21,
+  "config": {
+    "alignment": {
+      "max_excerpt_seconds": 20.0,
+      "max_excerpts_per_role": 5,
+      "max_merge_gap_seconds": 1.5,
+      "min_chunk_match_ratio": 0.5,
+      "min_exact_match_characters": 4,
+      "min_excerpt_seconds": 0.5,
+      "min_role_purity": 0.85,
+      "mixed_role_chunk_policy": "split_by_exact_character_run_linear_time"
+    },
+    "expected_model_count": 7,
+    "models": [
+      {
+        "audio_path": "longAudioTest/audio_dots_tts.wav",
+        "model_id": "dots.tts-base",
+        "sha256": "58287a2e47811ad058e8d040bdacac8ca52f0f46bef9a89a177bb8172b1a2b4a"
+      },
+      {
+        "audio_path": "longAudioTest/audio_indextts2.wav",
+        "model_id": "IndexTTS2",
+        "sha256": "634b2804d19e59c644d28de1f39ee9c5cf06dafa61fd8d849dc8b79b5678e612"
+      },
+      {
+        "audio_path": "longAudioTest/audio_longCat.wav",
+        "model_id": "LongCat-AudioDiT-1B",
+        "sha256": "af1c498f8e715b2045006a0cf16d7eeb4f682f3e9aa4d5b720313da322ba2a3d"
+      },
+      {
+        "audio_path": "longAudioTest/audio_moss_tts.wav",
+        "model_id": "MOSS-TTS-Local-Transformer-v1.5",
+        "sha256": "ae6ffa92f1d42bfa1077e60560b509e325aae0cfd32b13282dcb0888005f8079"
+      },
+      {
+        "audio_path": "longAudioTest/audio_omniVoice.wav",
+        "model_id": "OmniVoice",
+        "sha256": "2837751f5b6dfc9b2565591252095555aca83c2d7b4898d2d2ead5dbe541470f"
+      },
+      {
+        "audio_path": "longAudioTest/audio_qwen3_tts.wav",
+        "model_id": "Qwen3-TTS-12Hz-1.7B-Base",
+        "sha256": "5d57f378463470efa715147d26d508a6e2517e96c0e40c88aafd522a456d2b80"
+      },
+      {
+        "audio_path": "longAudioTest/audio_voxcpm2.wav",
+        "model_id": "VoxCPM2",
+        "sha256": "8f49bda98fdd542e5002742ab49d863a1297b405f0475d0443f1e152751f5686"
+      }
+    ],
+    "nisqa": {
+      "batch_size": 8,
+      "checkpoint_path": "weights/nisqa_tts.tar",
+      "device": "cpu",
+      "model_name": "NISQA-TTS v1.0",
+      "repository_id": "NISQA"
+    },
+    "policy": {
+      "long_audio": "SenseVoice 与 Whisper 都对连续且不重叠的 30 秒分段顺序转写后计算全文 CER，Whisper 逐段字词时间戳平移到全局时间轴；双 SIM 对 Whisper 字词时间戳与冻结角色台词单调对齐，跨角色块按精确匹配字符的角色连续区间线性切分时间，再合并为角色片段并等权平均；双自然度对固定等距窗口等权平均。",
+      "normalization_id": "zh-v1",
+      "ranking": "各后端独立报告原始值和名次，不跨量纲加权，不设置未经校准的通过阈值。",
+      "reference_baseline": "六条原始音频分别提供 CER 与自然度基线，并构造六个同说话人分段和十五个跨角色说话人校准对照。"
+    },
+    "quality_sampling": {
+      "strategy": "non_overlapping_capacity_evenly_spaced",
+      "window_count": 8,
+      "window_seconds": 12.0
+    },
+    "references": [
+      {
+        "audio_path": "longAudioTest/mimo_旁白_v4.wav",
+        "role": "旁白",
+        "sha256": "4dfec3a69d03469366a3b44027f104111947ad8479ba17358ad7a3dfac1fc0d5",
+        "transcript": "我是旁白，初次见面，请多多指教。正在进行声线校准测试。123，这段音频将作为我的基准音色，希望能完美演绎接下来的故事，请多关照。"
+      },
+      {
+        "audio_path": "longAudioTest/mimo_辰南_v4.wav",
+        "role": "辰南",
+        "sha256": "7c8f63990e86d1d6aeabc24066fa39d433b53c1077980e387606bb633cf97746",
+        "transcript": "我是辰南，初次见面，请多多指教。正在进行声线校准测试。123，这段音频将作为我的基准音色，希望能完美演绎接下来的故事，请多关照。"
+      },
+      {
+        "audio_path": "longAudioTest/mimo_见习魔法师_v4.wav",
+        "role": "见习魔法师",
+        "sha256": "90d98d06bf18151561f2d520948ea46c43f49c9e07afe59618d4a33111c40f9e",
+        "transcript": "我是见习魔法师，初次见面，请多多指教。正在进行声线校准测试。123，这段音频将作为我的基准音色，希望能完美演绎接下来的故事，请多关照。"
+      },
+      {
+        "audio_path": "longAudioTest/mimo_女侍卫_v4.wav",
+        "role": "女侍卫",
+        "sha256": "b362e2c49e921187cee79d7727adfc1c383f1b6a2604dea5fc22c5b5940c2625",
+        "transcript": "我是女侍卫，初次见面，请多多指教。正在进行声线校准测试。123，这段音频将作为我的基准音色，希望能完美演绎接下来的故事，请多关照。"
+      },
+      {
+        "audio_path": "longAudioTest/mimo_侍卫_v4.wav",
+        "role": "侍卫",
+        "sha256": "17e198fa5d55c16487efbd9f8c28062c2c716fcb411e6dc8c6631b58e35a9cd8",
+        "transcript": "我是侍卫，初次见面，请多多指教。正在进行声线校准测试。123，这段音频将作为我的基准音色，希望能完美演绎接下来的故事，请多关照。"
+      },
+      {
+        "audio_path": "longAudioTest/mimo_小公主_v4.wav",
+        "role": "小公主",
+        "sha256": "13d60fc2cd2f81d59085d90098401f12eba64ab3f56b8e502db23e6250dba74a",
+        "transcript": "我是小公主，初次见面，请多多指教。正在进行声线校准测试。123，这段音频将作为我的基准音色，希望能完美演绎接下来的故事，请多关照。"
+      }
+    ],
+    "schema_version": "4.0",
+    "sensevoice": {
+      "device": "cuda",
+      "language": "zh",
+      "long_audio_chunk_seconds": 30.0,
+      "model_id": "FunAudioLLM/SenseVoiceSmall"
+    },
+    "source": {
+      "cer_reference": "ai_deal_dialogue_concatenation",
+      "dialogue_count": 148,
+      "dialogue_path": "longAudioTest/ai_deal.json",
+      "dialogue_sha256": "13b990ce706d15dc15c6294b50e50bb8f509823f5612e9ffa69e4d9a6b3dd5f9",
+      "normalized_character_count": 5673,
+      "raw_text_path": "longAudioTest/text.md",
+      "raw_text_relation": "text.md 与 ai_deal.json 是相邻但不同的小说片段；成品开头与 ai_deal.json 一致，因此不把 text.md 用作本批 CER 参考。",
+      "raw_text_sha256": "0c2b50df40aace086017b2bdcd3290a1dde5658083262fd7792ed96056f5d151"
+    },
+    "speechbrain_ecapa": {
+      "device": "cuda",
+      "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "sample_rate_hz": 16000
+    },
+    "utmosv2": {
+      "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+      "device": "cuda:0",
+      "inference_seed": 20260721,
+      "num_repetitions": 5,
+      "remove_silent_section": true
+    },
+    "wavlm": {
+      "device": "cuda",
+      "model_id": "microsoft/wavlm-base-sv",
+      "sample_rate_hz": 16000
+    },
+    "whisper": {
+      "device": "cuda",
+      "language": "zh",
+      "long_audio_chunk_seconds": 30.0,
+      "model_id": "openai/whisper-large-v3-turbo",
+      "return_timestamps": "word",
+      "task": "transcribe"
+    }
+  },
+  "coverage": {
+    "nisqa": {
+      "complete": 13,
+      "expected": 13
+    },
+    "sensevoice_cer": {
+      "complete": 13,
+      "expected": 13
+    },
+    "speechbrain_ecapa_sim": {
+      "complete": 63,
+      "expected": 63
+    },
+    "utmosv2": {
+      "complete": 13,
+      "expected": 13
+    },
+    "wavlm_sim": {
+      "complete": 63,
+      "expected": 63
+    },
+    "whisper_cer": {
+      "complete": 13,
+      "expected": 13
+    }
+  },
+  "cross_metric_weighted_score": false,
+  "offline": true,
+  "package_versions": {
+    "funasr": "1.3.9",
+    "speechbrain": "1.1.0",
+    "torch": "2.12.0",
+    "torchaudio": "2.11.0",
+    "transformers": "5.12.0",
+    "utmosv2": "1.3.1.dev0"
+  },
+  "reference_audio_count": 6,
+  "schema_version": "4.0",
+  "selected_metrics_this_invocation": [
+    "sensevoice_cer",
+    "whisper_cer",
+    "wavlm_sim",
+    "speechbrain_ecapa_sim",
+    "utmosv2",
+    "nisqa"
+  ],
+  "single_model_per_invocation": true,
+  "synthesis_audio_count": 7,
+  "synthesis_role_pair_count": 42,
+  "updated_at": "2026-07-21T07:19:21.323135+00:00"
+}

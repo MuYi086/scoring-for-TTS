@@ -51,3 +51,7 @@ listener-review/private-mapping/*
 Thumbs.db
 .idea/
 .vscode/
+
+# 长音频测试
+longAudioTest/audio*
+longAudioTest/mimo*

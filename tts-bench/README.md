@@ -128,6 +128,35 @@ python tts-bench/scripts/generate_neutral_v3_reports.py \
 
 断点续跑仅能对同一次未完成运行的相同目录使用 `--resume`。三份报告分别保留双 CER、双 SIM 和双自然度后端的原始值与独立名次，不计算跨量纲总分。
 
+## Task 5 V4 长音频中立评测
+
+V4 的冻结事实源是 `config/neutral-evaluation-v4.json`。本地输入位于被忽略的 `../longAudioTest/`：7 条模型长音频、6 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。本批成品正文实际对应 `ai_deal.json` 的 148 段 `dialogue`，因此全文 CER 以这些台词按原顺序拼接为参考；`text.md` 与其是相邻但不同的小说片段，不能混用。
+
+V4 一次进程只允许一个 `--model-id`。SenseVoice 与 Whisper 都把单条长音频切为连续、不重叠的 30 秒分段顺序转写，Whisper 的逐段字词时间戳会平移回全局时间轴；时间戳与冻结台词单调对齐，跨角色块按精确匹配字符的角色连续区间线性切分时间，再合并为角色片段，之后才运行 WavLM 与 ECAPA。UTMOSv2 和 NISQA-TTS 对全长固定等距窗口评价。每完成一条记录都会原子写回，终端中断后只对同一次输出目录使用 `--resume`。
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v4_setup.py \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v4.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTest/评测结果/task5-v4-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+第二个及后续模型使用同一目录并增加 `--resume`。全部覆盖完整后生成三份独立汇总报告：
+
+```bash
+python tts-bench/scripts/generate_neutral_v4_reports.py \
+  --results-dir longAudioTest/评测结果/task5-v4-YYYYMMDDTHHMMSSZ \
+  --reports-dir longAudioTest/评测结果
+```
+
+各模型六后端完成时还会在 `longAudioTest/评测结果/` 写入 `<model_id>_V4评价报告.md`。完整的 7 模型顺序、环境变量、输入恢复和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 14 节。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。

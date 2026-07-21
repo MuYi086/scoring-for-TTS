@@ -1,6 +1,6 @@
 # TTS 与音色设计评估工作区
 
-本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口与 Task 4 V3 专项评测均使用六个独立后端，不把不同量纲强行合成一个总分：
+本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口、Task 4 V3 与 Task 5 V4 专项评测均使用六个独立后端，不把不同量纲强行合成一个总分：
 
 - SenseVoice CER + Whisper CER；
 - WavLM SIM + SpeechBrain ECAPA SIM；
@@ -29,7 +29,7 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav` 与 `cloneData/audio_v3/*.wav`，也不包含 `hf-mirror` 权重。只执行 `git clone` 不能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`，也不包含 `hf-mirror` 权重。只执行 `git clone` 不能直接开始评测。
 
 ## Task 3 V2 复测
 
@@ -68,6 +68,24 @@ conda run --no-capture-output -n audio_eval \
 ```
 
 完整的 V2/V3 权重、音频迁移、断点续跑与报告命令见 [`docs/跨电脑复测指南.md`](docs/跨电脑复测指南.md)。
+
+## Task 5 V4 长音频复测
+
+V4 对 `longAudioTest/` 中 7 条完整多角色音频逐模型串行评价，并以 6 条 MiMo 角色音频提供原始基线或校准对照。SenseVoice 与 Whisper 都使用连续、不重叠的 30 秒分段，避免整条 18–31 分钟 WAV 一次进入模型而引发显存或内存溢出；一次命令必须且只能指定一个 `--model-id`。先预检，再为本次运行使用新目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v4_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v4.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTest/评测结果/task5-v4-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+后续模型对同一次输出目录增加 `--resume`，但每次仍只传一个模型。全部 7 个模型完成后运行 `generate_neutral_v4_reports.py` 生成三份 V4 汇总报告。完整模型清单、续跑顺序、输入恢复和验收规则见跨电脑复测指南第 14 节。
 
 ## 目录入口
 
