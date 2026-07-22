@@ -6,22 +6,22 @@
 - **对小说有声化的重要度：极高，建议作为第一道生产硬门槛。** 台词错误、漏句或重复会直接改变剧情，并带来最高的返工定位成本；优先选择两个 CER 都低且结论一致的模型，再进入音色和听感比较。
 - **不能代表什么**：CER 不评价角色是否像目标音色、情绪表演或声音自然度；背景音乐、音效和 ASR 偏差也会影响结果。六条角色原始音频只用于暴露 ASR 后端基线偏差。
 
-- SenseVoice 全文 CER 最低为 **0.0605**，对应**Qwen3-TTS-12Hz-1.7B-Base**。
-- Whisper 全文 CER 最低为 **0.0860**，对应**Qwen3-TTS-12Hz-1.7B-Base**。
-- 两组独立稠密名次相关为 **0.679**；不把两个 CER 简单平均为总分。
-- 两后端差异最大的是 **dots.tts-base**，绝对差为 **0.0807**。
+- SenseVoice 全文 CER 最低为 **0.0610**，对应**Qwen3-TTS-12Hz-1.7B-Base**。
+- Whisper 全文 CER 最低为 **0.1056**，对应**VoxCPM2**。
+- 两组独立稠密名次相关为 **0.857**；不把两个 CER 简单平均为总分。
+- 两后端差异最大的是 **OmniVoice**，绝对差为 **0.0973**。
 
 ## 模型全文结果
 
 | 模型 | 时长（秒） | SenseVoice CER ↓ | 名次 | Whisper CER ↓ | 名次 |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| dots.tts-base | 1888.42 | 0.1673 | 5 | 0.0866 | 2 |
-| IndexTTS2 | 1871.62 | 0.2077 | 6 | 0.1412 | 5 |
+| dots.tts-base | 1596.19 | 0.2256 | 6 | 0.1860 | 5 |
+| IndexTTS2 | 1907.08 | 0.2008 | 5 | 0.1840 | 4 |
 | LongCat-AudioDiT-1B | 1101.54 | 0.4278 | 7 | 0.3573 | 7 |
-| MOSS-TTS-Local-Transformer-v1.5 | 1745.25 | 0.1176 | 4 | 0.1428 | 6 |
-| OmniVoice | 1756.32 | 0.0927 | 3 | 0.0892 | 3 |
-| Qwen3-TTS-12Hz-1.7B-Base | 1434.98 | 0.0605 | 1 | 0.0860 | 1 |
-| VoxCPM2 | 1758.01 | 0.0760 | 2 | 0.1056 | 4 |
+| MOSS-TTS-Local-Transformer-v1.5 | 1809.64 | 0.1200 | 4 | 0.2075 | 6 |
+| OmniVoice | 1755.87 | 0.0770 | 3 | 0.1743 | 3 |
+| Qwen3-TTS-12Hz-1.7B-Base | 1423.46 | 0.0610 | 1 | 0.1282 | 2 |
+| VoxCPM2 | 1758.01 | 0.0760 | 2 | 0.1056 | 1 |
 
 ## 原始参考音频基线
 
@@ -45,19 +45,19 @@ Whisper 时间戳同时用于后续角色片段定位。下表的精确对齐率
 
 | 模型 | Whisper 时间戳块 | 精确对齐字符 / 参考字符 | 精确对齐率 |
 | --- | ---: | ---: | ---: |
-| dots.tts-base | 751 | 5285 / 5673 | 0.9316 |
-| IndexTTS2 | 787 | 5243 / 5673 | 0.9242 |
+| dots.tts-base | 694 | 4774 / 5673 | 0.8415 |
+| IndexTTS2 | 835 | 5261 / 5673 | 0.9274 |
 | LongCat-AudioDiT-1B | 528 | 3810 / 5673 | 0.6716 |
-| MOSS-TTS-Local-Transformer-v1.5 | 728 | 5218 / 5673 | 0.9198 |
-| OmniVoice | 716 | 5315 / 5673 | 0.9369 |
-| Qwen3-TTS-12Hz-1.7B-Base | 654 | 5291 / 5673 | 0.9327 |
+| MOSS-TTS-Local-Transformer-v1.5 | 835 | 5160 / 5673 | 0.9096 |
+| OmniVoice | 725 | 5320 / 5673 | 0.9378 |
+| Qwen3-TTS-12Hz-1.7B-Base | 680 | 5318 / 5673 | 0.9374 |
 | VoxCPM2 | 701 | 5285 / 5673 | 0.9316 |
 
 ## 解释边界与证据
 
 全文 CER 同时受 TTS 可懂度、背景音乐/音效、ASR 语言模型和长音频解码影响，不能评价音色、自然度或表演。模型时长差异很大，删句会表现为 CER 删除错误，因此不应以更短时长本身推断效率优势。
 
-- 逐音频结果与完整转写：[`per_audio.jsonl`](task5-20260721-v4-r05/per_audio.jsonl)
-- 覆盖、版本与冻结配置快照：[`run_metadata.json`](task5-20260721-v4-r05/run_metadata.json)
+- 逐音频结果与完整转写：[`per_audio.jsonl`](task5-20260722-v4-r01/per_audio.jsonl)
+- 覆盖、版本与冻结配置快照：[`run_metadata.json`](task5-20260722-v4-r01/run_metadata.json)
 - 配置事实源：`tts-bench/config/neutral-evaluation-v4.json`
 - 台词事实源：`longAudioTest/ai_deal.json`；原始但未被本批成品使用的文本：`longAudioTest/text.md`

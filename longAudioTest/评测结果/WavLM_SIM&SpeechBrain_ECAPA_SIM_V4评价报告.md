@@ -8,62 +8,62 @@
 
 技术上先将 Whisper 时间戳块与 148 段冻结台词做单调精确字符对齐，再为每个模型、每个角色按全文位置等距选取至多 5 段纯角色片段。两后端分别与同角色原始音频比较，片段内等权平均、六角色再等权宏平均。
 
-- WavLM 六角色宏平均最高为 **0.9614**，对应**dots.tts-base**。
-- ECAPA 六角色宏平均最高为 **0.7295**，对应**IndexTTS2**。
-- 两组独立名次相关为 **0.036**；两种嵌入空间不共用量纲，不跨后端平均。
+- WavLM 六角色宏平均最高为 **0.9593**，对应**VoxCPM2**。
+- ECAPA 六角色宏平均最高为 **0.6951**，对应**IndexTTS2**。
+- 两组独立名次相关为 **-0.321**；两种嵌入空间不共用量纲，不跨后端平均。
 
 ## 模型六角色宏平均
 
 | 模型 | WavLM SIM ↑ | 名次 | ECAPA SIM ↑ | 名次 |
 | --- | ---: | ---: | ---: | ---: |
-| dots.tts-base | 0.9614 | 1 | 0.7113 | 2 |
-| IndexTTS2 | 0.9460 | 7 | 0.7295 | 1 |
-| LongCat-AudioDiT-1B | 0.9487 | 5 | 0.6894 | 3 |
-| MOSS-TTS-Local-Transformer-v1.5 | 0.9486 | 6 | 0.6400 | 7 |
-| OmniVoice | 0.9542 | 4 | 0.6528 | 6 |
-| Qwen3-TTS-12Hz-1.7B-Base | 0.9547 | 3 | 0.6595 | 5 |
-| VoxCPM2 | 0.9593 | 2 | 0.6856 | 4 |
+| dots.tts-base | 0.9578 | 2 | 0.6547 | 5 |
+| IndexTTS2 | 0.9423 | 6 | 0.6951 | 1 |
+| LongCat-AudioDiT-1B | 0.9487 | 5 | 0.6894 | 2 |
+| MOSS-TTS-Local-Transformer-v1.5 | 0.9524 | 4 | 0.6153 | 7 |
+| OmniVoice | 0.9327 | 7 | 0.6637 | 4 |
+| Qwen3-TTS-12Hz-1.7B-Base | 0.9549 | 3 | 0.6444 | 6 |
+| VoxCPM2 | 0.9593 | 1 | 0.6856 | 3 |
 
 ## 逐角色结果
 
 | 模型 | 角色 | 片段数 | WavLM SIM ↑ | ECAPA SIM ↑ |
 | --- | --- | ---: | ---: | ---: |
-| dots.tts-base | 旁白 | 5 | 0.9734 | 0.7441 |
-| dots.tts-base | 辰南 | 5 | 0.9315 | 0.7370 |
-| dots.tts-base | 见习魔法师 | 3 | 0.9774 | 0.6557 |
-| dots.tts-base | 女侍卫 | 3 | 0.9738 | 0.7154 |
-| dots.tts-base | 侍卫 | 1 | 0.9510 | 0.6904 |
-| dots.tts-base | 小公主 | 5 | 0.9612 | 0.7251 |
-| IndexTTS2 | 旁白 | 5 | 0.9754 | 0.7896 |
-| IndexTTS2 | 辰南 | 5 | 0.9021 | 0.7133 |
-| IndexTTS2 | 见习魔法师 | 3 | 0.9453 | 0.7211 |
-| IndexTTS2 | 女侍卫 | 3 | 0.9719 | 0.7578 |
-| IndexTTS2 | 侍卫 | 1 | 0.9243 | 0.6567 |
-| IndexTTS2 | 小公主 | 5 | 0.9572 | 0.7384 |
+| dots.tts-base | 旁白 | 5 | 0.9778 | 0.6609 |
+| dots.tts-base | 辰南 | 5 | 0.9510 | 0.6393 |
+| dots.tts-base | 见习魔法师 | 3 | 0.9455 | 0.5577 |
+| dots.tts-base | 女侍卫 | 3 | 0.9644 | 0.6643 |
+| dots.tts-base | 侍卫 | 1 | 0.9557 | 0.6802 |
+| dots.tts-base | 小公主 | 5 | 0.9522 | 0.7258 |
+| IndexTTS2 | 旁白 | 5 | 0.9415 | 0.7608 |
+| IndexTTS2 | 辰南 | 5 | 0.9150 | 0.6860 |
+| IndexTTS2 | 见习魔法师 | 4 | 0.9375 | 0.6723 |
+| IndexTTS2 | 女侍卫 | 4 | 0.9719 | 0.7003 |
+| IndexTTS2 | 侍卫 | 1 | 0.9510 | 0.6663 |
+| IndexTTS2 | 小公主 | 5 | 0.9369 | 0.6852 |
 | LongCat-AudioDiT-1B | 旁白 | 5 | 0.9692 | 0.6832 |
 | LongCat-AudioDiT-1B | 辰南 | 5 | 0.9470 | 0.6924 |
 | LongCat-AudioDiT-1B | 见习魔法师 | 3 | 0.9701 | 0.6763 |
 | LongCat-AudioDiT-1B | 女侍卫 | 3 | 0.9713 | 0.7284 |
 | LongCat-AudioDiT-1B | 侍卫 | 1 | 0.9008 | 0.6231 |
 | LongCat-AudioDiT-1B | 小公主 | 5 | 0.9337 | 0.7332 |
-| MOSS-TTS-Local-Transformer-v1.5 | 旁白 | 5 | 0.9423 | 0.5779 |
-| MOSS-TTS-Local-Transformer-v1.5 | 辰南 | 5 | 0.8972 | 0.6018 |
-| MOSS-TTS-Local-Transformer-v1.5 | 见习魔法师 | 3 | 0.9540 | 0.6368 |
-| MOSS-TTS-Local-Transformer-v1.5 | 女侍卫 | 3 | 0.9632 | 0.6245 |
-| MOSS-TTS-Local-Transformer-v1.5 | 侍卫 | 1 | 0.9682 | 0.6722 |
-| MOSS-TTS-Local-Transformer-v1.5 | 小公主 | 5 | 0.9667 | 0.7268 |
-| OmniVoice | 旁白 | 5 | 0.9644 | 0.7309 |
-| OmniVoice | 辰南 | 5 | 0.9469 | 0.7023 |
-| OmniVoice | 见习魔法师 | 3 | 0.9571 | 0.6108 |
-| OmniVoice | 女侍卫 | 3 | 0.9642 | 0.7235 |
-| OmniVoice | 侍卫 | 1 | 0.9305 | 0.4008 |
-| OmniVoice | 小公主 | 5 | 0.9621 | 0.7487 |
-| Qwen3-TTS-12Hz-1.7B-Base | 旁白 | 5 | 0.9693 | 0.6218 |
-| Qwen3-TTS-12Hz-1.7B-Base | 辰南 | 5 | 0.9280 | 0.6568 |
-| Qwen3-TTS-12Hz-1.7B-Base | 见习魔法师 | 3 | 0.9520 | 0.6322 |
-| Qwen3-TTS-12Hz-1.7B-Base | 女侍卫 | 3 | 0.9638 | 0.6822 |
-| Qwen3-TTS-12Hz-1.7B-Base | 侍卫 | 1 | 0.9621 | 0.6505 |
-| Qwen3-TTS-12Hz-1.7B-Base | 小公主 | 5 | 0.9529 | 0.7134 |
+| MOSS-TTS-Local-Transformer-v1.5 | 旁白 | 5 | 0.9518 | 0.5673 |
+| MOSS-TTS-Local-Transformer-v1.5 | 辰南 | 5 | 0.9264 | 0.6136 |
+| MOSS-TTS-Local-Transformer-v1.5 | 见习魔法师 | 3 | 0.9586 | 0.6070 |
+| MOSS-TTS-Local-Transformer-v1.5 | 女侍卫 | 3 | 0.9780 | 0.6448 |
+| MOSS-TTS-Local-Transformer-v1.5 | 侍卫 | 1 | 0.9648 | 0.5892 |
+| MOSS-TTS-Local-Transformer-v1.5 | 小公主 | 5 | 0.9349 | 0.6702 |
+| OmniVoice | 旁白 | 5 | 0.9727 | 0.7395 |
+| OmniVoice | 辰南 | 5 | 0.9491 | 0.7098 |
+| OmniVoice | 见习魔法师 | 3 | 0.9534 | 0.6150 |
+| OmniVoice | 女侍卫 | 3 | 0.9629 | 0.7314 |
+| OmniVoice | 侍卫 | 1 | 0.7957 | 0.4251 |
+| OmniVoice | 小公主 | 5 | 0.9627 | 0.7614 |
+| Qwen3-TTS-12Hz-1.7B-Base | 旁白 | 5 | 0.9688 | 0.6304 |
+| Qwen3-TTS-12Hz-1.7B-Base | 辰南 | 5 | 0.9304 | 0.6482 |
+| Qwen3-TTS-12Hz-1.7B-Base | 见习魔法师 | 3 | 0.9575 | 0.6430 |
+| Qwen3-TTS-12Hz-1.7B-Base | 女侍卫 | 3 | 0.9654 | 0.6762 |
+| Qwen3-TTS-12Hz-1.7B-Base | 侍卫 | 1 | 0.9400 | 0.5635 |
+| Qwen3-TTS-12Hz-1.7B-Base | 小公主 | 5 | 0.9675 | 0.7050 |
 | VoxCPM2 | 旁白 | 5 | 0.9725 | 0.7078 |
 | VoxCPM2 | 辰南 | 5 | 0.9408 | 0.6790 |
 | VoxCPM2 | 见习魔法师 | 3 | 0.9712 | 0.6015 |
@@ -109,7 +109,7 @@
 
 ## 可追溯证据
 
-- 42 个模型/角色结果及片段时间：[`speaker_similarity.jsonl`](task5-20260721-v4-r05/speaker_similarity.jsonl)
-- 21 个原始音频校准对：[`speaker_calibration.jsonl`](task5-20260721-v4-r05/speaker_calibration.jsonl)
-- Whisper 对齐摘要与软件版本：[`run_metadata.json`](task5-20260721-v4-r05/run_metadata.json)
+- 42 个模型/角色结果及片段时间：[`speaker_similarity.jsonl`](task5-20260722-v4-r01/speaker_similarity.jsonl)
+- 21 个原始音频校准对：[`speaker_calibration.jsonl`](task5-20260722-v4-r01/speaker_calibration.jsonl)
+- Whisper 对齐摘要与软件版本：[`run_metadata.json`](task5-20260722-v4-r01/run_metadata.json)
 - 冻结配置：`tts-bench/config/neutral-evaluation-v4.json`

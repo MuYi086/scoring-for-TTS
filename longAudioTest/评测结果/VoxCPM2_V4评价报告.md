@@ -10,7 +10,7 @@
 | 全文可懂度 | Whisper CER | 0.1056 | 六角色宏平均 0.0848 | 越低越好 |
 | 角色音色 | WavLM SIM | 0.9593 | 同人分段 0.9796；跨角色 0.7181 | 越高越好 |
 | 角色音色 | ECAPA SIM | 0.6856 | 同人分段 0.8011；跨角色 0.4621 | 越高越好 |
-| 自然度 | UTMOSv2 | 3.1951 | 六角色宏平均 3.0915 | 越高越好 |
+| 自然度 | UTMOSv2 | 3.1946 | 六角色宏平均 3.0915 | 越高越好 |
 | 自然度 | NISQA-TTS | 4.1969 | 六角色宏平均 4.2231 | 越高越好 |
 
 原始参考音频与长音频不是同文本、也不是同混音条件；CER 与自然度对照只用于显示后端在本批原始录音上的锚点，不能把两者差值直接归因为音色克隆损失。
@@ -36,7 +36,7 @@
 
 双 CER 同时受背景音乐、音效和长音频 ASR 解码影响；双 SIM 使用 Whisper 对齐后的纯角色片段；双自然度预测器未在本批中文多角色长音频上用真人 MOS 重新校准。正式选择仍应结合人工盲听。
 
-- 逐音频结果：[`per_audio.jsonl`](task5-20260721-v4-r05/per_audio.jsonl)
-- 逐角色片段与双 SIM：[`speaker_similarity.jsonl`](task5-20260721-v4-r05/speaker_similarity.jsonl)
-- 原始音频校准对：[`speaker_calibration.jsonl`](task5-20260721-v4-r05/speaker_calibration.jsonl)
-- 配置、版本与覆盖：[`run_metadata.json`](task5-20260721-v4-r05/run_metadata.json)
+- 逐音频结果：[`per_audio.jsonl`](task5-20260722-v4-r01/per_audio.jsonl)
+- 逐角色片段与双 SIM：[`speaker_similarity.jsonl`](task5-20260722-v4-r01/speaker_similarity.jsonl)
+- 原始音频校准对：[`speaker_calibration.jsonl`](task5-20260722-v4-r01/speaker_calibration.jsonl)
+- 配置、版本与覆盖：[`run_metadata.json`](task5-20260722-v4-r01/run_metadata.json)

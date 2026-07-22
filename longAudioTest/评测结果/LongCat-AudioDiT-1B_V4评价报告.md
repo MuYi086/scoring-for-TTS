@@ -36,7 +36,7 @@
 
 双 CER 同时受背景音乐、音效和长音频 ASR 解码影响；双 SIM 使用 Whisper 对齐后的纯角色片段；双自然度预测器未在本批中文多角色长音频上用真人 MOS 重新校准。正式选择仍应结合人工盲听。
 
-- 逐音频结果：[`per_audio.jsonl`](task5-20260721-v4-r05/per_audio.jsonl)
-- 逐角色片段与双 SIM：[`speaker_similarity.jsonl`](task5-20260721-v4-r05/speaker_similarity.jsonl)
-- 原始音频校准对：[`speaker_calibration.jsonl`](task5-20260721-v4-r05/speaker_calibration.jsonl)
-- 配置、版本与覆盖：[`run_metadata.json`](task5-20260721-v4-r05/run_metadata.json)
+- 逐音频结果：[`per_audio.jsonl`](task5-20260722-v4-r01/per_audio.jsonl)
+- 逐角色片段与双 SIM：[`speaker_similarity.jsonl`](task5-20260722-v4-r01/speaker_similarity.jsonl)
+- 原始音频校准对：[`speaker_calibration.jsonl`](task5-20260722-v4-r01/speaker_calibration.jsonl)
+- 配置、版本与覆盖：[`run_metadata.json`](task5-20260722-v4-r01/run_metadata.json)

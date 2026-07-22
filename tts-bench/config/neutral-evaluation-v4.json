@@ -15,37 +15,37 @@
     {
       "model_id": "dots.tts-base",
       "audio_path": "longAudioTest/audio_dots_tts.wav",
-      "sha256": "58287a2e47811ad058e8d040bdacac8ca52f0f46bef9a89a177bb8172b1a2b4a"
+      "sha256": "8146089bb03e7cd402871eb2bd631c5a00134758153c2354fd625218884ec2e0"
     },
     {
       "model_id": "IndexTTS2",
       "audio_path": "longAudioTest/audio_indextts2.wav",
-      "sha256": "634b2804d19e59c644d28de1f39ee9c5cf06dafa61fd8d849dc8b79b5678e612"
+      "sha256": "cf15d68580b482a70cb075783b7f2b2410e22021b48f71b929d326fcabd7901b"
     },
     {
       "model_id": "LongCat-AudioDiT-1B",
       "audio_path": "longAudioTest/audio_longCat.wav",
-      "sha256": "af1c498f8e715b2045006a0cf16d7eeb4f682f3e9aa4d5b720313da322ba2a3d"
+      "sha256": "c3593c32a6e5898426a05b2a5bb99bf1f71d92fa966ac14581afc950fe6e3baa"
     },
     {
       "model_id": "MOSS-TTS-Local-Transformer-v1.5",
       "audio_path": "longAudioTest/audio_moss_tts.wav",
-      "sha256": "ae6ffa92f1d42bfa1077e60560b509e325aae0cfd32b13282dcb0888005f8079"
+      "sha256": "c15e6c51b8ddc9b4dd90079466fc1ebee521df528ddb80c4c79a2d3216a47f21"
     },
     {
       "model_id": "OmniVoice",
       "audio_path": "longAudioTest/audio_omniVoice.wav",
-      "sha256": "2837751f5b6dfc9b2565591252095555aca83c2d7b4898d2d2ead5dbe541470f"
+      "sha256": "9b6ff55779e3cc05de8f77394bc09f5640773d0aff6d6bbe70063f83aa765595"
     },
     {
       "model_id": "Qwen3-TTS-12Hz-1.7B-Base",
       "audio_path": "longAudioTest/audio_qwen3_tts.wav",
-      "sha256": "5d57f378463470efa715147d26d508a6e2517e96c0e40c88aafd522a456d2b80"
+      "sha256": "1bcb41edda1afca9cb825cca30ee5d5fa392d10f0fe96d6567b5d64cedac9b8b"
     },
     {
       "model_id": "VoxCPM2",
       "audio_path": "longAudioTest/audio_voxcpm2.wav",
-      "sha256": "8f49bda98fdd542e5002742ab49d863a1297b405f0475d0443f1e152751f5686"
+      "sha256": "44ca104149824a026cd6bc530316fc7b1fd28ab4ccb57ca832b001d7a331fbfa"
     }
   ],
   "references": [
