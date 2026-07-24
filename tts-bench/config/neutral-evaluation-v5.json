@@ -1,0 +1,151 @@
+{
+  "schema_version": "5.0",
+  "expected_model_count": 7,
+  "expected_reference_count": 5,
+  "report_generator_module": "generate_neutral_v5_reports",
+  "source": {
+    "raw_text_path": "buildTestV5/text.md",
+    "raw_text_sha256": "5e481d2f296e7ddb1620fc50d31a8e5e573458f2187af2921e8956f8497cda00",
+    "dialogue_path": "buildTestV5/ai_deal.json",
+    "dialogue_sha256": "b30f178b666fd047416a9e8c39a49ffea6101a15f9e4bd6868078228ddde037d",
+    "dialogue_count": 93,
+    "normalized_character_count": 4713,
+    "raw_text_normalized_character_count": 4911,
+    "cer_reference": "ai_deal_dialogue_concatenation",
+    "case_id": "task6_v5_full_audiobook",
+    "raw_text_relation": "text.md 是小说原文；ai_deal.json 为实际合成输入，省略原文中 198 个规范化字符的说话人提示语。七条成品均按 ai_deal.json 合成，因此以其中 93 段 dialogue 台词串计算 CER。"
+  },
+  "models": [
+    {
+      "model_id": "dots.tts-base",
+      "audio_path": "buildTestV5/红房子_dots_tts.wav",
+      "sha256": "894db1248de653a619e4360e526bbafb54d067e8de38f0f8b8fead92457c9401"
+    },
+    {
+      "model_id": "IndexTTS2",
+      "audio_path": "buildTestV5/红房子_indextts2.wav",
+      "sha256": "0056186a14e99fc1a47d4c95f0971ab0047748f74a5bdf1b1d08cea55bd84270"
+    },
+    {
+      "model_id": "LongCat-AudioDiT-1B",
+      "audio_path": "buildTestV5/红房子_longCat.wav",
+      "sha256": "a3d62a2fdc1a5ea232d708601ed27f7e867976ea8e7ec2227e520bccba640fa1"
+    },
+    {
+      "model_id": "MOSS-TTS-Local-Transformer-v1.5",
+      "audio_path": "buildTestV5/红房子_moss_tts.wav",
+      "sha256": "de32dc330e09bdc43d8e0bd834eb11474191eee09e26315b27e05418a12a8ecb"
+    },
+    {
+      "model_id": "OmniVoice",
+      "audio_path": "buildTestV5/红房子_OmniVoice.wav",
+      "sha256": "187e6e2bc252e6185af999d458afb63d4c4b4e829296dff616e1e35d873cb3ec"
+    },
+    {
+      "model_id": "Qwen3-TTS-12Hz-1.7B-Base",
+      "audio_path": "buildTestV5/红房子_qwen3_tts.wav",
+      "sha256": "35746043ed1b19d751ddfa17bc2abbfcc3df2191a29612748f944cb3a12eba39"
+    },
+    {
+      "model_id": "VoxCPM2",
+      "audio_path": "buildTestV5/红房子_voxcpm2.wav",
+      "sha256": "c2ad8e6bcabce86abf8d51939c308864133341ba7f548776885cfb89177545de"
+    }
+  ],
+  "references": [
+    {
+      "role": "我",
+      "voice_description": "男性，约二十八岁，音域中等偏高，声线清亮年轻、明净且有适度共鸣；咬字清晰精准，语速平稳适中，气质冷静理性。",
+      "audio_path": "buildTestV5/mimo_我_v5.wav",
+      "sha256": "288240a93c5f29ad058d246f9dbb66b085bff6e46f7a1b14c2b54a80ac8e631f",
+      "transcript": "这廊道的阴影比书里描写的更深些，脚步声在石壁间回响。你说，当年那些走夜路的人，真能靠一盏灯就撑到天亮吗？"
+    },
+    {
+      "role": "旁白",
+      "voice_description": "男性，约二十八岁，音域中等偏中低，声线清晰略带醇厚；咬字清晰有力，语速中等平稳，气质冷静理性并带悬疑与紧张感。",
+      "audio_path": "buildTestV5/mimo_旁白_v5.wav",
+      "sha256": "604ecfc6e83c5ef1ab3e2b65c08519d8d5098796928cbd5e972ba36e82a98321",
+      "transcript": "夜色浸透了古堡的石墙，长廊深处传来若有似无的叹息。阴影在烛光边缘蠕动，仿佛有什么东西正贴着冰冷的地面匍匐靠近。我屏住呼吸，那阴影里，究竟藏着什么？"
+    },
+    {
+      "role": "枯臂男子",
+      "voice_description": "中老年男性，音调低沉，音色干涩偏薄并略带沙哑；咬字清晰但松弛，语速缓慢刻板，气质封闭阴郁且疏离。",
+      "audio_path": "buildTestV5/mimo_枯臂男子_v5.wav",
+      "sha256": "3e07a93f5a0e97b9c726b7eab0c26898ab45ce7f47b718e867920ae8ef2386ba",
+      "transcript": "把那本旧书放回架子上，就是最上面那层。你听见楼上的脚步声了吗？别管它。在这里，很多声音只属于它们自己。"
+    },
+    {
+      "role": "老妇人",
+      "voice_description": "老年女性，音域偏低，声线单薄并略带沙哑与气声，音色暗沉干涩；语速缓慢且有絮叨式重复停顿，气质阴郁宿命。",
+      "audio_path": "buildTestV5/mimo_老妇人_v5.wav",
+      "sha256": "b97089134939916fc12b2087e681a958abff3cbb8d06a963f004dc639919222b",
+      "transcript": "哎，这宅子住久了，连窗缝透进来的风都像在叹气。我活到这把年纪，可记得年轻时总嫌三两年太短。如今呀，倒是嫌这日子没个尽头似的闷。"
+    },
+    {
+      "role": "蒙眼罩的老人",
+      "voice_description": "老年男性，音域低沉，声线沙哑且有颗粒感，音色偏暗；咬字缓慢清晰，节奏沉稳，气质阴郁神秘并带不祥预兆感。",
+      "audio_path": "buildTestV5/mimo_蒙眼罩的老人_v5.wav",
+      "sha256": "1d096e754307dbd79ee231db43b989966bdc40a5a6efe653abdcffbf8d7efa93",
+      "transcript": "岁月在寂静中侵蚀一切，而记忆的碎片如荆棘般缠绕。你是否察觉，那无形的阴影正悄然逼近？它低语着古老的秘密，在每一个寂静的夜里回响。无论你逃往何方，命运的锁链终将收紧，光明只是暂时的幻象。"
+    }
+  ],
+  "sensevoice": {
+    "model_id": "FunAudioLLM/SenseVoiceSmall",
+    "device": "cuda",
+    "language": "zh",
+    "long_audio_chunk_seconds": 30.0
+  },
+  "whisper": {
+    "model_id": "openai/whisper-large-v3-turbo",
+    "device": "cuda",
+    "language": "zh",
+    "task": "transcribe",
+    "return_timestamps": "word",
+    "long_audio_chunk_seconds": 30.0
+  },
+  "wavlm": {
+    "model_id": "microsoft/wavlm-base-sv",
+    "device": "cuda",
+    "sample_rate_hz": 16000
+  },
+  "speechbrain_ecapa": {
+    "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+    "device": "cuda",
+    "sample_rate_hz": 16000
+  },
+  "alignment": {
+    "max_excerpts_per_role": 5,
+    "min_exact_match_characters": 4,
+    "min_chunk_match_ratio": 0.5,
+    "min_role_purity": 0.85,
+    "mixed_role_chunk_policy": "split_by_exact_character_run_linear_time",
+    "max_merge_gap_seconds": 1.5,
+    "min_excerpt_seconds": 0.5,
+    "max_excerpt_seconds": 20.0
+  },
+  "utmosv2": {
+    "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+    "device": "cuda:0",
+    "inference_seed": 20260722,
+    "num_repetitions": 5,
+    "remove_silent_section": true
+  },
+  "nisqa": {
+    "repository_id": "NISQA",
+    "checkpoint_path": "weights/nisqa_tts.tar",
+    "device": "cpu",
+    "batch_size": 8,
+    "model_name": "NISQA-TTS v1.0"
+  },
+  "quality_sampling": {
+    "window_seconds": 12.0,
+    "window_count": 8,
+    "strategy": "non_overlapping_capacity_evenly_spaced"
+  },
+  "policy": {
+    "normalization_id": "zh-v1",
+    "ranking": "六个后端先在各自量纲内独立报告原始值和名次；综合报告仅对名次做统一尺度转换，不直接平均跨量纲原始值。",
+    "reference_baseline": "五条原始音频分别提供 CER 与自然度基线，并构造五个同说话人分段和十个跨角色说话人校准对照。",
+    "long_audio": "SenseVoice 与 Whisper 对连续且不重叠的 30 秒分段顺序转写后计算全文 CER；双 SIM 对 Whisper 字词时间戳与冻结角色台词单调对齐；双自然度对固定等距窗口等权平均。"
+  }
+}

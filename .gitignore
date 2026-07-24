@@ -55,3 +55,5 @@ Thumbs.db
 # 长音频测试
 longAudioTest/audio*
 longAudioTest/mimo*
+buildTestV5/红房子*
+buildTestV5/mimo*

@@ -14,6 +14,7 @@ import importlib.metadata
 import json
 import math
 import os
+import subprocess
 import sys
 import tempfile
 from collections import Counter, defaultdict
@@ -115,21 +116,34 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def validate_config(config: dict[str, Any]) -> None:
-    """校验 V4 配置中会影响统计对象的冻结约束。"""
+def evaluation_version(config: dict[str, Any]) -> str:
+    """返回长音频配置对应的人类可读版本号。"""
 
-    if config.get("schema_version") != "4.0":
-        raise ValueError("V4 长音频评测仅支持 schema_version=4.0")
+    schema_version = str(config.get("schema_version", ""))
+    if schema_version not in {"4.0", "5.0"}:
+        raise ValueError("长音频评测仅支持 schema_version=4.0 或 5.0")
+    return f"V{schema_version.split('.', maxsplit=1)[0]}"
+
+
+def validate_config(config: dict[str, Any]) -> None:
+    """校验 V4/V5 长音频配置中会影响统计对象的冻结约束。"""
+
+    version = evaluation_version(config)
     if config.get("policy", {}).get("normalization_id") != "zh-v1":
         raise ValueError("当前只实现 zh-v1 文本规范化")
     if config.get("source", {}).get("cer_reference") != "ai_deal_dialogue_concatenation":
-        raise ValueError("V4 CER 参考必须冻结为 ai_deal.json 的 dialogue 台词串")
+        raise ValueError(f"{version} CER 参考必须冻结为 ai_deal.json 的 dialogue 台词串")
     if not os.environ.get("HF_MIRROR_ROOT"):
-        raise ValueError("必须设置 HF_MIRROR_ROOT，V4 评测不允许隐式联网下载")
+        raise ValueError(f"必须设置 HF_MIRROR_ROOT，{version} 评测不允许隐式联网下载")
     models = config.get("models", [])
     references = config.get("references", [])
     if len(models) != int(config.get("expected_model_count", -1)):
         raise ValueError("models 数量与 expected_model_count 不一致")
+    expected_reference_count = config.get("expected_reference_count")
+    if expected_reference_count is not None and len(references) != int(
+        expected_reference_count
+    ):
+        raise ValueError("references 数量与 expected_reference_count 不一致")
     if len({item["model_id"] for item in models}) != len(models):
         raise ValueError("models 中存在重复 model_id")
     if len({item["role"] for item in references}) != len(references):
@@ -146,7 +160,7 @@ def validate_config(config: dict[str, Any]) -> None:
         config["alignment"].get("mixed_role_chunk_policy")
         != "split_by_exact_character_run_linear_time"
     ):
-        raise ValueError("V4 混合角色时间戳块必须使用冻结的线性切分策略")
+        raise ValueError(f"{version} 混合角色时间戳块必须使用冻结的线性切分策略")
     if float(config["quality_sampling"]["window_seconds"]) <= 0:
         raise ValueError("quality_sampling.window_seconds 必须大于 0")
     if int(config["quality_sampling"]["window_count"]) < 1:
@@ -154,9 +168,10 @@ def validate_config(config: dict[str, Any]) -> None:
 
 
 def load_dialogues(config: dict[str, Any]) -> list[dict[str, Any]]:
-    """读取并核对冻结的 148 段角色台词。"""
+    """读取并核对冻结的角色台词。"""
 
     source = config["source"]
+    version = evaluation_version(config)
     dialogue_path = project_path(source["dialogue_path"])
     raw_text_path = project_path(source["raw_text_path"])
     for path, expected_hash in [
@@ -164,9 +179,9 @@ def load_dialogues(config: dict[str, Any]) -> list[dict[str, Any]]:
         (raw_text_path, source["raw_text_sha256"]),
     ]:
         if not path.is_file():
-            raise ValueError(f"找不到 V4 输入文件：{path}")
+            raise ValueError(f"找不到 {version} 输入文件：{path}")
         if sha256_file(path) != expected_hash:
-            raise ValueError(f"V4 输入文件 SHA-256 与冻结配置不一致：{path}")
+            raise ValueError(f"{version} 输入文件 SHA-256 与冻结配置不一致：{path}")
 
     rows = json.loads(dialogue_path.read_text(encoding="utf-8"))
     dialogues = [row for row in rows if row.get("type") == "dialogue"]
@@ -180,6 +195,14 @@ def load_dialogues(config: dict[str, Any]) -> list[dict[str, Any]]:
             "ai_deal.json 规范化字符数应为 "
             f"{source['normalized_character_count']}，实际 {len(normalized)}"
         )
+    expected_raw_count = source.get("raw_text_normalized_character_count")
+    if expected_raw_count is not None:
+        raw_normalized = normalize_zh_v1(raw_text_path.read_text(encoding="utf-8"))
+        if len(raw_normalized) != int(expected_raw_count):
+            raise ValueError(
+                "text.md 规范化字符数应为 "
+                f"{expected_raw_count}，实际 {len(raw_normalized)}"
+            )
     configured_roles = {item["role"] for item in config["references"]}
     actual_roles = {row["role_name"] for row in dialogues}
     if actual_roles != configured_roles:
@@ -197,13 +220,14 @@ def input_from_config(
     path_value: str,
     expected_sha256: str,
     expected_text: str,
+    version: str = "V4",
 ) -> AudioInput:
     path = project_path(path_value)
     if not path.is_file():
-        raise ValueError(f"找不到 V4 音频：{path}")
+        raise ValueError(f"找不到 {version} 音频：{path}")
     actual_hash = sha256_file(path)
     if actual_hash != expected_sha256:
-        raise ValueError(f"V4 音频 SHA-256 与冻结配置不一致：{path}")
+        raise ValueError(f"{version} 音频 SHA-256 与冻结配置不一致：{path}")
     return AudioInput(
         audio_id=audio_id,
         kind=kind,
@@ -221,8 +245,9 @@ def build_inputs(
     config: dict[str, Any],
     dialogues: list[dict[str, Any]],
 ) -> tuple[list[AudioInput], list[AudioInput]]:
-    """从配置中的显式路径和哈希建立六条参考与七条长音频。"""
+    """从配置中的显式路径和哈希建立参考音频与模型长音频。"""
 
+    version = evaluation_version(config)
     expected_text = "".join(row["text_content"] for row in dialogues)
     references = [
         input_from_config(
@@ -234,6 +259,7 @@ def build_inputs(
             path_value=item["audio_path"],
             expected_sha256=item["sha256"],
             expected_text=item["transcript"],
+            version=version,
         )
         for item in config["references"]
     ]
@@ -242,11 +268,12 @@ def build_inputs(
             audio_id=f"synthesis:{item['model_id']}",
             kind="synthesis",
             model_id=item["model_id"],
-            case_id="task5_v4_full_audiobook",
+            case_id=config["source"].get("case_id", "task5_v4_full_audiobook"),
             role="完整有声书",
             path_value=item["audio_path"],
             expected_sha256=item["sha256"],
             expected_text=expected_text,
+            version=version,
         )
         for item in config["models"]
     ]
@@ -258,9 +285,9 @@ def audio_duration(path: Path) -> float:
     return float(sf.info(path).duration)
 
 
-def base_audio_record(audio: AudioInput) -> dict[str, Any]:
+def base_audio_record(audio: AudioInput, schema_version: str = "4.0") -> dict[str, Any]:
     return {
-        "schema_version": "4.0",
+        "schema_version": schema_version,
         "audio_id": audio.audio_id,
         "kind": audio.kind,
         "model_id": audio.model_id,
@@ -278,11 +305,13 @@ def base_audio_record(audio: AudioInput) -> dict[str, Any]:
 
 
 def base_similarity_records(
-    references: list[AudioInput], syntheses: list[AudioInput]
+    references: list[AudioInput],
+    syntheses: list[AudioInput],
+    schema_version: str = "4.0",
 ) -> list[dict[str, Any]]:
     return [
         {
-            "schema_version": "4.0",
+            "schema_version": schema_version,
             "model_id": synthesis.model_id,
             "role": reference.role,
             "reference_audio": {
@@ -302,12 +331,14 @@ def base_similarity_records(
     ]
 
 
-def build_calibration_records(references: list[AudioInput]) -> list[dict[str, Any]]:
+def build_calibration_records(
+    references: list[AudioInput], schema_version: str = "4.0"
+) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for reference in references:
         rows.append(
             {
-                "schema_version": "4.0",
+                "schema_version": schema_version,
                 "control_type": "same_speaker_split_half",
                 "left_role": reference.role,
                 "right_role": reference.role,
@@ -319,7 +350,7 @@ def build_calibration_records(references: list[AudioInput]) -> list[dict[str, An
     for left, right in combinations(references, 2):
         rows.append(
             {
-                "schema_version": "4.0",
+                "schema_version": schema_version,
                 "control_type": "different_speaker_reference_pair",
                 "left_role": left.role,
                 "right_role": right.role,
@@ -349,15 +380,15 @@ def restore_or_create_records(
             raise ValueError("--resume 要求 run_metadata.json 已存在")
         metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
         if metadata.get("config") != config:
-            raise ValueError("--resume 的已有结果配置与当前 V4 配置不一致")
+            raise ValueError("--resume 的已有结果配置与当前长音频配置不一致")
         rows = [read_jsonl(path) for path in paths]
         if any(not item for item in rows):
             raise ValueError("--resume 要求三份原始结果文件都已存在且非空")
         return rows[0], rows[1], rows[2]
     return (
-        [base_audio_record(item) for item in [*references, *syntheses]],
-        base_similarity_records(references, syntheses),
-        build_calibration_records(references),
+        [base_audio_record(item, config["schema_version"]) for item in [*references, *syntheses]],
+        base_similarity_records(references, syntheses, config["schema_version"]),
+        build_calibration_records(references, config["schema_version"]),
     )
 
 
@@ -1241,6 +1272,44 @@ def scoped_metric_coverage(
     }
 
 
+def evaluation_implementation(config: dict[str, Any]) -> dict[str, Any]:
+    """记录本次结果对应的 Git 状态与入口脚本哈希。"""
+
+    schema_major = str(config["schema_version"]).split(".", maxsplit=1)[0]
+    implementation_paths = [Path(__file__).resolve()]
+    entry_path = SCRIPT_DIR / f"run_neutral_evaluation_v{schema_major}.py"
+    if entry_path.exists() and entry_path not in implementation_paths:
+        implementation_paths.append(entry_path)
+
+    metadata: dict[str, Any] = {
+        "files": {
+            project_relative_path(path): sha256_file(path)
+            for path in implementation_paths
+        }
+    }
+    try:
+        metadata["project_git_commit"] = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=PROJECT_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        metadata["project_worktree_dirty"] = bool(
+            subprocess.run(
+                ["git", "status", "--porcelain"],
+                cwd=PROJECT_ROOT,
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout.strip()
+        )
+    except (OSError, subprocess.CalledProcessError):
+        metadata["project_git_commit"] = None
+        metadata["project_worktree_dirty"] = None
+    return metadata
+
+
 def save_state(
     output_dir: Path,
     audio_rows: list[dict[str, Any]],
@@ -1254,7 +1323,7 @@ def save_state(
     write_jsonl_atomic(output_dir / "speaker_similarity.jsonl", similarity_rows)
     write_jsonl_atomic(output_dir / "speaker_calibration.jsonl", calibration_rows)
     metadata = {
-        "schema_version": "4.0",
+        "schema_version": config["schema_version"],
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "selected_metrics_this_invocation": selected_metrics,
         "active_model_id_this_invocation": active_model_id,
@@ -1268,6 +1337,7 @@ def save_state(
         "calibration_pair_count": len(calibration_rows),
         "coverage": metric_coverage(audio_rows, similarity_rows, calibration_rows),
         "package_versions": package_versions(),
+        "implementation": evaluation_implementation(config),
         "config": config,
     }
     (output_dir / "run_metadata.json").write_text(
@@ -1277,7 +1347,7 @@ def save_state(
 
 
 def run(args: argparse.Namespace) -> int:
-    """执行一次可断点续跑的 V4 长音频评测。"""
+    """执行一次可断点续跑的 V4/V5 长音频评测。"""
 
     config = load_json(args.config)
     validate_config(config)
@@ -1411,9 +1481,13 @@ def run(args: argparse.Namespace) -> int:
         item["complete"] == item["expected"] for item in model_coverage.values()
     )
     if all_model_metrics_complete:
-        from generate_neutral_v4_reports import write_model_report
-
-        report_path = write_model_report(args.output_dir, args.reports_dir, args.model_id)
+        report_module_name = config.get(
+            "report_generator_module", "generate_neutral_v4_reports"
+        )
+        report_module = __import__(report_module_name, fromlist=["write_model_report"])
+        report_path = report_module.write_model_report(
+            args.output_dir, args.reports_dir, args.model_id
+        )
         print(f"单模型评价报告：{report_path}", flush=True)
     return 0
 

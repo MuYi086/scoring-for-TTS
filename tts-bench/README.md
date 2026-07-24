@@ -157,6 +157,35 @@ python tts-bench/scripts/generate_neutral_v4_reports.py \
 
 各模型六后端完成时还会在 `longAudioTest/评测结果/` 写入 `<model_id>_V4评价报告.md`。完整的 7 模型顺序、环境变量、输入恢复和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 14 节。
 
+## Task 6 V5 长音频中立评测
+
+V5 的冻结事实源是 `config/neutral-evaluation-v5.json`，输入位于 `../buildTestV5/`：7 条模型长音频、5 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 93 段 `dialogue` 合成，因此全文 CER 使用其 4713 个 `zh-v1` 规范化字符；`text.md` 多出的 198 个说话人提示字符不进入本批 CER。
+
+V5 复用 V4 的防内存溢出机制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 只读取 Whisper 时间戳对齐出的五个角色片段；双自然度只读取固定等距的 12 秒窗口。每条记录原子保存，可以只对同一次输出目录断点续跑。
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v5_setup.py \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v5.py \
+  --model-id dots.tts-base \
+  --output-dir buildTestV5/评测结果/task6-v5-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+
+```bash
+python tts-bench/scripts/generate_neutral_v5_reports.py \
+  --results-dir buildTestV5/评测结果/task6-v5-YYYYMMDDTHHMMSSZ \
+  --reports-dir buildTestV5/评测结果
+```
+
+分项报告保留六个后端的原始值与独立名次。综合报告不直接混合 CER、SIM 与预测 MOS 原始值，而是先转换各后端的本批名次分，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 15 节。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。
