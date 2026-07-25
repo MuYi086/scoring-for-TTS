@@ -120,13 +120,13 @@ def evaluation_version(config: dict[str, Any]) -> str:
     """返回长音频配置对应的人类可读版本号。"""
 
     schema_version = str(config.get("schema_version", ""))
-    if schema_version not in {"4.0", "5.0", "6.0"}:
-        raise ValueError("长音频评测仅支持 schema_version=4.0、5.0 或 6.0")
+    if schema_version not in {"4.0", "5.0", "6.0", "7.0"}:
+        raise ValueError("长音频评测仅支持 schema_version=4.0、5.0、6.0 或 7.0")
     return f"V{schema_version.split('.', maxsplit=1)[0]}"
 
 
 def validate_config(config: dict[str, Any]) -> None:
-    """校验 V4–V6 长音频配置中会影响统计对象的冻结约束。"""
+    """校验 V4–V7 长音频配置中会影响统计对象的冻结约束。"""
 
     version = evaluation_version(config)
     if config.get("policy", {}).get("normalization_id") != "zh-v1":
@@ -150,6 +150,17 @@ def validate_config(config: dict[str, Any]) -> None:
         raise ValueError("references 中存在重复角色")
     if int(config["alignment"]["max_excerpts_per_role"]) < 1:
         raise ValueError("max_excerpts_per_role 必须大于 0")
+    standard_minimum = int(config["alignment"]["min_exact_match_characters"])
+    fallback_minimum = int(
+        config["alignment"].get(
+            "fallback_min_exact_match_characters", standard_minimum
+        )
+    )
+    if not 1 <= fallback_minimum <= standard_minimum:
+        raise ValueError(
+            "fallback_min_exact_match_characters 必须在 1 与 "
+            "min_exact_match_characters 之间"
+        )
     for backend in ("sensevoice", "whisper"):
         chunk_seconds = float(config[backend]["long_audio_chunk_seconds"])
         if not 0 < chunk_seconds <= 60:
@@ -771,6 +782,7 @@ def align_role_excerpts(
 
     alignment = config["alignment"]
     candidates: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    fallback_candidates: dict[str, list[dict[str, Any]]] = defaultdict(list)
     rejected = Counter()
     current: dict[str, Any] | None = None
 
@@ -779,21 +791,31 @@ def align_role_excerpts(
         if current is None:
             return
         duration = current["end_seconds"] - current["start_seconds"]
-        if current["exact_match_characters"] < int(alignment["min_exact_match_characters"]):
+        standard_minimum = int(alignment["min_exact_match_characters"])
+        fallback_minimum = int(
+            alignment.get("fallback_min_exact_match_characters", standard_minimum)
+        )
+        if current["exact_match_characters"] < fallback_minimum:
             rejected["too_few_exact_matches"] += 1
         elif duration < float(alignment["min_excerpt_seconds"]):
             rejected["too_short"] += 1
         else:
-            current["match_ratio"] = (
-                current["exact_match_characters"] / current["normalized_characters"]
+            excerpt = dict(current)
+            excerpt["match_ratio"] = (
+                excerpt["exact_match_characters"] / excerpt["normalized_characters"]
             )
-            current["role_purity"] = (
-                current["role_exact_match_characters"]
-                / current["exact_match_characters"]
+            excerpt["role_purity"] = (
+                excerpt["role_exact_match_characters"]
+                / excerpt["exact_match_characters"]
             )
-            current.pop("role_exact_match_characters")
-            role = current.pop("role")
-            candidates[role].append(current)
+            excerpt.pop("role_exact_match_characters")
+            role = excerpt.pop("role")
+            if excerpt["exact_match_characters"] >= standard_minimum:
+                excerpt["selection_tier"] = "standard"
+                candidates[role].append(excerpt)
+            else:
+                excerpt["selection_tier"] = "short_role_fallback"
+                fallback_candidates[role].append(excerpt)
         current = None
 
     max_gap = float(alignment["max_merge_gap_seconds"])
@@ -882,10 +904,17 @@ def align_role_excerpts(
 
     limit = int(alignment["max_excerpts_per_role"])
     roles = {str(row["role_name"]) for row in dialogues}
-    selected = {
-        role: evenly_spaced(sorted(candidates.get(role, []), key=lambda item: item["start_seconds"]), limit)
-        for role in sorted(roles)
-    }
+    fallback_roles = sorted(
+        role
+        for role in roles
+        if not candidates.get(role) and fallback_candidates.get(role)
+    )
+    selected = {}
+    for role in sorted(roles):
+        pool = candidates.get(role, []) or fallback_candidates.get(role, [])
+        selected[role] = evenly_spaced(
+            sorted(pool, key=lambda item: item["start_seconds"]), limit
+        )
     missing = [role for role, items in selected.items() if not items]
     if missing:
         raise ValueError(f"Whisper 对齐后角色没有可用片段：{', '.join(missing)}")
@@ -896,7 +925,11 @@ def align_role_excerpts(
         "exact_alignment_ratio_to_expected": matched_characters / len(expected_text),
         "chunk_count": len(chunks),
         "candidate_count_by_role": {role: len(candidates.get(role, [])) for role in sorted(roles)},
+        "fallback_candidate_count_by_role": {
+            role: len(fallback_candidates.get(role, [])) for role in sorted(roles)
+        },
         "selected_count_by_role": {role: len(selected[role]) for role in sorted(roles)},
+        "fallback_roles": fallback_roles,
         "split_mixed_chunk_count": split_mixed_chunk_count,
         "rejected_chunk_counts": dict(sorted(rejected.items())),
     }
@@ -1347,7 +1380,7 @@ def save_state(
 
 
 def run(args: argparse.Namespace) -> int:
-    """执行一次可断点续跑的 V4–V6 长音频评测。"""
+    """执行一次可断点续跑的 V4–V7 长音频评测。"""
 
     config = load_json(args.config)
     validate_config(config)

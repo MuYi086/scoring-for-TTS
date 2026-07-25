@@ -1,6 +1,6 @@
 # TTS 与音色设计评估工作区
 
-本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口、Task 4 V3、Task 5 V4、Task 6 V5 与 Task 7 V6 专项评测均使用六个独立后端；分项报告不把不同量纲强行合成一个原始值总分：
+本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口、Task 4 V3、Task 5 V4、Task 6 V5、Task 7 V6 与 Task 8 V7 专项评测均使用六个独立后端；分项报告不把不同量纲强行合成一个原始值总分：
 
 - SenseVoice CER + Whisper CER；
 - WavLM SIM + SpeechBrain ECAPA SIM；
@@ -29,7 +29,7 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 7 的 `longAudioTestV6/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 7 的 `longAudioTestV6/*.wav`、Task 8 的 `longAudioTestV7/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
 
 ## Task 3 V2 复测
 
@@ -122,6 +122,24 @@ conda run --no-capture-output -n audio_eval \
 ```
 
 其余模型对同一目录增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v6_reports.py`，生成三份 V6 双后端报告和 task7 明确指定文件名的 `小说转有声TTS_V5综合评价报告.md`；综合报告正文和证据版本均为 V6。统一名次尺度与生产权重沿用台词正确性 50%、角色音色 30%、自然听感 20%。完整命令与验收规则见跨电脑复测指南第 16 节。
+
+## Task 8 V7 长音频复测
+
+V7 对 `longAudioTestV7/` 中 7 条多角色成品逐模型串行评价，并以旁白、我、警察 3 条 MiMo 角色音频提供原始基线与说话人校准。成品按 `ai_deal.json` 的 77 段台词合成，全文 CER 以其中 2066 个 `zh-v1` 规范化字符为参考；`text.md` 多出的 10 个叙述性说话提示字符不进入 CER。正式运行先预检，再使用一个全新的输出目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v7_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v7.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV7/评测结果/task8-v7-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余模型对同一目录增加 `--resume`，每次仍只能传一个 `--model-id`。角色若完全没有达到 4 个精确匹配字符的标准候选，V7 才允许使用至少 2 个精确匹配字符且满足其余门槛的短台词回退片段，原始结果和报告会显式标记。全部完成后运行 `generate_neutral_v7_reports.py`。按 `task8.md` 的明确要求，三份双后端报告沿用 V6 文件名，综合报告沿用 `小说转有声TTS_V5综合评价报告.md`；报告正文、冻结配置和原始证据均标识为 V7。综合报告只转换六后端的本批名次，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整命令与验收规则见跨电脑复测指南第 17 节。
 
 ## 目录入口
 

@@ -228,6 +228,14 @@ def render_model_report(
     }
     alignment = synthesis["metrics"]["whisper_cer"].get("alignment_summary", {})
     role_count = len(references)
+    fallback_roles = [
+        row["role"]
+        for row in model_similarity
+        if any(
+            excerpt.get("selection_tier") == "short_role_fallback"
+            for excerpt in row["alignment_excerpts"]
+        )
+    ]
     lines = [
         f"# {model_id} {REPORT_VERSION} 独立评价报告",
         "",
@@ -264,6 +272,13 @@ def render_model_report(
             f"- 成品时长：**{synthesis['audio']['duration_seconds']:.2f} 秒**。",
             f"- Whisper 精确对齐：**{alignment.get('exact_matched_characters', 0)} / {alignment.get('expected_characters', 0)}** 个规范化字符，对齐率 **{alignment.get('exact_alignment_ratio_to_expected', 0.0):.4f}**。",
             f"- 自然度窗口：UTMOSv2 **{synthesis['metrics']['utmosv2']['count']}** 个、NISQA-TTS **{synthesis['metrics']['nisqa']['count']}** 个。",
+            (
+                "- 短台词定位回退：**"
+                + "、".join(fallback_roles)
+                + "** 未找到达到标准精确匹配长度的候选，SIM 使用原始结果中显式标记的短台词精确匹配片段；短片段嵌入稳定性较弱，必须结合人工盲听。"
+                if fallback_roles
+                else "- 短台词定位回退：未触发。"
+            ),
             "- 双 CER 会受背景音乐、音效和 ASR 偏差影响；双 SIM 依赖自动时间戳对齐；双自然度没有本批真人 MOS 校准。正式选型仍需人工盲听。",
             "",
             "## 可追溯证据",
@@ -424,16 +439,21 @@ def render_similarity_report(
             "",
             "## 逐角色结果",
             "",
-            "| 模型 | 角色 | 片段数 | WavLM SIM ↑ | ECAPA SIM ↑ |",
-            "| --- | --- | ---: | ---: | ---: |",
+        "| 模型 | 角色 | 片段数 | 定位规则 | WavLM SIM ↑ | ECAPA SIM ↑ |",
+        "| --- | --- | ---: | --- | ---: | ---: |",
         ]
     )
     for row in sorted(
         similarity_rows,
         key=lambda item: (item["model_id"].casefold(), ROLE_ORDER[item["role"]]),
     ):
+        fallback = any(
+            excerpt.get("selection_tier") == "short_role_fallback"
+            for excerpt in row["alignment_excerpts"]
+        )
         lines.append(
             f"| {row['model_id']} | {row['role']} | {len(row['alignment_excerpts'])} | "
+            f"{'短台词回退' if fallback else '标准'} | "
             f"{metric_value(row, 'wavlm_sim'):.4f} | {metric_value(row, 'speechbrain_ecapa_sim'):.4f} |"
         )
     lines.extend(
@@ -445,6 +465,7 @@ def render_similarity_report(
             f"- ECAPA：同说话人分段均值 **{controls['speechbrain_ecapa_sim']['same_speaker_split_half']:.4f}**；跨角色均值 **{controls['speechbrain_ecapa_sim']['different_speaker_reference_pair']:.4f}**。",
             f"- {wavlm_calibration}应结合 ECAPA、逐角色结果和人工盲听，不设置未经校准的通过阈值。",
             "- 角色片段由 Whisper 时间戳与冻结台词单调对齐，按全文位置等距选择，不按 SIM 高低挑片段。",
+            "- 只有某角色完全没有达到标准精确匹配长度的候选时，才允许使用配置冻结且显式标记的短台词回退片段；其 SIM 稳定性更弱。",
             "- 背景音乐、音效、自动对齐误差和多人齐声都会影响嵌入；正式角色定版必须结合片段盲听。",
             "",
             f"- {similarity_count} 个模型/角色结果（{model_count} 个模型 × {role_count} 个角色）：[`speaker_similarity.jsonl`]({results_link}/speaker_similarity.jsonl)",

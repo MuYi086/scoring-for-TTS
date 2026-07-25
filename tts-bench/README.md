@@ -215,6 +215,35 @@ python tts-bench/scripts/generate_neutral_v6_reports.py \
 
 前三份报告文件名使用 V6；综合报告按 `task7.md` 的明确要求保留文件名 `小说转有声TTS_V5综合评价报告.md`，但正文、配置和原始证据均标识为 V6。综合分只对六后端的本批名次做统一尺度转换，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 16 节。
 
+## Task 8 V7 长音频中立评测
+
+V7 的冻结事实源是 `config/neutral-evaluation-v7.json`，输入位于 `../longAudioTestV7/`：7 条模型长音频、3 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 2066 个 `zh-v1` 规范化字符；`text.md` 多出的 10 个字符是两处叙述性说话提示，不进入本批 CER。
+
+V7 继续使用长音频中立流程：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 使用 Whisper 时间戳对齐出的三角色片段；角色若完全没有达到 4 个精确匹配字符的标准候选，才使用至少 2 个精确匹配字符且满足其余门槛的短台词回退片段，并在原始结果和报告中显式标记；双自然度只读取 8 个固定等距的 12 秒窗口。每条记录原子保存，只能对同一次未完成运行的原目录断点续跑。
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v7_setup.py \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v7.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV7/评测结果/task8-v7-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+
+```bash
+python tts-bench/scripts/generate_neutral_v7_reports.py \
+  --results-dir longAudioTestV7/评测结果/task8-v7-YYYYMMDDTHHMMSSZ \
+  --reports-dir longAudioTestV7/评测结果
+```
+
+按 `task8.md` 的明确要求，前三份报告沿用 V6 文件名，综合报告沿用 `小说转有声TTS_V5综合评价报告.md`，但正文、配置和原始证据均标识为 V7。综合分只对六后端的本批名次做统一尺度转换，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 17 节。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。
