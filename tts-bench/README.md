@@ -186,6 +186,35 @@ python tts-bench/scripts/generate_neutral_v5_reports.py \
 
 分项报告保留六个后端的原始值与独立名次。综合报告不直接混合 CER、SIM 与预测 MOS 原始值，而是先转换各后端的本批名次分，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 15 节。
 
+## Task 7 V6 长音频中立评测
+
+V6 的冻结事实源是 `config/neutral-evaluation-v6.json`，输入位于 `../longAudioTestV6/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 58 段 `dialogue` 合成，因此全文 CER 使用其 1783 个 `zh-v1` 规范化字符；`text.md` 多出的 43 个说话人提示字符不进入本批 CER。
+
+V6 复用经过测试的长音频流程：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 使用 Whisper 时间戳对齐出的四角色片段；双自然度只读取 8 个固定等距的 12 秒窗口。每条记录原子保存，只能对同一次未完成运行的原目录断点续跑。
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v6_setup.py \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v6.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV6/评测结果/task7-v6-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+
+```bash
+python tts-bench/scripts/generate_neutral_v6_reports.py \
+  --results-dir longAudioTestV6/评测结果/task7-v6-YYYYMMDDTHHMMSSZ \
+  --reports-dir longAudioTestV6/评测结果
+```
+
+前三份报告文件名使用 V6；综合报告按 `task7.md` 的明确要求保留文件名 `小说转有声TTS_V5综合评价报告.md`，但正文、配置和原始证据均标识为 V6。综合分只对六后端的本批名次做统一尺度转换，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 16 节。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。

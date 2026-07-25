@@ -24,6 +24,7 @@ def load_script():
 def test_whisper_loads_model_and_processor_offline_before_building_pipeline(monkeypatch) -> None:
     script = load_script()
     captured: dict[str, object] = {}
+    monkeypatch.delenv("HF_MIRROR_ROOT", raising=False)
 
     fake_torch = ModuleType("torch")
     fake_torch.cuda = type("FakeCuda", (), {"is_available": staticmethod(lambda: False)})()

@@ -120,13 +120,13 @@ def evaluation_version(config: dict[str, Any]) -> str:
     """返回长音频配置对应的人类可读版本号。"""
 
     schema_version = str(config.get("schema_version", ""))
-    if schema_version not in {"4.0", "5.0"}:
-        raise ValueError("长音频评测仅支持 schema_version=4.0 或 5.0")
+    if schema_version not in {"4.0", "5.0", "6.0"}:
+        raise ValueError("长音频评测仅支持 schema_version=4.0、5.0 或 6.0")
     return f"V{schema_version.split('.', maxsplit=1)[0]}"
 
 
 def validate_config(config: dict[str, Any]) -> None:
-    """校验 V4/V5 长音频配置中会影响统计对象的冻结约束。"""
+    """校验 V4–V6 长音频配置中会影响统计对象的冻结约束。"""
 
     version = evaluation_version(config)
     if config.get("policy", {}).get("normalization_id") != "zh-v1":
@@ -1347,7 +1347,7 @@ def save_state(
 
 
 def run(args: argparse.Namespace) -> int:
-    """执行一次可断点续跑的 V4/V5 长音频评测。"""
+    """执行一次可断点续跑的 V4–V6 长音频评测。"""
 
     config = load_json(args.config)
     validate_config(config)

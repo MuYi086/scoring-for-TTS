@@ -1,0 +1,144 @@
+{
+  "schema_version": "6.0",
+  "expected_model_count": 7,
+  "expected_reference_count": 4,
+  "report_generator_module": "generate_neutral_v6_reports",
+  "source": {
+    "raw_text_path": "longAudioTestV6/text.md",
+    "raw_text_sha256": "d66e7931ff8979f3c21962e7ce574eaa66c882f36d0446e7fcb086b434b83f3b",
+    "dialogue_path": "longAudioTestV6/ai_deal.json",
+    "dialogue_sha256": "8addf2671777f6c4a5d1698180d8474f4d647f12ab1297ff9ec5c56077becdec",
+    "dialogue_count": 58,
+    "normalized_character_count": 1783,
+    "raw_text_normalized_character_count": 1826,
+    "cer_reference": "ai_deal_dialogue_concatenation",
+    "case_id": "task7_v6_full_audiobook",
+    "raw_text_relation": "text.md 是小说原文；ai_deal.json 为实际合成输入，省略原文中 43 个规范化字符的说话人提示语。七条成品均按 ai_deal.json 合成，因此以其中 58 段 dialogue 台词串计算 CER。"
+  },
+  "models": [
+    {
+      "model_id": "dots.tts-base",
+      "audio_path": "longAudioTestV6/audio_dots_tts.wav",
+      "sha256": "46fd54f1c71e1cbf0a3d3b457feab416658555f8bd9d590edcb8ad11175af544"
+    },
+    {
+      "model_id": "IndexTTS2",
+      "audio_path": "longAudioTestV6/audio_indextts2.wav",
+      "sha256": "be0413efb9dbc5f9555b099c1a6bad5ca01f58ac7dc6863e28f1d36a75319d73"
+    },
+    {
+      "model_id": "LongCat-AudioDiT-1B",
+      "audio_path": "longAudioTestV6/audio_longCat.wav",
+      "sha256": "ffda3960225fcf7d9afb18e1b9c70c550547c48203766b3a6a2e2e2663cf72d5"
+    },
+    {
+      "model_id": "MOSS-TTS-Local-Transformer-v1.5",
+      "audio_path": "longAudioTestV6/audio_moss_tts.wav",
+      "sha256": "04e767d6ccb2b7ec4f8f7650c5902f17ba23335cf11184d588b4cbc41f553bea"
+    },
+    {
+      "model_id": "OmniVoice",
+      "audio_path": "longAudioTestV6/audio_omniVoice.wav",
+      "sha256": "8e26fd08507865a667026454911033b03ac421948495adf5064f8e1d9eb6111e"
+    },
+    {
+      "model_id": "Qwen3-TTS-12Hz-1.7B-Base",
+      "audio_path": "longAudioTestV6/audio_qwen3_tts.wav",
+      "sha256": "6e2e5306d12f1afc9df16105512d47217da64d45f44420425babfcff28a0923f"
+    },
+    {
+      "model_id": "VoxCPM2",
+      "audio_path": "longAudioTestV6/audio_voxcpm2.wav",
+      "sha256": "580219928b4ac0a22b41821cce00cae122c9d519357c8b2f8a2dc9591280e127"
+    }
+  ],
+  "references": [
+    {
+      "role": "旁白",
+      "voice_description": "男性，中年，音域中低，声线厚实略带磁性，明亮而不刺耳；咬字清晰干脆，语速中等偏慢，气质沉稳平和且有叙述张力。",
+      "audio_path": "longAudioTestV6/mimo_旁白_v6.wav",
+      "sha256": "277e87ff60c6d074574bce6225c111414505dbabf86320b4751e0b4b5952c9bb",
+      "transcript": "夜色中，两路人马各怀心思，表面客套，暗藏机锋，彼此试探周旋。"
+    },
+    {
+      "role": "三皇子",
+      "voice_description": "男性，青年至中年，音域中低，声线醇厚略带沙哑，共鸣深沉；咬字清晰稳重，语速适中偏缓，气质沉稳内敛并略带疏离与审慎。",
+      "audio_path": "longAudioTestV6/mimo_三皇子_v6.wav",
+      "sha256": "53523ca19d61f72d2a33fbbc938e6b83501035832b2cf5dd9471126ffafbf952",
+      "transcript": "本宫见此人一路鬼祟跟在身后，便已命人拿下，请公主自行发落吧。"
+    },
+    {
+      "role": "小公主",
+      "voice_description": "女性，少年至青年早期，音域中高，声线明亮略带尖细，清透偏薄；咬字干脆、语速偏快，气质灵动倨傲并带顽皮威压感。",
+      "audio_path": "longAudioTestV6/mimo_小公主_v6.wav",
+      "sha256": "f5477af90c82cd06d9e4949f6c9ca404385d9f9a65093ae5912dc54932a9bb76",
+      "transcript": "哎呀，谁给你的胆子，竟敢这样跟我说话？真是不知天高地厚了啊！"
+    },
+    {
+      "role": "辰南",
+      "voice_description": "青年男性，音域中高，声线偏明亮且略带痞气，清朗中带油滑与狡黠；咬字稍快、节奏灵活，气质轻浮中隐含机敏。",
+      "audio_path": "longAudioTestV6/mimo_辰南_v6.wav",
+      "sha256": "877d63fad18283cd3fec5226952b6d415286c5b309a8ad569c9669054697fa0d",
+      "transcript": "嘿嘿我说公主殿下您何必动怒呢，事情还没到那一步啊您急什么呀？"
+    }
+  ],
+  "sensevoice": {
+    "model_id": "FunAudioLLM/SenseVoiceSmall",
+    "device": "cuda",
+    "language": "zh",
+    "long_audio_chunk_seconds": 30.0
+  },
+  "whisper": {
+    "model_id": "openai/whisper-large-v3-turbo",
+    "device": "cuda",
+    "language": "zh",
+    "task": "transcribe",
+    "return_timestamps": "word",
+    "long_audio_chunk_seconds": 30.0
+  },
+  "wavlm": {
+    "model_id": "microsoft/wavlm-base-sv",
+    "device": "cuda",
+    "sample_rate_hz": 16000
+  },
+  "speechbrain_ecapa": {
+    "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+    "device": "cuda",
+    "sample_rate_hz": 16000
+  },
+  "alignment": {
+    "max_excerpts_per_role": 5,
+    "min_exact_match_characters": 4,
+    "min_chunk_match_ratio": 0.5,
+    "min_role_purity": 0.85,
+    "mixed_role_chunk_policy": "split_by_exact_character_run_linear_time",
+    "max_merge_gap_seconds": 1.5,
+    "min_excerpt_seconds": 0.5,
+    "max_excerpt_seconds": 20.0
+  },
+  "utmosv2": {
+    "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+    "device": "cuda:0",
+    "inference_seed": 20260725,
+    "num_repetitions": 5,
+    "remove_silent_section": true
+  },
+  "nisqa": {
+    "repository_id": "NISQA",
+    "checkpoint_path": "weights/nisqa_tts.tar",
+    "device": "cpu",
+    "batch_size": 8,
+    "model_name": "NISQA-TTS v1.0"
+  },
+  "quality_sampling": {
+    "window_seconds": 12.0,
+    "window_count": 8,
+    "strategy": "non_overlapping_capacity_evenly_spaced"
+  },
+  "policy": {
+    "normalization_id": "zh-v1",
+    "ranking": "六个后端先在各自量纲内独立报告原始值和名次；综合报告仅对名次做统一尺度转换，不直接平均跨量纲原始值。",
+    "reference_baseline": "四条原始音频分别提供 CER 与自然度基线，并构造四个同说话人分段和六个跨角色说话人校准对照。",
+    "long_audio": "SenseVoice 与 Whisper 对连续且不重叠的 30 秒分段顺序转写后计算全文 CER；双 SIM 对 Whisper 字词时间戳与冻结角色台词单调对齐；双自然度对固定等距窗口等权平均。"
+  }
+}

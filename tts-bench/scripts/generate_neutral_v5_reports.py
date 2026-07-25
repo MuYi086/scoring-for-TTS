@@ -18,6 +18,10 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parents[1]
 DEFAULT_RESULTS = PROJECT_ROOT / "buildTestV5" / "评测结果" / "task6-v5-raw"
 DEFAULT_REPORTS = PROJECT_ROOT / "buildTestV5" / "评测结果"
+REPORT_VERSION = "V5"
+SCHEMA_VERSION = "5.0"
+SOURCE_DISPLAY_PATH = "buildTestV5/ai_deal.json"
+CONFIG_DISPLAY_PATH = "tts-bench/config/neutral-evaluation-v5.json"
 REPORT_FILENAMES = {
     "cer": "SenseVoice_CER&Whisper_CER_V5评价报告.md",
     "sim": "WavLM_SIM&SpeechBrain_ECAPA_SIM_V5评价报告.md",
@@ -134,8 +138,11 @@ def validate_results(
     model_count = int(config.get("expected_model_count", -1))
     role_count = len(config.get("references", []))
     calibration_count = role_count + len(list(combinations(range(role_count), 2)))
-    if metadata.get("schema_version") != "5.0" or config.get("schema_version") != "5.0":
-        raise ValueError("原始结果不是冻结的 V5 配置")
+    if (
+        metadata.get("schema_version") != SCHEMA_VERSION
+        or config.get("schema_version") != SCHEMA_VERSION
+    ):
+        raise ValueError(f"原始结果不是冻结的 {REPORT_VERSION} 配置")
     if len(audio_rows) != model_count + role_count:
         raise ValueError(f"per_audio.jsonl 数量不正确：实际 {len(audio_rows)}")
     if len(similarity_rows) != model_count * role_count:
@@ -144,9 +151,9 @@ def validate_results(
         raise ValueError(f"speaker_calibration.jsonl 数量不正确：实际 {len(calibration_rows)}")
     configured_roles = {item["role"] for item in config.get("references", [])}
     if configured_roles != set(ROLE_ORDER):
-        raise ValueError("V5 报告角色顺序与冻结配置不一致")
+        raise ValueError(f"{REPORT_VERSION} 报告角色顺序与冻结配置不一致")
     if {row["role"] for row in similarity_rows} != configured_roles:
-        raise ValueError("V5 SIM 角色集合与冻结配置不一致")
+        raise ValueError(f"{REPORT_VERSION} SIM 角色集合与冻结配置不一致")
     all_rows = [*audio_rows, *similarity_rows, *calibration_rows]
     if any(row.get("errors") for row in all_rows):
         raise ValueError("原始结果仍有逐项错误，拒绝生成看似完整的报告")
@@ -193,7 +200,7 @@ def model_report_filename(model_id: str) -> str:
     safe = re.sub(r"[^0-9A-Za-z._-]+", "_", model_id).strip("._")
     if not safe:
         raise ValueError(f"model_id 无法生成安全文件名：{model_id!r}")
-    return f"{safe}_V5评价报告.md"
+    return f"{safe}_{REPORT_VERSION}评价报告.md"
 
 
 def render_model_report(
@@ -222,7 +229,7 @@ def render_model_report(
     alignment = synthesis["metrics"]["whisper_cer"].get("alignment_summary", {})
     role_count = len(references)
     lines = [
-        f"# {model_id} V5 独立评价报告",
+        f"# {model_id} {REPORT_VERSION} 独立评价报告",
         "",
         "## 六后端结果",
         "",
@@ -296,7 +303,7 @@ def render_cer_report(
     raw_count = int(source["raw_text_normalized_character_count"])
     dialogue_count = int(source["normalized_character_count"])
     lines = [
-        "# SenseVoice CER 与 Whisper CER V5 评价报告",
+        f"# SenseVoice CER 与 Whisper CER {REPORT_VERSION} 评价报告",
         "",
         "## 结论摘要",
         "",
@@ -339,7 +346,7 @@ def render_cer_report(
             "",
             "## 文本边界与证据",
             "",
-            f"成品按 `buildTestV5/ai_deal.json` 合成，故以其中 {source['dialogue_count']} 段台词、"
+            f"成品按 `{SOURCE_DISPLAY_PATH}` 合成，故以其中 {source['dialogue_count']} 段台词、"
             f"{dialogue_count} 个规范化字符计算 CER。`text.md` 有 {raw_count} 个规范化字符，"
             f"多出的 {raw_count - dialogue_count} 个说话人提示字符不进入合成；若直接作为参考会把输入差异误计为模型错误。"
             "规范化为 `zh-v1`，不做同音字或数字读法等价。",
@@ -349,7 +356,7 @@ def render_cer_report(
             "",
             f"- 完整转写：[`per_audio.jsonl`]({results_link}/per_audio.jsonl)",
             f"- 覆盖与配置：[`run_metadata.json`]({results_link}/run_metadata.json)",
-            "- 冻结配置：`tts-bench/config/neutral-evaluation-v5.json`",
+            f"- 冻结配置：`{CONFIG_DISPLAY_PATH}`",
             "",
         ]
     )
@@ -391,7 +398,7 @@ def render_similarity_report(
             f"{wavlm_model_min:.4f}–{wavlm_model_max:.4f}，自动 SIM 的区分证据较弱。"
         )
     lines = [
-        "# WavLM SIM 与 SpeechBrain ECAPA SIM V5 评价报告",
+        f"# WavLM SIM 与 SpeechBrain ECAPA SIM {REPORT_VERSION} 评价报告",
         "",
         "## 结论摘要",
         "",
@@ -442,7 +449,7 @@ def render_similarity_report(
             "",
             f"- {similarity_count} 个模型/角色结果（{model_count} 个模型 × {role_count} 个角色）：[`speaker_similarity.jsonl`]({results_link}/speaker_similarity.jsonl)",
             f"- {calibration_count} 个校准对：[`speaker_calibration.jsonl`]({results_link}/speaker_calibration.jsonl)",
-            "- 冻结配置：`tts-bench/config/neutral-evaluation-v5.json`",
+            f"- 冻结配置：`{CONFIG_DISPLAY_PATH}`",
             "",
         ]
     )
@@ -471,7 +478,7 @@ def render_quality_report(
     else:
         predictor_agreement = "两个预测器的第 1 名不同，自动自然听感结论存在明显分歧。"
     lines = [
-        "# UTMOSv2 与 NISQA V5 评价报告",
+        f"# UTMOSv2 与 NISQA {REPORT_VERSION} 评价报告",
         "",
         "## 结论摘要",
         "",
@@ -521,7 +528,7 @@ def render_quality_report(
             "",
             f"- 逐窗口分数：[`per_audio.jsonl`]({results_link}/per_audio.jsonl)",
             f"- 采样参数与版本：[`run_metadata.json`]({results_link}/run_metadata.json)",
-            "- 冻结配置：`tts-bench/config/neutral-evaluation-v5.json`",
+            f"- 冻结配置：`{CONFIG_DISPLAY_PATH}`",
             "",
         ]
     )
@@ -596,7 +603,7 @@ def render_comprehensive_report(
         "自然听感优先": {"台词正确性": 0.35, "角色音色": 0.20, "自然听感": 0.45},
     }
     lines = [
-        "# 小说转有声 TTS V5 综合评价报告",
+        f"# 小说转有声 TTS {REPORT_VERSION} 综合评价报告",
         "",
         "## 最终结论",
         "",
@@ -688,10 +695,10 @@ def render_comprehensive_report(
             "",
             "## 数据来源",
             "",
-            f"- [SenseVoice CER 与 Whisper CER V5 评价报告]({REPORT_FILENAMES['cer']})",
-            f"- [WavLM SIM 与 SpeechBrain ECAPA SIM V5 评价报告]({REPORT_FILENAMES['sim']})",
-            f"- [UTMOSv2 与 NISQA V5 评价报告]({REPORT_FILENAMES['quality']})",
-            f"- [V5 完整覆盖与配置快照]({results_link}/run_metadata.json)",
+            f"- [SenseVoice CER 与 Whisper CER {REPORT_VERSION} 评价报告]({REPORT_FILENAMES['cer']})",
+            f"- [WavLM SIM 与 SpeechBrain ECAPA SIM {REPORT_VERSION} 评价报告]({REPORT_FILENAMES['sim']})",
+            f"- [UTMOSv2 与 NISQA {REPORT_VERSION} 评价报告]({REPORT_FILENAMES['quality']})",
+            f"- [{REPORT_VERSION} 完整覆盖与配置快照]({results_link}/run_metadata.json)",
             "",
         ]
     )
@@ -756,5 +763,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except ValueError as error:
-        print(f"V5 报告生成失败：{error}", file=sys.stderr)
+        print(f"{REPORT_VERSION} 报告生成失败：{error}", file=sys.stderr)
         raise SystemExit(2) from error

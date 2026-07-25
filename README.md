@@ -1,6 +1,6 @@
 # TTS 与音色设计评估工作区
 
-本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口、Task 4 V3、Task 5 V4 与 Task 6 V5 专项评测均使用六个独立后端；分项报告不把不同量纲强行合成一个原始值总分：
+本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口、Task 4 V3、Task 5 V4、Task 6 V5 与 Task 7 V6 专项评测均使用六个独立后端；分项报告不把不同量纲强行合成一个原始值总分：
 
 - SenseVoice CER + Whisper CER；
 - WavLM SIM + SpeechBrain ECAPA SIM；
@@ -29,7 +29,7 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 7 的 `longAudioTestV6/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
 
 ## Task 3 V2 复测
 
@@ -104,6 +104,24 @@ conda run --no-capture-output -n audio_eval \
 ```
 
 后续按 `IndexTTS2`、`LongCat-AudioDiT-1B`、`MOSS-TTS-Local-Transformer-v1.5`、`OmniVoice`、`Qwen3-TTS-12Hz-1.7B-Base`、`VoxCPM2` 的顺序评价；对同一次输出目录增加 `--resume`，一次仍只传一个模型。全部完成后运行 `generate_neutral_v5_reports.py`，生成三份双后端报告和 `小说转有声TTS_V5综合评价报告.md`。综合报告先把六后端各自的名次换算到统一尺度，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权，不直接平均跨量纲原始值。完整命令与验收规则见跨电脑复测指南第 15 节。
+
+## Task 7 V6 长音频复测
+
+V6 对 `longAudioTestV6/` 中 7 条多角色成品逐模型串行评价，并以旁白、三皇子、小公主、辰南 4 条 MiMo 角色音频提供原始基线与说话人校准。成品按 `ai_deal.json` 的 58 段台词合成，全文 CER 以其中 1783 个 `zh-v1` 规范化字符为参考；`text.md` 多出的 43 个说话人提示字符不进入 CER。正式运行先预检，再使用一个全新的输出目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v6_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v6.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV6/评测结果/task7-v6-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余模型对同一目录增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v6_reports.py`，生成三份 V6 双后端报告和 task7 明确指定文件名的 `小说转有声TTS_V5综合评价报告.md`；综合报告正文和证据版本均为 V6。统一名次尺度与生产权重沿用台词正确性 50%、角色音色 30%、自然听感 20%。完整命令与验收规则见跨电脑复测指南第 16 节。
 
 ## 目录入口
 
