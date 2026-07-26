@@ -29,7 +29,7 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 7 的 `longAudioTestV6/*.wav`、Task 8 的 `longAudioTestV7/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 7 的 `longAudioTestV6/*.wav`、Task 8 的 `longAudioTestV7/*.wav`、Task 9 的 `longAudioTestV8/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
 
 ## Task 3 V2 复测
 
@@ -140,6 +140,24 @@ conda run --no-capture-output -n audio_eval \
 ```
 
 其余模型对同一目录增加 `--resume`，每次仍只能传一个 `--model-id`。角色若完全没有达到 4 个精确匹配字符的标准候选，V7 才允许使用至少 2 个精确匹配字符且满足其余门槛的短台词回退片段，原始结果和报告会显式标记。全部完成后运行 `generate_neutral_v7_reports.py`。按 `task8.md` 的明确要求，三份双后端报告沿用 V6 文件名，综合报告沿用 `小说转有声TTS_V5综合评价报告.md`；报告正文、冻结配置和原始证据均标识为 V7。综合报告只转换六后端的本批名次，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整命令与验收规则见跨电脑复测指南第 17 节。
+
+## Task 9 V8 长音频复测
+
+V8 对 `longAudioTestV8/` 中 7 条多角色成品逐模型串行评价，并以我、旁白、姐姐、神秘声音 4 条 MiMo 角色音频提供原始基线与说话人校准。成品按 `ai_deal.json` 的 97 段台词合成，全文 CER 以其中 2513 个 `zh-v1` 规范化字符为参考；`text.md` 中多出的 24 个叙述性字符不进入 CER。正式运行先预检，再使用全新的输出目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v8_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v8.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV8/评测结果/task9-v8-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余六个模型对同一目录增加 `--resume`，一次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v8_reports.py`，生成三份 V8 双后端报告与 `小说转有声TTS_V5综合评价报告.md`。综合分只转换六个后端在本批内的名次到统一尺度，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权；不直接平均跨量纲原始值。完整命令与验收规则见跨电脑复测指南第 18 节。
 
 ## 目录入口
 

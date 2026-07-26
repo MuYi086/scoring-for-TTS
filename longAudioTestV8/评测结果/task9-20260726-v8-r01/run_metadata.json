@@ -1,0 +1,208 @@
+{
+  "active_model_id_this_invocation": "VoxCPM2",
+  "audio_count": 11,
+  "calibration_pair_count": 10,
+  "config": {
+    "alignment": {
+      "fallback_min_exact_match_characters": 2,
+      "max_excerpt_seconds": 20.0,
+      "max_excerpts_per_role": 5,
+      "max_merge_gap_seconds": 1.5,
+      "min_chunk_match_ratio": 0.5,
+      "min_exact_match_characters": 4,
+      "min_excerpt_seconds": 0.5,
+      "min_role_purity": 0.85,
+      "mixed_role_chunk_policy": "split_by_exact_character_run_linear_time"
+    },
+    "expected_model_count": 7,
+    "expected_reference_count": 4,
+    "models": [
+      {
+        "audio_path": "longAudioTestV8/audio_dots_tts.wav",
+        "model_id": "dots.tts-base",
+        "sha256": "76f9aacc0ba62b9d26012ab5c89b339c4502d4103f0c3c24f4091b53ce41b2bb"
+      },
+      {
+        "audio_path": "longAudioTestV8/audio_indextts2.wav",
+        "model_id": "IndexTTS2",
+        "sha256": "2330ede42a151066077f3ae1a879fc3ad960197c4bf1b597a952cd0dded394f8"
+      },
+      {
+        "audio_path": "longAudioTestV8/audio_longCat.wav",
+        "model_id": "LongCat-AudioDiT-1B",
+        "sha256": "3ef85efdabbee0f54efe1afdc7b9478da854d8869bfe87abac7c38557456d6af"
+      },
+      {
+        "audio_path": "longAudioTestV8/audio_moss_tts.wav",
+        "model_id": "MOSS-TTS-Local-Transformer-v1.5",
+        "sha256": "c53be01f16ecce5683c9d08e8cb717c24e0d3f1e3d3c324359942536d00b78cb"
+      },
+      {
+        "audio_path": "longAudioTestV8/audio_omniVoice.wav",
+        "model_id": "OmniVoice",
+        "sha256": "f717398259ae54340079175b2d1394c469679c37017b74c424d516a778f6c1ee"
+      },
+      {
+        "audio_path": "longAudioTestV8/audio_qwen3_tts.wav",
+        "model_id": "Qwen3-TTS-12Hz-1.7B-Base",
+        "sha256": "124f3c97027e93e818dbb40ff582cb862d1998e101ac21d258df70832ec68612"
+      },
+      {
+        "audio_path": "longAudioTestV8/audio_voxcpm2.wav",
+        "model_id": "VoxCPM2",
+        "sha256": "84ea2c0db8947bf4fc7ecbd0569f80493014ec1609c1c4f917f896fe47d924df"
+      }
+    ],
+    "nisqa": {
+      "batch_size": 8,
+      "checkpoint_path": "weights/nisqa_tts.tar",
+      "device": "cpu",
+      "model_name": "NISQA-TTS v1.0",
+      "repository_id": "NISQA"
+    },
+    "policy": {
+      "long_audio": "SenseVoice 与 Whisper 对连续且不重叠的 30 秒分段顺序转写后计算全文 CER；双 SIM 对 Whisper 字词时间戳与冻结角色台词单调对齐。角色若没有达到 4 个精确匹配字符的标准候选，才允许使用至少 2 个精确匹配字符且满足其余质量门槛的短台词回退片段，并在原始结果中显式标记；双自然度对固定等距窗口等权平均。",
+      "normalization_id": "zh-v1",
+      "ranking": "六个后端先在各自量纲内独立报告原始值和名次；综合报告仅对名次做统一尺度转换，不直接平均跨量纲原始值。",
+      "reference_baseline": "四条原始音频分别提供 CER 与自然度基线，并构造四个同说话人分段和六个跨角色说话人校准对照。"
+    },
+    "quality_sampling": {
+      "strategy": "non_overlapping_capacity_evenly_spaced",
+      "window_count": 8,
+      "window_seconds": 12.0
+    },
+    "references": [
+      {
+        "audio_path": "longAudioTestV8/mimo_我_v8.wav",
+        "role": "我",
+        "sha256": "b663b128817004e1c5889e4fe040f8ee7e5f73a6fccbbdc24f3d98ab49ad57d9",
+        "transcript": "你究竟懂不懂现在情况很麻烦了？别在这里添乱了，听我的行不行？",
+        "voice_description": "青年至中年男性，音域中等偏窄，声线厚度适中偏轻盈，底色略带沙哑与疲惫感，共鸣以胸腔为主，发声力度中等但带有隐隐的紧绷感。咬字干脆利落，语速偏快，节奏有轻微顿挫，默认语气带有克制的不满与警惕，整体气质是理性中透出焦躁的普通人。"
+      },
+      {
+        "audio_path": "longAudioTestV8/mimo_旁白_v8.wav",
+        "role": "旁白",
+        "sha256": "7b5ce92cc776c956dc01429ec8a49b19d8bdbf6d4930141a45d943bc897c4d9f",
+        "transcript": "车轮碾过积雪，细碎声响中驯鹿的身影在漆黑的夜里纹丝不动",
+        "voice_description": "男性，三十至四十五岁，中低音域，音色厚实沉稳，略带沙哑质感，明亮度偏暗，共鸣饱满。咬字清晰有力，语速中等偏慢，节奏平稳，停顿自然，默认情绪基调冷静克制，带有成人叙述故事的神秘感和沉稳气质。"
+      },
+      {
+        "audio_path": "longAudioTestV8/mimo_姐姐_v8.wav",
+        "role": "姐姐",
+        "sha256": "52635d2d98a1ecd5cb8db6c3ec57d63edb3fe5a599eb76d7b73731632384100d",
+        "transcript": "后座那几袋东西，你等会儿记得都收拾好别落下什么重要的东西了。",
+        "voice_description": "女性，30岁左右，中低音域，声线偏厚实，略带沙哑的烟嗓质感，明暗适中。咬字清晰有力度，语速中等偏缓，停顿均匀，默认情绪基调冷静疏离，带点慵懒的淡漠气质。"
+      },
+      {
+        "audio_path": "longAudioTestV8/mimo_神秘声音_v8.wav",
+        "role": "神秘声音",
+        "sha256": "817cfe8d0f3ea94fedcd628cc4325640430b61f67f6c459d8b00a89468e5a8fd",
+        "transcript": "我找不到回家的路了，天好黑了，谁能帮帮我呀，我好害怕好冷啊。",
+        "voice_description": "女性儿童声线，音域偏高，音色轻柔清亮略带气声，声线厚度较薄，带有细微的沙哑质感。咬字偏软，语速缓慢，节奏不连贯，常带啜泣停顿，默认情绪基调为无助哀怜，整体气质柔弱悲戚，符合迷路孩童的哀求口吻。"
+      }
+    ],
+    "report_generator_module": "generate_neutral_v8_reports",
+    "schema_version": "8.0",
+    "sensevoice": {
+      "device": "cuda",
+      "language": "zh",
+      "long_audio_chunk_seconds": 30.0,
+      "model_id": "FunAudioLLM/SenseVoiceSmall"
+    },
+    "source": {
+      "case_id": "task9_v8_full_audiobook",
+      "cer_reference": "ai_deal_dialogue_concatenation",
+      "dialogue_count": 97,
+      "dialogue_path": "longAudioTestV8/ai_deal.json",
+      "dialogue_sha256": "ff7a9c4b70b708344af4dc33862228d38c53d6c485107d2bc476bcbaaa0ef45c",
+      "normalized_character_count": 2513,
+      "raw_text_normalized_character_count": 2537,
+      "raw_text_path": "longAudioTestV8/text.md",
+      "raw_text_relation": "text.md 是小说原文；ai_deal.json 为实际合成输入。原文多出 24 个规范化字符的叙述性说话提示：“不”“她问”“然后是一句”“姐姐在我耳边吼道”“我嘶声说”及两处“我问”。七条成品均按其中 97 段 dialogue 台词合成，因此以该台词串计算 CER。",
+      "raw_text_sha256": "7a06dc63d38d3113081f4132394f6741c004e3c338cafdfa534268714cf7051c"
+    },
+    "speechbrain_ecapa": {
+      "device": "cuda",
+      "model_id": "speechbrain/spkrec-ecapa-voxceleb",
+      "sample_rate_hz": 16000
+    },
+    "utmosv2": {
+      "checkpoint_id": "sarulab-speech/UTMOSv2/fold0_s42_best_model.pth",
+      "device": "cuda:0",
+      "inference_seed": 20260726,
+      "num_repetitions": 5,
+      "remove_silent_section": true
+    },
+    "wavlm": {
+      "device": "cuda",
+      "model_id": "microsoft/wavlm-base-sv",
+      "sample_rate_hz": 16000
+    },
+    "whisper": {
+      "device": "cuda",
+      "language": "zh",
+      "long_audio_chunk_seconds": 30.0,
+      "model_id": "openai/whisper-large-v3-turbo",
+      "return_timestamps": "word",
+      "task": "transcribe"
+    }
+  },
+  "coverage": {
+    "nisqa": {
+      "complete": 11,
+      "expected": 11
+    },
+    "sensevoice_cer": {
+      "complete": 11,
+      "expected": 11
+    },
+    "speechbrain_ecapa_sim": {
+      "complete": 38,
+      "expected": 38
+    },
+    "utmosv2": {
+      "complete": 11,
+      "expected": 11
+    },
+    "wavlm_sim": {
+      "complete": 38,
+      "expected": 38
+    },
+    "whisper_cer": {
+      "complete": 11,
+      "expected": 11
+    }
+  },
+  "cross_metric_weighted_score": false,
+  "implementation": {
+    "files": {
+      "tts-bench/scripts/run_neutral_evaluation_v4.py": "1eb0183ceb479a343c25ab0eb0fd1609b0b9e03713fc79567371ab67a4c23486",
+      "tts-bench/scripts/run_neutral_evaluation_v8.py": "c2932437e53e849d7fea8e60da65fd1885c6c3834ae5ec0e4833ae722f5de31e"
+    },
+    "project_git_commit": "c886c62c81502486f9f3d3e1143cb38323c15292",
+    "project_worktree_dirty": true
+  },
+  "offline": true,
+  "package_versions": {
+    "funasr": "1.3.9",
+    "speechbrain": "1.1.0",
+    "torch": "2.12.0",
+    "torchaudio": "2.11.0",
+    "transformers": "5.12.0",
+    "utmosv2": "1.3.1.dev0"
+  },
+  "reference_audio_count": 4,
+  "schema_version": "8.0",
+  "selected_metrics_this_invocation": [
+    "sensevoice_cer",
+    "whisper_cer",
+    "wavlm_sim",
+    "speechbrain_ecapa_sim",
+    "utmosv2",
+    "nisqa"
+  ],
+  "single_model_per_invocation": true,
+  "synthesis_audio_count": 7,
+  "synthesis_role_pair_count": 28,
+  "updated_at": "2026-07-26T10:29:06.188977+00:00"
+}
