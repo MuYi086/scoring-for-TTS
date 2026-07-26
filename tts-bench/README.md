@@ -273,6 +273,35 @@ python tts-bench/scripts/generate_neutral_v8_reports.py \
 
 输出为 `SenseVoice_CER&Whisper_CER_V8评价报告.md`、`WavLM_SIM&SpeechBrain_ECAPA_SIM_V8评价报告.md`、`UTMOSv2&NISQA_V8评价报告.md` 和 task9 指定文件名的 `小说转有声TTS_V5综合评价报告.md`。前三份报告保留原始量纲和独立名次；综合报告只转换六个后端的本批名次，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 18 节。
 
+## Task 10 V9 长音频中立评测
+
+V9 的冻结事实源是 `config/neutral-evaluation-v9.json`，输入位于 `../longAudioTestV9/`：7 条模型长音频、5 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 1,505 个 `zh-v1` 规范化字符；`text.md` 有 1,527 个字符且与实际合成输入存在叙述、引号归属与顺序差异，不进入本批 CER。
+
+V9 延续中立长音频流程：每次进程只处理一个 `--model-id`；SenseVoice 与 Whisper 对连续、不重叠的 30 秒分段顺序转写；双 SIM 使用 Whisper 字词时间戳对齐出的五角色片段；某角色无至少 4 个精确匹配字符的标准候选时，才使用至少 2 个精确匹配字符且满足其余门槛的短台词回退片段，并在原始结果和报告中显式标记；双自然度仅处理 8 个固定等距的 12 秒窗口。每条记录原子保存，只能对同一次未完成运行的原目录断点续跑。
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v9_setup.py \
+  --assets tts-bench/config/evaluation-assets-v2.json \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v9.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV9/评测结果/task10-v9-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+
+```bash
+python tts-bench/scripts/generate_neutral_v9_reports.py \
+  --results-dir longAudioTestV9/评测结果/task10-v9-YYYYMMDDTHHMMSSZ \
+  --reports-dir longAudioTestV9/评测结果
+```
+
+输出为 `SenseVoice_CER&Whisper_CER_V9评价报告.md`、`WavLM_SIM&SpeechBrain_ECAPA_SIM_V9评价报告.md`、`UTMOSv2&NISQA_V9评价报告.md` 和任务明确指定的 `小说转有声TTS_V5综合评价报告.md`。前三份报告保留原始量纲和独立名次；综合报告只转换六后端的本批名次，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 19 节。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。

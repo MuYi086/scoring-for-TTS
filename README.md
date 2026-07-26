@@ -159,6 +159,24 @@ conda run --no-capture-output -n audio_eval \
 
 其余六个模型对同一目录增加 `--resume`，一次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v8_reports.py`，生成三份 V8 双后端报告与 `小说转有声TTS_V5综合评价报告.md`。综合分只转换六个后端在本批内的名次到统一尺度，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权；不直接平均跨量纲原始值。完整命令与验收规则见跨电脑复测指南第 18 节。
 
+## Task 10 V9 长音频复测
+
+V9 对 `longAudioTestV9/` 中 7 条多角色成品逐模型串行评价，并以旁白、布罗迪、我、布罗迪姐姐、教授 5 条 MiMo 角色音频提供原始基线与说话人校准。七条成品实际按 `ai_deal.json` 的 77 段台词合成，全文 CER 以其中 1,505 个 `zh-v1` 规范化字符为参考；`text.md` 是相邻小说原文，共 1,527 个字符且部分叙述、引号归属与台词顺序不同，不能作为 CER 参考。正式运行先预检，再使用全新的输出目录：
+
+```bash
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v9_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n audio_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v9.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV9/评测结果/task10-v9-YYYYMMDDTHHMMSSZ \
+  --strict
+```
+
+其余六个模型对同一目录增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v9_reports.py`，生成 `SenseVoice_CER&Whisper_CER_V9评价报告.md`、`WavLM_SIM&SpeechBrain_ECAPA_SIM_V9评价报告.md`、`UTMOSv2&NISQA_V9评价报告.md` 及 `小说转有声TTS_V5综合评价报告.md`。综合分仅把六后端在本批中的名次换算到统一尺度，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权；不直接平均跨量纲原始值。完整命令与验收规则见跨电脑复测指南第 19 节。
+
 ## 目录入口
 
 - [`docs/跨电脑复测指南.md`](docs/跨电脑复测指南.md)：跨电脑环境、权重、音频和命令的权威操作手册。
