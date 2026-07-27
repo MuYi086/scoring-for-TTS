@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""在加载评价模型前检查 Task 10 V9 环境、权重、长音频和冻结哈希。"""
+"""在加载 ASR 前检查 Task 9 V9 公共评测环境、输入与冻结哈希。"""
 
 from __future__ import annotations
 
 import argparse
+import importlib.metadata
 import os
 import sys
 from pathlib import Path
@@ -15,14 +16,23 @@ PROJECT_ROOT = SCRIPT_DIR.parents[1]
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from check_neutral_evaluation_setup import (  # noqa: E402
-    CheckReport,
-    check_assets,
-    check_package_versions,
-    print_report,
-)
-from run_automated_evaluation import load_json, normalize_zh_v1, project_path  # noqa: E402
-from run_neutral_evaluation_v4 import build_inputs, load_dialogues, validate_config  # noqa: E402
+from check_neutral_evaluation_setup import CheckReport, print_report  # noqa: E402
+from public_evaluation_v9 import load_json, validate_config  # noqa: E402
+from run_automated_evaluation import sha256_file  # noqa: E402
+from public_evaluation_v9 import build_inputs, load_dialogues  # noqa: E402
+
+
+REQUIRED_PACKAGES = {
+    "torch": "2.12.0",
+    "torchaudio": "2.11.0",
+    "funasr": "1.3.9",
+    "transformers": "5.12.0",
+    "soundfile": "0.14.0",
+    "scipy": "1.15.3",
+    "jiwer": None,
+    "zhconv": None,
+    "zhon": "2.1.1",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -32,42 +42,75 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=PROJECT_ROOT / "tts-bench" / "config" / "neutral-evaluation-v9.json",
     )
-    parser.add_argument(
-        "--assets",
-        type=Path,
-        default=PROJECT_ROOT / "tts-bench" / "config" / "evaluation-assets-v2.json",
-    )
-    parser.add_argument(
-        "--strict-versions",
-        action="store_true",
-        help="把 Python、包、模型 revision 不一致视为失败。",
-    )
+    parser.add_argument("--strict-versions", action="store_true", help="版本漂移视为失败。")
     return parser.parse_args()
 
 
-def check_environment(report: CheckReport, config: dict[str, Any]) -> tuple[Path, Path] | None:
-    try:
-        validate_config(config)
-    except (KeyError, TypeError, ValueError) as exc:
-        report.errors.append(str(exc))
-        return None
+def check_package_versions(report: CheckReport, strict_versions: bool) -> None:
+    if sys.version_info[:2] == (3, 10):
+        report.passed.append(f"Python {sys.version_info.major}.{sys.version_info.minor}")
+    else:
+        report.version_mismatch(
+            f"Python 应为已验证的 3.10，实际为 {sys.version_info.major}.{sys.version_info.minor}",
+            strict_versions,
+        )
+    for package, expected in REQUIRED_PACKAGES.items():
+        try:
+            actual = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            report.errors.append(f"缺少公共 V9 运行包：{package}")
+            continue
+        if expected is None or actual == expected:
+            report.passed.append(f"{package}=={actual}")
+        else:
+            report.version_mismatch(
+                f"{package} 应为 {expected}，实际为 {actual}", strict_versions
+            )
 
-    mirror_root_value = os.environ.get("HF_MIRROR_ROOT")
-    if not mirror_root_value:
-        report.errors.append("必须设置 HF_MIRROR_ROOT，V9 评测不允许隐式联网下载")
+
+def check_model(
+    report: CheckReport,
+    mirror_root: Path,
+    section_name: str,
+    section: dict[str, Any],
+    marker: str,
+    strict_versions: bool,
+) -> None:
+    model_id = str(section["model_id"])
+    model_dir = mirror_root / model_id
+    model_file = model_dir / marker
+    if not model_file.is_file():
+        report.errors.append(f"缺少 {section_name} 本地模型文件：{model_file}")
+        return
+    actual_hash = sha256_file(model_file)
+    if actual_hash != section["model_sha256"]:
+        report.errors.append(f"{section_name} 模型 SHA-256 不一致：{model_file}")
+    else:
+        report.passed.append(f"{section_name} 模型哈希已冻结：{model_id}")
+    metadata_path = model_dir / ".cache" / "huggingface" / "download" / f"{marker}.metadata"
+    revision = metadata_path.read_text(encoding="utf-8").splitlines()[0].strip() if metadata_path.is_file() else None
+    if revision == section["revision"]:
+        report.passed.append(f"{section_name} revision：{revision[:12]}")
+    elif revision is None:
+        report.version_mismatch(
+            f"{section_name} 缺少 Hugging Face revision 元数据：{metadata_path}", strict_versions
+        )
+    else:
+        report.version_mismatch(
+            f"{section_name} revision 应为 {section['revision']}，实际为 {revision}", strict_versions
+        )
+
+
+def check_environment(report: CheckReport) -> Path | None:
+    mirror_value = os.environ.get("HF_MIRROR_ROOT")
+    if not mirror_value:
+        report.errors.append("必须设置 HF_MIRROR_ROOT，公共 V9 评测不允许隐式联网下载")
         return None
-    mirror_root = Path(mirror_root_value).expanduser()
-    hf_home_value = os.environ.get("HF_HOME")
-    if not hf_home_value:
-        report.errors.append("必须设置 HF_HOME，UTMOSv2 的 Wav2Vec2 依赖从该缓存离线加载")
-        return None
-    hf_home = Path(hf_home_value).expanduser()
     for name in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE"):
         if os.environ.get(name) == "1":
             report.passed.append(f"{name}=1")
         else:
-            report.warnings.append(f"建议在正式复测时设置 {name}=1")
-
+            report.warnings.append(f"正式复测建议设置 {name}=1")
     try:
         import torch
     except ImportError:
@@ -77,7 +120,7 @@ def check_environment(report: CheckReport, config: dict[str, Any]) -> tuple[Path
             report.passed.append(f"CUDA 可用：{torch.cuda.get_device_name(0)}")
         else:
             report.errors.append("V9 配置要求 CUDA，但 torch.cuda.is_available() 为 False")
-    return mirror_root, hf_home
+    return Path(mirror_value).expanduser()
 
 
 def check_inputs(report: CheckReport, config: dict[str, Any]) -> None:
@@ -85,46 +128,27 @@ def check_inputs(report: CheckReport, config: dict[str, Any]) -> None:
         dialogues = load_dialogues(config)
         references, syntheses = build_inputs(config, dialogues)
     except (KeyError, OSError, TypeError, ValueError) as exc:
-        report.errors.append(f"V9 输入检查失败：{exc}")
+        report.errors.append(f"V9 输入或登记哈希检查失败：{exc}")
         return
-
-    role_counts: dict[str, int] = {}
-    for row in dialogues:
-        role = str(row["role_name"])
-        role_counts[role] = role_counts.get(role, 0) + 1
-    report.passed.append(
-        f"V9 输入完整：{len(references)} 条角色参考音频、{len(syntheses)} 条模型长音频"
-    )
-    report.passed.append(
-        f"角色台词完整：{len(dialogues)} 段，分布 "
-        + "、".join(f"{role} {count}" for role, count in role_counts.items())
-    )
-
-    raw_text = project_path(config["source"]["raw_text_path"]).read_text(encoding="utf-8")
-    dialogue_text = "".join(row["text_content"] for row in dialogues)
-    raw_count = len(normalize_zh_v1(raw_text))
-    dialogue_count = len(normalize_zh_v1(dialogue_text))
-    if normalize_zh_v1(raw_text) == normalize_zh_v1(dialogue_text):
-        report.warnings.append("text.md 与 ai_deal.json 规范化后完全一致")
-    elif config["source"].get("raw_text_relation"):
-        report.passed.append(
-            "已冻结 text.md 与 ai_deal.json 的差异，并明确以 ai_deal.json 台词串计算 CER："
-            f"{raw_count} 字对 {dialogue_count} 字"
-        )
-    else:
-        report.errors.append("text.md 与 ai_deal.json 不同，但配置未说明 raw_text_relation")
+    report.passed.append(f"V9 输入完整：{len(references)} 条角色参考音频、{len(syntheses)} 条模型长音频")
+    report.passed.append(f"实际 CER 台词串：{len(dialogues)} 段、{config['source']['normalized_character_count']} 个规范化字符")
 
 
 def main() -> int:
     args = parse_args()
-    config = load_json(args.config)
-    assets = load_json(args.assets)
     report = CheckReport()
+    try:
+        config = load_json(args.config)
+        validate_config(config)
+    except (KeyError, TypeError, ValueError) as exc:
+        report.errors.append(str(exc))
+        print_report(report)
+        return 2
     check_package_versions(report, args.strict_versions)
-    roots = check_environment(report, config)
-    if roots is not None:
-        mirror_root, hf_home = roots
-        check_assets(report, assets, mirror_root, hf_home, args.strict_versions)
+    mirror_root = check_environment(report)
+    if mirror_root is not None:
+        check_model(report, mirror_root, "SenseVoice", config["sensevoice"], "model.pt", args.strict_versions)
+        check_model(report, mirror_root, "Whisper-large-v3-turbo", config["whisper"], "model.safetensors", args.strict_versions)
         check_inputs(report, config)
     print_report(report)
     return 2 if report.errors else 0

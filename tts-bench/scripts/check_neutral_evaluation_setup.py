@@ -20,7 +20,11 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from run_automated_evaluation import load_json, sha256_file  # noqa: E402
-from run_neutral_evaluation_v2 import build_inputs, validate_config  # noqa: E402
+try:  # V2 运行器可作为可选历史组件缺席；预检须给出明确错误而非导入崩溃。
+    from run_neutral_evaluation_v2 import build_inputs, validate_config  # type: ignore[import-not-found]  # noqa: E402
+except ModuleNotFoundError:  # pragma: no cover - 由缺失历史组件的部署路径触发。
+    build_inputs = None
+    validate_config = None
 
 
 KNOWN_GOOD_PYTHON = (3, 10)
@@ -118,6 +122,9 @@ def check_package_versions(report: CheckReport, strict_versions: bool) -> None:
 
 
 def check_environment(report: CheckReport, config: dict[str, Any]) -> tuple[Path, Path] | None:
+    if validate_config is None:
+        report.errors.append("缺少 V2 运行器 run_neutral_evaluation_v2.py，无法执行 V2 权威入口预检")
+        return None
     try:
         validate_config(config)
     except ValueError as exc:
@@ -249,6 +256,10 @@ def main() -> int:
     if roots is not None:
         mirror_root, hf_home = roots
         check_assets(report, assets, mirror_root, hf_home, args.strict_versions)
+        if build_inputs is None:
+            report.errors.append("缺少 V2 运行器 run_neutral_evaluation_v2.py，无法检查输入矩阵")
+            print_report(report)
+            return 2
         try:
             references, syntheses = build_inputs(args.runs_root, config)
         except (ValueError, OSError, KeyError) as exc:
@@ -263,4 +274,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

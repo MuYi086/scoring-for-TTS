@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Task 10 V9 长音频六后端中立评测入口。"""
+"""Task 9 V9 公共评测受限入口。
+
+仅执行音频交付原始测量、SenseVoice CER 与 Whisper-large-v3-turbo CER。
+长音频 WavLM / ECAPA、UTMOSv2、NISQA 和自动综合排名已被公共任务排除。
+"""
 
 from __future__ import annotations
 
@@ -13,10 +17,7 @@ PROJECT_ROOT = SCRIPT_DIR.parents[1]
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from run_neutral_evaluation_v4 import METRICS, run  # noqa: E402
-
-
-DEFAULT_OUTPUT = PROJECT_ROOT / "longAudioTestV9" / "评测结果" / "task10-v9-raw"
+from public_evaluation_v9 import PUBLIC_METRICS, run  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -25,34 +26,28 @@ def parse_args() -> argparse.Namespace:
         "--config",
         type=Path,
         default=PROJECT_ROOT / "tts-bench" / "config" / "neutral-evaluation-v9.json",
-        help="V9 长音频冻结配置。",
+        help="V9 公共评测冻结配置。",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT,
-        help="本次原始结果目录；正式复测应使用一个尚不存在的新目录。",
+        required=True,
+        help="本次原始结果目录；正式评分必须传入尚不存在的新目录。",
     )
     parser.add_argument(
         "--metrics",
         nargs="+",
-        choices=METRICS,
-        default=list(METRICS),
-        help="只运行指定后端，用于排错或断点续跑。",
+        choices=PUBLIC_METRICS,
+        default=list(PUBLIC_METRICS),
+        help="仅可选择公共任务允许的后端；默认运行全部三个。",
     )
     parser.add_argument(
         "--model-id",
         required=True,
         help="本次唯一允许分析的模型；一次调用不得处理多条模型长音频。",
     )
-    parser.add_argument(
-        "--reports-dir",
-        type=Path,
-        default=PROJECT_ROOT / "longAudioTestV9" / "评测结果",
-        help="单模型六后端完成后写入独立评价报告的目录。",
-    )
-    parser.add_argument("--resume", action="store_true", help="续跑同一次未完成的 V9 评测。")
-    parser.add_argument("--strict", action="store_true", help="所选后端存在任一缺失或错误时返回非零状态。")
+    parser.add_argument("--resume", action="store_true", help="仅续跑同一次未完成的 V9 评测。")
+    parser.add_argument("--strict", action="store_true", help="所选指标存在缺失或错误时返回非零状态。")
     return parser.parse_args()
 
 
@@ -64,5 +59,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except (ValueError, RuntimeError) as error:
-        print(f"V9 长音频中立评测失败：{error}", file=sys.stderr)
+        print(f"V9 公共评测失败：{error}", file=sys.stderr)
         raise SystemExit(2) from error
