@@ -505,7 +505,8 @@ class UtmosV2Evaluator:
             import utmosv2
         except ImportError as exc:
             raise RuntimeError(
-                "UTMOSv2 未安装。请先按 utmosv2/安装与使用说明.md 安装，再运行全量评估。"
+                "UTMOSv2 未安装。公共评测任务不使用该指标；若运行旧版自动评测，"
+                "请在独立环境安装与该旧配置匹配的 UTMOSv2 依赖。"
             ) from exc
         checkpoint_id = str(config["checkpoint_id"])
         checkpoint_path = resolve_mirrored_model(checkpoint_id)
@@ -829,4 +830,3 @@ if __name__ == "__main__":
     except (ValueError, RuntimeError) as error:
         print(f"自动评估失败：{error}", file=sys.stderr)
         raise SystemExit(2) from error
-

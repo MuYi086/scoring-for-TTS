@@ -189,8 +189,5 @@ conda run --no-capture-output -n audio_eval \
 - [`cloneData/`](cloneData/)：八个模型的集中声音克隆入口；只有需要重新生成 WAV 时才安装这些独立环境。
 - [`modelScript/`](modelScript/)：各 TTS 模型的安装指南与底层合成脚本。
 - [`asr/`](asr/)：自动语音识别与 CER 规范化边界。
-- [`wavlm/`](wavlm/)：说话人相似度与校准边界。
-- [`utmosv2/`](utmosv2/)：自然度预测器说明。
-- [`listener-review/`](listener-review/)：人工盲听材料，不进入自动总分。
 
 评价脚本不会调用 TTS 合成模型，也不会下载缺失权重。模型权重、本地环境、云端密钥和机器专属路径均不得提交到仓库。

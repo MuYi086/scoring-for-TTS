@@ -32,14 +32,8 @@ cloneData/*.part
 cloneData/indextts2/.runtime_cache/
 cloneData/*/.runtime_cache/
 cloneData/*/.tmp/
-wavlm/models/*
-!wavlm/models/README.md
 asr/models/*
 !asr/models/README.md
-utmosv2/models/*
-!utmosv2/models/README.md
-listener-review/private-mapping/*
-!listener-review/private-mapping/README.md
 
 # Secrets and local config
 .env
