@@ -31,17 +31,18 @@ ai_deal.json是大模型识别人物和情绪处理后的完整json，用来将�
 
 audio_*.wav是各个模型分析音色并对角色说的文本使用对应音色克隆后合成的最终的音频文件
 
-现在期望你每次只分析一个模型对应的wav，
-你需要使用更加中立的评测机制，
-  - SenseVoice CER + Whisper CER
-  - WavLM SIM + SpeechBrain ECAPA SIM
-  - UTMOSv2 + NISQA
-对每个模型克隆的音频和原始音频做对比，输出该模型对应的评价报告到`longAudioTestV9/评测结果`目录`。
-等所有模型都分析完成后，再回过来总结所有的分析报告，输出最终的
+现在期望你每次只分析一个模型对应的 wav。
+
+你需要使用以下可直接参考的自动评测机制，仅判断台词正确性：
+
+- SenseVoice CER + Whisper CER
+
+对每个模型的完整合成音频，以 `ai_deal.json` 中实际合成的 77 段台词串为唯一 CER 参考，分别运行 SenseVoice CER 与 Whisper CER。输出逐模型的台词正确性核对结果到 `longAudioTestV9/评测结果` 目录。
+
+等所有模型都分析完成后，汇总双 ASR 的全文 CER、完整转写、双后端名次和分歧项，输出最终的：
+
 `SenseVoice_CER&Whisper_CER_V9评价报告`
-`WavLM_SIM&SpeechBrain_ECAPA_SIM_V9评价报告`
-`UTMOSv2&NISQA_V9评价报告`
-到`longAudioTestV9/评测结果`目录
 
+到 `longAudioTestV9/评测结果` 目录。
 
-然后统计上面三份评价报告，按照真实世界小说生产有声音频的工作流分配权重，将三份文档按照统一标准体系权重计算分数综合后给出可以按照分数排名的最终`longAudioTestV9/评测结果/小说转有声TTS_V5综合评价报告.md`，也输出到`longAudioTestV9/评测结果`目录
+不运行 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2 或 NISQA-TTS，也不生成自动综合分或自动总排名。音色贴合、角色区分度、自然度、情绪、停顿、伪影和长时间听觉疲劳属于人工盲听范围，不在本任务的自动评测机制中。具体边界见 [`task9_自动评测与人工盲听边界说明.md`](task9_自动评测与人工盲听边界说明.md)。
