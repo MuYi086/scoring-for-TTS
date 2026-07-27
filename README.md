@@ -177,6 +177,10 @@ conda run --no-capture-output -n audio_eval \
 
 其余六个模型对同一目录增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v9_reports.py`，生成 `SenseVoice_CER&Whisper_CER_V9评价报告.md`、`WavLM_SIM&SpeechBrain_ECAPA_SIM_V9评价报告.md`、`UTMOSv2&NISQA_V9评价报告.md` 及 `小说转有声TTS_V5综合评价报告.md`。综合分仅把六后端在本批中的名次换算到统一尺度，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权；不直接平均跨量纲原始值。完整命令与验收规则见跨电脑复测指南第 19 节。
 
+### Seed-TTS-Eval 中文外部基准
+
+`task9.md` 另外定义了独立的 Seed-TTS-Eval（Seed TTS 官方客观基准）中文常规集与难例集评测。它使用隔离的 `seed_tts_eval` 环境运行本地 Hugging Face（模型托管平台）`funasr/paraformer-zh` 的中文 WER（词错误率），使用独立的 `seed_tts_sim` 环境运行 WavLM-large-SV SIM（说话人余弦相似度）；后者固定为当前 UniSpeech vendored Fairseq 以 `READTHEDOCS=1` 跳过未使用的可选原生扩展后的安装方式。中文流程不下载或加载 Whisper-large-v3。按官方 meta 重新生成独立短音频，不是对 `longAudioTestV9/audio_*.wav` 的重复打分，也不由 `run_neutral_evaluation_v9.py` 执行。运行前必须完成 task9 中的环境、权重、数据哈希、源码兼容补丁和单样本烟雾检查；外部基准的两个分数分别报告，不与 V9 长音频结果或综合分混合。
+
 ## 目录入口
 
 - [`docs/跨电脑复测指南.md`](docs/跨电脑复测指南.md)：跨电脑环境、权重、音频和命令的权威操作手册。

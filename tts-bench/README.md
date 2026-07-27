@@ -302,6 +302,10 @@ python tts-bench/scripts/generate_neutral_v9_reports.py \
 
 输出为 `SenseVoice_CER&Whisper_CER_V9评价报告.md`、`WavLM_SIM&SpeechBrain_ECAPA_SIM_V9评价报告.md`、`UTMOSv2&NISQA_V9评价报告.md` 和任务明确指定的 `小说转有声TTS_V5综合评价报告.md`。前三份报告保留原始量纲和独立名次；综合报告只转换六后端的本批名次，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 19 节。
 
+### Seed-TTS-Eval 中文外部基准
+
+Seed-TTS-Eval（Seed TTS 官方客观基准）不属于本目录的 `run_neutral_evaluation_v9.py` 六后端流程。输入是按官方中文 meta 单独生成的 `utt.wav`；本地 Hugging Face（模型托管平台）`funasr/paraformer-zh` WER（词错误率）在 `seed_tts_eval` 环境运行，WavLM-large-SV SIM（说话人余弦相似度）在独立的 `seed_tts_sim` 环境运行。后者固定为当前 UniSpeech vendored Fairseq 以 `READTHEDOCS=1` 跳过未使用的可选原生扩展后的安装方式。中文流程不下载或加载 Whisper-large-v3。请以根目录 `task9.md` 的前置条件、冻结记录、源码兼容补丁和报告边界为准；不得把该外部基准的分数写入 V9 的 JSONL、六后端报告或综合排名。
+
 ## 新建一次合成运行
 
 1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。
