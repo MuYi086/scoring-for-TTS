@@ -35,6 +35,14 @@ cloneData/*/.tmp/
 asr/models/*
 !asr/models/README.md
 
+# Seed-TTS 官方基准的本地大体积音频、原始评分与机器冻结记录
+Seed-TTS-test/result/*/*
+Seed-TTS-test/report/*/*
+!Seed-TTS-test/result/.gitkeep
+!Seed-TTS-test/result/*/.gitkeep
+!Seed-TTS-test/report/.gitkeep
+!Seed-TTS-test/report/*/.gitkeep
+
 # Secrets and local config
 .env
 .env.*

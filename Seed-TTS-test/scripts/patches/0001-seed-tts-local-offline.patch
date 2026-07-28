@@ -1,0 +1,55 @@
+diff --git a/cal_sim.sh b/cal_sim.sh
+index 0de7427..93fed4a 100644
+--- a/cal_sim.sh
++++ b/cal_sim.sh
+@@ -19,5 +19,5 @@ num_job=$ARNOLD_WORKER_GPU
+ num=`wc -l $wav_wav_text | awk -F' ' '{print $1}'`
+ num_per_thread=`expr $num / $num_job + 1`
+-sudo split -l $num_per_thread --additional-suffix=.lst -d $wav_wav_text $thread_dir/thread-
++split -l $num_per_thread --additional-suffix=.lst -d $wav_wav_text $thread_dir/thread-
+ out_dir=/tmp/thread_metas_$timestamp/results/
+ mkdir $out_dir
+ 
+diff --git a/cal_wer.sh b/cal_wer.sh
+index 319ebd5..ef65a20 100644
+--- a/cal_wer.sh
++++ b/cal_wer.sh
+@@ -10,7 +10,6 @@ wav_wav_text=$output_dir/wav_res_ref_text
+ workdir=$(cd $(dirname $0); cd ../; pwd)
+ 
+ python3 get_wav_res_ref_text.py $meta_lst $output_dir $wav_wav_text
+-python3 prepare_ckpt.py
+ 
+ timestamp=$(date +%s)
+ thread_dir=/tmp/thread_metas_$timestamp/
+@@ -18,6 +17,6 @@ mkdir $thread_dir
+ num_job=$ARNOLD_WORKER_GPU
+ num=`wc -l $wav_wav_text | awk -F' ' '{print $1}'`
+ num_per_thread=`expr $num / $num_job + 1`
+-sudo split -l $num_per_thread --additional-suffix=.lst -d $wav_wav_text $thread_dir/thread-
++split -l $num_per_thread --additional-suffix=.lst -d $wav_wav_text $thread_dir/thread-
+ out_dir=/tmp/thread_metas_$timestamp/results/
+ mkdir $out_dir
+ 
+diff --git a/run_wer.py b/run_wer.py
+index e13b4ef..d2a93f 100644
+--- a/run_wer.py
++++ b/run_wer.py
+@@ -25,7 +25,12 @@ def load_en_model():
+     return processor, model
+ 
+ def load_zh_model():
+-    model = AutoModel(model="paraformer-zh")
++    model_dir = os.environ.get("SEED_TTS_PARAFORMER_DIR")
++    if not model_dir:
++        raise RuntimeError("必须设置 SEED_TTS_PARAFORMER_DIR，中文 WER 不允许隐式下载 Paraformer。")
++    if not os.path.isdir(model_dir):
++        raise RuntimeError(f"SEED_TTS_PARAFORMER_DIR 不存在：{model_dir}")
++    model = AutoModel(model=model_dir, hub="hf")
+     return model
+ 
+ def process_one(hypo, truth):
+diff --git a/thirdparty/UniSpeech/downstreams/speaker_verification/select.py b/thirdparty/UniSpeech/downstreams/speaker_verification/select_speakers.py
+similarity index 100%
+rename from thirdparty/UniSpeech/downstreams/speaker_verification/select.py
+rename to thirdparty/UniSpeech/downstreams/speaker_verification/select_speakers.py
