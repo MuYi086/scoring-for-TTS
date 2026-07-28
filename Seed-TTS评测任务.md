@@ -28,13 +28,9 @@
 
 ## 3. 开始前只做一次
 
-加载本机配置。当前机器已提供被 Git 忽略的 `Seed-TTS-test/.env`；换机器时以 [`Seed-TTS-test/env.example`](Seed-TTS-test/env.example) 填写本机路径，禁止提交真实路径、令牌或大体积音频。
+当前机器的八个公共入口会自动加载被 Git 忽略的 `Seed-TTS-test/.env`，因此后面的命令可直接复制执行，不需要先手工 `source`。换机器时，只需以 [`Seed-TTS-test/env.example`](Seed-TTS-test/env.example) 填写本机路径后保存为 `Seed-TTS-test/.env`；禁止提交真实路径、令牌或大体积音频。
 
-```bash
-source Seed-TTS-test/.env
-```
-
-公共入口会自动检查七模型权重、官方清单、参考音频、评分资源、独立 Conda（Python 环境管理器）环境、Qwen3-TTS 所需 SoX（音频处理工具）及评分器补丁。检查失败时，先修复环境，不要通过开始合成来试错。
+公共入口随后自动检查七模型权重、官方清单、参考音频、评分资源、独立 Conda（Python 环境管理器）环境、Qwen3-TTS 所需 SoX（音频处理工具）及评分器补丁。检查失败时，先修复环境，不要通过开始合成来试错。
 
 ## 4. 单独完整评测一个模型
 

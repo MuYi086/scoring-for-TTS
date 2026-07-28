@@ -66,6 +66,7 @@ def test_public_scripts_only_expose_complete_test_launchers() -> None:
     assert config["models"]["omnivoice"]["output_dir"] == "omniVoice"
     assert config["models"]["qwen3_tts"]["required_executable_env"] == "SEED_TTS_QWEN3_SOX_BIN"
     assert (INTERNAL_DIR / "prepare_indextts2_environment.sh").is_file()
+    assert (INTERNAL_DIR / "load_local_env.sh").is_file()
     assert not list(SCRIPTS_DIR.glob("run_*.sh"))
 
 
@@ -77,6 +78,7 @@ def test_full_test_launchers_are_independent_and_all_models_stay_serial() -> Non
     assert generic.is_file()
     assert all_models.is_file()
     assert "internal/test_all_models.sh" in all_models.read_text(encoding="utf-8")
+    assert "internal/load_local_env.sh" in all_models.read_text(encoding="utf-8")
     content = all_models_internal.read_text(encoding="utf-8")
     assert "models=(dots_tts indextts2 longcat_audiodit moss_tts omnivoice qwen3_tts voxcpm2)" in content
     assert "--resume" in content
@@ -85,6 +87,7 @@ def test_full_test_launchers_are_independent_and_all_models_stay_serial() -> Non
         launcher = SCRIPTS_DIR / f"test_{model_id}.sh"
         assert launcher.is_file()
         assert f'internal/test_model.sh" {model_id}' in launcher.read_text(encoding="utf-8")
+        assert "internal/load_local_env.sh" in launcher.read_text(encoding="utf-8")
 
 
 def test_report_parsers_require_exact_raw_coverage(tmp_path: Path) -> None:
