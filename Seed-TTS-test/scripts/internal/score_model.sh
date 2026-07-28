@@ -11,7 +11,7 @@ model_id=$1
 shift
 run_id=
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-seed_tts_root=$(cd "$script_dir/.." && pwd)
+seed_tts_root=$(cd "$script_dir/../.." && pwd)
 result_root="$seed_tts_root/result"
 report_root="$seed_tts_root/report"
 while [[ $# -gt 0 ]]; do

@@ -25,7 +25,7 @@ from seed_tts_runner import (
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SEED_TTS_ROOT = SCRIPT_DIR.parent
+SEED_TTS_ROOT = SCRIPT_DIR.parent.parent
 DEFAULT_RESULT_ROOT = SEED_TTS_ROOT / "result"
 PATCH_PATH = SCRIPT_DIR / "patches" / "0001-seed-tts-local-offline.patch"
 

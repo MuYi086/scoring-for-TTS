@@ -13,7 +13,7 @@ from seed_tts_runner import CONFIG_PATH, SeedTtsError, load_json, sha256_file
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SEED_TTS_ROOT = SCRIPT_DIR.parent
+SEED_TTS_ROOT = SCRIPT_DIR.parent.parent
 DEFAULT_REPORT_ROOT = SEED_TTS_ROOT / "report"
 
 

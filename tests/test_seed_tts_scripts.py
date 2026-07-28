@@ -9,7 +9,8 @@ import pytest
 
 
 SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "Seed-TTS-test" / "scripts"
-sys.path.insert(0, str(SCRIPTS_DIR))
+INTERNAL_DIR = SCRIPTS_DIR / "internal"
+sys.path.insert(0, str(INTERNAL_DIR))
 
 import render_seed_tts_report as report  # noqa: E402
 import seed_tts_runner as runner  # noqa: E402
@@ -49,18 +50,41 @@ def test_item_seed_is_stable_and_utt_specific() -> None:
     assert runner.stable_item_seed(42, "one") != runner.stable_item_seed(42, "two")
 
 
-def test_model_config_has_exactly_seven_independent_launchers() -> None:
+def test_public_scripts_only_expose_complete_test_launchers() -> None:
     config = runner.load_json(runner.CONFIG_PATH)
     assert set(config["models"]) == set(runner.BACKENDS)
+    expected = {"test_all_models.sh"}
     for model_id in config["models"]:
-        launcher = SCRIPTS_DIR / f"run_{model_id}.sh"
+        expected.add(f"test_{model_id}.sh")
+        launcher = SCRIPTS_DIR / f"test_{model_id}.sh"
         assert launcher.is_file()
         assert "TTS-and-VoiceDesign" not in launcher.read_text(encoding="utf-8")
+        assert "internal/test_model.sh" in launcher.read_text(encoding="utf-8")
+    assert {path.name for path in SCRIPTS_DIR.glob("*.sh")} == expected
     assert config["models"]["indextts2"]["runtime_distribution"] == "indextts"
     assert config["models"]["longcat_audiodit"]["output_dir"] == "longCat"
     assert config["models"]["omnivoice"]["output_dir"] == "omniVoice"
     assert config["models"]["qwen3_tts"]["required_executable_env"] == "SEED_TTS_QWEN3_SOX_BIN"
-    assert (SCRIPTS_DIR / "prepare_indextts2_environment.sh").is_file()
+    assert (INTERNAL_DIR / "prepare_indextts2_environment.sh").is_file()
+    assert not list(SCRIPTS_DIR.glob("run_*.sh"))
+
+
+def test_full_test_launchers_are_independent_and_all_models_stay_serial() -> None:
+    model_ids = ("dots_tts", "indextts2", "longcat_audiodit", "moss_tts", "omnivoice", "qwen3_tts", "voxcpm2")
+    generic = INTERNAL_DIR / "test_model.sh"
+    all_models = SCRIPTS_DIR / "test_all_models.sh"
+    all_models_internal = INTERNAL_DIR / "test_all_models.sh"
+    assert generic.is_file()
+    assert all_models.is_file()
+    assert "internal/test_all_models.sh" in all_models.read_text(encoding="utf-8")
+    content = all_models_internal.read_text(encoding="utf-8")
+    assert "models=(dots_tts indextts2 longcat_audiodit moss_tts omnivoice qwen3_tts voxcpm2)" in content
+    assert "--resume" in content
+    assert "ThreadPool" not in content
+    for model_id in model_ids:
+        launcher = SCRIPTS_DIR / f"test_{model_id}.sh"
+        assert launcher.is_file()
+        assert f'internal/test_model.sh" {model_id}' in launcher.read_text(encoding="utf-8")
 
 
 def test_report_parsers_require_exact_raw_coverage(tmp_path: Path) -> None:
@@ -82,7 +106,7 @@ def test_report_parsers_require_exact_raw_coverage(tmp_path: Path) -> None:
 
 
 def test_frozen_patch_declares_only_required_compatibility_changes() -> None:
-    content = (SCRIPTS_DIR / "patches" / "0001-seed-tts-local-offline.patch").read_text(encoding="utf-8")
+    content = (INTERNAL_DIR / "patches" / "0001-seed-tts-local-offline.patch").read_text(encoding="utf-8")
     assert "SEED_TTS_PARAFORMER_DIR" in content
     assert "sudo split" in content
     assert "select_speakers.py" in content

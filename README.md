@@ -113,7 +113,7 @@ conda run --no-capture-output -n seed_tts_eval \
 
 ### Seed-TTS-Eval 中文外部基准
 
-Seed-TTS-Eval（Seed TTS 官方客观基准）由独立的 [Seed-TTS评测任务](Seed-TTS评测任务.md) 管理。它使用固定官方中文常规集与难例集，按官方 meta 重新生成独立短音频；不是对 `longAudioTestV9/audio_*.wav` 的重复打分，也不由 `run_neutral_evaluation_v9.py` 执行。七模型的串行合成入口、评分器冻结补丁、预检与报告均位于 `Seed-TTS-test/`；本机变量（含 Qwen3-TTS 的 SoX 路径）以该手册和 `env.example` 为准。相同冻结模型版本只执行一次并复用结果，WER 与 SIM 分别报告，不与 V9 长音频结果或综合分混合。
+Seed-TTS-Eval（Seed TTS 官方客观基准）由独立的 [Seed-TTS评测任务](Seed-TTS评测任务.md) 管理。它使用固定官方中文常规集与难例集，按官方 meta 重新生成独立短音频；不是对 `longAudioTestV9/audio_*.wav` 的重复打分，也不由 `run_neutral_evaluation_v9.py` 执行。七模型的逐一复制命令与严格顺序的全量回归命令均写在该手册中；本机变量（含 Qwen3-TTS 的 SoX 路径）以该手册和 `env.example` 为准。相同冻结模型版本只执行一次并复用结果，WER 与 SIM 分别报告，不与 V9 长音频结果或综合分混合。
 
 ## 目录入口
 

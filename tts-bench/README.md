@@ -308,7 +308,7 @@ python tts-bench/scripts/generate_neutral_v9_reports.py \
 
 ### Seed-TTS-Eval 中文外部基准
 
-Seed-TTS-Eval（Seed TTS 官方客观基准）不属于本目录的长音频受限入口。输入是按官方中文 meta 单独生成的 `utt.wav`，由根目录 [Seed-TTS评测任务.md](../Seed-TTS评测任务.md) 和 `../Seed-TTS-test/` 定义七模型独立串行合成、环境冻结、源码兼容补丁、预检、手动评分和结果复用规则；本机变量（包括 Qwen3-TTS 的 SoX 路径）以该手册为准。不得把该外部基准的分数写入长音频 CER 报告或任何综合排名。
+Seed-TTS-Eval（Seed TTS 官方客观基准）不属于本目录的长音频受限入口。输入是按官方中文 meta 单独生成的 `utt.wav`，由根目录 [Seed-TTS评测任务.md](../Seed-TTS评测任务.md) 和 `../Seed-TTS-test/` 定义七模型独立串行合成、环境冻结、源码兼容补丁、预检、单模型完整测试与顺序全量回归规则；手册已提供可直接复制的七模型单独命令与全量命令。本机变量（包括 Qwen3-TTS 的 SoX 路径）也以该手册为准。不得把该外部基准的分数写入长音频 CER 报告或任何综合排名。
 
 ## 新建一次合成运行
 

@@ -27,8 +27,8 @@
 
 ## 开始正式执行前
 
-1. 在新的 shell 加载本机 `.env`，运行 `python Seed-TTS-test/scripts/check_seed_tts_setup.py`，必须全通过。
-2. 为单个模型创建从未使用的正式 `run-id`，执行对应的 `run_<model>.sh`；不要并行运行模型，也不要使用 `--limit`。
-3. 仅在两个分集都完成 2,420 条 WAV 后，运行 `score_model.sh`。报告保持 WER 与 SIM 独立呈现，禁止生成跨量纲总分。
+1. 在新的 shell 加载本机 `.env`；公共 `test_*.sh` 入口会自动运行并要求通过前置检查。
+2. 为单个模型创建从未使用的正式 `run-id`，执行对应的 `test_<model>.sh`；它会串行合成后自动评分。需要全量回归时，执行 `test_all_models.sh --batch-id <新标识>`；不要并行运行模型，也不要使用 `--limit`。
+3. 中断的全量批次使用相同 `batch-id` 加 `--resume`；单模型中断使用相同 `run-id` 加 `--resume`。报告保持 WER 与 SIM 独立呈现，禁止生成跨量纲总分。
 
 长音频目录及其历史占位报告不能替代本基准输入、输出或结论。
