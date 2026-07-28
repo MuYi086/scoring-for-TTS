@@ -1,6 +1,6 @@
 # TTS 与音色设计评估工作区
 
-本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口、Task 4 V3、Task 5 V4、Task 6 V5、Task 7 V6 与 Task 8 V7 专项评测均使用六个独立后端；分项报告不把不同量纲强行合成一个原始值总分：
+本仓库用于比较中文文本转语音（TTS）模型的声音克隆、文本忠实度、说话人相似度和自然度。V2 权威入口及早期专项评测使用六个独立后端；分项报告不把不同量纲强行合成一个原始值总分：
 
 - SenseVoice CER + Whisper CER；
 - WavLM SIM + SpeechBrain ECAPA SIM；
@@ -29,7 +29,67 @@ conda run --no-capture-output -n audio_eval \
 
 预检通过后，为每次复测指定新的 `--output-dir`，再运行 [`run_neutral_evaluation_v2.py`](tts-bench/scripts/run_neutral_evaluation_v2.py)。不要直接复用仓库内的历史结果目录。
 
-> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 7 的 `longAudioTestV6/*.wav`、Task 8 的 `longAudioTestV7/*.wav`、Task 9 的 `longAudioTestV8/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
+> 注意：GitHub 仓库包含 V2 和 V3 各三条 `testData/` 原始参考音频、冻结清单和运行记录，但 **不包含** 被 `.gitignore` 忽略的 `cloneData/audio_v2/*.wav`、`cloneData/audio_v3/*.wav`、Task 5 的 `longAudioTest/`、Task 6 的 `longAudioTestV6/*.wav`、Task 7 的 `longAudioTestV7/*.wav`、V8 公共长音频的 `longAudioTestV8/*.wav`，也不包含 `hf-mirror` 权重。V5 的 `buildTestV5/*.wav` 体积较大，迁移和提交前也必须单独确认。只执行 `git clone` 不保证能直接开始评测。
+
+## Task 6 V6 公共长音频评测
+
+V6 对 `longAudioTestV6/` 中 7 条多角色成品逐模型串行评测。全文 CER 以 `ai_deal.json` 中 58 段实际合成台词的 1,783 个 `zh-v1` 规范化字符为唯一参考；`text.md` 是小说原文，共 1,826 个规范化字符，不能替代 CER 参考。
+
+V6 只运行音频交付原始测量、SenseVoice CER 与 Whisper-large-v3-turbo CER；两个 CER 后端独立排名，不合并为总分。长音频 WavLM / ECAPA、UTMOSv2、NISQA 与自动综合排名均被 [公共评测任务](公共评测任务.md) 排除。正式运行前，以 `seed_tts_eval` 环境预检：
+
+```bash
+conda run --no-capture-output -n seed_tts_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v6_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n seed_tts_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v6.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV6/评测结果 \
+  --strict
+```
+
+其余六个模型复用同一目录并增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v6_reports.py`，只生成 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V6评价报告.md` 与 `音频交付与文本一致性_V6自动检查报告.md`。完整命令与验收规则见 [跨电脑复测指南](docs/跨电脑复测指南.md)。
+
+## Task 7 V7 公共长音频评测
+
+V7 对 `longAudioTestV7/` 中 7 条多角色成品逐模型串行评测。全文 CER 以 `ai_deal.json` 中 77 段实际合成台词的 2,066 个 `zh-v1` 规范化字符为唯一参考；`text.md` 是小说原文，共 2,076 个规范化字符，不能替代 CER 参考。
+
+V7 只运行音频交付原始测量、SenseVoice CER 与 Whisper-large-v3-turbo CER；两个 CER 后端独立排名，不合并为总分。长音频 WavLM / ECAPA、UTMOSv2、NISQA 与自动综合排名均被 [公共评测任务](公共评测任务.md) 排除。正式运行前，以 `seed_tts_eval` 环境预检：
+
+```bash
+conda run --no-capture-output -n seed_tts_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v7_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n seed_tts_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v7.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV7/评测结果 \
+  --strict
+```
+
+其余六个模型复用同一目录并增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v7_reports.py`，只生成 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V7评价报告.md` 与 `音频交付与文本一致性_V7自动检查报告.md`。完整命令与验收规则见 [跨电脑复测指南](docs/跨电脑复测指南.md)。
+
+## Task 8 V8 公共长音频评测
+
+V8 对 `longAudioTestV8/` 中 7 条多角色成品逐模型串行评测。全文 CER 以 `ai_deal.json` 中 97 段实际合成台词的 2,513 个 `zh-v1` 规范化字符为唯一参考；`text.md` 是小说原文，共 2,537 个规范化字符，不能替代 CER 参考。
+
+V8 只运行音频交付原始测量、SenseVoice CER 与 Whisper-large-v3-turbo CER；两个 CER 后端独立排名，不合并为总分。长音频 WavLM / ECAPA、UTMOSv2、NISQA 与自动综合排名均被 [公共评测任务](公共评测任务.md) 排除。正式运行前，以 `seed_tts_eval` 环境预检：
+
+```bash
+conda run --no-capture-output -n seed_tts_eval \
+  python tts-bench/scripts/check_neutral_evaluation_v8_setup.py \
+  --strict-versions
+
+conda run --no-capture-output -n seed_tts_eval \
+  python tts-bench/scripts/run_neutral_evaluation_v8.py \
+  --model-id dots.tts-base \
+  --output-dir longAudioTestV8/评测结果 \
+  --strict
+```
+
+其余六个模型复用同一目录并增加 `--resume`，每次仍只能传一个 `--model-id`。全部完成后运行 `generate_neutral_v8_reports.py`，只生成 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V8评价报告.md` 与 `音频交付与文本一致性_V8自动检查报告.md`。完整命令与验收规则见 [跨电脑复测指南](docs/跨电脑复测指南.md)。
 
 ## Task 10 V9 公共长音频评测
 

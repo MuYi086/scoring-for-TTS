@@ -21,17 +21,11 @@ ai_deal.json是大模型识别人物和情绪处理后的完整json，用来将�
 
 audio_*.wav是各个模型分析音色并对角色说的文本使用对应音色克隆后合成的最终的音频文件
 
-现在期望你每次只分析一个模型对应的wav，
-你需要使用更加中立的评测机制，
-  - SenseVoice CER + Whisper CER
-  - WavLM SIM + SpeechBrain ECAPA SIM
-  - UTMOSv2 + NISQA
-对每个模型克隆的音频和原始音频做对比，输出该模型对应的评价报告到`longAudioTestV7/评测结果`目录`。
-等所有模型都分析完成后，再回过来总结所有的分析报告，输出最终的
-`SenseVoice_CER&Whisper_CER_V6评价报告`
-`WavLM_SIM&SpeechBrain_ECAPA_SIM_V6评价报告`
-`UTMOSv2&NISQA_V6评价报告`
-到`longAudioTestV7/评测结果`目录
+## 公共评测任务入口
 
+本任务完整采用 [公共评测任务.md](公共评测任务.md)，不得在此重复或改变其中的评测规则。
 
-然后统计上面三份评价报告，按照真实世界小说生产有声音频的工作流分配权重，将三份文档按照统一标准体系权重计算分数综合后给出可以按照分数排名的最终`longAudioTestV7/评测结果/小说转有声TTS_V5综合评价报告.md`，也输出到`longAudioTestV7/评测结果`目录
+- `<评测目录>`：`longAudioTestV7`
+- `<版本标识>`：`V7`
+- `<输出目录>`：`longAudioTestV7/评测结果`
+- `<实际台词串>`：以 `longAudioTestV7/ai_deal.json` 中实际参与合成、顺序固定的全部台词为准。

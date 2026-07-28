@@ -68,12 +68,18 @@ def load_results(results_dir: Path) -> tuple[list[dict[str, Any]], dict[str, Any
     return rows, metadata
 
 
-def validate_results(rows: list[dict[str, Any]], metadata: dict[str, Any]) -> None:
+def validate_results(
+    rows: list[dict[str, Any]],
+    metadata: dict[str, Any],
+    *,
+    schema_version: str = "9.0",
+    version_label: str = "V9",
+) -> None:
     """拒绝把不完整、越界或失败的原始结果渲染成正式报告。"""
 
     config = metadata.get("config", {})
-    if metadata.get("schema_version") != "9.0" or config.get("schema_version") != "9.0":
-        raise ValueError("原始结果不是冻结的 V9 配置")
+    if metadata.get("schema_version") != schema_version or config.get("schema_version") != schema_version:
+        raise ValueError(f"原始结果不是冻结的 {version_label} 配置")
     if metadata.get("evaluation_profile") != "public-task-restricted":
         raise ValueError("原始结果不是公共评测受限入口产生的结果")
     if tuple(metadata.get("long_audio_metrics", ())) != PUBLIC_METRICS:
@@ -92,8 +98,9 @@ def validate_results(rows: list[dict[str, Any]], metadata: dict[str, Any]) -> No
         item = coverage.get(metric, {})
         if item.get("complete") != item.get("expected") or item.get("expected") != len(rows):
             raise ValueError(f"{metric} 覆盖不完整：{item}")
-    if {row.get("role") for row in rows if row.get("kind") == "reference"} != set(ROLE_ORDER):
-        raise ValueError("原始参考角色集合与 V9 冻结配置不一致")
+    expected_roles = {str(item["role"]) for item in config.get("references", [])}
+    if {row.get("role") for row in rows if row.get("kind") == "reference"} != expected_roles:
+        raise ValueError(f"原始参考角色集合与 {version_label} 冻结配置不一致")
 
 
 def synthesis_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -127,7 +134,14 @@ def error_locations(reference: str, hypothesis: str, limit: int = 80) -> list[st
     return locations or ["无差异。"]
 
 
-def render_cer_report(rows: list[dict[str, Any]], metadata: dict[str, Any], link: str) -> str:
+def render_cer_report(
+    rows: list[dict[str, Any]],
+    metadata: dict[str, Any],
+    link: str,
+    *,
+    version_label: str = "V9",
+    role_order: dict[str, int] = ROLE_ORDER,
+) -> str:
     syntheses = synthesis_rows(rows)
     references = reference_rows(rows)
     sense_values = {row["model_id"]: cer(row, "sensevoice_cer") for row in syntheses}
@@ -140,7 +154,7 @@ def render_cer_report(rows: list[dict[str, Any]], metadata: dict[str, Any], link
     sense_leaders = [model for model, value in sense_values.items() if value == sense_best]
     whisper_leaders = [model for model, value in whisper_values.items() if value == whisper_best]
     lines = [
-        "# SenseVoice CER 与 Whisper-large-v3-turbo CER V9 评价报告",
+        f"# SenseVoice CER 与 Whisper-large-v3-turbo CER {version_label} 评价报告",
         "",
         "## 结论摘要",
         "",
@@ -173,14 +187,14 @@ def render_cer_report(rows: list[dict[str, Any]], metadata: dict[str, Any], link
             "| --- | ---: | ---: |",
         ]
     )
-    for row in sorted(references, key=lambda item: ROLE_ORDER[item["role"]]):
+    for row in sorted(references, key=lambda item: role_order[item["role"]]):
         lines.append(f"| {row['role']} | {cer(row, 'sensevoice_cer'):.4f} | {cer(row, 'whisper_cer'):.4f} |")
     lines.extend(
         [
             "",
             "## 台词边界与错误位置",
             "",
-            f"成品按 `longAudioTestV9/ai_deal.json` 的 **{source['dialogue_count']} 段**实际台词合成；"
+            f"成品按 `{source['dialogue_path']}` 的 **{source['dialogue_count']} 段**实际台词合成；"
             f"全文 CER 固定使用其 **{source['normalized_character_count']}** 个 `zh-v1` 规范化字符。"
             f"`text.md` 有 {source['raw_text_normalized_character_count']} 个规范化字符，{source['raw_text_relation']}",
             "",
@@ -196,6 +210,48 @@ def render_cer_report(rows: list[dict[str, Any]], metadata: dict[str, Any], link
             value = row["metrics"][metric]
             lines.append(f"- {label}（CER {value['cer']:.4f}）：")
             lines.extend(f"  - {item}" for item in error_locations(value["reference_normalized"], value["hypothesis_normalized"]))
+    lines.extend(
+        [
+            "",
+            "## 双后端分歧项",
+            "",
+            "下表仅列示两个独立 ASR 后端的名次差异，方便安排人工逐条复核；"
+            "名次差不得跨后端合并，也不用于判定模型优劣。",
+            "",
+            "| 模型 | SenseVoice 名次 | Whisper-large-v3-turbo 名次 | 名次差（绝对值） |",
+            "| --- | ---: | ---: | ---: |",
+        ]
+    )
+    for row in sorted(syntheses, key=lambda item: item["model_id"].casefold()):
+        model = row["model_id"]
+        lines.append(
+            f"| {model} | {sense_ranks[model]} | {whisper_ranks[model]} | "
+            f"{abs(sense_ranks[model] - whisper_ranks[model])} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## 完整转写",
+            "",
+            "以下为两个 ASR 后端的原始全文转写，未额外修订或规范化；"
+            "规范化版本、30 秒分段与字词时间戳见原始结果。",
+        ]
+    )
+    for row in sorted(syntheses, key=lambda item: item["model_id"].casefold()):
+        lines.extend(["", f"### {row['model_id']}", ""])
+        for metric, label in (
+            ("sensevoice_cer", "SenseVoice"),
+            ("whisper_cer", "Whisper-large-v3-turbo"),
+        ):
+            lines.extend(
+                [
+                    f"#### {label}",
+                    "",
+                    "````text",
+                    str(row["metrics"][metric]["hypothesis_raw"]),
+                    "````",
+                ]
+            )
     lines.extend(
         [
             "",
@@ -224,12 +280,14 @@ def delivery_summary(row: dict[str, Any]) -> tuple[str, str, str]:
     )
 
 
-def render_delivery_report(rows: list[dict[str, Any]], metadata: dict[str, Any], link: str) -> str:
+def render_delivery_report(
+    rows: list[dict[str, Any]], metadata: dict[str, Any], link: str, *, version_label: str = "V9"
+) -> str:
     syntheses = synthesis_rows(rows)
     checks = metadata["unexecuted_checks"]
     source = metadata["config"]["source"]
     lines = [
-        "# 音频交付与文本一致性 V9 自动检查报告",
+        f"# 音频交付与文本一致性 {version_label} 自动检查报告",
         "",
         "## 结论边界",
         "",
@@ -274,7 +332,7 @@ def render_delivery_report(rows: list[dict[str, Any]], metadata: dict[str, Any],
             "",
             "## 台词与结构完整性",
             "",
-            f"全文以 `longAudioTestV9/ai_deal.json` 的 {source['dialogue_count']} 段、"
+            f"全文以 `{source['dialogue_path']}` 的 {source['dialogue_count']} 段、"
             f"{source['normalized_character_count']} 个规范化字符为唯一参考；"
             "SenseVoice 与 Whisper-large-v3-turbo 的全文 CER、完整转写和错误位置见同批 CER 报告。"
             "两个后端均按固定连续、不重叠的 30 秒分段顺序转写。",
@@ -294,13 +352,22 @@ def render_delivery_report(rows: list[dict[str, Any]], metadata: dict[str, Any],
     return "\n".join(lines)
 
 
-def build_reports(results_dir: Path, results_link: str | None = None) -> dict[str, str]:
+def build_reports(
+    results_dir: Path,
+    results_link: str | None = None,
+    *,
+    schema_version: str = "9.0",
+    version_label: str = "V9",
+    role_order: dict[str, int] = ROLE_ORDER,
+) -> dict[str, str]:
     rows, metadata = load_results(results_dir)
-    validate_results(rows, metadata)
+    validate_results(rows, metadata, schema_version=schema_version, version_label=version_label)
     link = results_link or results_dir.name
     return {
-        "cer": render_cer_report(rows, metadata, link),
-        "delivery": render_delivery_report(rows, metadata, link),
+        "cer": render_cer_report(
+            rows, metadata, link, version_label=version_label, role_order=role_order
+        ),
+        "delivery": render_delivery_report(rows, metadata, link, version_label=version_label),
     }
 
 

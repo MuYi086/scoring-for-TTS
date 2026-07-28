@@ -1,0 +1,107 @@
+{
+  "schema_version": "7.0",
+  "evaluation_profile": "public-task-restricted",
+  "expected_model_count": 7,
+  "expected_reference_count": 3,
+  "report_generator_module": "generate_neutral_v7_reports",
+  "source": {
+    "raw_text_path": "longAudioTestV7/text.md",
+    "raw_text_sha256": "ece0aa2992023e36498ab3f76b4c21486eb460958a81c0e8622c90d9cc88f822",
+    "dialogue_path": "longAudioTestV7/ai_deal.json",
+    "dialogue_sha256": "0f08f9fd318e51a6b3186a33f42d7e78c14226553afd7c66a15fad5d001c995c",
+    "dialogue_count": 77,
+    "normalized_character_count": 2066,
+    "raw_text_normalized_character_count": 2076,
+    "cer_reference": "ai_deal_dialogue_concatenation",
+    "case_id": "task7_v7_full_audiobook",
+    "raw_text_relation": "text.md 是小说原文；ai_deal.json 是七条成品实际使用的分角色合成输入。两者规范化后分别为 2076 与 2066 个字符；原文多出的 10 个字符是两处叙述性说话提示。全文 CER 只以 ai_deal.json 中 77 段 dialogue 的原始顺序拼接结果为准。"
+  },
+  "models": [
+    {"model_id": "dots.tts-base", "audio_path": "longAudioTestV7/audio_dots_tts.wav", "sha256": "693294aed7aea368e8bdd526333b16ab82d374747ca4b548fc9cb96176616cd0"},
+    {"model_id": "IndexTTS2", "audio_path": "longAudioTestV7/audio_indextts2.wav", "sha256": "4760a7ad83292199e55743129003adb0b8f686c18463011c866a1802ba5a7d3f"},
+    {"model_id": "LongCat-AudioDiT-1B", "audio_path": "longAudioTestV7/audio_longCat.wav", "sha256": "cea047a55bc585dcb96b764789045f0243948714f413f40076156ba30c2f4c4f"},
+    {"model_id": "MOSS-TTS-Local-Transformer-v1.5", "audio_path": "longAudioTestV7/audio_moss_tts.wav", "sha256": "43db022e8c2c3e58843bca36dfce1f45ef292f15c49e616236fc54048fa13d65"},
+    {"model_id": "OmniVoice", "audio_path": "longAudioTestV7/audio_omniVoice.wav", "sha256": "eff3f94e4303154aee6265ad129fb5a4b1c90b93cb7e0be9087c7b744b63f123"},
+    {"model_id": "Qwen3-TTS-12Hz-1.7B-Base", "audio_path": "longAudioTestV7/audio_qwen3_tts.wav", "sha256": "5350f2dfb4353b9a49ac8d14843f995e05a42805a983223a4b0fe817070daa02"},
+    {"model_id": "VoxCPM2", "audio_path": "longAudioTestV7/audio_voxcpm2.wav", "sha256": "df3bf0430cd9d33319d58c1b1cddf3b37926d1747c9cbcbc9f9ff58b4ffc1203"}
+  ],
+  "references": [
+    {
+      "role": "旁白",
+      "voice_description": "成年女性，中频偏暗，音色略带沙哑与气声，声线薄透但不过分尖锐，共鸣自然，发声力度适中偏轻柔。咬字清晰利落，语速中等偏慢，节奏均匀，停顿自然沉稳，默认情绪基调为冷静克制的叙述，隐含一丝不安但波动极小，整体气质内敛而耐听。",
+      "audio_path": "longAudioTestV7/mimo_旁白_v7.wav",
+      "sha256": "8885c87564386b09462755f465a2d2a801dfbe2192721b977b7a643359b9b90e",
+      "transcript": "夜夜如此，我听见头顶传来三声闷响，不像老鼠，更像精准的敲击。"
+    },
+    {
+      "role": "我",
+      "voice_description": "女性，三十岁左右，中高音域，声线偏薄而明亮，带轻微的金属质感与气息感，发声位置靠前，共鸣偏头腔，整体音色柔韧但隐含着紧绷的不安。咬字清晰利落，默认语速中等偏快，句子间有短促停顿，节奏略显急促，整体气质敏感而克制，情绪基调是藏在平静表面下的持续焦虑与警觉。",
+      "audio_path": "longAudioTestV7/mimo_我_v7.wav",
+      "sha256": "04996d602a928b3ae32c8d9478a0a71d6dba1a403da7a35341951347c9fb85ea",
+      "transcript": "求你了别动，你就在我头顶的天花板上慢慢地移动，我害怕极了。"
+    },
+    {
+      "role": "警察",
+      "voice_description": "男性，30至40岁，中低音域，声线厚实明亮带轻微粗粝感，共鸣稳健，无沙哑或气声。咬字干净利落，语速中等偏快，节奏紧凑，停顿短促，默认情绪警觉而克制，气质冷静权威。",
+      "audio_path": "longAudioTestV7/mimo_警察_v7.wav",
+      "sha256": "83a959d317dbf0b1829f25b27878220789781c8c0114d2b64e147c1c67f7d320",
+      "transcript": "现场所有人请立即停下脚步，配合警方的调查不要做无谓的抵抗了。"
+    }
+  ],
+  "sensevoice": {
+    "model_id": "FunAudioLLM/SenseVoiceSmall",
+    "revision": "716d31dbfd64b40152f3399a720890b005ffaf90",
+    "model_sha256": "833ca2dcfdf8ec91bd4f31cfac36d6124e0c459074d5e909aec9cabe6204a3ea",
+    "device": "cuda",
+    "language": "zh",
+    "long_audio_chunk_seconds": 30.0
+  },
+  "whisper": {
+    "model_id": "openai/whisper-large-v3-turbo",
+    "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+    "model_sha256": "542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1",
+    "device": "cuda",
+    "language": "zh",
+    "task": "transcribe",
+    "return_timestamps": "word",
+    "long_audio_chunk_seconds": 30.0
+  },
+  "audio_delivery": {
+    "measurement": {
+      "clip_sample_threshold": 0.999,
+      "silence_threshold_dbfs": -60.0,
+      "analysis_window_seconds": 0.1,
+      "reported_silence_minimum_seconds": 0.5
+    },
+    "format_contract": {
+      "status": "not_frozen",
+      "reason": "任务未指定目标渠道、采样率、声道、位深、时长或响度阈值。"
+    },
+    "loudness_contract": {
+      "status": "not_frozen",
+      "reason": "任务未指定发布渠道及其集成响度、短时响度、响度范围和最大真峰值规范。"
+    }
+  },
+  "checks": {
+    "forced_alignment": {
+      "status": "not_configured",
+      "reason": "未冻结强制对齐工具、发音词典、字符或词级覆盖阈值及读法规则。"
+    },
+    "role_routing": {
+      "status": "not_configured",
+      "reason": "未冻结闭集角色分类器、参考集、校准方式和告警阈值。"
+    }
+  },
+  "policy": {
+    "normalization_id": "zh-v1",
+    "long_audio_metrics": ["audio_delivery", "sensevoice_cer", "whisper_cer"],
+    "prohibited_long_audio_metrics": [
+      "wavlm_sim",
+      "speechbrain_ecapa_sim",
+      "utmosv2",
+      "nisqa",
+      "cross_metric_weighted_score"
+    ],
+    "ranking": "SenseVoice CER 与 Whisper-large-v3-turbo CER 分别报告原始值和独立名次；不得平均为综合分。"
+  }
+}

@@ -101,10 +101,10 @@ def check_model(
         )
 
 
-def check_environment(report: CheckReport) -> Path | None:
+def check_environment(report: CheckReport, version_label: str = "V9") -> Path | None:
     mirror_value = os.environ.get("HF_MIRROR_ROOT")
     if not mirror_value:
-        report.errors.append("必须设置 HF_MIRROR_ROOT，公共 V9 评测不允许隐式联网下载")
+        report.errors.append(f"必须设置 HF_MIRROR_ROOT，公共 {version_label} 评测不允许隐式联网下载")
         return None
     for name in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE"):
         if os.environ.get(name) == "1":
@@ -119,39 +119,57 @@ def check_environment(report: CheckReport) -> Path | None:
         if torch.cuda.is_available():
             report.passed.append(f"CUDA 可用：{torch.cuda.get_device_name(0)}")
         else:
-            report.errors.append("V9 配置要求 CUDA，但 torch.cuda.is_available() 为 False")
+            report.errors.append(f"{version_label} 配置要求 CUDA，但 torch.cuda.is_available() 为 False")
     return Path(mirror_value).expanduser()
 
 
-def check_inputs(report: CheckReport, config: dict[str, Any]) -> None:
+def check_inputs(report: CheckReport, config: dict[str, Any], version_label: str = "V9") -> None:
     try:
         dialogues = load_dialogues(config)
         references, syntheses = build_inputs(config, dialogues)
     except (KeyError, OSError, TypeError, ValueError) as exc:
-        report.errors.append(f"V9 输入或登记哈希检查失败：{exc}")
+        report.errors.append(f"{version_label} 输入或登记哈希检查失败：{exc}")
         return
-    report.passed.append(f"V9 输入完整：{len(references)} 条角色参考音频、{len(syntheses)} 条模型长音频")
+    report.passed.append(
+        f"{version_label} 输入完整：{len(references)} 条角色参考音频、{len(syntheses)} 条模型长音频"
+    )
     report.passed.append(f"实际 CER 台词串：{len(dialogues)} 段、{config['source']['normalized_character_count']} 个规范化字符")
 
 
-def main() -> int:
-    args = parse_args()
+def run_check(
+    config_path: Path,
+    strict_versions: bool,
+    *,
+    expected_schema_version: str = "9.0",
+    version_label: str = "V9",
+) -> int:
+    """在不加载 ASR 权重的前提下校验一个受限公共评测配置。"""
+
     report = CheckReport()
     try:
-        config = load_json(args.config)
-        validate_config(config)
+        config = load_json(config_path)
+        validate_config(
+            config,
+            expected_schema_version=expected_schema_version,
+            version_label=version_label,
+        )
     except (KeyError, TypeError, ValueError) as exc:
         report.errors.append(str(exc))
         print_report(report)
         return 2
-    check_package_versions(report, args.strict_versions)
-    mirror_root = check_environment(report)
+    check_package_versions(report, strict_versions)
+    mirror_root = check_environment(report, version_label)
     if mirror_root is not None:
-        check_model(report, mirror_root, "SenseVoice", config["sensevoice"], "model.pt", args.strict_versions)
-        check_model(report, mirror_root, "Whisper-large-v3-turbo", config["whisper"], "model.safetensors", args.strict_versions)
-        check_inputs(report, config)
+        check_model(report, mirror_root, "SenseVoice", config["sensevoice"], "model.pt", strict_versions)
+        check_model(report, mirror_root, "Whisper-large-v3-turbo", config["whisper"], "model.safetensors", strict_versions)
+        check_inputs(report, config, version_label)
     print_report(report)
     return 2 if report.errors else 0
+
+
+def main() -> int:
+    args = parse_args()
+    return run_check(args.config, args.strict_versions)
 
 
 if __name__ == "__main__":

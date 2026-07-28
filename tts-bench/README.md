@@ -186,92 +186,95 @@ python tts-bench/scripts/generate_neutral_v5_reports.py \
 
 分项报告保留六个后端的原始值与独立名次。综合报告不直接混合 CER、SIM 与预测 MOS 原始值，而是先转换各后端的本批名次分，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 15 节。
 
-## Task 7 V6 长音频中立评测
+## Task 6 V6 公共长音频评测
 
-V6 的冻结事实源是 `config/neutral-evaluation-v6.json`，输入位于 `../longAudioTestV6/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 58 段 `dialogue` 合成，因此全文 CER 使用其 1783 个 `zh-v1` 规范化字符；`text.md` 多出的 43 个说话人提示字符不进入本批 CER。
+V6 的冻结事实源是 `config/neutral-evaluation-v6.json`，输入位于 `../longAudioTestV6/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 58 段 `dialogue` 合成，因此全文 CER 使用其 1,783 个 `zh-v1` 规范化字符；`text.md` 有 1,826 个规范化字符，只作原文核对，不进入本批 CER。
 
-V6 复用经过测试的长音频流程：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 使用 Whisper 时间戳对齐出的四角色片段；双自然度只读取 8 个固定等距的 12 秒窗口。每条记录原子保存，只能对同一次未完成运行的原目录断点续跑。
+V6 受 [公共评测任务](../公共评测任务.md) 限制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；仅测量音频可解码性、格式、采样削波、直流偏置和静音位置。目标渠道格式/响度阈值、强制对齐、读法词典和角色路由分类器尚未冻结，因此报告只能记录原始测量或“未执行”。
+
+公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧 V6 六后端报告或任何加权排名用于本入口。
 
 ```bash
-conda run --no-capture-output -n audio_eval \
+conda run --no-capture-output -n seed_tts_eval \
   python tts-bench/scripts/check_neutral_evaluation_v6_setup.py \
-  --assets tts-bench/config/evaluation-assets-v2.json \
   --strict-versions
 
-conda run --no-capture-output -n audio_eval \
+conda run --no-capture-output -n seed_tts_eval \
   python tts-bench/scripts/run_neutral_evaluation_v6.py \
   --model-id dots.tts-base \
-  --output-dir longAudioTestV6/评测结果/task7-v6-YYYYMMDDTHHMMSSZ \
+  --output-dir longAudioTestV6/评测结果 \
   --strict
 ```
 
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
 
 ```bash
 python tts-bench/scripts/generate_neutral_v6_reports.py \
-  --results-dir longAudioTestV6/评测结果/task7-v6-YYYYMMDDTHHMMSSZ \
+  --results-dir longAudioTestV6/评测结果 \
   --reports-dir longAudioTestV6/评测结果
 ```
 
-前三份报告文件名使用 V6；综合报告按 `task7.md` 的明确要求保留文件名 `小说转有声TTS_V5综合评价报告.md`，但正文、配置和原始证据均标识为 V6。综合分只对六后端的本批名次做统一尺度转换，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 16 节。
+输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V6评价报告.md` 与 `音频交付与文本一致性_V6自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
 
-## Task 8 V7 长音频中立评测
+## Task 7 V7 公共长音频评测
 
-V7 的冻结事实源是 `config/neutral-evaluation-v7.json`，输入位于 `../longAudioTestV7/`：7 条模型长音频、3 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 2066 个 `zh-v1` 规范化字符；`text.md` 多出的 10 个字符是两处叙述性说话提示，不进入本批 CER。
+V7 的冻结事实源是 `config/neutral-evaluation-v7.json`，输入位于 `../longAudioTestV7/`：7 条模型长音频、3 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 2,066 个 `zh-v1` 规范化字符；`text.md` 有 2,076 个规范化字符，只作原文核对，不进入本批 CER。
 
-V7 继续使用长音频中立流程：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 使用 Whisper 时间戳对齐出的三角色片段；角色若完全没有达到 4 个精确匹配字符的标准候选，才使用至少 2 个精确匹配字符且满足其余门槛的短台词回退片段，并在原始结果和报告中显式标记；双自然度只读取 8 个固定等距的 12 秒窗口。每条记录原子保存，只能对同一次未完成运行的原目录断点续跑。
+V7 受 [公共评测任务](../公共评测任务.md) 限制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；仅测量音频可解码性、格式、采样削波、直流偏置和静音位置。目标渠道格式/响度阈值、强制对齐、读法词典和角色路由分类器尚未冻结，因此报告只能记录原始测量或“未执行”。
+
+公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧 V7 六后端报告或任何加权排名用于本入口。
 
 ```bash
-conda run --no-capture-output -n audio_eval \
+conda run --no-capture-output -n seed_tts_eval \
   python tts-bench/scripts/check_neutral_evaluation_v7_setup.py \
-  --assets tts-bench/config/evaluation-assets-v2.json \
   --strict-versions
 
-conda run --no-capture-output -n audio_eval \
+conda run --no-capture-output -n seed_tts_eval \
   python tts-bench/scripts/run_neutral_evaluation_v7.py \
   --model-id dots.tts-base \
-  --output-dir longAudioTestV7/评测结果/task8-v7-YYYYMMDDTHHMMSSZ \
+  --output-dir longAudioTestV7/评测结果 \
   --strict
 ```
 
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
 
 ```bash
 python tts-bench/scripts/generate_neutral_v7_reports.py \
-  --results-dir longAudioTestV7/评测结果/task8-v7-YYYYMMDDTHHMMSSZ \
+  --results-dir longAudioTestV7/评测结果 \
   --reports-dir longAudioTestV7/评测结果
 ```
 
-按 `task8.md` 的明确要求，前三份报告沿用 V6 文件名，综合报告沿用 `小说转有声TTS_V5综合评价报告.md`，但正文、配置和原始证据均标识为 V7。综合分只对六后端的本批名次做统一尺度转换，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 17 节。
+输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V7评价报告.md` 与 `音频交付与文本一致性_V7自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
 
-## Task 9 V8 长音频中立评测
+## Task 8 V8 公共长音频评测
 
-V8 的冻结事实源是 `config/neutral-evaluation-v8.json`，输入位于 `../longAudioTestV8/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 97 段 `dialogue` 合成，因此全文 CER 使用其 2513 个 `zh-v1` 规范化字符；`text.md` 多出的 24 个叙述性字符不进入本批 CER。
+V8 的冻结事实源是 `config/neutral-evaluation-v8.json`，输入位于 `../longAudioTestV8/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 97 段 `dialogue` 合成，因此全文 CER 使用其 2,513 个 `zh-v1` 规范化字符；`text.md` 有 2,537 个规范化字符，仅作原文核对。
 
-V8 继续使用长音频中立流程：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 使用 Whisper 时间戳对齐出的四角色片段；若某角色没有达到 4 个精确匹配字符的标准候选，才允许使用至少 2 个精确匹配字符且满足其余门槛的短台词回退片段，并在原始结果与报告中显式标记；双自然度只读取 8 个固定等距的 12 秒窗口。每条记录原子保存，只能对同一次未完成运行的原目录断点续跑。
+V8 受 [公共评测任务](../公共评测任务.md) 限制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；仅测量音频可解码性、格式、采样削波、直流偏置和静音位置。目标渠道格式/响度阈值、强制对齐、读法词典和角色路由分类器尚未冻结，因此报告只能记录原始测量或“未执行”。
+
+公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧 V8 六后端报告或任何加权排名用于本入口。
 
 ```bash
-conda run --no-capture-output -n audio_eval \
+conda run --no-capture-output -n seed_tts_eval \
   python tts-bench/scripts/check_neutral_evaluation_v8_setup.py \
-  --assets tts-bench/config/evaluation-assets-v2.json \
   --strict-versions
 
-conda run --no-capture-output -n audio_eval \
+conda run --no-capture-output -n seed_tts_eval \
   python tts-bench/scripts/run_neutral_evaluation_v8.py \
   --model-id dots.tts-base \
-  --output-dir longAudioTestV8/评测结果/task9-v8-YYYYMMDDTHHMMSSZ \
+  --output-dir longAudioTestV8/评测结果 \
   --strict
 ```
 
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
+其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
 
 ```bash
 python tts-bench/scripts/generate_neutral_v8_reports.py \
-  --results-dir longAudioTestV8/评测结果/task9-v8-YYYYMMDDTHHMMSSZ \
+  --results-dir longAudioTestV8/评测结果 \
   --reports-dir longAudioTestV8/评测结果
 ```
 
-输出为 `SenseVoice_CER&Whisper_CER_V8评价报告.md`、`WavLM_SIM&SpeechBrain_ECAPA_SIM_V8评价报告.md`、`UTMOSv2&NISQA_V8评价报告.md` 和 task9 指定文件名的 `小说转有声TTS_V5综合评价报告.md`。前三份报告保留原始量纲和独立名次；综合报告只转换六个后端的本批名次，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 18 节。
+输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V8评价报告.md` 与 `音频交付与文本一致性_V8自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
 
 ## Task 10 V9 公共长音频评测
 

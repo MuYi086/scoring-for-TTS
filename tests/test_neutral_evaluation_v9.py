@@ -211,6 +211,8 @@ def test_complete_public_v9_results_render_only_required_reports(tmp_path: Path)
     assert set(reports) == {"cer", "delivery"}
     assert "Whisper-large-v3-turbo" in reports["cer"]
     assert "77 段" in reports["cer"]
+    assert "双后端分歧项" in reports["cer"]
+    assert "## 完整转写" in reports["cer"]
     assert "不判定通过、失败或优劣" in reports["delivery"]
     assert "强制对齐与读法合规：**未执行**" in reports["delivery"]
     assert "综合" not in "\n".join(reports.values())

@@ -100,13 +100,17 @@ def write_jsonl_atomic(path: Path, rows: Iterable[dict[str, Any]]) -> None:
     temporary.replace(path)
 
 
-def validate_config(config: dict[str, Any]) -> None:
-    """校验会改变 V9 统计对象或受限范围的冻结字段。"""
+def validate_config(
+    config: dict[str, Any], *, expected_schema_version: str = "9.0", version_label: str = "V9"
+) -> None:
+    """校验会改变受限公共评测统计对象或范围的冻结字段。"""
 
-    if config.get("schema_version") != "9.0":
-        raise ValueError("公共 V9 入口只支持 schema_version=9.0")
+    if config.get("schema_version") != expected_schema_version:
+        raise ValueError(
+            f"公共 {version_label} 入口只支持 schema_version={expected_schema_version}"
+        )
     if config.get("evaluation_profile") != "public-task-restricted":
-        raise ValueError("V9 配置必须声明 public-task-restricted 评测范围")
+        raise ValueError(f"{version_label} 配置必须声明 public-task-restricted 评测范围")
     policy = config.get("policy", {})
     if policy.get("normalization_id") != "zh-v1":
         raise ValueError("当前只支持 zh-v1 文本规范化")
@@ -121,7 +125,7 @@ def validate_config(config: dict[str, Any]) -> None:
         "cross_metric_weighted_score",
     }
     if not required_prohibited <= prohibited:
-        raise ValueError("V9 配置没有完整禁止公共任务排除的长音频指标或综合分")
+        raise ValueError(f"{version_label} 配置没有完整禁止公共任务排除的长音频指标或综合分")
 
     source = config.get("source", {})
     required_source = {
@@ -135,7 +139,7 @@ def validate_config(config: dict[str, Any]) -> None:
         "cer_reference",
     }
     if required_source - set(source):
-        raise ValueError("source 缺少 V9 台词串冻结字段")
+        raise ValueError(f"source 缺少 {version_label} 台词串冻结字段")
     if source.get("cer_reference") != "ai_deal_dialogue_concatenation":
         raise ValueError("全文 CER 参考必须为 ai_deal.json 的 dialogue 台词串")
 
@@ -850,13 +854,19 @@ def apply_whisper(
         release_model(evaluator)
 
 
-def run(args: Any) -> int:
+def run(
+    args: Any, *, expected_schema_version: str = "9.0", version_label: str = "V9"
+) -> int:
     """执行一次单模型受限评测。"""
 
     config = load_json(args.config)
-    validate_config(config)
+    validate_config(
+        config,
+        expected_schema_version=expected_schema_version,
+        version_label=version_label,
+    )
     if not os.environ.get("HF_MIRROR_ROOT"):
-        raise ValueError("必须设置 HF_MIRROR_ROOT，公共 V9 评测不允许隐式联网下载")
+        raise ValueError(f"必须设置 HF_MIRROR_ROOT，公共 {version_label} 评测不允许隐式联网下载")
     dialogues = load_dialogues(config)
     references, syntheses = build_inputs(config, dialogues)
     configured_models = {item.model_id for item in syntheses}
