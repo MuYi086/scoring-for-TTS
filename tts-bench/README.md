@@ -276,6 +276,12 @@ python tts-bench/scripts/generate_neutral_v8_reports.py \
 
 输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V8评价报告.md` 与 `音频交付与文本一致性_V8自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
 
+## Task 9 V2 双模型旁白克隆评测
+
+`task-runner/task9/` 是独立于本目录通用七模型基准的 Task 9 专用流程：它只比较 IndexTTS2 与 VoxCPM2，唯一台词是 `../longAudioTestV9/text.md`，并使用 `task-runner/task9/evaluation-contract.json` 的 `task9-v2` 契约。合成编排器会生成与最终 WAV 哈希绑定的逐段音频证据；评测按这些语义段独立运行 SenseVoice 与 Whisper-large-v3-turbo，分别报告严格汉字 CER、带声调拼音辅助 CER 和 ASR 健康状态。`pypinyin==0.55.0` 已冻结在 `environment/audio-eval-requirements.txt`；强制对齐、读法词典校准和角色路由仍未执行。
+
+完整命令、复跑规则及报告解释见 [`../task9.md`](../task9.md) 和 [`../task-runner/task9/README.md`](../task-runner/task9/README.md)。下节的 Task 10 V9 七模型流程使用另一份输入契约，不能与 Task 9 的结果混用。
+
 ## Task 10 V9 公共长音频评测
 
 V9 的冻结事实源是 `config/neutral-evaluation-v9.json`，输入位于 `../longAudioTestV9/`：7 条模型长音频、5 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 1,505 个 `zh-v1` 规范化字符；`text.md` 有 1,527 个字符且与实际合成输入存在叙述、引号归属与顺序差异，不进入本批 CER。

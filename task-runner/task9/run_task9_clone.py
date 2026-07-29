@@ -43,6 +43,7 @@ class TaskPaths:
     indextts_output: Path
     voxcpm2_output: Path
     segment_manifest: Path
+    segment_evidence_root: Path
 
 
 @dataclass(frozen=True)
@@ -84,6 +85,7 @@ def task_paths(task_dir: Path) -> TaskPaths:
         indextts_output=root / "audio_indextts2.wav",
         voxcpm2_output=root / "audio_voxcpm2.wav",
         segment_manifest=root / ".task9_segment_manifest.json",
+        segment_evidence_root=root / ".task9_synthesis_evidence",
     )
 
 
@@ -255,6 +257,10 @@ def build_invocations(args: argparse.Namespace, inputs: TaskPaths, models: Model
                 str(args.index_max_text_tokens_per_segment),
                 "--segment-manifest",
                 str(inputs.segment_manifest),
+                "--segment-evidence-root",
+                str(inputs.segment_evidence_root),
+                "--model-id",
+                "indextts2",
                 "--local-files-only",
             ),
         ),
@@ -282,6 +288,10 @@ def build_invocations(args: argparse.Namespace, inputs: TaskPaths, models: Model
                 args.reference_text,
                 "--segment-manifest",
                 str(inputs.segment_manifest),
+                "--segment-evidence-root",
+                str(inputs.segment_evidence_root),
+                "--model-id",
+                "voxcpm2",
                 "--local-files-only",
             ),
         ),
@@ -301,6 +311,7 @@ def print_plan(inputs: TaskPaths, invocations: Iterable[Invocation], segment_pla
         f"目标 {policy['target_seconds']} 秒，最大 {policy['max_segment_seconds']} 秒"
     )
     print(f"共享清单：{inputs.segment_manifest}")
+    print(f"逐段证据根目录：{inputs.segment_evidence_root}")
     for invocation in invocations:
         print(f"\n[{invocation.label}] 目标：{invocation.output_path}")
         print(shlex.join(invocation.command))

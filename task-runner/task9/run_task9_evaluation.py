@@ -19,18 +19,17 @@ import platform
 import re
 import subprocess
 import sys
-import tempfile
 import unicodedata
 from pathlib import Path
 from typing import Any, Callable
 
+from synthesis_evidence import EVIDENCE_SCHEMA_VERSION, load_verified_synthesis_evidence
 from text_segments import load_segment_plan
 
 
 TASK_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = TASK_DIR.parents[1]
 DEFAULT_CONTRACT = TASK_DIR / "evaluation-contract.json"
-DEFAULT_RESULTS_DIR = PROJECT_ROOT / "longAudioTestV9" / "评测结果" / "task9-v9-raw"
 SENSEVOICE_CONTROL_TAG = re.compile(r"<\|[^|>]+\|>")
 
 
@@ -164,6 +163,80 @@ def levenshtein_alignment(reference: str, hypothesis: str) -> tuple[int, list[di
     return matrix[rows][columns], errors
 
 
+def levenshtein_token_alignment(reference: list[str], hypothesis: list[str]) -> tuple[int, list[dict[str, Any]]]:
+    """返回 token 级编辑距离及拼音 token 位置，避免把多字符 token 拆开计算。"""
+    rows, columns = len(reference), len(hypothesis)
+    matrix = [[0] * (columns + 1) for _ in range(rows + 1)]
+    for index in range(rows + 1):
+        matrix[index][0] = index
+    for index in range(columns + 1):
+        matrix[0][index] = index
+    for ref_index in range(1, rows + 1):
+        for hyp_index in range(1, columns + 1):
+            matrix[ref_index][hyp_index] = min(
+                matrix[ref_index - 1][hyp_index] + 1,
+                matrix[ref_index][hyp_index - 1] + 1,
+                matrix[ref_index - 1][hyp_index - 1]
+                + (reference[ref_index - 1] != hypothesis[hyp_index - 1]),
+            )
+    errors: list[dict[str, Any]] = []
+    ref_index, hyp_index = rows, columns
+    while ref_index or hyp_index:
+        if (
+            ref_index
+            and hyp_index
+            and matrix[ref_index][hyp_index] == matrix[ref_index - 1][hyp_index - 1]
+            and reference[ref_index - 1] == hypothesis[hyp_index - 1]
+        ):
+            ref_index -= 1
+            hyp_index -= 1
+            continue
+        if (
+            ref_index
+            and hyp_index
+            and matrix[ref_index][hyp_index] == matrix[ref_index - 1][hyp_index - 1] + 1
+        ):
+            errors.append(
+                {
+                    "operation": "substitution",
+                    "reference_index": ref_index - 1,
+                    "reference_token": reference[ref_index - 1],
+                    "hypothesis_index": hyp_index - 1,
+                    "hypothesis_token": hypothesis[hyp_index - 1],
+                }
+            )
+            ref_index -= 1
+            hyp_index -= 1
+            continue
+        if ref_index and matrix[ref_index][hyp_index] == matrix[ref_index - 1][hyp_index] + 1:
+            errors.append(
+                {
+                    "operation": "deletion",
+                    "reference_index": ref_index - 1,
+                    "reference_token": reference[ref_index - 1],
+                    "hypothesis_index": hyp_index,
+                    "hypothesis_token": "",
+                }
+            )
+            ref_index -= 1
+            continue
+        if hyp_index and matrix[ref_index][hyp_index] == matrix[ref_index][hyp_index - 1] + 1:
+            errors.append(
+                {
+                    "operation": "insertion",
+                    "reference_index": ref_index,
+                    "reference_token": "",
+                    "hypothesis_index": hyp_index - 1,
+                    "hypothesis_token": hypothesis[hyp_index - 1],
+                }
+            )
+            hyp_index -= 1
+            continue
+        raise RuntimeError("拼音编辑距离回溯失败")
+    errors.reverse()
+    return matrix[rows][columns], errors
+
+
 def load_contract(path: Path) -> dict[str, Any]:
     try:
         contract = json.loads(path.read_text(encoding="utf-8"))
@@ -174,7 +247,7 @@ def load_contract(path: Path) -> dict[str, Any]:
 
 
 def validate_contract(contract: dict[str, Any]) -> None:
-    if contract.get("schema_version") != "task9-v1" or contract.get("version") != "V9":
+    if contract.get("schema_version") != "task9-v2" or contract.get("version") != "V9":
         raise ValueError("评测契约不是 Task 9 V9 的冻结格式")
     source = contract.get("source")
     if not isinstance(source, dict) or source.get("cer_reference") != "text_md_actual_synthesis_order":
@@ -186,6 +259,32 @@ def validate_contract(contract: dict[str, Any]) -> None:
     model_ids = [item.get("model_id") for item in contract["models"]]
     if len(set(model_ids)) != len(model_ids) or not all(isinstance(item, str) and item for item in model_ids):
         raise ValueError("模型标识必须唯一且非空")
+    evaluation = contract.get("asr_evaluation")
+    if not isinstance(evaluation, dict) or evaluation.get("mode") != "synthesis_segment_evidence":
+        raise ValueError("Task 9 V2 必须使用逐段合成音频证据评测。")
+    if not isinstance(evaluation.get("evidence_root"), str):
+        raise ValueError("Task 9 V2 缺少逐段证据根目录。")
+    if evaluation.get("evidence_schema_version") != EVIDENCE_SCHEMA_VERSION:
+        raise ValueError("Task 9 V2 逐段证据版本未冻结或不匹配。")
+    health = evaluation.get("health")
+    if not isinstance(health, dict):
+        raise ValueError("Task 9 V2 缺少 ASR 健康门控配置。")
+    required_health = (
+        "minimum_hypothesis_to_reference_ratio",
+        "maximum_hypothesis_to_reference_ratio",
+        "maximum_consecutive_deletions",
+        "maximum_backend_disagreement_cer",
+        "ranking_requires_healthy_segments",
+    )
+    if any(name not in health for name in required_health):
+        raise ValueError("Task 9 V2 的 ASR 健康门控配置不完整。")
+    phonetic = evaluation.get("phonetic")
+    if not isinstance(phonetic, dict) or phonetic.get("library") != "pypinyin":
+        raise ValueError("Task 9 V2 必须冻结 pypinyin 拼音辅助指标配置。")
+    if not isinstance(phonetic.get("version"), str) or phonetic.get("style") != "tone3":
+        raise ValueError("Task 9 V2 的拼音指标版本或风格不完整。")
+    if not isinstance(phonetic.get("phrase_overrides"), dict):
+        raise ValueError("Task 9 V2 的拼音词典覆盖项必须是对象。")
 
 
 def project_path(relative_path: str) -> Path:
@@ -252,6 +351,7 @@ def check_preflight(contract: dict[str, Any], hf_mirror_root: Path | None) -> li
             require_nonempty_file(path, label)
         except (FileNotFoundError, ValueError) as exc:
             errors.append(str(exc))
+    source_segments: list[dict[str, Any]] = []
     if raw_text_path.is_file():
         raw_text = raw_text_path.read_text(encoding="utf-8").strip()
         normalized_count = len(normalize_zh_v1(raw_text))
@@ -261,14 +361,27 @@ def check_preflight(contract: dict[str, Any], hf_mirror_root: Path | None) -> li
                 f"当前 {normalized_count}，冻结值 {contract['source']['normalized_character_count']}"
             )
         try:
-            load_segment_plan(segment_manifest_path, raw_text)
+            source_segments = load_segment_plan(segment_manifest_path, raw_text)
         except (FileNotFoundError, ValueError) as exc:
             errors.append(f"共享分段清单检查失败：{exc}")
     for item in contract["models"]:
+        audio_path = project_path(item["audio_path"])
         try:
-            require_nonempty_file(project_path(item["audio_path"]), f"{item['display_name']} 成品音频")
+            require_nonempty_file(audio_path, f"{item['display_name']} 成品音频")
         except (FileNotFoundError, ValueError) as exc:
             errors.append(str(exc))
+            continue
+        if source_segments:
+            try:
+                load_verified_synthesis_evidence(
+                    evidence_root=project_path(contract["asr_evaluation"]["evidence_root"]),
+                    model_id=str(item["model_id"]),
+                    output_audio=audio_path,
+                    source_segment_manifest=segment_manifest_path,
+                    source_segments=source_segments,
+                )
+            except (FileNotFoundError, ValueError) as exc:
+                errors.append(f"{item['display_name']} 逐段证据检查失败：{exc}")
     if hf_mirror_root is None:
         errors.append("必须传入 --hf-mirror-root 或设置 HF_MIRROR_ROOT；正式评测不允许隐式联网下载")
     elif not hf_mirror_root.expanduser().is_dir():
@@ -289,6 +402,15 @@ def check_preflight(contract: dict[str, Any], hf_mirror_root: Path | None) -> li
     else:
         if not torch.cuda.is_available():
             errors.append("评测契约要求 CUDA，但 torch.cuda.is_available() 为 False")
+    try:
+        import pypinyin
+    except ImportError as exc:
+        errors.append(f"评测环境缺少 pypinyin：{exc}")
+    else:
+        expected = str(contract["asr_evaluation"]["phonetic"]["version"])
+        actual = str(getattr(pypinyin, "__version__", "unknown"))
+        if actual != expected:
+            errors.append(f"pypinyin 版本不匹配：当前 {actual}，冻结值 {expected}")
     return errors
 
 
@@ -327,7 +449,7 @@ def load_or_create_results(
     reference_path = project_path(contract["reference"]["audio_path"])
     segment_manifest = json.loads(segment_manifest_path.read_text(encoding="utf-8"))
     return {
-        "schema_version": "task9-v1",
+        "schema_version": "task9-v2",
         "version": contract["version"],
         "created_at": utc_now(),
         "contract_path": str(contract_path.resolve()),
@@ -407,58 +529,6 @@ def audio_measurement(audio_path: Path, measurement_config: dict[str, Any]) -> d
     }
 
 
-def each_audio_chunk(
-    audio_path: Path,
-    chunk_seconds: float,
-    temporary_dir: Path,
-    callback: Callable[[Path, float, float], str | tuple[str, str]],
-) -> list[dict[str, Any]]:
-    """以连续、无重叠的固定时长分段转写长音频。"""
-    try:
-        import soundfile as sf
-    except ImportError as exc:
-        raise RuntimeError("长音频分段缺少 soundfile") from exc
-    chunks: list[dict[str, Any]] = []
-    with sf.SoundFile(str(audio_path)) as source:
-        sample_rate = source.samplerate
-        chunk_frames = max(1, round(chunk_seconds * sample_rate))
-        frame_start = 0
-        index = 0
-        while True:
-            audio = source.read(chunk_frames, dtype="float32", always_2d=True)
-            if len(audio) == 0:
-                break
-            start_seconds = frame_start / sample_rate
-            end_seconds = (frame_start + len(audio)) / sample_rate
-            chunk_path = temporary_dir / f"chunk-{index:05d}.wav"
-            sf.write(str(chunk_path), audio, sample_rate, format="WAV")
-            try:
-                transcription_result = callback(chunk_path, start_seconds, end_seconds)
-            finally:
-                chunk_path.unlink(missing_ok=True)
-            if isinstance(transcription_result, tuple):
-                transcription, raw_transcription = transcription_result
-            else:
-                transcription = transcription_result
-                raw_transcription = transcription
-            record: dict[str, Any] = {
-                "index": index,
-                "start_seconds": start_seconds,
-                "end_seconds": end_seconds,
-                "transcription": transcription,
-            }
-            if raw_transcription != transcription:
-                record["raw_transcription"] = raw_transcription
-            chunks.append(
-                record
-            )
-            frame_start += len(audio)
-            index += 1
-    if not chunks:
-        raise RuntimeError("未能从音频读取任何转写分段")
-    return chunks
-
-
 def clear_cuda_cache(torch: Any) -> None:
     if not torch.cuda.is_available():
         return
@@ -469,7 +539,39 @@ def clear_cuda_cache(torch: Any) -> None:
         pass
 
 
-def transcribe_sensevoice(audio_path: Path, config: dict[str, Any], model_dir: Path, temporary_root: Path) -> tuple[str, list[dict[str, Any]]]:
+def each_synthesis_segment(
+    audio_segments: list[dict[str, Any]], callback: Callable[[Path, float, float], str | tuple[str, str]]
+) -> list[dict[str, Any]]:
+    """按合成时冻结的语义片段转写，不再把长音频硬切成固定窗口。"""
+    chunks: list[dict[str, Any]] = []
+    for index, segment in enumerate(audio_segments):
+        transcription_result = callback(
+            Path(segment["audio_path"]), float(segment["start_seconds"]), float(segment["end_seconds"])
+        )
+        if isinstance(transcription_result, tuple):
+            transcription, raw_transcription = transcription_result
+        else:
+            transcription = transcription_result
+            raw_transcription = transcription
+        record: dict[str, Any] = {
+            "index": index,
+            "segment_id": segment["segment_id"],
+            "start_seconds": float(segment["start_seconds"]),
+            "end_seconds": float(segment["end_seconds"]),
+            "audio_sha256": segment["audio_sha256"],
+            "transcription": transcription,
+        }
+        if raw_transcription != transcription:
+            record["raw_transcription"] = raw_transcription
+        chunks.append(record)
+    if not chunks:
+        raise RuntimeError("逐段合成证据不含可转写音频。")
+    return chunks
+
+
+def transcribe_sensevoice(
+    audio_segments: list[dict[str, Any]], config: dict[str, Any], model_dir: Path
+) -> tuple[str, list[dict[str, Any]]]:
     try:
         import torch
         from funasr import AutoModel
@@ -495,7 +597,7 @@ def transcribe_sensevoice(audio_path: Path, config: dict[str, Any], model_dir: P
             raw_text = text.strip()
             return strip_sensevoice_control_tags(raw_text), raw_text
 
-        chunks = each_audio_chunk(audio_path, float(config["chunk_seconds"]), temporary_root, transcribe)
+        chunks = each_synthesis_segment(audio_segments, transcribe)
         return "".join(item["transcription"] for item in chunks), chunks
     finally:
         if model is not None:
@@ -503,7 +605,9 @@ def transcribe_sensevoice(audio_path: Path, config: dict[str, Any], model_dir: P
         clear_cuda_cache(torch)
 
 
-def transcribe_whisper(audio_path: Path, config: dict[str, Any], model_dir: Path, temporary_root: Path) -> tuple[str, list[dict[str, Any]]]:
+def transcribe_whisper(
+    audio_segments: list[dict[str, Any]], config: dict[str, Any], model_dir: Path
+) -> tuple[str, list[dict[str, Any]]]:
     try:
         import torch
         from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
@@ -535,7 +639,7 @@ def transcribe_whisper(audio_path: Path, config: dict[str, Any], model_dir: Path
                 raise RuntimeError("Whisper-large-v3-turbo 结果缺少 text")
             return text.strip()
 
-        chunks = each_audio_chunk(audio_path, float(config["chunk_seconds"]), temporary_root, transcribe)
+        chunks = each_synthesis_segment(audio_segments, transcribe)
         return "".join(item["transcription"] for item in chunks), chunks
     finally:
         del recognizer
@@ -544,37 +648,227 @@ def transcribe_whisper(audio_path: Path, config: dict[str, Any], model_dir: Path
         clear_cuda_cache(torch)
 
 
+def phonetic_tokens(text: str, config: dict[str, Any]) -> list[str]:
+    """将规范化文本映射为冻结版本的带调拼音 token。"""
+    try:
+        import pypinyin
+        from pypinyin import Style, load_phrases_dict, pinyin
+    except ImportError as exc:
+        raise RuntimeError("拼音辅助指标缺少 pypinyin") from exc
+    expected_version = str(config["version"])
+    actual_version = str(getattr(pypinyin, "__version__", "unknown"))
+    if actual_version != expected_version:
+        raise RuntimeError(f"pypinyin 版本不匹配：当前 {actual_version}，冻结值 {expected_version}")
+    if config.get("style") != "tone3":
+        raise ValueError("当前仅支持 tone3 拼音风格。")
+    overrides = config.get("phrase_overrides", {})
+    if overrides:
+        try:
+            load_phrases_dict({phrase: [[token] for token in tokens] for phrase, tokens in overrides.items()})
+        except (AttributeError, TypeError, ValueError) as exc:
+            raise ValueError("冻结拼音词典覆盖项格式无效。") from exc
+    values = pinyin(
+        text,
+        style=Style.TONE3,
+        neutral_tone_with_five=True,
+        errors=lambda item: list(item),
+        strict=False,
+    )
+    return [str(token) for item in values for token in item]
+
+
+def max_consecutive_deletions(errors: list[dict[str, Any]]) -> int:
+    positions = sorted(item["reference_index"] for item in errors if item["operation"] == "deletion")
+    maximum = 0
+    current = 0
+    previous: int | None = None
+    for position in positions:
+        if previous is not None and position == previous + 1:
+            current += 1
+        else:
+            current = 1
+        maximum = max(maximum, current)
+        previous = position
+    return maximum
+
+
+def segment_health(
+    reference_length: int, hypothesis_length: int, strict_errors: list[dict[str, Any]], config: dict[str, Any]
+) -> dict[str, Any]:
+    ratio = hypothesis_length / max(reference_length, 1)
+    longest_deletion = max_consecutive_deletions(strict_errors)
+    reasons: list[str] = []
+    if ratio < float(config["minimum_hypothesis_to_reference_ratio"]):
+        reasons.append("hypothesis_too_short")
+    if ratio > float(config["maximum_hypothesis_to_reference_ratio"]):
+        reasons.append("hypothesis_too_long")
+    if longest_deletion > int(config["maximum_consecutive_deletions"]):
+        reasons.append("consecutive_deletion_too_long")
+    return {
+        "status": "healthy" if not reasons else "unreliable",
+        "hypothesis_to_reference_ratio": ratio,
+        "maximum_consecutive_deletions": longest_deletion,
+        "reasons": reasons,
+    }
+
+
+def classify_strict_errors(
+    errors: list[dict[str, Any]], phonetic_config: dict[str, Any]
+) -> list[dict[str, Any]]:
+    classified: list[dict[str, Any]] = []
+    for error in errors:
+        item = dict(error)
+        if item["operation"] != "substitution":
+            item["classification"] = item["operation"]
+        elif phonetic_tokens(item["reference_character"], phonetic_config) == phonetic_tokens(
+            item["hypothesis_character"], phonetic_config
+        ):
+            item["classification"] = "same_pronunciation_substitution"
+        else:
+            item["classification"] = "different_pronunciation_substitution"
+        classified.append(item)
+    return classified
+
+
+def overall_health(chunks: list[dict[str, Any]], ranking_requires_healthy_segments: bool) -> dict[str, Any]:
+    unreliable = [item["segment_id"] for item in chunks if item["asr_health"]["status"] != "healthy"]
+    healthy = not unreliable
+    return {
+        "status": "healthy" if healthy else "unreliable",
+        "unreliable_segment_ids": unreliable,
+        "ranking_eligible": healthy or not ranking_requires_healthy_segments,
+    }
+
+
+def offset_error_locations(
+    errors: list[dict[str, Any]], segment_id: str, reference_offset: int, hypothesis_offset: int
+) -> list[dict[str, Any]]:
+    locations: list[dict[str, Any]] = []
+    for error in errors:
+        item = dict(error)
+        item["segment_id"] = segment_id
+        item["reference_index"] = int(item["reference_index"]) + reference_offset
+        item["hypothesis_index"] = int(item["hypothesis_index"]) + hypothesis_offset
+        locations.append(item)
+    return locations
+
+
 def evaluate_asr_backend(
     backend_key: str,
-    transcriber: Callable[[Path, dict[str, Any], Path, Path], tuple[str, list[dict[str, Any]]]],
-    audio_path: Path,
-    reference_normalized: str,
+    transcriber: Callable[[list[dict[str, Any]], dict[str, Any], Path], tuple[str, list[dict[str, Any]]]],
+    audio_segments: list[dict[str, Any]],
     backend_config: dict[str, Any],
     model_dir: Path,
-    output_dir: Path,
+    phonetic_config: dict[str, Any],
+    health_config: dict[str, Any],
 ) -> dict[str, Any]:
-    with tempfile.TemporaryDirectory(prefix=f"task9-{backend_key}-", dir=output_dir) as temporary:
-        transcription, chunks = transcriber(audio_path, backend_config, model_dir, Path(temporary))
-    hypothesis_normalized = normalize_zh_v1(transcription)
-    errors, locations = levenshtein_alignment(reference_normalized, hypothesis_normalized)
+    transcription, raw_chunks = transcriber(audio_segments, backend_config, model_dir)
+    if len(raw_chunks) != len(audio_segments):
+        raise RuntimeError("ASR 返回的逐段转写数量与合成证据不一致。")
+    chunks: list[dict[str, Any]] = []
+    error_locations: list[dict[str, Any]] = []
+    reference_offset = 0
+    hypothesis_offset = 0
+    strict_error_count = 0
+    phonetic_error_count = 0
+    reference_phonetic_count = 0
+    hypothesis_phonetic_count = 0
+    for evidence, raw_chunk in zip(audio_segments, raw_chunks):
+        reference = normalize_zh_v1(str(evidence["text"]))
+        hypothesis = normalize_zh_v1(str(raw_chunk["transcription"]))
+        strict_errors, strict_locations = levenshtein_alignment(reference, hypothesis)
+        strict_locations = classify_strict_errors(strict_locations, phonetic_config)
+        reference_phonetic = phonetic_tokens(reference, phonetic_config)
+        hypothesis_phonetic = phonetic_tokens(hypothesis, phonetic_config)
+        phonetic_errors, phonetic_locations = levenshtein_token_alignment(reference_phonetic, hypothesis_phonetic)
+        chunk = {
+            **raw_chunk,
+            "reference_text_sha256": evidence["text_sha256"],
+            "reference_normalized": reference,
+            "normalized_transcription": hypothesis,
+            "strict_character_errors": strict_errors,
+            "strict_character_error_locations": strict_locations,
+            "phonetic_errors": phonetic_errors,
+            "phonetic_error_locations": phonetic_locations,
+            "reference_phonetic_token_count": len(reference_phonetic),
+            "hypothesis_phonetic_token_count": len(hypothesis_phonetic),
+            "asr_health": segment_health(len(reference), len(hypothesis), strict_locations, health_config),
+        }
+        chunks.append(chunk)
+        error_locations.extend(offset_error_locations(strict_locations, str(evidence["segment_id"]), reference_offset, hypothesis_offset))
+        reference_offset += len(reference)
+        hypothesis_offset += len(hypothesis)
+        strict_error_count += strict_errors
+        phonetic_error_count += phonetic_errors
+        reference_phonetic_count += len(reference_phonetic)
+        hypothesis_phonetic_count += len(hypothesis_phonetic)
+    reference_normalized = "".join(item["reference_normalized"] for item in chunks)
+    hypothesis_normalized = "".join(item["normalized_transcription"] for item in chunks)
     return {
         "status": "complete",
         "backend": backend_key,
         "model_id": backend_config["model_id"],
         "revision": backend_config["revision"],
         "decode_parameters": {
-            key: value
-            for key, value in backend_config.items()
-            if key not in {"model_id", "revision", "marker"}
+            key: value for key, value in backend_config.items() if key not in {"model_id", "revision", "marker"}
         },
+        "evaluation_unit": "synthesis_segment_evidence",
         "full_transcription": transcription,
         "normalized_transcription": hypothesis_normalized,
         "normalized_reference_character_count": len(reference_normalized),
         "normalized_transcription_character_count": len(hypothesis_normalized),
-        "character_errors": errors,
-        "cer": errors / len(reference_normalized),
-        "error_locations": locations,
+        "character_errors": strict_error_count,
+        "cer": strict_error_count / max(len(reference_normalized), 1),
+        "strict_character_cer": strict_error_count / max(len(reference_normalized), 1),
+        "phonetic_errors": phonetic_error_count,
+        "phonetic_cer": phonetic_error_count / max(reference_phonetic_count, 1),
+        "reference_phonetic_token_count": reference_phonetic_count,
+        "hypothesis_phonetic_token_count": hypothesis_phonetic_count,
+        "error_locations": error_locations,
         "chunks": chunks,
+        "asr_health": overall_health(chunks, bool(health_config["ranking_requires_healthy_segments"])),
+    }
+
+
+def apply_cross_backend_health(record: dict[str, Any], health_config: dict[str, Any]) -> dict[str, Any]:
+    """将同一语义段的双 ASR 明显分歧纳入两端健康状态，而不修改原始转写。"""
+    sense = record["metrics"]["sensevoice_cer"]
+    whisper = record["metrics"]["whisper_large_v3_turbo_cer"]
+    sense_chunks = sense["chunks"]
+    whisper_chunks = whisper["chunks"]
+    if len(sense_chunks) != len(whisper_chunks):
+        raise RuntimeError("双 ASR 的逐段结果数量不一致。")
+    disagreements: list[dict[str, Any]] = []
+    threshold = float(health_config["maximum_backend_disagreement_cer"])
+    for sense_chunk, whisper_chunk in zip(sense_chunks, whisper_chunks):
+        if sense_chunk["segment_id"] != whisper_chunk["segment_id"]:
+            raise RuntimeError("双 ASR 的逐段结果标识不一致。")
+        errors, _ = levenshtein_alignment(
+            str(sense_chunk["normalized_transcription"]), str(whisper_chunk["normalized_transcription"])
+        )
+        denominator = max(
+            len(str(sense_chunk["normalized_transcription"])),
+            len(str(whisper_chunk["normalized_transcription"])),
+            1,
+        )
+        rate = errors / denominator
+        if rate > threshold:
+            segment_id = str(sense_chunk["segment_id"])
+            disagreements.append(
+                {"segment_id": segment_id, "strict_character_disagreement_cer": rate}
+            )
+            for chunk in (sense_chunk, whisper_chunk):
+                chunk["asr_health"]["status"] = "unreliable"
+                chunk["asr_health"]["reasons"].append("cross_backend_disagreement")
+                chunk["asr_health"]["strict_character_disagreement_cer"] = rate
+    for metric in (sense, whisper):
+        metric["asr_health"] = overall_health(
+            metric["chunks"], bool(health_config["ranking_requires_healthy_segments"])
+        )
+    return {
+        "status": "healthy" if not disagreements else "unreliable",
+        "unreliable_segment_ids": [item["segment_id"] for item in disagreements],
+        "segments": disagreements,
     }
 
 
@@ -582,19 +876,43 @@ def evaluate_model(
     contract: dict[str, Any], model: dict[str, Any], hf_mirror_root: Path, output_dir: Path
 ) -> dict[str, Any]:
     source_text = project_path(contract["source"]["text_path"]).read_text(encoding="utf-8")
-    reference_normalized = normalize_zh_v1(source_text)
     audio_path = project_path(model["audio_path"])
+    segment_manifest_path = project_path(contract["source"]["segment_manifest_path"])
+    source_segments = load_segment_plan(segment_manifest_path, source_text)
+    evaluation_config = contract["asr_evaluation"]
+    evidence = load_verified_synthesis_evidence(
+        evidence_root=project_path(str(evaluation_config["evidence_root"])),
+        model_id=str(model["model_id"]),
+        output_audio=audio_path,
+        source_segment_manifest=segment_manifest_path,
+        source_segments=source_segments,
+    )
+    audio_segments = [
+        {
+            **entry,
+            "text": source["text"],
+            "text_sha256": source["text_sha256"],
+        }
+        for source, entry in zip(source_segments, evidence["segments"])
+    ]
     record: dict[str, Any] = {
         "model_id": model["model_id"],
         "display_name": model["display_name"],
         "audio_path": str(audio_path),
         "started_at": utc_now(),
         "audio_delivery": audio_measurement(audio_path, contract["audio_measurement"]),
+        "synthesis_evidence": {
+            "schema_version": evidence["schema_version"],
+            "manifest_path": str(evidence["manifest_path"]),
+            "manifest_sha256": sha256_file(Path(evidence["manifest_path"])),
+            "full_audio_sha256": evidence["full_audio_sha256"],
+            "segment_count": len(audio_segments),
+        },
         "metrics": {},
         "errors": [],
         "not_executed": contract["not_executed"],
     }
-    backends: tuple[tuple[str, Callable[[Path, dict[str, Any], Path, Path], tuple[str, list[dict[str, Any]]]], str], ...] = (
+    backends: tuple[tuple[str, Callable[[list[dict[str, Any]], dict[str, Any], Path], tuple[str, list[dict[str, Any]]]], str], ...] = (
         ("sensevoice_cer", transcribe_sensevoice, "sensevoice"),
         ("whisper_large_v3_turbo_cer", transcribe_whisper, "whisper_large_v3_turbo"),
     )
@@ -605,11 +923,11 @@ def evaluate_model(
             record["metrics"][metric_name] = evaluate_asr_backend(
                 config_name,
                 transcriber,
-                audio_path,
-                reference_normalized,
+                audio_segments,
                 backend_config,
                 model_dir,
-                output_dir,
+                evaluation_config["phonetic"],
+                evaluation_config["health"],
             )
         except Exception as exc:
             record["metrics"][metric_name] = {
@@ -619,6 +937,8 @@ def evaluate_model(
                 "error": str(exc),
             }
             record["errors"].append({"metric": metric_name, "error": str(exc)})
+    if not record["errors"]:
+        record["asr_consensus_health"] = apply_cross_backend_health(record, evaluation_config["health"])
     record["finished_at"] = utc_now()
     record["status"] = "complete" if not record["errors"] else "error"
     return record

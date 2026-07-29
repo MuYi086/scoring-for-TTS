@@ -44,7 +44,7 @@ def load_results(results_dir: Path) -> dict[str, Any]:
 
 
 def validate_complete_results(results: dict[str, Any]) -> None:
-    if results.get("schema_version") != "task9-v1" or results.get("version") != "V9":
+    if results.get("schema_version") != "task9-v2" or results.get("version") != "V9":
         raise ValueError("结果不是 Task 9 V9 格式")
     contract = results.get("contract")
     if not isinstance(contract, dict):
@@ -64,7 +64,11 @@ def validate_complete_results(results: dict[str, Any]) -> None:
 
 
 def ranked_models(results: dict[str, Any], metric: str) -> list[dict[str, Any]]:
-    models = list(results["models"].values())
+    models = [
+        item
+        for item in results["models"].values()
+        if item["metrics"][metric]["asr_health"]["ranking_eligible"]
+    ]
     return sorted(models, key=lambda item: float(item["metrics"][metric]["cer"]))
 
 
@@ -79,33 +83,41 @@ def build_cer_report(results: dict[str, Any], results_link: str) -> str:
     lines = [
         "# SenseVoice CER 与 Whisper-large-v3-turbo CER V9 评价报告",
         "",
-        "本报告只衡量全文台词保真。全文参考严格为 `longAudioTestV9/text.md` 中实际参与合成、原始顺序固定的文本；未使用不存在的 `ai_deal.json`，也未复用旧 V9 字符统计。",
+        "本报告衡量双 ASR 转写与实际合成台词的差异。全文参考严格为 `longAudioTestV9/text.md` 中实际参与合成、原始顺序固定的文本；未使用不存在的 `ai_deal.json`，也未复用旧 V9 字符统计。",
         "",
         f"- 规范化规则：`{source['normalization_id']}`；参考字符数：`{source['normalized_character_count']}`。",
         f"- 共享分段清单：{len(segment_manifest['segments'])} 段；按旁白参考语速估算，目标片段 `{segment_policy['target_seconds']}` 秒、最大 `{segment_policy['max_segment_seconds']}` 秒。",
+        "- ASR 直接读取与最终 WAV 哈希绑定的逐段合成证据；严格汉字 CER 记录字面差异，拼音 CER 仅用于识别同音字造成的假阳性，二者均不等同于人工确认的朗读错误。",
         f"- 原始证据：[task9_evaluation_results.json]({results_link}/task9_evaluation_results.json)。",
         "- 两个后端独立排名，绝不平均为综合分；Whisper 名称完整标注为 Whisper-large-v3-turbo。",
         "",
-        "## 双后端全文 CER 与独立名次",
+        "## 双后端逐段文本指标与独立名次",
         "",
-        "| 模型 | SenseVoice CER | SenseVoice 名次 | Whisper-large-v3-turbo CER | Whisper-large-v3-turbo 名次 | 差值（Whisper - SenseVoice） |",
-        "| --- | ---: | ---: | ---: | ---: | ---: |",
+        "| 模型 | SenseVoice 严格汉字 CER | SenseVoice 拼音 CER | SenseVoice 健康 / 名次 | Whisper 严格汉字 CER | Whisper 拼音 CER | Whisper 健康 / 名次 |",
+        "| --- | ---: | ---: | --- | ---: | ---: | --- |",
     ]
     sense_places = {item["model_id"]: index for index, item in enumerate(sense_rank, start=1)}
     whisper_places = {item["model_id"]: index for index, item in enumerate(whisper_rank, start=1)}
     for record in model_records.values():
-        sense = float(record["metrics"]["sensevoice_cer"]["cer"])
-        whisper = float(record["metrics"]["whisper_large_v3_turbo_cer"]["cer"])
+        sense_result = record["metrics"]["sensevoice_cer"]
+        whisper_result = record["metrics"]["whisper_large_v3_turbo_cer"]
+        sense = float(sense_result["cer"])
+        whisper = float(whisper_result["cer"])
+        sense_health = sense_result["asr_health"]
+        whisper_health = whisper_result["asr_health"]
+        sense_rank_label = str(sense_places[record["model_id"]]) if record["model_id"] in sense_places else "不排名"
+        whisper_rank_label = str(whisper_places[record["model_id"]]) if record["model_id"] in whisper_places else "不排名"
         lines.append(
             "| "
             + " | ".join(
                 (
                     escape_cell(record["display_name"]),
                     format_number(sense),
-                    str(sense_places[record["model_id"]]),
+                    format_number(float(sense_result["phonetic_cer"])),
+                    escape_cell(f"{sense_health['status']} / {sense_rank_label}"),
                     format_number(whisper),
-                    str(whisper_places[record["model_id"]]),
-                    format_number(whisper - sense),
+                    format_number(float(whisper_result["phonetic_cer"])),
+                    escape_cell(f"{whisper_health['status']} / {whisper_rank_label}"),
                 )
             )
             + " |"
@@ -123,8 +135,10 @@ def build_cer_report(results: dict[str, Any], results_link: str) -> str:
                 [
                     f"#### {label}",
                     "",
-                    f"- 全文 CER：`{format_number(float(result['cer']))}`；字符编辑数：`{result['character_errors']}`。",
-                    f"- 分段：连续、无重叠的 {len(result['chunks'])} 段；解码参数已保存在原始证据。",
+                    f"- 严格汉字 CER：`{format_number(float(result['strict_character_cer']))}`；字符编辑数：`{result['character_errors']}`。",
+                    f"- 拼音 CER：`{format_number(float(result['phonetic_cer']))}`；拼音 token 编辑数：`{result['phonetic_errors']}`。",
+                    f"- ASR 健康：`{result['asr_health']['status']}`；不可靠片段：{', '.join(result['asr_health']['unreliable_segment_ids']) or '无'}；该后端{'参与' if result['asr_health']['ranking_eligible'] else '不参与'}名次。",
+                    f"- 分段：按冻结合成证据的 {len(result['chunks'])} 个语义段逐段解码；解码参数已保存在原始证据。",
                     "",
                     "完整转写：",
                     "",
@@ -140,10 +154,10 @@ def build_cer_report(results: dict[str, Any], results_link: str) -> str:
                 continue
             lines.extend(
                 [
-                    "字符错误位置（参考与转写索引均从 0 开始）：",
+                    "严格汉字差异位置（参考与转写索引均从 0 开始；不是人工确认的错读结论）：",
                     "",
-                    "| 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |",
-                    "| --- | ---: | --- | ---: | --- |",
+                    "| 片段 | 分类 | 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |",
+                    "| --- | --- | --- | ---: | --- | ---: | --- |",
                 ]
             )
             for error in locations:
@@ -151,6 +165,8 @@ def build_cer_report(results: dict[str, Any], results_link: str) -> str:
                     "| "
                     + " | ".join(
                         (
+                            escape_cell(error.get("segment_id", "")),
+                            escape_cell(error.get("classification", "")),
                             escape_cell(error["operation"]),
                             str(error["reference_index"]),
                             escape_cell(error["reference_character"] or "∅"),
@@ -161,7 +177,7 @@ def build_cer_report(results: dict[str, Any], results_link: str) -> str:
                     + " |"
                 )
             lines.append("")
-    lines.extend(["## 双后端分歧项", ""])
+    lines.extend(["## 双后端分歧与 ASR 健康门控", ""])
     for record in model_records.values():
         sense = record["metrics"]["sensevoice_cer"]
         whisper = record["metrics"]["whisper_large_v3_turbo_cer"]
@@ -180,6 +196,7 @@ def build_cer_report(results: dict[str, Any], results_link: str) -> str:
                 f"- 仅 SenseVoice 报告的错误：{len(sense_set - whisper_set)} 项。",
                 f"- 仅 Whisper-large-v3-turbo 报告的错误：{len(whisper_set - sense_set)} 项。",
                 f"- 两后端共同报告的错误：{len(sense_set & whisper_set)} 项。",
+                f"- 同段转写共识健康：`{record['asr_consensus_health']['status']}`；分歧过大的片段：{', '.join(record['asr_consensus_health']['unreliable_segment_ids']) or '无'}。",
                 "",
             ]
         )
@@ -242,8 +259,8 @@ def build_automated_report(results: dict[str, Any], results_link: str) -> str:
     lines.extend(["", "## 台词与结构完整性", ""])
     lines.extend(
         [
-            "| 模型 | SenseVoice CER | Whisper-large-v3-turbo CER | SenseVoice 错误数 | Whisper-large-v3-turbo 错误数 | 全文转写记录 |",
-            "| --- | ---: | ---: | ---: | ---: | --- |",
+            "| 模型 | SenseVoice 严格 / 拼音 CER | SenseVoice 健康 | Whisper 严格 / 拼音 CER | Whisper 健康 | 全文转写记录 |",
+            "| --- | --- | --- | --- | --- | --- |",
         ]
     )
     for record in results["models"].values():
@@ -254,10 +271,10 @@ def build_automated_report(results: dict[str, Any], results_link: str) -> str:
             + " | ".join(
                 (
                     escape_cell(record["display_name"]),
-                    format_number(float(sense["cer"])),
-                    format_number(float(whisper["cer"])),
-                    str(sense["character_errors"]),
-                    str(whisper["character_errors"]),
+                    escape_cell(f"{sense['strict_character_cer']:.6f} / {sense['phonetic_cer']:.6f}"),
+                    escape_cell(sense["asr_health"]["status"]),
+                    escape_cell(f"{whisper['strict_character_cer']:.6f} / {whisper['phonetic_cer']:.6f}"),
+                    escape_cell(whisper["asr_health"]["status"]),
                     "见 CER 报告及原始 JSON",
                 )
             )
@@ -266,7 +283,7 @@ def build_automated_report(results: dict[str, Any], results_link: str) -> str:
     lines.extend(
         [
             "",
-            "全文覆盖、缺失、插入、重复和顺序风险均以双 ASR 的完整转写及其字符编辑位置呈现；CER 不代表音频质量或角色表现。",
+            "全文覆盖、缺失、插入、重复和顺序风险均以双 ASR 的逐段原始转写及其字符差异呈现。严格汉字 CER、拼音 CER 和 ASR 健康状态均不代表音频质量、角色表现或人工确认的朗读错误。",
             "",
             "## 共享分段与拼接条件",
             "",

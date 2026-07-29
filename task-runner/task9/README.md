@@ -8,6 +8,8 @@
 - `longAudioTestV9/mimo_旁白_v9.wav` 及其任务文案作为克隆参考；
 - `longAudioTestV9/audio_indextts2.wav`、`longAudioTestV9/audio_voxcpm2.wav` 作为固定输出。
 
+每次实际合成还会在 `longAudioTestV9/.task9_synthesis_evidence/` 写入逐段音频证据。该目录按“模型标识 / 最终 WAV 的 SHA-256”组织，保存每段的文本哈希、片段 WAV 哈希、在成品中的时间位置和段间停顿；已被 `.gitignore` 排除，不能手工修改或提交。Task 9 v2 评测只接受与当前成品 WAV 哈希、共享分段清单哈希均一致的证据。因此，只要手工替换了成品 WAV，就必须重新通过本编排器合成，不能复用旧证据。
+
 模型根目录和 IndexTTS2 源码目录必须通过参数或环境变量提供，不在仓库中记录机器专属路径。先进行无模型预检：
 
 ```bash
@@ -24,7 +26,7 @@ IndexTTS2 与 VoxCPM2 必须使用同一份 `text_segments.py` 生成的隐藏�
 
 ## 公共评测
 
-合成两条成品后，使用同一份本地 ASR 镜像进行只读预检。Task 9 的唯一 CER（字符错误率）参考是 `longAudioTestV9/text.md` 的实际全文和原始顺序；不能使用旧 V9 的 `ai_deal.json` 或字符数。
+合成两条成品后，使用同一份本地 ASR 镜像进行只读预检。Task 9 的唯一严格 CER（字符错误率）参考是 `longAudioTestV9/text.md` 的实际全文和原始顺序；不能使用旧 V9 的 `ai_deal.json` 或字符数。预检还会校验两条成品的逐段证据、共享清单、`pypinyin==0.55.0`、本地 ASR 权重和 CUDA。
 
 ```bash
 HF_MIRROR_ROOT=/path/to/hf-mirror \
@@ -35,7 +37,7 @@ conda run --no-capture-output -n audio_eval \
 正式评测的原始结果目录必须是新目录。首次评测 IndexTTS2，随后只对同一次未完成目录使用 `--resume` 评测 VoxCPM2：
 
 ```bash
-RESULT_DIR="longAudioTestV9/评测结果/task9-v9-$(date -u +%Y%m%dT%H%M%SZ)"
+RESULT_DIR="longAudioTestV9/评测结果/task9-v2-$(date -u +%Y%m%dT%H%M%SZ)"
 
 HF_MIRROR_ROOT=/path/to/hf-mirror \
 conda run --no-capture-output -n audio_eval \
@@ -52,4 +54,4 @@ python task-runner/task9/generate_task9_reports.py \
   --reports-dir longAudioTestV9/评测结果
 ```
 
-最后一条命令固定生成 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V9评价报告.md` 与 `音频交付与文本一致性_V9自动检查报告.md`。该受限入口只报告音频交付原始测量和双 CER 的独立名次；V9 尚未冻结交付阈值，且没有冻结的强制对齐器或角色分类器，因此不会自行判定通过、失败或音色优劣。
+最后一条命令固定生成 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V9评价报告.md` 与 `音频交付与文本一致性_V9自动检查报告.md`。评测器会按冻结的语义段分别转写，避免旧版固定 30 秒切块造成前后错误串联；它同时报告严格汉字 CER、带声调拼音 CER（仅作同音字假阳性辅助）及 ASR 健康状态。只有全部片段健康且双后端无异常分歧的后端才参与各自的 CER 名次，原始转写和原始数值仍完整保留。V9 尚未冻结交付阈值，且没有冻结的强制对齐器或角色分类器，因此不会自行判定通过、失败或音色优劣。

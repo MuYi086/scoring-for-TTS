@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from synthesis_evidence import write_synthesis_evidence
 from text_segments import join_waveforms, load_segment_plan, read_synthesis_text
 
 
@@ -22,6 +23,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output", type=Path, required=True, help="精确目标 WAV 路径")
     parser.add_argument("--style-prompt", default="", help="可选风格前缀；默认空值为纯克隆")
     parser.add_argument("--segment-manifest", type=Path, required=True, help="两个模型共用的冻结分段清单")
+    parser.add_argument("--segment-evidence-root", type=Path, default=None, help="可选的逐段音频证据根目录")
+    parser.add_argument("--model-id", default="voxcpm2", help="逐段证据中的固定模型标识")
     parser.add_argument("--cfg-value", type=float, default=2.0, help="分类器自由引导强度")
     parser.add_argument("--inference-timesteps", type=int, default=10, help="扩散推理步数")
     parser.add_argument("--seed", type=int, default=20260614, help="固定采样随机种子")
@@ -123,9 +126,25 @@ def run(args: argparse.Namespace) -> Path:
         output = args.output.expanduser().resolve()
         output.parent.mkdir(parents=True, exist_ok=True)
         pauses = [int(item["pause_after_ms"]) for item in segments[:-1]]
-        sf.write(str(output), join_waveforms(waveforms, sample_rate, pauses, np), sample_rate)
+        waveform = join_waveforms(waveforms, sample_rate, pauses, np)
+        sf.write(str(output), waveform, sample_rate)
         if not output.is_file() or output.stat().st_size == 0:
             raise RuntimeError(f"VoxCPM2 未生成有效音频：{output}")
+        if args.segment_evidence_root is not None:
+            evidence = write_synthesis_evidence(
+                evidence_root=args.segment_evidence_root,
+                model_id=args.model_id,
+                output_audio=output,
+                segment_manifest=args.segment_manifest,
+                segments=segments,
+                waveforms=waveforms,
+                sample_rate=sample_rate,
+                pauses_ms=pauses,
+                first_segment_trimmed_samples=0,
+                np=np,
+                sf=sf,
+            )
+            print(f"VoxCPM2 逐段证据完成：{evidence}")
         return output
     finally:
         del model

@@ -79,6 +79,8 @@ def test_dry_run_plan_uses_text_reference_and_serial_model_order(tmp_path: Path)
     assert str(inputs.indextts_output) in invocations[0].command
     assert "--segment-manifest" in invocations[0].command
     assert str(inputs.segment_manifest) in invocations[0].command
+    assert "--segment-evidence-root" in invocations[0].command
+    assert str(inputs.segment_evidence_root) in invocations[0].command
     assert "--prompt-text" in invocations[1].command
     assert runner.DEFAULT_REFERENCE_TEXT in invocations[1].command
     assert str(inputs.voxcpm2_output) in invocations[1].command
@@ -261,6 +263,8 @@ def test_two_models_share_exactly_the_same_task9_text_segments(tmp_path: Path) -
 
     assert str(inputs.segment_manifest) in invocations[0].command
     assert str(inputs.segment_manifest) in invocations[1].command
+    assert str(inputs.segment_evidence_root) in invocations[0].command
+    assert str(inputs.segment_evidence_root) in invocations[1].command
 
 
 def test_task9_original_text_has_a_complete_shared_80_character_segment_plan() -> None:

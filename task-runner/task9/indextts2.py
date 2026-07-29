@@ -12,6 +12,7 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
+from synthesis_evidence import write_synthesis_evidence
 from text_segments import join_waveforms, load_segment_plan, read_synthesis_text
 
 
@@ -49,6 +50,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--max-text-tokens-per-segment", type=int, default=128, help="原生单段最大 token 数")
     parser.add_argument("--max-mel-tokens", type=int, default=1200, help="单段最大 mel token 数")
     parser.add_argument("--segment-manifest", type=Path, required=True, help="两个模型共用的冻结分段清单")
+    parser.add_argument("--segment-evidence-root", type=Path, default=None, help="可选的逐段音频证据根目录")
+    parser.add_argument("--model-id", default="indextts2", help="逐段证据中的固定模型标识")
     parser.add_argument("--no-fp16", action="store_true", help="关闭 CUDA FP16")
     parser.add_argument("--use-cuda-kernel", action="store_true", help="启用可选 BigVGAN CUDA 内核")
     parser.add_argument(
@@ -299,6 +302,21 @@ def run(args: argparse.Namespace) -> Path:
         if trimmed_samples:
             print(f"已裁掉前导静音 {trimmed_samples / sample_rate:.2f}s")
         sf.write(str(output), waveform, sample_rate, format="WAV")
+        if args.segment_evidence_root is not None:
+            evidence = write_synthesis_evidence(
+                evidence_root=args.segment_evidence_root,
+                model_id=args.model_id,
+                output_audio=output,
+                segment_manifest=args.segment_manifest,
+                segments=segments,
+                waveforms=waveforms,
+                sample_rate=sample_rate,
+                pauses_ms=pauses,
+                first_segment_trimmed_samples=trimmed_samples,
+                np=np,
+                sf=sf,
+            )
+            print(f"IndexTTS2 逐段证据完成：{evidence}")
         return output
     finally:
         del model

@@ -13,6 +13,7 @@
 | 音色说明 | 女声，20–30 岁，中音区略偏低；沉静、敏锐、略带暖意；咬字清晰但不刻板，中等偏慢语速，自然停顿；整体像深夜播讲都市传说的悬念播客旁白。 |
 | IndexTTS2 成品 | `longAudioTestV9/audio_indextts2.wav` |
 | VoxCPM2 成品 | `longAudioTestV9/audio_voxcpm2.wav` |
+| 逐段合成证据 | `longAudioTestV9/.task9_synthesis_evidence/<模型>/<成品 SHA-256>/`（忽略，不提交） |
 
 成品只能使用上述参考音频、参考文案和 `text.md`。禁止以旧 V9 的 `ai_deal.json`、分角色台词或旧字符统计替代实际全文。
 
@@ -52,6 +53,8 @@ python task-runner/task9/run_task9_clone.py --overwrite
 
 合成完成后先核对两条 WAV 均可解码、非空，并确认它们使用的清单哈希相同；不要因两模型原生采样率不同而重采样或覆盖，除非评测契约已经冻结该要求。
 
+编排器会在写出每条成品后自动保存逐段音频证据：每段证据的文本哈希必须对应共享清单，片段 WAV 哈希、片段在成品中的时间位置和最终 WAV 哈希均会被记录。该目录是本地可复核资产，已忽略；不要手工编辑、移动或将其提交到仓库。若成品 WAV 被外部工具替换、响度处理或重编码，原证据会因最终哈希不匹配而失效；应通过编排器重新合成并重新评测，避免把不属于该成品的逐段转写当作评测依据。
+
 ## 4. 公共评测执行顺序
 
 正式评测前，先以只读方式检查两条成品、本地 SenseVoiceSmall、Whisper-large-v3-turbo、CUDA 和 `python -m pip check`：
@@ -65,7 +68,7 @@ conda run --no-capture-output -n audio_eval \
 每次完整复测都必须使用全新的结果目录；只有同一批次的第二个模型才使用 `--resume`。先评测 IndexTTS2，再续跑 VoxCPM2：
 
 ```bash
-RESULT_DIR="longAudioTestV9/评测结果/task9-v9-$(date -u +%Y%m%dT%H%M%SZ)"
+RESULT_DIR="longAudioTestV9/评测结果/task9-v2-$(date -u +%Y%m%dT%H%M%SZ)"
 
 HF_MIRROR_ROOT=/path/to/hf-mirror \
 conda run --no-capture-output -n audio_eval \
@@ -84,18 +87,26 @@ python task-runner/task9/generate_task9_reports.py \
 
 SenseVoice 的输出中可能带有 `<|zh|>`、`<|HAPPY|>` 等语言、情绪或事件控制标记。评测器必须保存逐段 `raw_transcription` 以供复核，但只能从 CER 输入中移除这类非朗读控制标记；不得修改实际转写台词、纠错或补字。Whisper-large-v3-turbo 的模型名必须完整保留，两个后端的 CER 只能独立排名，禁止平均为综合分。
 
+v2 不再把最终长音频机械地切成连续的 30 秒窗口，而是对与最终 WAV 哈希绑定的每个合成语义段独立转写，并把错误定位限定在该段内。每个后端同时给出三类信息：
+
+- 严格汉字 CER：保留字面替换、插入、删除，是唯一的正式文本差异测量；同音字仍会计入。
+- 带声调拼音 CER：使用冻结的 `pypinyin==0.55.0` 和 `tone3` 读法，只作“严格差异可能是同音字”的辅助线索，不能取代严格 CER，也不能证明实际没有错读。
+- ASR 健康门控：当单段转写长度明显异常、连续删除过长，或 SenseVoice 与 Whisper 在同段分歧过大时，该后端不参与名次。原始 CER、逐段转写和错误位置仍会保留，供人工试听时复核。
+
+强制对齐、读法词典校准和角色路由分类仍属中高风险项目；当前契约明确记录为未执行，不能把它们的结论伪装成自动评测结果。
+
 固定报告名为：
 
 - `longAudioTestV9/评测结果/SenseVoice_CER&Whisper-large-v3-turbo_CER_V9评价报告.md`
 - `longAudioTestV9/评测结果/音频交付与文本一致性_V9自动检查报告.md`
 
-## 5. 已验证执行摘要（非阈值）
+## 5. 历史执行摘要（v1，不可与 v2 比较）
 
-已完成的一次本地复测使用上述共享清单、同一参考音频和本地 ASR 权重；校正 SenseVoice 控制标记后，原始结果为：
+此前一次本地复测以固定 30 秒窗口转写最终长音频。该方法会在窗口边界发生漏转写时把后续差异串联放大，已经被 v2 的逐段证据评测取代。以下数值仅保留为历史记录，不能作为当前模型错误率、名次或 v2 基线：
 
 | 模型 | SenseVoice CER | Whisper-large-v3-turbo CER |
 | --- | ---: | ---: |
 | IndexTTS2 | 0.036018 | 0.187950 |
 | VoxCPM2 | 0.098887 | 0.178782 |
 
-这只是该次输入、模型版本和环境下的可复核测量，不构成通过线、音质结论或跨后端综合排名。最终评价仍需结合公共报告中的完整转写、错误位置、音频原始测量和人工试听。
+重新合成并按本任务第 4 节生成全新的 v2 结果目录后，才可比较当前的严格 CER、拼音辅助指标、ASR 健康状态、逐段转写和人工试听结果。
