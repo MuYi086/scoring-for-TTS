@@ -130,6 +130,13 @@ def run(args: argparse.Namespace) -> Path:
         sf.write(str(output), waveform, sample_rate)
         if not output.is_file() or output.stat().st_size == 0:
             raise RuntimeError(f"VoxCPM2 未生成有效音频：{output}")
+        try:
+            info = sf.info(str(output))
+            decoded, decoded_rate = sf.read(str(output), frames=1, dtype="float32", always_2d=True)
+        except RuntimeError as exc:
+            raise RuntimeError(f"VoxCPM2 成品 WAV 无法解码：{output}: {exc}") from exc
+        if info.frames <= 0 or decoded_rate != sample_rate or len(decoded) == 0:
+            raise RuntimeError(f"VoxCPM2 成品 WAV 为空或采样率异常：{output}")
         if args.segment_evidence_root is not None:
             evidence = write_synthesis_evidence(
                 evidence_root=args.segment_evidence_root,

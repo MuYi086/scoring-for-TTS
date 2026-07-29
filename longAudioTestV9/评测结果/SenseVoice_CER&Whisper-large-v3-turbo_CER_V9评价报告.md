@@ -1,18 +1,19 @@
 # SenseVoice CER 与 Whisper-large-v3-turbo CER V9 评价报告
 
-本报告只衡量全文台词保真。全文参考严格为 `longAudioTestV9/text.md` 中实际参与合成、原始顺序固定的文本；未使用不存在的 `ai_deal.json`，也未复用旧 V9 字符统计。
+本报告衡量双 ASR 转写与实际合成台词的差异。全文参考严格为 `longAudioTestV9/text.md` 中实际参与合成、原始顺序固定的文本；未使用不存在的 `ai_deal.json`，也未复用旧 V9 字符统计。
 
 - 规范化规则：`zh-v1`；参考字符数：`1527`。
 - 共享分段清单：23 段；按旁白参考语速估算，目标片段 `25` 秒、最大 `35` 秒。
-- 原始证据：[task9_evaluation_results.json](task9-v9-tags-clean-20260729T034802Z/task9_evaluation_results.json)。
+- ASR 直接读取与最终 WAV 哈希绑定的逐段合成证据；严格汉字 CER 记录字面差异，拼音 CER 仅用于识别同音字造成的假阳性，二者均不等同于人工确认的朗读错误。
+- 原始证据：[task9_evaluation_results.json](task9-v2-20260729T093808Z/task9_evaluation_results.json)。
 - 两个后端独立排名，绝不平均为综合分；Whisper 名称完整标注为 Whisper-large-v3-turbo。
 
-## 双后端全文 CER 与独立名次
+## 双后端逐段文本指标与独立名次
 
-| 模型 | SenseVoice CER | SenseVoice 名次 | Whisper-large-v3-turbo CER | Whisper-large-v3-turbo 名次 | 差值（Whisper - SenseVoice） |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| IndexTTS2 | 0.036018 | 1 | 0.187950 | 2 | 0.151932 |
-| VoxCPM2 | 0.098887 | 2 | 0.178782 | 1 | 0.079895 |
+| 模型 | SenseVoice 严格汉字 CER | SenseVoice 拼音 CER | SenseVoice 健康 / 名次 | Whisper 严格汉字 CER | Whisper 拼音 CER | Whisper 健康 / 名次 |
+| --- | ---: | ---: | --- | ---: | ---: | --- |
+| IndexTTS2 | 0.033399 | 0.009823 | healthy / 2 | 0.033399 | 0.007204 | healthy / 1 |
+| VoxCPM2 | 0.029470 | 0.007859 | healthy / 1 | 0.040602 | 0.009823 | healthy / 2 |
 
 ## 完整转写与字符错误位置
 
@@ -20,846 +21,299 @@
 
 #### SenseVoice
 
-- 全文 CER：`0.036018`；字符编辑数：`55`。
-- 分段：连续、无重叠的 15 段；解码参数已保存在原始证据。
+- 严格汉字 CER：`0.033399`；字符编辑数：`51`。
+- 拼音 CER：`0.009823`；拼音 token 编辑数：`15`。
+- ASR 健康：`healthy`；不可靠片段：无；该后端参与名次。
+- 分段：按冻结合成证据的 23 个语义段逐段解码；解码参数已保存在原始证据。
 
 完整转写：
 
 ```text
-视频通话接通了，我的男朋友微笑着，首先我爱你，我想你，我等不及你回家了，我也爱你，我也等不及了。我盯着电脑屏幕，你在哪儿？我在阁楼里，布罗迪回答，我把弓箭器材放上去的时候，发现了个挺酷的东西。他刚在休斯敦一个安静的社区买了一栋老房子。我希望那里有一天，能成。成为我们的社区，我们交往三年了，我猜他可能会在今年春天，我大学毕业之后求婚。看看这个，他把一个落满灰尘的箱子拖到吊灯下面，好让我看清上面的课文，看起来像是阿拉伯文，他打开箱子，取出一个三角形护身符，银制的上面有同样的标记，接着是一个极小的推拉盒。里面装着碎纸片、木屑，还有一些辨认不出的块状物，闻起来像茉莉花，他凑近嗅了嗅。下一个物件是个束口袋，他打开袋子，把里面的东西倒在掌心里。嗯，绞指甲搞什么鬼，箱子里最后两样东西是一本破旧的古蓝鲸和一盒玻璃球装饰品，不是没有挂钩或绳子的地方？有三个透明的，还有这个，他举起来给我看是烟熏黄的颜色。我发誓那球在他掌心里动了一下，他摔到地上碎了，有什么东西闪过，像火焰一样。布罗迪骂了一句，那是什么，我喊道，我我不知道他盯着我视线之外的地方，他歪着头，好像在听什么。布罗迪，他说，然后唐纳特什么唐纳特是他母亲的名字。布罗迪茫然的看着屏幕说，我得挂了，没再多说一个字，他结束了skype通话，我试图打回去，他没接，那晚他也没接，终于第二天早上他接了，我现在有点忙，他说声音很沉，你还好吗？嗯，他说，然后挂断了，接下来一整天我都没有他的消息，于是我打电话给他姐姐，让他去看看他。一小时后，他回了电话，他的声音很谨慎。嗯，阿丽亚，我看见他了，他看起来有点糟，听着你们吵架了吗？什么没有，我告诉他，你在担心他，他就那么看着我他昨天。还好好的，我们还在计划圣诞假期的安排，又是一阵犹豫，他表现的几乎像磕了药。我从不知道布罗迪会他不会，从来不好吧，只是给他一两天时间，也许他真的在忙什么事。有消息我会告诉你的。但他没有，我也没有，他不接我电话，也不回短信，这太不像布罗迪了。我为。这里翻江倒海，真不知道我怎么熬过期末考试的。我想到了他找到的那些奇怪的东西，一定和那有关。我的祖母是孟加拉裔穆斯林。我父亲不信仰任何宗教，但我上学期修了一门伊斯兰传统的课程，我很喜欢那位教授，在飞回家前的那个早上，我顺道去了他的办公室，阿利亚真是个惊喜，当我告诉他。布罗迪的发现和那通诡异的视频通话时，他的笑容消失了。他走到书架前拿起一本书，翻了几页，他停下来递给我。那些课文和护身符是不是长这样？是的，这是什么？我们课上没有多讲，但古兰鲸认为，安拉有三种有知识的造物，天使、人类和精灵。你描述的那些物件。是魔法师用来控制和意识精灵的，有时他们会把这些生物困在玻璃球里。精灵，我笑了，你是说神灯精灵，你描述的那些是邪恶的魔法。你说他重复了他母亲的名字。传说中魔法师需要三样东西才能跟恶魔谈论你一个名字，你母亲的名字和一份痕迹，头发只。蟹，您不会真的相信有精灵吧。他看了我很久，然后说我会发一封邮件给你，里面有一些经文可以抵御精灵附身。等你见到布罗迪，不妨试试，还有阿利亚，小心点，我对他的警告一笑置之。但那天下午敲响布罗迪家门时，我的心沉甸甸的。他敲到第三下才开门。他的样子让我震惊，他看起来很疲惫，胡子拉嚓，他看着我仿佛我是个陌生人。布罗迪，怎么回事？他身后的走廊里有什么东西一闪而过，像是相机闪光灯的余晖。我发誓我瞬间看见了一个火焰凝成的女人。他回头看了一眼，又转向我，你该走了，他当着我的面关上了门，我一。一直等到夜幕降临，拿了藏着的钥匙，自己开了门，房子里很安静，我蹑手蹑脚的穿过各个房间寻找他。当我偷偷望向他的卧室时，我倒吸一口凉气，布罗迪趴浮在床上，盯着天花板，那个火焰女人坐在她身上，他听到我的动静，猛的转过头来，嘶嘶作响，露出两英寸长的尖牙，我跑了穿。通过房子时，门像枪声一样砰砰的关合，前门打不开了，我尖叫着猛拉门把手，他在逼近阁楼的梯子放下来了，我冲了上去，我掏出手机，疯狂的想打开教授发给我的邮件，透过阁楼口，布罗迪和那个火焰女人仰头盯着我，门砰的关上了，我被困在这里好几个小时了。我一直念。送着导师发给我的经文，直到我的声音和手机电池都耗尽。现在我闻到了烟味。
+视频通话接通了，我的男朋友微笑着，首先我爱你，我想你，我等不及你回家了，我也爱你，我也等不及了。我盯着电脑屏幕，你在哪儿？我在阁楼里，布罗迪回答，我把弓箭器材放上去的时候，发现了个挺酷的东西。他刚在休斯敦一个安静的社区买了一栋老房子，我希望那里有一天能成为我们的社区。我们交往三年了，我猜他可能会在今年春天，我大学毕业之后求婚。看看这个，他把一个落满灰尘的箱子拖到吊灯下面，好让我看清上面的课文，看起来像是阿拉伯文。他打开箱子，取出一个三角形护身符，银制的上面有同样的标记，接着是一个极小的推拉盒，里面装着碎纸片、木屑，还有一些辨认不出的块状物，闻起来像茉莉花，他凑近嗅了嗅。下一个物件是个束口袋，他打开袋子，把里面的东西倒在掌心里。嗯，叫指甲搞什么鬼？箱子里最后两样东西是一本破旧的古蓝鲸和一盒玻璃球装饰品，不是没有挂钩或绳子的地方。有三个透明的，还有这个，他举起来给我看是烟熏黄的颜色。我发誓那球在他掌心里动了一下，他摔到地上碎了，有什么东西闪过，像火焰一样。布罗迪骂了一句，那是什么？我喊道。我我不知道他盯着我视线之外的地方，他歪着头好像在听什么。布罗迪，他说，然后唐纳特什么？唐纳特是他母亲的名字，布罗迪茫然的看着屏幕说，我得挂了。没再多说一个字，他结束了skype通话，我试图打回去，他没接。那晚他也没接。终于第二天早上他接了，我现在有点忙，他说声音很沉，你还好吗？嗯，他说然后挂断了。接下来一整天，我都没有他的消息，于是我打电话给他姐姐，让他去看看他。一小时后，他回了电话，他的声音很谨慎。嗯，阿丽呀，我看见他了，她看起来有点糟，听着你们吵架了吗？什么？没有我告诉他，你在担心他，他就那么看着我，他昨天还好好的，我们还在计划圣诞假期的安排，又是一阵犹豫。他表现的几乎像磕了药。我从不知道布罗迪会，他不会从来不。好吧，只是给他一两天时间，也许他真的在忙什么事，有消息我会告诉你的，但他没有，我也没有他不接我电话，也不回短信，这太不像布罗迪了。我为力翻江倒海，真不知道我怎么熬过期末考试的。我想到了他找到的那些奇怪的东西，一定和那有关。我的祖母是孟加拉裔穆斯林。我父亲不信仰任何宗教，但我上学期修了一门伊斯兰传统的课程，我很喜欢那位教授，在飞回家前的那个早上，我顺道去了他的办公室。阿利亚真是个惊喜。当我告诉他布罗迪的发现和那通诡异的视频通话时，他的笑容消失了。他走到书架前拿起一本书，翻了几页，他停下来递给我。那些课文和护身符是不是长这样？是的，这是什么？我们课上没有多讲，但古兰鲸认为安拉有三种有致石的造物，天使、人类和精灵。你描述的那些物件是魔法师用来控制和意识精灵的。有时他们会把这些生物困在玻璃球里。精灵。我笑了，你是说神灯精灵，你描述的那些是邪恶的魔法，你说他重复了他母亲的名字，传说中魔法师需要三样东西才能跟恶魔谈论你一个名字，你母亲的名字和一份痕迹。头发指甲屑，您不会真的相信有精灵吧。他看了我很久，然后说我会发一封邮件给你。里面有一些经文可以抵御精灵附身。等你见到布罗迪，不妨试试。还有阿利亚，小心点。我对他的警告一笑置止，但那天下午敲响布罗迪家门时，我的心沉甸甸的，他敲到第三下才开门，他的样子让我震惊，他看起来很疲惫，胡子拉碴，他看着我仿佛我是个陌生人。布罗迪。怎么回事？他身后的走廊里有什么东西一闪而过，像是相机闪光灯的余晖。我发誓，我瞬间看见了一个火焰凝成的女人，他回头看了一眼，又转向我，你该走了，他当着我的面关上了门。我一直等到夜幕降临，拿了藏着的钥匙，自己开了门，房子里很安静，我蹑手蹑脚的穿过各个房间寻找他。当我偷偷望向他的卧室时，我倒吸一口凉气，布罗底趴浮在床上，盯着天花板。那个火焰女人坐在他身上，他听到我的动静，猛的转过头来，嘶嘶作响，露出两英寸长的尖牙。我跑了，穿过房子时，门像枪声一样砰砰的关合，前门打不开了，我尖叫着猛拉门把手。他在逼近阁楼的梯子放下来了，我冲了上去，我掏出手机，疯狂的想打开教授发给我的邮件。透过阁楼口，布罗迪和那个火焰女人仰头盯着我门砰的关上了。我被困在这里好几个小时了，我一直念诵着导师发给我的经吻，直到我的声音和手机电池都耗尽。现在我闻到了烟味。
 ```
 
-字符错误位置（参考与转写索引均从 0 开始）：
+严格汉字差异位置（参考与转写索引均从 0 开始；不是人工确认的错读结论）：
 
-| 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
-| --- | ---: | --- | ---: | --- |
-| insertion | 112 | ∅ | 112 | 成 |
-| substitution | 175 | 刻 | 176 | 课 |
-| substitution | 176 | 纹 | 177 | 文 |
-| substitution | 202 | 质 | 203 | 制 |
-| substitution | 283 | 呃 | 284 | 嗯 |
-| substitution | 284 | 脚 | 285 | 绞 |
-| substitution | 285 | 趾 | 286 | 指 |
-| substitution | 307 | 兰 | 308 | 蓝 |
-| substitution | 308 | 经 | 309 | 鲸 |
-| substitution | 368 | 它 | 369 | 他 |
-| substitution | 435 | 娜 | 436 | 纳 |
-| substitution | 440 | 娜 | 441 | 纳 |
-| substitution | 454 | 地 | 455 | 的 |
-| substitution | 556 | 她 | 557 | 他 |
-| substitution | 565 | 她 | 566 | 他 |
-| substitution | 570 | 她 | 571 | 他 |
-| substitution | 579 | 莉 | 580 | 丽 |
-| substitution | 580 | 娅 | 581 | 亚 |
-| substitution | 650 | 得 | 651 | 的 |
-| substitution | 703 | 她 | 704 | 他 |
-| insertion | 730 | ∅ | 731 | 为 |
-| substitution | 730 | 胃 | 732 | 这 |
-| substitution | 833 | 她 | 835 | 他 |
-| substitution | 839 | 莉 | 841 | 利 |
-| substitution | 840 | 娅 | 842 | 亚 |
-| substitution | 850 | 她 | 852 | 他 |
-| substitution | 868 | 她 | 870 | 他 |
-| substitution | 875 | 她 | 877 | 他 |
-| substitution | 890 | 她 | 892 | 他 |
-| substitution | 899 | 刻 | 901 | 课 |
-| substitution | 900 | 纹 | 902 | 文 |
-| substitution | 928 | 经 | 930 | 鲸 |
-| substitution | 937 | 智 | 939 | 知 |
-| substitution | 966 | 役 | 968 | 意 |
-| substitution | 967 | 使 | 969 | 识 |
-| deletion | 1060 | 指 | 1062 | ∅ |
-| substitution | 1061 | 甲 | 1062 | 只 |
-| substitution | 1062 | 屑 | 1063 | 蟹 |
-| substitution | 1074 | 她 | 1075 | 他 |
-| substitution | 1121 | 莉 | 1122 | 利 |
-| substitution | 1122 | 娅 | 1123 | 亚 |
-| substitution | 1128 | 她 | 1129 | 他 |
-| substitution | 1183 | 碴 | 1184 | 嚓 |
-| insertion | 1273 | ∅ | 1274 | 一 |
-| substitution | 1304 | 地 | 1306 | 的 |
-| substitution | 1336 | 伏 | 1338 | 浮 |
-| substitution | 1353 | 他 | 1355 | 她 |
-| substitution | 1356 | 她 | 1358 | 他 |
-| substitution | 1364 | 地 | 1366 | 的 |
-| insertion | 1386 | ∅ | 1388 | 通 |
-| substitution | 1398 | 地 | 1401 | 的 |
-| substitution | 1416 | 她 | 1419 | 他 |
-| substitution | 1441 | 地 | 1444 | 的 |
-| substitution | 1475 | 地 | 1478 | 的 |
-| substitution | 1495 | 诵 | 1498 | 送 |
+| 片段 | 分类 | 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
+| --- | --- | --- | ---: | --- | ---: | --- |
+| 003 | same_pronunciation_substitution | substitution | 175 | 刻 | 175 | 课 |
+| 003 | same_pronunciation_substitution | substitution | 176 | 纹 | 176 | 文 |
+| 004 | same_pronunciation_substitution | substitution | 202 | 质 | 202 | 制 |
+| 005 | different_pronunciation_substitution | substitution | 283 | 呃 | 283 | 嗯 |
+| 005 | different_pronunciation_substitution | substitution | 284 | 脚 | 284 | 叫 |
+| 005 | same_pronunciation_substitution | substitution | 285 | 趾 | 285 | 指 |
+| 005 | same_pronunciation_substitution | substitution | 307 | 兰 | 307 | 蓝 |
+| 005 | same_pronunciation_substitution | substitution | 308 | 经 | 308 | 鲸 |
+| 006 | same_pronunciation_substitution | substitution | 368 | 它 | 368 | 他 |
+| 007 | same_pronunciation_substitution | substitution | 435 | 娜 | 435 | 纳 |
+| 007 | same_pronunciation_substitution | substitution | 440 | 娜 | 440 | 纳 |
+| 007 | different_pronunciation_substitution | substitution | 454 | 地 | 454 | 的 |
+| 009 | same_pronunciation_substitution | substitution | 556 | 她 | 556 | 他 |
+| 009 | same_pronunciation_substitution | substitution | 565 | 她 | 565 | 他 |
+| 009 | same_pronunciation_substitution | substitution | 570 | 她 | 570 | 他 |
+| 009 | same_pronunciation_substitution | substitution | 579 | 莉 | 579 | 丽 |
+| 009 | different_pronunciation_substitution | substitution | 580 | 娅 | 580 | 呀 |
+| 009 | same_pronunciation_substitution | substitution | 586 | 他 | 586 | 她 |
+| 010 | different_pronunciation_substitution | substitution | 650 | 得 | 650 | 的 |
+| 011 | same_pronunciation_substitution | substitution | 703 | 她 | 703 | 他 |
+| 012 | same_pronunciation_substitution | substitution | 730 | 胃 | 730 | 为 |
+| 012 | different_pronunciation_substitution | substitution | 731 | 里 | 731 | 力 |
+| 013 | same_pronunciation_substitution | substitution | 833 | 她 | 833 | 他 |
+| 013 | same_pronunciation_substitution | substitution | 839 | 莉 | 839 | 利 |
+| 013 | same_pronunciation_substitution | substitution | 840 | 娅 | 840 | 亚 |
+| 014 | same_pronunciation_substitution | substitution | 850 | 她 | 850 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 868 | 她 | 868 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 875 | 她 | 875 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 890 | 她 | 890 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 899 | 刻 | 899 | 课 |
+| 014 | same_pronunciation_substitution | substitution | 900 | 纹 | 900 | 文 |
+| 015 | same_pronunciation_substitution | substitution | 928 | 经 | 928 | 鲸 |
+| 015 | same_pronunciation_substitution | substitution | 937 | 智 | 937 | 致 |
+| 015 | same_pronunciation_substitution | substitution | 938 | 识 | 938 | 石 |
+| 015 | same_pronunciation_substitution | substitution | 966 | 役 | 966 | 意 |
+| 015 | different_pronunciation_substitution | substitution | 967 | 使 | 967 | 识 |
+| 017 | same_pronunciation_substitution | substitution | 1074 | 她 | 1074 | 他 |
+| 017 | same_pronunciation_substitution | substitution | 1121 | 莉 | 1121 | 利 |
+| 017 | same_pronunciation_substitution | substitution | 1122 | 娅 | 1122 | 亚 |
+| 018 | same_pronunciation_substitution | substitution | 1128 | 她 | 1128 | 他 |
+| 018 | different_pronunciation_substitution | substitution | 1135 | 之 | 1135 | 止 |
+| 020 | different_pronunciation_substitution | substitution | 1304 | 地 | 1304 | 的 |
+| 020 | different_pronunciation_substitution | substitution | 1334 | 迪 | 1334 | 底 |
+| 020 | same_pronunciation_substitution | substitution | 1336 | 伏 | 1336 | 浮 |
+| 021 | same_pronunciation_substitution | substitution | 1356 | 她 | 1356 | 他 |
+| 021 | different_pronunciation_substitution | substitution | 1364 | 地 | 1364 | 的 |
+| 021 | different_pronunciation_substitution | substitution | 1398 | 地 | 1398 | 的 |
+| 022 | same_pronunciation_substitution | substitution | 1416 | 她 | 1416 | 他 |
+| 022 | different_pronunciation_substitution | substitution | 1441 | 地 | 1441 | 的 |
+| 022 | different_pronunciation_substitution | substitution | 1475 | 地 | 1475 | 的 |
+| 023 | different_pronunciation_substitution | substitution | 1504 | 文 | 1504 | 吻 |
 
 #### Whisper-large-v3-turbo
 
-- 全文 CER：`0.187950`；字符编辑数：`287`。
-- 分段：连续、无重叠的 15 段；解码参数已保存在原始证据。
+- 严格汉字 CER：`0.033399`；字符编辑数：`51`。
+- 拼音 CER：`0.007204`；拼音 token 编辑数：`11`。
+- ASR 健康：`healthy`；不可靠片段：无；该后端参与名次。
+- 分段：按冻结合成证据的 23 个语义段逐段解码；解码参数已保存在原始证据。
 
 完整转写：
 
 ```text
-视频通话接通了,我的男朋友微笑着,首先我爱你,我想你,我等不及你回家了,我也爱你,我也等不及了,我盯着电脑屏幕,你在哪儿?我在阁楼里,布罗迪回答,我把弓箭器材放上去的时候,发现了个挺酷的东西,他刚在休斯敦一个安静的社区买了一栋老房子,成为我们的社区我们交往三年了我猜他可能会在今年春天我大学毕业之后求婚看看这个他把一个落满灰尘的箱子拖到吊灯下面好让我看清上面的课文看起来像是阿拉伯文他打开箱子取出一个三角形护身符银制的上面有同样的标记接着是一个极小的推拉盒里面装着碎纸片木屑还有一些辨认不出的块状物闻起来像茉莉花她凑近绣了绣下一个物件是个漱口袋她打开袋子把里面的东西倒在掌心里嗯 叫指甲搞什么鬼箱子里最后两样东西是一本破旧的古兰经和一盒玻璃球装饰品不是没有挂钩或绳子的地方有三个透明的,还有这个。他举起来给我看,是烟熏黄的颜色。我发誓,那球在他掌心里冻了一下,他摔到地上,碎了。有什么东西闪过,像火焰一样?布罗迪骂了一句,那是什么?我喊道,我,我不知道。他盯着我视线之外的地方,他歪着头,好像在听什么。布罗迪他说然后唐纳特什么唐纳特是他母亲的名字布罗迪茫然地看着屏幕说我得挂了没再多说一个字他结束了skype通话我试图打回去他没接那晚他也没接终于第二天早上他接了我现在有点忙他说声音很沉你还好吗嗯,她说,然后挂断了。接下来一整天我都没有她的消息,于是我打电话给她姐姐,让她去看看她。一小时候她回了电话,她的声音很谨慎。嗯,阿丽亚,我看见她了,她看起来有点糟,听着你们吵架了吗?什么?没有,我告诉她你在担心她,她就那么看着我。还好好的我们还在计划圣诞假期的安排又是一阵犹豫他表现得几乎像磕了药我从不知道布罗迪会他不会从来不好吧只是给他一两天时间也许他真的在忙什么事有消息我会告诉你的但他没有我也没有他不接我电话也不回短信这太不像布罗迪了阿丽亚真是个惊喜布罗迪的发现和那通诡异的视频通话时,他的笑容消失了,他走到书架前拿起一本书,翻了几页他停下来递给我。那些课文和护身符,是不是长这样?是的这是什么?我们课上没有多讲,但古兰经认为,安拉有三种有智识的造物,天使、人类和精灵。你描述的那些物件,是魔法师用来控制和意识精灵的有时他们会把这些生物困在玻璃球里精灵我笑了你是说神灯精灵你描述的那些是邪恶的魔法你说他重复了他母亲的名字传说中魔法师需要三样东西才能跟恶魔谈论你一个名字你母亲的名字和一份痕迹您不会真的相信有精灵吧?他看了我很久,然后说,我会发一封邮件给你,里面有一些经文,可以抵御精灵附身。等你见到布罗迪,不妨试试,还有阿利亚小心点。我对他的警告一笑置之,但那天下午敲响布罗迪家门时,我的心沉甸甸的,他敲到第三下才开门。她的样子让我震惊她看起来很疲惫胡子拉叉她看着我仿佛我是个陌生人布罗迪怎么回事她身后的走廊里有什么东西一闪而过像是相机闪光灯的余晖我发誓我瞬间看见了一个火焰凝成的女人她回头看了一眼又转向我你该走了她当着我的面关上了门一直等到夜幕降临,拿了藏着的钥匙,自己开了门。房子里很安静,我捏手捏脚地穿过各个房间,寻找她。当我偷偷望向她的卧室时,我倒吸一口凉气,布罗迪趴伏在床上,盯着天花板。那个火焰女人坐在她身上,她听到我的动静,猛地转过头来,嘶嘶作响,露出两英寸长的尖牙。我被困在这里好几个小时了,送着导师发给我的经文,直到我的声音和手机电池都耗尽,现在我闻到了烟味。
+视频通话接通了,我的男朋友微笑着,首先,我爱你,我想你,我等不及你回家了,我也爱你,我也等不及了,我盯着电脑屏幕,你在哪儿呢?我在阁楼里布罗迪回答我把弓箭器材放上去的时候发现了个挺酷的东西他刚在休斯敦一个安静的社区买了一栋老房子我希望那里有一天能成为我们的社区我们交往三年了我猜他可能会在今年春天我大学毕业之后求婚看看这个他把一个落满灰尘的箱子拖到吊灯下面好让我看清上面的课文看起来像是阿拉伯文他打开箱子,取出一个三角形护身符,银制的上面有同样的标记。接着是一个极小的推拉盒,里面装着碎纸片,木屑,还有一些辨认不出的快撞物,闻起来像茉莉花。他凑近秀了秀。下一个物件是个漱口袋,他打开袋子,把里面的东西倒在掌心里。嗯,叫指甲,搞什么鬼?箱子里最后两样东西是一本破旧的古兰经和一盒玻璃球,装饰品,不是没有挂钩或绳子的地方。有三个透明的还有这个他举起来给我看是烟熏黄的颜色我发誓那球在他掌心里冻了一下他摔到地上碎了有什么东西闪过像火焰一样布罗迪骂了一句那是什么我喊道我,我不知道,他盯着我视线之外的地方,他歪着头,好像在听什么,布罗迪,他说,然后唐纳特什么,唐纳特是他母亲的名字,布罗迪茫然地看着屏幕,说,我得挂了。没再多说一个字,他结束了skype通话,我试图打回去,他没接,那晚他也没接,终于第二天早上他接了,我现在有点忙,他说声音很沉,你还好吗?嗯,他说,然后挂断了。接下来一整天我都没有她的消息于是我打电话给她姐姐让她去看看她一小时后她回了电话她的声音很谨慎嗯 阿丽啊我看见她了她看起来有点糟听着你们吵架了吗什么没有,我告诉他你在担心他,他就那么看着我,他昨天还好好的,我们还在计划圣诞假期的安排,又是一阵犹豫,他表现得几乎像磕了药,我从不知道布罗迪会,他不会从来不。好吧,只是给他一两天时间,也许他真的在忙什么事,有消息我会告诉你的,但他没有,我也没有,他不接我电话,也不回短信,这太不像布罗迪了。我胃里翻江倒海真不知道我怎么熬过期末考试的我想到了他找到的那些奇怪的东西一定和那有关我的祖母是孟加拉义穆斯林我父亲不信仰任何宗教,但我上学期修了一门伊斯兰传统的课程。我很喜欢那位教授,在飞回家前的那个早上,我顺道去了他的办公室,阿里亚真是个惊喜。当我告诉他布罗迪的发现和那通诡异的视频通话时,他的笑容消失了。他走到书架前拿起一本书,翻了几页他停下来递给我。那些课文和护身符是不是长这样?是的,这是什么?我们课上没有多讲但古兰经认为安拉有三种有智识的造物天使人类和精灵你描述的那些物件是魔法师用来控制和意识精灵的有时他们会把这些生物困在玻璃球里精灵我笑了你是说神灯精灵你描述的那些是邪恶的魔法你说他重复了他母亲的名字传说中魔法师需要三样东西才能跟恶魔谈论你一个名字你母亲的名字和一份痕迹头发指甲蟹您不会真的相信有精灵吧他看了我很久然后说我会发一封邮件给你里面有一些经文可以抵御精灵附身等你见到布罗迪不妨试试还有阿利亚小心点我对他的警告一笑置之但那天下午敲响布罗迪家门时我的心沉甸甸的他敲到第三下才开门他的样子让我震惊他看起来很疲惫胡子拉叉他看着我仿佛我是个陌生人布罗迪怎么回事她身后的走廊里有什么东西一闪而过像是相机闪光灯的余晖我发誓我瞬间看见了一个火焰凝成的女人她回头看了一眼又转向我你该走了她当着我的面关上了门我一直等到夜幕降临,拿了藏着的钥匙,自己开了门。房子里很安静,我捏手捏脚地穿过各个房间,寻找他。当我偷偷望向他的卧室时,我倒吸一口凉气,布罗迪趴伏在床上,盯着天花板。那个火焰女人坐在她身上,她听到我的动静,猛地转过头来,嘶嘶作响,露出两英寸长的尖牙。我跑了,穿过房子时,门像枪声一样,砰砰地关门,前门打不开了,我尖叫着猛拉门把手。他在逼近,阁楼的梯子放下来了,我冲了上去,我掏出手机,疯狂地想打开教授发给我的邮件。透过阁楼口,布罗迪和那个火焰女人仰头盯着我,门砰得关上了。我被困在这里好几个小时了我一直念诵着导师发给我的经文直到我的声音和手机电池都耗尽现在我闻到了烟味
 ```
 
-字符错误位置（参考与转写索引均从 0 开始）：
+严格汉字差异位置（参考与转写索引均从 0 开始；不是人工确认的错读结论）：
 
-| 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
-| --- | ---: | --- | ---: | --- |
-| deletion | 103 | 我 | 103 | ∅ |
-| deletion | 104 | 希 | 103 | ∅ |
-| deletion | 105 | 望 | 103 | ∅ |
-| deletion | 106 | 那 | 103 | ∅ |
-| deletion | 107 | 里 | 103 | ∅ |
-| deletion | 108 | 有 | 103 | ∅ |
-| deletion | 109 | 一 | 103 | ∅ |
-| deletion | 110 | 天 | 103 | ∅ |
-| deletion | 111 | 能 | 103 | ∅ |
-| substitution | 175 | 刻 | 166 | 课 |
-| substitution | 176 | 纹 | 167 | 文 |
-| substitution | 202 | 质 | 193 | 制 |
-| substitution | 251 | 他 | 242 | 她 |
-| substitution | 254 | 嗅 | 245 | 绣 |
-| substitution | 256 | 嗅 | 247 | 绣 |
-| substitution | 264 | 束 | 255 | 漱 |
-| substitution | 267 | 他 | 258 | 她 |
-| substitution | 283 | 呃 | 274 | 嗯 |
-| substitution | 284 | 脚 | 275 | 叫 |
-| substitution | 285 | 趾 | 276 | 指 |
-| substitution | 364 | 动 | 355 | 冻 |
-| substitution | 368 | 它 | 359 | 他 |
-| substitution | 435 | 娜 | 426 | 纳 |
-| substitution | 440 | 娜 | 431 | 纳 |
-| substitution | 524 | 他 | 515 | 她 |
-| substitution | 541 | 他 | 532 | 她 |
-| substitution | 552 | 他 | 543 | 她 |
-| substitution | 560 | 他 | 551 | 她 |
-| substitution | 564 | 后 | 555 | 候 |
-| substitution | 579 | 莉 | 570 | 丽 |
-| substitution | 580 | 娅 | 571 | 亚 |
-| substitution | 584 | 他 | 575 | 她 |
-| substitution | 586 | 他 | 577 | 她 |
-| substitution | 608 | 他 | 599 | 她 |
-| substitution | 613 | 他 | 604 | 她 |
-| substitution | 614 | 他 | 605 | 她 |
-| deletion | 621 | 他 | 612 | ∅ |
-| deletion | 622 | 昨 | 612 | ∅ |
-| deletion | 623 | 天 | 612 | ∅ |
-| substitution | 703 | 她 | 691 | 他 |
-| deletion | 728 | 了 | 716 | ∅ |
-| deletion | 729 | 我 | 716 | ∅ |
-| deletion | 730 | 胃 | 716 | ∅ |
-| deletion | 731 | 里 | 716 | ∅ |
-| deletion | 732 | 翻 | 716 | ∅ |
-| deletion | 733 | 江 | 716 | ∅ |
-| deletion | 734 | 倒 | 716 | ∅ |
-| deletion | 735 | 海 | 716 | ∅ |
-| deletion | 736 | 真 | 716 | ∅ |
-| deletion | 737 | 不 | 716 | ∅ |
-| deletion | 738 | 知 | 716 | ∅ |
-| deletion | 739 | 道 | 716 | ∅ |
-| deletion | 740 | 我 | 716 | ∅ |
-| deletion | 741 | 怎 | 716 | ∅ |
-| deletion | 742 | 么 | 716 | ∅ |
-| deletion | 743 | 熬 | 716 | ∅ |
-| deletion | 744 | 过 | 716 | ∅ |
-| deletion | 745 | 期 | 716 | ∅ |
-| deletion | 746 | 末 | 716 | ∅ |
-| deletion | 747 | 考 | 716 | ∅ |
-| deletion | 748 | 试 | 716 | ∅ |
-| deletion | 749 | 的 | 716 | ∅ |
-| deletion | 750 | 我 | 716 | ∅ |
-| deletion | 751 | 想 | 716 | ∅ |
-| deletion | 752 | 到 | 716 | ∅ |
-| deletion | 753 | 了 | 716 | ∅ |
-| deletion | 754 | 他 | 716 | ∅ |
-| deletion | 755 | 找 | 716 | ∅ |
-| deletion | 756 | 到 | 716 | ∅ |
-| deletion | 757 | 的 | 716 | ∅ |
-| deletion | 758 | 那 | 716 | ∅ |
-| deletion | 759 | 些 | 716 | ∅ |
-| deletion | 760 | 奇 | 716 | ∅ |
-| deletion | 761 | 怪 | 716 | ∅ |
-| deletion | 762 | 的 | 716 | ∅ |
-| deletion | 763 | 东 | 716 | ∅ |
-| deletion | 764 | 西 | 716 | ∅ |
-| deletion | 765 | 一 | 716 | ∅ |
-| deletion | 766 | 定 | 716 | ∅ |
-| deletion | 767 | 和 | 716 | ∅ |
-| deletion | 768 | 那 | 716 | ∅ |
-| deletion | 769 | 有 | 716 | ∅ |
-| deletion | 770 | 关 | 716 | ∅ |
-| deletion | 771 | 我 | 716 | ∅ |
-| deletion | 772 | 的 | 716 | ∅ |
-| deletion | 773 | 祖 | 716 | ∅ |
-| deletion | 774 | 母 | 716 | ∅ |
-| deletion | 775 | 是 | 716 | ∅ |
-| deletion | 776 | 孟 | 716 | ∅ |
-| deletion | 777 | 加 | 716 | ∅ |
-| deletion | 778 | 拉 | 716 | ∅ |
-| deletion | 779 | 裔 | 716 | ∅ |
-| deletion | 780 | 穆 | 716 | ∅ |
-| deletion | 781 | 斯 | 716 | ∅ |
-| deletion | 782 | 林 | 716 | ∅ |
-| deletion | 783 | 我 | 716 | ∅ |
-| deletion | 784 | 父 | 716 | ∅ |
-| deletion | 785 | 亲 | 716 | ∅ |
-| deletion | 786 | 不 | 716 | ∅ |
-| deletion | 787 | 信 | 716 | ∅ |
-| deletion | 788 | 仰 | 716 | ∅ |
-| deletion | 789 | 任 | 716 | ∅ |
-| deletion | 790 | 何 | 716 | ∅ |
-| deletion | 791 | 宗 | 716 | ∅ |
-| deletion | 792 | 教 | 716 | ∅ |
-| deletion | 793 | 但 | 716 | ∅ |
-| deletion | 794 | 我 | 716 | ∅ |
-| deletion | 795 | 上 | 716 | ∅ |
-| deletion | 796 | 学 | 716 | ∅ |
-| deletion | 797 | 期 | 716 | ∅ |
-| deletion | 798 | 修 | 716 | ∅ |
-| deletion | 799 | 了 | 716 | ∅ |
-| deletion | 800 | 一 | 716 | ∅ |
-| deletion | 801 | 门 | 716 | ∅ |
-| deletion | 802 | 伊 | 716 | ∅ |
-| deletion | 803 | 斯 | 716 | ∅ |
-| deletion | 804 | 兰 | 716 | ∅ |
-| deletion | 805 | 传 | 716 | ∅ |
-| deletion | 806 | 统 | 716 | ∅ |
-| deletion | 807 | 的 | 716 | ∅ |
-| deletion | 808 | 课 | 716 | ∅ |
-| deletion | 809 | 程 | 716 | ∅ |
-| deletion | 810 | 我 | 716 | ∅ |
-| deletion | 811 | 很 | 716 | ∅ |
-| deletion | 812 | 喜 | 716 | ∅ |
-| deletion | 813 | 欢 | 716 | ∅ |
-| deletion | 814 | 那 | 716 | ∅ |
-| deletion | 815 | 位 | 716 | ∅ |
-| deletion | 816 | 教 | 716 | ∅ |
-| deletion | 817 | 授 | 716 | ∅ |
-| deletion | 818 | 在 | 716 | ∅ |
-| deletion | 819 | 飞 | 716 | ∅ |
-| deletion | 820 | 回 | 716 | ∅ |
-| deletion | 821 | 家 | 716 | ∅ |
-| deletion | 822 | 前 | 716 | ∅ |
-| deletion | 823 | 的 | 716 | ∅ |
-| deletion | 824 | 那 | 716 | ∅ |
-| deletion | 825 | 个 | 716 | ∅ |
-| deletion | 826 | 早 | 716 | ∅ |
-| deletion | 827 | 上 | 716 | ∅ |
-| deletion | 828 | 我 | 716 | ∅ |
-| deletion | 829 | 顺 | 716 | ∅ |
-| deletion | 830 | 道 | 716 | ∅ |
-| deletion | 831 | 去 | 716 | ∅ |
-| deletion | 833 | 她 | 717 | ∅ |
-| deletion | 834 | 的 | 717 | ∅ |
-| deletion | 835 | 办 | 717 | ∅ |
-| deletion | 836 | 公 | 717 | ∅ |
-| deletion | 837 | 室 | 717 | ∅ |
-| substitution | 839 | 莉 | 718 | 丽 |
-| substitution | 840 | 娅 | 719 | 亚 |
-| deletion | 846 | 当 | 725 | ∅ |
-| deletion | 847 | 我 | 725 | ∅ |
-| deletion | 848 | 告 | 725 | ∅ |
-| deletion | 849 | 诉 | 725 | ∅ |
-| deletion | 850 | 她 | 725 | ∅ |
-| substitution | 868 | 她 | 742 | 他 |
-| substitution | 875 | 她 | 749 | 他 |
-| substitution | 890 | 她 | 764 | 他 |
-| substitution | 899 | 刻 | 773 | 课 |
-| substitution | 900 | 纹 | 774 | 文 |
-| substitution | 966 | 役 | 840 | 意 |
-| substitution | 967 | 使 | 841 | 识 |
-| deletion | 1058 | 头 | 932 | ∅ |
-| deletion | 1059 | 发 | 932 | ∅ |
-| deletion | 1060 | 指 | 932 | ∅ |
-| deletion | 1061 | 甲 | 932 | ∅ |
-| deletion | 1062 | 屑 | 932 | ∅ |
-| substitution | 1074 | 她 | 943 | 他 |
-| substitution | 1121 | 莉 | 990 | 利 |
-| substitution | 1122 | 娅 | 991 | 亚 |
-| substitution | 1128 | 她 | 997 | 他 |
-| substitution | 1165 | 他 | 1034 | 她 |
-| substitution | 1173 | 他 | 1042 | 她 |
-| substitution | 1183 | 碴 | 1052 | 叉 |
-| substitution | 1184 | 他 | 1053 | 她 |
-| substitution | 1203 | 他 | 1072 | 她 |
-| substitution | 1247 | 他 | 1116 | 她 |
-| substitution | 1262 | 他 | 1131 | 她 |
-| deletion | 1272 | 我 | 1141 | ∅ |
-| substitution | 1300 | 蹑 | 1168 | 捏 |
-| substitution | 1302 | 蹑 | 1170 | 捏 |
-| substitution | 1313 | 他 | 1181 | 她 |
-| substitution | 1320 | 他 | 1188 | 她 |
-| substitution | 1353 | 他 | 1221 | 她 |
-| deletion | 1382 | 我 | 1250 | ∅ |
-| deletion | 1383 | 跑 | 1250 | ∅ |
-| deletion | 1384 | 了 | 1250 | ∅ |
-| deletion | 1385 | 穿 | 1250 | ∅ |
-| deletion | 1386 | 过 | 1250 | ∅ |
-| deletion | 1387 | 房 | 1250 | ∅ |
-| deletion | 1388 | 子 | 1250 | ∅ |
-| deletion | 1389 | 时 | 1250 | ∅ |
-| deletion | 1390 | 门 | 1250 | ∅ |
-| deletion | 1391 | 像 | 1250 | ∅ |
-| deletion | 1392 | 枪 | 1250 | ∅ |
-| deletion | 1393 | 声 | 1250 | ∅ |
-| deletion | 1394 | 一 | 1250 | ∅ |
-| deletion | 1395 | 样 | 1250 | ∅ |
-| deletion | 1396 | 砰 | 1250 | ∅ |
-| deletion | 1397 | 砰 | 1250 | ∅ |
-| deletion | 1398 | 地 | 1250 | ∅ |
-| deletion | 1399 | 关 | 1250 | ∅ |
-| deletion | 1400 | 合 | 1250 | ∅ |
-| deletion | 1401 | 前 | 1250 | ∅ |
-| deletion | 1402 | 门 | 1250 | ∅ |
-| deletion | 1403 | 打 | 1250 | ∅ |
-| deletion | 1404 | 不 | 1250 | ∅ |
-| deletion | 1405 | 开 | 1250 | ∅ |
-| deletion | 1406 | 了 | 1250 | ∅ |
-| deletion | 1407 | 我 | 1250 | ∅ |
-| deletion | 1408 | 尖 | 1250 | ∅ |
-| deletion | 1409 | 叫 | 1250 | ∅ |
-| deletion | 1410 | 着 | 1250 | ∅ |
-| deletion | 1411 | 猛 | 1250 | ∅ |
-| deletion | 1412 | 拉 | 1250 | ∅ |
-| deletion | 1413 | 门 | 1250 | ∅ |
-| deletion | 1414 | 把 | 1250 | ∅ |
-| deletion | 1415 | 手 | 1250 | ∅ |
-| deletion | 1416 | 她 | 1250 | ∅ |
-| deletion | 1417 | 在 | 1250 | ∅ |
-| deletion | 1418 | 逼 | 1250 | ∅ |
-| deletion | 1419 | 近 | 1250 | ∅ |
-| deletion | 1420 | 阁 | 1250 | ∅ |
-| deletion | 1421 | 楼 | 1250 | ∅ |
-| deletion | 1422 | 的 | 1250 | ∅ |
-| deletion | 1423 | 梯 | 1250 | ∅ |
-| deletion | 1424 | 子 | 1250 | ∅ |
-| deletion | 1425 | 放 | 1250 | ∅ |
-| deletion | 1426 | 下 | 1250 | ∅ |
-| deletion | 1427 | 来 | 1250 | ∅ |
-| deletion | 1428 | 了 | 1250 | ∅ |
-| deletion | 1429 | 我 | 1250 | ∅ |
-| deletion | 1430 | 冲 | 1250 | ∅ |
-| deletion | 1431 | 了 | 1250 | ∅ |
-| deletion | 1432 | 上 | 1250 | ∅ |
-| deletion | 1433 | 去 | 1250 | ∅ |
-| deletion | 1434 | 我 | 1250 | ∅ |
-| deletion | 1435 | 掏 | 1250 | ∅ |
-| deletion | 1436 | 出 | 1250 | ∅ |
-| deletion | 1437 | 手 | 1250 | ∅ |
-| deletion | 1438 | 机 | 1250 | ∅ |
-| deletion | 1439 | 疯 | 1250 | ∅ |
-| deletion | 1440 | 狂 | 1250 | ∅ |
-| deletion | 1441 | 地 | 1250 | ∅ |
-| deletion | 1442 | 想 | 1250 | ∅ |
-| deletion | 1443 | 打 | 1250 | ∅ |
-| deletion | 1444 | 开 | 1250 | ∅ |
-| deletion | 1445 | 教 | 1250 | ∅ |
-| deletion | 1446 | 授 | 1250 | ∅ |
-| deletion | 1447 | 发 | 1250 | ∅ |
-| deletion | 1448 | 给 | 1250 | ∅ |
-| deletion | 1449 | 我 | 1250 | ∅ |
-| deletion | 1450 | 的 | 1250 | ∅ |
-| deletion | 1451 | 邮 | 1250 | ∅ |
-| deletion | 1452 | 件 | 1250 | ∅ |
-| deletion | 1453 | 透 | 1250 | ∅ |
-| deletion | 1454 | 过 | 1250 | ∅ |
-| deletion | 1455 | 阁 | 1250 | ∅ |
-| deletion | 1456 | 楼 | 1250 | ∅ |
-| deletion | 1457 | 口 | 1250 | ∅ |
-| deletion | 1458 | 布 | 1250 | ∅ |
-| deletion | 1459 | 罗 | 1250 | ∅ |
-| deletion | 1460 | 迪 | 1250 | ∅ |
-| deletion | 1461 | 和 | 1250 | ∅ |
-| deletion | 1462 | 那 | 1250 | ∅ |
-| deletion | 1463 | 个 | 1250 | ∅ |
-| deletion | 1464 | 火 | 1250 | ∅ |
-| deletion | 1465 | 焰 | 1250 | ∅ |
-| deletion | 1466 | 女 | 1250 | ∅ |
-| deletion | 1467 | 人 | 1250 | ∅ |
-| deletion | 1468 | 仰 | 1250 | ∅ |
-| deletion | 1469 | 头 | 1250 | ∅ |
-| deletion | 1470 | 盯 | 1250 | ∅ |
-| deletion | 1471 | 着 | 1250 | ∅ |
-| deletion | 1472 | 我 | 1250 | ∅ |
-| deletion | 1473 | 门 | 1250 | ∅ |
-| deletion | 1474 | 砰 | 1250 | ∅ |
-| deletion | 1475 | 地 | 1250 | ∅ |
-| deletion | 1476 | 关 | 1250 | ∅ |
-| deletion | 1477 | 上 | 1250 | ∅ |
-| deletion | 1478 | 了 | 1250 | ∅ |
-| deletion | 1491 | 我 | 1262 | ∅ |
-| deletion | 1492 | 一 | 1262 | ∅ |
-| deletion | 1493 | 直 | 1262 | ∅ |
-| deletion | 1494 | 念 | 1262 | ∅ |
-| substitution | 1495 | 诵 | 1262 | 送 |
+| 片段 | 分类 | 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
+| --- | --- | --- | ---: | --- | ---: | --- |
+| 001 | insertion | insertion | 52 | ∅ | 52 | 呢 |
+| 003 | same_pronunciation_substitution | substitution | 175 | 刻 | 176 | 课 |
+| 003 | same_pronunciation_substitution | substitution | 176 | 纹 | 177 | 文 |
+| 004 | same_pronunciation_substitution | substitution | 202 | 质 | 203 | 制 |
+| 004 | same_pronunciation_substitution | substitution | 241 | 块 | 242 | 快 |
+| 004 | same_pronunciation_substitution | substitution | 242 | 状 | 243 | 撞 |
+| 004 | same_pronunciation_substitution | substitution | 254 | 嗅 | 255 | 秀 |
+| 004 | same_pronunciation_substitution | substitution | 256 | 嗅 | 257 | 秀 |
+| 005 | same_pronunciation_substitution | substitution | 264 | 束 | 265 | 漱 |
+| 005 | different_pronunciation_substitution | substitution | 283 | 呃 | 284 | 嗯 |
+| 005 | different_pronunciation_substitution | substitution | 284 | 脚 | 285 | 叫 |
+| 005 | same_pronunciation_substitution | substitution | 285 | 趾 | 286 | 指 |
+| 006 | same_pronunciation_substitution | substitution | 364 | 动 | 365 | 冻 |
+| 006 | same_pronunciation_substitution | substitution | 368 | 它 | 369 | 他 |
+| 007 | same_pronunciation_substitution | substitution | 435 | 娜 | 436 | 纳 |
+| 007 | same_pronunciation_substitution | substitution | 440 | 娜 | 441 | 纳 |
+| 009 | same_pronunciation_substitution | substitution | 541 | 他 | 542 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 552 | 他 | 553 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 560 | 他 | 561 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 579 | 莉 | 580 | 丽 |
+| 009 | different_pronunciation_substitution | substitution | 580 | 娅 | 581 | 啊 |
+| 009 | same_pronunciation_substitution | substitution | 584 | 他 | 585 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 586 | 他 | 587 | 她 |
+| 011 | same_pronunciation_substitution | substitution | 703 | 她 | 704 | 他 |
+| 012 | same_pronunciation_substitution | substitution | 779 | 裔 | 780 | 义 |
+| 013 | same_pronunciation_substitution | substitution | 833 | 她 | 834 | 他 |
+| 013 | different_pronunciation_substitution | substitution | 839 | 莉 | 840 | 里 |
+| 013 | same_pronunciation_substitution | substitution | 840 | 娅 | 841 | 亚 |
+| 014 | same_pronunciation_substitution | substitution | 850 | 她 | 851 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 868 | 她 | 869 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 875 | 她 | 876 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 890 | 她 | 891 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 899 | 刻 | 900 | 课 |
+| 014 | same_pronunciation_substitution | substitution | 900 | 纹 | 901 | 文 |
+| 015 | same_pronunciation_substitution | substitution | 966 | 役 | 967 | 意 |
+| 015 | different_pronunciation_substitution | substitution | 967 | 使 | 968 | 识 |
+| 017 | same_pronunciation_substitution | substitution | 1062 | 屑 | 1063 | 蟹 |
+| 017 | same_pronunciation_substitution | substitution | 1074 | 她 | 1075 | 他 |
+| 017 | same_pronunciation_substitution | substitution | 1121 | 莉 | 1122 | 利 |
+| 017 | same_pronunciation_substitution | substitution | 1122 | 娅 | 1123 | 亚 |
+| 018 | same_pronunciation_substitution | substitution | 1128 | 她 | 1129 | 他 |
+| 018 | different_pronunciation_substitution | substitution | 1183 | 碴 | 1184 | 叉 |
+| 019 | same_pronunciation_substitution | substitution | 1203 | 他 | 1204 | 她 |
+| 019 | same_pronunciation_substitution | substitution | 1247 | 他 | 1248 | 她 |
+| 019 | same_pronunciation_substitution | substitution | 1262 | 他 | 1263 | 她 |
+| 020 | different_pronunciation_substitution | substitution | 1300 | 蹑 | 1301 | 捏 |
+| 020 | different_pronunciation_substitution | substitution | 1302 | 蹑 | 1303 | 捏 |
+| 021 | same_pronunciation_substitution | substitution | 1353 | 他 | 1354 | 她 |
+| 021 | different_pronunciation_substitution | substitution | 1400 | 合 | 1401 | 门 |
+| 022 | same_pronunciation_substitution | substitution | 1416 | 她 | 1417 | 他 |
+| 022 | different_pronunciation_substitution | substitution | 1475 | 地 | 1476 | 得 |
 
 ### VoxCPM2
 
 #### SenseVoice
 
-- 全文 CER：`0.098887`；字符编辑数：`151`。
-- 分段：连续、无重叠的 18 段；解码参数已保存在原始证据。
+- 严格汉字 CER：`0.029470`；字符编辑数：`45`。
+- 拼音 CER：`0.007859`；拼音 token 编辑数：`12`。
+- ASR 健康：`healthy`；不可靠片段：无；该后端参与名次。
+- 分段：按冻结合成证据的 23 个语义段逐段解码；解码参数已保存在原始证据。
 
 完整转写：
 
 ```text
-视频通话接通了，我的男朋友微笑着，首先我爱你，我想你，我等不及你回家了。我也爱你，我也等不及了，我盯着电脑屏幕，你在哪儿，我在阁楼里，布洛迪回答，我把弓箭器材放上去的时候，我发现了个挺酷。的东西他刚在休斯敦一个安静的社区买了一栋老房子，我希望那里有一天能成为我们的社区。我们交往年了，我猜他可能会在今年春天，我大学毕业之后求婚。看看这个他把一个落满灰尘的箱子拖到吊灯下面好让我看清上面的课文看起来。像是阿拉伯文，他打开箱子，取出一个三角形护身符，银制的上面有同样的标记，接着是一个极小的推拉盒，里面装着碎纸片木屑，还有一些辨认不出的块状物，闻起来像茉莉花，他凑进绣了嗅。下一个物件，是个竖口袋，他打开袋子。把里面的东西倒在掌心里呃，脚趾甲搞什么鬼，箱子里最后两样东西是一本破旧的古蓝鲸和一盒玻璃球装饰品，不是没有挂钩或绳子的地方，有三个透明的，还有这个他举起来给我看，是烟熏黄的颜色。我发誓那球在他掌心里动了一下，他摔到地上，碎了，有什么东西闪过，像火焰一样。布罗迪骂了一句，那是什么？我喊道，我我不知道，他盯着我视线之外的地方，他歪着头，好像在听什么，布罗迪，他说，然后躺。唐纳特什么唐纳特是他母亲的名字，布罗迪茫然的看着屏幕说我得挂了。没再多说一个字，他结束了skype通话，我试图打回去，他没接，那晚他也没接，终于第二天早上，他接了，我现在有点忙，他说声音很沉。你还好吗？嗯，他说然后挂断了，接下来一整天我都没有他的消息。于是我打电话给他姐姐，让她去看看她。一小时后，他回了电话。她的声音很谨慎，嗯，阿丽亚，我看见他了，她看起来有点糟，听着。你吵架了吗？什么没有告他心他划圣。好吧，只是给他一两天时间，也许他真的在忙什么事，有消息我会告诉你的，但他没有，我也没有他不接我电话，也不回短信，这太不像布洛迪了，我为你翻江倒海，真不知道我怎么熬过期末考试的，我想到了他找到的那些。奇怪的东西一定和那有关。我的祖母是孟加拉穆斯林，父亲不信仰任何学一门伊斯兰传统的课程。我喜欢位教授在飞回家前的那个早上我去了办个惊喜。当我。告诉他布罗迪的发现和那通诡异的视频通话时，他的笑容消失了。他走到书架前拿起一本书翻了几页，他停下来递给我那些课文和护身符是不是长这样，是的，这是什么？我们课上没有多讲，但古兰经认为，安拉有三种有。致石的造物，天使人类和精灵，你描述的那些物件是魔法师用来控制和意识精灵的。有时他们会把这些生物困在玻璃球里，精灵我笑了，你是说神灯精灵，你描述的那些是邪恶的魔法，你说他重复了他母亲的名字。传说中，魔法师需要三样东西才能跟恶魔谈论你一个名字，你母亲的名字和一份痕迹，头发指甲屑，您不会真的相信有精灵吧。他看了我很久，然后说我会发一封邮件给你，里面有一些经文可以抵御精灵附身。等你见到布罗迪，不妨试试，还有阿利亚小心点，我对他的警告一笑，那天下午敲响布罗迪家门时，我的心沉甸甸的。敲到第三下开门，他的子我震惊，看起来疲惫，胡看着我仿。我是个陌生人布罗迪怎么回事？他身后的走廊里有什么东西一闪而过，像是相机闪光灯的余晖。我发誓我瞬间看见了一个火焰凝成的女人，他回头看了一眼，又转向我，该走他当着我的面关上了门，我一直等。等到夜幕降临，拿了藏着的钥匙，自己开了门，房子里很安静，我蹑手蹑脚的穿过各个房间寻找她当我偷偷望向她的卧室时，我倒吸一口凉气，布罗迪趴伏在床上，盯着天花板。那个火焰女人坐在她身上。她听到我的动静，猛。转过头来，嘶嘶作响，露出两英寸长的尖牙，我跑了穿过房子时，门像枪声一样砰砰的关合，前门打不开了，我尖叫着猛拉门把手，他在逼近，阁楼的梯子放下来了，我冲了上去，我掏出手机，疯狂的想打开教授发给我。邮件透过阁楼口，布罗迪和那个火焰女人仰头盯着我门砰的关上了，我被困在这里好几个小时了。我一直念诵着导师发给我的经文，直到我的声音和手机电池都耗尽，现在我闻到了烟味。
+视频通话接通了，我的男朋友微笑着，首先我爱你，我想你，我等不及你回家了，我也爱你，我也等不及了，我盯着电脑屏幕，你在哪儿？我在阁楼里，布洛迪回答，我把弓箭器材放上去的时候，发现了个挺酷的东西。他刚在休斯敦一个安静的社区买了一栋老房子，我希望那里有一天能成为我们的社区。我们交往三年了，我猜他可能会在今年春天，我大学毕业之后求婚。看看这个他把一个落满灰尘的箱子拖到吊灯下面，好让我看清上面的课文，看起来像是阿拉伯文。他打开箱子，取出一个三角形护身符，银制的上面有同样的标记，接着是一个极小的推拉盒，里面装着碎纸片、木屑，还有一些辨认不出的块状物，闻起来像茉莉花，他凑近嗅了嗅。下一个物件是个束口袋，他打开袋子，把里面的东西倒在掌心里。呃，脚趾甲搞什么鬼，箱子里最后两样东西是一本破旧的古蓝鲸和一盒玻璃球装饰品，不是没有挂钩或绳子的地方。有三个透明的，还有这个他举起来给我看，是烟熏黄的颜色。我发誓那球在他掌心里动了一下，他摔到地上碎了。有什么东西闪过，像火焰一样，布罗迪骂了一句，那是什么？我喊道。我我不知道他盯着我视线之外的地方，他歪着头好像在听什么。布罗迪他说，然后唐纳特，什么唐纳特是他母亲的名字，布罗迪茫然的看着屏幕，说，我得挂了。没再多说一个字，他结束了skype通话，我试图打回去，他没接，那晚他也没接。终于第二天早上他接了，我现在有点忙，他说声音很沉，你还好吗？嗯，他说然后挂断了。接下来一整天，我都没有她的消息，于是我打电话给他姐姐，让她去看看她。一小时后，她回了电话，她的声音很谨慎，嗯，阿丽亚，我看见她了，她看起来有点糟，听着你们吵架了吗？什么？没有我告诉他，你在担心他，他就那么看着我，他昨天还好好的，我们还在计划圣诞假期的安排，又是一阵犹豫，他表现的几乎像磕了药，我从不知道布罗迪会，他不会，从来不。好吧，只是给他一两天时间，也许他真的在忙什么事，有消息我会告诉你的，但他没有，我也没有，他不接我电话，也不回短信，这太不像布洛迪了。无谓里翻江倒海，真不知道我怎么熬过期末考试的。我想到了他找到的那些奇怪的东西，一定和那有关。我的祖母是孟加拉裔穆斯林。我父亲不信仰任何宗教，但我上学期修了一门伊斯兰传统的课程，我很喜欢那位教授，在飞回家前的那个早上，我顺道去了他的办公室。阿丽亚真是个惊喜。当我告诉他，布罗迪的发现和那通诡异的视频通话时，他的笑容消失了。他走到书架前，拿起一本书，翻了几页，他停下来递给我。那些课文和护身符是不是长这样？是的，这是什么？我们课上没有多讲，但古兰经认为安拉有三种有志识的造物，天使、人类和精灵，你描述的那些物件是魔法师用来控制和意识精灵的。有时他们会把这些生物困在玻璃球里，精灵。我笑了，你是说神灯精灵，你描述的那些是邪恶的魔法，你说他重复了他母亲的名字，传说中魔法师需要三样东西才能跟恶魔谈论你一个名字，你母亲的名字和一份痕迹。头发指甲屑，您不会真的相信有精灵吧。他看了我很久，然后说我会发一封邮件给你。里面有一些经文，可以抵御精灵附身，等你见到布罗迪，不妨试试，还有阿利亚，小心点。我对他的警告一笑置之，但那天下午敲响布罗迪家门时，我的心沉甸甸的，他敲到第三下才开门，他的样子让我震惊，他看起来很疲惫，胡子拉碴，他看着我仿佛我是个陌生人，布罗迪。怎么回事？他身后的走廊里有什么东西一闪而过，像是相机、闪光灯的余晖。我发誓我瞬间看见了一个火焰凝成的女人，他回头看了一眼，又转向我，你该走了，他当着我的面关上了门。我一直等到夜幕降临，拿了藏着的钥匙，自己开了门，房子里很安静，我蹑手蹑脚的穿过各个房间寻找他。当我偷偷望向他的卧室时，我倒吸一口凉气。布罗迪趴伏在床上盯着天花板。那个火焰女人坐在他身上，他听到我的动静，猛的转过头来，嘶嘶作响，露出2英寸长的尖牙。我跑了，穿过房子时，门像枪声一样砰砰的关合，前门打不开了，我尖叫着猛拉门把手。他在逼近阁楼的梯子放下来了，我冲了上去，我掏出手机，疯狂的想打开教授发给我的邮件，透过阁楼口，布罗迪和那个火焰女人仰头盯着我，门砰的关上了。我被困在这里好几个小时了，我一直念诵着导师发给我的经文，直到我的声音和手机电池都耗尽。现在我闻到了烟味。
 ```
 
-字符错误位置（参考与转写索引均从 0 开始）：
+严格汉字差异位置（参考与转写索引均从 0 开始；不是人工确认的错读结论）：
 
-| 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
-| --- | ---: | --- | ---: | --- |
-| substitution | 58 | 罗 | 58 | 洛 |
-| insertion | 74 | ∅ | 74 | 我 |
-| deletion | 123 | 三 | 124 | ∅ |
-| substitution | 175 | 刻 | 175 | 课 |
-| substitution | 176 | 纹 | 176 | 文 |
-| substitution | 202 | 质 | 202 | 制 |
-| substitution | 253 | 近 | 253 | 进 |
-| substitution | 254 | 嗅 | 254 | 绣 |
-| substitution | 264 | 束 | 264 | 竖 |
-| substitution | 307 | 兰 | 307 | 蓝 |
-| substitution | 308 | 经 | 308 | 鲸 |
-| substitution | 368 | 它 | 368 | 他 |
-| insertion | 434 | ∅ | 434 | 躺 |
-| substitution | 435 | 娜 | 436 | 纳 |
-| substitution | 440 | 娜 | 441 | 纳 |
-| substitution | 454 | 地 | 455 | 的 |
-| substitution | 560 | 他 | 561 | 她 |
-| substitution | 565 | 她 | 566 | 他 |
-| substitution | 579 | 莉 | 580 | 丽 |
-| substitution | 580 | 娅 | 581 | 亚 |
-| substitution | 586 | 他 | 587 | 她 |
-| deletion | 596 | 们 | 597 | ∅ |
-| deletion | 605 | 我 | 605 | ∅ |
-| deletion | 607 | 诉 | 606 | ∅ |
-| deletion | 609 | 你 | 607 | ∅ |
-| deletion | 610 | 在 | 607 | ∅ |
-| deletion | 611 | 担 | 607 | ∅ |
-| deletion | 613 | 他 | 608 | ∅ |
-| deletion | 614 | 他 | 608 | ∅ |
-| deletion | 615 | 就 | 608 | ∅ |
-| deletion | 616 | 那 | 608 | ∅ |
-| deletion | 617 | 么 | 608 | ∅ |
-| deletion | 618 | 看 | 608 | ∅ |
-| deletion | 619 | 着 | 608 | ∅ |
-| deletion | 620 | 我 | 608 | ∅ |
-| deletion | 622 | 昨 | 609 | ∅ |
-| deletion | 623 | 天 | 609 | ∅ |
-| deletion | 624 | 还 | 609 | ∅ |
-| deletion | 625 | 好 | 609 | ∅ |
-| deletion | 626 | 好 | 609 | ∅ |
-| deletion | 627 | 的 | 609 | ∅ |
-| deletion | 628 | 我 | 609 | ∅ |
-| deletion | 629 | 们 | 609 | ∅ |
-| deletion | 630 | 还 | 609 | ∅ |
-| deletion | 631 | 在 | 609 | ∅ |
-| deletion | 632 | 计 | 609 | ∅ |
-| deletion | 635 | 诞 | 611 | ∅ |
-| deletion | 636 | 假 | 611 | ∅ |
-| deletion | 637 | 期 | 611 | ∅ |
-| deletion | 638 | 的 | 611 | ∅ |
-| deletion | 639 | 安 | 611 | ∅ |
-| deletion | 640 | 排 | 611 | ∅ |
-| deletion | 641 | 又 | 611 | ∅ |
-| deletion | 642 | 是 | 611 | ∅ |
-| deletion | 643 | 一 | 611 | ∅ |
-| deletion | 644 | 阵 | 611 | ∅ |
-| deletion | 645 | 犹 | 611 | ∅ |
-| deletion | 646 | 豫 | 611 | ∅ |
-| deletion | 647 | 他 | 611 | ∅ |
-| deletion | 648 | 表 | 611 | ∅ |
-| deletion | 649 | 现 | 611 | ∅ |
-| deletion | 650 | 得 | 611 | ∅ |
-| deletion | 651 | 几 | 611 | ∅ |
-| deletion | 652 | 乎 | 611 | ∅ |
-| deletion | 653 | 像 | 611 | ∅ |
-| deletion | 654 | 磕 | 611 | ∅ |
-| deletion | 655 | 了 | 611 | ∅ |
-| deletion | 656 | 药 | 611 | ∅ |
-| deletion | 657 | 我 | 611 | ∅ |
-| deletion | 658 | 从 | 611 | ∅ |
-| deletion | 659 | 不 | 611 | ∅ |
-| deletion | 660 | 知 | 611 | ∅ |
-| deletion | 661 | 道 | 611 | ∅ |
-| deletion | 662 | 布 | 611 | ∅ |
-| deletion | 663 | 罗 | 611 | ∅ |
-| deletion | 664 | 迪 | 611 | ∅ |
-| deletion | 665 | 会 | 611 | ∅ |
-| deletion | 666 | 他 | 611 | ∅ |
-| deletion | 667 | 不 | 611 | ∅ |
-| deletion | 668 | 会 | 611 | ∅ |
-| deletion | 669 | 从 | 611 | ∅ |
-| deletion | 670 | 来 | 611 | ∅ |
-| deletion | 671 | 不 | 611 | ∅ |
-| substitution | 703 | 她 | 642 | 他 |
-| substitution | 726 | 罗 | 665 | 洛 |
-| substitution | 730 | 胃 | 669 | 为 |
-| substitution | 731 | 里 | 670 | 你 |
-| deletion | 779 | 裔 | 718 | ∅ |
-| deletion | 783 | 我 | 721 | ∅ |
-| deletion | 791 | 宗 | 728 | ∅ |
-| deletion | 792 | 教 | 728 | ∅ |
-| deletion | 793 | 但 | 728 | ∅ |
-| deletion | 794 | 我 | 728 | ∅ |
-| deletion | 795 | 上 | 728 | ∅ |
-| deletion | 797 | 期 | 729 | ∅ |
-| deletion | 798 | 修 | 729 | ∅ |
-| deletion | 799 | 了 | 729 | ∅ |
-| deletion | 811 | 很 | 740 | ∅ |
-| deletion | 814 | 那 | 742 | ∅ |
-| deletion | 829 | 顺 | 756 | ∅ |
-| deletion | 830 | 道 | 756 | ∅ |
-| deletion | 833 | 她 | 758 | ∅ |
-| deletion | 834 | 的 | 758 | ∅ |
-| deletion | 836 | 公 | 759 | ∅ |
-| deletion | 837 | 室 | 759 | ∅ |
-| deletion | 838 | 阿 | 759 | ∅ |
-| deletion | 839 | 莉 | 759 | ∅ |
-| deletion | 840 | 娅 | 759 | ∅ |
-| deletion | 841 | 真 | 759 | ∅ |
-| deletion | 842 | 是 | 759 | ∅ |
-| substitution | 850 | 她 | 766 | 他 |
-| substitution | 868 | 她 | 784 | 他 |
-| substitution | 875 | 她 | 791 | 他 |
-| substitution | 890 | 她 | 806 | 他 |
-| substitution | 899 | 刻 | 815 | 课 |
-| substitution | 900 | 纹 | 816 | 文 |
-| substitution | 937 | 智 | 853 | 致 |
-| substitution | 938 | 识 | 854 | 石 |
-| substitution | 966 | 役 | 882 | 意 |
-| substitution | 967 | 使 | 883 | 识 |
-| substitution | 1074 | 她 | 990 | 他 |
-| substitution | 1121 | 莉 | 1037 | 利 |
-| substitution | 1122 | 娅 | 1038 | 亚 |
-| substitution | 1128 | 她 | 1044 | 他 |
-| deletion | 1134 | 置 | 1050 | ∅ |
-| deletion | 1135 | 之 | 1050 | ∅ |
-| deletion | 1136 | 但 | 1050 | ∅ |
-| deletion | 1156 | 他 | 1069 | ∅ |
-| deletion | 1162 | 才 | 1074 | ∅ |
-| deletion | 1167 | 样 | 1078 | ∅ |
-| deletion | 1169 | 让 | 1079 | ∅ |
-| deletion | 1173 | 他 | 1082 | ∅ |
-| deletion | 1177 | 很 | 1085 | ∅ |
-| deletion | 1181 | 子 | 1088 | ∅ |
-| deletion | 1182 | 拉 | 1088 | ∅ |
-| deletion | 1183 | 碴 | 1088 | ∅ |
-| deletion | 1184 | 他 | 1088 | ∅ |
-| deletion | 1189 | 佛 | 1092 | ∅ |
-| deletion | 1258 | 你 | 1160 | ∅ |
-| deletion | 1261 | 了 | 1162 | ∅ |
-| insertion | 1275 | ∅ | 1175 | 等 |
-| substitution | 1304 | 地 | 1205 | 的 |
-| substitution | 1313 | 他 | 1214 | 她 |
-| substitution | 1320 | 他 | 1221 | 她 |
-| substitution | 1353 | 他 | 1254 | 她 |
-| deletion | 1364 | 地 | 1265 | ∅ |
-| substitution | 1398 | 地 | 1298 | 的 |
-| substitution | 1416 | 她 | 1316 | 他 |
-| substitution | 1441 | 地 | 1341 | 的 |
-| deletion | 1450 | 的 | 1350 | ∅ |
-| substitution | 1475 | 地 | 1374 | 的 |
+| 片段 | 分类 | 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
+| --- | --- | --- | ---: | --- | ---: | --- |
+| 002 | different_pronunciation_substitution | substitution | 58 | 罗 | 58 | 洛 |
+| 003 | same_pronunciation_substitution | substitution | 175 | 刻 | 175 | 课 |
+| 003 | same_pronunciation_substitution | substitution | 176 | 纹 | 176 | 文 |
+| 004 | same_pronunciation_substitution | substitution | 202 | 质 | 202 | 制 |
+| 005 | same_pronunciation_substitution | substitution | 307 | 兰 | 307 | 蓝 |
+| 005 | same_pronunciation_substitution | substitution | 308 | 经 | 308 | 鲸 |
+| 006 | same_pronunciation_substitution | substitution | 368 | 它 | 368 | 他 |
+| 007 | same_pronunciation_substitution | substitution | 435 | 娜 | 435 | 纳 |
+| 007 | same_pronunciation_substitution | substitution | 440 | 娜 | 440 | 纳 |
+| 007 | different_pronunciation_substitution | substitution | 454 | 地 | 454 | 的 |
+| 009 | same_pronunciation_substitution | substitution | 541 | 他 | 541 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 560 | 他 | 560 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 579 | 莉 | 579 | 丽 |
+| 009 | same_pronunciation_substitution | substitution | 580 | 娅 | 580 | 亚 |
+| 009 | same_pronunciation_substitution | substitution | 584 | 他 | 584 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 586 | 他 | 586 | 她 |
+| 010 | different_pronunciation_substitution | substitution | 650 | 得 | 650 | 的 |
+| 011 | same_pronunciation_substitution | substitution | 703 | 她 | 703 | 他 |
+| 011 | different_pronunciation_substitution | substitution | 726 | 罗 | 726 | 洛 |
+| 012 | different_pronunciation_substitution | substitution | 729 | 我 | 729 | 无 |
+| 012 | same_pronunciation_substitution | substitution | 730 | 胃 | 730 | 谓 |
+| 013 | same_pronunciation_substitution | substitution | 833 | 她 | 833 | 他 |
+| 013 | same_pronunciation_substitution | substitution | 839 | 莉 | 839 | 丽 |
+| 013 | same_pronunciation_substitution | substitution | 840 | 娅 | 840 | 亚 |
+| 014 | same_pronunciation_substitution | substitution | 850 | 她 | 850 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 868 | 她 | 868 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 875 | 她 | 875 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 890 | 她 | 890 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 899 | 刻 | 899 | 课 |
+| 014 | same_pronunciation_substitution | substitution | 900 | 纹 | 900 | 文 |
+| 015 | same_pronunciation_substitution | substitution | 937 | 智 | 937 | 志 |
+| 015 | same_pronunciation_substitution | substitution | 966 | 役 | 966 | 意 |
+| 015 | different_pronunciation_substitution | substitution | 967 | 使 | 967 | 识 |
+| 017 | same_pronunciation_substitution | substitution | 1074 | 她 | 1074 | 他 |
+| 017 | same_pronunciation_substitution | substitution | 1121 | 莉 | 1121 | 利 |
+| 017 | same_pronunciation_substitution | substitution | 1122 | 娅 | 1122 | 亚 |
+| 018 | same_pronunciation_substitution | substitution | 1128 | 她 | 1128 | 他 |
+| 020 | different_pronunciation_substitution | substitution | 1304 | 地 | 1304 | 的 |
+| 021 | same_pronunciation_substitution | substitution | 1356 | 她 | 1356 | 他 |
+| 021 | different_pronunciation_substitution | substitution | 1364 | 地 | 1364 | 的 |
+| 021 | different_pronunciation_substitution | substitution | 1375 | 两 | 1375 | 2 |
+| 021 | different_pronunciation_substitution | substitution | 1398 | 地 | 1398 | 的 |
+| 022 | same_pronunciation_substitution | substitution | 1416 | 她 | 1416 | 他 |
+| 022 | different_pronunciation_substitution | substitution | 1441 | 地 | 1441 | 的 |
+| 022 | different_pronunciation_substitution | substitution | 1475 | 地 | 1475 | 的 |
 
 #### Whisper-large-v3-turbo
 
-- 全文 CER：`0.178782`；字符编辑数：`273`。
-- 分段：连续、无重叠的 18 段；解码参数已保存在原始证据。
+- 严格汉字 CER：`0.040602`；字符编辑数：`62`。
+- 拼音 CER：`0.009823`；拼音 token 编辑数：`15`。
+- ASR 健康：`healthy`；不可靠片段：无；该后端参与名次。
+- 分段：按冻结合成证据的 23 个语义段逐段解码；解码参数已保存在原始证据。
 
 完整转写：
 
 ```text
-视频通话接通了我的男朋友微笑着首先我爱你我想你我等不及你回家了我也爱你我也等不及了我盯着电脑屏幕你在哪儿我在阁楼里布洛迪回答我把弓箭器材放上去的时候她刚在休斯顿一个安静的社区买了一栋老房子我希望那里有一天能成为我们的社区我们交往三年了我猜她可能会在今年春天我大学毕业之后求婚看看这个她把一个落满灰尘的箱子拖到吊灯下面好让我看清上面的课文像是阿拉伯文,他打开箱子,取出一个三角形护身符,银制的,上面有同样的标记,接着是一个极小的推拉盒,里面装着碎纸片,木屑,还有一些辨认不出的块状物,闻起来像茉莉花,他凑近绣了绣,下一个物件,是个漱口袋,把里面的东西倒在掌心里呃脚指甲搞什么鬼箱子里最后两样东西是一本破旧的古兰经和一盒玻璃球装饰品不是没有挂钩或绳子的地方有三个透明的还有这个他举起来给我看是烟熏黄的颜色我发誓那球在他掌心里动了一下,他摔到地上,碎了,有什么东西闪过,像火焰一样。布罗迪骂了一句,那是什么?我喊道。我……我不知道。他盯着我视线之外的地方,他歪着头,好像在听什么。唐纳特什么唐纳特是他母亲的名字布罗迪茫然地看着屏幕说我得挂了没再多说一个字他结束了skype通话我试图打回去他没接那晚他也没接终于第二天早上他接了我现在有点忙他说声音很沉你还好吗嗯她说然后挂断了接下来一整天我都没有她的消息于是我打电话给她姐姐让她去看看她一小时后她回了电话她的声音很谨慎嗯阿丽亚我看见她了她看起来有点糟听着你们吵架了吗什么没有我告诉他你在担心他他就那么看着我他昨天还好好的我们还在计划圣诞假期的安排又是一阵犹豫他表现得几乎像磕了药我从不知道布罗迪会他不会从来不会好吧,只是给他一两天时间,也许他真的在忙什么事,有消息我会告诉你的,但他没有,我也没有,他不接我电话也不回短信,这太不像布罗迪了。但我上学期修了一门伊斯兰传统的课程我很喜欢那位教授在飞回家前的那个早上我顺道去了他的办公室阿利亚真是个惊喜告诉他布洛迪的发现和那同诡异的视频通话时,他的笑容消失了。他走到书架前,拿起一本书,翻了几页,他停下来递给我。那些课文和护身符是不是长这样?是的。这是什么?我们课上没有多讲,我笑了你是说神灯精灵你描述的那些是邪恶的魔法你说他重复了他母亲的名字传说中魔法师需要三样东西才能跟恶魔谈论你一个名字你母亲的名字和一份痕迹头发指甲屑您不会真的相信有精灵吧他看了我很久然后说我会发一封邮件给你里面有一些经文等你见到布罗迪不妨试试还有阿丽亚小心点我对她的警告一笑置之但那天下午敲响布罗迪家门时我的心沉甸甸的她敲到第三下才开门她的样子让我震惊她看起来很疲惫胡子拉叉不服我是个陌生人布罗迪怎么回事她身后的走廊里有什么东西一闪而过像是相机闪光灯的余晖我发誓我瞬间看见了一个火焰凝成的女人她回头看了一眼又转向我你该走了她当着我的面关上了门想到夜幕降临拿了藏着的钥匙自己开了门房子里很安静我捏手捏脚地穿过各个房间寻找她当我偷偷望向她的卧室时我倒吸一口凉气布罗迪趴扶在床上盯着天花板那个火焰女人坐在她身上她听到我的动静转过头来 嘶嘶作响露出两英寸长的尖牙我跑了穿过房子时门像枪声一样砰砰的关河前门打不开了我尖叫着猛拉门把手他在逼近阁楼的梯子放下来了我冲了上去我掏出手机疯狂地想打开教授我一直念诵着导师发给我的经文直到我的声音和手机电池都耗尽现在我闻到了烟味
+视频通话接通了,我的男朋友微笑着,首先,我爱你,我想你,我等不及你回家了,我也爱你,我也等不及了,我盯着电脑屏幕,你在哪儿?我在阁楼里布洛迪回答我把弓箭器材放上去的时候发现了个挺酷的东西他刚在休斯顿一个安静的社区买了一栋老房子我希望那里有一天能成为我们的社区我们交往三年了我猜他可能会在今年春天我大学毕业之后求婚看看这个他把一个落满灰尘的箱子拖到吊灯下面好让我看清上面的课文看起来像是阿拉伯文她打开箱子取出一个三角形护身符银制的上面有同样的标记接着是一个极小的推拉盒里面装着碎纸片木屑还有一些辨认不出的块状物闻起来像茉莉花她凑近绣了绣下一个物件是个漱口袋他打开袋子把里面的东西倒在掌心里呃脚指甲搞什么鬼箱子里最后两样东西是一本破旧的古兰经和一盒玻璃球装饰品不是没有挂钩或绳子的地方有三个透明的还有这个他举起来给我看是烟熏黄的颜色我发誓那球在他掌心里冻了一下他摔到地上碎了有什么东西闪过像火焰一样布罗迪骂了一句那是什么我喊道我我不知道他盯着我视线之外的地方他歪着头好像在听什么布罗迪他说然后唐纳特什么唐纳特是他母亲的名字布罗迪茫然地看着屏幕说我得挂了没再多说一个字,她结束了Skype通话。我试图打回去,她没接,那晚她也没接。终于,第二天早上,她接了,我现在有点忙。她说,声音很沉,你还好吗?嗯,她说,然后挂断了。接下来一整天我都没有她的消息于是我打电话给她姐姐让她去看看她一小时后她回了电话她的声音很谨慎嗯阿丽雅我看见她了她看起来有点糟听着你们吵架了吗什么没有我告诉他你在担心他他就那么看着我他昨天还好好的我们还在计划圣诞假期的安排又是一阵犹豫他表现得几乎像磕了药我从不知道布罗迪会他不会从来不会好吧只是给他一两天时间也许他真的在忙什么事有消息我会告诉你的但他没有我也没有他不接我电话也不回短信这太不像布罗迪了我为李翻江倒海真不知道我怎么熬过期末考试的我想到了他找到的那些奇怪的东西一定和那有关我的祖母是孟加拉乙穆斯林我父亲不信仰任何宗教但我上学期修了一门伊斯兰传统的课程我很喜欢那位教授在飞回家前的那个早上我顺道去了他的办公室阿里亚真是个惊喜当我告诉他布洛迪的发现和那同诡异的视频通话时他的笑容消失了他走到书架前拿起一本书翻了几页他停下来递给我那些课文和护身符是不是长这样是的这是什么我们课上没有多讲但古兰经认为安拉有三种有智史的造物天使人类和精灵你描述的那些物件是魔法师用来控制和意识精灵的有时他们会把这些生物困在玻璃球里精灵我笑了你是说神灯精灵你描述的那些是邪恶的魔法你说他重复了他母亲的名字传说中魔法师需要三样东西才能跟恶魔谈论你一个名字你母亲的名字和一份痕迹头发指甲屑您不会真的相信有精灵吧他看了我很久然后说我会发一封邮件给你里面有一些经文可以抵御精灵附身等你见到布罗迪不妨试试还有阿利亚小心点我对他的警告一笑置之但那天下午敲响布罗迪家门时我的心沉甸甸的他敲到第三下才开门他的样子让我震惊他看起来很疲惫胡子拉叉他看着我仿佛我是个陌生人布罗迪怎么回事她身后的走廊里有什么东西一闪而过像是相机闪光灯的余晖我发誓我瞬间看见了一个火焰凝成的女人她回头看了一眼又转向我你该走了她当着我的面关上了门我一直等到夜幕降临拿了藏着的钥匙自己开了门房子里很安静我捏手捏脚地穿过各个房间寻找他当我偷偷望向他的卧室时我倒吸一口凉气布罗迪趴扶在床上盯着天花板那个火焰女人坐在她身上她听到我的动静猛地转过头来嘶嘶作响露出两英寸长的尖牙我跑了穿过房子时门像枪声一样砰砰的关河前门打不开了我尖叫着猛拉门把手他在逼近阁楼的梯子放下来了我冲了上去我掏出手机疯狂地想打开教授发给我的邮件透过阁楼口布罗迪和那个火焰女人仰头盯着我门砰地关上了我被困在这里好几个小时了我一直念诵着导师发给我的经文直到我的声音和手机电池都耗尽现在我闻到了烟味
 ```
 
-字符错误位置（参考与转写索引均从 0 开始）：
+严格汉字差异位置（参考与转写索引均从 0 开始；不是人工确认的错读结论）：
 
-| 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
-| --- | ---: | --- | ---: | --- |
-| substitution | 58 | 罗 | 58 | 洛 |
-| deletion | 74 | 发 | 74 | ∅ |
-| deletion | 75 | 现 | 74 | ∅ |
-| deletion | 76 | 了 | 74 | ∅ |
-| deletion | 77 | 个 | 74 | ∅ |
-| deletion | 78 | 挺 | 74 | ∅ |
-| deletion | 79 | 酷 | 74 | ∅ |
-| deletion | 80 | 的 | 74 | ∅ |
-| deletion | 81 | 东 | 74 | ∅ |
-| deletion | 82 | 西 | 74 | ∅ |
-| substitution | 83 | 他 | 74 | 她 |
-| substitution | 88 | 敦 | 79 | 顿 |
-| substitution | 128 | 他 | 119 | 她 |
-| substitution | 150 | 他 | 141 | 她 |
-| deletion | 175 | 刻 | 166 | ∅ |
-| deletion | 176 | 纹 | 166 | ∅ |
-| deletion | 177 | 看 | 166 | ∅ |
-| substitution | 178 | 起 | 166 | 课 |
-| substitution | 179 | 来 | 167 | 文 |
-| substitution | 202 | 质 | 190 | 制 |
-| substitution | 254 | 嗅 | 242 | 绣 |
-| substitution | 256 | 嗅 | 244 | 绣 |
-| substitution | 264 | 束 | 252 | 漱 |
-| deletion | 266 | 袋 | 254 | ∅ |
-| deletion | 267 | 他 | 254 | ∅ |
-| deletion | 268 | 打 | 254 | ∅ |
-| deletion | 269 | 开 | 254 | ∅ |
-| deletion | 271 | 子 | 255 | ∅ |
-| substitution | 285 | 趾 | 268 | 指 |
-| substitution | 368 | 它 | 351 | 他 |
-| deletion | 427 | 布 | 410 | ∅ |
-| deletion | 428 | 罗 | 410 | ∅ |
-| deletion | 429 | 迪 | 410 | ∅ |
-| deletion | 430 | 他 | 410 | ∅ |
-| deletion | 431 | 说 | 410 | ∅ |
-| deletion | 432 | 然 | 410 | ∅ |
-| deletion | 433 | 后 | 410 | ∅ |
-| substitution | 435 | 娜 | 411 | 纳 |
-| substitution | 440 | 娜 | 416 | 纳 |
-| substitution | 524 | 他 | 500 | 她 |
-| substitution | 541 | 他 | 517 | 她 |
-| substitution | 552 | 他 | 528 | 她 |
-| substitution | 560 | 他 | 536 | 她 |
-| substitution | 579 | 莉 | 555 | 丽 |
-| substitution | 580 | 娅 | 556 | 亚 |
-| substitution | 584 | 他 | 560 | 她 |
-| substitution | 586 | 他 | 562 | 她 |
-| insertion | 672 | ∅ | 648 | 会 |
-| substitution | 703 | 她 | 680 | 他 |
-| deletion | 728 | 了 | 705 | ∅ |
-| deletion | 729 | 我 | 705 | ∅ |
-| deletion | 730 | 胃 | 705 | ∅ |
-| deletion | 731 | 里 | 705 | ∅ |
-| deletion | 732 | 翻 | 705 | ∅ |
-| deletion | 733 | 江 | 705 | ∅ |
-| deletion | 734 | 倒 | 705 | ∅ |
-| deletion | 735 | 海 | 705 | ∅ |
-| deletion | 736 | 真 | 705 | ∅ |
-| deletion | 737 | 不 | 705 | ∅ |
-| deletion | 738 | 知 | 705 | ∅ |
-| deletion | 739 | 道 | 705 | ∅ |
-| deletion | 740 | 我 | 705 | ∅ |
-| deletion | 741 | 怎 | 705 | ∅ |
-| deletion | 742 | 么 | 705 | ∅ |
-| deletion | 743 | 熬 | 705 | ∅ |
-| deletion | 744 | 过 | 705 | ∅ |
-| deletion | 745 | 期 | 705 | ∅ |
-| deletion | 746 | 末 | 705 | ∅ |
-| deletion | 747 | 考 | 705 | ∅ |
-| deletion | 748 | 试 | 705 | ∅ |
-| deletion | 749 | 的 | 705 | ∅ |
-| deletion | 750 | 我 | 705 | ∅ |
-| deletion | 751 | 想 | 705 | ∅ |
-| deletion | 752 | 到 | 705 | ∅ |
-| deletion | 754 | 他 | 706 | ∅ |
-| deletion | 755 | 找 | 706 | ∅ |
-| deletion | 756 | 到 | 706 | ∅ |
-| deletion | 757 | 的 | 706 | ∅ |
-| deletion | 758 | 那 | 706 | ∅ |
-| deletion | 759 | 些 | 706 | ∅ |
-| deletion | 760 | 奇 | 706 | ∅ |
-| deletion | 761 | 怪 | 706 | ∅ |
-| deletion | 762 | 的 | 706 | ∅ |
-| deletion | 763 | 东 | 706 | ∅ |
-| deletion | 764 | 西 | 706 | ∅ |
-| deletion | 765 | 一 | 706 | ∅ |
-| deletion | 766 | 定 | 706 | ∅ |
-| deletion | 767 | 和 | 706 | ∅ |
-| deletion | 768 | 那 | 706 | ∅ |
-| deletion | 769 | 有 | 706 | ∅ |
-| deletion | 770 | 关 | 706 | ∅ |
-| deletion | 771 | 我 | 706 | ∅ |
-| deletion | 772 | 的 | 706 | ∅ |
-| deletion | 773 | 祖 | 706 | ∅ |
-| deletion | 774 | 母 | 706 | ∅ |
-| deletion | 775 | 是 | 706 | ∅ |
-| deletion | 776 | 孟 | 706 | ∅ |
-| deletion | 777 | 加 | 706 | ∅ |
-| deletion | 778 | 拉 | 706 | ∅ |
-| deletion | 779 | 裔 | 706 | ∅ |
-| deletion | 780 | 穆 | 706 | ∅ |
-| deletion | 781 | 斯 | 706 | ∅ |
-| deletion | 782 | 林 | 706 | ∅ |
-| deletion | 783 | 我 | 706 | ∅ |
-| deletion | 784 | 父 | 706 | ∅ |
-| deletion | 785 | 亲 | 706 | ∅ |
-| deletion | 786 | 不 | 706 | ∅ |
-| deletion | 787 | 信 | 706 | ∅ |
-| deletion | 788 | 仰 | 706 | ∅ |
-| deletion | 789 | 任 | 706 | ∅ |
-| deletion | 790 | 何 | 706 | ∅ |
-| deletion | 791 | 宗 | 706 | ∅ |
-| deletion | 792 | 教 | 706 | ∅ |
-| substitution | 833 | 她 | 746 | 他 |
-| substitution | 839 | 莉 | 752 | 利 |
-| substitution | 840 | 娅 | 753 | 亚 |
-| deletion | 846 | 当 | 759 | ∅ |
-| deletion | 847 | 我 | 759 | ∅ |
-| substitution | 850 | 她 | 761 | 他 |
-| substitution | 852 | 罗 | 763 | 洛 |
-| substitution | 859 | 通 | 770 | 同 |
-| substitution | 868 | 她 | 779 | 他 |
-| substitution | 875 | 她 | 786 | 他 |
-| substitution | 890 | 她 | 801 | 他 |
-| substitution | 899 | 刻 | 810 | 课 |
-| substitution | 900 | 纹 | 811 | 文 |
-| deletion | 925 | 但 | 836 | ∅ |
-| deletion | 926 | 古 | 836 | ∅ |
-| deletion | 927 | 兰 | 836 | ∅ |
-| deletion | 928 | 经 | 836 | ∅ |
-| deletion | 929 | 认 | 836 | ∅ |
-| deletion | 930 | 为 | 836 | ∅ |
-| deletion | 931 | 安 | 836 | ∅ |
-| deletion | 932 | 拉 | 836 | ∅ |
-| deletion | 933 | 有 | 836 | ∅ |
-| deletion | 934 | 三 | 836 | ∅ |
-| deletion | 935 | 种 | 836 | ∅ |
-| deletion | 936 | 有 | 836 | ∅ |
-| deletion | 937 | 智 | 836 | ∅ |
-| deletion | 938 | 识 | 836 | ∅ |
-| deletion | 939 | 的 | 836 | ∅ |
-| deletion | 940 | 造 | 836 | ∅ |
-| deletion | 941 | 物 | 836 | ∅ |
-| deletion | 942 | 天 | 836 | ∅ |
-| deletion | 943 | 使 | 836 | ∅ |
-| deletion | 944 | 人 | 836 | ∅ |
-| deletion | 945 | 类 | 836 | ∅ |
-| deletion | 946 | 和 | 836 | ∅ |
-| deletion | 947 | 精 | 836 | ∅ |
-| deletion | 948 | 灵 | 836 | ∅ |
-| deletion | 949 | 你 | 836 | ∅ |
-| deletion | 950 | 描 | 836 | ∅ |
-| deletion | 951 | 述 | 836 | ∅ |
-| deletion | 952 | 的 | 836 | ∅ |
-| deletion | 953 | 那 | 836 | ∅ |
-| deletion | 954 | 些 | 836 | ∅ |
-| deletion | 955 | 物 | 836 | ∅ |
-| deletion | 956 | 件 | 836 | ∅ |
-| deletion | 957 | 是 | 836 | ∅ |
-| deletion | 958 | 魔 | 836 | ∅ |
-| deletion | 959 | 法 | 836 | ∅ |
-| deletion | 960 | 师 | 836 | ∅ |
-| deletion | 961 | 用 | 836 | ∅ |
-| deletion | 962 | 来 | 836 | ∅ |
-| deletion | 963 | 控 | 836 | ∅ |
-| deletion | 964 | 制 | 836 | ∅ |
-| deletion | 965 | 和 | 836 | ∅ |
-| deletion | 966 | 役 | 836 | ∅ |
-| deletion | 967 | 使 | 836 | ∅ |
-| deletion | 968 | 精 | 836 | ∅ |
-| deletion | 969 | 灵 | 836 | ∅ |
-| deletion | 970 | 的 | 836 | ∅ |
-| deletion | 971 | 有 | 836 | ∅ |
-| deletion | 972 | 时 | 836 | ∅ |
-| deletion | 973 | 他 | 836 | ∅ |
-| deletion | 974 | 们 | 836 | ∅ |
-| deletion | 975 | 会 | 836 | ∅ |
-| deletion | 976 | 把 | 836 | ∅ |
-| deletion | 977 | 这 | 836 | ∅ |
-| deletion | 978 | 些 | 836 | ∅ |
-| deletion | 979 | 生 | 836 | ∅ |
-| deletion | 980 | 物 | 836 | ∅ |
-| deletion | 981 | 困 | 836 | ∅ |
-| deletion | 982 | 在 | 836 | ∅ |
-| deletion | 983 | 玻 | 836 | ∅ |
-| deletion | 984 | 璃 | 836 | ∅ |
-| deletion | 985 | 球 | 836 | ∅ |
-| deletion | 986 | 里 | 836 | ∅ |
-| deletion | 987 | 精 | 836 | ∅ |
-| deletion | 988 | 灵 | 836 | ∅ |
-| substitution | 1074 | 她 | 921 | 他 |
-| deletion | 1099 | 可 | 946 | ∅ |
-| deletion | 1100 | 以 | 946 | ∅ |
-| deletion | 1101 | 抵 | 946 | ∅ |
-| deletion | 1102 | 御 | 946 | ∅ |
-| deletion | 1103 | 精 | 946 | ∅ |
-| deletion | 1104 | 灵 | 946 | ∅ |
-| deletion | 1105 | 附 | 946 | ∅ |
-| deletion | 1106 | 身 | 946 | ∅ |
-| substitution | 1121 | 莉 | 960 | 丽 |
-| substitution | 1122 | 娅 | 961 | 亚 |
-| substitution | 1156 | 他 | 995 | 她 |
-| substitution | 1165 | 他 | 1004 | 她 |
-| substitution | 1173 | 他 | 1012 | 她 |
-| deletion | 1183 | 碴 | 1022 | ∅ |
-| deletion | 1184 | 他 | 1022 | ∅ |
-| deletion | 1185 | 看 | 1022 | ∅ |
-| deletion | 1186 | 着 | 1022 | ∅ |
-| substitution | 1187 | 我 | 1022 | 叉 |
-| substitution | 1188 | 仿 | 1023 | 不 |
-| substitution | 1189 | 佛 | 1024 | 服 |
-| substitution | 1203 | 他 | 1038 | 她 |
-| substitution | 1247 | 他 | 1082 | 她 |
-| substitution | 1262 | 他 | 1097 | 她 |
-| deletion | 1272 | 我 | 1107 | ∅ |
-| deletion | 1273 | 一 | 1107 | ∅ |
-| deletion | 1274 | 直 | 1107 | ∅ |
-| substitution | 1275 | 等 | 1107 | 想 |
-| substitution | 1300 | 蹑 | 1132 | 捏 |
-| substitution | 1302 | 蹑 | 1134 | 捏 |
-| substitution | 1313 | 他 | 1145 | 她 |
-| substitution | 1320 | 他 | 1152 | 她 |
-| substitution | 1336 | 伏 | 1168 | 扶 |
-| substitution | 1353 | 他 | 1185 | 她 |
-| deletion | 1363 | 猛 | 1195 | ∅ |
-| deletion | 1364 | 地 | 1195 | ∅ |
-| substitution | 1398 | 地 | 1228 | 的 |
-| substitution | 1400 | 合 | 1230 | 河 |
-| substitution | 1416 | 她 | 1246 | 他 |
-| deletion | 1447 | 发 | 1277 | ∅ |
-| deletion | 1448 | 给 | 1277 | ∅ |
-| deletion | 1449 | 我 | 1277 | ∅ |
-| deletion | 1450 | 的 | 1277 | ∅ |
-| deletion | 1451 | 邮 | 1277 | ∅ |
-| deletion | 1452 | 件 | 1277 | ∅ |
-| deletion | 1453 | 透 | 1277 | ∅ |
-| deletion | 1454 | 过 | 1277 | ∅ |
-| deletion | 1455 | 阁 | 1277 | ∅ |
-| deletion | 1456 | 楼 | 1277 | ∅ |
-| deletion | 1457 | 口 | 1277 | ∅ |
-| deletion | 1458 | 布 | 1277 | ∅ |
-| deletion | 1459 | 罗 | 1277 | ∅ |
-| deletion | 1460 | 迪 | 1277 | ∅ |
-| deletion | 1461 | 和 | 1277 | ∅ |
-| deletion | 1462 | 那 | 1277 | ∅ |
-| deletion | 1463 | 个 | 1277 | ∅ |
-| deletion | 1464 | 火 | 1277 | ∅ |
-| deletion | 1465 | 焰 | 1277 | ∅ |
-| deletion | 1466 | 女 | 1277 | ∅ |
-| deletion | 1467 | 人 | 1277 | ∅ |
-| deletion | 1468 | 仰 | 1277 | ∅ |
-| deletion | 1469 | 头 | 1277 | ∅ |
-| deletion | 1470 | 盯 | 1277 | ∅ |
-| deletion | 1471 | 着 | 1277 | ∅ |
-| deletion | 1472 | 我 | 1277 | ∅ |
-| deletion | 1473 | 门 | 1277 | ∅ |
-| deletion | 1474 | 砰 | 1277 | ∅ |
-| deletion | 1475 | 地 | 1277 | ∅ |
-| deletion | 1476 | 关 | 1277 | ∅ |
-| deletion | 1477 | 上 | 1277 | ∅ |
-| deletion | 1478 | 了 | 1277 | ∅ |
-| deletion | 1479 | 我 | 1277 | ∅ |
-| deletion | 1480 | 被 | 1277 | ∅ |
-| deletion | 1481 | 困 | 1277 | ∅ |
-| deletion | 1482 | 在 | 1277 | ∅ |
-| deletion | 1483 | 这 | 1277 | ∅ |
-| deletion | 1484 | 里 | 1277 | ∅ |
-| deletion | 1485 | 好 | 1277 | ∅ |
-| deletion | 1486 | 几 | 1277 | ∅ |
-| deletion | 1487 | 个 | 1277 | ∅ |
-| deletion | 1488 | 小 | 1277 | ∅ |
-| deletion | 1489 | 时 | 1277 | ∅ |
-| deletion | 1490 | 了 | 1277 | ∅ |
+| 片段 | 分类 | 操作 | 参考索引 | 参考字符 | 转写索引 | 转写字符 |
+| --- | --- | --- | ---: | --- | ---: | --- |
+| 002 | different_pronunciation_substitution | substitution | 58 | 罗 | 58 | 洛 |
+| 002 | different_pronunciation_substitution | substitution | 88 | 敦 | 88 | 顿 |
+| 003 | same_pronunciation_substitution | substitution | 175 | 刻 | 175 | 课 |
+| 003 | same_pronunciation_substitution | substitution | 176 | 纹 | 176 | 文 |
+| 004 | same_pronunciation_substitution | substitution | 186 | 他 | 186 | 她 |
+| 004 | same_pronunciation_substitution | substitution | 202 | 质 | 202 | 制 |
+| 004 | same_pronunciation_substitution | substitution | 251 | 他 | 251 | 她 |
+| 004 | same_pronunciation_substitution | substitution | 254 | 嗅 | 254 | 绣 |
+| 004 | same_pronunciation_substitution | substitution | 256 | 嗅 | 256 | 绣 |
+| 005 | same_pronunciation_substitution | substitution | 264 | 束 | 264 | 漱 |
+| 005 | same_pronunciation_substitution | substitution | 285 | 趾 | 285 | 指 |
+| 006 | same_pronunciation_substitution | substitution | 364 | 动 | 364 | 冻 |
+| 006 | same_pronunciation_substitution | substitution | 368 | 它 | 368 | 他 |
+| 007 | same_pronunciation_substitution | substitution | 435 | 娜 | 435 | 纳 |
+| 007 | same_pronunciation_substitution | substitution | 440 | 娜 | 440 | 纳 |
+| 008 | same_pronunciation_substitution | substitution | 471 | 他 | 471 | 她 |
+| 008 | same_pronunciation_substitution | substitution | 488 | 他 | 488 | 她 |
+| 008 | same_pronunciation_substitution | substitution | 493 | 他 | 493 | 她 |
+| 008 | same_pronunciation_substitution | substitution | 504 | 他 | 504 | 她 |
+| 008 | same_pronunciation_substitution | substitution | 513 | 他 | 513 | 她 |
+| 008 | same_pronunciation_substitution | substitution | 524 | 他 | 524 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 541 | 他 | 541 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 552 | 他 | 552 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 560 | 他 | 560 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 579 | 莉 | 579 | 丽 |
+| 009 | different_pronunciation_substitution | substitution | 580 | 娅 | 580 | 雅 |
+| 009 | same_pronunciation_substitution | substitution | 584 | 他 | 584 | 她 |
+| 009 | same_pronunciation_substitution | substitution | 586 | 他 | 586 | 她 |
+| 010 | insertion | insertion | 672 | ∅ | 672 | 会 |
+| 011 | same_pronunciation_substitution | substitution | 703 | 她 | 704 | 他 |
+| 012 | same_pronunciation_substitution | substitution | 730 | 胃 | 731 | 为 |
+| 012 | same_pronunciation_substitution | substitution | 731 | 里 | 732 | 李 |
+| 012 | different_pronunciation_substitution | substitution | 779 | 裔 | 780 | 乙 |
+| 013 | same_pronunciation_substitution | substitution | 833 | 她 | 834 | 他 |
+| 013 | different_pronunciation_substitution | substitution | 839 | 莉 | 840 | 里 |
+| 013 | same_pronunciation_substitution | substitution | 840 | 娅 | 841 | 亚 |
+| 014 | same_pronunciation_substitution | substitution | 850 | 她 | 851 | 他 |
+| 014 | different_pronunciation_substitution | substitution | 852 | 罗 | 853 | 洛 |
+| 014 | different_pronunciation_substitution | substitution | 859 | 通 | 860 | 同 |
+| 014 | same_pronunciation_substitution | substitution | 868 | 她 | 869 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 875 | 她 | 876 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 890 | 她 | 891 | 他 |
+| 014 | same_pronunciation_substitution | substitution | 899 | 刻 | 900 | 课 |
+| 014 | same_pronunciation_substitution | substitution | 900 | 纹 | 901 | 文 |
+| 015 | different_pronunciation_substitution | substitution | 938 | 识 | 939 | 史 |
+| 015 | same_pronunciation_substitution | substitution | 966 | 役 | 967 | 意 |
+| 015 | different_pronunciation_substitution | substitution | 967 | 使 | 968 | 识 |
+| 017 | same_pronunciation_substitution | substitution | 1074 | 她 | 1075 | 他 |
+| 017 | same_pronunciation_substitution | substitution | 1121 | 莉 | 1122 | 利 |
+| 017 | same_pronunciation_substitution | substitution | 1122 | 娅 | 1123 | 亚 |
+| 018 | same_pronunciation_substitution | substitution | 1128 | 她 | 1129 | 他 |
+| 018 | different_pronunciation_substitution | substitution | 1183 | 碴 | 1184 | 叉 |
+| 019 | same_pronunciation_substitution | substitution | 1203 | 他 | 1204 | 她 |
+| 019 | same_pronunciation_substitution | substitution | 1247 | 他 | 1248 | 她 |
+| 019 | same_pronunciation_substitution | substitution | 1262 | 他 | 1263 | 她 |
+| 020 | different_pronunciation_substitution | substitution | 1300 | 蹑 | 1301 | 捏 |
+| 020 | different_pronunciation_substitution | substitution | 1302 | 蹑 | 1303 | 捏 |
+| 020 | same_pronunciation_substitution | substitution | 1336 | 伏 | 1337 | 扶 |
+| 021 | same_pronunciation_substitution | substitution | 1353 | 他 | 1354 | 她 |
+| 021 | different_pronunciation_substitution | substitution | 1398 | 地 | 1399 | 的 |
+| 021 | same_pronunciation_substitution | substitution | 1400 | 合 | 1401 | 河 |
+| 022 | same_pronunciation_substitution | substitution | 1416 | 她 | 1417 | 他 |
 
-## 双后端分歧项
+## 双后端分歧与 ASR 健康门控
 
 ### IndexTTS2
 
-- 仅 SenseVoice 报告的错误：29 项。
-- 仅 Whisper-large-v3-turbo 报告的错误：261 项。
-- 两后端共同报告的错误：26 项。
+- 仅 SenseVoice 报告的错误：24 项。
+- 仅 Whisper-large-v3-turbo 报告的错误：24 项。
+- 两后端共同报告的错误：27 项。
+- 同段转写共识健康：`healthy`；分歧过大的片段：无。
 
 ### VoxCPM2
 
-- 仅 SenseVoice 报告的错误：119 项。
-- 仅 Whisper-large-v3-turbo 报告的错误：241 项。
-- 两后端共同报告的错误：32 项。
+- 仅 SenseVoice 报告的错误：16 项。
+- 仅 Whisper-large-v3-turbo 报告的错误：33 项。
+- 两后端共同报告的错误：29 项。
+- 同段转写共识健康：`healthy`；分歧过大的片段：无。

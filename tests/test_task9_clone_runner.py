@@ -110,6 +110,25 @@ def test_preflight_refuses_existing_audio_without_overwrite(tmp_path: Path) -> N
         raise AssertionError("已有目标音频时必须要求显式覆盖确认")
 
 
+def test_dry_run_allows_existing_audio_without_overwrite(tmp_path: Path) -> None:
+    runner = load_module("task9_runner_dry_run_existing", RUNNER_PATH)
+    task_dir, mirror, code_path, _ = create_task_inputs(tmp_path)
+    (task_dir / "audio_indextts2.wav").write_bytes(b"existing")
+    args = runner.parse_args(
+        [
+            "--task-dir",
+            str(task_dir),
+            "--hf-mirror-root",
+            str(mirror),
+            "--indextts-code-path",
+            str(code_path),
+            "--dry-run",
+        ]
+    )
+
+    runner.validate_preflight(args, runner.task_paths(args.task_dir), runner.resolve_model_paths(args))
+
+
 def test_preflight_ignores_completed_unselected_model_output(tmp_path: Path) -> None:
     runner = load_module("task9_runner_selected_overwrite", RUNNER_PATH)
     task_dir, mirror, code_path, _ = create_task_inputs(tmp_path)

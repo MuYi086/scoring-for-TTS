@@ -302,6 +302,13 @@ def run(args: argparse.Namespace) -> Path:
         if trimmed_samples:
             print(f"已裁掉前导静音 {trimmed_samples / sample_rate:.2f}s")
         sf.write(str(output), waveform, sample_rate, format="WAV")
+        try:
+            info = sf.info(str(output))
+            decoded, decoded_rate = sf.read(str(output), frames=1, dtype="float32", always_2d=True)
+        except RuntimeError as exc:
+            raise RuntimeError(f"IndexTTS2 成品 WAV 无法解码：{output}: {exc}") from exc
+        if info.frames <= 0 or decoded_rate != sample_rate or len(decoded) == 0:
+            raise RuntimeError(f"IndexTTS2 成品 WAV 为空或采样率异常：{output}")
         if args.segment_evidence_root is not None:
             evidence = write_synthesis_evidence(
                 evidence_root=args.segment_evidence_root,

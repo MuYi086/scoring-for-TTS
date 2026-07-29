@@ -204,7 +204,9 @@ def validate_preflight(args: argparse.Namespace, inputs: TaskPaths, models: Mode
     require_directory(models.voxcpm2_model, "VoxCPM2 模型目录")
     if shutil.which(args.conda_executable) is None:
         raise FileNotFoundError(f"找不到 Conda 可执行文件：{args.conda_executable}")
-    if not args.overwrite:
+    # ``--dry-run`` 只检查可执行条件，不会触碰目标文件；已有成品不应妨碍
+    # 用户先查看即将运行的共享清单和命令。实际合成仍必须显式确认覆盖。
+    if not args.dry_run and not args.overwrite:
         outputs = {
             "indextts2": inputs.indextts_output,
             "voxcpm2": inputs.voxcpm2_output,
@@ -355,7 +357,7 @@ def run(args: argparse.Namespace) -> int:
 def main() -> int:
     try:
         return run(parse_args())
-    except (FileNotFoundError, RuntimeError, ValueError) as error:
+    except (FileNotFoundError, FileExistsError, RuntimeError, ValueError) as error:
         print(f"Task 9 合成编排失败：{error}", file=sys.stderr)
         return 2
 

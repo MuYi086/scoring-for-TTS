@@ -67,9 +67,14 @@ def write_synthesis_evidence(
     existing_manifest = destination / EVIDENCE_MANIFEST_NAME
     if existing_manifest.is_file():
         existing = json.loads(existing_manifest.read_text(encoding="utf-8"))
-        if existing.get("full_audio_sha256") == audio_sha256:
+        if (
+            existing.get("schema_version") == EVIDENCE_SCHEMA_VERSION
+            and existing.get("model_id") == model_id
+            and existing.get("full_audio_sha256") == audio_sha256
+            and existing.get("source_segment_manifest_sha256") == sha256_file(source_manifest)
+        ):
             return existing_manifest
-        raise ValueError(f"逐段证据目录与目标音频哈希冲突：{destination}")
+        raise ValueError(f"逐段证据目录与当前合成条件冲突：{destination}")
     if destination.exists():
         raise FileExistsError(f"逐段证据目录已存在但缺少清单，拒绝覆盖：{destination}")
 

@@ -134,7 +134,7 @@ def test_phonetic_metric_separates_same_pronunciation_substitution() -> None:
     }
 
     def fake_transcriber(audio_segments, _config, _model_dir):
-        return "他", [{"index": 0, "segment_id": "001", "start_seconds": 0.0, "end_seconds": 1.0, "audio_sha256": "a" * 64, "transcription": "他"}]
+        return "他", [{"index": 0, "segment_id": "001", "start_seconds": 0.0, "end_seconds": 1.0, "audio_sha256": "a" * 64, "transcription": "他", "raw_transcription": "<|zh|>他"}]
 
     result = evaluator.evaluate_asr_backend(
         "fake",
@@ -149,6 +149,7 @@ def test_phonetic_metric_separates_same_pronunciation_substitution() -> None:
     assert result["strict_character_cer"] == 1.0
     assert result["phonetic_cer"] == 0.0
     assert result["error_locations"][0]["classification"] == "same_pronunciation_substitution"
+    assert result["chunks"][0]["raw_transcription"] == "<|zh|>他"
 
 
 def test_asr_health_flags_a_long_contiguous_deletion() -> None:

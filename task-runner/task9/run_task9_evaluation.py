@@ -303,6 +303,21 @@ def require_nonempty_file(path: Path, label: str) -> None:
         raise ValueError(f"{label}为空：{path}")
 
 
+def require_decodable_audio(path: Path, label: str) -> None:
+    """只读确认 WAV 可解码且至少含一个采样，避免把损坏成品带入正式评测。"""
+    try:
+        import soundfile as sf
+    except ImportError as exc:
+        raise RuntimeError("评测环境缺少 soundfile，无法验证成品 WAV") from exc
+    try:
+        info = sf.info(str(path))
+        waveform, _ = sf.read(str(path), frames=1, dtype="float32", always_2d=True)
+    except RuntimeError as exc:
+        raise ValueError(f"{label}无法解码：{path}: {exc}") from exc
+    if info.frames <= 0 or len(waveform) == 0:
+        raise ValueError(f"{label}可打开但不含可解码采样：{path}")
+
+
 def model_entry(contract: dict[str, Any], model_id: str) -> dict[str, Any]:
     for item in contract["models"]:
         if item["model_id"] == model_id:
@@ -368,6 +383,7 @@ def check_preflight(contract: dict[str, Any], hf_mirror_root: Path | None) -> li
         audio_path = project_path(item["audio_path"])
         try:
             require_nonempty_file(audio_path, f"{item['display_name']} 成品音频")
+            require_decodable_audio(audio_path, f"{item['display_name']} 成品音频")
         except (FileNotFoundError, ValueError) as exc:
             errors.append(str(exc))
             continue
@@ -560,9 +576,8 @@ def each_synthesis_segment(
             "end_seconds": float(segment["end_seconds"]),
             "audio_sha256": segment["audio_sha256"],
             "transcription": transcription,
+            "raw_transcription": raw_transcription,
         }
-        if raw_transcription != transcription:
-            record["raw_transcription"] = raw_transcription
         chunks.append(record)
     if not chunks:
         raise RuntimeError("逐段合成证据不含可转写音频。")
