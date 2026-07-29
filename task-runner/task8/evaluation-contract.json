@@ -1,0 +1,81 @@
+{
+  "schema_version": "task8-v2",
+  "version": "V8",
+  "source": {
+    "text_path": "longAudioTestV8/text.md",
+    "text_sha256": "7a06dc63d38d3113081f4132394f6741c004e3c338cafdfa534268714cf7051c",
+    "segment_manifest_path": "longAudioTestV8/.task8_segment_manifest.json",
+    "cer_reference": "text_md_actual_synthesis_order",
+    "normalization_id": "zh-v1",
+    "normalized_character_count": 2537,
+    "description": "V8 的两条成品均须直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用已删除的 ai_deal.json、旧 V8 字符数或其他版本台词。两个模型还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的同一份分段清单。"
+  },
+  "reference": {
+    "role": "旁白",
+    "audio_path": "longAudioTestV8/mimo_旁白_v8.wav",
+    "transcript": "车轮碾过积雪，细碎声响中驯鹿的身影在漆黑的夜里纹丝不动。",
+    "voice_description": "男性，三十至四十五岁，中低音域，音色厚实沉稳，略带沙哑质感，明亮度偏暗，共鸣饱满。咬字清晰有力，语速中等偏慢，节奏平稳，停顿自然，默认情绪基调冷静克制，带有成人叙述故事的神秘感和沉稳气质。"
+  },
+  "models": [
+    {
+      "model_id": "indextts2",
+      "display_name": "IndexTTS2",
+      "audio_path": "longAudioTestV8/audio_indextts2.wav"
+    },
+    {
+      "model_id": "voxcpm2",
+      "display_name": "VoxCPM2",
+      "audio_path": "longAudioTestV8/audio_voxcpm2.wav"
+    }
+  ],
+  "asr": {
+    "sensevoice": {
+      "model_id": "FunAudioLLM/SenseVoiceSmall",
+      "revision": "716d31dbfd64b40152f3399a720890b005ffaf90",
+      "marker": "model.pt",
+      "device": "cuda",
+      "language": "zh",
+      "use_itn": true,
+      "batch_size_s": 60
+    },
+    "whisper_large_v3_turbo": {
+      "model_id": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "marker": "model.safetensors",
+      "device": "cuda",
+      "language": "zh",
+      "task": "transcribe",
+      "local_files_only": true
+    }
+  },
+  "asr_evaluation": {
+    "mode": "synthesis_segment_evidence",
+    "evidence_root": "longAudioTestV8/.task8_synthesis_evidence",
+    "evidence_schema_version": "task9-synthesis-evidence-v1",
+    "evidence_note": "ASR 直接读取与最终 WAV 哈希和共享分段清单哈希均一致的逐段合成证据；每段独立转写并计算差异，最后按原始顺序汇总全文指标。固定时间窗口不作为 CER 评测单元。",
+    "health": {
+      "minimum_hypothesis_to_reference_ratio": 0.5,
+      "maximum_hypothesis_to_reference_ratio": 1.5,
+      "maximum_consecutive_deletions": 20,
+      "maximum_backend_disagreement_cer": 0.5,
+      "ranking_requires_healthy_segments": true
+    },
+    "phonetic": {
+      "library": "pypinyin",
+      "version": "0.55.0",
+      "style": "tone3",
+      "phrase_overrides": {}
+    }
+  },
+  "audio_measurement": {
+    "silence_threshold_dbfs": -60.0,
+    "long_silence_min_seconds": 2.0,
+    "clipping_threshold": 0.999,
+    "delivery_contract_status": "unfrozen",
+    "delivery_contract_note": "V8 尚未冻结目标渠道格式、响度、真峰值、静音或时长阈值；入口只报告原始测量值和异常位置，不判定通过、失败或优劣。"
+  },
+  "not_executed": {
+    "forced_alignment": "强制对齐属于中高风险后续项，当前未配置冻结模型、读法词典和校准阈值，未执行。",
+    "role_routing": "未配置闭集角色分类器、校准方式及阈值，未执行。"
+  }
+}

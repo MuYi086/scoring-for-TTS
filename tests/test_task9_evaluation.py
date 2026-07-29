@@ -205,6 +205,23 @@ def test_sensevoice_control_tags_do_not_count_as_spoken_text() -> None:
     ) == "实际台词"
 
 
+def test_whisper_uses_waveform_input_without_requiring_ffmpeg(monkeypatch) -> None:
+    import numpy as np
+
+    evaluator = load_module("task9_evaluator_whisper_waveform", EVALUATOR_PATH)
+    fake_soundfile = type(
+        "FakeSoundFile",
+        (),
+        {"read": staticmethod(lambda *_args, **_kwargs: (np.asarray([[0.0], [1.0]], dtype=np.float32), 24000))},
+    )
+    monkeypatch.setitem(sys.modules, "soundfile", fake_soundfile)
+
+    payload = evaluator.whisper_waveform_input(Path("unused.wav"))
+
+    assert payload["sampling_rate"] == 24000
+    assert payload["raw"].tolist() == [0.0, 1.0]
+
+
 def test_reporter_writes_the_two_public_v9_reports(tmp_path: Path) -> None:
     reporter = load_module("task9_reporter", REPORTER_PATH)
     contract = json.loads(CONTRACT_PATH.read_text(encoding="utf-8"))

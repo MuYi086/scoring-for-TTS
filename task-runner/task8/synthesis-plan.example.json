@@ -1,0 +1,74 @@
+{
+  "schema_version": "task8-synthesis-plan-v2",
+  "version": "V8",
+  "source": {
+    "text_path": "longAudioTestV8/text.md",
+    "reference_audio_path": "longAudioTestV8/mimo_旁白_v8.wav",
+    "reference_transcript": "车轮碾过积雪，细碎声响中驯鹿的身影在漆黑的夜里纹丝不动。",
+    "voice_description": "男性，三十至四十五岁，中低音域，音色厚实沉稳，略带沙哑质感，明亮度偏暗，共鸣饱满。咬字清晰有力，语速中等偏慢，节奏平稳，停顿自然，默认情绪基调冷静克制，带有成人叙述故事的神秘感和沉稳气质。"
+  },
+  "models": [
+    {
+      "model_id": "indextts2",
+      "output_mode": "exact_path",
+      "command": [
+        "conda",
+        "run",
+        "--no-capture-output",
+        "-n",
+        "indextts2",
+        "python",
+        "task-runner/task9/indextts2.py",
+        "--model-path",
+        "/path/to/IndexTTS-2",
+        "--code-path",
+        "/path/to/index-tts",
+        "--text-file",
+        "{text_file}",
+        "--ref-audio",
+        "{reference_audio}",
+        "--emo-text",
+        "{voice_description}",
+        "--output",
+        "{output_path}",
+        "--segment-manifest",
+        "{segment_manifest}",
+        "--segment-evidence-root",
+        "{segment_evidence_root}",
+        "--model-id",
+        "indextts2",
+        "--local-files-only"
+      ]
+    },
+    {
+      "model_id": "voxcpm2",
+      "output_mode": "exact_path",
+      "command": [
+        "conda",
+        "run",
+        "--no-capture-output",
+        "-n",
+        "voxcpm2",
+        "python",
+        "task-runner/task9/voxcpm2.py",
+        "--model-path",
+        "/path/to/VoxCPM2",
+        "--text-file",
+        "{text_file}",
+        "--ref-audio",
+        "{reference_audio}",
+        "--prompt-text",
+        "{reference_transcript}",
+        "--output",
+        "{output_path}",
+        "--segment-manifest",
+        "{segment_manifest}",
+        "--segment-evidence-root",
+        "{segment_evidence_root}",
+        "--model-id",
+        "voxcpm2",
+        "--local-files-only"
+      ]
+    }
+  ]
+}

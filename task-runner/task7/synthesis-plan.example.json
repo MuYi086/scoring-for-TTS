@@ -1,0 +1,33 @@
+{
+  "schema_version": "task7-synthesis-plan-v2",
+  "version": "V7",
+  "source": {
+    "text_path": "longAudioTestV7/text.md",
+    "reference_audio_path": "longAudioTestV7/mimo_旁白_v7.wav",
+    "reference_transcript": "夜夜如此，我听见头顶传来三声闷响，不像老鼠，更像精准的敲击。",
+    "voice_description": "成年女性，中频偏暗，音色略带沙哑与气声，声线薄透但不过分尖锐，共鸣自然，发声力度适中偏轻柔。咬字清晰利落，语速中等偏慢，节奏均匀，停顿自然沉稳，默认情绪基调为冷静克制的叙述，隐含一丝不安但波动极小，整体气质内敛而耐听。"
+  },
+  "models": [
+    {
+      "model_id": "indextts2",
+      "output_mode": "exact_path",
+      "command": [
+        "conda", "run", "--no-capture-output", "-n", "indextts2", "python", "task-runner/task9/indextts2.py",
+        "--model-path", "/path/to/IndexTTS-2", "--code-path", "/path/to/index-tts",
+        "--text-file", "{text_file}", "--ref-audio", "{reference_audio}", "--emo-text", "{voice_description}",
+        "--output", "{output_path}", "--segment-manifest", "{segment_manifest}",
+        "--segment-evidence-root", "{segment_evidence_root}", "--model-id", "indextts2", "--local-files-only"
+      ]
+    },
+    {
+      "model_id": "voxcpm2",
+      "output_mode": "exact_path",
+      "command": [
+        "conda", "run", "--no-capture-output", "-n", "voxcpm2", "python", "task-runner/task9/voxcpm2.py",
+        "--model-path", "/path/to/VoxCPM2", "--text-file", "{text_file}", "--ref-audio", "{reference_audio}",
+        "--prompt-text", "{reference_transcript}", "--output", "{output_path}", "--segment-manifest", "{segment_manifest}",
+        "--segment-evidence-root", "{segment_evidence_root}", "--model-id", "voxcpm2", "--local-files-only"
+      ]
+    }
+  ]
+}

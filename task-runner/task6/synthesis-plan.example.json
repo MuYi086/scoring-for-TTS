@@ -1,0 +1,33 @@
+{
+  "schema_version": "task6-synthesis-plan-v2",
+  "version": "V6",
+  "source": {
+    "text_path": "longAudioTestV6/text.md",
+    "reference_audio_path": "longAudioTestV6/mimo_旁白_v6.wav",
+    "reference_transcript": "夜色中，两路人马各怀心思，表面客套，暗藏机锋，彼此试探周旋。",
+    "voice_description": "男性，中年，音域中低，声线厚实略带磁性，明亮而不刺耳，音色沉稳平和中蕴含细微的叙述张力。咬字清晰干脆，语速中等偏慢，节奏均匀从容，语气平稳理性，自带一种冷眼旁观、洞察世事的气质。"
+  },
+  "models": [
+    {
+      "model_id": "indextts2",
+      "output_mode": "exact_path",
+      "command": [
+        "conda", "run", "--no-capture-output", "-n", "indextts2", "python", "task-runner/task9/indextts2.py",
+        "--model-path", "/path/to/IndexTTS-2", "--code-path", "/path/to/index-tts",
+        "--text-file", "{text_file}", "--ref-audio", "{reference_audio}", "--emo-text", "{voice_description}",
+        "--output", "{output_path}", "--segment-manifest", "{segment_manifest}",
+        "--segment-evidence-root", "{segment_evidence_root}", "--model-id", "indextts2", "--local-files-only"
+      ]
+    },
+    {
+      "model_id": "voxcpm2",
+      "output_mode": "exact_path",
+      "command": [
+        "conda", "run", "--no-capture-output", "-n", "voxcpm2", "python", "task-runner/task9/voxcpm2.py",
+        "--model-path", "/path/to/VoxCPM2", "--text-file", "{text_file}", "--ref-audio", "{reference_audio}",
+        "--prompt-text", "{reference_transcript}", "--output", "{output_path}", "--segment-manifest", "{segment_manifest}",
+        "--segment-evidence-root", "{segment_evidence_root}", "--model-id", "voxcpm2", "--local-files-only"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "task6-v2",
+  "version": "V6",
+  "source": {
+    "text_path": "longAudioTestV6/text.md",
+    "text_sha256": "d66e7931ff8979f3c21962e7ce574eaa66c882f36d0446e7fcb086b434b83f3b",
+    "segment_manifest_path": "longAudioTestV6/.task6_segment_manifest.json",
+    "cer_reference": "text_md_actual_synthesis_order",
+    "normalization_id": "zh-v1",
+    "normalized_character_count": 1826,
+    "description": "V6 的两条成品均须直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json、旧 V6 字符数或其他版本台词。两个模型还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的同一份分段清单。"
+  },
+  "reference": {
+    "role": "旁白",
+    "audio_path": "longAudioTestV6/mimo_旁白_v6.wav",
+    "transcript": "夜色中，两路人马各怀心思，表面客套，暗藏机锋，彼此试探周旋。",
+    "voice_description": "男性，中年，音域中低，声线厚实略带磁性，明亮而不刺耳，音色沉稳平和中蕴含细微的叙述张力。咬字清晰干脆，语速中等偏慢，节奏均匀从容，语气平稳理性，自带一种冷眼旁观、洞察世事的气质。"
+  },
+  "models": [
+    {
+      "model_id": "indextts2",
+      "display_name": "IndexTTS2",
+      "audio_path": "longAudioTestV6/audio_indextts2.wav"
+    },
+    {
+      "model_id": "voxcpm2",
+      "display_name": "VoxCPM2",
+      "audio_path": "longAudioTestV6/audio_voxcpm2.wav"
+    }
+  ],
+  "asr": {
+    "sensevoice": {
+      "model_id": "FunAudioLLM/SenseVoiceSmall",
+      "revision": "716d31dbfd64b40152f3399a720890b005ffaf90",
+      "marker": "model.pt",
+      "device": "cuda",
+      "language": "zh",
+      "use_itn": true,
+      "batch_size_s": 60
+    },
+    "whisper_large_v3_turbo": {
+      "model_id": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "marker": "model.safetensors",
+      "device": "cuda",
+      "language": "zh",
+      "task": "transcribe",
+      "local_files_only": true
+    }
+  },
+  "asr_evaluation": {
+    "mode": "synthesis_segment_evidence",
+    "evidence_root": "longAudioTestV6/.task6_synthesis_evidence",
+    "evidence_schema_version": "task9-synthesis-evidence-v1",
+    "evidence_note": "ASR 直接读取与最终 WAV 哈希和共享分段清单哈希均一致的逐段合成证据；每段独立转写并计算差异，最后按原始顺序汇总全文指标。固定时间窗口和整条长音频单次转写不作为 CER 评测单元。",
+    "health": {
+      "minimum_hypothesis_to_reference_ratio": 0.5,
+      "maximum_hypothesis_to_reference_ratio": 1.5,
+      "maximum_consecutive_deletions": 20,
+      "maximum_backend_disagreement_cer": 0.5,
+      "ranking_requires_healthy_segments": true
+    },
+    "phonetic": {
+      "library": "pypinyin",
+      "version": "0.55.0",
+      "style": "tone3",
+      "phrase_overrides": {}
+    }
+  },
+  "audio_measurement": {
+    "silence_threshold_dbfs": -60.0,
+    "long_silence_min_seconds": 2.0,
+    "clipping_threshold": 0.999,
+    "delivery_contract_status": "unfrozen",
+    "delivery_contract_note": "V6 尚未冻结目标渠道格式、响度、真峰值、静音或时长阈值；入口只报告原始测量值和异常位置，不判定通过、失败或优劣。"
+  },
+  "not_executed": {
+    "forced_alignment": "强制对齐属于中高风险后续项，当前未配置冻结模型、读法词典和校准阈值，未执行。",
+    "role_routing": "未配置闭集角色分类器、校准方式及阈值，未执行。"
+  }
+}

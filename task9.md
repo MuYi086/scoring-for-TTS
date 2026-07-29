@@ -2,7 +2,9 @@
 
 本任务以 `longAudioTestV9/text.md` 的实际全文为唯一合成台词，分别用 IndexTTS2 与 VoxCPM2 克隆同一位旁白，并按 [公共评测任务.md](公共评测任务.md) 导出双 ASR（自动语音识别）CER（字符错误率）和交付原始测量。所有 Task 9 脚本必须位于 `task-runner/task9/`；不得修改 `modelScript/` 中用于跨设备安装和备份的脚本。
 
-## 1. 固定输入、角色与成品
+执行顺序固定为：先运行第 3 节合成编排器，生成 IndexTTS2 的 `audio_indextts2.wav`、VoxCPM2 的 `audio_voxcpm2.wav` 及其逐段证据；再运行第 4 节公共评测。Task 9 的模型集合仅为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。两条成品是第一阶段的输出，不是启动整个 Task 9 前由外部提供的前置条件。
+
+## 1. 固定输入、角色与合成产物
 
 | 项目 | 固定值 |
 | --- | --- |
@@ -55,50 +57,23 @@ python task-runner/task9/run_task9_clone.py --overwrite
 
 编排器会在写出每条成品后自动保存逐段音频证据：每段证据的文本哈希必须对应共享清单，片段 WAV 哈希、片段在成品中的时间位置和最终 WAV 哈希均会被记录。该目录是本地可复核资产，已忽略；不要手工编辑、移动或将其提交到仓库。若成品 WAV 被外部工具替换、响度处理或重编码，原证据会因最终哈希不匹配而失效；应通过编排器重新合成并重新评测，避免把不属于该成品的逐段转写当作评测依据。
 
-## 4. 公共评测执行顺序
+## 4. 公共评测入口
 
-正式评测前，先以只读方式检查两条成品、本地 SenseVoiceSmall、Whisper-large-v3-turbo、CUDA 和 `python -m pip check`：
+Task 9 完整采用 [公共评测任务.md](公共评测任务.md)。公共规则之外，本任务固定以下目录与模型标识：
 
-```bash
-HF_MIRROR_ROOT=/path/to/hf-mirror \
-conda run --no-capture-output -n audio_eval \
-  python task-runner/task9/check_task9_evaluation_setup.py
-```
+| 公共任务配置 | Task 9 固定值 |
+| --- | --- |
+| `<评测目录>` | `longAudioTestV9` |
+| `<版本标识>` | `V9` |
+| `<实际台词串>` | `longAudioTestV9/text.md` 的实际全文与原始顺序 |
+| `<评测运行目录>` | `task-runner/task9` |
+| `<输出目录>` | `longAudioTestV9/评测结果` |
+| `<预检器>` | `check_task9_evaluation_setup.py` |
+| `<评测器>` | `run_task9_evaluation.py` |
+| `<报告生成器>` | `generate_task9_reports.py` |
+| 首个 / 后续模型标识 | `indextts2` / `voxcpm2` |
 
-每次完整复测都必须使用全新的结果目录；只有同一批次的第二个模型才使用 `--resume`。先评测 IndexTTS2，再续跑 VoxCPM2：
-
-```bash
-RESULT_DIR="longAudioTestV9/评测结果/task9-v2-$(date -u +%Y%m%dT%H%M%SZ)"
-
-HF_MIRROR_ROOT=/path/to/hf-mirror \
-conda run --no-capture-output -n audio_eval \
-  python task-runner/task9/run_task9_evaluation.py \
-  --model-id indextts2 --output-dir "$RESULT_DIR" --strict
-
-HF_MIRROR_ROOT=/path/to/hf-mirror \
-conda run --no-capture-output -n audio_eval \
-  python task-runner/task9/run_task9_evaluation.py \
-  --model-id voxcpm2 --output-dir "$RESULT_DIR" --resume --strict
-
-python task-runner/task9/generate_task9_reports.py \
-  --results-dir "$RESULT_DIR" \
-  --reports-dir longAudioTestV9/评测结果
-```
-
-SenseVoice 的输出中可能带有 `<|zh|>`、`<|HAPPY|>` 等语言、情绪或事件控制标记。评测器必须保存逐段 `raw_transcription` 以供复核，但只能从 CER 输入中移除这类非朗读控制标记；不得修改实际转写台词、纠错或补字。Whisper-large-v3-turbo 的模型名必须完整保留，两个后端的 CER 只能独立排名，禁止平均为综合分。
-
-v2 不再把最终长音频机械地切成连续的 30 秒窗口，而是对与最终 WAV 哈希绑定的每个合成语义段独立转写，并把错误定位限定在该段内。每个后端同时给出三类信息：
-
-- 严格汉字 CER：保留字面替换、插入、删除，是唯一的正式文本差异测量；同音字仍会计入。
-- 带声调拼音 CER：使用冻结的 `pypinyin==0.55.0` 和 `tone3` 读法，只作“严格差异可能是同音字”的辅助线索，不能取代严格 CER，也不能证明实际没有错读。
-- ASR 健康门控：当单段转写长度明显异常、连续删除过长，或 SenseVoice 与 Whisper 在同段分歧过大时，该后端不参与名次。原始 CER、逐段转写和错误位置仍会保留，供人工试听时复核。
-
-强制对齐、读法词典校准和角色路由分类仍属中高风险项目；当前契约明确记录为未执行，不能把它们的结论伪装成自动评测结果。
-
-固定报告名为：
-
-- `longAudioTestV9/评测结果/SenseVoice_CER&Whisper-large-v3-turbo_CER_V9评价报告.md`
-- `longAudioTestV9/评测结果/音频交付与文本一致性_V9自动检查报告.md`
+Task 9 的评测模式为与最终 WAV 哈希绑定的逐段合成证据；共享清单、证据目录和 `task9-v2` 契约由本任务第 2、3 节定义。其余预检、运行、`--resume`、双 ASR、报告和人工边界均遵循公共任务。
 
 ## 5. 历史执行摘要（v1，不可与 v2 比较）
 
@@ -109,4 +84,4 @@ v2 不再把最终长音频机械地切成连续的 30 秒窗口，而是对与�
 | IndexTTS2 | 0.036018 | 0.187950 |
 | VoxCPM2 | 0.098887 | 0.178782 |
 
-重新合成并按本任务第 4 节生成全新的 v2 结果目录后，才可比较当前的严格 CER、拼音辅助指标、ASR 健康状态、逐段转写和人工试听结果。
+重新合成并按[公共评测任务第 3 节](公共评测任务.md#3-公共执行顺序)生成全新的 v2 结果目录后，才可比较当前的严格 CER、拼音辅助指标、ASR 健康状态、逐段转写和人工试听结果。

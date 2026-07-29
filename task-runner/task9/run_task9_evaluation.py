@@ -555,6 +555,26 @@ def clear_cuda_cache(torch: Any) -> None:
         pass
 
 
+def whisper_waveform_input(audio_path: Path) -> dict[str, Any]:
+    """以波形而非文件名调用 Whisper，避免隐式依赖系统 ffmpeg。
+
+    逐段证据均为 WAV，``soundfile`` 已是评测环境的冻结依赖。直接传入
+    ``raw`` 与 ``sampling_rate`` 还能确保 Hugging Face pipeline 不会自行
+    将短片段重新切为固定时间窗口。
+    """
+    try:
+        import soundfile as sf
+    except ImportError as exc:
+        raise RuntimeError("Whisper 读取逐段证据需要 soundfile") from exc
+    try:
+        waveform, sample_rate = sf.read(str(audio_path), dtype="float32", always_2d=True)
+    except RuntimeError as exc:
+        raise RuntimeError(f"Whisper 无法读取逐段证据音频：{audio_path}: {exc}") from exc
+    if len(waveform) == 0:
+        raise RuntimeError(f"Whisper 逐段证据音频为空：{audio_path}")
+    return {"raw": waveform.mean(axis=1), "sampling_rate": int(sample_rate)}
+
+
 def each_synthesis_segment(
     audio_segments: list[dict[str, Any]], callback: Callable[[Path, float, float], str | tuple[str, str]]
 ) -> list[dict[str, Any]]:
@@ -636,17 +656,20 @@ def transcribe_whisper(
         device = 0 if str(config["device"]) == "cuda" else -1
         model = AutoModelForSpeechSeq2Seq.from_pretrained(str(model_dir), local_files_only=True)
         processor = AutoProcessor.from_pretrained(str(model_dir), local_files_only=True)
-        recognizer = pipeline(
-            "automatic-speech-recognition",
-            model=model,
-            tokenizer=processor.tokenizer,
-            feature_extractor=processor.feature_extractor,
-            device=device,
-        )
+        pipeline_options: dict[str, Any] = {
+            "model": model,
+            "tokenizer": processor.tokenizer,
+            "feature_extractor": processor.feature_extractor,
+            "device": device,
+        }
+        if "chunk_length_s" in config:
+            pipeline_options["chunk_length_s"] = float(config["chunk_length_s"])
+        recognizer = pipeline("automatic-speech-recognition", **pipeline_options)
 
         def transcribe(chunk: Path, _start: float, _end: float) -> str:
             result = recognizer(
-                str(chunk),
+                whisper_waveform_input(chunk),
+                return_timestamps=True,
                 generate_kwargs={"language": str(config["language"]), "task": str(config["task"])},
             )
             text = result.get("text") if isinstance(result, dict) else None
@@ -776,6 +799,7 @@ def evaluate_asr_backend(
     model_dir: Path,
     phonetic_config: dict[str, Any],
     health_config: dict[str, Any],
+    evaluation_unit: str = "synthesis_segment_evidence",
 ) -> dict[str, Any]:
     transcription, raw_chunks = transcriber(audio_segments, backend_config, model_dir)
     if len(raw_chunks) != len(audio_segments):
@@ -827,7 +851,7 @@ def evaluate_asr_backend(
         "decode_parameters": {
             key: value for key, value in backend_config.items() if key not in {"model_id", "revision", "marker"}
         },
-        "evaluation_unit": "synthesis_segment_evidence",
+        "evaluation_unit": evaluation_unit,
         "full_transcription": transcription,
         "normalized_transcription": hypothesis_normalized,
         "normalized_reference_character_count": len(reference_normalized),

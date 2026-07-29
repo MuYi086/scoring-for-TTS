@@ -188,93 +188,27 @@ python tts-bench/scripts/generate_neutral_v5_reports.py \
 
 ## Task 6 V6 公共长音频评测
 
-V6 的冻结事实源是 `config/neutral-evaluation-v6.json`，输入位于 `../longAudioTestV6/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 58 段 `dialogue` 合成，因此全文 CER 使用其 1,783 个 `zh-v1` 规范化字符；`text.md` 有 1,826 个规范化字符，只作原文核对，不进入本批 CER。
+V6 的完整流程先在 `../task-runner/task6/run_task6_synthesis.py` 中仅用 IndexTTS2 与 VoxCPM2 克隆旁白，生成本地、被忽略的 `../longAudioTestV6/audio_indextts2.wav` 与 `audio_voxcpm2.wav`，随后才进入公共评测入口。候选成品是合成阶段的输出，不是启动整个 Task 6 前的外部输入；模型标识固定为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。唯一 CER 参考始终是 `../longAudioTestV6/text.md` 的实际全文和原始顺序（`zh-v1` 规范化后 1,826 个字符），不使用不存在的 `ai_deal.json`、旧 V6 字符统计或旧七模型脚本。
 
-V6 受 [公共评测任务](../公共评测任务.md) 限制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；仅测量音频可解码性、格式、采样削波、直流偏置和静音位置。目标渠道格式/响度阈值、强制对齐、读法词典和角色路由分类器尚未冻结，因此报告只能记录原始测量或“未执行”。
+V6 的两个模型均使用按参考语速冻结的共享语义分段清单，并在 `../longAudioTestV6/.task6_synthesis_evidence/` 写入与最终 WAV 哈希绑定的逐段音频证据。VoxCPM2 只使用参考音频和参考文案，不传会被朗读的 `--style-prompt`。V6 与 Task 9 共用双 ASR、严格汉字/拼音辅助 CER、ASR 健康门控和交付原始测量；评测器只读取哈希与共享清单均一致的证据，逐段转写后汇总全文 CER，固定时间窗口和整条长音频单次转写都不再用于 V6 CER。目标渠道阈值、强制对齐、读法词典和角色路由分类器尚未冻结，所以报告只记录原始测量或“未执行”。
 
-公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧 V6 六后端报告或任何加权排名用于本入口。
-
-```bash
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/check_neutral_evaluation_v6_setup.py \
-  --strict-versions
-
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v6.py \
-  --model-id dots.tts-base \
-  --output-dir longAudioTestV6/评测结果 \
-  --strict
-```
-
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v6_reports.py \
-  --results-dir longAudioTestV6/评测结果 \
-  --reports-dir longAudioTestV6/评测结果
-```
-
-输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V6评价报告.md` 与 `音频交付与文本一致性_V6自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
+完整执行顺序见 [`../task6.md`](../task6.md) 和 [`../公共评测任务.md`](../公共评测任务.md)：先用本地计划运行 `run_task6_synthesis.py` 生成候选，再运行 `check_task6_evaluation_setup.py`，随后先以 `indextts2` 创建新结果目录、再以 `voxcpm2 --resume` 完成评测，最后用 `generate_task6_reports.py` 生成两份公共报告。两个 CER 保持独立名次，绝不生成总分。
 
 ## Task 7 V7 公共长音频评测
 
-V7 的冻结事实源是 `config/neutral-evaluation-v7.json`，输入位于 `../longAudioTestV7/`：7 条模型长音频、3 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 2,066 个 `zh-v1` 规范化字符；`text.md` 有 2,076 个规范化字符，只作原文核对，不进入本批 CER。
+V7 的完整流程先在 `../task-runner/task7/run_task7_synthesis.py` 中仅用 IndexTTS2 与 VoxCPM2 克隆旁白，生成本地、被忽略的 `../longAudioTestV7/audio_indextts2.wav` 与 `audio_voxcpm2.wav`，随后才进入公共评测入口。候选成品是合成阶段的输出，不是启动整个 Task 7 前的外部输入；模型标识固定为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。唯一 CER 参考始终是 `../longAudioTestV7/text.md` 的实际全文和原始顺序（`zh-v1` 规范化后 2,076 个字符），不使用不存在的 `ai_deal.json`、旧 V7 字符统计或旧七模型脚本。
 
-V7 受 [公共评测任务](../公共评测任务.md) 限制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；仅测量音频可解码性、格式、采样削波、直流偏置和静音位置。目标渠道格式/响度阈值、强制对齐、读法词典和角色路由分类器尚未冻结，因此报告只能记录原始测量或“未执行”。
+V7 的两个模型均使用按参考语速冻结的共享语义分段清单，并在 `../longAudioTestV7/.task7_synthesis_evidence/` 写入与最终 WAV 哈希绑定的逐段音频证据。VoxCPM2 只使用参考音频和参考文案，不传会被朗读的 `--style-prompt`。V7 与 Task 9 共用双 ASR、严格汉字/拼音辅助 CER、ASR 健康门控和交付原始测量；评测器只读取哈希与共享清单均一致的证据，逐段转写后汇总全文 CER，固定时间窗口和整条长音频单次转写都不再用于 V7 CER。目标渠道阈值、强制对齐、读法词典和角色路由分类器尚未冻结，所以报告只记录原始测量或“未执行”。
 
-公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧 V7 六后端报告或任何加权排名用于本入口。
-
-```bash
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/check_neutral_evaluation_v7_setup.py \
-  --strict-versions
-
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v7.py \
-  --model-id dots.tts-base \
-  --output-dir longAudioTestV7/评测结果 \
-  --strict
-```
-
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v7_reports.py \
-  --results-dir longAudioTestV7/评测结果 \
-  --reports-dir longAudioTestV7/评测结果
-```
-
-输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V7评价报告.md` 与 `音频交付与文本一致性_V7自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
+完整执行顺序见 [`../task7.md`](../task7.md) 和 [`../公共评测任务.md`](../公共评测任务.md)：先用本地计划运行 `run_task7_synthesis.py` 生成候选，再运行 `check_task7_evaluation_setup.py`，随后先以 `indextts2` 创建新结果目录、再以 `voxcpm2 --resume` 完成评测，最后用 `generate_task7_reports.py` 生成两份公共报告。两个 CER 保持独立名次，绝不生成总分。
 
 ## Task 8 V8 公共长音频评测
 
-V8 的冻结事实源是 `config/neutral-evaluation-v8.json`，输入位于 `../longAudioTestV8/`：7 条模型长音频、4 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 97 段 `dialogue` 合成，因此全文 CER 使用其 2,513 个 `zh-v1` 规范化字符；`text.md` 有 2,537 个规范化字符，仅作原文核对。
+V8 的完整流程先在 `../task-runner/task8/run_task8_synthesis.py` 中仅用 IndexTTS2 与 VoxCPM2 克隆旁白，生成本地、被忽略的 `../longAudioTestV8/audio_indextts2.wav` 与 `audio_voxcpm2.wav`，随后才进入受限公共评测入口。候选成品是合成阶段的输出，而不是启动整个 Task 8 前的外部输入；模型标识固定为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。唯一 CER 参考始终是 `../longAudioTestV8/text.md` 的实际全文和原始顺序（`zh-v1` 规范化后 2,537 个字符），不再使用已删除的 `neutral-evaluation-v8.json`、`ai_deal.json` 或 `tts-bench/scripts/*v8*` 脚本。
 
-V8 受 [公共评测任务](../公共评测任务.md) 限制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；仅测量音频可解码性、格式、采样削波、直流偏置和静音位置。目标渠道格式/响度阈值、强制对齐、读法词典和角色路由分类器尚未冻结，因此报告只能记录原始测量或“未执行”。
+V8 的两个模型均使用按参考语速冻结的 V9 同款分段清单，并在 `../longAudioTestV8/.task8_synthesis_evidence/` 生成与最终 WAV 哈希绑定的逐段音频证据。VoxCPM2 只使用参考音频和参考文案，不传会被朗读的 `--style-prompt`。V8 与 Task 9 共用双 ASR、严格汉字/拼音辅助 CER、ASR 健康门控和交付原始测量；评测器只读取哈希与共享清单均一致的证据，逐段转写后汇总全文 CER，固定时间窗口和整条长音频单次转写都不再用于 V8 CER。目标渠道阈值、强制对齐、读法词典和角色路由分类器尚未冻结，所以报告只记录原始测量或“未执行”。
 
-公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧 V8 六后端报告或任何加权排名用于本入口。
-
-```bash
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/check_neutral_evaluation_v8_setup.py \
-  --strict-versions
-
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v8.py \
-  --model-id dots.tts-base \
-  --output-dir longAudioTestV8/评测结果 \
-  --strict
-```
-
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v8_reports.py \
-  --results-dir longAudioTestV8/评测结果 \
-  --reports-dir longAudioTestV8/评测结果
-```
-
-输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V8评价报告.md` 与 `音频交付与文本一致性_V8自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
+完整执行顺序见 [`../task8.md`](../task8.md) 和 [`../公共评测任务.md`](../公共评测任务.md)：先用本地计划运行 `run_task8_synthesis.py` 生成候选，再运行 `check_task8_evaluation_setup.py`，随后对每个已发现模型运行 `run_task8_evaluation.py`（首个模型使用新结果目录，后续模型增加 `--resume`），最后用 `generate_task8_reports.py` 生成两份公共报告。两个 CER 保持独立名次，绝不生成总分。
 
 ## Task 9 V2 双模型旁白克隆评测
 
