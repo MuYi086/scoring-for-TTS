@@ -17,3 +17,39 @@ python task-runner/task9/run_task9_clone.py --dry-run
 ```
 
 确认预检后，移除 `--dry-run` 才会开始合成。脚本默认禁止覆盖已有 WAV；只有明确传入 `--overwrite` 才会覆盖。
+
+IndexTTS2 与 VoxCPM2 必须使用同一份 `text_segments.py` 生成的隐藏清单 `.task9_segment_manifest.json`。它先用旁白参考音频的实际语速换算时长预算（默认目标 25 秒、上限 35 秒），再优先按完整句和段落切分；只有单句超预算时才在次级标点或字符预算处切分。两者逐段克隆后，按相同的边界规则拼接：强制切分 250ms、句末 500ms、段落 750ms，末段不补静音。清单记录每段文本哈希、估算时长、边界类型及停顿，评测结果会冻结清单哈希，确保两个模型的文本片段、顺序和停顿条件完全一致。
+
+该规则吸收了长文本工作室的通用实践：优先语义完整的句段、根据参考声线语速而不是死板字数控制单段长度、以显式停顿表达句/段落边界，并把清单作为可复现证据。相邻上下文仅记录在清单中，不会作为待朗读文本注入模型，以免污染全文 CER。
+
+## 公共评测
+
+合成两条成品后，使用同一份本地 ASR 镜像进行只读预检。Task 9 的唯一 CER（字符错误率）参考是 `longAudioTestV9/text.md` 的实际全文和原始顺序；不能使用旧 V9 的 `ai_deal.json` 或字符数。
+
+```bash
+HF_MIRROR_ROOT=/path/to/hf-mirror \
+conda run --no-capture-output -n audio_eval \
+  python task-runner/task9/check_task9_evaluation_setup.py
+```
+
+正式评测的原始结果目录必须是新目录。首次评测 IndexTTS2，随后只对同一次未完成目录使用 `--resume` 评测 VoxCPM2：
+
+```bash
+RESULT_DIR="longAudioTestV9/评测结果/task9-v9-$(date -u +%Y%m%dT%H%M%SZ)"
+
+HF_MIRROR_ROOT=/path/to/hf-mirror \
+conda run --no-capture-output -n audio_eval \
+  python task-runner/task9/run_task9_evaluation.py \
+  --model-id indextts2 --output-dir "$RESULT_DIR" --strict
+
+HF_MIRROR_ROOT=/path/to/hf-mirror \
+conda run --no-capture-output -n audio_eval \
+  python task-runner/task9/run_task9_evaluation.py \
+  --model-id voxcpm2 --output-dir "$RESULT_DIR" --resume --strict
+
+python task-runner/task9/generate_task9_reports.py \
+  --results-dir "$RESULT_DIR" \
+  --reports-dir longAudioTestV9/评测结果
+```
+
+最后一条命令固定生成 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V9评价报告.md` 与 `音频交付与文本一致性_V9自动检查报告.md`。该受限入口只报告音频交付原始测量和双 CER 的独立名次；V9 尚未冻结交付阈值，且没有冻结的强制对齐器或角色分类器，因此不会自行判定通过、失败或音色优劣。

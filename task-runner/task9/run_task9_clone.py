@@ -18,6 +18,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
+from text_segments import build_segment_plan, write_segment_plan
+
 
 TASK_SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = TASK_SCRIPT_DIR.parents[1]
@@ -40,13 +42,14 @@ class TaskPaths:
     reference_audio: Path
     indextts_output: Path
     voxcpm2_output: Path
+    segment_manifest: Path
 
 
 @dataclass(frozen=True)
 class ModelPaths:
     """两个模型及其运行源码的本地目录。"""
 
-    hf_mirror_root: Path
+    hf_mirror_root: Path | None
     indextts_model: Path
     indextts_code: Path
     voxcpm2_model: Path
@@ -80,6 +83,7 @@ def task_paths(task_dir: Path) -> TaskPaths:
         reference_audio=root / "mimo_旁白_v9.wav",
         indextts_output=root / "audio_indextts2.wav",
         voxcpm2_output=root / "audio_voxcpm2.wav",
+        segment_manifest=root / ".task9_segment_manifest.json",
     )
 
 
@@ -121,19 +125,20 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--index-max-text-tokens-per-segment",
         type=int,
-        default=80,
-        help="IndexTTS2 原生单段最大 token 数，默认采用 API 的长文本保守值 80",
+        default=128,
+        help="IndexTTS2 单个共同文本片段的原生 token 上限，默认 128，覆盖清单的 35 秒上限",
     )
     parser.add_argument(
-        "--voxcpm-style-prompt",
-        default="",
-        help="可选 VoxCPM2 风格前缀；默认空值以匹配 API 的纯克隆模式",
-    )
-    parser.add_argument(
-        "--voxcpm-max-chars-per-chunk",
+        "--segment-target-seconds",
         type=int,
-        default=0,
-        help="VoxCPM2 每段最大字符数；0 表示整段，匹配 API 默认值",
+        default=25,
+        help="根据旁白参考语速估算的目标片段时长（秒）",
+    )
+    parser.add_argument(
+        "--segment-max-seconds",
+        type=int,
+        default=35,
+        help="根据旁白参考语速估算的最大片段时长（秒）",
     )
     parser.add_argument("--overwrite", action="store_true", help="明确允许覆盖已有目标音频")
     parser.add_argument("--dry-run", action="store_true", help="只校验路径并打印命令，不启动模型")
@@ -154,8 +159,10 @@ def resolve_model_path(
 def resolve_model_paths(args: argparse.Namespace) -> ModelPaths:
     """解析两个模型路径并要求 IndexTTS2 的源码目录明确可追溯。"""
     mirror_root = args.hf_mirror_root.expanduser().resolve() if args.hf_mirror_root else None
-    if mirror_root is None:
-        raise ValueError("必须设置 --hf-mirror-root 或显式传入两个模型路径。")
+    if mirror_root is None and (
+        args.indextts_model_path is None or args.voxcpm2_model_path is None
+    ):
+        raise ValueError("必须设置 --hf-mirror-root，或显式传入两个模型路径。")
     if args.indextts_code_path is None:
         raise ValueError("缺少 --indextts-code-path（或 INDEXTTS_CODE_PATH 环境变量）。")
     return ModelPaths(
@@ -188,14 +195,19 @@ def validate_preflight(args: argparse.Namespace, inputs: TaskPaths, models: Mode
     """执行无模型加载的本地路径和覆盖保护校验。"""
     require_file(inputs.text_file, "合成原文 text.md")
     require_file(inputs.reference_audio, "旁白参考音频")
-    require_directory(models.hf_mirror_root, "hf-mirror 根目录")
+    if models.hf_mirror_root is not None:
+        require_directory(models.hf_mirror_root, "hf-mirror 根目录")
     require_directory(models.indextts_model, "IndexTTS2 模型目录")
     require_directory(models.indextts_code, "IndexTTS2 源码目录")
     require_directory(models.voxcpm2_model, "VoxCPM2 模型目录")
     if shutil.which(args.conda_executable) is None:
         raise FileNotFoundError(f"找不到 Conda 可执行文件：{args.conda_executable}")
     if not args.overwrite:
-        existing = [path for path in (inputs.indextts_output, inputs.voxcpm2_output) if path.exists()]
+        outputs = {
+            "indextts2": inputs.indextts_output,
+            "voxcpm2": inputs.voxcpm2_output,
+        }
+        existing = [outputs[model] for model in selected_models(args.models) if outputs[model].exists()]
         if existing:
             raise FileExistsError("目标音频已存在；如确认覆盖，请显式传入 --overwrite：" + ", ".join(map(str, existing)))
 
@@ -241,6 +253,8 @@ def build_invocations(args: argparse.Namespace, inputs: TaskPaths, models: Model
                 index_emo_text,
                 "--max-text-tokens-per-segment",
                 str(args.index_max_text_tokens_per_segment),
+                "--segment-manifest",
+                str(inputs.segment_manifest),
                 "--local-files-only",
             ),
         ),
@@ -266,10 +280,8 @@ def build_invocations(args: argparse.Namespace, inputs: TaskPaths, models: Model
                 str(inputs.voxcpm2_output),
                 "--prompt-text",
                 args.reference_text,
-                "--style-prompt",
-                args.voxcpm_style_prompt,
-                "--max-chars-per-chunk",
-                str(args.voxcpm_max_chars_per_chunk),
+                "--segment-manifest",
+                str(inputs.segment_manifest),
                 "--local-files-only",
             ),
         ),
@@ -277,10 +289,18 @@ def build_invocations(args: argparse.Namespace, inputs: TaskPaths, models: Model
     return tuple(invocations[model] for model in selected)
 
 
-def print_plan(inputs: TaskPaths, invocations: Iterable[Invocation]) -> None:
+def print_plan(inputs: TaskPaths, invocations: Iterable[Invocation], segment_plan: dict) -> None:
     """输出所有实际输入、固定输出名和即将执行的命令。"""
     print(f"文本源：{inputs.text_file}")
     print(f"参考音频：{inputs.reference_audio}")
+    policy = segment_plan["policy"]
+    rate = segment_plan["reference_speech_rate"]
+    print(
+        "共享分段："
+        f"{len(segment_plan['segments'])} 段，参考语速 {rate['characters_per_second']:.3f} 字/秒，"
+        f"目标 {policy['target_seconds']} 秒，最大 {policy['max_segment_seconds']} 秒"
+    )
+    print(f"共享清单：{inputs.segment_manifest}")
     for invocation in invocations:
         print(f"\n[{invocation.label}] 目标：{invocation.output_path}")
         print(shlex.join(invocation.command))
@@ -291,20 +311,25 @@ def run(args: argparse.Namespace) -> int:
     inputs = task_paths(args.task_dir)
     models = resolve_model_paths(args)
     validate_preflight(args, inputs, models)
+    segment_plan = build_segment_plan(
+        inputs.text_file.read_text(encoding="utf-8").strip(),
+        inputs.reference_audio,
+        args.reference_text,
+        args.segment_target_seconds,
+        args.segment_max_seconds,
+    )
     invocations = build_invocations(args, inputs, models)
-    print_plan(inputs, invocations)
+    print_plan(inputs, invocations, segment_plan)
     if args.dry_run:
         print("\n预检通过：未加载模型、未生成音频、未运行评测。")
         return 0
 
+    write_segment_plan(inputs.segment_manifest, segment_plan)
+
     child_env = os.environ.copy()
-    child_env.update(
-        {
-            "HF_HOME": str(models.hf_mirror_root),
-            "HF_HUB_OFFLINE": "1",
-            "TRANSFORMERS_OFFLINE": "1",
-        }
-    )
+    child_env.update({"HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1"})
+    if models.hf_mirror_root is not None:
+        child_env["HF_HOME"] = str(models.hf_mirror_root)
     for invocation in invocations:
         print(f"\n开始串行合成：{invocation.label}", flush=True)
         completed = subprocess.run(invocation.command, env=child_env, check=False)

@@ -1,0 +1,63 @@
+{
+  "schema_version": "task9-v1",
+  "version": "V9",
+  "source": {
+    "text_path": "longAudioTestV9/text.md",
+    "segment_manifest_path": "longAudioTestV9/.task9_segment_manifest.json",
+    "cer_reference": "text_md_actual_synthesis_order",
+    "normalization_id": "zh-v1",
+    "normalized_character_count": 1527,
+    "description": "Task 9 的两条成品均直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json 或旧 V9 台词统计。两个模型还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的同一份分段清单。"
+  },
+  "reference": {
+    "role": "旁白",
+    "audio_path": "longAudioTestV9/mimo_旁白_v9.wav",
+    "transcript": "深夜空旷的旧走廊里那盏旧灯忽明忽暗，从远处隐约传来一阵低语声。",
+    "voice_description": "女声，20-30岁，中音区略偏低，音色沉静而敏锐，略带暖意，不沙哑或气声过度。咬字清晰但不刻板，语速中等偏慢，有自然的停顿；默认气质冷静而克制，像深夜播讲都市传说中的悬念播客主，不动声色地铺垫紧张氛围。"
+  },
+  "models": [
+    {
+      "model_id": "indextts2",
+      "display_name": "IndexTTS2",
+      "audio_path": "longAudioTestV9/audio_indextts2.wav"
+    },
+    {
+      "model_id": "voxcpm2",
+      "display_name": "VoxCPM2",
+      "audio_path": "longAudioTestV9/audio_voxcpm2.wav"
+    }
+  ],
+  "asr": {
+    "sensevoice": {
+      "model_id": "FunAudioLLM/SenseVoiceSmall",
+      "revision": "716d31dbfd64b40152f3399a720890b005ffaf90",
+      "marker": "model.pt",
+      "device": "cuda",
+      "language": "zh",
+      "chunk_seconds": 30.0,
+      "use_itn": true,
+      "batch_size_s": 60
+    },
+    "whisper_large_v3_turbo": {
+      "model_id": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "marker": "model.safetensors",
+      "device": "cuda",
+      "language": "zh",
+      "task": "transcribe",
+      "chunk_seconds": 30.0,
+      "local_files_only": true
+    }
+  },
+  "audio_measurement": {
+    "silence_threshold_dbfs": -60.0,
+    "long_silence_min_seconds": 2.0,
+    "clipping_threshold": 0.999,
+    "delivery_contract_status": "unfrozen",
+    "delivery_contract_note": "V9 尚未冻结目标渠道格式、响度、真峰值、静音或时长阈值；受限入口只报告原始测量值和异常位置，不判定通过、失败或优劣。"
+  },
+  "not_executed": {
+    "forced_alignment": "未配置冻结发音词典和强制对齐器，未执行。",
+    "role_routing": "未配置闭集角色分类器、校准方式及阈值，未执行。"
+  }
+}

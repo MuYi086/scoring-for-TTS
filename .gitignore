@@ -25,23 +25,8 @@ outputs/
 tts-bench/datasets/audio/
 tts-bench/runs/*/audio/
 tts-bench/runs/*/derived/
-cloneData/*.wav
-cloneData/audio_v2/*.wav
-cloneData/audio_v3/*.wav
-cloneData/*.part
-cloneData/indextts2/.runtime_cache/
-cloneData/*/.runtime_cache/
-cloneData/*/.tmp/
 asr/models/*
 !asr/models/README.md
-
-# Seed-TTS 官方基准的本地大体积音频、原始评分与机器冻结记录
-Seed-TTS-test/result/*/*
-Seed-TTS-test/report/*/*
-!Seed-TTS-test/result/.gitkeep
-!Seed-TTS-test/result/*/.gitkeep
-!Seed-TTS-test/report/.gitkeep
-!Seed-TTS-test/report/*/.gitkeep
 
 # Secrets and local config
 .env
@@ -66,4 +51,5 @@ longAudioTestV7/mimo*
 longAudioTestV8/audio*
 longAudioTestV8/mimo*
 longAudioTestV9/audio*
-longAudioTestV9/评测结果/
+longAudioTestV9/.task9_*
+longAudioTestV9/评测结果/task9-*
