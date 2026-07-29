@@ -1,46 +1,21 @@
-# tts-bench：基准事实源
+# tts-bench：通用实验基准
 
-`tts-bench` 是所有评估的唯一编排层。它不会合成 TTS 音频，但会批量运行客观评价器，确保每个模型面对同一份输入、同一条参考音频、同一份预处理约定，并且每个数字都能回溯到具体音频与配置。
+`tts-bench` 只保留早期通用、短样本实验基准的登记格式与自动评价器。它不是 Task 6、Task 7、Task 8 或 Task 9 的长音频公共评测入口；这些任务必须使用各自 `task-runner/task*/` 下的合成器、冻结契约、预检器、评测器和报告生成器。
 
-## 目录职责
+已删除失效的 V2–V5 和旧七模型 V9 说明、配置及预检入口。它们依赖的运行器、清单或输入已不在仓库中，且其六后端指标与当前长音频双 ASR 规则不兼容。
 
-```text
-tts-bench/
-├── contracts/       # 机器可读的数据契约（JSON Schema）
-├── datasets/        # 样本集说明；本地音频放 datasets/audio/，不提交
-├── config/          # 自动评价器、阈值、归一化区间和权重的冻结配置
-├── manifests/       # 冻结的 case 清单，JSON Lines（每行一个样本）
-├── reports/         # 可提交的汇总报告与决策记录
-├── runs/            # 历史 V1 合成记录；其中音频不提交
-├── runs-v2/         # Task 3 V2 独立的八模型合成记录
-├── runs-v3/         # Task 4 V3 独立的八模型合成记录
-├── scripts/         # 一键批量客观评估入口
-└── templates/       # 新建运行和汇总时复制的模板
-```
+## 保留内容
 
-## 四种核心对象
+- `scripts/run_automated_evaluation.py`：对已登记的通用短样本运行执行音频健康、WavLM、ASR 和 UTMOSv2 自动评价；不调用 TTS 合成模型。
+- `config/automated-evaluation*.json`：该通用评价器的示例与本地配置。
+- `contracts/`、`templates/` 和 `datasets/README.md`：通用实验登记格式。
+- `environment/`：该通用评价器的环境定义。
 
-| 对象 | 作用 | 存放位置 |
-| --- | --- | --- |
-| `case`（评测样本） | 固定参考音频、参考转写、待合成文本和考察维度。 | `manifests/*.jsonl` |
-| `run`（一次运行） | 某模型、某配置、某个冻结清单的一次完整执行。 | `runs/<run_id>/` |
-| `synthesis record`（合成记录） | 将一个 `case` 的输出音频、哈希、耗时和配置绑定。 | `runs/<run_id>/synthesis.jsonl` |
-| `metric record`（指标记录） | 将一个评价器的逐样本结果绑定到合成记录。 | `runs/<run_id>/metrics/` |
+通用实验的本地音频、运行记录和派生结果不提交到仓库。
 
-`case_id` 与 `run_id` 是跨目录关联的主键。不要用文件名、显示名称或目录扫描顺序作为关联依据。
+## 通用实验运行
 
-## 批量自动评估
-
-在完成各模型的合成并登记 `synthesis.jsonl` 后，先复制 `config/automated-evaluation.example.json` 为 `config/automated-evaluation.json`，按校准集调整归一化区间和权重；再一次评估全部运行：
-
-评价模型统一从 `HF_MIRROR_ROOT` 指向的本地 `hf-mirror` 目录解析。为保证全程离线且缓存也落在该目录，可先设置：
-
-```bash
-export HF_MIRROR_ROOT=~/hf-mirror
-export HF_HOME=~/hf-mirror/huggingface-cache
-export HF_HUB_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
-```
+在已登记 `tts-bench/runs/<run_id>/synthesis.jsonl` 的前提下，使用本地配置运行：
 
 ```bash
 conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
@@ -48,214 +23,15 @@ conda run -n audio_eval python tts-bench/scripts/run_automated_evaluation.py \
   --config tts-bench/config/automated-evaluation.json
 ```
 
-脚本默认不下载 WavLM 与 ASR 权重；首次准备好权重后才运行。确实需要首次下载时显式增加 `--allow-model-download`。结果写入新的 `tts-bench/reports/automated-*/` 目录：
+该命令的 `configured_score`（配置化比较分）仅适用于同一通用实验配置，不能用于 Task 6–9，也不能替代人工试听。
 
-- `per_case.jsonl`：每个 `run_id` / `case_id` 的 WavLM、ASR/CER、UTMOSv2、削波检查、长程音色稳定度与错误；
-- `model_summary.csv`：每个候选模型的均值、失败数、实时率和 `configured_score`（配置化比较分）；
-- `input_errors.jsonl`：不合格或无法定位的合成记录，绝不静默略过；
-- `run_metadata.json`：本次配置、模型选择与执行时间。
+## 当前长音频入口
 
-`configured_score` 是将预先冻结的归一化区间与权重应用到同一批结果的排序工具，不是人类主观 MOS；个人对停顿、语气和情绪的试听记录不参与它。
+| 任务 | 合成与评测入口 |
+| --- | --- |
+| Task 6 | `task-runner/task6/` |
+| Task 7 | `task-runner/task7/` |
+| Task 8 | `task-runner/task8/` |
+| Task 9 | `task-runner/task9/` |
 
-## V2 双后端中立评测
-
-当前 V2 使用旁白、辰南、小公主三角色，冻结清单为 `manifests/task3-2026-07-19-v2.jsonl`，合成记录和音频分别位于 `runs-v2/` 与 `../cloneData/audio_v2/`。`neutral-evaluation-v2.json` 的六后端流程分别运行 SenseVoice CER、Whisper CER、WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2 和 NISQA-TTS，不计算跨指标加权总分；CER 与自然度包含原始参考音频基线，说话人相似度包含同说话人分段和跨角色校准对照。
-
-新电脑的完整环境与权重准备以 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 为准。基础环境、Python 依赖和冻结评价资产分别在 `environment/` 与 `config/evaluation-assets-v2.json`。
-
-正式运行前先检查包版本、CUDA、权重、24 条克隆 WAV 和登记哈希：
-
-```bash
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/check_neutral_evaluation_setup.py \
-  --runs-root tts-bench/runs-v2 \
-  --config tts-bench/config/neutral-evaluation-v2.json \
-  --assets tts-bench/config/evaluation-assets-v2.json \
-  --strict-versions
-```
-
-仓库已经包含历史报告；每次复测必须指定新的输出目录：
-
-```bash
-HF_MIRROR_ROOT=~/hf-mirror \
-HF_HOME=~/hf-mirror/huggingface-cache \
-HF_HUB_OFFLINE=1 \
-TRANSFORMERS_OFFLINE=1 \
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v2.py \
-  --runs-root tts-bench/runs-v2 \
-  --output-dir tts-bench/reports/replay-v2-YYYYMMDDTHHMMSSZ \
-  --strict
-```
-
-评测按后端逐项落盘。中断后使用相同输出目录增加 `--resume`，并可通过 `--metrics` 只重跑指定后端。全部覆盖完整后生成三份报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v2_reports.py \
-  --results-dir tts-bench/reports/replay-YYYYMMDDTHHMMSSZ \
-  --reports-dir tts-bench/reports/replay-YYYYMMDDTHHMMSSZ/reports
-```
-
-V2 原始结果包括 `per_audio.jsonl`、`speaker_similarity.jsonl`、`speaker_calibration.jsonl` 和 `run_metadata.json`。UTMOSv2 固定随机种子并对每条音频做五次裁剪平均，避免默认单次随机裁剪造成批次漂移。
-
-## Task 4 V3 中立评测
-
-V3 沿用同一套六后端和 `evaluation-assets-v2.json` 冻结权重，但参考音频、目标文本、角色与合成记录全部独立。评测输入是 `runs-v3/` 登记的 8 模型 × 3 角色矩阵，对应本地音频位于 `cloneData/audio_v3/`。
-
-正式评分前必须预检：
-
-```bash
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/check_neutral_evaluation_setup.py \
-  --runs-root tts-bench/runs-v3 \
-  --config tts-bench/config/neutral-evaluation-v3.json \
-  --assets tts-bench/config/evaluation-assets-v2.json \
-  --strict-versions
-```
-
-每次复测使用新的输出目录：
-
-```bash
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v3.py \
-  --output-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ \
-  --strict
-
-python tts-bench/scripts/generate_neutral_v3_reports.py \
-  --results-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ \
-  --reports-dir tts-bench/reports/replay-v3-YYYYMMDDTHHMMSSZ/reports
-```
-
-断点续跑仅能对同一次未完成运行的相同目录使用 `--resume`。三份报告分别保留双 CER、双 SIM 和双自然度后端的原始值与独立名次，不计算跨量纲总分。
-
-## Task 5 V4 长音频中立评测
-
-V4 的冻结事实源是 `config/neutral-evaluation-v4.json`。本地输入位于被忽略的 `../longAudioTest/`：7 条模型长音频、6 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。本批成品正文实际对应 `ai_deal.json` 的 148 段 `dialogue`，因此全文 CER 以这些台词按原顺序拼接为参考；`text.md` 与其是相邻但不同的小说片段，不能混用。
-
-V4 一次进程只允许一个 `--model-id`。SenseVoice 与 Whisper 都把单条长音频切为连续、不重叠的 30 秒分段顺序转写，Whisper 的逐段字词时间戳会平移回全局时间轴；时间戳与冻结台词单调对齐，跨角色块按精确匹配字符的角色连续区间线性切分时间，再合并为角色片段，之后才运行 WavLM 与 ECAPA。UTMOSv2 和 NISQA-TTS 对全长固定等距窗口评价。每完成一条记录都会原子写回，终端中断后只对同一次输出目录使用 `--resume`。
-
-```bash
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/check_neutral_evaluation_v4_setup.py \
-  --assets tts-bench/config/evaluation-assets-v2.json \
-  --strict-versions
-
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v4.py \
-  --model-id dots.tts-base \
-  --output-dir longAudioTest/评测结果/task5-v4-YYYYMMDDTHHMMSSZ \
-  --strict
-```
-
-第二个及后续模型使用同一目录并增加 `--resume`。全部覆盖完整后生成三份独立汇总报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v4_reports.py \
-  --results-dir longAudioTest/评测结果/task5-v4-YYYYMMDDTHHMMSSZ \
-  --reports-dir longAudioTest/评测结果
-```
-
-各模型六后端完成时还会在 `longAudioTest/评测结果/` 写入 `<model_id>_V4评价报告.md`。完整的 7 模型顺序、环境变量、输入恢复和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 14 节。
-
-## Task 6 V5 长音频中立评测
-
-V5 的冻结事实源是 `config/neutral-evaluation-v5.json`，输入位于 `../buildTestV5/`：7 条模型长音频、5 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 93 段 `dialogue` 合成，因此全文 CER 使用其 4713 个 `zh-v1` 规范化字符；`text.md` 多出的 198 个说话人提示字符不进入本批 CER。
-
-V5 复用 V4 的防内存溢出机制：每次进程只处理一个 `--model-id`；双 ASR 对连续、不重叠的 30 秒分段顺序转写；双 SIM 只读取 Whisper 时间戳对齐出的五个角色片段；双自然度只读取固定等距的 12 秒窗口。每条记录原子保存，可以只对同一次输出目录断点续跑。
-
-```bash
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/check_neutral_evaluation_v5_setup.py \
-  --assets tts-bench/config/evaluation-assets-v2.json \
-  --strict-versions
-
-conda run --no-capture-output -n audio_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v5.py \
-  --model-id dots.tts-base \
-  --output-dir buildTestV5/评测结果/task6-v5-YYYYMMDDTHHMMSSZ \
-  --strict
-```
-
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成三份分项报告和一份生产权重综合报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v5_reports.py \
-  --results-dir buildTestV5/评测结果/task6-v5-YYYYMMDDTHHMMSSZ \
-  --reports-dir buildTestV5/评测结果
-```
-
-分项报告保留六个后端的原始值与独立名次。综合报告不直接混合 CER、SIM 与预测 MOS 原始值，而是先转换各后端的本批名次分，再按台词正确性 50%、角色音色 30%、自然听感 20% 加权。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md) 第 15 节。
-
-## Task 6 V6 公共长音频评测
-
-V6 的完整流程先在 `../task-runner/task6/run_task6_synthesis.py` 中仅用 IndexTTS2 与 VoxCPM2 克隆旁白，生成本地、被忽略的 `../longAudioTestV6/audio_indextts2.wav` 与 `audio_voxcpm2.wav`，随后才进入公共评测入口。候选成品是合成阶段的输出，不是启动整个 Task 6 前的外部输入；模型标识固定为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。唯一 CER 参考始终是 `../longAudioTestV6/text.md` 的实际全文和原始顺序（`zh-v1` 规范化后 1,826 个字符），不使用不存在的 `ai_deal.json`、旧 V6 字符统计或旧七模型脚本。
-
-V6 的两个模型均使用按参考语速冻结的共享语义分段清单，并在 `../longAudioTestV6/.task6_synthesis_evidence/` 写入与最终 WAV 哈希绑定的逐段音频证据。VoxCPM2 只使用参考音频和参考文案，不传会被朗读的 `--style-prompt`。V6 与 Task 9 共用双 ASR、严格汉字/拼音辅助 CER、ASR 健康门控和交付原始测量；评测器只读取哈希与共享清单均一致的证据，逐段转写后汇总全文 CER，固定时间窗口和整条长音频单次转写都不再用于 V6 CER。目标渠道阈值、强制对齐、读法词典和角色路由分类器尚未冻结，所以报告只记录原始测量或“未执行”。
-
-完整执行顺序见 [`../task6.md`](../task6.md) 和 [`../公共评测任务.md`](../公共评测任务.md)：先用本地计划运行 `run_task6_synthesis.py` 生成候选，再运行 `check_task6_evaluation_setup.py`，随后先以 `indextts2` 创建新结果目录、再以 `voxcpm2 --resume` 完成评测，最后用 `generate_task6_reports.py` 生成两份公共报告。两个 CER 保持独立名次，绝不生成总分。
-
-## Task 7 V7 公共长音频评测
-
-V7 的完整流程先在 `../task-runner/task7/run_task7_synthesis.py` 中仅用 IndexTTS2 与 VoxCPM2 克隆旁白，生成本地、被忽略的 `../longAudioTestV7/audio_indextts2.wav` 与 `audio_voxcpm2.wav`，随后才进入公共评测入口。候选成品是合成阶段的输出，不是启动整个 Task 7 前的外部输入；模型标识固定为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。唯一 CER 参考始终是 `../longAudioTestV7/text.md` 的实际全文和原始顺序（`zh-v1` 规范化后 2,076 个字符），不使用不存在的 `ai_deal.json`、旧 V7 字符统计或旧七模型脚本。
-
-V7 的两个模型均使用按参考语速冻结的共享语义分段清单，并在 `../longAudioTestV7/.task7_synthesis_evidence/` 写入与最终 WAV 哈希绑定的逐段音频证据。VoxCPM2 只使用参考音频和参考文案，不传会被朗读的 `--style-prompt`。V7 与 Task 9 共用双 ASR、严格汉字/拼音辅助 CER、ASR 健康门控和交付原始测量；评测器只读取哈希与共享清单均一致的证据，逐段转写后汇总全文 CER，固定时间窗口和整条长音频单次转写都不再用于 V7 CER。目标渠道阈值、强制对齐、读法词典和角色路由分类器尚未冻结，所以报告只记录原始测量或“未执行”。
-
-完整执行顺序见 [`../task7.md`](../task7.md) 和 [`../公共评测任务.md`](../公共评测任务.md)：先用本地计划运行 `run_task7_synthesis.py` 生成候选，再运行 `check_task7_evaluation_setup.py`，随后先以 `indextts2` 创建新结果目录、再以 `voxcpm2 --resume` 完成评测，最后用 `generate_task7_reports.py` 生成两份公共报告。两个 CER 保持独立名次，绝不生成总分。
-
-## Task 8 V8 公共长音频评测
-
-V8 的完整流程先在 `../task-runner/task8/run_task8_synthesis.py` 中仅用 IndexTTS2 与 VoxCPM2 克隆旁白，生成本地、被忽略的 `../longAudioTestV8/audio_indextts2.wav` 与 `audio_voxcpm2.wav`，随后才进入受限公共评测入口。候选成品是合成阶段的输出，而不是启动整个 Task 8 前的外部输入；模型标识固定为 `indextts2` 与 `voxcpm2`，不得加入 Qwen3-TTS 或其他候选。唯一 CER 参考始终是 `../longAudioTestV8/text.md` 的实际全文和原始顺序（`zh-v1` 规范化后 2,537 个字符），不再使用已删除的 `neutral-evaluation-v8.json`、`ai_deal.json` 或 `tts-bench/scripts/*v8*` 脚本。
-
-V8 的两个模型均使用按参考语速冻结的 V9 同款分段清单，并在 `../longAudioTestV8/.task8_synthesis_evidence/` 生成与最终 WAV 哈希绑定的逐段音频证据。VoxCPM2 只使用参考音频和参考文案，不传会被朗读的 `--style-prompt`。V8 与 Task 9 共用双 ASR、严格汉字/拼音辅助 CER、ASR 健康门控和交付原始测量；评测器只读取哈希与共享清单均一致的证据，逐段转写后汇总全文 CER，固定时间窗口和整条长音频单次转写都不再用于 V8 CER。目标渠道阈值、强制对齐、读法词典和角色路由分类器尚未冻结，所以报告只记录原始测量或“未执行”。
-
-完整执行顺序见 [`../task8.md`](../task8.md) 和 [`../公共评测任务.md`](../公共评测任务.md)：先用本地计划运行 `run_task8_synthesis.py` 生成候选，再运行 `check_task8_evaluation_setup.py`，随后对每个已发现模型运行 `run_task8_evaluation.py`（首个模型使用新结果目录，后续模型增加 `--resume`），最后用 `generate_task8_reports.py` 生成两份公共报告。两个 CER 保持独立名次，绝不生成总分。
-
-## Task 9 V2 双模型旁白克隆评测
-
-`task-runner/task9/` 是独立于本目录通用七模型基准的 Task 9 专用流程：它只比较 IndexTTS2 与 VoxCPM2，唯一台词是 `../longAudioTestV9/text.md`，并使用 `task-runner/task9/evaluation-contract.json` 的 `task9-v2` 契约。合成编排器会生成与最终 WAV 哈希绑定的逐段音频证据；评测按这些语义段独立运行 SenseVoice 与 Whisper-large-v3-turbo，分别报告严格汉字 CER、带声调拼音辅助 CER 和 ASR 健康状态。`pypinyin==0.55.0` 已冻结在 `environment/audio-eval-requirements.txt`；强制对齐、读法词典校准和角色路由仍未执行。
-
-完整命令、复跑规则及报告解释见 [`../task9.md`](../task9.md) 和 [`../task-runner/task9/README.md`](../task-runner/task9/README.md)。下节的 Task 10 V9 七模型流程使用另一份输入契约，不能与 Task 9 的结果混用。
-
-## Task 10 V9 公共长音频评测
-
-V9 的冻结事实源是 `config/neutral-evaluation-v9.json`，输入位于 `../longAudioTestV9/`：7 条模型长音频、5 条 MiMo 角色参考音频、`ai_deal.json` 与 `text.md`。七条成品按 `ai_deal.json` 的 77 段 `dialogue` 合成，因此全文 CER 使用其 1,505 个 `zh-v1` 规范化字符；`text.md` 有 1,527 个字符且与实际合成输入存在叙述、引号归属与顺序差异，不进入本批 CER。
-
-受限入口每次只处理一个 `--model-id`，以连续、不重叠的 30 秒分段顺序运行 SenseVoice 与 Whisper-large-v3-turbo，并测量音频可解码性、格式、采样削波、直流偏置和静音位置。仅在目标渠道格式和响度契约已经冻结时才可判定交付通过或失败；V9 当前未冻结这些阈值，所以只报告原始测量值。强制对齐、读法合规和角色路由分类器也未配置，报告必须显示“未执行”。
-
-公共任务明确排除长音频 WavLM SIM、SpeechBrain ECAPA SIM、UTMOSv2、NISQA 与自动综合分；不得把旧六后端报告或任何加权排名用于 V9。
-
-```bash
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/check_neutral_evaluation_v9_setup.py \
-  --strict-versions
-
-conda run --no-capture-output -n seed_tts_eval \
-  python tts-bench/scripts/run_neutral_evaluation_v9.py \
-  --model-id dots.tts-base \
-  --output-dir longAudioTestV9/评测结果/task10-v9-YYYYMMDDTHHMMSSZ \
-  --strict
-```
-
-其余六个模型对同一目录增加 `--resume`，且每次只传一个 `--model-id`。全部覆盖完整后生成两份公共报告：
-
-```bash
-python tts-bench/scripts/generate_neutral_v9_reports.py \
-  --results-dir longAudioTestV9/评测结果/task10-v9-YYYYMMDDTHHMMSSZ \
-  --reports-dir longAudioTestV9/评测结果
-```
-
-输出为 `SenseVoice_CER&Whisper-large-v3-turbo_CER_V9评价报告.md` 与 `音频交付与文本一致性_V9自动检查报告.md`。两个 CER 保持独立名次，绝不生成总分。完整迁移、运行顺序和验收步骤见 [`../docs/跨电脑复测指南.md`](../docs/跨电脑复测指南.md)。
-
-### Seed-TTS-Eval 中文外部基准
-
-Seed-TTS-Eval（Seed TTS 官方客观基准）不属于本目录的长音频受限入口。输入是按官方中文 meta 单独生成的 `utt.wav`，由根目录 [Seed-TTS评测任务.md](../Seed-TTS评测任务.md) 和 `../Seed-TTS-test/` 定义七模型独立串行合成、环境冻结、源码兼容补丁、预检、单模型完整测试与顺序全量回归规则；手册已提供可直接复制的七模型单独命令与全量命令，公共入口会自动加载本机 `.env`。不得把该外部基准的分数写入长音频 CER 报告或任何综合排名。
-
-## 新建一次合成运行
-
-1. 从 `templates/run.example.yaml` 复制为 `runs/<run_id>/run.yaml`，填写模型版本、配置快照和冻结的清单路径。
-2. 由 `modelScript/` 中相应脚本手工合成，把原始 WAV 放在 `runs/<run_id>/audio/<case_id>.wav`。该目录被忽略，避免大音频进入 Git。
-3. 以 `contracts/synthesis-record.schema.json` 为准，逐行填写 `synthesis.jsonl`。每条成功或失败的尝试都应留下记录。
-4. 在 TTS 合成进程完全退出并释放显存后，对全部成功样本执行一次自动评估。评价器会按需加载；如需排查显存或依赖问题，可用 `--metrics` 单独运行某一类指标。
-5. 只在逐样本结果齐全后比较；`templates/scorecard.csv` 只承载汇总展示，不能替代逐样本证据。
-
-详细操作与停止条件见仓库根目录的 [`评估步骤指南.md`](../评估步骤指南.md)。
+长音频任务只报告 SenseVoice CER 与 Whisper-large-v3-turbo CER 的独立名次，并使用最终 WAV 哈希绑定的逐段合成证据；不得复用本目录的 WavLM、UTMOSv2、综合分或旧长音频脚本。
