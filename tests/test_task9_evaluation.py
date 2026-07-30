@@ -205,6 +205,60 @@ def test_sensevoice_control_tags_do_not_count_as_spoken_text() -> None:
     ) == "实际台词"
 
 
+def test_evaluation_uses_the_same_trimmed_source_text_as_synthesis(monkeypatch, tmp_path: Path) -> None:
+    evaluator = load_module("task9_evaluator_trimmed_source", EVALUATOR_PATH)
+    text_path = tmp_path / "longAudioTestV9" / "text.md"
+    manifest_path = tmp_path / "longAudioTestV9" / ".task9_segment_manifest.json"
+    audio_path = tmp_path / "longAudioTestV9" / "audio_indextts2.wav"
+    evidence_manifest = tmp_path / "evidence.json"
+    text_path.parent.mkdir(parents=True)
+    text_path.write_text("实际合成文本。\n", encoding="utf-8")
+    manifest_path.write_text("{}", encoding="utf-8")
+    audio_path.write_bytes(b"wav")
+    evidence_manifest.write_text("{}", encoding="utf-8")
+    monkeypatch.setattr(evaluator, "PROJECT_ROOT", tmp_path)
+    source_segments = [{"segment_id": "001", "text": "实际合成文本。", "text_sha256": "a" * 64}]
+    seen_source_text: list[str] = []
+    monkeypatch.setattr(
+        evaluator,
+        "load_segment_plan",
+        lambda _path, text: seen_source_text.append(text) or source_segments,
+    )
+    monkeypatch.setattr(
+        evaluator,
+        "load_verified_synthesis_evidence",
+        lambda **_kwargs: {
+            "schema_version": "task9-synthesis-evidence-v1",
+            "manifest_path": evidence_manifest,
+            "full_audio_sha256": "b" * 64,
+            "segments": [{"segment_id": "001", "audio_path": audio_path}],
+        },
+    )
+    monkeypatch.setattr(evaluator, "audio_measurement", lambda *_args: {"decode_status": "decoded"})
+    monkeypatch.setattr(evaluator, "evaluate_asr_backend", lambda *_args: {"status": "complete", "chunks": []})
+    monkeypatch.setattr(evaluator, "apply_cross_backend_health", lambda *_args: {"status": "healthy"})
+    contract = {
+        "source": {
+            "text_path": "longAudioTestV9/text.md",
+            "segment_manifest_path": "longAudioTestV9/.task9_segment_manifest.json",
+        },
+        "asr_evaluation": {"evidence_root": "evidence", "phonetic": {}, "health": {}},
+        "audio_measurement": {},
+        "not_executed": {},
+        "asr": {"sensevoice": {"model_id": "sensevoice"}, "whisper_large_v3_turbo": {"model_id": "whisper"}},
+    }
+    model = {
+        "model_id": "indextts2",
+        "display_name": "IndexTTS2",
+        "audio_path": "longAudioTestV9/audio_indextts2.wav",
+    }
+
+    result = evaluator.evaluate_model(contract, model, tmp_path, tmp_path)
+
+    assert seen_source_text == ["实际合成文本。"]
+    assert result["status"] == "complete"
+
+
 def test_whisper_uses_waveform_input_without_requiring_ffmpeg(monkeypatch) -> None:
     import numpy as np
 

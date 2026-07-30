@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from synthesis_evidence import EVIDENCE_SCHEMA_VERSION, load_verified_synthesis_evidence
-from text_segments import load_segment_plan
+from text_segments import load_segment_plan, read_synthesis_text
 
 
 TASK_DIR = Path(__file__).resolve().parent
@@ -914,7 +914,9 @@ def apply_cross_backend_health(record: dict[str, Any], health_config: dict[str, 
 def evaluate_model(
     contract: dict[str, Any], model: dict[str, Any], hf_mirror_root: Path, output_dir: Path
 ) -> dict[str, Any]:
-    source_text = project_path(contract["source"]["text_path"]).read_text(encoding="utf-8")
+    # 分段清单在合成阶段由 read_synthesis_text() 冻结；评测也必须采用
+    # 同一份实际合成文本。原始 text.md 的完整字节哈希仍在预检和结果契约中校验。
+    source_text = read_synthesis_text(project_path(contract["source"]["text_path"]))
     audio_path = project_path(model["audio_path"])
     segment_manifest_path = project_path(contract["source"]["segment_manifest_path"])
     source_segments = load_segment_plan(segment_manifest_path, source_text)
