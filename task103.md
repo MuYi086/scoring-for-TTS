@@ -1,6 +1,6 @@
 你先阅读`modelScript/tts_local_voxcpm2_安装指南.md`和`modelScript/tts_local_voxcpm2.py`
 然后参考上面的方式
-1. 创建一个conda 环境，名称是 LongCat-AudioDiT-3.5B-bf16，安装 `~/hf-mirror/drbaph/LongCat-AudioDiT-3.5B-bf16`所要求的软件,需要的其他依赖在`~/tts-depency/LongCat-AudioDiT`,将接入使用的方式写成`tts_local_LongCat_AudioDit_3.5B_bf16.py`和`tts_local_LongCat_AudioDit_3.5B_bf16_安装指南.md`输出到`modelScript`目录
+1. 创建一个conda 环境，名称是 dots_tts_soar，安装 `~/hf-mirror/rednote-hilab/dots.tts-soar`所要求的软件,将接入使用的方式写成`tts_local_dots_tts_soar.py`和`tts_local_dots_tts_soar_安装指南.md`输出到`modelScript`目录
 
 
 将以上逐个完成
