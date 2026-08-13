@@ -7,7 +7,7 @@
     "cer_reference": "text_md_actual_synthesis_order",
     "normalization_id": "zh-v1",
     "normalized_character_count": 1527,
-    "description": "Task 9 的两条成品均直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json 或旧 V9 台词统计。两个模型还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的同一份分段清单。"
+    "description": "Task 9 成品直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json 或旧 V9 台词统计。合成必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的分段清单。"
   },
   "reference": {
     "role": "旁白",
@@ -16,11 +16,6 @@
     "voice_description": "女声，20-30岁，中音区略偏低，音色沉静而敏锐，略带暖意，不沙哑或气声过度。咬字清晰但不刻板，语速中等偏慢，有自然的停顿；默认气质冷静而克制，像深夜播讲都市传说中的悬念播客主，不动声色地铺垫紧张氛围。"
   },
   "models": [
-    {
-      "model_id": "indextts2",
-      "display_name": "IndexTTS2",
-      "audio_path": "longAudioTestV9/audio_indextts2.wav"
-    },
     {
       "model_id": "voxcpm2",
       "display_name": "VoxCPM2",

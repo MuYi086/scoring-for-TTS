@@ -34,7 +34,7 @@ def main() -> int:
             print(f"- {error}", file=sys.stderr)
         return 2
     print(
-        "Task 7 评测预检通过：text.md、共享分段清单、旁白参考音频、两条候选成品及其哈希绑定逐段证据、"
+        "Task 7 评测预检通过：text.md、共享分段清单、旁白参考音频、候选成品及其哈希绑定逐段证据、"
         "本地双 ASR、pypinyin、CUDA 和 pip check 均可用。"
     )
     return 0

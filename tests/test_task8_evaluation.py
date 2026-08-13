@@ -76,27 +76,25 @@ def test_contract_freezes_v8_text_md_as_the_only_cer_reference() -> None:
     assert contract["source"]["normalized_character_count"] == 2537
     assert contract["asr_evaluation"]["mode"] == "synthesis_segment_evidence"
     assert contract["source"]["segment_manifest_path"] == "longAudioTestV8/.task8_segment_manifest.json"
-    assert [item["model_id"] for item in contract["models"]] == ["indextts2", "voxcpm2"]
+    assert [item["model_id"] for item in contract["models"]] == ["voxcpm2"]
 
 
 def test_discover_models_uses_the_frozen_candidate_registry(monkeypatch, tmp_path: Path) -> None:
     evaluator = load_module("task8_evaluator_discovery", EVALUATOR_PATH)
     audio_dir = tmp_path / "longAudioTestV8"
     audio_dir.mkdir()
-    (audio_dir / "audio_indextts2.wav").write_bytes(b"first")
     (audio_dir / "audio_voxcpm2.wav").write_bytes(b"second")
     monkeypatch.setattr(evaluator, "PROJECT_ROOT", tmp_path)
     contract = {
         "models": [
-            {"model_id": "indextts2", "display_name": "IndexTTS2", "audio_path": "longAudioTestV8/audio_indextts2.wav"},
             {"model_id": "voxcpm2", "display_name": "VoxCPM2", "audio_path": "longAudioTestV8/audio_voxcpm2.wav"},
         ]
     }
 
     models = evaluator.discover_models(contract)
 
-    assert [item["model_id"] for item in models] == ["indextts2", "voxcpm2"]
-    assert models[0]["audio_sha256"] == hashlib.sha256(b"first").hexdigest()
+    assert [item["model_id"] for item in models] == ["voxcpm2"]
+    assert models[0]["audio_sha256"] == hashlib.sha256(b"second").hexdigest()
 
 
 def test_v8_evaluation_delegates_to_task9_hash_bound_segment_evidence(monkeypatch, tmp_path: Path) -> None:

@@ -1,4 +1,4 @@
-"""Task 9 两个模型共用的长文分段、停顿与可复核清单规则。"""
+"""Task 9 长文分段、停顿与可复核清单规则。"""
 
 from __future__ import annotations
 
@@ -132,7 +132,7 @@ def build_segment_plan(
     target_seconds: float,
     max_segment_seconds: float,
 ) -> dict[str, Any]:
-    """构造语义完整、按参考语速预算且可供两个模型共用的分段清单。"""
+    """构造语义完整、按参考语速预算且可供评测链路复用的分段清单。"""
     if target_seconds <= 0 or max_segment_seconds < target_seconds:
         raise ValueError("分段时长预算必须满足 0 < target_seconds <= max_segment_seconds。")
     rate = speech_rate_from_reference(reference_audio, reference_text)

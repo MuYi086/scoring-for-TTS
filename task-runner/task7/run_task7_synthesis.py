@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Task 7 V7 第一阶段：仅用 IndexTTS2 与 VoxCPM2 合成长音频成品。"""
+"""Task 7 V7 第一阶段：使用 VoxCPM2 合成长音频成品。"""
 
 from __future__ import annotations
 

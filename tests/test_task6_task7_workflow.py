@@ -1,4 +1,4 @@
-"""Task 6/7 两阶段、双模型逐段证据流程的无模型测试。"""
+"""Task 6/7 两阶段、VoxCPM2 逐段证据流程的无模型测试。"""
 
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ def load_synthesis_wrapper(task_id: str):
     return module
 
 
-def test_v6_v7_contracts_freeze_their_own_text_and_exactly_two_evidenced_candidates() -> None:
+def test_v6_v7_contracts_freeze_their_own_text_and_the_single_evidenced_candidate() -> None:
     evaluator = load_evaluator()
     expected = {
         "task6": ("V6", "longAudioTestV6/text.md", 1826),
@@ -51,23 +51,20 @@ def test_v6_v7_contracts_freeze_their_own_text_and_exactly_two_evidenced_candida
         assert contract["source"]["segment_manifest_path"] == f"longAudioTest{version}/.{task_id}_segment_manifest.json"
         assert contract["asr_evaluation"]["mode"] == "synthesis_segment_evidence"
         assert contract["asr_evaluation"]["evidence_root"] == f"longAudioTest{version}/.{task_id}_synthesis_evidence"
-        assert [model["model_id"] for model in contract["models"]] == ["indextts2", "voxcpm2"]
+        assert [model["model_id"] for model in contract["models"]] == ["voxcpm2"]
         assert evaluator.task_identity(contract) == (f"Task {task_id[-1]}", version)
 
 
-def test_v6_v7_synthesis_templates_only_plan_the_two_required_models() -> None:
+def test_v6_v7_synthesis_templates_only_plan_voxcpm2() -> None:
     for task_id, version in (("task6", "V6"), ("task7", "V7")):
         plan = json.loads((ROOT / "task-runner" / task_id / "synthesis-plan.example.json").read_text(encoding="utf-8"))
         assert plan["schema_version"] == f"{task_id}-synthesis-plan-v2"
         assert plan["version"] == version
-        assert [model["model_id"] for model in plan["models"]] == ["indextts2", "voxcpm2"]
-        index_command = plan["models"][0]["command"]
-        vox_command = plan["models"][1]["command"]
-        assert "task-runner/task9/indextts2.py" in index_command
+        assert [model["model_id"] for model in plan["models"]] == ["voxcpm2"]
+        vox_command = plan["models"][0]["command"]
         assert "task-runner/task9/voxcpm2.py" in vox_command
-        for command in (index_command, vox_command):
-            assert "{segment_manifest}" in command
-            assert "{segment_evidence_root}" in command
+        assert "{segment_manifest}" in vox_command
+        assert "{segment_evidence_root}" in vox_command
         assert "--style-prompt" not in vox_command
 
 
@@ -99,13 +96,10 @@ def test_versioned_results_must_stay_under_their_own_task_directory(monkeypatch,
         raise AssertionError("Task 7 结果不得写入 V6 目录")
 
 
-def test_task6_task7_docs_describe_synthesis_before_evaluation_and_exclude_qwen() -> None:
-    for version in ("6", "7"):
-        document = (ROOT / f"task{version}.md").read_text(encoding="utf-8")
-        assert "两个阶段" in document
-        assert "audio_*.wav` 是第一阶段的输出" in document
-        assert "IndexTTS2" in document and "VoxCPM2" in document
-        assert "Qwen3-TTS" in document
+def test_task6_task7_docs_describe_synthesis_before_evaluation_and_exclude_retired_models() -> None:
+    for document_path in sorted(ROOT.glob("task[67].md")):
+        document = document_path.read_text(encoding="utf-8")
+        version = document_path.stem.removeprefix("task")
+        assert "第一阶段合成的输出" in document
+        assert "VoxCPM2" in document
         assert f"longAudioTestV{version}/text.md" in document
-        assert "逐段证据" in document
-        assert "整条长音频一次送入 ASR" in document

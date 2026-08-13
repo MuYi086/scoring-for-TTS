@@ -9,17 +9,6 @@
   },
   "models": [
     {
-      "model_id": "indextts2",
-      "output_mode": "exact_path",
-      "command": [
-        "conda", "run", "--no-capture-output", "-n", "indextts2", "python", "task-runner/task9/indextts2.py",
-        "--model-path", "/path/to/IndexTTS-2", "--code-path", "/path/to/index-tts",
-        "--text-file", "{text_file}", "--ref-audio", "{reference_audio}", "--emo-text", "{voice_description}",
-        "--output", "{output_path}", "--segment-manifest", "{segment_manifest}",
-        "--segment-evidence-root", "{segment_evidence_root}", "--model-id", "indextts2", "--local-files-only"
-      ]
-    },
-    {
       "model_id": "voxcpm2",
       "output_mode": "exact_path",
       "command": [

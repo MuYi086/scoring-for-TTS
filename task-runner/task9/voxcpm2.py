@@ -22,7 +22,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--prompt-text", required=True, help="参考音频的准确文案")
     parser.add_argument("--output", type=Path, required=True, help="精确目标 WAV 路径")
     parser.add_argument("--style-prompt", default="", help="可选风格前缀；默认空值为纯克隆")
-    parser.add_argument("--segment-manifest", type=Path, required=True, help="两个模型共用的冻结分段清单")
+    parser.add_argument("--segment-manifest", type=Path, required=True, help="评测任务共用的冻结分段清单")
     parser.add_argument("--segment-evidence-root", type=Path, default=None, help="可选的逐段音频证据根目录")
     parser.add_argument("--model-id", default="voxcpm2", help="逐段证据中的固定模型标识")
     parser.add_argument("--cfg-value", type=float, default=2.0, help="分类器自由引导强度")

@@ -34,7 +34,7 @@ def main() -> int:
             print(f"- {error}", file=sys.stderr)
         return 2
     print(
-        "Task 8 评测预检通过：text.md、共享分段清单、旁白参考音频、全部 audio_*.wav 及其哈希绑定逐段证据、"
+        "Task 8 评测预检通过：text.md、共享分段清单、旁白参考音频、候选 audio_*.wav 及其哈希绑定逐段证据、"
         "本地 SenseVoiceSmall 与 Whisper-large-v3-turbo、pypinyin、CUDA 和 pip check 均可用。"
     )
     return 0

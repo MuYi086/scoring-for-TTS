@@ -130,8 +130,8 @@ def validate_contract(contract: dict[str, Any]) -> None:
             raise ValueError(f"{task_label} 缺少 audio_*.wav 候选发现规则")
         if not isinstance(discovery.get("minimum_model_count"), int) or discovery["minimum_model_count"] < 1:
             raise ValueError(f"{task_label} 候选模型最小数量必须为正整数")
-        if discovery.get("required_model_ids") != ["indextts2", "voxcpm2"]:
-            raise ValueError(f"{task_label} 必须且只能评测阶段一生成的 indextts2 与 voxcpm2")
+        if discovery.get("required_model_ids") != ["voxcpm2"]:
+            raise ValueError(f"{task_label} 必须且只能评测阶段一生成的 voxcpm2")
         evaluation = contract.get("asr_evaluation")
         if not isinstance(evaluation, dict) or evaluation.get("mode") != "whole_audio":
             raise ValueError(f"{task_label} 必须明确使用整条成品评测单元")
@@ -139,8 +139,8 @@ def validate_contract(contract: dict[str, Any]) -> None:
     if not isinstance(source.get("segment_manifest_path"), str):
         raise ValueError(f"{task_label} 必须冻结共享分段清单路径")
     models = contract.get("models")
-    if not isinstance(models, list) or [item.get("model_id") for item in models if isinstance(item, dict)] != ["indextts2", "voxcpm2"]:
-        raise ValueError(f"{task_label} 必须且只能登记 indextts2 与 voxcpm2")
+    if not isinstance(models, list) or [item.get("model_id") for item in models if isinstance(item, dict)] != ["voxcpm2"]:
+        raise ValueError(f"{task_label} 必须且只能登记 voxcpm2")
     if any(
         not isinstance(item, dict)
         or not isinstance(item.get("display_name"), str)
@@ -173,7 +173,7 @@ def validate_contract(contract: dict[str, Any]) -> None:
 
 
 def discover_models(contract: dict[str, Any]) -> list[dict[str, str]]:
-    """从冻结契约读取且只读取两个允许的候选成品。"""
+    """从冻结契约读取允许的候选成品。"""
     candidates: list[dict[str, str]] = []
     for item in contract["models"]:
         model_id = str(item["model_id"])

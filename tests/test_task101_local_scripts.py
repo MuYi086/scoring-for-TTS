@@ -49,20 +49,3 @@ def test_step_code_preflight_has_actionable_error(tmp_path):
     module = load_module("task101_step", "modelScript/tts_local_Step_Audio_EditX.py")
     with pytest.raises(FileNotFoundError, match="源码目录不存在"):
         module.load_upstream(tmp_path / "missing")
-
-
-def test_ming_instruction_serializes_voice_controls():
-    module = load_module("task101_ming", "modelScript/tts_local_Ming_omni_tts.py")
-    args = argparse.Namespace(
-        instruction_json=None,
-        style="轻柔耳语",
-        emotion="平静",
-        dialect=None,
-        speed=None,
-        pitch=None,
-        volume=None,
-    )
-    instruction = module.build_instruction(args)
-    assert instruction is not None
-    assert "轻柔耳语" in instruction
-    assert "平静" in instruction

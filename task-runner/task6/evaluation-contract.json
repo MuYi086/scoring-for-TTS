@@ -8,7 +8,7 @@
     "cer_reference": "text_md_actual_synthesis_order",
     "normalization_id": "zh-v1",
     "normalized_character_count": 1826,
-    "description": "V6 的两条成品均须直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json、旧 V6 字符数或其他版本台词。两个模型还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的同一份分段清单。"
+    "description": "V6 成品须直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json、旧 V6 字符数或其他版本台词。合成还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的分段清单。"
   },
   "reference": {
     "role": "旁白",
@@ -17,11 +17,6 @@
     "voice_description": "男性，中年，音域中低，声线厚实略带磁性，明亮而不刺耳，音色沉稳平和中蕴含细微的叙述张力。咬字清晰干脆，语速中等偏慢，节奏均匀从容，语气平稳理性，自带一种冷眼旁观、洞察世事的气质。"
   },
   "models": [
-    {
-      "model_id": "indextts2",
-      "display_name": "IndexTTS2",
-      "audio_path": "longAudioTestV6/audio_indextts2.wav"
-    },
     {
       "model_id": "voxcpm2",
       "display_name": "VoxCPM2",

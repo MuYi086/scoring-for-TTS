@@ -53,7 +53,6 @@ def plan_for(runner, command: list[str], output_mode: str = "exact_path") -> dic
             "voice_description": runner.VOICE_DESCRIPTION,
         },
         "models": [
-            {"model_id": "indextts2", "output_mode": output_mode, "command": command},
             {"model_id": "voxcpm2", "output_mode": output_mode, "command": command},
         ],
     }
@@ -120,7 +119,6 @@ def test_dry_run_uses_fixed_v8_inputs_without_creating_audio(monkeypatch, tmp_pa
     result = runner.run(runner.parse_args(["--plan", str(plan_path), "--task-dir", str(task_dir), "--dry-run"]))
 
     assert result == 0
-    assert not (task_dir / "audio_indextts2.wav").exists()
     assert not (task_dir / "audio_voxcpm2.wav").exists()
 
 
@@ -165,8 +163,8 @@ def test_existing_candidate_requires_explicit_overwrite(monkeypatch, tmp_path: P
     task_dir = configure_task(monkeypatch, runner, tmp_path)
     plan_path = task_dir / ".task8-synthesis-plan.json"
     write_plan(plan_path, plan_for(runner, fake_wav_command()))
-    write_wav(task_dir / "audio_indextts2.wav")
-    args = runner.parse_args(["--plan", str(plan_path), "--task-dir", str(task_dir), "--models", "indextts2"])
+    write_wav(task_dir / "audio_voxcpm2.wav")
+    args = runner.parse_args(["--plan", str(plan_path), "--task-dir", str(task_dir), "--models", "voxcpm2"])
 
     try:
         runner.run(args)
@@ -176,18 +174,17 @@ def test_existing_candidate_requires_explicit_overwrite(monkeypatch, tmp_path: P
         raise AssertionError("覆盖已有候选成品必须显式确认")
 
 
-def test_plan_rejects_models_other_than_indextts2_and_voxcpm2(monkeypatch, tmp_path: Path) -> None:
+def test_plan_rejects_models_other_than_voxcpm2(monkeypatch, tmp_path: Path) -> None:
     runner = load_runner("task8_synthesis_fixed_models")
     task_dir = configure_task(monkeypatch, runner, tmp_path)
     plan_path = task_dir / ".task8-synthesis-plan.json"
     plan = plan_for(runner, fake_wav_command())
-    plan["models"][1]["model_id"] = "qwen3-tts"
+    plan["models"][0]["model_id"] = "qwen3-tts"
     write_plan(plan_path, plan)
 
     try:
         runner.load_plan(plan_path)
     except ValueError as error:
-        assert "indextts2" in str(error)
         assert "voxcpm2" in str(error)
     else:
         raise AssertionError("Task 8 不得加入 Qwen3-TTS 或其他模型")
@@ -198,7 +195,7 @@ def test_voxcpm2_plan_rejects_a_style_prompt_that_would_be_read_as_text(monkeypa
     task_dir = configure_task(monkeypatch, runner, tmp_path)
     plan_path = task_dir / ".task8-synthesis-plan.json"
     plan = plan_for(runner, fake_wav_command())
-    plan["models"][1]["command"].extend(["--style-prompt", "{voice_description}"])
+    plan["models"][0]["command"].extend(["--style-prompt", "{voice_description}"])
     write_plan(plan_path, plan)
 
     try:

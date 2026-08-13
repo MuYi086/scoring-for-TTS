@@ -50,7 +50,7 @@ VOICE_DESCRIPTION = (
     "咬字清晰有力，语速中等偏慢，节奏平稳，停顿自然，默认情绪基调冷静克制，"
     "带有成人叙述故事的神秘感和沉稳气质。"
 )
-EXPECTED_MODEL_IDS = ("indextts2", "voxcpm2")
+EXPECTED_MODEL_IDS = ("voxcpm2",)
 SEGMENT_TARGET_SECONDS = 25
 SEGMENT_MAX_SECONDS = 35
 MODEL_ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
@@ -166,9 +166,8 @@ def load_plan(path: Path) -> tuple[dict[str, Any], list[SynthesisModel]]:
             raise ValueError(f"{model_id} 的 output_mode 非法：{output_mode!r}")
         if not isinstance(command, list) or not command or not all(isinstance(token, str) and token for token in command):
             raise ValueError(f"{model_id} 的 command 必须是非空字符串数组")
-        # V8 与 Task 9 一样，两个模型必须从同一份语义分段清单读取文本，并
-        # 产出与最终成品哈希绑定的片段音频证据。只给 VoxCPM2 分段会让
-        # IndexTTS2 的长音频无法进入同一条可复核评测链路。
+        # V8 与 Task 9 一样，模型必须从同一份语义分段清单读取文本，并
+        # 产出与最终成品哈希绑定的片段音频证据。
         required_placeholders = {
             "{text_file}",
             "{reference_audio}",
@@ -194,7 +193,7 @@ def load_plan(path: Path) -> tuple[dict[str, Any], list[SynthesisModel]]:
         models.append(SynthesisModel(model_id, output_mode, tuple(command)))
     if tuple(model_ids) != EXPECTED_MODEL_IDS:
         raise ValueError(
-            f"{TASK_LABEL} 只比较并且必须按顺序合成 IndexTTS2 与 VoxCPM2："
+            f"{TASK_LABEL} 只允许合成 VoxCPM2："
             + "、".join(EXPECTED_MODEL_IDS)
         )
     return plan, models
@@ -241,7 +240,7 @@ def validate_preflight(task_dir: Path, models: list[SynthesisModel], overwrite: 
 
 
 def build_shared_segment_plan(inputs: dict[str, Path]) -> dict[str, Any]:
-    """为两个模型建立按旁白参考语速约束的共享分段清单。"""
+    """建立按旁白参考语速约束的共享分段清单。"""
     return build_segment_plan(
         inputs["text_file"].read_text(encoding="utf-8").strip(),
         inputs["reference_audio"],

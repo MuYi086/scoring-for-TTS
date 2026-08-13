@@ -254,8 +254,8 @@ def validate_contract(contract: dict[str, Any]) -> None:
         raise ValueError("Task 9 CER 必须使用 text.md 实际合成顺序")
     if not isinstance(source.get("segment_manifest_path"), str):
         raise ValueError("Task 9 必须登记共享分段清单路径")
-    if not isinstance(contract.get("models"), list) or len(contract["models"]) != 2:
-        raise ValueError("Task 9 必须登记两条待测模型音频")
+    if not isinstance(contract.get("models"), list) or len(contract["models"]) != 1:
+        raise ValueError("Task 9 必须登记一条待测模型音频")
     model_ids = [item.get("model_id") for item in contract["models"]]
     if len(set(model_ids)) != len(model_ids) or not all(isinstance(item, str) and item for item in model_ids):
         raise ValueError("模型标识必须唯一且非空")

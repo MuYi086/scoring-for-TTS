@@ -93,7 +93,7 @@ def test_contract_freezes_text_md_as_the_only_cer_reference() -> None:
     assert contract["source"]["text_path"] == "longAudioTestV9/text.md"
     assert contract["source"]["cer_reference"] == "text_md_actual_synthesis_order"
     assert contract["source"]["normalized_character_count"] == 1527
-    assert [item["model_id"] for item in contract["models"]] == ["indextts2", "voxcpm2"]
+    assert [item["model_id"] for item in contract["models"]] == ["voxcpm2"]
 
 
 def test_character_error_locations_are_reconstructable() -> None:
@@ -209,7 +209,7 @@ def test_evaluation_uses_the_same_trimmed_source_text_as_synthesis(monkeypatch, 
     evaluator = load_module("task9_evaluator_trimmed_source", EVALUATOR_PATH)
     text_path = tmp_path / "longAudioTestV9" / "text.md"
     manifest_path = tmp_path / "longAudioTestV9" / ".task9_segment_manifest.json"
-    audio_path = tmp_path / "longAudioTestV9" / "audio_indextts2.wav"
+    audio_path = tmp_path / "longAudioTestV9" / "audio_voxcpm2.wav"
     evidence_manifest = tmp_path / "evidence.json"
     text_path.parent.mkdir(parents=True)
     text_path.write_text("实际合成文本。\n", encoding="utf-8")
@@ -248,9 +248,9 @@ def test_evaluation_uses_the_same_trimmed_source_text_as_synthesis(monkeypatch, 
         "asr": {"sensevoice": {"model_id": "sensevoice"}, "whisper_large_v3_turbo": {"model_id": "whisper"}},
     }
     model = {
-        "model_id": "indextts2",
-        "display_name": "IndexTTS2",
-        "audio_path": "longAudioTestV9/audio_indextts2.wav",
+        "model_id": "voxcpm2",
+        "display_name": "VoxCPM2",
+        "audio_path": "longAudioTestV9/audio_voxcpm2.wav",
     }
 
     result = evaluator.evaluate_model(contract, model, tmp_path, tmp_path)
@@ -295,10 +295,7 @@ def test_reporter_writes_the_two_public_v9_reports(tmp_path: Path) -> None:
                 "segments": [{"segment_id": "001", "text": "测试"}],
             },
         },
-        "models": {
-            "indextts2": complete_record("indextts2", "IndexTTS2"),
-            "voxcpm2": complete_record("voxcpm2", "VoxCPM2"),
-        },
+        "models": {"voxcpm2": complete_record("voxcpm2", "VoxCPM2")},
     }
     (tmp_path / "task9_evaluation_results.json").write_text(
         json.dumps(results, ensure_ascii=False), encoding="utf-8"

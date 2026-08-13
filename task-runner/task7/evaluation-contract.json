@@ -8,7 +8,7 @@
     "cer_reference": "text_md_actual_synthesis_order",
     "normalization_id": "zh-v1",
     "normalized_character_count": 2076,
-    "description": "V7 的两条成品均须直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json、旧 V7 字符数或其他版本台词。两个模型还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的同一份分段清单。"
+    "description": "V7 成品须直接使用 text.md 全文合成；CER 只能使用该文件去除空白和标点后的原始顺序文本，不能使用不存在的 ai_deal.json、旧 V7 字符数或其他版本台词。合成还必须使用由旁白参考语速、句末标点、段落边界和统一停顿策略冻结的分段清单。"
   },
   "reference": {
     "role": "旁白",
@@ -17,11 +17,6 @@
     "voice_description": "成年女性，中频偏暗，音色略带沙哑与气声，声线薄透但不过分尖锐，共鸣自然，发声力度适中偏轻柔。咬字清晰利落，语速中等偏慢，节奏均匀，停顿自然沉稳，默认情绪基调为冷静克制的叙述，隐含一丝不安但波动极小，整体气质内敛而耐听。"
   },
   "models": [
-    {
-      "model_id": "indextts2",
-      "display_name": "IndexTTS2",
-      "audio_path": "longAudioTestV7/audio_indextts2.wav"
-    },
     {
       "model_id": "voxcpm2",
       "display_name": "VoxCPM2",
