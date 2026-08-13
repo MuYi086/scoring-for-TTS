@@ -1,6 +1,6 @@
 你先阅读`modelScript/tts_local_voxcpm2_安装指南.md`和`modelScript/tts_local_voxcpm2.py`
 然后参考上面的方式
-1. 创建一个conda 环境，名称是 stable_audio_3_small_sfx，安装 `~/hf-mirror/stabilityai/stable-audio-3-small-sfx`所要求的软件,将接入使用的方式写成`tts_local_stable_audio_3_small_sfx.py`和`tts_local_stable_audio_3_small_sfx_安装指南.md`输出到`modelScript`目录
+1. 创建一个conda 环境，名称是 stable_audio_3_medium，安装 `~/hf-mirror/stabilityai/stable-audio-3-medium`所要求的软件,将接入使用的方式写成`tts_local_stable_audio_3_medium.py`和`tts_local_stable_audio_3_medium_安装指南.md`输出到`modelScript`目录
 
 
 将以上逐个完成
