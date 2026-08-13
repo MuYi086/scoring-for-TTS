@@ -1,19 +1,31 @@
 # Repository Guidelines
 
-## 宪章与语言 (Constitution & Language)
+## 项目结构
 
-修改代码、数据、文档或生成资产前，先阅读 [CONSTITUTION.md](CONSTITUTION.md)。本项目面向用户和贡献者的文档、总结、评审意见和代理输出默认中文优先。必须保留英文术语时，首次出现应补中文说明，例如 `voice casting`（角色配音映射）。
+- `modelScript/`：本地或云端 TTS（文本转语音）模型脚本及安装说明。
+- `task-runner/task6/` 至 `task-runner/task9/`：长音频合成、预检、评测和报告生成的权威入口。
+- `longAudioTestV6/` 至 `longAudioTestV9/`：各任务的冻结文本、参考音频和报告目录；音频、分段清单、证据及运行结果通常被忽略，不应提交。
+- `asr/`：ASR（自动语音识别）规范化规则、配置示例和数据契约；`tests/`：pytest（Python 测试框架）测试。
+- `pyproject.toml`、`CONSTITUTION.md`、`公共评测任务.md`：依赖、项目原则和公共评测契约。
 
-## 安全与配置提示 (Security)
+## 开发与测试命令
 
-不要提交密钥、本地环境文件或机器专属路径。大体积音频资产提交前必须单独确认，因为会显著增加仓库体积。
+```bash
+python -m pytest -q                         # 运行全部无模型测试
+python -m pytest tests/test_task9_evaluation.py -q
+ruff check .                                # 执行静态检查（若已安装 Ruff）
+```
 
-## 评测复现规则 (Evaluation Reproduction)
+长音频任务先阅读对应 `task*.md` 和 `公共评测任务.md`。以 Task 9 为例，先执行 `python task-runner/task9/run_task9_clone.py --dry-run`，再运行对应 `check_task9_evaluation_setup.py`；正式评分每次使用新的 `--output-dir`，仅对同一次未完成运行使用 `--resume`。
 
-修改 Task 6–9 的评测环境、模型版本、输入发现、指标计算或报告导出前，先阅读 [公共评测任务.md](公共评测任务.md) 和对应 `task*.md`。权威入口是对应 `task-runner/task*/` 目录中的冻结契约、合成器、预检器、评测器和报告生成器；不得将 `tts-bench` 的通用短样本评价器用于这些长音频任务。
+## 编码与命名
 
-- 不要假设 GitHub 克隆包含 `cloneData/*.wav` 或 `hf-mirror`；前者被忽略，后者始终在仓库外。
-- 正式评分前必须运行对应任务的 `check_task*_evaluation_setup.py`，确认冻结文本、共享分段清单、候选成品、哈希绑定逐段证据、双 ASR、CUDA 与环境版本。
-- 每次复测使用新的 `--output-dir`；只有继续同一次未完成运行时才能使用 `--resume`。
-- 不得把不同后端或不同量纲的原始值直接平均；长音频报告保持 SenseVoice 与 Whisper-large-v3-turbo 的独立名次、原始转写和健康门控。
-- 更新环境变量、依赖版本、模型 revision 或复测命令时，同步更新对应 `task*.md`、[公共评测任务.md](公共评测任务.md) 和相关 `task-runner/task*/README.md`；如改动通用短样本基准，再同步更新 `tts-bench/README.md`。
+使用 Python 3.11、4 个空格缩进和不超过 100 字符的行宽；函数与变量使用 `snake_case`，测试文件命名为 `tests/test_*.py`。新增逻辑应拆成小型、可测试函数，避免无必要的重型依赖。Markdown 文档和贡献说明中文优先，首次出现的英文术语附中文解释。
+
+## 评测与测试规范
+
+影响匹配、校验、合成证据、控制提示或报告格式的改动必须补充 pytest 用例。Task 6–9 只能按冻结输入串行评测 IndexTTS2 与 VoxCPM2；正式评分前必须通过任务预检。SenseVoice 与 Whisper-large-v3-turbo 的结果分别报告，禁止跨后端或跨量纲平均，也不得用 `tts-bench` 通用短样本评价器替代长音频运行器。
+
+## 提交与 PR
+
+提交信息沿用简短的 Conventional Commits（约定式提交）风格，例如 `feat: 增加模型脚本`、`fix: 修复评测路径`。PR 应说明变更范围、验证命令及评测影响；涉及任务契约、模型版本、环境变量或命令时，同时更新相关任务文档和 README。不要提交密钥、`.env`、机器专属路径或未经确认的大体积音频资产。
