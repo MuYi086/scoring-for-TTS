@@ -1,2 +1,2 @@
-你评估当前项目的`.pytest_cache`和`asr`和`work`
-是否和当前项目执行评测任务"公共评测任务.md","task6.md"和"task102.md"有影响。如果无影响，帮我删除
+你先阅读`/c/github/fapai_renhe/scripts`项目中minerU的用法。
+现在我希望你再当前项目script创建一个deal_nsnsjb的脚本，使用minerU将`C:\Downloads\男生女生金版2002-2015`目录下所有的pdf都转成markdown，名称不变，文件保存在当前项目`training/男生女生金版`
