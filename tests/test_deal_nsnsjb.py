@@ -166,36 +166,53 @@ class DealNsnsjbTests(unittest.TestCase):
         self.assertEqual(matched["id-1"]["state"], "done")
         self.assertEqual(matched["id-2"]["state"], "failed")
 
-    def test_poll_for_batch_results_waits_for_every_uploaded_file_without_network(self):
-        items = (
-            self.module.BatchItem("id-1", Path("first.pdf"), Path("first.md")),
-            self.module.BatchItem("id-2", Path("second.pdf"), Path("second.md")),
-        )
-        batch = self.module.SubmittedBatch("batch-1", items)
-        snapshots = [
-            [
-                {"data_id": "id-1", "state": "running"},
-                {"data_id": "id-2", "state": "waiting-file"},
-            ],
-            [
-                {"data_id": "id-1", "state": "done", "full_zip_url": "zip-1"},
-                {"data_id": "id-2", "state": "failed", "err_msg": "bad pdf"},
-            ],
-        ]
+    def test_collect_batch_results_saves_each_done_file_before_next_poll(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory)
+            first = self.module.BatchItem(
+                "id-1", Path("first.pdf"), output_dir / "first.md"
+            )
+            second = self.module.BatchItem(
+                "id-2", Path("second.pdf"), output_dir / "second.md"
+            )
+            batch = self.module.SubmittedBatch("batch-1", (first, second))
+            call_count = 0
 
-        with patch.object(self.module, "get_batch_results", side_effect=snapshots) as get:
-            with patch.object(self.module.time, "sleep") as sleep:
-                results = self.module.poll_for_batch_results(
-                    batch,
-                    api_key="test-key",
-                    interval=5,
-                    timeout=30,
-                )
+            def get_snapshot(*unused_args):
+                nonlocal call_count
+                call_count += 1
+                if call_count == 1:
+                    return [
+                        {"data_id": "id-1", "state": "done", "full_zip_url": "zip-1"},
+                        {"data_id": "id-2", "state": "running"},
+                    ]
+                self.assertTrue(first.output_path.exists())
+                return [
+                    {"data_id": "id-1", "state": "done", "full_zip_url": "zip-1"},
+                    {"data_id": "id-2", "state": "done", "full_zip_url": "zip-2"},
+                ]
 
-        self.assertEqual(get.call_count, 2)
-        sleep.assert_called_once_with(5)
-        self.assertEqual(results["id-1"]["state"], "done")
-        self.assertEqual(results["id-2"]["state"], "failed")
+            def write_result(item, unused_zip_url):
+                item.output_path.write_text("markdown", encoding="utf-8")
+
+            with patch.object(self.module, "get_batch_results", side_effect=get_snapshot):
+                with patch.object(
+                    self.module,
+                    "download_and_write_result",
+                    side_effect=write_result,
+                ):
+                    with patch.object(self.module.time, "sleep") as sleep:
+                        succeeded, failed = self.module.collect_batch_results(
+                            batch,
+                            api_key="test-key",
+                            poll_interval=5,
+                            poll_timeout=30,
+                            download_workers=2,
+                        )
+
+            self.assertEqual((succeeded, failed), (2, 0))
+            self.assertEqual(call_count, 2)
+            sleep.assert_called_once_with(5)
 
     def test_collect_batch_results_isolates_per_file_failures_without_network(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -207,15 +224,15 @@ class DealNsnsjbTests(unittest.TestCase):
                 "id-2", Path("second.pdf"), output_dir / "second.md"
             )
             batch = self.module.SubmittedBatch("batch-1", (first, second))
-            results = {
-                "id-1": {"state": "done", "full_zip_url": "zip-1"},
-                "id-2": {"state": "failed", "err_msg": "bad pdf"},
-            }
+            results = [
+                {"data_id": "id-1", "state": "done", "full_zip_url": "zip-1"},
+                {"data_id": "id-2", "state": "failed", "err_msg": "bad pdf"},
+            ]
 
             def write_result(item, unused_zip_url):
                 item.output_path.write_text("markdown", encoding="utf-8")
 
-            with patch.object(self.module, "poll_for_batch_results", return_value=results):
+            with patch.object(self.module, "get_batch_results", return_value=results):
                 with patch.object(
                     self.module,
                     "download_and_write_result",
@@ -246,6 +263,8 @@ class DealNsnsjbTests(unittest.TestCase):
         self.assertEqual(command[command.index("--upload-file") + 1], str(pdf_path))
         self.assertEqual(command[-1], "https://upload.example/signed")
         self.assertNotIn("Content-Type", command)
+        self.assertIn("--speed-limit", command)
+        self.assertIn("--speed-time", command)
 
     def test_upload_file_retries_broken_connection_without_network(self):
         broken_pipe = self.module.subprocess.CompletedProcess(
@@ -376,7 +395,7 @@ class DealNsnsjbTests(unittest.TestCase):
                 error_path = output_dir / name
                 self.assertIn("user authenticate failed", error_path.read_text(encoding="utf-8"))
 
-    def test_run_submits_all_batches_before_collecting_results(self):
+    def test_run_finishes_each_batch_before_submitting_the_next(self):
         with tempfile.TemporaryDirectory() as directory:
             source_dir = Path(directory) / "source"
             output_dir = Path(directory) / "output"
@@ -415,7 +434,7 @@ class DealNsnsjbTests(unittest.TestCase):
 
             self.assertEqual(
                 events,
-                [("submit", 50), ("submit", 1), ("collect", 50), ("collect", 1)],
+                [("submit", 50), ("collect", 50), ("submit", 1), ("collect", 1)],
             )
             self.assertEqual(summary.succeeded, 51)
             self.assertEqual(summary.failed, 0)

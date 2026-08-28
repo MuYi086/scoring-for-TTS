@@ -19,7 +19,7 @@
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import as_completed, ThreadPoolExecutor
+from concurrent.futures import as_completed, FIRST_COMPLETED, ThreadPoolExecutor, wait
 from dataclasses import dataclass
 import io
 import json
@@ -45,6 +45,9 @@ DEFAULT_DOWNLOAD_WORKERS = 4
 UPLOAD_TIMEOUT_SECONDS = 300
 UPLOAD_MAX_ATTEMPTS = 3
 UPLOAD_RETRY_DELAY_SECONDS = 2
+PROGRESS_HEARTBEAT_SECONDS = 30
+UPLOAD_LOW_SPEED_LIMIT_BYTES = 1024
+UPLOAD_LOW_SPEED_TIME_SECONDS = 60
 DOWNLOAD_TIMEOUT_SECONDS = 120
 MAX_UPLOAD_SIZE_BYTES = 200 * 1024 * 1024
 WINDOWS_SOURCE_DIR = Path(r"C:\Downloads\男生女生金版2002-2015")
@@ -106,20 +109,29 @@ def default_source_dir() -> Path:
     return WSL_SOURCE_DIR
 
 
-def build_parser() -> argparse.ArgumentParser:
-    """创建命令行参数解析器。"""
-    parser = argparse.ArgumentParser(description="使用 MinerU 将 PDF 批量转换为 Markdown")
+def build_parser(
+    *,
+    collection_name: str = "《男生女生（金版）》",
+    windows_source_dir: Path = WINDOWS_SOURCE_DIR,
+    wsl_source_dir: Path = WSL_SOURCE_DIR,
+    default_output_dir: Path = DEFAULT_OUTPUT_DIR,
+) -> argparse.ArgumentParser:
+    """为指定刊物创建命令行参数解析器。"""
+    source_dir = windows_source_dir if windows_source_dir.exists() else wsl_source_dir
+    parser = argparse.ArgumentParser(
+        description=f"使用 MinerU 将{collection_name} PDF 批量转换为 Markdown"
+    )
     parser.add_argument(
         "--source-dir",
         type=Path,
-        default=default_source_dir(),
-        help="待转换 PDF 目录；默认是 C:\\Downloads\\男生女生金版2002-2015",
+        default=source_dir,
+        help=f"待转换 PDF 目录；Windows 默认是 {windows_source_dir}",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT_DIR,
-        help="Markdown 输出目录；默认是 training/男生女生金版",
+        default=default_output_dir,
+        help=f"Markdown 输出目录；默认是 {default_output_dir}",
     )
     parser.add_argument(
         "--overwrite",
@@ -343,6 +355,10 @@ def upload_file(pdf_path: Path, upload_url: str) -> None:
         "30",
         "--max-time",
         str(UPLOAD_TIMEOUT_SECONDS),
+        "--speed-limit",
+        str(UPLOAD_LOW_SPEED_LIMIT_BYTES),
+        "--speed-time",
+        str(UPLOAD_LOW_SPEED_TIME_SECONDS),
         "--output",
         os.devnull,
         "--write-out",
@@ -386,7 +402,7 @@ def upload_file(pdf_path: Path, upload_url: str) -> None:
 
         delay = UPLOAD_RETRY_DELAY_SECONDS * attempt
         log(
-            f"  上传连接中断，第 {attempt}/{UPLOAD_MAX_ATTEMPTS} 次失败，"
+            f"  {pdf_path.name} 上传连接中断，第 {attempt}/{UPLOAD_MAX_ATTEMPTS} 次失败，"
             f"{delay} 秒后重试..."
         )
         time.sleep(delay)
@@ -406,16 +422,37 @@ def upload_batch(
             executor.submit(upload_file, item.pdf_path, upload_url): item
             for item, upload_url in zip(items, upload_urls, strict=True)
         }
-        for completed_count, future in enumerate(as_completed(future_items), start=1):
-            item = future_items[future]
-            try:
-                future.result()
-            except Exception as error:
-                failures.append((item, error))
-                log(f"  [上传失败] {item.pdf_path.name}: {error}")
-            else:
-                completed_items.add(item.data_id)
-                log(f"  上传完成 [{completed_count}/{len(items)}] {item.pdf_path.name}")
+        pending_futures = set(future_items)
+        completed_count = 0
+        while pending_futures:
+            done, pending_futures = wait(
+                pending_futures,
+                timeout=PROGRESS_HEARTBEAT_SECONDS,
+                return_when=FIRST_COMPLETED,
+            )
+            if not done:
+                log(
+                    f"  上传仍在进行：已结束 {completed_count}/{len(items)}，"
+                    f"尚有 {len(pending_futures)} 个未结束"
+                )
+                continue
+            for future in done:
+                completed_count += 1
+                item = future_items[future]
+                try:
+                    future.result()
+                except Exception as error:
+                    failures.append((item, error))
+                    log(
+                        f"  [上传失败 {completed_count}/{len(items)}] "
+                        f"{item.pdf_path.name}: {error}"
+                    )
+                else:
+                    completed_items.add(item.data_id)
+                    log(
+                        f"  上传完成 [{completed_count}/{len(items)}] "
+                        f"{item.pdf_path.name}"
+                    )
 
     uploaded = tuple(item for item in items if item.data_id in completed_items)
     return uploaded, failures
@@ -464,52 +501,6 @@ def match_batch_results(
         if data_id in expected_ids:
             matched[data_id] = result_item
     return matched
-
-
-def poll_for_batch_results(
-    batch: SubmittedBatch,
-    api_key: str,
-    interval: float,
-    timeout: float,
-) -> dict[str, dict[str, Any]]:
-    """等待已成功上传的文件全部进入 done 或 failed 状态。"""
-    if not batch.items:
-        return {}
-
-    started_at = time.monotonic()
-    last_state_summary: tuple[tuple[str, int], ...] | None = None
-    last_matched: dict[str, dict[str, Any]] = {}
-    while time.monotonic() - started_at < timeout:
-        matched = match_batch_results(batch.items, get_batch_results(batch.batch_id, api_key))
-        last_matched = matched
-        states = {
-            item.data_id: matched.get(item.data_id, {}).get("state", "not-returned")
-            for item in batch.items
-        }
-        state_counts: dict[str, int] = {}
-        for state in states.values():
-            state_counts[state] = state_counts.get(state, 0) + 1
-        state_summary = tuple(sorted(state_counts.items()))
-        if state_summary != last_state_summary:
-            formatted = ", ".join(f"{state}={count}" for state, count in state_summary)
-            elapsed = int(time.monotonic() - started_at)
-            log(f"  批量解析中... [{elapsed}s] {formatted}")
-            last_state_summary = state_summary
-
-        if all(state in {"done", "failed"} for state in states.values()):
-            return matched
-
-        time.sleep(interval)
-
-    unfinished = [
-        item.pdf_path.name
-        for item in batch.items
-        if last_matched.get(item.data_id, {}).get("state") not in {"done", "failed"}
-    ]
-    preview = "、".join(unfinished[:5])
-    if len(unfinished) > 5:
-        preview += f" 等 {len(unfinished)} 个文件"
-    raise TimeoutError(f"等待 MinerU 批量解析超时（{timeout:g} 秒）：{preview}")
 
 
 def download_zip(zip_url: str) -> bytes:
@@ -575,51 +566,102 @@ def collect_batch_results(
     poll_timeout: float,
     download_workers: int,
 ) -> tuple[int, int]:
-    """等待一批任务完成，并发下载成功结果，分别统计成功和失败。"""
-    results = poll_for_batch_results(batch, api_key, poll_interval, poll_timeout)
-    failed = 0
-    downloadable: list[tuple[BatchItem, str]] = []
-    for item in batch.items:
-        result_item = results[item.data_id]
-        if result_item.get("state") == "failed":
-            error = RuntimeError(
-                f"MinerU 解析失败: {result_item.get('err_msg') or 'unknown'}"
-            )
-            write_error(item.error_path, error)
-            log(f"  [解析失败] {item.pdf_path.name}: {error}")
-            failed += 1
-            continue
+    """轮询一批任务，将每轮新完成的结果立即并发下载并写入。"""
+    if not batch.items:
+        return 0, 0
 
-        zip_url = result_item.get("full_zip_url")
-        if not isinstance(zip_url, str) or not zip_url:
-            error = RuntimeError("MinerU 已完成但未返回 full_zip_url")
-            write_error(item.error_path, error)
-            log(f"  [结果失败] {item.pdf_path.name}: {error}")
-            failed += 1
-            continue
-        downloadable.append((item, zip_url))
-
+    remaining = {item.data_id: item for item in batch.items}
+    started_at = time.monotonic()
+    last_progress: tuple[int, int, tuple[tuple[str, int], ...]] | None = None
+    last_log_at = started_at - PROGRESS_HEARTBEAT_SECONDS
     succeeded = 0
-    if downloadable:
-        worker_count = min(download_workers, len(downloadable))
-        with ThreadPoolExecutor(max_workers=worker_count) as executor:
-            future_items = {
-                executor.submit(download_and_write_result, item, zip_url): item
-                for item, zip_url in downloadable
-            }
-            for future in as_completed(future_items):
-                item = future_items[future]
-                try:
-                    future.result()
-                except Exception as error:
-                    write_error(item.error_path, error)
-                    log(f"  [下载失败] {item.pdf_path.name}: {error}")
-                    failed += 1
-                else:
-                    succeeded += 1
-                    if item.error_path.exists():
-                        item.error_path.unlink()
-                    log(f"  [OK] 已保存: {item.output_path}")
+    failed = 0
+
+    while remaining:
+        elapsed = time.monotonic() - started_at
+        if elapsed >= poll_timeout:
+            unfinished = [item.pdf_path.name for item in remaining.values()]
+            preview = "、".join(unfinished[:5])
+            if len(unfinished) > 5:
+                preview += f" 等 {len(unfinished)} 个文件"
+            raise TimeoutError(
+                f"等待 MinerU 批量解析超时（{poll_timeout:g} 秒）：{preview}"
+            )
+
+        matched = match_batch_results(
+            batch.items,
+            get_batch_results(batch.batch_id, api_key),
+        )
+        downloadable: list[tuple[BatchItem, str]] = []
+        for data_id, item in list(remaining.items()):
+            result_item = matched.get(data_id)
+            if result_item is None:
+                continue
+            state = result_item.get("state")
+            if state == "failed":
+                error = RuntimeError(
+                    f"MinerU 解析失败: {result_item.get('err_msg') or 'unknown'}"
+                )
+                write_error(item.error_path, error)
+                log(f"  [解析失败] {item.pdf_path.name}: {error}")
+                failed += 1
+                del remaining[data_id]
+                continue
+            if state != "done":
+                continue
+
+            zip_url = result_item.get("full_zip_url")
+            if not isinstance(zip_url, str) or not zip_url:
+                error = RuntimeError("MinerU 已完成但未返回 full_zip_url")
+                write_error(item.error_path, error)
+                log(f"  [结果失败] {item.pdf_path.name}: {error}")
+                failed += 1
+                del remaining[data_id]
+                continue
+            downloadable.append((item, zip_url))
+
+        if downloadable:
+            worker_count = min(download_workers, len(downloadable))
+            with ThreadPoolExecutor(max_workers=worker_count) as executor:
+                future_items = {
+                    executor.submit(download_and_write_result, item, zip_url): item
+                    for item, zip_url in downloadable
+                }
+                for future in as_completed(future_items):
+                    item = future_items[future]
+                    try:
+                        future.result()
+                    except Exception as error:
+                        write_error(item.error_path, error)
+                        log(f"  [下载失败] {item.pdf_path.name}: {error}")
+                        failed += 1
+                    else:
+                        succeeded += 1
+                        if item.error_path.exists():
+                            item.error_path.unlink()
+                        log(f"  [OK] 已保存: {item.output_path}")
+                    del remaining[item.data_id]
+
+        state_counts: dict[str, int] = {}
+        for data_id in remaining:
+            state = matched.get(data_id, {}).get("state", "not-returned")
+            state_counts[state] = state_counts.get(state, 0) + 1
+        state_summary = tuple(sorted(state_counts.items()))
+        progress = (succeeded, failed, state_summary)
+        now = time.monotonic()
+        if progress != last_progress or now - last_log_at >= PROGRESS_HEARTBEAT_SECONDS:
+            formatted = ", ".join(
+                f"{state}={count}" for state, count in state_summary
+            ) or "无待处理文件"
+            log(
+                f"  本批进度：已保存 {succeeded}，失败 {failed}，"
+                f"剩余 {len(remaining)}（{formatted}）"
+            )
+            last_progress = progress
+            last_log_at = now
+
+        if remaining:
+            time.sleep(poll_interval)
     return succeeded, failed
 
 
@@ -663,7 +705,7 @@ def run(args: argparse.Namespace) -> RunSummary:
         f"上传并发数 {args.upload_workers}"
     )
 
-    submitted_batches: list[SubmittedBatch] = []
+    succeeded = 0
     failed = 0
     for batch_index, items in enumerate(batches, start=1):
         log(f"[提交批次 {batch_index}/{len(batches)}] {len(items)} 个文件")
@@ -677,28 +719,26 @@ def run(args: argparse.Namespace) -> RunSummary:
             log(f"  [ERR] 批次提交失败: {error}")
             log("检测到批次级错误，停止提交；修复后重新运行会跳过已有 Markdown。")
             raise
-        submitted_batches.append(submitted_batch)
         failed += upload_failures
-
-    log("全部批次上传完成；MinerU 已在后台并行解析，开始收取各批结果。")
-    succeeded = 0
-    for batch_index, batch in enumerate(submitted_batches, start=1):
-        if not batch.items:
+        if not submitted_batch.items:
+            log(f"[批次 {batch_index}/{len(batches)} 完成] 本批文件全部上传失败")
             continue
+
         log(
-            f"[收取批次 {batch_index}/{len(submitted_batches)}] "
-            f"batch_id={batch.batch_id}，{len(batch.items)} 个已上传文件"
+            f"[收取批次 {batch_index}/{len(batches)}] "
+            f"batch_id={submitted_batch.batch_id}，"
+            f"等待 {len(submitted_batch.items)} 个已上传文件"
         )
         try:
             batch_succeeded, batch_failed = collect_batch_results(
-                batch,
+                submitted_batch,
                 api_key,
                 args.poll_interval,
                 args.poll_timeout,
                 args.download_workers,
             )
         except Exception as error:
-            for item in batch.items:
+            for item in submitted_batch.items:
                 if not item.output_path.exists():
                     write_error(item.error_path, error)
             log(f"  [ERR] 批次结果收取失败: {error}")
@@ -706,13 +746,17 @@ def run(args: argparse.Namespace) -> RunSummary:
             raise
         succeeded += batch_succeeded
         failed += batch_failed
+        log(
+            f"[批次 {batch_index}/{len(batches)} 完成] "
+            f"成功 {batch_succeeded}，失败 {upload_failures + batch_failed}；"
+            "开始下一批"
+        )
 
     return RunSummary(len(pdf_files), succeeded, failed, skipped)
 
 
-def main(argv: list[str] | None = None) -> int:
-    """运行命令行入口，并在有失败文件时返回非零状态。"""
-    args = build_parser().parse_args(argv)
+def run_cli(args: argparse.Namespace) -> int:
+    """运行已解析的命令行参数，并在有失败文件时返回非零状态。"""
     try:
         summary = run(args)
     except KeyboardInterrupt:
@@ -727,6 +771,35 @@ def main(argv: list[str] | None = None) -> int:
         f"失败 {summary.failed}，跳过 {summary.skipped}"
     )
     return 1 if summary.failed else 0
+
+
+def main_for_collection(
+    argv: list[str] | None = None,
+    *,
+    collection_name: str,
+    windows_source_dir: Path,
+    wsl_source_dir: Path,
+    default_output_dir: Path,
+) -> int:
+    """使用共享 MinerU 流程运行一个指定刊物的数据集。"""
+    args = build_parser(
+        collection_name=collection_name,
+        windows_source_dir=windows_source_dir,
+        wsl_source_dir=wsl_source_dir,
+        default_output_dir=default_output_dir,
+    ).parse_args(argv)
+    return run_cli(args)
+
+
+def main(argv: list[str] | None = None) -> int:
+    """运行《男生女生（金版）》命令行入口。"""
+    return main_for_collection(
+        argv,
+        collection_name="《男生女生（金版）》",
+        windows_source_dir=WINDOWS_SOURCE_DIR,
+        wsl_source_dir=WSL_SOURCE_DIR,
+        default_output_dir=DEFAULT_OUTPUT_DIR,
+    )
 
 
 if __name__ == "__main__":

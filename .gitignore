@@ -71,5 +71,10 @@ longAudioTestV9/评测结果/task9-*
 longAudioTestV9/.task9_synthesis_evidence/
 
 # MinerU 本地批量转换结果（源 PDF 和 API 密钥均不在仓库中）
-training/男生女生金版/*.md
 training/男生女生金版/*.md.error
+training/怖客/*.md.error
+training/猛鬼杂志故事/*.md.error
+training/民间故事胆小鬼/*.md.error
+training/悚族/*.md.error
+training/岁月推理/*.md.error
+training/啄木鸟/*.md.error
