@@ -9,11 +9,11 @@
 运行前请仅在本机环境中设置 MinerU API Token：
 
     export MINEU_API_KEY='...'
-    python training/script/deal_nsnsjb.py
+    python training/script/dealPdf/deal_nsnsjb.py
 
 先检查待处理列表而不访问 MinerU：
 
-    python training/script/deal_nsnsjb.py --dry-run
+    python training/script/dealPdf/deal_nsnsjb.py --dry-run
 """
 
 from __future__ import annotations
@@ -52,7 +52,7 @@ DOWNLOAD_TIMEOUT_SECONDS = 120
 MAX_UPLOAD_SIZE_BYTES = 200 * 1024 * 1024
 WINDOWS_SOURCE_DIR = Path(r"C:\Downloads\男生女生金版2002-2015")
 WSL_SOURCE_DIR = Path("/mnt/c/Downloads/男生女生金版2002-2015")
-REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_OUTPUT_DIR = REPOSITORY_ROOT / "training" / "男生女生金版"
 API_TOKEN_ENVIRONMENT_VARIABLE = "MINEU_API_KEY"
 

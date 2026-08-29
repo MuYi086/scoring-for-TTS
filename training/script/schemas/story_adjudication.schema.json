@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^story_[0-9a-f]{16}$"},
+    "decision": {"type": "string", "enum": ["pass", "revise", "reject"]},
+    "factual_consistency": {"type": "number", "minimum": 0, "maximum": 1},
+    "audio_readability": {"type": "number", "minimum": 0, "maximum": 1},
+    "suspense_preservation": {"type": "number", "minimum": 0, "maximum": 1},
+    "required_corrections": {"type": "array", "items": {"type": "string"}},
+    "final_output_b": {"type": "string"},
+    "rationale": {"type": "string"}
+  },
+  "required": [
+    "source_id",
+    "decision",
+    "factual_consistency",
+    "audio_readability",
+    "suspense_preservation",
+    "required_corrections",
+    "final_output_b",
+    "rationale"
+  ],
+  "additionalProperties": false
+}

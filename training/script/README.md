@@ -6,28 +6,28 @@
 
 | 任务 | 脚本 | Windows 输入目录 | Markdown 输出目录 |
 | --- | --- | --- | --- |
-| Task 11 | `deal_nsnsjb.py` | `C:\Downloads\男生女生金版2002-2015` | `training/男生女生金版/` |
-| Task 12 | `deal_bk.py` | `C:\Downloads\怖客2010-2018` | `training/怖客/` |
-| Task 13 | `deal_mgzzgs.py` | `C:\Downloads\猛鬼杂志故事-56本` | `training/猛鬼杂志故事/` |
-| Task 14 | `deal_mjgsdxg.py` | `C:\Downloads\民间故事胆小鬼` | `training/民间故事胆小鬼/` |
-| Task 15 | `deal_sz.py` | `C:\Downloads\悚族-75本` | `training/悚族/` |
-| Task 16 | `deal_sytl.py` | `C:\Downloads\岁月推理` | `training/岁月推理/` |
-| Task 17 | `deal_zmn.py` | `C:\Downloads\啄木鸟` | `training/啄木鸟/` |
+| Task 11 | `dealPdf/deal_nsnsjb.py` | `C:\Downloads\男生女生金版2002-2015` | `training/男生女生金版/` |
+| Task 12 | `dealPdf/deal_bk.py` | `C:\Downloads\怖客2010-2018` | `training/怖客/` |
+| Task 13 | `dealPdf/deal_mgzzgs.py` | `C:\Downloads\猛鬼杂志故事-56本` | `training/猛鬼杂志故事/` |
+| Task 14 | `dealPdf/deal_mjgsdxg.py` | `C:\Downloads\民间故事胆小鬼` | `training/民间故事胆小鬼/` |
+| Task 15 | `dealPdf/deal_sz.py` | `C:\Downloads\悚族-75本` | `training/悚族/` |
+| Task 16 | `dealPdf/deal_sytl.py` | `C:\Downloads\岁月推理` | `training/岁月推理/` |
+| Task 17 | `dealPdf/deal_zmn.py` | `C:\Downloads\啄木鸟` | `training/啄木鸟/` |
 
 所有入口只从环境变量读取 MinerU API Token，绝不把 Token 写入仓库：
 
 ```bash
 export MINEU_API_KEY='你的 MinerU API Token'
 python -c "import os; print('MINEU_API_KEY 已设置' if os.getenv('MINEU_API_KEY') else 'MINEU_API_KEY 未设置')"
-python training/script/deal_nsnsjb.py --dry-run
-python training/script/deal_nsnsjb.py
+python training/script/dealPdf/deal_nsnsjb.py --dry-run
+python training/script/dealPdf/deal_nsnsjb.py
 ```
 
 其他数据集将命令中的脚本名替换为上表对应入口。例如：
 
 ```bash
-python training/script/deal_bk.py --dry-run
-python training/script/deal_bk.py
+python training/script/dealPdf/deal_bk.py --dry-run
+python training/script/dealPdf/deal_bk.py
 ```
 
 脚本读取的是启动它的 Python 进程继承的环境变量，不会自行解析 `~/.bashrc`。因此 `.bashrc` 中必须使用
@@ -48,8 +48,8 @@ Ubuntu/WSL 通常已自带 `curl`；临时断线会自动重试 3 次，HTTP 4xx
 每批最多处理 50 个 PDF。网络较慢或连接不稳定时可降低上传并发数；确认带宽充足时可提高：
 
 ```bash
-python training/script/deal_nsnsjb.py --upload-workers 2
-python training/script/deal_nsnsjb.py --upload-workers 8 --download-workers 8
+python training/script/dealPdf/deal_nsnsjb.py --upload-workers 2
+python training/script/dealPdf/deal_nsnsjb.py --upload-workers 8 --download-workers 8
 ```
 
 `--batch-size` 的取值范围为 1–50，默认 50；`--poll-timeout` 是每批结果的最长等待时间。
@@ -62,3 +62,10 @@ MinerU 精准解析 API 限制单个文件不超过 200 MB、200 页。脚本会
 PDF；页数由 MinerU 在服务端校验。
 
 生成的 Markdown 和错误标记已加入 `.gitignore`，仅保留在本机训练数据目录中。
+
+## 教师数据与 QLoRA 流水线
+
+PDF 转换完成后，按 [`training/最适合你的模型流水线.md`](../最适合你的模型流水线.md) 执行
+`step_1_prepare_stories.py` 至 `step_8_prepare_llamafactory.py`。所有运行数据默认写入仓库根目录
+已忽略的 `work/training-pipeline/`；未经人工确认完整故事边界和云端训练权利的文本不会进入
+Codex 阶段。

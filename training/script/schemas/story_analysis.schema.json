@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^story_[0-9a-f]{16}$"},
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "aliases": {"type": "array", "items": {"type": "string"}},
+          "role": {"type": "string"}
+        },
+        "required": ["name", "aliases", "role"],
+        "additionalProperties": false
+      }
+    },
+    "immutable_facts": {"type": "array", "items": {"type": "string"}},
+    "clues": {"type": "array", "items": {"type": "string"}},
+    "misdirection": {"type": "array", "items": {"type": "string"}},
+    "twist": {"type": "string"},
+    "story_dna": {
+      "type": "object",
+      "properties": {
+        "genre": {"type": "string"},
+        "narrative_viewpoint": {"type": "string"},
+        "timeline": {"type": "string"},
+        "suspense_mechanism": {"type": "array", "items": {"type": "string"}},
+        "audio_adaptation_risks": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": [
+        "genre",
+        "narrative_viewpoint",
+        "timeline",
+        "suspense_mechanism",
+        "audio_adaptation_risks"
+      ],
+      "additionalProperties": false
+    },
+    "ocr_flags": {"type": "array", "items": {"type": "string"}},
+    "difficulty": {"type": "string", "enum": ["normal", "hard"]}
+  },
+  "required": [
+    "source_id",
+    "characters",
+    "immutable_facts",
+    "clues",
+    "misdirection",
+    "twist",
+    "story_dna",
+    "ocr_flags",
+    "difficulty"
+  ],
+  "additionalProperties": false
+}

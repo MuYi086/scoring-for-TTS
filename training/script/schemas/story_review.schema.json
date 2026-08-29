@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^story_[0-9a-f]{16}$"},
+    "factual_consistency": {"type": "number", "minimum": 0, "maximum": 1},
+    "audio_readability": {"type": "number", "minimum": 0, "maximum": 1},
+    "suspense_preservation": {"type": "number", "minimum": 0, "maximum": 1},
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "character",
+              "time",
+              "location",
+              "death_method",
+              "key_object",
+              "clue",
+              "misdirection",
+              "twist",
+              "causality",
+              "readability",
+              "suspense",
+              "other"
+            ]
+          },
+          "severity": {"type": "string", "enum": ["minor", "major", "critical"]},
+          "evidence": {"type": "string"},
+          "suggestion": {"type": "string"}
+        },
+        "required": ["category", "severity", "evidence", "suggestion"],
+        "additionalProperties": false
+      }
+    },
+    "decision": {"type": "string", "enum": ["pass", "revise", "escalate"]}
+  },
+  "required": [
+    "source_id",
+    "factual_consistency",
+    "audio_readability",
+    "suspense_preservation",
+    "problems",
+    "decision"
+  ],
+  "additionalProperties": false
+}

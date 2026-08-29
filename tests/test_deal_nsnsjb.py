@@ -1,4 +1,4 @@
-"""training/script/deal_nsnsjb.py 的无网络单元测试。"""
+"""training/script/dealPdf/deal_nsnsjb.py 的无网络单元测试。"""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def load_module():
-    path = REPO_ROOT / "training" / "script" / "deal_nsnsjb.py"
+    path = REPO_ROOT / "training" / "script" / "dealPdf" / "deal_nsnsjb.py"
     spec = importlib.util.spec_from_file_location("deal_nsnsjb", path)
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)

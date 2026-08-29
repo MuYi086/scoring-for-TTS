@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^story_[0-9a-f]{16}$"},
+    "input_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "output_b": {"type": "string", "minLength": 1},
+    "quality_flags": {"type": "array", "items": {"type": "string"}},
+    "needs_human_review": {"type": "boolean"}
+  },
+  "required": [
+    "source_id",
+    "input_sha256",
+    "output_b",
+    "quality_flags",
+    "needs_human_review"
+  ],
+  "additionalProperties": false
+}
