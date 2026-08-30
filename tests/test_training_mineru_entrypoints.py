@@ -82,7 +82,9 @@ class TrainingMinerUEntrypointTests(unittest.TestCase):
                     collection_name=collection_name,
                     windows_source_dir=Path(windows_source),
                     wsl_source_dir=Path(wsl_source),
-                    default_output_dir=REPO_ROOT / "training" / output_name,
+                    default_output_dir=(
+                        REPO_ROOT / "training" / "原始资源" / output_name
+                    ),
                 )
 
     def test_shared_parser_uses_collection_specific_wsl_and_output_defaults(self):

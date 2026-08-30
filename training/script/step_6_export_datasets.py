@@ -21,6 +21,7 @@ from step_1_prepare_stories import (
     write_json,
     write_jsonl,
 )
+from step_2_analyze_stories import boundary_assessment_passes, validate_analysis
 from step_3_rewrite_stories import validate_rewrite
 from step_4_review_rewrites import deterministic_gate, validate_review
 from step_5_adjudicate_stories import adjudication_gate, validate_adjudication
@@ -74,20 +75,24 @@ def load_approvals(path: Path | None) -> dict[str, dict[str, Any]]:
 def resolve_candidate(
     story: dict[str, Any], work_dir: Path, variant: str
 ) -> dict[str, Any]:
-    """汇总 Step 3–5，为人工审核选择当前最佳 B 和流水线状态。"""
+    """汇总 Step 3–5，选择当前最佳 B 并生成自动门禁或人工抽查所需状态。"""
 
     source_id = str(story["source_id"])
+    analysis_path = work_dir / "analysis" / f"{source_id}.json"
     rewrite_path = work_dir / "rewrites" / variant / f"{source_id}.json"
     review_path = work_dir / "reviews" / variant / f"{source_id}.json"
-    if not rewrite_path.is_file() or not review_path.is_file():
-        raise PipelineError(f"缺少 {source_id} 的改写或复核结果")
+    if not analysis_path.is_file() or not rewrite_path.is_file() or not review_path.is_file():
+        raise PipelineError(f"缺少 {source_id} 的分析、改写或复核结果")
+    analysis = read_json(analysis_path)
     rewrite = read_json(rewrite_path)
     review = read_json(review_path)
+    validate_analysis(analysis, source_id)
     validate_rewrite(rewrite, source_id, str(story["sha256"]))
     validate_review(review, source_id)
     review_gate = review.get("_deterministic_gate") or deterministic_gate(review)
     output_b = rewrite["output_b"]
     pipeline_decision = review_gate["decision"]
+    boundary_passed = boundary_assessment_passes(analysis)
     selected_stage = "terra_rewrite"
     adjudication_path = work_dir / "adjudications" / variant / f"{source_id}.json"
     adjudication: dict[str, Any] | None = None
@@ -99,6 +104,8 @@ def resolve_candidate(
         if adjudication["final_output_b"].strip():
             output_b = adjudication["final_output_b"]
             selected_stage = "sol_adjudication"
+    if not boundary_passed:
+        pipeline_decision = "reject"
     return {
         "source_id": source_id,
         "story": story,
@@ -106,6 +113,7 @@ def resolve_candidate(
         "pipeline_decision": pipeline_decision,
         "selected_stage": selected_stage,
         "rewrite": rewrite,
+        "analysis": analysis,
         "review": review,
         "adjudication": adjudication,
     }
@@ -130,7 +138,24 @@ def easy_dataset_record(candidate: dict[str, Any], input_a: str) -> dict[str, An
         "audio_readability": review["audio_readability"],
         "suspense_preservation": review["suspense_preservation"],
         "needs_human_review": candidate["rewrite"]["needs_human_review"],
+        "boundary_assessment": candidate["analysis"]["boundary_assessment"],
     }
+
+
+def can_auto_approve_candidate(candidate: dict[str, Any]) -> bool:
+    """判断高质量 train 样本能否由多重门禁自动批准。"""
+
+    story = candidate["story"]
+    rewrite = candidate["rewrite"]
+    checks = rewrite.get("_deterministic_checks", {})
+    return (
+        story.get("split") == "train"
+        and candidate["pipeline_decision"] == "pass"
+        and boundary_assessment_passes(candidate["analysis"])
+        and rewrite.get("needs_human_review") is False
+        and not checks.get("forbidden_markers", [])
+        and not checks.get("new_name_candidates", [])
+    )
 
 
 def sharegpt_record(input_a: str, output_b: str) -> dict[str, Any]:
@@ -175,6 +200,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--approval-manifest", type=Path)
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--max-estimated-tokens", type=int, default=7500)
+    parser.add_argument(
+        "--auto-approve-passed",
+        action="store_true",
+        help="自动导出通过双重 AI 与确定性门禁的 train 样本；validation 仍需人工批准",
+    )
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     return parser
@@ -194,8 +224,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     protected_story_count = len(all_stories) - len(stories)
     candidates: list[dict[str, Any]] = []
     input_texts: dict[str, str] = {}
+    rejected: list[dict[str, str]] = []
     for story in stories:
-        candidate = resolve_candidate(story, args.work_dir, args.variant)
+        try:
+            candidate = resolve_candidate(story, args.work_dir, args.variant)
+        except PipelineError as error:
+            rejected.append(
+                {
+                    "source_id": str(story["source_id"]),
+                    "reason": "missing_or_invalid_pipeline_output",
+                    "detail": str(error),
+                }
+            )
+            continue
         story_path = args.work_dir / story["story_path"]
         input_a = story_path.read_text(encoding="utf-8")
         candidates.append(candidate)
@@ -206,25 +247,31 @@ def main(argv: Sequence[str] | None = None) -> int:
     ]
     train_records: list[dict[str, Any]] = []
     validation_records: list[dict[str, Any]] = []
-    rejected: list[dict[str, str]] = []
+    automatic_approval_count = 0
     for candidate in candidates:
         source_id = candidate["source_id"]
         story = candidate["story"]
         approval = approvals.get(source_id)
-        if approval is None or approval["decision"] != "approved":
+        manually_approved = approval is not None and approval["decision"] == "approved"
+        automatically_approved = args.auto_approve_passed and can_auto_approve_candidate(
+            candidate
+        )
+        if not manually_approved and not automatically_approved:
             rejected.append({"source_id": source_id, "reason": "not_human_approved"})
             continue
         if candidate["pipeline_decision"] != "pass":
             rejected.append({"source_id": source_id, "reason": "pipeline_not_passed"})
             continue
-        if approval["output_sha256"] != sha256_text(candidate["output_b"]):
+        if manually_approved and approval["output_sha256"] != sha256_text(
+            candidate["output_b"]
+        ):
             rejected.append({"source_id": source_id, "reason": "stale_approval_output_changed"})
             continue
         split = str(story["split"])
         if split not in {"train", "validation"}:
             rejected.append({"source_id": source_id, "reason": f"protected_split_{split}"})
             continue
-        approval_split = approval.get("split")
+        approval_split = approval.get("split") if manually_approved else None
         if approval_split is not None and approval_split != split:
             raise PipelineError(f"审核 split 与冻结 split 不一致：{source_id}")
         input_a = input_texts[source_id]
@@ -237,6 +284,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             continue
         if split == "train":
             train_records.append(record)
+            if automatically_approved and not manually_approved:
+                automatic_approval_count += 1
         else:
             validation_records.append(record)
     report = {
@@ -245,6 +294,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "candidate_count": len(candidate_records),
         "protected_story_count": protected_story_count,
         "approval_count": len(approvals),
+        "automatic_approval_count": automatic_approval_count,
         "train_count": len(train_records),
         "validation_count": len(validation_records),
         "rejected_count": len(rejected),
@@ -255,7 +305,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     print(
         f"审核候选：{len(candidate_records)}；训练：{len(train_records)}；"
         f"验证：{len(validation_records)}；保护集：{protected_story_count}；"
-        f"未导出：{len(rejected)}"
+        f"自动批准：{automatic_approval_count}；未导出：{len(rejected)}"
     )
     if args.dry_run:
         return 0

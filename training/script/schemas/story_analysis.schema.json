@@ -39,7 +39,28 @@
       "additionalProperties": false
     },
     "ocr_flags": {"type": "array", "items": {"type": "string"}},
-    "difficulty": {"type": "string", "enum": ["normal", "hard"]}
+    "difficulty": {"type": "string", "enum": ["normal", "hard"]},
+    "boundary_assessment": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["complete", "incomplete", "uncertain"]
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "issues": {"type": "array", "items": {"type": "string"}},
+        "suggested_start_line": {"type": ["integer", "null"], "minimum": 1},
+        "suggested_end_line": {"type": ["integer", "null"], "minimum": 1}
+      },
+      "required": [
+        "status",
+        "confidence",
+        "issues",
+        "suggested_start_line",
+        "suggested_end_line"
+      ],
+      "additionalProperties": false
+    }
   },
   "required": [
     "source_id",
@@ -50,7 +71,8 @@
     "twist",
     "story_dna",
     "ocr_flags",
-    "difficulty"
+    "difficulty",
+    "boundary_assessment"
   ],
   "additionalProperties": false
 }

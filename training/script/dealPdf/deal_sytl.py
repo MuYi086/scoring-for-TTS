@@ -14,7 +14,9 @@ else:
 
 WINDOWS_SOURCE_DIR = Path(r"C:\Downloads\岁月推理")
 WSL_SOURCE_DIR = Path("/mnt/c/Downloads/岁月推理")
-DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[3] / "training" / "岁月推理"
+DEFAULT_OUTPUT_DIR = (
+    Path(__file__).resolve().parents[3] / "training" / "原始资源" / "岁月推理"
+)
 
 
 def main(argv: list[str] | None = None) -> int:

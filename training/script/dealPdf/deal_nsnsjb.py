@@ -3,7 +3,7 @@
 
 默认读取 Windows 的 ``C:\\Downloads\\男生女生金版2002-2015``（在 WSL 中自动映射为
 ``/mnt/c/Downloads/男生女生金版2002-2015``），并将同名 ``.md`` 写入本仓库的
-``training/男生女生金版``。脚本按 MinerU 批量接口提交并并发上传，已生成的非空 Markdown 会被
+``training/原始资源/男生女生金版``。脚本按 MinerU 批量接口提交并并发上传，已生成的非空 Markdown 会被
 跳过，因此可安全重跑。
 
 运行前请仅在本机环境中设置 MinerU API Token：
@@ -53,7 +53,7 @@ MAX_UPLOAD_SIZE_BYTES = 200 * 1024 * 1024
 WINDOWS_SOURCE_DIR = Path(r"C:\Downloads\男生女生金版2002-2015")
 WSL_SOURCE_DIR = Path("/mnt/c/Downloads/男生女生金版2002-2015")
 REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_OUTPUT_DIR = REPOSITORY_ROOT / "training" / "男生女生金版"
+DEFAULT_OUTPUT_DIR = REPOSITORY_ROOT / "training" / "原始资源" / "男生女生金版"
 API_TOKEN_ENVIRONMENT_VARIABLE = "MINEU_API_KEY"
 
 

@@ -10,23 +10,28 @@ import shlex
 from typing import Any, Sequence
 
 from step_1_prepare_stories import (
+    DEFAULT_HEARTBEAT_SECONDS,
     DEFAULT_WORK_DIR,
     PipelineError,
     canonical_json_sha256,
     codex_command,
     eligible_story_records,
     extract_name_candidates,
+    limit_pending_items,
     read_json,
     relative_to_repo,
     run_codex_task,
+    run_parallel_tasks,
     utc_now,
     validate_exact_keys,
     write_json,
+    write_jsonl,
 )
-from step_2_analyze_stories import validate_analysis
+from step_2_analyze_stories import boundary_assessment_passes, validate_analysis
 
 
 DEFAULT_MODEL = "gpt-5.6-terra"
+DEFAULT_TEACHER_SPLITS = frozenset({"train", "validation"})
 SCHEMA_PATH = Path(__file__).resolve().parent / "schemas" / "story_rewrite.schema.json"
 REQUIRED_KEYS = {
     "source_id",
@@ -130,10 +135,26 @@ def build_parser() -> argparse.ArgumentParser:
         "--include-split",
         action="append",
         choices=("train", "validation", "blind", "test"),
+        help="限制处理集合；默认只处理 train 和 validation",
     )
-    parser.add_argument("--limit", type=int)
+    parser.add_argument(
+        "--limit",
+        type=int,
+        help="每次最多处理的尚未完成项；重复执行同一命令会继续下一批",
+    )
     parser.add_argument("--retries", type=int, default=2)
     parser.add_argument("--timeout", type=float, default=3600)
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=3,
+        help="并发改写故事数，默认 3；额度或显存受限时降为 1",
+    )
+    parser.add_argument(
+        "--heartbeat-seconds",
+        type=float,
+        default=DEFAULT_HEARTBEAT_SECONDS,
+    )
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--continue-on-error", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
@@ -148,14 +169,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         raise PipelineError("variant 只能包含字母、数字、点、下划线和连字符")
     manifest = args.manifest or args.work_dir / "stories.jsonl"
     analysis_dir = args.analysis_dir or args.work_dir / "analysis"
-    include_splits = set(args.include_split) if args.include_split else None
+    include_splits = (
+        set(args.include_split) if args.include_split else set(DEFAULT_TEACHER_SPLITS)
+    )
     stories = eligible_story_records(manifest, include_splits)
-    if args.limit is not None:
-        if args.limit < 0:
-            raise PipelineError("limit 不能小于 0")
-        stories = stories[: args.limit]
     output_dir = args.work_dir / "rewrites" / args.variant
     pending: list[tuple[dict[str, Any], dict[str, Any], Path, str]] = []
+    skipped_boundaries: list[dict[str, Any]] = []
     for story in stories:
         source_id = str(story["source_id"])
         analysis_path = analysis_dir / f"{source_id}.json"
@@ -163,6 +183,16 @@ def main(argv: Sequence[str] | None = None) -> int:
             raise PipelineError(f"缺少 Step 2 分析：{analysis_path}")
         analysis = read_json(analysis_path)
         validate_analysis(analysis, source_id)
+        if not boundary_assessment_passes(analysis):
+            skipped_boundaries.append(
+                {
+                    "source_id": source_id,
+                    "source_path": story["source_path"],
+                    "reason": "step_2_boundary_not_complete",
+                    **analysis["boundary_assessment"],
+                }
+            )
+            continue
         analysis_digest = canonical_json_sha256(
             {key: value for key, value in analysis.items() if not key.startswith("_")}
         )
@@ -176,7 +206,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             except PipelineError:
                 pass
         pending.append((story, analysis, analysis_path, analysis_digest))
-    print(f"{args.variant} 待改写：{len(pending)} / 可用故事：{len(stories)}")
+    pending = limit_pending_items(pending, args.limit)
+    print(
+        f"{args.variant} 待改写：{len(pending)} / 可用故事：{len(stories)}；"
+        f"边界阻断：{len(skipped_boundaries)}"
+    )
     if args.dry_run:
         if pending:
             story, analysis, analysis_path, _ = pending[0]
@@ -197,8 +231,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             print(f"示例命令：{shlex.join(command)}")
         return 0
-    failures = 0
-    for index, (story, analysis, analysis_path, analysis_digest) in enumerate(pending, 1):
+    def rewrite_story(
+        item: tuple[dict[str, Any], dict[str, Any], Path, str]
+    ) -> None:
+        story, analysis, analysis_path, analysis_digest = item
         source_id = str(story["source_id"])
         story_path = args.work_dir / story["story_path"]
         output_path = output_dir / f"{source_id}.json"
@@ -207,51 +243,62 @@ def main(argv: Sequence[str] | None = None) -> int:
             if analysis["difficulty"] == "hard"
             else args.normal_reasoning_effort
         )
-        print(
-            f"[{index}/{len(pending)}] {args.model} {effort} 改写 {source_id}",
-            flush=True,
+        result = run_codex_task(
+            prompt=build_prompt(story, story_path, analysis_path),
+            model=args.model,
+            reasoning_effort=effort,
+            schema_path=SCHEMA_PATH,
+            output_path=output_path,
+            validator=lambda value, expected=source_id, digest=str(
+                story["sha256"]
+            ): validate_rewrite(value, expected, digest),
+            retries=args.retries,
+            timeout=args.timeout,
+            profile=args.profile,
+            local_provider=args.local_provider,
         )
-        try:
-            result = run_codex_task(
-                prompt=build_prompt(story, story_path, analysis_path),
-                model=args.model,
-                reasoning_effort=effort,
-                schema_path=SCHEMA_PATH,
-                output_path=output_path,
-                validator=lambda value, expected=source_id, digest=str(
-                    story["sha256"]
-                ): validate_rewrite(value, expected, digest),
-                retries=args.retries,
-                timeout=args.timeout,
-                profile=args.profile,
-                local_provider=args.local_provider,
-            )
-            input_a = story_path.read_text(encoding="utf-8")
-            result["_deterministic_checks"] = {
-                "forbidden_markers": forbidden_output_markers(result["output_b"]),
-                "new_name_candidates": new_name_candidates(input_a, result["output_b"]),
-            }
-            result["_provenance"] = {
-                "stage": "audio_rewrite",
-                "variant": args.variant,
-                "model": args.model,
-                "reasoning_effort": effort,
-                "speed": "profile" if args.profile else "standard",
-                "profile": args.profile,
-                "local_provider": args.local_provider,
-                "input_sha256": story["sha256"],
-                "analysis_sha256": analysis_digest,
-                "generated_at": utc_now(),
-            }
-            write_json(output_path, result)
-        except PipelineError as error:
-            failures += 1
-            write_json(
-                args.work_dir / "errors" / "step_3" / args.variant / f"{source_id}.json",
-                {"source_id": source_id, "stage": "audio_rewrite", "error": str(error)},
-            )
-            if not args.continue_on_error:
-                raise
+        input_a = story_path.read_text(encoding="utf-8")
+        result["_deterministic_checks"] = {
+            "forbidden_markers": forbidden_output_markers(result["output_b"]),
+            "new_name_candidates": new_name_candidates(input_a, result["output_b"]),
+        }
+        result["_provenance"] = {
+            "stage": "audio_rewrite",
+            "variant": args.variant,
+            "model": args.model,
+            "reasoning_effort": effort,
+            "speed": "profile" if args.profile else "standard",
+            "profile": args.profile,
+            "local_provider": args.local_provider,
+            "input_sha256": story["sha256"],
+            "analysis_sha256": analysis_digest,
+            "generated_at": utc_now(),
+        }
+        write_json(output_path, result)
+
+    def record_rewrite_error(
+        item: tuple[dict[str, Any], dict[str, Any], Path, str], error: Exception
+    ) -> None:
+        source_id = str(item[0]["source_id"])
+        write_json(
+            args.work_dir / "errors" / "step_3" / args.variant / f"{source_id}.json",
+            {"source_id": source_id, "stage": "audio_rewrite", "error": str(error)},
+        )
+
+    failures = run_parallel_tasks(
+        pending,
+        workers=args.workers,
+        heartbeat_seconds=args.heartbeat_seconds,
+        stage_label=f"{args.model} 教师改写",
+        item_label=lambda item: str(item[0]["source_id"]),
+        task=rewrite_story,
+        on_error=record_rewrite_error,
+        continue_on_error=args.continue_on_error,
+    )
+    write_jsonl(
+        args.work_dir / "errors" / "step_3" / args.variant / "boundary_blocked.jsonl",
+        skipped_boundaries,
+    )
     print(f"改写完成：{len(pending) - failures}；失败：{failures}")
     return 1 if failures else 0
 

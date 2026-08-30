@@ -171,7 +171,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     train_records = load_json_array(export_dir / "sharegpt_train.json")
     validation_records = load_json_array(export_dir / "sharegpt_validation.json")
     if not train_records:
-        raise PipelineError("训练集为空；先完成人工审核和 Step 6 导出")
+        raise PipelineError("训练集为空；先完成 Step 6 自动门禁/必要人审并导出")
     config = training_yaml(
         model_name_or_path=args.model_name_or_path,
         dataset_dir=export_dir,

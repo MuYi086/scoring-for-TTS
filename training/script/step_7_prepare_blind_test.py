@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Step 7：匿名打包 60 篇文本盲测，并冻结其中 10 篇音频盲听子集。"""
+"""Step 7：匿名打包冻结 blind 故事，并选取最多 10 篇音频盲听子集。"""
 
 from __future__ import annotations
 
@@ -103,7 +103,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="append",
         help="变体名称=Step3输出目录；省略时使用五个推荐变体",
     )
-    parser.add_argument("--count", type=int, default=60)
+    parser.add_argument(
+        "--count",
+        type=int,
+        help="盲测故事数；默认使用全部冻结 blind 故事",
+    )
     parser.add_argument("--audio-count", type=int, default=10)
     parser.add_argument("--seed", type=int, default=20260830)
     parser.add_argument("--output-dir", type=Path)
@@ -116,18 +120,26 @@ def main(argv: Sequence[str] | None = None) -> int:
     """运行 Step 7。"""
 
     args = build_parser().parse_args(argv)
-    if args.count < 1 or not 0 <= args.audio_count <= args.count:
-        raise PipelineError("count/audio-count 范围无效")
+    if args.count is not None and args.count < 1:
+        raise PipelineError("count 必须大于 0")
+    if args.audio_count < 0:
+        raise PipelineError("audio-count 不能小于 0")
     manifest = args.manifest or args.work_dir / "stories.jsonl"
     output_dir = args.output_dir or args.work_dir / "blind_test"
     variants = variant_directories(args.variant, args.work_dir)
     blind_stories = eligible_story_records(manifest, {"blind"})
-    if len(blind_stories) < args.count:
+    count = args.count if args.count is not None else len(blind_stories)
+    if count < 1:
+        raise PipelineError("冻结 blind 故事为空")
+    if len(blind_stories) < count:
         raise PipelineError(
-            f"冻结 blind 故事只有 {len(blind_stories)} 篇，少于要求的 {args.count} 篇"
+            f"冻结 blind 故事只有 {len(blind_stories)} 篇，少于要求的 {count} 篇"
         )
+    if args.count is not None and args.audio_count > count:
+        raise PipelineError("audio-count 不能大于显式指定的 count")
+    audio_count = min(args.audio_count, count)
     blind_stories.sort(key=lambda record: (record["sha256"], record["source_id"]))
-    selected = blind_stories[: args.count]
+    selected = blind_stories[:count]
     assignments: list[dict[str, Any]] = []
     score_rows: list[dict[str, str]] = []
     packages: list[tuple[Path, str]] = []
@@ -180,7 +192,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     "notes": "",
                 }
             )
-    audio_subset = [assignment["story_code"] for assignment in assignments[: args.audio_count]]
+    audio_subset = [assignment["story_code"] for assignment in assignments[:audio_count]]
     report = {
         "generated_at": utc_now(),
         "seed": args.seed,

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source_path": {"type": "string", "minLength": 1},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "line_count": {"type": "integer", "minimum": 1},
+    "stories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string", "minLength": 1},
+          "start_line": {"type": "integer", "minimum": 1},
+          "end_line": {"type": "integer", "minimum": 1},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "completeness": {
+            "type": "string",
+            "enum": ["complete", "installment", "uncertain"]
+          },
+          "content_kind": {
+            "type": "string",
+            "enum": ["fiction", "narrative_nonfiction", "other"]
+          },
+          "target_genre": {"type": "boolean"},
+          "reason": {"type": "string"}
+        },
+        "required": [
+          "title",
+          "start_line",
+          "end_line",
+          "confidence",
+          "completeness",
+          "content_kind",
+          "target_genre",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "document_notes": {"type": "string"}
+  },
+  "required": [
+    "source_path",
+    "source_sha256",
+    "line_count",
+    "stories",
+    "document_notes"
+  ],
+  "additionalProperties": false
+}

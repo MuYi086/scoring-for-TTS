@@ -6,13 +6,13 @@
 
 | 任务 | 脚本 | Windows 输入目录 | Markdown 输出目录 |
 | --- | --- | --- | --- |
-| Task 11 | `dealPdf/deal_nsnsjb.py` | `C:\Downloads\男生女生金版2002-2015` | `training/男生女生金版/` |
-| Task 12 | `dealPdf/deal_bk.py` | `C:\Downloads\怖客2010-2018` | `training/怖客/` |
-| Task 13 | `dealPdf/deal_mgzzgs.py` | `C:\Downloads\猛鬼杂志故事-56本` | `training/猛鬼杂志故事/` |
-| Task 14 | `dealPdf/deal_mjgsdxg.py` | `C:\Downloads\民间故事胆小鬼` | `training/民间故事胆小鬼/` |
-| Task 15 | `dealPdf/deal_sz.py` | `C:\Downloads\悚族-75本` | `training/悚族/` |
-| Task 16 | `dealPdf/deal_sytl.py` | `C:\Downloads\岁月推理` | `training/岁月推理/` |
-| Task 17 | `dealPdf/deal_zmn.py` | `C:\Downloads\啄木鸟` | `training/啄木鸟/` |
+| Task 11 | `dealPdf/deal_nsnsjb.py` | `C:\Downloads\男生女生金版2002-2015` | `training/原始资源/男生女生金版/` |
+| Task 12 | `dealPdf/deal_bk.py` | `C:\Downloads\怖客2010-2018` | `training/原始资源/怖客/` |
+| Task 13 | `dealPdf/deal_mgzzgs.py` | `C:\Downloads\猛鬼杂志故事-56本` | `training/原始资源/猛鬼杂志故事/` |
+| Task 14 | `dealPdf/deal_mjgsdxg.py` | `C:\Downloads\民间故事胆小鬼` | `training/原始资源/民间故事胆小鬼/` |
+| Task 15 | `dealPdf/deal_sz.py` | `C:\Downloads\悚族-75本` | `training/原始资源/悚族/` |
+| Task 16 | `dealPdf/deal_sytl.py` | `C:\Downloads\岁月推理` | `training/原始资源/岁月推理/` |
+| Task 17 | `dealPdf/deal_zmn.py` | `C:\Downloads\啄木鸟` | `training/原始资源/啄木鸟/` |
 
 所有入口只从环境变量读取 MinerU API Token，绝不把 Token 写入仓库：
 
@@ -65,7 +65,23 @@ PDF；页数由 MinerU 在服务端校验。
 
 ## 教师数据与 QLoRA 流水线
 
-PDF 转换完成后，按 [`training/最适合你的模型流水线.md`](../最适合你的模型流水线.md) 执行
-`step_1_prepare_stories.py` 至 `step_8_prepare_llamafactory.py`。所有运行数据默认写入仓库根目录
-已忽略的 `work/training-pipeline/`；未经人工确认完整故事边界和云端训练权利的文本不会进入
-Codex 阶段。
+PDF 转换完成后，只按
+[`training/最适合你的模型流水线.md`](../最适合你的模型流水线.md) 的 Step 0–8 执行。当前正式
+数据集由 `step_0_plan_sources.py` 冻结为四个刊物各 20 份来源，共 80 份；Step 1 不再扫描整个
+`training/`，也不接受旧的数量切分参数。
+
+先验证冻结清单和 Step 1 本地入口：
+
+```bash
+python training/script/step_0_plan_sources.py --dry-run
+python training/script/step_1_prepare_stories.py --auto-boundaries --dry-run
+```
+
+正常结束应分别显示 542→80 的规划统计和 `Step 1a 检查通过（退出码 0）`。两条命令都不会调用
+模型或写入工作目录。正式运行数据默认写入已忽略的 `work/training-pipeline-fear-v1/`。
+
+确认云端处理和训练授权后，再按主文档底部的
+[Step 0–8 快速操作表](../最适合你的模型流水线.md#step-08-快速操作表)运行。Step 2–5 可用
+`--limit 100 --continue-on-error` 分批执行；重复同一命令会跳过来源哈希未变化的有效结果并继续。
+遇到 429、账户并发限制或网络不稳定时，将对应 worker 参数降为 1。按一次 Ctrl+C 会终止当前
+模型子进程并取消尚未提交的任务，之后可重复同一命令续跑。
