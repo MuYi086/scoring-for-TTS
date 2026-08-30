@@ -1,0 +1,38 @@
+{
+  "dataset_version": "fear-suspense-v1",
+  "seed": 20260830,
+  "collections": [
+    "怖客",
+    "猛鬼杂志故事",
+    "男生女生金版",
+    "悚族"
+  ],
+  "per_collection": 20,
+  "split_quotas_per_collection": {
+    "train": 14,
+    "validation": 2,
+    "blind": 2,
+    "test": 2
+  },
+  "selected_sources_sha256": "aadf9ce2781eb456cf4f47cd5c190bca15fed63961e422b294661bf9ec5c4637",
+  "source_inventory_sha256": "aa1a1ea1b1c2ff003ed2a86870e83e31b71dd8594eaf54bfdbbf217056075f16",
+  "plan_sha256": "7730db559b2465d2f137be5c007c6588f18b3a9e57a9f6be51c62788e79fe6e2",
+  "source_count": 542,
+  "selected_source_count": 80,
+  "source_reserve_count": 462,
+  "collection_counts": {
+    "怖客": 20,
+    "悚族": 20,
+    "猛鬼杂志故事": 20,
+    "男生女生金版": 20
+  },
+  "split_counts": {
+    "train": 56,
+    "validation": 8,
+    "blind": 8,
+    "test": 8
+  },
+  "selected_bytes": 18838764,
+  "selected_line_count": 265903,
+  "generated_at": "2026-08-30T13:11:24+00:00"
+}
