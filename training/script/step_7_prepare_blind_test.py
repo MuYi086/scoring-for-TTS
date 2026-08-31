@@ -20,6 +20,7 @@ from step_1_prepare_stories import (
     read_json,
     utc_now,
     write_json,
+    write_stage_progress,
 )
 from step_3_rewrite_stories import validate_rewrite
 
@@ -120,6 +121,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     """运行 Step 7。"""
 
     args = build_parser().parse_args(argv)
+    progress_started_at = utc_now()
     if args.count is not None and args.count < 1:
         raise PipelineError("count 必须大于 0")
     if args.audio_count < 0:
@@ -226,8 +228,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     write_json(output_dir / "audio_subset.json", audio_subset)
     write_json(output_dir / "blind_test_report.json", report)
     atomic_write_text(output_dir / "scoring_sheet.csv", scoring_csv(score_rows))
+    write_stage_progress(
+        args.work_dir / "progress" / "step_7_blind_test.json",
+        stage="step_7_blind_test",
+        stage_label="Step 7 盲测打包",
+        status="completed",
+        total_items=len(assignments),
+        completed_items=len(assignments),
+        skipped_existing_items=0,
+        scheduled_this_run=len(assignments),
+        completed_this_run=len(assignments),
+        failed_this_run=0,
+        started_at=progress_started_at,
+    )
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None

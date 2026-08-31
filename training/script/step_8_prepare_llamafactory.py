@@ -15,6 +15,7 @@ from step_1_prepare_stories import (
     read_json,
     utc_now,
     write_json,
+    write_stage_progress,
 )
 
 
@@ -154,6 +155,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     """运行 Step 8。"""
 
     args = build_parser().parse_args(argv)
+    progress_started_at = utc_now()
     if args.cutoff_len < 512:
         raise PipelineError("cutoff-len 不能小于 512")
     export_dir = args.export_dir or args.work_dir / "exports"
@@ -203,8 +205,24 @@ def main(argv: Sequence[str] | None = None) -> int:
             "command": command,
         },
     )
+    write_stage_progress(
+        args.work_dir / "progress" / "step_8_llamafactory.json",
+        stage="step_8_llamafactory",
+        stage_label="Step 8 LLaMA-Factory 配置",
+        status="completed",
+        total_items=1,
+        completed_items=1,
+        skipped_existing_items=0,
+        scheduled_this_run=1,
+        completed_this_run=1,
+        failed_this_run=0,
+        started_at=progress_started_at,
+    )
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None

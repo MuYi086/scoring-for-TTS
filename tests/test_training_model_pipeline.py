@@ -618,6 +618,146 @@ class TrainingModelPipelineTests(unittest.TestCase):
         self.assertEqual(set(completed), {1, 3})
         self.assertEqual(errors, [(2, "模拟失败")])
 
+    def test_codex_usage_limit_stops_without_retrying(self):
+        class QuotaProcess:
+            returncode = 1
+            pid = 999999
+
+            def communicate(self, timeout=None):
+                return (
+                    "",
+                    "ERROR: You've hit your usage limit. Purchase more credits "
+                    "or try again at 6:09 PM.",
+                )
+
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "result.json"
+            with (
+                patch.object(step_1, "codex_command", return_value=["codex"]),
+                patch.object(
+                    step_1.subprocess,
+                    "Popen",
+                    return_value=QuotaProcess(),
+                ) as popen,
+            ):
+                with self.assertRaisesRegex(
+                    step_1.PipelineQuotaExhausted,
+                    "使用额度已耗尽",
+                ):
+                    step_1.run_codex_task(
+                        prompt="测试",
+                        model="test",
+                        reasoning_effort="medium",
+                        schema_path=Path(directory) / "schema.json",
+                        output_path=output_path,
+                        validator=lambda value: None,
+                        retries=5,
+                        timeout=30,
+                    )
+
+            self.assertEqual(popen.call_count, 1)
+            self.assertFalse(output_path.with_suffix(".json.tmp").exists())
+
+    def test_parallel_runner_stops_on_quota_and_records_resumable_progress(self):
+        with tempfile.TemporaryDirectory() as directory:
+            progress_path = Path(directory) / "progress.json"
+            completed: list[int] = []
+            errors: list[int] = []
+
+            def task(item: int) -> None:
+                if item == 2:
+                    raise step_1.PipelineQuotaExhausted("模拟额度耗尽")
+                completed.append(item)
+
+            try:
+                with self.assertRaisesRegex(
+                    step_1.PipelineQuotaExhausted,
+                    "已停止后续任务",
+                ):
+                    step_1.run_parallel_tasks(
+                        [1, 2, 3],
+                        workers=1,
+                        heartbeat_seconds=1,
+                        stage_label="测试额度",
+                        item_label=str,
+                        task=task,
+                        on_error=lambda item, error: errors.append(item),
+                        continue_on_error=True,
+                        progress_path=progress_path,
+                        progress_stage="test_quota",
+                        total_items=5,
+                        completed_before=2,
+                    )
+            finally:
+                step_1._MODEL_TASK_CANCELLED.clear()
+
+            progress = step_1.read_json(progress_path)
+            self.assertEqual(completed, [1])
+            self.assertEqual(errors, [2])
+            self.assertEqual(progress["status"], "quota_exhausted")
+            self.assertEqual(progress["completed_items"], 3)
+            self.assertEqual(progress["pending_items"], 2)
+            self.assertEqual(progress["skipped_existing_items"], 2)
+            self.assertEqual(progress["completed_this_run"], 1)
+            self.assertEqual(progress["failed_this_run"], 1)
+
+    def test_parallel_progress_marks_limited_successful_batch_partial(self):
+        with tempfile.TemporaryDirectory() as directory:
+            progress_path = Path(directory) / "progress.json"
+
+            failures = step_1.run_parallel_tasks(
+                [3, 4],
+                workers=1,
+                heartbeat_seconds=1,
+                stage_label="测试分批",
+                item_label=str,
+                task=lambda item: None,
+                on_error=lambda item, error: None,
+                continue_on_error=True,
+                progress_path=progress_path,
+                progress_stage="test_batch",
+                total_items=5,
+                completed_before=2,
+            )
+
+            progress = step_1.read_json(progress_path)
+            self.assertEqual(failures, 0)
+            self.assertEqual(progress["status"], "partial")
+            self.assertEqual(progress["completed_items"], 4)
+            self.assertEqual(progress["pending_items"], 1)
+
+    def test_step_2_rejects_partial_step_1_aggregate(self):
+        with tempfile.TemporaryDirectory() as directory:
+            work_dir = Path(directory)
+            manifest = work_dir / "stories.jsonl"
+            step_1.write_jsonl(manifest, [])
+            step_1.write_json(
+                work_dir / "automatic_boundary_report.json",
+                {
+                    "source_count": 80,
+                    "completed_source_count": 78,
+                    "failed_source_count": 48,
+                },
+            )
+
+            with self.assertRaisesRegex(step_1.PipelineError, "Step 1 尚未完整结束"):
+                step_2.require_completed_step_1(work_dir, manifest)
+
+            step_1.write_json(
+                work_dir / "automatic_boundary_report.json",
+                {
+                    "source_count": 80,
+                    "completed_source_count": 80,
+                    "failed_source_count": 0,
+                },
+            )
+            step_1.write_json(
+                work_dir / "progress" / "step_1_boundary_review.json",
+                {"status": "quota_exhausted"},
+            )
+            with self.assertRaisesRegex(step_1.PipelineError, "进度不是 completed"):
+                step_2.require_completed_step_1(work_dir, manifest)
+
     def test_model_task_cancellation_terminates_active_subprocess(self):
         with tempfile.TemporaryDirectory() as directory:
             output_path = Path(directory) / "result.json"

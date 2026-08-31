@@ -20,6 +20,7 @@ from step_1_prepare_stories import (
     utc_now,
     write_json,
     write_jsonl,
+    write_stage_progress,
 )
 from step_2_analyze_stories import boundary_assessment_passes, validate_analysis
 from step_3_rewrite_stories import validate_rewrite
@@ -214,6 +215,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     """运行 Step 6。"""
 
     args = build_parser().parse_args(argv)
+    progress_started_at = utc_now()
     if args.max_estimated_tokens < 1:
         raise PipelineError("max-estimated-tokens 必须大于 0")
     manifest = args.manifest or args.work_dir / "stories.jsonl"
@@ -329,8 +331,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     write_json(output_dir / "dataset_info.json", dataset_info())
     write_json(output_dir / "export_report.json", report)
     write_jsonl(output_dir / "rejected.jsonl", rejected)
+    write_stage_progress(
+        args.work_dir / "progress" / "step_6_export.json",
+        stage="step_6_export",
+        stage_label="Step 6 数据集导出",
+        status="completed",
+        total_items=len(stories),
+        completed_items=len(stories),
+        skipped_existing_items=0,
+        scheduled_this_run=len(stories),
+        completed_this_run=len(stories),
+        failed_this_run=0,
+        started_at=progress_started_at,
+    )
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None

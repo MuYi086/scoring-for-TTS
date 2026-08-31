@@ -172,6 +172,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     include_splits = (
         set(args.include_split) if args.include_split else set(DEFAULT_TEACHER_SPLITS)
     )
+    split_scope = "_".join(sorted(include_splits))
     stories = eligible_story_records(manifest, include_splits)
     output_dir = args.work_dir / "rewrites" / args.variant
     pending: list[tuple[dict[str, Any], dict[str, Any], Path, str]] = []
@@ -206,6 +207,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             except PipelineError:
                 pass
         pending.append((story, analysis, analysis_path, analysis_digest))
+    candidate_count = len(stories) - len(skipped_boundaries)
+    pending_total = len(pending)
+    completed_before = candidate_count - pending_total
     pending = limit_pending_items(pending, args.limit)
     print(
         f"{args.variant} 待改写：{len(pending)} / 可用故事：{len(stories)}；"
@@ -275,6 +279,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             "generated_at": utc_now(),
         }
         write_json(output_path, result)
+        (
+            args.work_dir / "errors" / "step_3" / args.variant / f"{source_id}.json"
+        ).unlink(missing_ok=True)
 
     def record_rewrite_error(
         item: tuple[dict[str, Any], dict[str, Any], Path, str], error: Exception
@@ -294,6 +301,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         task=rewrite_story,
         on_error=record_rewrite_error,
         continue_on_error=args.continue_on_error,
+        progress_path=(
+            args.work_dir
+            / "progress"
+            / f"step_3_{args.variant}_{split_scope}.json"
+        ),
+        progress_stage=f"step_3_{args.variant}_{split_scope}",
+        total_items=candidate_count,
+        completed_before=completed_before,
     )
     write_jsonl(
         args.work_dir / "errors" / "step_3" / args.variant / "boundary_blocked.jsonl",
@@ -304,4 +319,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None

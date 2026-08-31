@@ -78,6 +78,10 @@ class PipelineInterrupted(PipelineError):
     """用户中断了模型流水线；已完成的原子结果仍可续跑。"""
 
 
+class PipelineQuotaExhausted(PipelineError):
+    """模型额度已经耗尽；继续提交任务只会重复失败并浪费时间。"""
+
+
 ParallelItem = TypeVar("ParallelItem")
 
 
@@ -119,6 +123,16 @@ class FrozenSource:
 _MODEL_TASK_CANCELLED = threading.Event()
 _ACTIVE_MODEL_PROCESSES: set[subprocess.Popen[str]] = set()
 _ACTIVE_MODEL_PROCESSES_LOCK = threading.Lock()
+QUOTA_EXHAUSTION_PATTERNS = tuple(
+    re.compile(pattern, re.IGNORECASE)
+    for pattern in (
+        r"you(?:'|’)ve hit your usage limit",
+        r"you have hit your usage limit",
+        r"insufficient_quota",
+        r"quota[_ ]exceeded",
+        r"usage limit.{0,160}(?:purchase more credits|try again at|upgrade)",
+    )
+)
 
 
 def utc_now() -> str:
@@ -166,6 +180,61 @@ def write_jsonl(path: Path, records: Iterable[dict[str, Any]]) -> None:
 
     content = "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records)
     atomic_write_text(path, content)
+
+
+def write_stage_progress(
+    path: Path,
+    *,
+    stage: str,
+    stage_label: str,
+    status: str,
+    total_items: int,
+    completed_items: int,
+    skipped_existing_items: int,
+    scheduled_this_run: int,
+    completed_this_run: int,
+    failed_this_run: int,
+    started_at: str,
+    last_error: str | None = None,
+) -> None:
+    """原子写入可供人和脚本读取的阶段断点摘要。"""
+
+    if total_items < 0 or not 0 <= completed_items <= total_items:
+        raise PipelineError("阶段进度计数无效")
+    write_json(
+        path,
+        {
+            "schema_version": 1,
+            "stage": stage,
+            "stage_label": stage_label,
+            "status": status,
+            "total_items": total_items,
+            "completed_items": completed_items,
+            "pending_items": total_items - completed_items,
+            "skipped_existing_items": skipped_existing_items,
+            "scheduled_this_run": scheduled_this_run,
+            "completed_this_run": completed_this_run,
+            "failed_this_run": failed_this_run,
+            "started_at": started_at,
+            "updated_at": utc_now(),
+            "last_error": last_error,
+            "resume_instruction": "重复同一条命令；不要添加 --overwrite 或刷新参数",
+        },
+    )
+
+
+def quota_exhaustion_detail(output: str) -> str | None:
+    """从 Codex 输出中识别不可通过重试恢复的硬额度耗尽。"""
+
+    if not any(pattern.search(output) for pattern in QUOTA_EXHAUSTION_PATTERNS):
+        return None
+    matching_lines = [
+        line.strip()
+        for line in output.splitlines()
+        if any(pattern.search(line) for pattern in QUOTA_EXHAUSTION_PATTERNS)
+    ]
+    detail = matching_lines[-1] if matching_lines else "usage limit"
+    return re.sub(r"\s+", " ", detail)[:500]
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -726,16 +795,54 @@ def run_parallel_tasks(
     task: Callable[[ParallelItem], None],
     on_error: Callable[[ParallelItem, Exception], None],
     continue_on_error: bool,
+    progress_path: Path | None = None,
+    progress_stage: str | None = None,
+    total_items: int | None = None,
+    completed_before: int = 0,
 ) -> int:
-    """并发执行独立模型任务，定期输出心跳并统一处理失败。"""
+    """并发执行独立模型任务，并持久化可续跑进度。"""
 
     validate_parallel_settings(workers, heartbeat_seconds)
+    total_items = total_items if total_items is not None else completed_before + len(items)
+    if completed_before < 0 or total_items < completed_before + len(items):
+        raise PipelineError("并发任务的总数、既有完成数和本次任务数不一致")
+    progress_started_at = utc_now()
+
+    def record_progress(
+        status: str,
+        *,
+        completed_this_run: int,
+        failed_this_run: int,
+        last_error: str | None = None,
+    ) -> None:
+        if progress_path is None:
+            return
+        write_stage_progress(
+            progress_path,
+            stage=progress_stage or stage_label,
+            stage_label=stage_label,
+            status=status,
+            total_items=total_items,
+            completed_items=completed_before + completed_this_run,
+            skipped_existing_items=completed_before,
+            scheduled_this_run=len(items),
+            completed_this_run=completed_this_run,
+            failed_this_run=failed_this_run,
+            started_at=progress_started_at,
+            last_error=last_error,
+        )
+
     if not items:
+        status = "completed" if completed_before == total_items else "partial"
+        record_progress(status, completed_this_run=0, failed_this_run=0)
         return 0
     started_at = time.monotonic()
     completed_count = 0
+    success_count = 0
     failure_count = 0
     first_error: tuple[ParallelItem, Exception] | None = None
+    quota_error: tuple[ParallelItem, PipelineQuotaExhausted] | None = None
+    record_progress("running", completed_this_run=0, failed_this_run=0)
 
     def timed_task(item: ParallelItem) -> float:
         item_started_at = time.monotonic()
@@ -743,6 +850,8 @@ def run_parallel_tasks(
         return time.monotonic() - item_started_at
 
     print(f"{stage_label}：{len(items)} 项，并发数 {min(workers, len(items))}", flush=True)
+    if progress_path is not None:
+        print(f"进度记录：{progress_path}", flush=True)
     _MODEL_TASK_CANCELLED.clear()
     executor = ThreadPoolExecutor(max_workers=workers, thread_name_prefix="training-model")
     item_iterator = iter(items)
@@ -769,9 +878,15 @@ def run_parallel_tasks(
             if not done:
                 elapsed = int(time.monotonic() - started_at)
                 print(
-                    f"[{stage_label}] 运行中：完成 {completed_count}/{len(items)}；"
+                    f"[{stage_label}] 运行中：已结束 {completed_count}/{len(items)}；"
+                    f"成功 {success_count}；失败 {failure_count}；"
                     f"仍在运行或排队 {len(items) - completed_count}；已用 {elapsed} 秒",
                     flush=True,
+                )
+                record_progress(
+                    "running",
+                    completed_this_run=success_count,
+                    failed_this_run=failure_count,
                 )
                 continue
             for future in done:
@@ -779,6 +894,16 @@ def run_parallel_tasks(
                 completed_count += 1
                 try:
                     duration = future.result()
+                except PipelineQuotaExhausted as error:
+                    failure_count += 1
+                    quota_error = (item, error)
+                    on_error(item, error)
+                    print(
+                        f"[{stage_label} 额度耗尽 {completed_count}/{len(items)}] "
+                        f"{item_label(item)}：{error}",
+                        flush=True,
+                    )
+                    break
                 except PipelineInterrupted:
                     interrupted = True
                     break
@@ -793,19 +918,25 @@ def run_parallel_tasks(
                     if not continue_on_error and first_error is None:
                         first_error = (item, error)
                 else:
+                    success_count += 1
                     print(
                         f"[{stage_label} 完成 {completed_count}/{len(items)}] "
                         f"{item_label(item)}（{duration:.1f} 秒）",
                         flush=True,
                     )
-                if first_error is None and not interrupted:
+                record_progress(
+                    "running",
+                    completed_this_run=success_count,
+                    failed_this_run=failure_count,
+                )
+                if first_error is None and quota_error is None and not interrupted:
                     submit_next()
-            if first_error is not None or interrupted:
+            if first_error is not None or quota_error is not None or interrupted:
                 break
     except KeyboardInterrupt:
         interrupted = True
     finally:
-        if interrupted or first_error is not None:
+        if interrupted or quota_error is not None or first_error is not None:
             for future in future_items:
                 future.cancel()
             active_count = cancel_active_model_tasks()
@@ -815,17 +946,74 @@ def run_parallel_tasks(
                     f"正在取消未启动任务并终止 {active_count} 个模型进程。",
                     flush=True,
                 )
+            elif quota_error is not None:
+                print(
+                    f"[{stage_label}] 检测到额度耗尽：已成功 {success_count}/{len(items)}；"
+                    f"正在取消未启动任务并终止 {active_count} 个模型进程。",
+                    flush=True,
+                )
         executor.shutdown(
             wait=True,
-            cancel_futures=interrupted or first_error is not None,
+            cancel_futures=(
+                interrupted or quota_error is not None or first_error is not None
+            ),
         )
+        if interrupted or quota_error is not None or first_error is not None:
+            for future, item in future_items.items():
+                if future.cancelled():
+                    continue
+                try:
+                    duration = future.result()
+                except Exception:
+                    continue
+                success_count += 1
+                completed_count += 1
+                print(
+                    f"[{stage_label} 停线前完成 {completed_count}/{len(items)}] "
+                    f"{item_label(item)}（{duration:.1f} 秒）",
+                    flush=True,
+                )
     if interrupted:
+        record_progress(
+            "interrupted",
+            completed_this_run=success_count,
+            failed_this_run=failure_count,
+            last_error="用户中断",
+        )
         raise PipelineInterrupted(
             f"{stage_label} 已由用户中断；已完成结果已保留，重复同一命令可续跑"
         )
+    if quota_error is not None:
+        item, error = quota_error
+        record_progress(
+            "quota_exhausted",
+            completed_this_run=success_count,
+            failed_this_run=failure_count,
+            last_error=str(error),
+        )
+        raise PipelineQuotaExhausted(
+            f"{stage_label} 额度已耗尽，已停止后续任务；"
+            f"触发项：{item_label(item)}。有效结果已保留，额度恢复后重复同一命令续跑"
+        ) from error
     if first_error is not None:
         item, error = first_error
+        record_progress(
+            "failed",
+            completed_this_run=success_count,
+            failed_this_run=failure_count,
+            last_error=str(error),
+        )
         raise PipelineError(f"{stage_label} 失败：{item_label(item)}：{error}") from error
+    final_status = (
+        "completed"
+        if completed_before + success_count == total_items
+        else "partial"
+    )
+    record_progress(
+        final_status,
+        completed_this_run=success_count,
+        failed_this_run=failure_count,
+    )
     return failure_count
 
 
@@ -984,6 +1172,13 @@ def run_codex_task(
                     _ACTIVE_MODEL_PROCESSES.discard(process)
             if _MODEL_TASK_CANCELLED.is_set():
                 raise PipelineInterrupted("模型任务已取消")
+            quota_detail = quota_exhaustion_detail(f"{stdout}\n{stderr}")
+            if quota_detail is not None:
+                if temporary_path.exists():
+                    temporary_path.unlink()
+                raise PipelineQuotaExhausted(
+                    f"Codex 使用额度已耗尽：{quota_detail}"
+                )
             if timed_out:
                 last_error = f"运行超过 {timeout:g} 秒"
             elif process.returncode == 0 and temporary_path.is_file():
@@ -1474,6 +1669,9 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             "generated_at": utc_now(),
         }
         write_json(output_path, result)
+        (args.work_dir / "errors" / "step_1" / source_detection_name(relative)).unlink(
+            missing_ok=True
+        )
 
     def record_detection_error(
         item: tuple[Path, str, str, int, Path, Path], error: Exception
@@ -1497,6 +1695,10 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
         task=detect_source,
         on_error=record_detection_error,
         continue_on_error=args.continue_on_error,
+        progress_path=args.work_dir / "progress" / "step_1_boundary_detection.json",
+        progress_stage="step_1_boundary_detection",
+        total_items=len(sources),
+        completed_before=len(sources) - len(pending),
     )
 
     ambiguous_sources: list[tuple[Path, str, str, int, Path, Path]] = []
@@ -1592,6 +1794,12 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
                 "generated_at": utc_now(),
             }
             write_json(review_path, result)
+            (
+                args.work_dir
+                / "errors"
+                / "step_1_review"
+                / source_detection_name(relative)
+            ).unlink(missing_ok=True)
 
         def record_review_error(
             item: tuple[Path, str, str, int, Path, Path], error: Exception
@@ -1615,6 +1823,10 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             task=review_source,
             on_error=record_review_error,
             continue_on_error=args.continue_on_error,
+            progress_path=args.work_dir / "progress" / "step_1_boundary_review.json",
+            progress_stage="step_1_boundary_review",
+            total_items=len(ambiguous_sources) + len(usable_review_source_paths),
+            completed_before=len(usable_review_source_paths),
         )
         failures += review_failures
         reviewed_source_count = len(ambiguous_sources) - review_failures

@@ -213,10 +213,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     include_splits = (
         set(args.include_split) if args.include_split else set(DEFAULT_TEACHER_SPLITS)
     )
+    split_scope = "_".join(sorted(include_splits))
     gold_ids = load_gold_ids(args.gold_manifest)
     stories = eligible_story_records(manifest, include_splits)
     selected: list[tuple[dict[str, Any], Path, Path, Path, bool, str]] = []
     skipped: list[dict[str, str]] = []
+    candidate_count = 0
     for story in stories:
         source_id = str(story["source_id"])
         analysis_path = analysis_dir / f"{source_id}.json"
@@ -239,6 +241,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         needs_sol = analysis["difficulty"] == "hard" or gate["decision"] != "pass" or gold_standard
         if not needs_sol:
             continue
+        candidate_count += 1
         evidence_sha256 = canonical_json_sha256(
             {
                 "analysis": {
@@ -262,6 +265,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         selected.append(
             (story, analysis_path, rewrite_path, review_path, gold_standard, evidence_sha256)
         )
+    pending_total = len(selected)
+    completed_before = candidate_count - pending_total
     selected = limit_pending_items(selected, args.limit)
     print(
         f"Sol 待裁决：{len(selected)} / 可用故事：{len(stories)}；"
@@ -331,6 +336,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             "generated_at": utc_now(),
         }
         write_json(output_path, result)
+        (
+            args.work_dir / "errors" / "step_5" / args.variant / f"{source_id}.json"
+        ).unlink(missing_ok=True)
 
     def record_adjudication_error(
         item: tuple[dict[str, Any], Path, Path, Path, bool, str], error: Exception
@@ -350,6 +358,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         task=adjudicate_story,
         on_error=record_adjudication_error,
         continue_on_error=args.continue_on_error,
+        progress_path=(
+            args.work_dir
+            / "progress"
+            / f"step_5_{args.variant}_{split_scope}.json"
+        ),
+        progress_stage=f"step_5_{args.variant}_{split_scope}",
+        total_items=candidate_count,
+        completed_before=completed_before,
     )
     write_jsonl(
         args.work_dir / "errors" / "step_5" / args.variant / "prerequisite_blocked.jsonl",
@@ -360,4 +376,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None

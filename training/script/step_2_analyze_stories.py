@@ -175,14 +175,48 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def require_completed_step_1(work_dir: Path, manifest: Path) -> None:
+    """默认清单必须来自完整结束且无模型失败的 Step 1。"""
+
+    if manifest.resolve() != (work_dir / "stories.jsonl").resolve():
+        return
+    report_path = work_dir / "automatic_boundary_report.json"
+    if report_path.is_file():
+        report = read_json(report_path)
+        source_count = report.get("source_count")
+        completed_source_count = report.get("completed_source_count")
+        failed_source_count = report.get("failed_source_count")
+        if (
+            not isinstance(source_count, int)
+            or not isinstance(completed_source_count, int)
+            or not isinstance(failed_source_count, int)
+            or completed_source_count != source_count
+            or failed_source_count != 0
+        ):
+            raise PipelineError(
+                "Step 1 尚未完整结束或仍有模型失败；请先重复 Step 1c 原命令续跑"
+            )
+    for progress_name in (
+        "step_1_boundary_detection.json",
+        "step_1_boundary_review.json",
+    ):
+        progress_path = work_dir / "progress" / progress_name
+        if progress_path.is_file() and read_json(progress_path).get("status") != "completed":
+            raise PipelineError(
+                f"Step 1 进度不是 completed：{progress_path}；请先续跑 Step 1c"
+            )
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     """运行 Step 2。"""
 
     args = build_parser().parse_args(argv)
     manifest = args.manifest or args.work_dir / "stories.jsonl"
+    require_completed_step_1(args.work_dir, manifest)
     include_splits = (
         set(args.include_split) if args.include_split else set(DEFAULT_ANALYSIS_SPLITS)
     )
+    split_scope = "_".join(sorted(include_splits))
     stories = eligible_story_records(manifest, include_splits)
     output_dir = args.work_dir / "analysis"
     pending: list[dict[str, Any]] = []
@@ -197,6 +231,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             except PipelineError:
                 pass
         pending.append(story)
+    pending_total = len(pending)
+    completed_before = len(stories) - pending_total
     pending = limit_pending_items(pending, args.limit)
     print(f"Luna 待处理：{len(pending)} / 可用故事：{len(stories)}")
     if args.dry_run:
@@ -239,6 +275,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             "codex_cwd": str(REPO_ROOT),
         }
         write_json(output_path, result)
+        (args.work_dir / "errors" / "step_2" / f"{source_id}.json").unlink(
+            missing_ok=True
+        )
 
     def record_analysis_error(story: dict[str, Any], error: Exception) -> None:
         source_id = str(story["source_id"])
@@ -256,6 +295,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         task=analyze_story,
         on_error=record_analysis_error,
         continue_on_error=args.continue_on_error,
+        progress_path=args.work_dir / "progress" / f"step_2_analysis_{split_scope}.json",
+        progress_stage=f"step_2_analysis_{split_scope}",
+        total_items=len(stories),
+        completed_before=completed_before,
     )
     repair_queue: list[dict[str, Any]] = []
     for story in stories:
@@ -282,4 +325,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None

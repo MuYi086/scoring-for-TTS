@@ -202,6 +202,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     include_splits = (
         set(args.include_split) if args.include_split else set(DEFAULT_TEACHER_SPLITS)
     )
+    split_scope = "_".join(sorted(include_splits))
     stories = eligible_story_records(manifest, include_splits)
     pending: list[tuple[dict[str, Any], Path, Path, str, str]] = []
     skipped: list[dict[str, str]] = []
@@ -242,6 +243,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         pending.append(
             (story, analysis_path, rewrite_path, analysis_sha256, rewrite_sha256)
         )
+    candidate_count = len(stories) - len(skipped)
+    pending_total = len(pending)
+    completed_before = candidate_count - pending_total
     pending = limit_pending_items(pending, args.limit)
     print(
         f"独立复核待处理：{len(pending)} / 可用故事：{len(stories)}；"
@@ -291,6 +295,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             "generated_at": utc_now(),
         }
         write_json(output_path, result)
+        (
+            args.work_dir / "errors" / "step_4" / args.variant / f"{source_id}.json"
+        ).unlink(missing_ok=True)
 
     def record_review_error(
         item: tuple[dict[str, Any], Path, Path, str, str], error: Exception
@@ -310,6 +317,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         task=review_story,
         on_error=record_review_error,
         continue_on_error=args.continue_on_error,
+        progress_path=(
+            args.work_dir
+            / "progress"
+            / f"step_4_{args.variant}_{split_scope}.json"
+        ),
+        progress_stage=f"step_4_{args.variant}_{split_scope}",
+        total_items=candidate_count,
+        completed_before=completed_before,
     )
     write_jsonl(
         args.work_dir / "errors" / "step_4" / args.variant / "prerequisite_blocked.jsonl",
@@ -320,4 +335,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except PipelineError as error:
+        raise SystemExit(f"错误：{error}") from None
