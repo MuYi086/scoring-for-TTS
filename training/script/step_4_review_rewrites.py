@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Step 4：使用第二次独立 Terra 调用比较 A 与 B，只纠错、不重写。"""
+"""Step 4：优先用 Luna 独立比较 A/B，风险样本路由 Terra。"""
 
 from __future__ import annotations
 
@@ -11,9 +11,11 @@ from typing import Any, Sequence
 
 from step_1_prepare_stories import (
     DEFAULT_HEARTBEAT_SECONDS,
+    DEFAULT_STORY_BATCH_LIMIT,
     DEFAULT_WORK_DIR,
     PipelineError,
     REPO_ROOT,
+    atomic_write_text,
     canonical_json_sha256,
     codex_command,
     eligible_story_records,
@@ -24,15 +26,21 @@ from step_1_prepare_stories import (
     run_parallel_tasks,
     sha256_text,
     utc_now,
+    validate_automatic_model_policy,
     validate_exact_keys,
     write_json,
     write_jsonl,
 )
-from step_2_analyze_stories import boundary_assessment_passes, validate_analysis
+from step_2_analyze_stories import (
+    boundary_assessment_passes,
+    build_story_boundary_context,
+    validate_analysis,
+)
 from step_3_rewrite_stories import DEFAULT_TEACHER_SPLITS, validate_rewrite
 
 
-DEFAULT_MODEL = "gpt-5.6-terra"
+DEFAULT_MODEL = "gpt-5.6-luna"
+DEFAULT_REVIEW_MODEL = "gpt-5.6-terra"
 SCHEMA_PATH = Path(__file__).resolve().parent / "schemas" / "story_review.schema.json"
 REQUIRED_KEYS = {
     "source_id",
@@ -120,21 +128,19 @@ def build_prompt(
     story_path: Path,
     analysis_path: Path,
     rewrite_path: Path,
+    boundary_context_path: Path,
 ) -> str:
     """构造独立 A/B 保真复核任务。"""
-
-    source_file = REPO_ROOT / str(
-        story_record.get("source_file", f"training/{story_record['source_path']}")
-    )
 
     return f"""你正在执行训练数据流水线 Step 4：独立比较原稿 A 与有声稿 B。
 
 读取：
 - 完整原稿 A：`{relative_to_repo(story_path)}`
-- 原始整期来源：`{relative_to_repo(source_file)}`，当前边界为
-  {story_record['start_line']}–{story_record['end_line']}
+- Python 生成的边界前后局部原文：`{relative_to_repo(boundary_context_path)}`
 - Step 2 事实清单：`{relative_to_repo(analysis_path)}`
 - Step 3 改写结果 B：`{relative_to_repo(rewrite_path)}`
+
+不要打开原始整期来源；边界局部包已经包含起止位置审计所需的带行号上下文。
 
 只做检查，不重新创作，不直接修改 B。输出必须严格符合给定 JSON Schema，source_id 必须是
 `{story_record['source_id']}`。
@@ -151,14 +157,21 @@ severity=critical 并 decision=escalate，不能靠重写 B 掩盖残缺来源�
 def build_parser() -> argparse.ArgumentParser:
     """构造 Step 4 命令行。"""
 
-    parser = argparse.ArgumentParser(description="用独立 Terra 调用复核 A/B 保真度")
+    parser = argparse.ArgumentParser(description="用 Luna/Terra 风险路由复核 A/B 保真度")
     parser.add_argument("--work-dir", type=Path, default=DEFAULT_WORK_DIR)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--analysis-dir", type=Path)
     parser.add_argument("--variant", default="teacher")
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--reasoning-effort", default="high")
-    parser.add_argument("--profile", help="可选 Codex profile；默认 Standard")
+    parser.add_argument("--review-model", default=DEFAULT_REVIEW_MODEL)
+    parser.add_argument("--reasoning-effort", default="medium")
+    parser.add_argument("--review-reasoning-effort", default="medium")
+    parser.add_argument(
+        "--terra-audit-percent",
+        type=int,
+        default=10,
+        help="普通 train 样本稳定抽取给 Terra 的百分比，默认 10",
+    )
     parser.add_argument(
         "--include-split",
         action="append",
@@ -168,15 +181,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--limit",
         type=int,
+        default=DEFAULT_STORY_BATCH_LIMIT,
         help="每次最多处理的尚未完成项；重复执行同一命令会继续下一批",
     )
-    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=1,
+        help="仅临时网络/传输失败的额外重试次数，默认 1",
+    )
     parser.add_argument("--timeout", type=float, default=2400)
     parser.add_argument(
         "--workers",
         type=int,
-        default=4,
-        help="并发复核故事数，默认 4；额度受限时降为 1",
+        default=2,
+        help="并发复核故事数，默认 2；额度受限时降为 1",
     )
     parser.add_argument(
         "--heartbeat-seconds",
@@ -195,16 +214,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", args.variant):
         raise PipelineError("variant 只能包含字母、数字、点、下划线和连字符")
+    if not 0 <= args.terra_audit_percent <= 100:
+        raise PipelineError("terra-audit-percent 必须在 0–100 之间")
+    validate_automatic_model_policy(args.model, args.reasoning_effort)
+    validate_automatic_model_policy(
+        args.review_model,
+        args.review_reasoning_effort,
+    )
     manifest = args.manifest or args.work_dir / "stories.jsonl"
     analysis_dir = args.analysis_dir or args.work_dir / "analysis"
     rewrite_dir = args.work_dir / "rewrites" / args.variant
     output_dir = args.work_dir / "reviews" / args.variant
+    context_dir = args.work_dir / "boundary_context"
     include_splits = (
         set(args.include_split) if args.include_split else set(DEFAULT_TEACHER_SPLITS)
     )
     split_scope = "_".join(sorted(include_splits))
     stories = eligible_story_records(manifest, include_splits)
-    pending: list[tuple[dict[str, Any], Path, Path, str, str]] = []
+    pending: list[tuple[dict[str, Any], Path, Path, str, str, str, str, str]] = []
     skipped: list[dict[str, str]] = []
     for story in stories:
         source_id = str(story["source_id"])
@@ -227,6 +254,20 @@ def main(argv: Sequence[str] | None = None) -> int:
             {key: value for key, value in analysis.items() if not key.startswith("_")}
         )
         rewrite_sha256 = sha256_text(rewrite["output_b"])
+        checks = rewrite.get("_deterministic_checks", {})
+        audit_bucket = int(sha256_text(source_id)[:8], 16) % 100
+        needs_terra = (
+            analysis["difficulty"] == "hard"
+            or story.get("split") == "validation"
+            or rewrite["needs_human_review"]
+            or bool(checks.get("new_name_candidates", []))
+            or audit_bucket < args.terra_audit_percent
+        )
+        model = args.review_model if needs_terra else args.model
+        effort = (
+            args.review_reasoning_effort if needs_terra else args.reasoning_effort
+        )
+        route = "risk_or_audit_review" if needs_terra else "luna_default_review"
         output_path = output_dir / f"{source_id}.json"
         if output_path.exists() and not args.overwrite:
             try:
@@ -241,7 +282,16 @@ def main(argv: Sequence[str] | None = None) -> int:
             except PipelineError:
                 pass
         pending.append(
-            (story, analysis_path, rewrite_path, analysis_sha256, rewrite_sha256)
+            (
+                story,
+                analysis_path,
+                rewrite_path,
+                analysis_sha256,
+                rewrite_sha256,
+                model,
+                effort,
+                route,
+            )
         )
     candidate_count = len(stories) - len(skipped)
     pending_total = len(pending)
@@ -253,42 +303,74 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if args.dry_run:
         if pending:
-            story, analysis_path, rewrite_path, _, _ = pending[0]
+            story, analysis_path, rewrite_path, _, _, model, effort, _ = pending[0]
             story_path = args.work_dir / story["story_path"]
+            context_path = context_dir / f"{story['source_id']}.txt"
             command = codex_command(
-                prompt=build_prompt(story, story_path, analysis_path, rewrite_path),
-                model=args.model,
-                reasoning_effort=args.reasoning_effort,
+                prompt=build_prompt(
+                    story,
+                    story_path,
+                    analysis_path,
+                    rewrite_path,
+                    context_path,
+                ),
+                model=model,
+                reasoning_effort=effort,
                 schema_path=SCHEMA_PATH,
                 output_path=output_dir / f"{story['source_id']}.json.tmp",
-                profile=args.profile,
             )
             print(f"示例命令：{shlex.join(command)}")
         return 0
-    def review_story(item: tuple[dict[str, Any], Path, Path, str, str]) -> None:
-        story, analysis_path, rewrite_path, analysis_sha256, rewrite_sha256 = item
+    def review_story(
+        item: tuple[dict[str, Any], Path, Path, str, str, str, str, str]
+    ) -> None:
+        (
+            story,
+            analysis_path,
+            rewrite_path,
+            analysis_sha256,
+            rewrite_sha256,
+            model,
+            effort,
+            route,
+        ) = item
         source_id = str(story["source_id"])
         story_path = args.work_dir / story["story_path"]
         output_path = output_dir / f"{source_id}.json"
+        source_file = REPO_ROOT / str(
+            story.get("source_file", f"training/{story['source_path']}")
+        )
+        context_path = context_dir / f"{source_id}.txt"
+        if not context_path.is_file():
+            atomic_write_text(
+                context_path,
+                build_story_boundary_context(story, source_file),
+            )
         result = run_codex_task(
-            prompt=build_prompt(story, story_path, analysis_path, rewrite_path),
-            model=args.model,
-            reasoning_effort=args.reasoning_effort,
+            prompt=build_prompt(
+                story,
+                story_path,
+                analysis_path,
+                rewrite_path,
+                context_path,
+            ),
+            model=model,
+            reasoning_effort=effort,
             schema_path=SCHEMA_PATH,
             output_path=output_path,
             validator=lambda value, expected=source_id: validate_review(value, expected),
             retries=args.retries,
             timeout=args.timeout,
-            profile=args.profile,
         )
         result["_deterministic_gate"] = deterministic_gate(result)
         result["_provenance"] = {
             "stage": "rewrite_review",
             "variant": args.variant,
-            "model": args.model,
-            "reasoning_effort": args.reasoning_effort,
-            "speed": "profile" if args.profile else "standard",
-            "profile": args.profile,
+            "model": model,
+            "reasoning_effort": effort,
+            "model_route": route,
+            "speed": "standard",
+            "boundary_context": relative_to_repo(context_path),
             "input_sha256": story["sha256"],
             "analysis_sha256": analysis_sha256,
             "rewrite_sha256": rewrite_sha256,
@@ -300,7 +382,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         ).unlink(missing_ok=True)
 
     def record_review_error(
-        item: tuple[dict[str, Any], Path, Path, str, str], error: Exception
+        item: tuple[dict[str, Any], Path, Path, str, str, str, str, str],
+        error: Exception,
     ) -> None:
         source_id = str(item[0]["source_id"])
         write_json(
@@ -312,7 +395,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         pending,
         workers=args.workers,
         heartbeat_seconds=args.heartbeat_seconds,
-        stage_label="Terra 独立复核",
+        stage_label="Luna/Terra 独立复核",
         item_label=lambda item: str(item[0]["source_id"]),
         task=review_story,
         on_error=record_review_error,

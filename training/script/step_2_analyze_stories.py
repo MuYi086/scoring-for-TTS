@@ -10,9 +10,11 @@ from typing import Any, Sequence
 
 from step_1_prepare_stories import (
     DEFAULT_HEARTBEAT_SECONDS,
+    DEFAULT_STORY_BATCH_LIMIT,
     DEFAULT_WORK_DIR,
     PipelineError,
     REPO_ROOT,
+    atomic_write_text,
     codex_command,
     eligible_story_records,
     limit_pending_items,
@@ -21,6 +23,7 @@ from step_1_prepare_stories import (
     run_codex_task,
     run_parallel_tasks,
     utc_now,
+    validate_automatic_model_policy,
     validate_exact_keys,
     write_json,
     write_jsonl,
@@ -28,7 +31,7 @@ from step_1_prepare_stories import (
 
 
 DEFAULT_MODEL = "gpt-5.6-luna"
-DEFAULT_REASONING_EFFORT = "high"
+DEFAULT_REASONING_EFFORT = "medium"
 DEFAULT_ANALYSIS_SPLITS = frozenset({"train", "validation"})
 SCHEMA_PATH = Path(__file__).resolve().parent / "schemas" / "story_analysis.schema.json"
 REQUIRED_KEYS = {
@@ -105,19 +108,53 @@ def boundary_assessment_passes(value: dict[str, Any], minimum_confidence: float 
     )
 
 
-def build_prompt(story_record: dict[str, Any], story_path: Path) -> str:
-    """构造只提取事实、不改写原文的 Luna 任务。"""
+def build_story_boundary_context(
+    story_record: dict[str, Any],
+    source_file: Path,
+    *,
+    context_lines: int = 60,
+) -> str:
+    """生成故事边界两侧的带行号局部原文，不复制整期杂志。"""
 
-    source_file = REPO_ROOT / str(
-        story_record.get("source_file", f"training/{story_record['source_path']}")
+    if context_lines < 1:
+        raise PipelineError("context_lines 必须大于 0")
+    lines = source_file.read_text(encoding="utf-8").splitlines()
+    start_line = int(story_record["start_line"])
+    end_line = int(story_record["end_line"])
+    windows = (
+        (max(1, start_line - context_lines), min(len(lines), start_line + context_lines)),
+        (max(1, end_line - context_lines), min(len(lines), end_line + context_lines)),
     )
+    parts = [
+        f"source_path={story_record['source_path']}",
+        f"story_boundary=L{start_line}-L{end_line}",
+    ]
+    seen: set[tuple[int, int]] = set()
+    for window_start, window_end in windows:
+        if (window_start, window_end) in seen:
+            continue
+        seen.add((window_start, window_end))
+        parts.append(f"[context L{window_start}-L{window_end}]")
+        parts.extend(
+            f"L{line_number}\t{lines[line_number - 1]}"
+            for line_number in range(window_start, window_end + 1)
+        )
+    return "\n".join(parts).rstrip() + "\n"
+
+
+def build_prompt(
+    story_record: dict[str, Any], story_path: Path, boundary_context_path: Path
+) -> str:
+    """构造只提取事实、不改写原文的 Luna 任务。"""
 
     return f"""你正在执行训练数据流水线 Step 2，只做故事理解和第二次边界审计，不改写正文。
 
 读取：
 - Step 1 提取稿：`{relative_to_repo(story_path)}`
-- 原始整期来源：`{relative_to_repo(source_file)}`
+- Python 生成的边界前后局部原文：`{relative_to_repo(boundary_context_path)}`
 - Step 1 边界：{story_record['start_line']}–{story_record['end_line']}（1 起始、包含端点）
+
+不要打开原始整期来源；局部包已提供边界审计所需的带行号上下文。
 
 输出必须严格符合给定 JSON Schema，并满足：
 
@@ -125,7 +162,7 @@ def build_prompt(story_record: dict[str, Any], story_path: Path) -> str:
 2. characters 合并同一人物的称呼并保留 aliases；不要把普通名词当人名。
 3. immutable_facts 只记录后续改写绝不能改变的人物、时间、地点、死亡方式、关键物件和因果。
 4. clues、misdirection、twist 分开记录，不补写原文没有的信息。
-5. 对照原始来源中边界前后内容，判断提取稿是否有完整开头和结局、是否混入相邻故事、广告或
+5. 对照局部包中的边界前后内容，判断提取稿是否有完整开头和结局、是否混入相邻故事、广告或
    刊后内容。只有无问题时 boundary_assessment.status=complete、issues=[]；不得因为 Step 1 已标为
    auto_approved 就默认通过。
 6. 若边界错误，给出可由 Python 应用的 suggested_start_line/suggested_end_line；无法可靠判断时用
@@ -144,7 +181,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--reasoning-effort", default=DEFAULT_REASONING_EFFORT)
-    parser.add_argument("--profile", help="可选 Codex 配置 profile；默认不启用 Fast")
     parser.add_argument(
         "--include-split",
         action="append",
@@ -154,15 +190,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--limit",
         type=int,
+        default=DEFAULT_STORY_BATCH_LIMIT,
         help="每次最多处理的尚未完成项；重复执行同一命令会继续下一批",
     )
-    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=1,
+        help="仅临时网络/传输失败的额外重试次数，默认 1",
+    )
     parser.add_argument("--timeout", type=float, default=1800)
     parser.add_argument(
         "--workers",
         type=int,
-        default=4,
-        help="并发故事数，默认 4；额度受限时降为 1",
+        default=2,
+        help="并发故事数，默认 2；额度受限时降为 1",
     )
     parser.add_argument(
         "--heartbeat-seconds",
@@ -211,6 +253,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     """运行 Step 2。"""
 
     args = build_parser().parse_args(argv)
+    validate_automatic_model_policy(args.model, args.reasoning_effort)
     manifest = args.manifest or args.work_dir / "stories.jsonl"
     require_completed_step_1(args.work_dir, manifest)
     include_splits = (
@@ -219,6 +262,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     split_scope = "_".join(sorted(include_splits))
     stories = eligible_story_records(manifest, include_splits)
     output_dir = args.work_dir / "analysis"
+    context_dir = args.work_dir / "boundary_context"
     pending: list[dict[str, Any]] = []
     for story in stories:
         output_path = output_dir / f"{story['source_id']}.json"
@@ -239,13 +283,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         if pending:
             sample = pending[0]
             sample_path = args.work_dir / sample["story_path"]
+            context_path = context_dir / f"{sample['source_id']}.txt"
             command = codex_command(
-                prompt=build_prompt(sample, sample_path),
+                prompt=build_prompt(sample, sample_path, context_path),
                 model=args.model,
                 reasoning_effort=args.reasoning_effort,
                 schema_path=SCHEMA_PATH,
                 output_path=output_dir / f"{sample['source_id']}.json.tmp",
-                profile=args.profile,
             )
             print(f"示例命令：{shlex.join(command)}")
         return 0
@@ -253,8 +297,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         source_id = str(story["source_id"])
         story_path = args.work_dir / story["story_path"]
         output_path = output_dir / f"{source_id}.json"
+        source_file = REPO_ROOT / str(
+            story.get("source_file", f"training/{story['source_path']}")
+        )
+        context_path = context_dir / f"{source_id}.txt"
+        atomic_write_text(context_path, build_story_boundary_context(story, source_file))
         result = run_codex_task(
-            prompt=build_prompt(story, story_path),
+            prompt=build_prompt(story, story_path, context_path),
             model=args.model,
             reasoning_effort=args.reasoning_effort,
             schema_path=SCHEMA_PATH,
@@ -262,14 +311,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             validator=lambda value, expected=source_id: validate_analysis(value, expected),
             retries=args.retries,
             timeout=args.timeout,
-            profile=args.profile,
         )
         result["_provenance"] = {
             "stage": "story_analysis",
             "model": args.model,
             "reasoning_effort": args.reasoning_effort,
-            "speed": "profile" if args.profile else "standard",
-            "profile": args.profile,
+            "speed": "standard",
+            "boundary_context": relative_to_repo(context_path),
             "input_sha256": story["sha256"],
             "generated_at": utc_now(),
             "codex_cwd": str(REPO_ROOT),

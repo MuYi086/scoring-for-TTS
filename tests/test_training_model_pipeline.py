@@ -23,6 +23,7 @@ try:
     import step_2_analyze_stories as step_2
     import step_3_rewrite_stories as step_3
     import step_4_review_rewrites as step_4
+    import step_5_adjudicate_stories as step_5
     import step_6_export_datasets as step_6
     import step_7_prepare_blind_test as step_7
     import step_8_prepare_llamafactory as step_8
@@ -93,6 +94,77 @@ class TrainingModelPipelineTests(unittest.TestCase):
             self.assertIn("正式运行命令预览（仅展示，本次未执行）", output.getvalue())
             self.assertIn("Step 1a 检查通过（退出码 0）", output.getvalue())
             self.assertFalse(work_dir.exists())
+
+    def test_step_1_dry_run_reports_manual_package_before_existing_terra_result(self):
+        with tempfile.TemporaryDirectory(dir=REPO_ROOT) as directory:
+            root = Path(directory)
+            input_dir = root / "training"
+            source_file = input_dir / "刊物" / "一期.md"
+            source_file.parent.mkdir(parents=True)
+            source_file.write_text("# 待复核故事\n正文。\n", encoding="utf-8")
+            work_dir = root / "work"
+            source_manifest = root / "selected_sources.jsonl"
+            step_1.write_jsonl(
+                source_manifest,
+                [frozen_source_record(input_dir, source_file)],
+            )
+            relative = source_file.relative_to(input_dir).as_posix()
+            review_name = step_1.source_detection_name(relative)
+            source_text = source_file.read_text(encoding="utf-8")
+            detection = {
+                "source_path": relative,
+                "source_sha256": step_1.sha256_text(source_text),
+                "line_count": len(source_text.splitlines()),
+                "stories": [],
+                "document_notes": "没有可自动批准的边界",
+                "_provenance": {
+                    "input_sha256": step_1.sha256_text(source_text),
+                    "model": "gpt-5.6-luna",
+                },
+            }
+            step_1.write_json(work_dir / "boundary_detection" / review_name, detection)
+            reviewed = {
+                **detection,
+                "_provenance": {
+                    "input_sha256": detection["source_sha256"],
+                    "model": "gpt-5.6-terra",
+                },
+            }
+            step_1.write_json(
+                work_dir / "boundary_detection_review" / review_name,
+                reviewed,
+            )
+            package_path = (
+                work_dir
+                / "manual_escalation"
+                / "step_1"
+                / f"{Path(review_name).stem}.md"
+            )
+            package_path.parent.mkdir(parents=True)
+            package_path.write_text("# 人工 Sol 升级\n", encoding="utf-8")
+            output = io.StringIO()
+
+            with contextlib.redirect_stdout(output):
+                exit_code = step_1.main(
+                    [
+                        "--input-dir",
+                        str(input_dir),
+                        "--source-manifest",
+                        str(source_manifest),
+                        "--work-dir",
+                        str(work_dir),
+                        "--auto-boundaries",
+                        "--resolve-ambiguous",
+                        "--dry-run",
+                    ]
+                )
+
+            self.assertEqual(exit_code, 0)
+            self.assertIn(
+                "Terra 边界复核：已完成 0/1；自动待处理 0；等待人工 Sol 1",
+                output.getvalue(),
+            )
+            self.assertIn("下一步：处理 Step 1d 人工 Sol 升级包", output.getvalue())
 
     def test_step_0_selects_balanced_reproducible_four_way_plan(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -562,10 +634,131 @@ class TrainingModelPipelineTests(unittest.TestCase):
         )
 
         self.assertIn("--ephemeral", command)
+        self.assertIn("--ignore-user-config", command)
+        self.assertNotIn("--profile", command)
         self.assertEqual(command[command.index("--sandbox") + 1], "read-only")
         self.assertEqual(command[command.index("--model") + 1], "gpt-5.6-terra")
         self.assertIn("--output-schema", command)
         self.assertIn('model_reasoning_effort="high"', command)
+
+    def test_automatic_model_policy_rejects_sol_alias_fast_profiles_and_xhigh(self):
+        for model in ("gpt-5.6", "gpt-5.6-sol"):
+            with self.subTest(model=model), self.assertRaisesRegex(
+                step_1.PipelineError, "禁止 Sol"
+            ):
+                step_1.codex_command(
+                    prompt="测试",
+                    model=model,
+                    reasoning_effort="medium",
+                    schema_path=Path("schema.json"),
+                    output_path=Path("output.json"),
+                )
+        with self.assertRaisesRegex(step_1.PipelineError, "xhigh/max/pro"):
+            step_1.codex_command(
+                prompt="测试",
+                model="gpt-5.6-luna",
+                reasoning_effort="xhigh",
+                schema_path=Path("schema.json"),
+                output_path=Path("output.json"),
+            )
+        for parser in (
+            step_1.build_parser(),
+            step_2.build_parser(),
+            step_3.build_parser(),
+            step_4.build_parser(),
+            step_5.build_parser(),
+        ):
+            self.assertNotIn("profile", vars(parser.parse_args([])))
+
+    def test_validation_failure_is_not_retried_with_same_prompt(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "result.json"
+            temporary_path = output_path.with_suffix(".json.tmp")
+
+            class InvalidProcess:
+                returncode = 0
+                pid = 999998
+
+                def communicate(self, timeout=None):
+                    temporary_path.write_text("{}", encoding="utf-8")
+                    return "", ""
+
+                def poll(self):
+                    return 0
+
+            with (
+                patch.object(step_1, "codex_command", return_value=["codex"]),
+                patch.object(
+                    step_1.subprocess,
+                    "Popen",
+                    return_value=InvalidProcess(),
+                ) as popen,
+            ):
+                with self.assertRaisesRegex(step_1.PipelineTaskFailed, "已尝试 1 次"):
+                    step_1.run_codex_task(
+                        prompt="测试",
+                        model="gpt-5.6-luna",
+                        reasoning_effort="medium",
+                        schema_path=Path(directory) / "schema.json",
+                        output_path=output_path,
+                        validator=lambda value: (_ for _ in ()).throw(
+                            step_1.PipelineError("字段不匹配")
+                        ),
+                        retries=5,
+                        timeout=30,
+                    )
+            self.assertEqual(popen.call_count, 1)
+
+    def test_quality_fallback_uses_terra_high_once_then_requires_manual_sol(self):
+        validation_error = step_1.PipelineTaskFailed(
+            "结构校验失败",
+            failure_kind="validation",
+        )
+        with patch.object(
+            step_1,
+            "run_codex_task",
+            side_effect=[validation_error, {"ok": True}],
+        ) as run_task:
+            result, model, effort, used_fallback = (
+                step_1.run_codex_task_with_quality_fallback(
+                    prompt="测试",
+                    model="gpt-5.6-terra",
+                    reasoning_effort="medium",
+                    fallback_model="gpt-5.6-terra",
+                    fallback_reasoning_effort="high",
+                    schema_path=Path("schema.json"),
+                    output_path=Path("output.json"),
+                    validator=lambda value: None,
+                    retries=1,
+                    timeout=30,
+                )
+            )
+        self.assertEqual(result, {"ok": True})
+        self.assertEqual((model, effort, used_fallback), ("gpt-5.6-terra", "high", True))
+        self.assertEqual(run_task.call_count, 2)
+        self.assertEqual(run_task.call_args_list[1].kwargs["retries"], 0)
+
+        with patch.object(
+            step_1,
+            "run_codex_task",
+            side_effect=[validation_error, validation_error],
+        ):
+            with self.assertRaisesRegex(
+                step_1.PipelineManualEscalationRequired,
+                "需要人工 Sol",
+            ):
+                step_1.run_codex_task_with_quality_fallback(
+                    prompt="测试",
+                    model="gpt-5.6-terra",
+                    reasoning_effort="medium",
+                    fallback_model="gpt-5.6-terra",
+                    fallback_reasoning_effort="high",
+                    schema_path=Path("schema.json"),
+                    output_path=Path("output.json"),
+                    validator=lambda value: None,
+                    retries=1,
+                    timeout=30,
+                )
 
     def test_cloud_selection_rejects_unknown_rights(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -818,10 +1011,18 @@ class TrainingModelPipelineTests(unittest.TestCase):
 
     def test_model_stage_worker_defaults_are_conservative(self):
         self.assertEqual(step_1.build_parser().parse_args([]).boundary_workers, 3)
-        self.assertEqual(step_2.build_parser().parse_args([]).workers, 4)
+        self.assertEqual(step_1.build_parser().parse_args([]).boundary_review_limit, 10)
+        self.assertEqual(step_2.build_parser().parse_args([]).workers, 2)
+        self.assertEqual(step_2.build_parser().parse_args([]).limit, 20)
+        self.assertEqual(step_2.DEFAULT_REASONING_EFFORT, "medium")
         self.assertEqual(step_2.DEFAULT_ANALYSIS_SPLITS, {"train", "validation"})
-        self.assertEqual(step_3.build_parser().parse_args([]).workers, 3)
-        self.assertEqual(step_4.build_parser().parse_args([]).workers, 4)
+        self.assertEqual(step_3.build_parser().parse_args([]).workers, 2)
+        self.assertEqual(step_3.DEFAULT_MODEL, "gpt-5.6-luna")
+        self.assertEqual(step_3.DEFAULT_TEACHER_MODEL, "gpt-5.6-terra")
+        self.assertEqual(step_4.build_parser().parse_args([]).workers, 2)
+        self.assertEqual(step_4.DEFAULT_MODEL, "gpt-5.6-luna")
+        self.assertEqual(step_5.DEFAULT_MODEL, "gpt-5.6-terra")
+        self.assertEqual(step_5.build_parser().parse_args([]).reasoning_effort, "medium")
         self.assertEqual(step_3.DEFAULT_TEACHER_SPLITS, {"train", "validation"})
 
     def test_blind_test_defaults_to_all_frozen_stories(self):
@@ -847,7 +1048,56 @@ class TrainingModelPipelineTests(unittest.TestCase):
                 )
 
             self.assertEqual(exit_code, 0)
-            self.assertIn("盲测故事：1；变体：5；音频子集：1", output.getvalue())
+            self.assertIn("盲测故事：1；变体：3；音频子集：1", output.getvalue())
+
+    def test_compact_boundary_packets_exclude_story_middle(self):
+        lines = [f"第{index}行" for index in range(1, 401)]
+        source_text = "\n".join(lines)
+        detection = {
+            "source_path": "刊物/一期.md",
+            "source_sha256": step_1.sha256_text(source_text),
+            "line_count": len(lines),
+            "stories": [
+                {
+                    "title": "风险故事",
+                    "start_line": 100,
+                    "end_line": 300,
+                    "completeness": "uncertain",
+                    "content_kind": "fiction",
+                    "target_genre": True,
+                    "confidence": 0.6,
+                    "reason": "待核对",
+                }
+            ],
+            "document_notes": "",
+        }
+
+        review_packet = step_1.build_boundary_review_packet(
+            source_text,
+            detection,
+            minimum_confidence=0.8,
+            context_lines=10,
+        )
+        self.assertIn("L100\t第100行", review_packet)
+        self.assertIn("L300\t第300行", review_packet)
+        self.assertNotIn("L200\t第200行", review_packet)
+
+        with tempfile.TemporaryDirectory() as directory:
+            source_file = Path(directory) / "一期.md"
+            source_file.write_text(source_text, encoding="utf-8")
+            story = {
+                "source_path": "刊物/一期.md",
+                "start_line": 100,
+                "end_line": 300,
+            }
+            context = step_2.build_story_boundary_context(
+                story,
+                source_file,
+                context_lines=10,
+            )
+            self.assertIn("L100\t第100行", context)
+            self.assertIn("L300\t第300行", context)
+            self.assertNotIn("L200\t第200行", context)
 
     def test_automatic_run_only_resumes_its_own_step_1_manifest(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -94,17 +94,20 @@ def resolve_candidate(
     output_b = rewrite["output_b"]
     pipeline_decision = review_gate["decision"]
     boundary_passed = boundary_assessment_passes(analysis)
-    selected_stage = "terra_rewrite"
+    selected_stage = "rewrite"
     adjudication_path = work_dir / "adjudications" / variant / f"{source_id}.json"
     adjudication: dict[str, Any] | None = None
     if adjudication_path.is_file():
         adjudication = read_json(adjudication_path)
         validate_adjudication(adjudication, source_id)
-        sol_gate = adjudication.get("_deterministic_gate") or adjudication_gate(adjudication)
-        pipeline_decision = "pass" if sol_gate["passed"] else sol_gate["decision"]
+        final_gate = adjudication.get("_deterministic_gate") or adjudication_gate(
+            adjudication
+        )
+        pipeline_decision = "pass" if final_gate["passed"] else final_gate["decision"]
         if adjudication["final_output_b"].strip():
             output_b = adjudication["final_output_b"]
-            selected_stage = "sol_adjudication"
+            model = adjudication.get("_provenance", {}).get("model", "manual")
+            selected_stage = f"{model}_adjudication"
     if not boundary_passed:
         pipeline_decision = "reject"
     return {

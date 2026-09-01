@@ -42,6 +42,13 @@ ALLOWED_SPLITS = {"train", "validation", "blind", "test"}
 APPROVED_BOUNDARY_STATUSES = {"approved", "auto_approved"}
 DEFAULT_BOUNDARY_MODEL = "gpt-5.6-luna"
 DEFAULT_BOUNDARY_REASONING_EFFORT = "medium"
+DEFAULT_BOUNDARY_REVIEW_MODEL = "gpt-5.6-terra"
+DEFAULT_BOUNDARY_REVIEW_REASONING_EFFORT = "medium"
+DEFAULT_BOUNDARY_REVIEW_LIMIT = 10
+DEFAULT_BOUNDARY_REVIEW_CONTEXT_LINES = 30
+DEFAULT_STORY_BATCH_LIMIT = 20
+AUTOMATIC_CLOUD_MODELS = frozenset({"gpt-5.6-luna", "gpt-5.6-terra"})
+AUTOMATIC_REASONING_EFFORTS = frozenset({"low", "medium", "high"})
 BOUNDARY_SCHEMA_PATH = Path(__file__).resolve().parent / "schemas" / "story_boundaries.schema.json"
 DEFAULT_HEARTBEAT_SECONDS = 30.0
 MAX_PARALLEL_WORKERS = 16
@@ -80,6 +87,18 @@ class PipelineInterrupted(PipelineError):
 
 class PipelineQuotaExhausted(PipelineError):
     """模型额度已经耗尽；继续提交任务只会重复失败并浪费时间。"""
+
+
+class PipelineTaskFailed(PipelineError):
+    """单个模型任务在有限的临时重试后仍失败。"""
+
+    def __init__(self, message: str, *, failure_kind: str) -> None:
+        super().__init__(message)
+        self.failure_kind = failure_kind
+
+
+class PipelineManualEscalationRequired(PipelineError):
+    """自动 Luna/Terra 路径无法可靠完成，需要用户手工调用 Sol。"""
 
 
 ParallelItem = TypeVar("ParallelItem")
@@ -131,6 +150,21 @@ QUOTA_EXHAUSTION_PATTERNS = tuple(
         r"insufficient_quota",
         r"quota[_ ]exceeded",
         r"usage limit.{0,160}(?:purchase more credits|try again at|upgrade)",
+    )
+)
+TRANSIENT_MODEL_FAILURE_PATTERNS = tuple(
+    re.compile(pattern, re.IGNORECASE)
+    for pattern in (
+        r"tls handshake",
+        r"failed to connect",
+        r"connection (?:reset|closed|refused)",
+        r"transport channel closed",
+        r"http/request failed",
+        r"request timed out",
+        r"stream disconnected",
+        r"websocket",
+        r"temporar(?:y|ily) unavailable",
+        r"timeout waiting for child process",
     )
 )
 
@@ -1053,6 +1087,35 @@ def relative_to_repo(path: Path) -> str:
         raise PipelineError(f"Codex 输入必须位于仓库内：{path}") from error
 
 
+def validate_automatic_model_policy(
+    model: str,
+    reasoning_effort: str,
+    *,
+    local_provider: str | None = None,
+) -> None:
+    """禁止自动 Sol、隐式 Sol 别名、过高推理和用户 Fast 配置。"""
+
+    if reasoning_effort not in AUTOMATIC_REASONING_EFFORTS:
+        allowed = "、".join(sorted(AUTOMATIC_REASONING_EFFORTS))
+        raise PipelineError(
+            f"自动流水线 reasoning effort 只允许 {allowed}；"
+            "xhigh/max/pro 请改走人工升级"
+        )
+    if local_provider is not None:
+        return
+    if model not in AUTOMATIC_CLOUD_MODELS:
+        allowed = "、".join(sorted(AUTOMATIC_CLOUD_MODELS))
+        raise PipelineError(
+            f"自动云端模型只允许 {allowed}；禁止 Sol 和会隐式路由到 Sol 的模型别名"
+        )
+
+
+def is_transient_model_failure(detail: str) -> bool:
+    """仅把网络、传输和进程超时视为可原样重试的临时故障。"""
+
+    return any(pattern.search(detail) for pattern in TRANSIENT_MODEL_FAILURE_PATTERNS)
+
+
 def codex_command(
     *,
     prompt: str,
@@ -1060,14 +1123,20 @@ def codex_command(
     reasoning_effort: str,
     schema_path: Path,
     output_path: Path,
-    profile: str | None = None,
     local_provider: str | None = None,
 ) -> list[str]:
-    """构造最小权限、非交互、结构化输出的 Codex CLI 命令。"""
+    """构造固定 Standard、最小权限、非交互、结构化输出的 Codex CLI 命令。"""
+
+    validate_automatic_model_policy(
+        model,
+        reasoning_effort,
+        local_provider=local_provider,
+    )
 
     command = [
         "codex",
         "exec",
+        "--ignore-user-config",
         "--ephemeral",
         "--sandbox",
         "read-only",
@@ -1078,8 +1147,6 @@ def codex_command(
     ]
     if local_provider:
         command.extend(["--oss", "--local-provider", local_provider])
-    if profile:
-        command.extend(["--profile", profile])
     command.extend(
         [
             "--config",
@@ -1104,7 +1171,6 @@ def run_codex_task(
     validator: Callable[[dict[str, Any]], None],
     retries: int,
     timeout: float,
-    profile: str | None = None,
     local_provider: str | None = None,
 ) -> dict[str, Any]:
     """执行一次独立 Codex 任务，校验最终 JSON，并只重试临时失败。"""
@@ -1119,11 +1185,13 @@ def run_codex_task(
         reasoning_effort=reasoning_effort,
         schema_path=schema_path,
         output_path=temporary_path,
-        profile=profile,
         local_provider=local_provider,
     )
     last_error = ""
+    failure_kind = "process"
+    attempts = 0
     for attempt in range(retries + 1):
+        attempts += 1
         if _MODEL_TASK_CANCELLED.is_set():
             raise PipelineInterrupted("模型任务已取消")
         if temporary_path.exists():
@@ -1144,6 +1212,7 @@ def run_codex_task(
             )
         except OSError as error:
             last_error = str(error)
+            failure_kind = "transport"
         else:
             with _ACTIVE_MODEL_PROCESSES_LOCK:
                 _ACTIVE_MODEL_PROCESSES.add(process)
@@ -1181,22 +1250,122 @@ def run_codex_task(
                 )
             if timed_out:
                 last_error = f"运行超过 {timeout:g} 秒"
+                failure_kind = "timeout"
             elif process.returncode == 0 and temporary_path.is_file():
                 try:
                     value = read_json(temporary_path)
                     validator(value)
                 except PipelineError as error:
                     last_error = f"结构化输出校验失败：{error}"
+                    failure_kind = "validation"
                 else:
                     temporary_path.unlink()
                     return value
             else:
                 stderr_tail = stderr.strip()[-1000:]
                 last_error = f"退出码 {process.returncode}: {stderr_tail or '无错误输出'}"
-        if attempt < retries:
+                failure_kind = (
+                    "transport" if is_transient_model_failure(stderr_tail) else "process"
+                )
+        retryable = failure_kind in {"transport", "timeout"}
+        if attempt < retries and retryable:
             if _MODEL_TASK_CANCELLED.wait(min(2**attempt, 8)):
                 raise PipelineInterrupted("模型任务已取消")
-    raise PipelineError(f"Codex 任务失败（已尝试 {retries + 1} 次）：{last_error}")
+            continue
+        break
+    if temporary_path.exists():
+        temporary_path.unlink()
+    raise PipelineTaskFailed(
+        f"Codex 任务失败（已尝试 {attempts} 次，类型 {failure_kind}）：{last_error}",
+        failure_kind=failure_kind,
+    )
+
+
+def run_codex_task_with_quality_fallback(
+    *,
+    prompt: str,
+    model: str,
+    reasoning_effort: str,
+    fallback_model: str,
+    fallback_reasoning_effort: str,
+    schema_path: Path,
+    output_path: Path,
+    validator: Callable[[dict[str, Any]], None],
+    retries: int,
+    timeout: float,
+) -> tuple[dict[str, Any], str, str, bool]:
+    """结构校验失败时仅用 Terra high 修复一次；传输失败留待续跑。"""
+
+    try:
+        result = run_codex_task(
+            prompt=prompt,
+            model=model,
+            reasoning_effort=reasoning_effort,
+            schema_path=schema_path,
+            output_path=output_path,
+            validator=validator,
+            retries=retries,
+            timeout=timeout,
+        )
+        return result, model, reasoning_effort, False
+    except PipelineTaskFailed as first_error:
+        if first_error.failure_kind != "validation":
+            raise
+        repair_prompt = (
+            prompt
+            + "\n\n上一轮输出未通过本地结构校验。只修正结构、绑定字段和明确指出的问题，"
+            + "不要扩大任务范围。校验错误："
+            + str(first_error)[-800:]
+        )
+        try:
+            result = run_codex_task(
+                prompt=repair_prompt,
+                model=fallback_model,
+                reasoning_effort=fallback_reasoning_effort,
+                schema_path=schema_path,
+                output_path=output_path,
+                validator=validator,
+                retries=0,
+                timeout=timeout,
+            )
+        except PipelineTaskFailed as fallback_error:
+            raise PipelineManualEscalationRequired(
+                "Terra medium 与一次 Terra high 定向修复均未通过校验；"
+                f"需要人工 Sol。最后错误：{fallback_error}"
+            ) from fallback_error
+        return result, fallback_model, fallback_reasoning_effort, True
+
+
+def write_manual_escalation_package(
+    *,
+    package_dir: Path,
+    item_id: str,
+    stage: str,
+    prompt: str,
+    schema_path: Path,
+    manual_result_path: Path,
+    error: str,
+) -> Path:
+    """写出可复制给 Sol 的最小人工升级说明，不自动调用 Sol。"""
+
+    package_path = package_dir / f"{item_id}.md"
+    content = f"""# 人工 Sol 升级：{stage}
+
+自动流程已停止，未自动调用 Sol。
+
+- 项目：`{item_id}`
+- 最后错误：{error}
+- 输出 Schema：`{relative_to_repo(schema_path)}`
+- 将人工得到的纯 JSON 保存到：`{relative_to_repo(manual_result_path)}`
+
+## 可复制提示词
+
+```text
+{prompt}
+```
+"""
+    atomic_write_text(package_path, content)
+    return package_path
 
 
 def validate_exact_keys(
@@ -1384,28 +1553,119 @@ def build_boundary_prompt(
 def build_boundary_review_prompt(
     *,
     source_path: str,
-    source_file: Path,
-    evidence_path: Path,
     previous_detection_path: Path,
+    review_packet_path: Path,
     source_sha256: str,
     line_count: int,
 ) -> str:
-    """构造只针对第一遍低置信度来源的独立二次边界裁决。"""
+    """构造只复核风险边界、保留其余首轮结果的 Terra 任务。"""
 
-    base = build_boundary_prompt(
-        source_path=source_path,
-        source_file=source_file,
-        evidence_path=evidence_path,
-        source_sha256=source_sha256,
-        line_count=line_count,
-        inspect_full_source=True,
-    )
-    return base + f"""
+    return f"""你正在执行训练数据流水线 Step 1 的低成本边界复核。
 
-这是低置信度来源的第二遍独立裁决。第一遍结果位于
-`{relative_to_repo(previous_detection_path)}`。先独立检查原文，再对照第一遍结果；修正误把章节当故事、
-漏掉结尾、混入广告或遗漏完整小说的问题。不要为了与第一遍一致而保留错误边界。
+只读取：
+- 第一遍完整边界结果：`{relative_to_repo(previous_detection_path)}`
+- Python 生成的紧凑标题清单和风险边界局部原文包：`{relative_to_repo(review_packet_path)}`
+
+不要打开原始整期 Markdown，不要从头扫描全文。局部包已包含风险故事起止位置附近的带行号原文。
+
+输入绑定：
+- source_path 必须是 `{source_path}`
+- source_sha256 必须是 `{source_sha256}`
+- line_count 必须是 {line_count}
+
+输出仍须符合完整 story_boundaries JSON Schema：先复制第一遍 stories；只修改局部包明确标出的
+低置信度或 completeness=uncertain 项。没有证据表明存在问题的故事必须逐字段原样保留。允许合并误拆
+章节、修正 start_line/end_line、标题、完整性和类型；不得靠猜测添加证据包中不存在的故事。
+
+边界规则：目录标题不是正文起点；start_line 是正文标题或紧邻署名，end_line 是结局最后一行且不含
+下一篇、广告或刊后内容；连载或缺头缺尾不得标 complete；stories 必须升序且不重叠。不要复制长段
+原文，不执行文件写入。若局部证据不足，保留 uncertain 并降低 confidence，不要扫描全文补证。
 """
+
+
+def build_boundary_review_packet(
+    source_text: str,
+    detection: dict[str, Any],
+    *,
+    minimum_confidence: float,
+    context_lines: int = 60,
+) -> str:
+    """只打包风险故事起止附近原文，避免 Terra 重读整期杂志。"""
+
+    if context_lines < 1:
+        raise PipelineError("boundary review context_lines 必须大于 0")
+    lines = source_text.splitlines()
+    risky: list[tuple[int, dict[str, Any], list[str]]] = []
+    for index, story in enumerate(detection["stories"]):
+        reasons: list[str] = []
+        if story["completeness"] == "uncertain":
+            reasons.append("completeness_uncertain")
+        if float(story["confidence"]) < minimum_confidence:
+            reasons.append("confidence_below_threshold")
+        if reasons:
+            risky.append((index, story, reasons))
+
+    header = {
+        "source_path": detection["source_path"],
+        "source_sha256": detection["source_sha256"],
+        "line_count": detection["line_count"],
+        "minimum_confidence": minimum_confidence,
+        "risky_story_count": len(risky),
+    }
+    parts = [json.dumps(header, ensure_ascii=False, sort_keys=True)]
+    parts.append(
+        "HEADINGS "
+        + json.dumps(
+            heading_candidates(source_text),
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+    )
+    if not risky:
+        parts.append("没有单篇风险候选；下面提供每个标题附近的短上下文用于确认空 stories。")
+        for heading in heading_candidates(source_text):
+            center = int(heading["line"])
+            start = max(1, center - 4)
+            end = min(len(lines), center + 12)
+            parts.append(f"[heading context L{start}-L{end}]")
+            parts.extend(
+                f"L{line_number}\t{lines[line_number - 1]}"
+                for line_number in range(start, end + 1)
+            )
+        return "\n".join(parts).rstrip() + "\n"
+
+    for index, story, reasons in risky:
+        parts.append(
+            "\nRISK "
+            + json.dumps(
+                {"story_index": index, "reasons": reasons, "story": story},
+                ensure_ascii=False,
+                sort_keys=True,
+            )
+        )
+        windows = (
+            (
+                max(1, int(story["start_line"]) - context_lines),
+                min(len(lines), int(story["start_line"]) + context_lines),
+                "start",
+            ),
+            (
+                max(1, int(story["end_line"]) - context_lines),
+                min(len(lines), int(story["end_line"]) + context_lines),
+                "end",
+            ),
+        )
+        seen_ranges: set[tuple[int, int]] = set()
+        for start, end, label in windows:
+            if (start, end) in seen_ranges:
+                continue
+            seen_ranges.add((start, end))
+            parts.append(f"[{label} context L{start}-L{end}]")
+            parts.extend(
+                f"L{line_number}\t{lines[line_number - 1]}"
+                for line_number in range(start, end + 1)
+            )
+    return "\n".join(parts).rstrip() + "\n"
 
 
 def automatic_boundary_records(
@@ -1533,6 +1793,16 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
 
     if not 0 <= args.auto_confidence <= 1:
         raise PipelineError("auto-confidence 必须在 0–1 之间")
+    if args.boundary_review_context_lines < 1:
+        raise PipelineError("boundary-review-context-lines 必须大于 0")
+    validate_automatic_model_policy(
+        args.boundary_model,
+        args.boundary_reasoning_effort,
+    )
+    validate_automatic_model_policy(
+        args.boundary_review_model,
+        args.boundary_review_reasoning_effort,
+    )
     validate_parallel_settings(args.boundary_workers, args.heartbeat_seconds)
     validate_parallel_settings(args.boundary_review_workers, args.heartbeat_seconds)
     if not args.dry_run and args.rights_status != APPROVED_RIGHTS_STATUS:
@@ -1615,16 +1885,93 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
                 reasoning_effort=args.boundary_reasoning_effort,
                 schema_path=BOUNDARY_SCHEMA_PATH,
                 output_path=output_path.with_suffix(".json.tmp"),
-                profile=args.profile,
             )
             print("正式运行命令预览（仅展示，本次未执行）：")
             print(f"  {' '.join(command[:12])} ...（后续参数已省略）")
+        review_required = 0
+        review_completed = 0
+        review_manual = 0
+        if args.resolve_ambiguous:
+            for source_file in sources:
+                relative = source_file.relative_to(args.input_dir).as_posix()
+                first_path = detection_dir / source_detection_name(relative)
+                if not first_path.is_file():
+                    continue
+                source_text = source_file.read_text(encoding="utf-8")
+                detection = read_json(first_path)
+                records, queued = automatic_boundary_records(
+                    detection,
+                    source_text,
+                    minimum_confidence=args.auto_confidence,
+                    min_chars=args.min_chars,
+                    max_chars=args.max_chars,
+                    rights_status=args.rights_status,
+                )
+                if records and not queued:
+                    continue
+                review_required += 1
+                review_name = source_detection_name(relative)
+                review_path = args.work_dir / "boundary_detection_review" / review_name
+                manual_path = (
+                    args.work_dir
+                    / "manual_results"
+                    / "step_1_boundary_review"
+                    / review_name
+                )
+                package_path = (
+                    args.work_dir
+                    / "manual_escalation"
+                    / "step_1"
+                    / f"{Path(review_name).stem}.md"
+                )
+                if package_path.is_file() and not manual_path.is_file():
+                    review_manual += 1
+                    continue
+                source_hash = sha256_text(source_text)
+                line_count = len(source_text.splitlines())
+                candidate_path = manual_path if manual_path.is_file() else review_path
+                if candidate_path.is_file():
+                    try:
+                        existing = read_json(candidate_path)
+                        validate_boundary_detection(
+                            existing,
+                            source_path=relative,
+                            source_sha256=source_hash,
+                            line_count=line_count,
+                        )
+                        provenance = existing.get("_provenance", {})
+                        if candidate_path == manual_path or provenance.get(
+                            "input_sha256"
+                        ) == source_hash:
+                            review_completed += 1
+                            continue
+                    except PipelineError:
+                        pass
+            print(
+                f"Terra 边界复核：已完成 {review_completed}/{review_required}；"
+                f"自动待处理 {review_required - review_completed - review_manual}；"
+                f"等待人工 Sol {review_manual}；每批上限 {args.boundary_review_limit}"
+            )
         print(
             "Step 1a 检查通过（退出码 0）：dry-run 未调用模型，也未写入流水线文件。"
         )
-        print(
-            "下一步：执行 Step 1b 四来源代表性实跑；它才会调用模型并写入运行目录。"
-        )
+        if pending:
+            print(
+                "下一步：先执行 Step 1b 代表性实跑，再执行 Step 1c；"
+                "实跑才会调用模型并写入运行目录。"
+            )
+        elif (
+            args.resolve_ambiguous
+            and review_required - review_completed - review_manual > 0
+        ):
+            print("下一步：重复 Step 1c 正式命令，按批继续 Terra 局部复核。")
+        elif args.resolve_ambiguous and review_manual > 0:
+            print(
+                "下一步：处理 Step 1d 人工 Sol 升级包，把纯 JSON 保存到对应的 "
+                "manual_results/step_1_boundary_review/ 路径；随后执行 Step 1e 正式命令导入。"
+            )
+        else:
+            print("Step 1 当前没有待处理的模型任务。")
         return 0
 
     def detect_source(item: tuple[Path, str, str, int, Path, Path]) -> None:
@@ -1655,14 +2002,12 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             ),
             retries=args.retries,
             timeout=args.timeout,
-            profile=args.profile,
         )
         result["_provenance"] = {
             "stage": "automatic_story_boundaries",
             "model": args.boundary_model,
             "reasoning_effort": args.boundary_reasoning_effort,
-            "speed": "profile" if args.profile else "standard",
-            "profile": args.profile,
+            "speed": "standard",
             "input_sha256": source_hash,
             "evidence_only": not args.boundary_full_source,
             "duration_seconds": round(time.monotonic() - started_at, 1),
@@ -1703,6 +2048,7 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
 
     ambiguous_sources: list[tuple[Path, str, str, int, Path, Path]] = []
     usable_review_source_paths: set[str] = set()
+    manual_review_waiting: list[tuple[str, Path, Path]] = []
     for source_file in sources:
         relative = source_file.relative_to(args.input_dir).as_posix()
         first_path = detection_dir / source_detection_name(relative)
@@ -1727,8 +2073,42 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
         review_path = args.work_dir / "boundary_detection_review" / source_detection_name(
             relative
         )
+        manual_result_path = (
+            args.work_dir
+            / "manual_results"
+            / "step_1_boundary_review"
+            / source_detection_name(relative)
+        )
         source_hash = sha256_text(source_text)
         line_count = len(source_text.splitlines())
+        if manual_result_path.is_file() and not args.refresh_boundaries:
+            manual_result = read_json(manual_result_path)
+            validate_boundary_detection(
+                manual_result,
+                source_path=relative,
+                source_sha256=source_hash,
+                line_count=line_count,
+            )
+            manual_result["_provenance"] = {
+                "stage": "manual_story_boundaries_review",
+                "model": "manual-sol",
+                "reasoning_effort": "manual",
+                "speed": "standard",
+                "input_sha256": source_hash,
+                "imported_at": utc_now(),
+            }
+            write_json(review_path, manual_result)
+        manual_package_path = (
+            args.work_dir
+            / "manual_escalation"
+            / "step_1"
+            / f"{Path(source_detection_name(relative)).stem}.md"
+        )
+        if manual_package_path.is_file() and not manual_result_path.is_file():
+            manual_review_waiting.append(
+                (relative, manual_package_path, manual_result_path)
+            )
+            continue
         if review_path.is_file() and not args.refresh_boundaries:
             try:
                 existing = read_json(review_path)
@@ -1747,49 +2127,83 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             (source_file, relative, source_hash, line_count, evidence_path, review_path)
         )
 
-    reviewed_source_count = 0
+    review_pending_total = len(ambiguous_sources) + len(manual_review_waiting)
+    reviewed_source_count = len(usable_review_source_paths)
+    review_failures = 0
+    selected_ambiguous_sources: list[tuple[Path, str, str, int, Path, Path]] = []
     if args.resolve_ambiguous:
-        print(f"Sol 二次边界裁决待处理：{len(ambiguous_sources)}")
+        selected_ambiguous_sources = limit_pending_items(
+            ambiguous_sources,
+            args.boundary_review_limit,
+        )
+        print(
+            f"Terra 二次边界裁决本批：{len(selected_ambiguous_sources)} / "
+            f"全部待处理：{review_pending_total}；"
+            f"等待人工 Sol：{len(manual_review_waiting)}"
+        )
+        for relative, package_path, manual_result_path in manual_review_waiting:
+            print(
+                f"[等待人工 Sol] {relative}：{package_path}；"
+                f"保存结果到 {manual_result_path}",
+                flush=True,
+            )
 
         def review_source(item: tuple[Path, str, str, int, Path, Path]) -> None:
-            source_file, relative, source_hash, line_count, evidence_path, review_path = item
+            source_file, relative, source_hash, line_count, _, review_path = item
             source_text = source_file.read_text(encoding="utf-8")
-            if not evidence_path.is_file():
-                atomic_write_text(evidence_path, build_boundary_evidence(source_text))
             first_path = detection_dir / source_detection_name(relative)
+            first_detection = read_json(first_path)
+            packet_path = (
+                args.work_dir
+                / "boundary_review_packets"
+                / f"{Path(source_detection_name(relative)).stem}.txt"
+            )
+            atomic_write_text(
+                packet_path,
+                build_boundary_review_packet(
+                    source_text,
+                    first_detection,
+                    minimum_confidence=args.auto_confidence,
+                    context_lines=args.boundary_review_context_lines,
+                ),
+            )
+            prompt = build_boundary_review_prompt(
+                source_path=relative,
+                previous_detection_path=first_path,
+                review_packet_path=packet_path,
+                source_sha256=source_hash,
+                line_count=line_count,
+            )
             started_at = time.monotonic()
-            result = run_codex_task(
-                prompt=build_boundary_review_prompt(
-                    source_path=relative,
-                    source_file=source_file,
-                    evidence_path=evidence_path,
-                    previous_detection_path=first_path,
-                    source_sha256=source_hash,
-                    line_count=line_count,
-                ),
-                model=args.boundary_review_model,
-                reasoning_effort=args.boundary_review_reasoning_effort,
-                schema_path=BOUNDARY_SCHEMA_PATH,
-                output_path=review_path,
-                validator=lambda value, path=relative, digest=source_hash, count=line_count: (
-                    validate_boundary_detection(
-                        value,
-                        source_path=path,
-                        source_sha256=digest,
-                        line_count=count,
-                    )
-                ),
-                retries=args.retries,
-                timeout=args.timeout,
-                profile=args.profile,
+            result, effective_model, effective_effort, used_fallback = (
+                run_codex_task_with_quality_fallback(
+                    prompt=prompt,
+                    model=args.boundary_review_model,
+                    reasoning_effort=args.boundary_review_reasoning_effort,
+                    fallback_model="gpt-5.6-terra",
+                    fallback_reasoning_effort="high",
+                    schema_path=BOUNDARY_SCHEMA_PATH,
+                    output_path=review_path,
+                    validator=lambda value, path=relative, digest=source_hash, count=line_count: (
+                        validate_boundary_detection(
+                            value,
+                            source_path=path,
+                            source_sha256=digest,
+                            line_count=count,
+                        )
+                    ),
+                    retries=args.retries,
+                    timeout=args.timeout,
+                )
             )
             result["_provenance"] = {
                 "stage": "automatic_story_boundaries_review",
-                "model": args.boundary_review_model,
-                "reasoning_effort": args.boundary_review_reasoning_effort,
-                "speed": "profile" if args.profile else "standard",
-                "profile": args.profile,
+                "model": effective_model,
+                "reasoning_effort": effective_effort,
+                "quality_fallback_used": used_fallback,
+                "speed": "standard",
                 "input_sha256": source_hash,
+                "targeted_packet": relative_to_repo(packet_path),
                 "duration_seconds": round(time.monotonic() - started_at, 1),
                 "generated_at": utc_now(),
             }
@@ -1805,6 +2219,40 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             item: tuple[Path, str, str, int, Path, Path], error: Exception
         ) -> None:
             relative = item[1]
+            if isinstance(error, PipelineManualEscalationRequired):
+                first_path = detection_dir / source_detection_name(relative)
+                packet_path = (
+                    args.work_dir
+                    / "boundary_review_packets"
+                    / f"{Path(source_detection_name(relative)).stem}.txt"
+                )
+                prompt = build_boundary_review_prompt(
+                    source_path=relative,
+                    previous_detection_path=first_path,
+                    review_packet_path=packet_path,
+                    source_sha256=item[2],
+                    line_count=item[3],
+                )
+                manual_result_path = (
+                    args.work_dir
+                    / "manual_results"
+                    / "step_1_boundary_review"
+                    / source_detection_name(relative)
+                )
+                package_path = write_manual_escalation_package(
+                    package_dir=args.work_dir / "manual_escalation" / "step_1",
+                    item_id=Path(source_detection_name(relative)).stem,
+                    stage="Step 1 Terra 边界复核",
+                    prompt=prompt,
+                    schema_path=BOUNDARY_SCHEMA_PATH,
+                    manual_result_path=manual_result_path,
+                    error=str(error),
+                )
+                print(
+                    f"[需人工 Sol] {relative}：{package_path}；"
+                    f"结果保存到 {manual_result_path} 后重跑同一命令",
+                    flush=True,
+                )
             write_json(
                 args.work_dir / "errors" / "step_1_review" / source_detection_name(relative),
                 {
@@ -1815,22 +2263,24 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             )
 
         review_failures = run_parallel_tasks(
-            ambiguous_sources,
+            selected_ambiguous_sources,
             workers=args.boundary_review_workers,
             heartbeat_seconds=args.heartbeat_seconds,
-            stage_label="Sol 边界复核",
+            stage_label="Terra 边界复核",
             item_label=lambda item: item[1],
             task=review_source,
             on_error=record_review_error,
             continue_on_error=args.continue_on_error,
             progress_path=args.work_dir / "progress" / "step_1_boundary_review.json",
             progress_stage="step_1_boundary_review",
-            total_items=len(ambiguous_sources) + len(usable_review_source_paths),
+            total_items=review_pending_total + len(usable_review_source_paths),
             completed_before=len(usable_review_source_paths),
         )
         failures += review_failures
-        reviewed_source_count = len(ambiguous_sources) - review_failures
-        for _, relative, source_hash, line_count, _, review_path in ambiguous_sources:
+        reviewed_source_count += len(selected_ambiguous_sources) - review_failures
+        for _, relative, source_hash, line_count, _, review_path in (
+            selected_ambiguous_sources
+        ):
             if not review_path.is_file():
                 continue
             try:
@@ -1848,6 +2298,7 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
 
     boundaries: list[dict[str, Any]] = []
     review_queue: list[dict[str, Any]] = []
+    semantic_manual_waiting: list[str] = []
     completed_sources = 0
     for source_file in sources:
         relative = source_file.relative_to(args.input_dir).as_posix()
@@ -1882,6 +2333,49 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
         )
         apply_frozen_source_metadata(accepted, source_plan[relative])
         apply_frozen_source_metadata(queued, source_plan[relative])
+        provenance = detection.get("_provenance", {})
+        if (
+            queued
+            and output_path == review_path
+            and provenance.get("model") == "gpt-5.6-terra"
+        ):
+            packet_path = (
+                args.work_dir
+                / "boundary_review_packets"
+                / f"{Path(source_detection_name(relative)).stem}.txt"
+            )
+            manual_result_path = (
+                args.work_dir
+                / "manual_results"
+                / "step_1_boundary_review"
+                / source_detection_name(relative)
+            )
+            prompt = build_boundary_review_prompt(
+                source_path=relative,
+                previous_detection_path=first_path,
+                review_packet_path=packet_path,
+                source_sha256=sha256_text(source_text),
+                line_count=len(source_text.splitlines()),
+            )
+            prompt += (
+                "\n\n自动 Terra 复核结果仍留下低置信度或 completeness=uncertain 项："
+                f"`{relative_to_repo(review_path)}`。请读取它并只解决其中未决边界。"
+            )
+            package_path = write_manual_escalation_package(
+                package_dir=args.work_dir / "manual_escalation" / "step_1",
+                item_id=Path(source_detection_name(relative)).stem,
+                stage="Step 1 Terra 边界复核未决",
+                prompt=prompt,
+                schema_path=BOUNDARY_SCHEMA_PATH,
+                manual_result_path=manual_result_path,
+                error="Terra medium/high 后仍有低置信度或完整性不确定边界",
+            )
+            semantic_manual_waiting.append(relative)
+            print(
+                f"[需人工 Sol] {relative}：Terra 结果仍未决；{package_path}；"
+                f"保存结果到 {manual_result_path} 后重跑同一命令",
+                flush=True,
+            )
         boundaries.extend(accepted)
         review_queue.extend(queued)
         completed_sources += 1
@@ -1899,8 +2393,19 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
             "generated_at": utc_now(),
             "source_count": len(sources),
             "completed_source_count": completed_sources,
-            "failed_source_count": failures,
+            "failed_source_count": (
+                failures + len(manual_review_waiting) + len(semantic_manual_waiting)
+            ),
             "second_pass_source_count": reviewed_source_count,
+            "second_pass_pending_count": max(
+                0,
+                review_pending_total
+                - (len(selected_ambiguous_sources) - review_failures)
+                + len(semantic_manual_waiting),
+            ),
+            "manual_escalation_count": (
+                len(manual_review_waiting) + len(semantic_manual_waiting)
+            ),
             "candidate_count": len(boundaries),
             "auto_approved_count": auto_approved,
             "excluded_count": excluded_count,
@@ -1934,7 +2439,7 @@ def run_automatic_boundaries(args: argparse.Namespace) -> int:
         f"自动批准边界：{auto_approved}；低置信度队列：{len(review_queue)}；"
         f"排除非目标内容：{excluded_count}；已提取故事：{len(stories)}；云端可用：{eligible}"
     )
-    return 1 if failures else 0
+    return 1 if failures or manual_review_waiting or semantic_manual_waiting else 0
 
 
 def apply_boundary_repairs(args: argparse.Namespace) -> int:
@@ -2087,10 +2592,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--resolve-ambiguous",
         action="store_true",
-        help="让 Sol 对 Luna 的低置信度来源做第二遍独立边界裁决",
+        help="让 Terra 对 Luna 的风险边界做局部复核；不会自动调用 Sol",
     )
-    parser.add_argument("--boundary-review-model", default="gpt-5.6-sol")
-    parser.add_argument("--boundary-review-reasoning-effort", default="high")
+    parser.add_argument("--boundary-review-model", default=DEFAULT_BOUNDARY_REVIEW_MODEL)
+    parser.add_argument(
+        "--boundary-review-reasoning-effort",
+        default=DEFAULT_BOUNDARY_REVIEW_REASONING_EFFORT,
+    )
     parser.add_argument(
         "--boundary-workers",
         type=int,
@@ -2101,7 +2609,19 @@ def build_parser() -> argparse.ArgumentParser:
         "--boundary-review-workers",
         type=int,
         default=2,
-        help="Sol 疑难复核并发来源数，默认 2；额度受限时降为 1",
+        help="Terra 风险复核并发来源数，默认 2；额度受限时降为 1",
+    )
+    parser.add_argument(
+        "--boundary-review-limit",
+        type=int,
+        default=DEFAULT_BOUNDARY_REVIEW_LIMIT,
+        help="每次最多复核的未完成来源，默认 10；重复命令续跑",
+    )
+    parser.add_argument(
+        "--boundary-review-context-lines",
+        type=int,
+        default=DEFAULT_BOUNDARY_REVIEW_CONTEXT_LINES,
+        help="风险故事起止两侧各保留的局部原文行数，默认 30",
     )
     parser.add_argument(
         "--boundary-full-source",
@@ -2113,7 +2633,6 @@ def build_parser() -> argparse.ArgumentParser:
         "--boundary-reasoning-effort",
         default=DEFAULT_BOUNDARY_REASONING_EFFORT,
     )
-    parser.add_argument("--profile", help="可选 Codex profile；默认 Standard")
     parser.add_argument(
         "--rights-status",
         choices=("unknown", APPROVED_RIGHTS_STATUS),
@@ -2126,7 +2645,12 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         help="代表性试跑时每个目标刊物处理 N 份；正式运行省略",
     )
-    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=1,
+        help="仅临时网络/传输失败的额外重试次数，默认 1",
+    )
     parser.add_argument("--timeout", type=float, default=3600)
     parser.add_argument(
         "--heartbeat-seconds",

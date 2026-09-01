@@ -82,6 +82,10 @@ python training/script/step_1_prepare_stories.py --auto-boundaries --dry-run
 
 确认云端处理和训练授权后，再按主文档底部的
 [Step 0–8 快速操作表](../最适合你的模型流水线.md#step-08-快速操作表)运行。Step 2–5 可用
-`--limit 100 --continue-on-error` 分批执行；重复同一命令会跳过来源哈希未变化的有效结果并继续。
+`--limit 20 --continue-on-error` 分批执行；Step 1 Terra 复核默认每批 10 份。重复同一命令会跳过
+来源哈希未变化的有效结果并继续。自动调用只允许 Luna/Terra medium，必要修复最多 Terra high
+一次；脚本禁用 profile/Fast 且不会自动调用 Sol，未解决项会生成手工升级包。
+当 Step 1 显示“自动待处理 0；等待人工 Sol N”时，不要继续空跑相同命令；应按主文档 Step 1d
+逐项保存人工 JSON，再按 Step 1e 运行正式命令导入。Step 1 的两份进度都完成后才能进入 Step 2。
 遇到 429、账户并发限制或网络不稳定时，将对应 worker 参数降为 1。按一次 Ctrl+C 会终止当前
 模型子进程并取消尚未提交的任务，之后可重复同一命令续跑。

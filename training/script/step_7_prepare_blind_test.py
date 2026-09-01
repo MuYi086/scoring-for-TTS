@@ -27,11 +27,10 @@ from step_3_rewrite_stories import validate_rewrite
 
 DEFAULT_VARIANTS = {
     "local_qwen": "local_qwen",
-    "luna_high": "luna_high",
-    "luna_xhigh": "luna_xhigh",
-    "terra_high": "terra_high",
-    "terra_xhigh": "terra_xhigh",
+    "luna_medium": "luna_medium",
+    "terra_medium": "terra_medium",
 }
+DEFAULT_BLIND_STORY_COUNT = 10
 
 
 def parse_variant(specification: str, work_dir: Path) -> tuple[str, Path]:
@@ -102,12 +101,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--variant",
         action="append",
-        help="变体名称=Step3输出目录；省略时使用五个推荐变体",
+        help="变体名称=Step3输出目录；省略时使用本地、Luna medium、Terra medium",
     )
     parser.add_argument(
         "--count",
         type=int,
-        help="盲测故事数；默认使用全部冻结 blind 故事",
+        help="盲测故事数；默认稳定选取最多 10 篇，明确扩展时再传更大值",
     )
     parser.add_argument("--audio-count", type=int, default=10)
     parser.add_argument("--seed", type=int, default=20260830)
@@ -130,7 +129,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     output_dir = args.output_dir or args.work_dir / "blind_test"
     variants = variant_directories(args.variant, args.work_dir)
     blind_stories = eligible_story_records(manifest, {"blind"})
-    count = args.count if args.count is not None else len(blind_stories)
+    count = (
+        args.count
+        if args.count is not None
+        else min(DEFAULT_BLIND_STORY_COUNT, len(blind_stories))
+    )
     if count < 1:
         raise PipelineError("冻结 blind 故事为空")
     if len(blind_stories) < count:
@@ -140,7 +143,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.count is not None and args.audio_count > count:
         raise PipelineError("audio-count 不能大于显式指定的 count")
     audio_count = min(args.audio_count, count)
-    blind_stories.sort(key=lambda record: (record["sha256"], record["source_id"]))
+    # 与 Step 2/3 的 source_id 排序保持一致，使 --limit 10 生成的三个变体可直接打包。
+    blind_stories.sort(key=lambda record: str(record["source_id"]))
     selected = blind_stories[:count]
     assignments: list[dict[str, Any]] = []
     score_rows: list[dict[str, str]] = []

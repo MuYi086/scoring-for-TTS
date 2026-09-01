@@ -11,6 +11,7 @@ from typing import Any, Sequence
 
 from step_1_prepare_stories import (
     DEFAULT_HEARTBEAT_SECONDS,
+    DEFAULT_STORY_BATCH_LIMIT,
     DEFAULT_WORK_DIR,
     PipelineError,
     canonical_json_sha256,
@@ -23,6 +24,7 @@ from step_1_prepare_stories import (
     run_codex_task,
     run_parallel_tasks,
     utc_now,
+    validate_automatic_model_policy,
     validate_exact_keys,
     write_json,
     write_jsonl,
@@ -30,7 +32,8 @@ from step_1_prepare_stories import (
 from step_2_analyze_stories import boundary_assessment_passes, validate_analysis
 
 
-DEFAULT_MODEL = "gpt-5.6-terra"
+DEFAULT_MODEL = "gpt-5.6-luna"
+DEFAULT_TEACHER_MODEL = "gpt-5.6-terra"
 DEFAULT_TEACHER_SPLITS = frozenset({"train", "validation"})
 SCHEMA_PATH = Path(__file__).resolve().parent / "schemas" / "story_rewrite.schema.json"
 REQUIRED_KEYS = {
@@ -121,15 +124,15 @@ def build_prompt(
 def build_parser() -> argparse.ArgumentParser:
     """构造 Step 3 命令行。"""
 
-    parser = argparse.ArgumentParser(description="用 Terra 生成有声友好纯文本 B")
+    parser = argparse.ArgumentParser(description="优先用 Luna、按风险路由 Terra 生成纯文本 B")
     parser.add_argument("--work-dir", type=Path, default=DEFAULT_WORK_DIR)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--analysis-dir", type=Path)
     parser.add_argument("--variant", default="teacher")
     parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--normal-reasoning-effort", default="high")
-    parser.add_argument("--hard-reasoning-effort", default="xhigh")
-    parser.add_argument("--profile", help="可选 Codex profile；默认 Standard")
+    parser.add_argument("--teacher-model", default=DEFAULT_TEACHER_MODEL)
+    parser.add_argument("--normal-reasoning-effort", default="medium")
+    parser.add_argument("--hard-reasoning-effort", default="medium")
     parser.add_argument("--local-provider", choices=("ollama", "lmstudio"))
     parser.add_argument(
         "--include-split",
@@ -140,15 +143,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--limit",
         type=int,
+        default=DEFAULT_STORY_BATCH_LIMIT,
         help="每次最多处理的尚未完成项；重复执行同一命令会继续下一批",
     )
-    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=1,
+        help="仅临时网络/传输失败的额外重试次数，默认 1",
+    )
     parser.add_argument("--timeout", type=float, default=3600)
     parser.add_argument(
         "--workers",
         type=int,
-        default=3,
-        help="并发改写故事数，默认 3；额度或显存受限时降为 1",
+        default=2,
+        help="并发改写故事数，默认 2；额度或显存受限时降为 1",
     )
     parser.add_argument(
         "--heartbeat-seconds",
@@ -167,6 +176,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", args.variant):
         raise PipelineError("variant 只能包含字母、数字、点、下划线和连字符")
+    validate_automatic_model_policy(
+        args.model,
+        args.normal_reasoning_effort,
+        local_provider=args.local_provider,
+    )
+    validate_automatic_model_policy(
+        args.teacher_model,
+        args.hard_reasoning_effort,
+        local_provider=args.local_provider,
+    )
     manifest = args.manifest or args.work_dir / "stories.jsonl"
     analysis_dir = args.analysis_dir or args.work_dir / "analysis"
     include_splits = (
@@ -181,7 +200,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         source_id = str(story["source_id"])
         analysis_path = analysis_dir / f"{source_id}.json"
         if not analysis_path.is_file():
-            raise PipelineError(f"缺少 Step 2 分析：{analysis_path}")
+            skipped_boundaries.append(
+                {
+                    "source_id": source_id,
+                    "source_path": story["source_path"],
+                    "reason": "missing_step_2_analysis",
+                }
+            )
+            continue
         analysis = read_json(analysis_path)
         validate_analysis(analysis, source_id)
         if not boundary_assessment_passes(analysis):
@@ -215,22 +241,32 @@ def main(argv: Sequence[str] | None = None) -> int:
         f"{args.variant} 待改写：{len(pending)} / 可用故事：{len(stories)}；"
         f"边界阻断：{len(skipped_boundaries)}"
     )
-    if args.dry_run:
-        if pending:
-            story, analysis, analysis_path, _ = pending[0]
+
+    def model_route(
+        story: dict[str, Any], analysis: dict[str, Any]
+    ) -> tuple[str, str, str]:
+        if args.local_provider or args.variant != "teacher":
             effort = (
                 args.hard_reasoning_effort
                 if analysis["difficulty"] == "hard"
                 else args.normal_reasoning_effort
             )
+            return args.model, effort, "fixed_variant"
+        if analysis["difficulty"] == "hard" or story.get("split") == "validation":
+            return args.teacher_model, args.hard_reasoning_effort, "risk_teacher"
+        return args.model, args.normal_reasoning_effort, "luna_default"
+
+    if args.dry_run:
+        if pending:
+            story, analysis, analysis_path, _ = pending[0]
+            model, effort, _ = model_route(story, analysis)
             story_path = args.work_dir / story["story_path"]
             command = codex_command(
                 prompt=build_prompt(story, story_path, analysis_path),
-                model=args.model,
+                model=model,
                 reasoning_effort=effort,
                 schema_path=SCHEMA_PATH,
                 output_path=output_dir / f"{story['source_id']}.json.tmp",
-                profile=args.profile,
                 local_provider=args.local_provider,
             )
             print(f"示例命令：{shlex.join(command)}")
@@ -242,14 +278,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         source_id = str(story["source_id"])
         story_path = args.work_dir / story["story_path"]
         output_path = output_dir / f"{source_id}.json"
-        effort = (
-            args.hard_reasoning_effort
-            if analysis["difficulty"] == "hard"
-            else args.normal_reasoning_effort
-        )
+        model, effort, route = model_route(story, analysis)
         result = run_codex_task(
             prompt=build_prompt(story, story_path, analysis_path),
-            model=args.model,
+            model=model,
             reasoning_effort=effort,
             schema_path=SCHEMA_PATH,
             output_path=output_path,
@@ -258,7 +290,6 @@ def main(argv: Sequence[str] | None = None) -> int:
             ): validate_rewrite(value, expected, digest),
             retries=args.retries,
             timeout=args.timeout,
-            profile=args.profile,
             local_provider=args.local_provider,
         )
         input_a = story_path.read_text(encoding="utf-8")
@@ -269,10 +300,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         result["_provenance"] = {
             "stage": "audio_rewrite",
             "variant": args.variant,
-            "model": args.model,
+            "model": model,
             "reasoning_effort": effort,
-            "speed": "profile" if args.profile else "standard",
-            "profile": args.profile,
+            "model_route": route,
+            "speed": "standard",
             "local_provider": args.local_provider,
             "input_sha256": story["sha256"],
             "analysis_sha256": analysis_digest,
@@ -296,7 +327,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         pending,
         workers=args.workers,
         heartbeat_seconds=args.heartbeat_seconds,
-        stage_label=f"{args.model} 教师改写",
+        stage_label="Luna/Terra 路由改写",
         item_label=lambda item: str(item[0]["source_id"]),
         task=rewrite_story,
         on_error=record_rewrite_error,
