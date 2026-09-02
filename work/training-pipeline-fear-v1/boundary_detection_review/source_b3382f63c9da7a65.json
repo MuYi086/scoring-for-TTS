@@ -1,0 +1,198 @@
+{
+  "source_path": "怖客/《怖客》2010年1月-手机惊魂.md",
+  "source_sha256": "e17571965475aca145d4327e02fc4546540b173285f1684ec443e5a7d0914e85",
+  "line_count": 4039,
+  "stories": [
+    {
+      "title": "找个天使替我爱你",
+      "start_line": 183,
+      "end_line": 529,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录与正文标题对应；529行以失忆后的重新相识完成超自然爱情故事的闭环，下一篇从533行开始。"
+    },
+    {
+      "title": "人骨小三儿",
+      "start_line": 533,
+      "end_line": 747,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总标题在正文中因图文解析丢失，但封面题名与情节吻合；五个章节连续，747行完成项链真相与杀人结局，749行为编辑信息。"
+    },
+    {
+      "title": "藏",
+      "start_line": 861,
+      "end_line": 883,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名与861行作者署名相符；883行以男孩挖出自身白骨完成独立微型恐怖故事，885行为编辑信息。"
+    },
+    {
+      "title": "致命抉择",
+      "start_line": 893,
+      "end_line": 1151,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名可由刊首题名表确认，893行“害怕选择的人”是开篇小节；1133行后的结局仍属本篇，1151行为最后正文。"
+    },
+    {
+      "title": "174寝室",
+      "start_line": 1153,
+      "end_line": 1373,
+      "confidence": 0.7,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，1373行有明确结局；但现存正文从1153行半句开始且与上一篇编辑信息粘连，明显缺少开头，不能判为完整。"
+    },
+    {
+      "title": "一定要走楼梯",
+      "start_line": 1379,
+      "end_line": 1430,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认题名；标题和署名在正文解析中丢失，1379行是最早正文，1430行完成亡灵救人及纵火案揭示，1432行为编辑信息。"
+    },
+    {
+      "title": "胆小鬼",
+      "start_line": 1434,
+      "end_line": 1470,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认题名，1460行作者署名因版面解析落入正文中段；故事实际从1434行开始，1470行完成司机亡灵反转。"
+    },
+    {
+      "title": "小楚爱不爱我",
+      "start_line": 1474,
+      "end_line": 1513,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1474行标题虽有OCR讹字，但可由目录校正；1513行揭示小楚是植物人的灵魂并完成结局，1515行为编辑信息。"
+    },
+    {
+      "title": "来生约",
+      "start_line": 1517,
+      "end_line": 1553,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认题名，正文标题因解析丢失；1517行开始新的母子故事，1553行完成来生约的反转，1555行为编辑信息。"
+    },
+    {
+      "title": "真相",
+      "start_line": 1557,
+      "end_line": 1599,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1557行标题和作者明确；1599行以多重真相的开放式恐怖反问收束，1603行已更换人物和故事。"
+    },
+    {
+      "title": "手机惊魂",
+      "start_line": 1603,
+      "end_line": 1940,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认题名，正文总标题因解析丢失；1603行起围绕手机软件连续叙事，1940行完成误杀与信息更新的反转。"
+    },
+    {
+      "title": "向日葵",
+      "start_line": 1942,
+      "end_line": 1976,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1942行标题存在OCR讹字，可由目录校正；1976行以女孩雀斑随葵花子消失完成独立怪谈。"
+    },
+    {
+      "title": "真凶",
+      "start_line": 1982,
+      "end_line": 2106,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名和版面次序可确认本篇，1982行“复明”是首节而非独立故事；2106行揭示文俊才是真凶并完成报应结局，2108行为编辑信息。"
+    },
+    {
+      "title": "同生怨",
+      "start_line": 2112,
+      "end_line": 2320,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "刊首题名表可校正2112行受损标题；其后各小节连续，2320行完成遗产争夺的最终反转，2322行为编辑信息。"
+    },
+    {
+      "title": "杀手的秘密",
+      "start_line": 2324,
+      "end_line": 2475,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认总题名，2324行“奇怪的房东”是首章；后续章节连续至2475行的双重设局结局，2477行为编辑信息。"
+    },
+    {
+      "title": "我是老鼠",
+      "start_line": 2481,
+      "end_line": 2957,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2481行标题及作者明确；各章节连续，2957行以毛手搭肩完成恐怖结局，2959行为编辑信息。"
+    },
+    {
+      "title": "谢宁的日记本（上）",
+      "start_line": 2961,
+      "end_line": 3264,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确标注“上”，2961行标题、2965行作者署名清楚；正文延续至3264行，3266行明确标注未完待续。"
+    },
+    {
+      "title": "分裂",
+      "start_line": 3266,
+      "end_line": 3574,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "刊首题名表确认总题名；3266行在上一篇编辑信息后粘连出现首节题名“奇怪的争吵”，后续小节均属同篇，3574行揭示三姐妹实为一人。"
+    }
+  ],
+  "document_notes": "第二遍依据原文修正了第一遍的多处合并错误：拆出了《来生约》《手机惊魂》《一定要走楼梯》《胆小鬼》等独立短篇，并补全《谢宁的日记本（上）》至未完待续前的3264行。《174寝室》在源 Markdown 中开头已经缺失，因此保守标为 uncertain。3578行后的《人头气球》主要由图片构成，现存文字只是零散图中文字，按纯图片内容排除；作者访谈、问卷、广告及书籍简介亦未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "e17571965475aca145d4327e02fc4546540b173285f1684ec443e5a7d0914e85",
+    "duration_seconds": 343.0,
+    "generated_at": "2026-08-31T06:33:13+00:00"
+  }
+}

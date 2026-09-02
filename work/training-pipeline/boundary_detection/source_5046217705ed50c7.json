@@ -1,0 +1,189 @@
+{
+  "source_path": "岁月推理/岁月推理记忆3期.md",
+  "source_sha256": "71e02f8359c797d50f305ec876cf51c95ee50fe6fcfd6cb95202ccaaf0142d4a",
+  "line_count": 9957,
+  "stories": [
+    {
+      "title": "镜子",
+      "start_line": 321,
+      "end_line": 656,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，含连续章节并在第四节形成完整收束。"
+    },
+    {
+      "title": "深渊",
+      "start_line": 658,
+      "end_line": 1064,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，正文连续，末段为明确的情节结局。"
+    },
+    {
+      "title": "顶楼",
+      "start_line": 1066,
+      "end_line": 1556,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后有作者署名，章节从时间、地点、人物推进至水落石出并收束。"
+    },
+    {
+      "title": "七宗罪之饕餮",
+      "start_line": 1558,
+      "end_line": 1906,
+      "confidence": 0.97,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名和连续叙事，但结尾明确表示欧洲之旅才刚开始，疑为连载片段。"
+    },
+    {
+      "title": "画鬼",
+      "start_line": 2120,
+      "end_line": 2520,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，数字小节属于同一故事，末节完成案件及人物后果的收束。"
+    },
+    {
+      "title": "黄裙子",
+      "start_line": 2522,
+      "end_line": 2932,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，正文连续，结尾完成谜题揭示并以家庭对话收束。"
+    },
+    {
+      "title": "侦探，是一件浪漫的活儿",
+      "start_line": 2934,
+      "end_line": 3416,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，独立连续叙事，末段明确交代主角死亡结局。"
+    },
+    {
+      "title": "可疑的殉情者",
+      "start_line": 3418,
+      "end_line": 3944,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，多个编号小节属于同一案件故事，末节揭示关键推理并完成收束。"
+    },
+    {
+      "title": "作家不见了",
+      "start_line": 4200,
+      "end_line": 4636,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，独立侦探故事，结尾完成调查主题与人物思考的收束。"
+    },
+    {
+      "title": "奇怪的人名",
+      "start_line": 4638,
+      "end_line": 5362,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，邀请函及编号小节构成连续故事，末段明确揭示身份与真相。"
+    },
+    {
+      "title": "天生的恐惧",
+      "start_line": 5364,
+      "end_line": 5486,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，短篇恐怖叙事，末段以反转式警告完成结尾。"
+    },
+    {
+      "title": "童谣杀人事件",
+      "start_line": 5776,
+      "end_line": 6348,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，连续案件叙事，后续小节完成调查、解释与结局。"
+    },
+    {
+      "title": "第六把钥匙",
+      "start_line": 6350,
+      "end_line": 6552,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，独立悬疑故事，末段完成关键线索揭示和人物结局。"
+    },
+    {
+      "title": "爱情黑盒子",
+      "start_line": 6554,
+      "end_line": 6738,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "有作者署名，独立故事，末段以案件经历后的对话完成收束；题材偏爱情与日常悬疑。"
+    },
+    {
+      "title": "凶案现场",
+      "start_line": 7550,
+      "end_line": 8096,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，连续第一人称叙事，末段完成主要人物关系和事件余波的收束。"
+    },
+    {
+      "title": "摩天轮里的秘密",
+      "start_line": 8320,
+      "end_line": 8774,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，独立侦探故事，末段完成案件解决并附注说明。"
+    },
+    {
+      "title": "消失的受害人",
+      "start_line": 8776,
+      "end_line": 9412,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名，[1]至[10]为同一连续故事，末段完成案件侦破与人物对话收束；证据包显示部分编号缺失，边界置信度略降。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未打开或扫描原始 Markdown。已排除目录、广告、声明、征稿、知识文章、推理谜题及答案栏目等非独立小说内容；连载性质的《七宗罪之饕餮》标为 installment。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "71e02f8359c797d50f305ec876cf51c95ee50fe6fcfd6cb95202ccaaf0142d4a",
+    "evidence_only": true,
+    "duration_seconds": 111.4,
+    "generated_at": "2026-08-30T11:26:41+00:00"
+  }
+}

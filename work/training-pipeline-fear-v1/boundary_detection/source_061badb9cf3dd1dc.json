@@ -1,0 +1,119 @@
+{
+  "source_path": "悚族/《悚族》美人鱼杀手.md",
+  "source_sha256": "0a35eaed6e230f3c8a9bee7b81ebe3785e9b68fb1a2993c9222d8052b550041b",
+  "line_count": 3882,
+  "stories": [
+    {
+      "title": "黑猫侦探社",
+      "start_line": 9,
+      "end_line": 23,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题与完整推理情节均明确，L23给出结论。"
+    },
+    {
+      "title": "美人鱼杀手",
+      "start_line": 169,
+      "end_line": 489,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从第一章开始，至“最后真相”结束；目录标题未作为起点。"
+    },
+    {
+      "title": "分身术",
+      "start_line": 497,
+      "end_line": 931,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个章节及尾部“秘密”属于同一分身题材故事，L931收束。"
+    },
+    {
+      "title": "最完美的母亲",
+      "start_line": 971,
+      "end_line": 1309,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据段从作者问答栏目过渡到李梳子故事，实际小说起点在该段内部无法仅凭首尾摘要精确确认；L1309有明确结尾。"
+    },
+    {
+      "title": "粉红色信笺",
+      "start_line": 1315,
+      "end_line": 1455,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文为同一故事连续章节，但L1455在句中截断，下一段转入另一篇。"
+    },
+    {
+      "title": "百度预测死亡",
+      "start_line": 1459,
+      "end_line": 1867,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "六章连续正文，L1867形成故事结局。"
+    },
+    {
+      "title": "爱的迷失",
+      "start_line": 1869,
+      "end_line": 2131,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从第一章“梦魇”开始，含尾声并在L2131结束；正式故事标题未在正文标题段中清晰出现。"
+    },
+    {
+      "title": "发如魅",
+      "start_line": 2133,
+      "end_line": 2499,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "引子及连续章节构成完整头发诡异题材故事，L2499为收束段。"
+    },
+    {
+      "title": "还我2元钱",
+      "start_line": 2505,
+      "end_line": 3357,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续章节从女孩事件发展至玩具枪结尾，属于完整惊悚短篇。"
+    },
+    {
+      "title": "五官DIY",
+      "start_line": 3411,
+      "end_line": 3801,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "楔子至“游戏永不终止”构成完整怪谈故事；L3803起为书目信息。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包判断，未读取原始 Markdown。已排除封面、目录、栏目、作者简介、答案、版权信息及恋爱测试等内容。最完美的母亲与爱的迷失的正文标题/起点在证据摘要中存在不完整或混杂情况，因此相应降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "0a35eaed6e230f3c8a9bee7b81ebe3785e9b68fb1a2993c9222d8052b550041b",
+    "evidence_only": true,
+    "duration_seconds": 123.2,
+    "generated_at": "2026-08-31T05:35:09+00:00"
+  }
+}

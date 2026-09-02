@@ -1,0 +1,149 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2008年01.md",
+  "source_sha256": "083f1608690fe1469f23761f306af2772d794154f86d9b4713ba39db96a8811f",
+  "line_count": 5168,
+  "stories": [
+    {
+      "title": "星际卧底",
+      "start_line": 314,
+      "end_line": 658,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文从章节（一）开始，章节（二）至（九）连续构成同一篇科幻校园故事；前置内容为作者访谈，未计入。"
+    },
+    {
+      "title": "中国结",
+      "start_line": 660,
+      "end_line": 918,
+      "confidence": 0.75,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名在此开始，后续章节（三）等为同一篇带有灵异氛围的小说；918为正文及相关收束文字末行。"
+    },
+    {
+      "title": "狻猊泪",
+      "start_line": 920,
+      "end_line": 1174,
+      "confidence": 0.67,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者及章节【壹】至【染】连续，明显属于玄幻小说；末段行文似有截断，无法确认结尾完整性。"
+    },
+    {
+      "title": "驱影人",
+      "start_line": 1178,
+      "end_line": 1415,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，章节01至08构成完整超自然故事，1415为结局正文末行。"
+    },
+    {
+      "title": "坠落之前是更深的坠落",
+      "start_line": 1423,
+      "end_line": 1871,
+      "confidence": 0.81,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从小说标题开始，后续少年安康学院、花洒及尾声均为同一篇心理惊悚/灵异小说；1871为结局正文末行。"
+    },
+    {
+      "title": "锁",
+      "start_line": 1893,
+      "end_line": 1927,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题明确，正文短篇独立成篇，1927完成故事收束；同题SHOW为栏目标题。"
+    },
+    {
+      "title": "901，爱情走过",
+      "start_line": 1929,
+      "end_line": 2033,
+      "confidence": 0.79,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "A/B交替段落共同构成同一篇爱情短篇；标题在排版顺序中后置，实际正文从1929开始，2033为结尾。"
+    },
+    {
+      "title": "陌路",
+      "start_line": 2594,
+      "end_line": 2860,
+      "confidence": 0.87,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，章节1至9及后续MOLU段落为同一篇带梦游与人格分裂元素的悬疑惊悚小说。"
+    },
+    {
+      "title": "五百散",
+      "start_line": 2878,
+      "end_line": 3343,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题记及章节[1]至[9]连续组成同一篇历史灵异小说；标题在中段出现，疑为版面顺序造成，故边界置信度略低。"
+    },
+    {
+      "title": "不要放过我",
+      "start_line": 3404,
+      "end_line": 3998,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，章节2至8及重复编号的后续段落连续，题外话仍为故事尾声，3998结束。"
+    },
+    {
+      "title": "星期物语",
+      "start_line": 4002,
+      "end_line": 4368,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及星期日到星期日的连续章节构成完整奇幻校园故事；中间创作谈为同篇文章附属内容。"
+    },
+    {
+      "title": "死亡的另一半",
+      "start_line": 4374,
+      "end_line": 4941,
+      "confidence": 0.76,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "章节1至3属于同一篇灵异小说，但4941明确标注“待续”，本期仅为连载片段。"
+    },
+    {
+      "title": "电话谋杀案",
+      "start_line": 5035,
+      "end_line": 5094,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "位于恐怖推理栏目且有独立标题和叙事正文；但证据包显示结尾语义不够明确，无法可靠确认是否完整收束。"
+    }
+  ],
+  "document_notes": "首轮仅读取边界证据包，未打开或扫描原始 Markdown。已排除目录、栏目、创作谈、动漫/商品介绍、推理答案、电影介绍、声明及公益捐助内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "083f1608690fe1469f23761f306af2772d794154f86d9b4713ba39db96a8811f",
+    "evidence_only": true,
+    "duration_seconds": 370.8,
+    "generated_at": "2026-08-31T06:18:27+00:00"
+  }
+}

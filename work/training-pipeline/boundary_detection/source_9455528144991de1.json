@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第06期.md",
+  "source_sha256": "e2e4621def3d7c287dc9db11291e7ae9b6d361b6cf8db940af19c12682bbf0c3",
+  "line_count": 5193,
+  "stories": [
+    {
+      "title": "我的兄弟姐妹们",
+      "start_line": 289,
+      "end_line": 1338,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后连续包含多个内部小节，至结局段结束；目录标题已排除。"
+    },
+    {
+      "title": "我和她的三夜两日",
+      "start_line": 1340,
+      "end_line": 1904,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文包含章节、尾声、解释及后记，均属同一作品；结局和作者后记完整。"
+    },
+    {
+      "title": "开棺发财摇钱树（下）",
+      "start_line": 1906,
+      "end_line": 2276,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“下”，本期仅刊载下篇，缺少完整开端。"
+    },
+    {
+      "title": "草叶的移形换影",
+      "start_line": 2428,
+      "end_line": 2456,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "互动栏目中的独立生活短篇，叙事完整但不属于目标悬疑推理类型。"
+    },
+    {
+      "title": "孤独的门萨",
+      "start_line": 2458,
+      "end_line": 3348,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名后为连续完整的犯罪推理叙事，含多个内部视角和小节，至结局结束。"
+    },
+    {
+      "title": "看守眼",
+      "start_line": 3350,
+      "end_line": 4136,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "章节标题“第壹话”至“第染话”均属同一短篇；末行取故事正文结尾，排除刊载说明。"
+    },
+    {
+      "title": "流星",
+      "start_line": 4140,
+      "end_line": 4554,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由标题、作者署名开始，结局完整，后接编者谈，未将编者谈并入故事。"
+    },
+    {
+      "title": "浴缸里的新娘",
+      "start_line": 4582,
+      "end_line": 4808,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "《世界怪奇实话》栏目中的完整悬案叙事，结尾完成案件说明；属于纪实性犯罪叙事而非虚构小说。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别。已排除目录、新闻资讯、栏目页、谜题解答篇、预告、订阅广告、书评及编者谈等非故事内容；同一作品的章节、尾声、后记均已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "e2e4621def3d7c287dc9db11291e7ae9b6d361b6cf8db940af19c12682bbf0c3",
+    "evidence_only": true,
+    "duration_seconds": 376.2,
+    "generated_at": "2026-08-30T11:34:13+00:00"
+  }
+}

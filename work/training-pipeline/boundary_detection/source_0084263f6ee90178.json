@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第12期.md",
+  "source_sha256": "c0f8ba7eb4ea96d942362b0de34390147365f4148e9e90f81c7359e9550a5019",
+  "line_count": 5822,
+  "stories": [
+    {
+      "title": "雪·花",
+      "start_line": 168,
+      "end_line": 1389,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际起点为封面故事标题，后续章节与尾声连续，结尾有明确情节收束。"
+    },
+    {
+      "title": "濯魂之杀",
+      "start_line": 1391,
+      "end_line": 2257,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名明确，连续至发现关键线索处，但证据显示结尾停在悬念场景，未见完整收束。"
+    },
+    {
+      "title": "残局",
+      "start_line": 2259,
+      "end_line": 2493,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题下多个叙事小节属于同一篇短篇，末尾以“无非残局”收束。"
+    },
+    {
+      "title": "圣光中的真相",
+      "start_line": 2495,
+      "end_line": 3252,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节明确，结尾完成案件委托情节收束。"
+    },
+    {
+      "title": "公主亭密室案",
+      "start_line": 3254,
+      "end_line": 3328,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立密室推理短篇，结尾明确指认嫌疑人并形成情节收束。"
+    },
+    {
+      "title": "冰枢之城",
+      "start_line": 3404,
+      "end_line": 4433,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题下含八章及多个小节，结局正文止于L4433；L4435起为后记，不计入故事。"
+    },
+    {
+      "title": "禁闭之音",
+      "start_line": 4458,
+      "end_line": 5295,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、译者信息和长篇正文边界明确，但证据包显示该段末尾混入书系宣传及作者简介，无法仅凭局部提纲精确确认小说结局最后一行，故降低置信度并标为 uncertain。"
+    },
+    {
+      "title": "世界怪奇实话之 莫非是她",
+      "start_line": 5305,
+      "end_line": 5489,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "独立完整的犯罪纪实叙事，末尾交代判决及案件疑点仍存。"
+    }
+  ],
+  "document_notes": "严格依据边界证据包识别，未打开或扫描原始 Markdown。目录、栏目、互动空间、征稿、下期预告、广告、订阅信息及作者简介均排除；章节、小节、序号标题和后记未拆分为新故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c0f8ba7eb4ea96d942362b0de34390147365f4148e9e90f81c7359e9550a5019",
+    "evidence_only": true,
+    "duration_seconds": 137.0,
+    "generated_at": "2026-08-30T11:36:29+00:00"
+  }
+}

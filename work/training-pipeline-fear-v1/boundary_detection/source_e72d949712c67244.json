@@ -1,0 +1,139 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-同学阿梅还魂.md",
+  "source_sha256": "06b09a361c81979c1bbb56df286c633e0f4c3dfdc8d2b4122558ed261b41aae3",
+  "line_count": 1872,
+  "stories": [
+    {
+      "title": "同学阿桉还魂",
+      "start_line": 46,
+      "end_line": 156,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际起点为标题行，内容有完整叙事开端和结局；目录未计入。"
+    },
+    {
+      "title": "行走鬼门关",
+      "start_line": 162,
+      "end_line": 184,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立鬼故事，标题后直接进入正文并在 L184 收束。"
+    },
+    {
+      "title": "1. 气球",
+      "start_line": 188,
+      "end_line": 250,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "编号短篇，标题段内叙事独立并有结尾。"
+    },
+    {
+      "title": "2. 舞台",
+      "start_line": 252,
+      "end_line": 348,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "编号短篇，标题段内叙事独立并有结尾。"
+    },
+    {
+      "title": "3. 切割",
+      "start_line": 350,
+      "end_line": 463,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "编号短篇，标题段内叙事独立并有结尾。"
+    },
+    {
+      "title": "4. 贩卖",
+      "start_line": 465,
+      "end_line": 479,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，标题段内叙事完整。"
+    },
+    {
+      "title": "引子",
+      "start_line": 485,
+      "end_line": 499,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "虽标题为“引子”且未见更高层故事标题，但该段具有独立恐怖叙事和收束。"
+    },
+    {
+      "title": "炊烟—倾听—噩梦—号码—诅咒—落魄",
+      "start_line": 501,
+      "end_line": 826,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个小节连续构成同一篇长篇恐怖叙事，已合并为一个故事；L826 为正文收束段。"
+    },
+    {
+      "title": "鬼搭肩",
+      "start_line": 834,
+      "end_line": 1137,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“知青故事”为内部栏目/小节标题，前后正文连续，应并入“鬼搭肩”；末段具有收束性。"
+    },
+    {
+      "title": "老宅日记",
+      "start_line": 1141,
+      "end_line": 1587,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后的数字小节一至七属于同一篇日记体恐怖小说，已合并。"
+    },
+    {
+      "title": "太平间",
+      "start_line": 1591,
+      "end_line": 1725,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“守望者”等标题均为内部小节；末尾叙事明显截断于未完句，不能标为完整。"
+    },
+    {
+      "title": "死神轻轻抱起 小女孩",
+      "start_line": 1729,
+      "end_line": 1869,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后为独立恐怖叙事；证据显示 L1870 起为刊后/目录内容，但未提供 L1869 的正文尾句，边界与完整性只能谨慎判定。"
+    }
+  ],
+  "document_notes": "首轮仅依据指定 boundary_evidence 证据包，未打开或扫描原始 Markdown。已排除刊名、目录及刊后信息；内部章节标题已合并。末篇因缺少正文最后一行的局部证据，标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "06b09a361c81979c1bbb56df286c633e0f4c3dfdc8d2b4122558ed261b41aae3",
+    "evidence_only": true,
+    "duration_seconds": 129.0,
+    "generated_at": "2026-08-31T05:47:10+00:00"
+  }
+}

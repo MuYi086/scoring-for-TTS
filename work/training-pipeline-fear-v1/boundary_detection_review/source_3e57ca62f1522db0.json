@@ -1,0 +1,98 @@
+{
+  "source_path": "悚族/《悚族》青丝魅.md",
+  "source_sha256": "2cf4fe6f8e36226613cedabfe2058c8e51bda4093cb95b1cf63ddd24ccd12af6",
+  "line_count": 2053,
+  "stories": [
+    {
+      "title": "黑猫怪谈社·无题（文/梁丙）",
+      "start_line": 91,
+      "end_line": 121,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后是一篇独立的恐怖微小说，L121以肉包子的反转完整收束；篇名未被提取。"
+    },
+    {
+      "title": "黑猫怪谈社·无题（文/常夏予诗）",
+      "start_line": 133,
+      "end_line": 155,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "新作者和主人公标志独立短篇开始，最终揭示恐怖场面是抽奖视频恶作剧；黑猫点评因分栏识别错误插入正文，但不是另一篇故事。"
+    },
+    {
+      "title": "黑猫怪谈社·无题（文/果冻凶猛）",
+      "start_line": 159,
+      "end_line": 191,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "人物和情节在L159完全切换，形成另一篇独立怪谈，并在L191以小满的阳寿耗尽收束；作者署名因版面错序混入L167，篇名未被提取。"
+    },
+    {
+      "title": "青丝魅",
+      "start_line": 199,
+      "end_line": 576,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L199作者署名与L201的篇名识别结果共同标志正文开始；多次“Qing Si Mei”是跨页页眉，L576以苏记焚毁后的柳树意象完成结局。"
+    },
+    {
+      "title": "多米诺空间",
+      "start_line": 580,
+      "end_line": 890,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题虽误识别为“多米诺空旧”，但与目录篇名及作者署名对应；其各小节和L880尾声属于同一篇，L890是尾声最后一行。"
+    },
+    {
+      "title": "你喜欢什么鬼",
+      "start_line": 892,
+      "end_line": 1150,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L892的篇名虽误识别首字，但与目录标题一致，L893紧接独立作者署名；后续小节均属本篇，L1150以钟叶遭诅咒反噬结束。"
+    },
+    {
+      "title": "眼中有影",
+      "start_line": 1158,
+      "end_line": 1531,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题“眼中同志”是OCR错误，目录给出篇名“眼中有影”；L1521至L1529已经揭示身世并完成情节收束，L1531的不完整语句是分栏提取错序，不代表连载未完。"
+    },
+    {
+      "title": "不可替代的疯狂",
+      "start_line": 1539,
+      "end_line": 1916,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1539的乱码标题对应目录中的“不可替代的疯狂”，L1541为作者署名；“你来代替我”等均为内部小节，L1916以于筠颜要求李森宇作出选择形成完整恐怖结局。"
+    }
+  ],
+  "document_notes": "第二遍复核修正了第一遍的关键边界错误：补入《黑猫怪谈社》中另外两篇完整微小说；将《多米诺空间》截止于L890，避免混入L892开始的《你喜欢什么鬼》；依据目录修正两处OCR篇名，并结合明确的情节收束将《眼中有影》和《不可替代的疯狂》判为完整篇。L2042的《禁止的肉体(上)》是以图片为主且明确未完的漫画片段，未列入；刊后信箱、编辑部趣闻和广告等亦已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2cf4fe6f8e36226613cedabfe2058c8e51bda4093cb95b1cf63ddd24ccd12af6",
+    "duration_seconds": 239.8,
+    "generated_at": "2026-08-31T11:31:31+00:00"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第10期.md",
+  "source_sha256": "636c2f643c3fb009653789d034f8a4f947f1098726ac0559c46c24bc4cf41a56",
+  "line_count": 6380,
+  "stories": [
+    {
+      "title": "招财猫不见了",
+      "start_line": 263,
+      "end_line": 1064,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，内容连续且以案件解决后的收束段落结束。"
+    },
+    {
+      "title": "死光计划",
+      "start_line": 1066,
+      "end_line": 1541,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确；中间包含《K38计划第二阶段实施方案》及连续叙事，至1541结束后转入下一篇故事。"
+    },
+    {
+      "title": "雨的守望",
+      "start_line": 1543,
+      "end_line": 2507,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录标题与正文段落内容可对应；正文标题本身未在证据包中明确出现，但从第一章开始，末章完成案件和人物收束。"
+    },
+    {
+      "title": "飘血祝融（下）",
+      "start_line": 2521,
+      "end_line": 3660,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确标注“下”，且证据包提供前情提要，说明本期仅刊载连载下篇。"
+    },
+    {
+      "title": "杀手无情",
+      "start_line": 3869,
+      "end_line": 5443,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者及章节正文明确，5443为故事收束段；后续为作者谈及作品的说明文字。"
+    },
+    {
+      "title": "巴黎绅士杀手",
+      "start_line": 5465,
+      "end_line": 5691,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、译者信息及连续章节明确，案件结局和叙述收尾均在5691结束。"
+    },
+    {
+      "title": "世界怪奇实话之手拿斧头的夫人画像",
+      "start_line": 5730,
+      "end_line": 5944,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题明确，内容为犯罪怪奇实录；末段在句中截断，无法确认结尾完整性。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未读取或扫描原始 Markdown。已排除目录、栏目、新闻、声明、作者简介、答案、征稿、预告及广告等内容；《雨夜怪谈》按推理谜题解答/栏目内容排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "636c2f643c3fb009653789d034f8a4f947f1098726ac0559c46c24bc4cf41a56",
+    "evidence_only": true,
+    "duration_seconds": 107.5,
+    "generated_at": "2026-08-30T11:35:26+00:00"
+  }
+}

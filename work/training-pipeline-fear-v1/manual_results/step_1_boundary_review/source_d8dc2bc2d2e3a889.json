@@ -1,0 +1,118 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-骸骨里的阴灵.md",
+  "source_sha256": "997fa526fd20621ce17569e0fdefe330bc109654d6ea8ed52918f6590869fe5a",
+  "line_count": 2704,
+  "stories": [
+  {
+  "title": "第一夜",
+  "start_line": 205,
+  "end_line": 507,
+  "confidence": 0.82,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "L205-207明确引入并开始叙述该故事，L213为其页内标题；L507“我死了”完成结局，L511起转入另一篇青莲叙事。"
+  },
+  {
+  "title": "的 奇情夜",
+  "start_line": 511,
+  "end_line": 693,
+  "confidence": 0.72,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "L511已开始青莲叙事，L523为重复排版并在L525给出标题；L693完成结局，L695开始《恐怖计算机》。标题疑有OCR缺   字，局部证据不足以更正。"
+  },
+  {
+  "title": "我要带你走！",
+  "start_line": 966,
+  "end_line": 1018,
+  "confidence": 0.75,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题和起始正文明确，但L1018仍在情节推进中即转入白芳的无关叙事，显示该篇在文档中缺少结尾。"
+  },
+  {
+  "title": "白马村的鬼故事",
+  "start_line": 1020,
+  "end_line": 1204,
+  "confidence": 0.86,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "L1020已开始白芳叙事，L1024标题后L1026重复该句，属排版重复；L1204为该篇恐怖收束，L1206开始下一篇。"
+  },
+  {
+  "title": "令人毛骨 悚然的验尸报告",
+  "start_line": 1206,
+  "end_line": 1300,
+  "confidence": 0.88,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题明确，正文为独立恐怖故事，L1300形成收束，L1302开始下一篇魔鬼座位故事。"
+  },
+  {
+  "title": "那个座位",
+  "start_line": 1304,
+  "end_line": 1547,
+  "confidence": 0.86,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题明确，内部“不能坐”、分节标题均属同一故事；L1547为警示式结局，之后转入新故事。"
+  },
+  {
+  "title": "死人改碑文",
+  "start_line": 1549,
+  "end_line": 1599,
+  "confidence": 0.78,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题和正文明确；L1599揭示妻子死因并构成反转结局，L1600随即转入无关的另一段第一人称叙事，故不应将其纳入   本篇。"
+  },
+  {
+  "title": "平安夜的故事",
+  "start_line": 1925,
+  "end_line": 2083,
+  "confidence": 0.88,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题明确，内部小节标题连续归属于同一故事，L2083完成结局，后续为另一篇学校实验室故事。"
+  },
+  {
+  "title": "学校的实验室",
+  "start_line": 2087,
+  "end_line": 2242,
+  "confidence": 0.9,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题明确，正文围绕解剖实验室鬼故事展开，L2242以日期和血字收束。"
+  },
+  {
+  "title": "灰车",
+  "start_line": 2244,
+  "end_line": 2379,
+  "confidence": 0.88,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题明确，正文连续且以“死灰”意象完成结局。"
+  },
+  {
+  "title": "桃花簪",
+  "start_line": 2381,
+  "end_line": 2520,
+  "confidence": 0.9,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题明确，内部标题和分段均属同一宫廷怪谈；L2520完成悲剧结局，后续为广告。"
+  }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。原“骸骨里的阴灵”条   目位于刊物开头：前有刊名和宣传语，标题后仅有一句承接性内容、图片及广告，属于封面或导读式故事摘句，不是正文故事起   点，因此从 stories 中移除。"
+  }

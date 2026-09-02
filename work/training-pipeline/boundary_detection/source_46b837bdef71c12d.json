@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第02期.md",
+  "source_sha256": "42f558d26536ae83ac9d1a94f388e7e7a0633f543037c15470700f893710a53c",
+  "line_count": 5139,
+  "stories": [
+    {
+      "title": "曼谷杀机",
+      "start_line": 235,
+      "end_line": 998,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息从235行开始，章节连续至尾声，998行形成完整结尾；前面的185行是目录条目。"
+    },
+    {
+      "title": "被埋葬的秘密",
+      "start_line": 1000,
+      "end_line": 1417,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从1000行开始，但末尾1417行以未完成的悬念句收束，明显缺少结局。"
+    },
+    {
+      "title": "海上星辰",
+      "start_line": 1419,
+      "end_line": 2705,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息从1419行开始，包含楔子、章节、尾声及收束性补充内容，2705行为故事最后正文。"
+    },
+    {
+      "title": "夜蛾之梦（下）",
+      "start_line": 2707,
+      "end_line": 3198,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "本期从“下”篇及前情提要开始，说明属于连载续篇；虽在3198行有本期情节收束，不能视为完整单篇小说。"
+    },
+    {
+      "title": "黄色房间的秘密",
+      "start_line": 3200,
+      "end_line": 3260,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和密室案件正文从3200行开始，3260行明确写出案件解决并结束。"
+    },
+    {
+      "title": "藩篱之钟",
+      "start_line": 3376,
+      "end_line": 3994,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息从3376行开始，证言一至九及续言连续组成故事，3994行结束；3996行起为结构立意说明，已排除。"
+    },
+    {
+      "title": "舞台谜案",
+      "start_line": 4022,
+      "end_line": 4897,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "译作标题、作者信息和分节正文从4022行开始，至4897行以叙事性收束结束；4899行起为作者生平评论，已排除。"
+    }
+  ],
+  "document_notes": "仅依据边界证据包识别。已排除目录、封面与栏目内容、推理之窗、作者评论、读者互动、下期预告及广告。目录中的重复标题未作为正文起点。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "42f558d26536ae83ac9d1a94f388e7e7a0633f543037c15470700f893710a53c",
+    "evidence_only": true,
+    "duration_seconds": 95.8,
+    "generated_at": "2026-08-30T11:37:22+00:00"
+  }
+}

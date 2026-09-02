@@ -1,0 +1,69 @@
+{
+  "source_path": "悚族/《悚族》人鱼的歌声.md",
+  "source_sha256": "eee66ff598a060e5924a698a57c453b183f811b8ea383334f95a0b2e0f72d9ef",
+  "line_count": 2518,
+  "stories": [
+    {
+      "title": "公交车上的女孩",
+      "start_line": 347,
+      "end_line": 367,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的惊悚短篇，标题与正文边界明确，L367以诡异反转收束。"
+    },
+    {
+      "title": "人鱼的歌声",
+      "start_line": 397,
+      "end_line": 760,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际从L397的故事标题开始，L496和L613为同一故事的续接标题段，L760形成结尾；排除了前置栏目标题与后续故事。"
+    },
+    {
+      "title": "左手怨灵",
+      "start_line": 768,
+      "end_line": 1073,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L768起为正文首章，后续1至6章属于同一恐怖故事，L1073明确交代事件收束；标题名参考证据中的目录信息，正文未见独立标题行。"
+    },
+    {
+      "title": "人鱼的歌声",
+      "start_line": 1077,
+      "end_line": 1456,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1077出现疑似故事标题但文字有“人曲”异文，L1083起为连续章节正文，L1450至L1456明确标示结局；与前一篇同名，边界依据章节连续性确定。"
+    },
+    {
+      "title": "疑惑",
+      "start_line": 1464,
+      "end_line": 1867,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1464起为独立恐怖故事，L1558与L1699为内部章节，L1867完成结局；L1871已转入下一篇栏目内容，故不纳入。"
+    }
+  ],
+  "document_notes": "仅依据证据包完成识别，未读取原始 Markdown。证据显示本期有5篇目标类型小说；其中第二篇“人鱼的歌声”与前篇同名，且其标题在证据中存在“人曲的歌声”异文，因此相应降低边界与标题置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "eee66ff598a060e5924a698a57c453b183f811b8ea383334f95a0b2e0f72d9ef",
+    "evidence_only": true,
+    "duration_seconds": 198.1,
+    "generated_at": "2026-08-31T05:28:22+00:00"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第03期.md",
+  "source_sha256": "244c6317eb5288329f8c70da2b1c7c6e0fa10f2fee14b7a3c096ab472c7d2ece",
+  "line_count": 6060,
+  "stories": [
+    {
+      "title": "褪色的爱",
+      "start_line": 228,
+      "end_line": 962,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题位于228行，后续章节标题并入同一故事，962行形成结尾，下一篇正文从964行开始。"
+    },
+    {
+      "title": "虚实之间",
+      "start_line": 964,
+      "end_line": 2263,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从964行标题开始，包含多个内部章节，2263行结束，下一篇小说从2265行开始。"
+    },
+    {
+      "title": "迷藏",
+      "start_line": 2265,
+      "end_line": 2777,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题位于2265行，2777行明确完成案件收束，后续从2779行进入另一篇小说。"
+    },
+    {
+      "title": "弗吉尼亚来客",
+      "start_line": 2779,
+      "end_line": 3784,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从2779行标题及作者信息开始，内部章节和尾声均属同一故事，3784行完成结尾。"
+    },
+    {
+      "title": "新占星术杀人魔法（上）",
+      "start_line": 4143,
+      "end_line": 4629,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“上”，正文含上篇及多个章节，4629行结束于未完案件段落；后续挑战读者和特别提示不计入小说正文。"
+    },
+    {
+      "title": "“西方明星”历险记",
+      "start_line": 4678,
+      "end_line": 5249,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及译者信息从4678行开始，5249行为故事结局正文，5251行起为出版选编说明。"
+    }
+  ],
+  "document_notes": "首轮仅依据证据包识别，未打开或扫描原始 Markdown。已排除目录、编辑栏目、知识文章、推理谜题、广告、预告、订阅及其他刊后内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "244c6317eb5288329f8c70da2b1c7c6e0fa10f2fee14b7a3c096ab472c7d2ece",
+    "evidence_only": true,
+    "duration_seconds": 86.5,
+    "generated_at": "2026-08-30T11:28:12+00:00"
+  }
+}

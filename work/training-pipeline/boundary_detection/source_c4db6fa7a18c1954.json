@@ -1,0 +1,59 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.04.md",
+  "source_sha256": "9448c82765827bb81a213a3796047b712c1716971e66bd5047d2596b7751741f",
+  "line_count": 2710,
+  "stories": [
+    {
+      "title": "瞄准",
+      "start_line": 761,
+      "end_line": 1019,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节构成完整警察题材小说，结尾正文位于责任编辑和插图信息之前。"
+    },
+    {
+      "title": "超时缉凶",
+      "start_line": 1269,
+      "end_line": 2376,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接作者署名和连续的二至十五章，内容为完整刑侦推理故事，正文结尾位于责任编辑和插图信息之前。"
+    },
+    {
+      "title": "两个房间的灯都亮着",
+      "start_line": 2384,
+      "end_line": 2444,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立短篇小说标题后接作者署名和连续叙事正文；证据包显示正文在责任编辑信息前结束，但题材未明确表现为目标类型。"
+    },
+    {
+      "title": "偏见",
+      "start_line": 2592,
+      "end_line": 2636,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇警察推理故事，正文后紧接问题与参考答案；已将答案部分排除，边界依据证据包中的答案起始位置推定。"
+    }
+  ],
+  "document_notes": "严格仅读取边界证据包，未打开或扫描原始 Markdown。已排除封面、目录、广告、刊务信息、导读、纪实人物报道、知识文章、旅行散文、下期预告及其他非小说内容；章节标题、作者署名和尾声均并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9448c82765827bb81a213a3796047b712c1716971e66bd5047d2596b7751741f",
+    "evidence_only": true,
+    "duration_seconds": 87.0,
+    "generated_at": "2026-08-30T11:19:40+00:00"
+  }
+}

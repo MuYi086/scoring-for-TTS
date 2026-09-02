@@ -1,0 +1,208 @@
+{
+  "source_path": "怖客/新锐阅读怖客2016年总第27期.md",
+  "source_sha256": "c01676712ded6cf6913ddae2d5bc5f44f1f08c0b790b434e237915b8ac809b43",
+  "line_count": 2794,
+  "stories": [
+    {
+      "title": "趁着一切都来得及",
+      "start_line": 24,
+      "end_line": 64,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题以图片形式紧邻正文，目录中的同名项不是起点；第64行完成疾病真相反转，之后进入目录。普通爱情短篇，不属于目标类型。"
+    },
+    {
+      "title": "烈日灼灵",
+      "start_line": 210,
+      "end_line": 478,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第210行是含作者署名的正文标题；第478行完成苏灵儿消逝后的结局，第480行是编辑信息。"
+    },
+    {
+      "title": "血祖棺",
+      "start_line": 482,
+      "end_line": 745,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第482行起为目录所列《血祖棺》的标题图片及连续盗墓故事；“影海”“老板”“主棺”“遗言”均为内部小节，第745行完成父子真相与逃生安排。"
+    },
+    {
+      "title": "人形疤",
+      "start_line": 749,
+      "end_line": 955,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第749行起为标题图片和独立正文；第955行以周俊散魂落入陈超掌心收束，第957行是编辑信息。"
+    },
+    {
+      "title": "真面目",
+      "start_line": 959,
+      "end_line": 1149,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由本期读者调查表确认，第959行起为标题图片；第1149行完成方昭杀人并记录姓名的结局，第1151行是编辑信息。"
+    },
+    {
+      "title": "请让我穿越吧",
+      "start_line": 1153,
+      "end_line": 1323,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "第1153行是标题图片，随后“主演”“客串”等为同一编辑部喜剧的角色和内部小节；第1323行完成主编重演往事的结局。故事未发生真实超自然事件。"
+    },
+    {
+      "title": "纹身",
+      "start_line": 1327,
+      "end_line": 1351,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由本期读者调查表确认，第1327行是标题图片；第1351行揭示所谓人头纹身来自吞食活人，形成完整反转。"
+    },
+    {
+      "title": "第四晚",
+      "start_line": 1355,
+      "end_line": 1391,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1355行起为目录所列短篇的标题图片和正文；连续数晚的歌词异象在第1391行以鬼前来“吻别”完成反转。"
+    },
+    {
+      "title": "系统出错",
+      "start_line": 1395,
+      "end_line": 1427,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1395行起为标题图片及阴间投胎故事；第1427行揭示“富贵胎”实为牛胎，结局完整。"
+    },
+    {
+      "title": "转嫁霉运",
+      "start_line": 1431,
+      "end_line": 1447,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文和目录均证明正确篇名为《转嫁霉运》；标题署名因版面抽取被错置到第1453行，第1431行起才是实际故事，第1447行完成“倒霉”双关反转。"
+    },
+    {
+      "title": "摸骨",
+      "start_line": 1455,
+      "end_line": 1480,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由目录确认；第1455行图片后开始张翔求见摸骨大师的独立故事，第1480行以手捧本人骨灰盒完成反转。第1453行是前篇错位的标题署名。"
+    },
+    {
+      "title": "同名同姓",
+      "start_line": 1482,
+      "end_line": 1496,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1482行标题、第1484行作者署名明确；第1496行完成阴间巨款引来鬼差调查的反转，下一行开始另一故事。"
+    },
+    {
+      "title": "烤兔肉",
+      "start_line": 1498,
+      "end_line": 1524,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "受版面抽取影响，标题和作者被置于正文结束后的第1528行；实际故事从第1498行开始，第1524行揭示叙述者已死且尸体正在被烤，结局完整。"
+    },
+    {
+      "title": "生死之约",
+      "start_line": 1530,
+      "end_line": 1818,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1530行起为标题图片；“就是它”“衣箱里的秘密”“协议上的约定”“抓走她的魂”“去找魂”“无奈的选择”均是内部章节，第1818行完成毁符反击。"
+    },
+    {
+      "title": "捕魂阵",
+      "start_line": 1822,
+      "end_line": 1997,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录和调查表确认篇名为《捕魂阵》，第1822行被OCR误作“描魂阵”；第1997行完整揭示钟守琛也将成为阴阵一员。"
+    },
+    {
+      "title": "爱的不是我",
+      "start_line": 2001,
+      "end_line": 2017,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2001行标题和作者信息明确；第2017行以导航语音所指对象完成惊悚反转。"
+    },
+    {
+      "title": "它要你们在一起",
+      "start_line": 2021,
+      "end_line": 2223,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2021行起为标题图片和连续正文；“难逃厄运”“痛苦的滋味”“最终结局”均属同篇，第2223行完成群鬼强迫两者在一起的结局。"
+    },
+    {
+      "title": "鬼知道",
+      "start_line": 2227,
+      "end_line": 2253,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2227行标题、第2229行作者署名明确；第2253行短信揭示来访爷爷已经死亡，第2255行是编辑信息。"
+    },
+    {
+      "title": "血壁怨",
+      "start_line": 2260,
+      "end_line": 2494,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名为《血壁怨》，第2260行标题被OCR截为“血”；“我可以帮你”等为内部小节，第2494行在揭示壁画、女鬼和命案真相后收束。"
+    }
+  ],
+  "document_notes": "第二遍依据原文边界独立裁决后再与第一遍对照。第一遍把第210—1149行的《烈日灼灵》《血祖棺》《人形疤》《真面目》误并为一篇，并将《同名同姓》与《烤兔肉》误并；本次已拆分，并补回标题由图片或调查表确认的完整短篇。标题错位或OCR错误处按目录、调查表、正文情节和编辑分隔线综合校正。已排除封面与目录、编读栏目、电影介绍、未给答案的猜谜文章、调查表及编辑署名。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c01676712ded6cf6913ddae2d5bc5f44f1f08c0b790b434e237915b8ac809b43",
+    "duration_seconds": 827.4,
+    "generated_at": "2026-08-31T07:26:39+00:00"
+  }
+}

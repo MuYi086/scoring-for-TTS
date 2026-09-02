@@ -1,0 +1,99 @@
+{
+  "source_path": "悚族/《悚族》饕餮之戒.md",
+  "source_sha256": "9d019617ec522725b3c8687b1baa8a5ccf749433fff4c8329ba9480694fbcc3f",
+  "line_count": 3489,
+  "stories": [
+    {
+      "title": "南瓜灯的泪水",
+      "start_line": 230,
+      "end_line": 348,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后为连续叙事正文，末尾仍是故事收束内容，下一标题进入另一篇。"
+    },
+    {
+      "title": "孤独病孩子",
+      "start_line": 350,
+      "end_line": 678,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题与目录题名对应，连续包含校园鬼怪叙事并在L678形成收束；L680起转入另一组人物和情节。"
+    },
+    {
+      "title": "一瓦情深",
+      "start_line": 680,
+      "end_line": 1037,
+      "confidence": 0.67,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L680起出现李晓俊、茹雪及借命法相关连续叙事，后续章节共同构成一篇完整故事，L1036-L1037为署名；开篇题名在证据中疑似缺失或被异常标题替代。"
+    },
+    {
+      "title": "恭喜你，中奖了",
+      "start_line": 1767,
+      "end_line": 1825,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "短篇标题明确，正文连续，L1825完成诅咒情节，下一篇从L1829开始。"
+    },
+    {
+      "title": "尺码",
+      "start_line": 1829,
+      "end_line": 1911,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，正文连续至L1911，随后进入下一篇。"
+    },
+    {
+      "title": "病毒营销专家",
+      "start_line": 1915,
+      "end_line": 2321,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，后续分段均围绕同一黑玫瑰诅咒故事，L2321完成收束。"
+    },
+    {
+      "title": "摄影惊魂论",
+      "start_line": 2325,
+      "end_line": 2736,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及多章连续正文明确，L2736为故事末尾；L2738起转入下一篇《替身情人》的题名和署名。"
+    },
+    {
+      "title": "替身情人",
+      "start_line": 2738,
+      "end_line": 3440,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，正文至L3440明确标注“未完待续”，属于本期未完连载。"
+    }
+  ],
+  "document_notes": "首轮仅读取证据包，未打开或扫描原始 Markdown。证据显示L144起的《不给糖就捣蛋》段落后混入万圣节知识说明，无法仅凭当前局部证据可靠确定小说结局行，故未列入。L1043之后至L1763存在异常标题、章节顺序和跨段衔接，无法可靠划出不重叠且符合完整边界的独立故事，故未强行纳入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9d019617ec522725b3c8687b1baa8a5ccf749433fff4c8329ba9480694fbcc3f",
+    "evidence_only": true,
+    "duration_seconds": 118.8,
+    "generated_at": "2026-08-31T05:38:37+00:00"
+  }
+}

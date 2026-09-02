@@ -1,0 +1,89 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-杀戮地带.md",
+  "source_sha256": "6b4ca41b454f38e9250a819be2922620cd86d0aa005acf42c28e1d44b88ff057",
+  "line_count": 3505,
+  "stories": [
+    {
+      "title": "别浪费水呀！",
+      "start_line": 145,
+      "end_line": 153,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文有明确标题、完整叙事与结局。"
+    },
+    {
+      "title": "地下凶邻",
+      "start_line": 382,
+      "end_line": 727,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，后续无标题段落与前文连续，末尾为完整的灵异解释与警告。"
+    },
+    {
+      "title": "火车司机",
+      "start_line": 729,
+      "end_line": 978,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和正文边界明确，但末尾停在死亡游戏倒计时，无法确认是否为本期结局。"
+    },
+    {
+      "title": "小玉的故事",
+      "start_line": 980,
+      "end_line": 1482,
+      "confidence": 0.86,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确且正文连续，但结尾以新的悬念对白收束，明显像连载片段。"
+    },
+    {
+      "title": "半魂",
+      "start_line": 1486,
+      "end_line": 1601,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题后开始，结尾回到现实并完成梦境经历的收束。"
+    },
+    {
+      "title": "慾心",
+      "start_line": 1925,
+      "end_line": 2327,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及跨小节连续正文可确认，但末尾停在人物呼喊处，缺乏明确结局。"
+    },
+    {
+      "title": "日月潭惊魂记",
+      "start_line": 3085,
+      "end_line": 3107,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，正文包含完整经历、事后解释和结尾警告。"
+    }
+  ],
+  "document_notes": "严格仅读取边界证据包，未打开或扫描原始 Markdown。排除了广告、目录、编辑信息及其他非小说栏目。部分疑似小说因标题缺失、广告混入或结尾不完整，未列入；已列出的不确定项保留较低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6b4ca41b454f38e9250a819be2922620cd86d0aa005acf42c28e1d44b88ff057",
+    "evidence_only": true,
+    "duration_seconds": 110.2,
+    "generated_at": "2026-08-31T05:53:32+00:00"
+  }
+}

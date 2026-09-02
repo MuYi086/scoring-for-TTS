@@ -1,0 +1,129 @@
+{
+  "source_path": "悚族/《悚族》完美女友.md",
+  "source_sha256": "614512d0ab20974bda814a28145cb34f3e4b9fcd28193e8c41a5706b9812f808",
+  "line_count": 3532,
+  "stories": [
+    {
+      "title": "星天鹅回鹅",
+      "start_line": 205,
+      "end_line": 1534,
+      "confidence": 0.56,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示该标题后接黑童话/惊悚内容及连续章节，但标题与正文组织关系异常，且结尾仅能依据段落边界推断，无法完全排除为专题或连载片段。"
+    },
+    {
+      "title": "请按时来做头",
+      "start_line": 1536,
+      "end_line": 1858,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从理发店情节实际开始，后续多个小节连续展开，至人头与真相揭示后的惊悚收束结束；目录中的同名项未作为正文起点。"
+    },
+    {
+      "title": "相亲",
+      "start_line": 1860,
+      "end_line": 1902,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、正文和幽冥咖啡座反转结局完整，下一段为另一篇短篇。"
+    },
+    {
+      "title": "黑匣子短篇系列之二 变心",
+      "start_line": 1906,
+      "end_line": 1948,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "系列标题后有作者署名和完整故事，结尾明确收束为离婚。"
+    },
+    {
+      "title": "黑匣子短篇系列之三 电梯里的父子",
+      "start_line": 1950,
+      "end_line": 1992,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、正文及电梯鬼故事结局完整。"
+    },
+    {
+      "title": "黑匣子短篇系列之四 激励",
+      "start_line": 1996,
+      "end_line": 2080,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "系列标题与作者署名后接完整校园惊悚故事，末尾完成真相反转。"
+    },
+    {
+      "title": "黑匣子短篇系列之五 妻子",
+      "start_line": 2082,
+      "end_line": 2144,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和完整鬼怪/犯罪情节均在本段内，末尾形成闭合结局。"
+    },
+    {
+      "title": "愿见",
+      "start_line": 2148,
+      "end_line": 2490,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名后为连续的惊悚故事，末尾回扣因果并完成收束。"
+    },
+    {
+      "title": "抢板凳游戏",
+      "start_line": 2496,
+      "end_line": 2893,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示从第一节开始，后续章节连续至鬼魂揭示；但正文标题及第三节缺失，实际起点和是否为本期完整篇仍有不确定性。"
+    },
+    {
+      "title": "完美女友",
+      "start_line": 2895,
+      "end_line": 3084,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确出现“完美女友”，正文从该处连续展开并有结尾呼应；正文起始处仅显示栏目式“悚族”标题，故边界置信度降低。"
+    },
+    {
+      "title": "武国计划",
+      "start_line": 3086,
+      "end_line": 3438,
+      "confidence": 0.79,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有明确标题、作者署名和连续章节，但正文在考试场景的悬念处结束，下一段转为拍照禁忌知识文章，明显未呈现完整结局。"
+    }
+  ],
+  "document_notes": "本轮仅依据边界证据包判断，未打开或扫描原始 Markdown。已排除征稿、栏目页、公告、刊务信息、图片/拍照说明、测试结果和作者简介；部分正文标题受目录、页眉或解析异常影响，已降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "614512d0ab20974bda814a28145cb34f3e4b9fcd28193e8c41a5706b9812f808",
+    "evidence_only": true,
+    "duration_seconds": 124.6,
+    "generated_at": "2026-08-31T05:30:51+00:00"
+  }
+}

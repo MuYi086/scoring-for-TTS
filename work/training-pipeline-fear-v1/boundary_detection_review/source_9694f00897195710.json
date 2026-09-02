@@ -1,0 +1,248 @@
+{
+  "source_path": "怖客/《怖客》2012年10月C版-跟我走吧.md",
+  "source_sha256": "7977501ec77dcd1ee1f663fd3f3310ff135d3df3abe7c730f9f982505fd4022a",
+  "line_count": 3673,
+  "stories": [
+    {
+      "title": "活人不能祭",
+      "start_line": 149,
+      "end_line": 364,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由刊末正刊目录确认；正文始于网祭情节，后续“兄弟，我该怎样拯救你”为同篇章节，结局止于编辑署名前。"
+    },
+    {
+      "title": "草如发",
+      "start_line": 372,
+      "end_line": 380,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "作者署名后是一则自述式灵异经历，叙事完整，篇名由刊末目录确认。"
+    },
+    {
+      "title": "跟我走吧",
+      "start_line": 388,
+      "end_line": 643,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“探险游戏”至“尾声”均为同一校园鬼故事，主篇名由刊末目录确认；跨栏OCR把另一则日记的开头插入尾声中，但真正结局延续至643行。"
+    },
+    {
+      "title": "蟾蜍附身",
+      "start_line": 647,
+      "end_line": 655,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "标题、署名和结尾明确，但开头被跨栏OCR提前排到627—629行，当前连续边界内正文明显从半句开始。"
+    },
+    {
+      "title": "午夜冥车",
+      "start_line": 661,
+      "end_line": 957,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由刊末目录确认；“楔子”及连续章节一直推进到“尾声”，957行为结局最后一行。"
+    },
+    {
+      "title": "谋皮",
+      "start_line": 961,
+      "end_line": 1247,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "961行标题被OCR误作“谋商”，刊末目录确认篇名为“谋皮”；“借皮”等均是内部章节，1247行为结局正文末行。"
+    },
+    {
+      "title": "入眼即亡",
+      "start_line": 1311,
+      "end_line": 1545,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主篇名由刊末目录确认；从“你眼睛里有什么？”至“悲伤的眼睛”为连续章节，1545行完成结局，后文已是另一篇微小说。"
+    },
+    {
+      "title": "面具",
+      "start_line": 1551,
+      "end_line": 1569,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后形成独立微型恐怖小说，1569行以骷髅真相收束；篇名由刊末目录确认。"
+    },
+    {
+      "title": "一盒点心",
+      "start_line": 1573,
+      "end_line": 1589,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立人物、事件和反转结局均完整，篇名由刊末目录确认，1591行已是编辑署名。"
+    },
+    {
+      "title": "小偷",
+      "start_line": 1595,
+      "end_line": 1677,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从作者署名开始，围绕两名鬼魂寻找替身展开完整叙事，1677行为结局，篇名由刊末目录确认。"
+    },
+    {
+      "title": "纸做的",
+      "start_line": 1681,
+      "end_line": 1707,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "该段是独立的工地鬼故事，1707行完成反转，篇名由刊末目录确认。"
+    },
+    {
+      "title": "追求个性",
+      "start_line": 1713,
+      "end_line": 1761,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后为独立理发店怪谈，1761行结束；篇名由刊末目录确认。"
+    },
+    {
+      "title": "悄悄话",
+      "start_line": 1765,
+      "end_line": 1836,
+      "confidence": 0.87,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文开头因跨栏排版出现在1773行标题之前；1765—1836行仍构成完整的食人反转短篇。"
+    },
+    {
+      "title": "还债",
+      "start_line": 1838,
+      "end_line": 1856,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名同在1838行，1856行完成阴间债务反转；1858行已转入下一篇。"
+    },
+    {
+      "title": "吃啥补啥",
+      "start_line": 1858,
+      "end_line": 1878,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立汤馆怪谈在1878行以三只眼睛的反转收束，篇名由刊末目录确认。"
+    },
+    {
+      "title": "借发还魂",
+      "start_line": 1886,
+      "end_line": 2135,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从紧邻篇名图片的作者署名开始；“真假室友”等均为内部章节，2135行为附身真相后的结局末行。"
+    },
+    {
+      "title": "爷爷送我一块表",
+      "start_line": 2143,
+      "end_line": 2152,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "Markdown标题存在OCR错乱，刊末目录给出完整篇名；作者署名及自述式经历连续，2152行收束。"
+    },
+    {
+      "title": "小心你的舌头",
+      "start_line": 2156,
+      "end_line": 2365,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2156行标题被OCR误识别；“给我你的鼻子”和“还差一双耳朵”是同篇章节，2365行为恶灵离去的结局。"
+    },
+    {
+      "title": "压在胸口的异物",
+      "start_line": 2371,
+      "end_line": 2375,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "独立自述式灵异经历，内容在2375行完整结束；篇名由刊末目录确认。"
+    },
+    {
+      "title": "哈尔滨游乐园之鬼城迷宫",
+      "start_line": 2619,
+      "end_line": 2671,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "标题、作者及鬼屋体验全过程明确，2671行为体验总结；其后是编辑署名和下一篇小说。"
+    },
+    {
+      "title": "命运修改器",
+      "start_line": 2675,
+      "end_line": 3206,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2675行主标题后依次为“死人复活”“怀疑”“不可改变”和“尾声”，3206行完成最终反转。"
+    },
+    {
+      "title": "半夜奇遇",
+      "start_line": 3212,
+      "end_line": 3220,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "从作者署名开始是一则完整自述式夜间怪事，篇名由刊末目录确认，3220行为结尾。"
+    },
+    {
+      "title": "拔苗助长",
+      "start_line": 3224,
+      "end_line": 3504,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题、作者署名及连续章节明确，“结局”在3504行完成；3506行是编辑署名，3508行起已进入调查问卷。"
+    }
+  ],
+  "document_notes": "第二遍抽查修正了第一遍的多项边界错误：127—143行“任时光匆匆流走”是作者创作自述，不属于后续小说；“跟我走吧”的尾声受跨栏OCR干扰但实际延续至643行；“入眼即亡”止于1545行，1551行后是多篇独立微小说；“还债”与“吃啥补啥”已拆分；“小心你的舌头”止于2365行；“拔苗助长”止于3504行，未混入问卷。正文图片中缺失或OCR失真的主篇名依据刊末正刊目录校正。已排除封面、目录、通知、作者简介、编辑部趣闻、问卷、广告和新书推介。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "7977501ec77dcd1ee1f663fd3f3310ff135d3df3abe7c730f9f982505fd4022a",
+    "duration_seconds": 955.5,
+    "generated_at": "2026-08-31T06:58:18+00:00"
+  }
+}

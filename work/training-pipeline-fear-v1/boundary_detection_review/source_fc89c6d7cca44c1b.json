@@ -1,0 +1,149 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2008年01.md",
+  "source_sha256": "083f1608690fe1469f23761f306af2772d794154f86d9b4713ba39db96a8811f",
+  "line_count": 5168,
+  "stories": [
+    {
+      "title": "星际卧底",
+      "start_line": 314,
+      "end_line": 658,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文从章节（一）开始，章节（二）至（九）连续构成同一篇科幻校园故事；前置内容为作者访谈，未计入。"
+    },
+    {
+      "title": "中国结",
+      "start_line": 660,
+      "end_line": 916,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名在此开始；916为叙事结局的末行，918的曼珠沙华释义紧接下一篇《狻猊泪》标题，不计入本篇。"
+    },
+    {
+      "title": "狻猊泪",
+      "start_line": 920,
+      "end_line": 1174,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者及章节【壹】至【染】连续；1174完成叙事收束，随后为插图及下一篇《驱影人》标题。"
+    },
+    {
+      "title": "驱影人",
+      "start_line": 1178,
+      "end_line": 1415,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，章节01至08构成完整超自然故事，1415为结局正文末行。"
+    },
+    {
+      "title": "坠落之前是更深的坠落",
+      "start_line": 1423,
+      "end_line": 1871,
+      "confidence": 0.81,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从小说标题开始，后续少年安康学院、花洒及尾声均为同一篇心理惊悚/灵异小说；1871为结局正文末行。"
+    },
+    {
+      "title": "锁",
+      "start_line": 1893,
+      "end_line": 1927,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题明确，正文短篇独立成篇，1927完成故事收束；同题SHOW为栏目标题。"
+    },
+    {
+      "title": "901，爱情走过",
+      "start_line": 1929,
+      "end_line": 2033,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "前篇在1927结束；A/B交替段落从1929起构成同一篇爱情短篇，标题因版面顺序出现在1997，2033为结局末行。"
+    },
+    {
+      "title": "陌路",
+      "start_line": 2594,
+      "end_line": 2860,
+      "confidence": 0.87,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，章节1至9及后续MOLU段落为同一篇带梦游与人格分裂元素的悬疑惊悚小说。"
+    },
+    {
+      "title": "五石散",
+      "start_line": 2878,
+      "end_line": 3347,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题记及章节[1]至[9]连续组成同一篇历史灵异小说；正文与创作谈均明确篇名为《五石散》，3345至3347为第九节结局，之后转入图书广告。"
+    },
+    {
+      "title": "不要放过我",
+      "start_line": 3404,
+      "end_line": 3998,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，章节2至8及重复编号的后续段落连续，题外话仍为故事尾声，3998结束。"
+    },
+    {
+      "title": "星期物语",
+      "start_line": 4002,
+      "end_line": 4368,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及星期日到星期日的连续章节构成完整奇幻校园故事；中间创作谈为同篇文章附属内容。"
+    },
+    {
+      "title": "死亡的另一半",
+      "start_line": 4374,
+      "end_line": 4941,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从第一节《红眼睛》开始，篇名在版面顺序中后置；4941明确标注“待续”，之后为下期预告和新栏目内容。"
+    },
+    {
+      "title": "电话谋杀案",
+      "start_line": 5035,
+      "end_line": 5061,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立标题后的电话叙事在5061以误拨号码的反转收束；随后仅有插图及公益捐助内容。"
+    }
+  ],
+  "document_notes": "首轮仅读取边界证据包，未打开或扫描原始 Markdown。已排除目录、栏目、创作谈、动漫/商品介绍、推理答案、电影介绍、声明及公益捐助内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "083f1608690fe1469f23761f306af2772d794154f86d9b4713ba39db96a8811f",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_fc89c6d7cca44c1b.txt",
+    "duration_seconds": 130.1,
+    "generated_at": "2026-09-01T02:01:37+00:00"
+  }
+}

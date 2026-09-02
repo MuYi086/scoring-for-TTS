@@ -1,0 +1,59 @@
+{
+  "source_path": "悚族/《悚族》霸王别姬.md",
+  "source_sha256": "33b30f30eeb57dc1739623202826263840da0339b60e77b7dc351e5b66132e5d",
+  "line_count": 2198,
+  "stories": [
+    {
+      "title": "★校门口的红衣女人 湖北/苏苏",
+      "start_line": 17,
+      "end_line": 42,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后直接进入独立怪谈叙事，并在 L42 完成事件收束；下一段为杂志栏目内容。"
+    },
+    {
+      "title": "（篇名缺失，章节 8–10）",
+      "start_line": 365,
+      "end_line": 573,
+      "confidence": 0.5,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示从数字章节“8”开始，后接“10”，内容明显属于连续小说且以“刚刚开始”收束；缺少明确篇名和开端，不能判为完整小说。"
+    },
+    {
+      "title": "GUZHAIHONGTONG / 红瞳",
+      "start_line": 575,
+      "end_line": 816,
+      "confidence": 0.66,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续标题与内容均为明显恐怖故事，L816形成阶段性结尾；但开头直接从“短短三月”进入，疑似缺少前文，故无法确认完整性。"
+    },
+    {
+      "title": "翻脸之动就是的幸福。",
+      "start_line": 822,
+      "end_line": 2171,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L822含篇名及作者署名，随后有“引子”、连续章节和“尾声”；L2171为结局正文末行，L2173起为刊后其他内容。"
+    }
+  ],
+  "document_notes": "首轮仅依据证据包判定，未打开或扫描原始 Markdown。目录段（L48–363）、杂志栏目及刊后内容均已排除。证据显示部分篇名或起始内容缺失，因此相应条目标为 installment 或 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "33b30f30eeb57dc1739623202826263840da0339b60e77b7dc351e5b66132e5d",
+    "evidence_only": true,
+    "duration_seconds": 90.7,
+    "generated_at": "2026-08-31T05:36:39+00:00"
+  }
+}

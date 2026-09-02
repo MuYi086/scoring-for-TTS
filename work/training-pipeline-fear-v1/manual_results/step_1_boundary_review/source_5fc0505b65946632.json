@@ -1,0 +1,108 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2007年10.md",
+  "source_sha256": "c6659022c1d4e4c30d115d7ba7514c71d93076dc57b7d8bc421afc53794fe0fa",
+  "line_count": 4396,
+  "stories": [
+    {
+      "title": "穿过骨头抚摸你",
+      "start_line": 451,
+      "end_line": 795,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节明确；结尾正文完整收束。"
+    },
+    {
+      "title": "（标题缺失，长乐未央故事）",
+      "start_line": 799,
+      "end_line": 1185,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "局部原文从章节（一）直接进入正文，未见正文标题或署名；原标“契丹王妃”为结尾后的推荐文章标题。故事在1185行完成情节收束。"
+    },
+    {
+      "title": "字符迷情",
+      "start_line": 1234,
+      "end_line": 1332,
+      "confidence": 0.95,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续章节明确；末章标为“最后还未完”，属于未完片段。"
+    },
+    {
+      "title": "白色曼珠沙华",
+      "start_line": 1336,
+      "end_line": 1769,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和正文起点明确，多个小节及灵异情节连续；证据显示故事在该段末收束，但中间夹有版面栏目。"
+    },
+    {
+      "title": "（标题缺失，星盘与傀儡师故事）",
+      "start_line": 2447,
+      "end_line": 2702,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "局部原文从第1节进入连续校园灵异故事；2702行以结局性反问收束，2704行“段子”为后续栏目，故不计入正文。标题仍缺失。"
+    },
+    {
+      "title": "睡",
+      "start_line": 2708,
+      "end_line": 2710,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后紧接单行完整微型恐怖故事，2710行的反转对话构成明确结局；2712行已为下一篇《异人》。"
+    },
+    {
+      "title": "异人",
+      "start_line": 2712,
+      "end_line": 3102,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及14个连续章节明确；法医调查与案件结局完整。"
+    },
+    {
+      "title": "陌生初熏",
+      "start_line": 3104,
+      "end_line": 3443,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、八章及后记连续，后记明确交代事件善后，故事完整结束。"
+    },
+    {
+      "title": "（标题缺失，周密与素食者故事）",
+      "start_line": 3445,
+      "end_line": 3719,
+      "confidence": 0.35,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3445行为“第二封来信”，局部包在此前3415行已进入同一叙事，证明当前起点缺头；但证据包未包含该故事的正文标题或确切起始边界，无法安全前移。3719行有明确结局，仍因起点无法确定而保留uncertain并降低置信度。"
+    },
+    {
+      "title": "天心",
+      "start_line": 3725,
+      "end_line": 4229,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连载章节明确；末尾标注“待续”，不能视为完整小说。"
+    }
+  ],
+  "document_notes": "仅复核指定局部包并保留第一遍未标记风险故事的全部字段；已更正风险项中可由局部原文明示的误题、栏目尾界和微型故事完整性。周密与素食者故事的局部证据未覆盖确切起点，因此保留为未决边界。"
+}

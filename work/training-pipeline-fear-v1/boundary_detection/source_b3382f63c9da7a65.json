@@ -1,0 +1,149 @@
+{
+  "source_path": "怖客/《怖客》2010年1月-手机惊魂.md",
+  "source_sha256": "e17571965475aca145d4327e02fc4546540b173285f1684ec443e5a7d0914e85",
+  "line_count": 4039,
+  "stories": [
+    {
+      "title": "找个天使替我爱你",
+      "start_line": 183,
+      "end_line": 529,
+      "confidence": 0.74,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "目录可确认标题，正文起于183行；证据尾部停在邀约场景，未能确认是否完整收束。"
+    },
+    {
+      "title": "何雨薇项链故事（标题未见）",
+      "start_line": 533,
+      "end_line": 747,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从第一章至第五章连续叙事，末尾完成恐怖揭示并收束；证据未显示独立总标题，标题据核心情节标注。"
+    },
+    {
+      "title": "害怕选择的人",
+      "start_line": 893,
+      "end_line": 1175,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由标题开始，含结局章节并在1175行完成收束。"
+    },
+    {
+      "title": "174寝室",
+      "start_line": 1179,
+      "end_line": 1458,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录可确认标题；1179行起为连续寝室恐怖叙事，1458行为正文末行，1460行起为署名信息。"
+    },
+    {
+      "title": "小楚爱互爱我",
+      "start_line": 1474,
+      "end_line": 1553,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和完整结尾均明确，1555行为编辑信息。"
+    },
+    {
+      "title": "真相",
+      "start_line": 1557,
+      "end_line": 1940,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者明确，内部章节连续，1940行完成案件反转与结局。"
+    },
+    {
+      "title": "向日英",
+      "start_line": 1942,
+      "end_line": 1976,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者明确，1976行形成独立的恐怖收束；后续1982行叙事主体明显 बदल。"
+    },
+    {
+      "title": "复明",
+      "start_line": 1982,
+      "end_line": 2106,
+      "confidence": 0.87,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "以复明为标题的独立超自然故事，2106行完成结局，2108行为编辑信息。"
+    },
+    {
+      "title": "同生缘",
+      "start_line": 2112,
+      "end_line": 2320,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题行存在但文本受解析干扰；正文围绕同生缘展开，2320行完成结局，2322行为编辑信息。"
+    },
+    {
+      "title": "奇怪的房东",
+      "start_line": 2324,
+      "end_line": 2475,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、连续章节和完整案件结局明确，2477行为实习编辑信息。"
+    },
+    {
+      "title": "我是老鼠",
+      "start_line": 2481,
+      "end_line": 2957,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者明确，章节连续，2957行完成恐怖场景，2959行为编辑信息。"
+    },
+    {
+      "title": "谢宁的日记本",
+      "start_line": 2961,
+      "end_line": 3232,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确标注“谢宁的日记本（上）”，正文末尾仍悬而未决。"
+    },
+    {
+      "title": "失踪",
+      "start_line": 3236,
+      "end_line": 3574,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从“失踪”章节开始形成连续的三姐妹恐怖叙事，3574行完成揭示，3576行为编辑信息。"
+    }
+  ],
+  "document_notes": "已仅依据边界证据包判定，未读取或扫描原始 Markdown。部分标题因源文档标题解析异常而作保守标注；3578行后的内容为知识/问卷等刊后内容，未列入小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "e17571965475aca145d4327e02fc4546540b173285f1684ec443e5a7d0914e85",
+    "evidence_only": true,
+    "duration_seconds": 132.2,
+    "generated_at": "2026-08-31T05:11:53+00:00"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2015年11.md",
+  "source_sha256": "012ffe138b8e9f55fcfb47a6a6b6927261c85aa892b1450c4616b2f9c86cc50d",
+  "line_count": 4881,
+  "stories": [
+    {
+      "title": "永夜之城",
+      "start_line": 492,
+      "end_line": 911,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及序篇至终章连续出现，结局明确；暗黑奇幻、魔神和诡异元素明显。"
+    },
+    {
+      "title": "太阳风",
+      "start_line": 913,
+      "end_line": 1181,
+      "confidence": 0.82,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从太阳风章节开始并有明确收束，但章节编号出现缺号（01、03、04、06、07），证据不足以完全确认是否存在缺失内容；属悬疑冒险类。"
+    },
+    {
+      "title": "乌鸦降临",
+      "start_line": 1187,
+      "end_line": 1751,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "主标题、连续章节及明确“结局”均在本期出现；属于奇幻喜剧小说，非目标类型。"
+    },
+    {
+      "title": "过犹不及",
+      "start_line": 1757,
+      "end_line": 2111,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "PART 01至PART 08连续构成完整犯罪悬疑故事，末段完成身份与案件收束。"
+    },
+    {
+      "title": "大魔术师",
+      "start_line": 2117,
+      "end_line": 2540,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "01至09及后续章节连续，末行明确交代故事结局；包含犯罪、复仇和惊悚元素。"
+    },
+    {
+      "title": "阴魂灯",
+      "start_line": 2554,
+      "end_line": 2756,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示故事正文由“天罗”“地网”“潜人”“制裁”连续组成，作者署名和主标题位于开篇正文之后，末段有情节收束；边界受版式顺序影响，置信度略降。"
+    },
+    {
+      "title": "海妖的女儿",
+      "start_line": 2762,
+      "end_line": 3215,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，章节连续至第11章，但缺少第04章且末尾停在未完成的抒情段落，明显为连载片段。"
+    },
+    {
+      "title": "糖衣",
+      "start_line": 3223,
+      "end_line": 3481,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及完整情节均在本段，结尾形成明确的心理与犯罪收束。"
+    },
+    {
+      "title": "糖衣凶徒",
+      "start_line": 3483,
+      "end_line": 3515,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立标题下有完整短篇情节，并以明确结句结束；属于黑暗犯罪惊悚类。"
+    },
+    {
+      "title": "流年雪",
+      "start_line": 3523,
+      "end_line": 3993,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "证据包显示主标题疑似位于前一段末尾，正文从楔子至尾声完整闭合；为古风奇幻/情感故事，标题边界受版式影响。"
+    },
+    {
+      "title": "思路Y 三次重复局面",
+      "start_line": 3999,
+      "end_line": 4510,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者信息、五章结构及案件解析连续出现，终章完成主线；属于推理小说。"
+    },
+    {
+      "title": "晚秋",
+      "start_line": 4518,
+      "end_line": 4788,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及悬疑正文明确，但章节编号从六章跳至九章，且结尾仍带有未完叙事感，判为连载片段。"
+    }
+  ],
+  "document_notes": "仅依据指定证据包识别，未打开或扫描原始 Markdown。已合并各故事内部章节、小节和尾声，排除创作谈、广告及其他非小说栏目；部分标题或章节存在版式错序、缺号，因此相应降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "012ffe138b8e9f55fcfb47a6a6b6927261c85aa892b1450c4616b2f9c86cc50d",
+    "evidence_only": true,
+    "duration_seconds": 132.2,
+    "generated_at": "2026-08-31T06:24:50+00:00"
+  }
+}

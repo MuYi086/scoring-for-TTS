@@ -1,0 +1,59 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.05.md",
+  "source_sha256": "29185950c388e46cd7cb7935e5b2d5eddc3283871f0fda6e06d8ee45515cf1ad",
+  "line_count": 6208,
+  "stories": [
+    {
+      "title": "生死守候",
+      "start_line": 192,
+      "end_line": 2608,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名始于192—196行，后续章节连续至2608行；标明“长篇小说连载”，本期未完结。"
+    },
+    {
+      "title": "金銮殿",
+      "start_line": 2614,
+      "end_line": 3881,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者、引子及多章正文连续至尾声，3883行起为责任编辑信息；内容涉及事故、威胁与犯罪悬疑。"
+    },
+    {
+      "title": "莲花·棉花",
+      "start_line": 4606,
+      "end_line": 4680,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题和作者署名后为连续第一人称故事正文，4682行起为编辑信息；属于家庭/校园题材短篇，不属目标类型。"
+    },
+    {
+      "title": "滚烫的河",
+      "start_line": 4688,
+      "end_line": 6021,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及多时段章节构成连续侦探犯罪故事，6023行起为责任编辑信息，正文在此前收束。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未打开或扫描原始Markdown。已合并章节、数字标题、尾声及时间段标题；排除了导读、纪实作品《笃实光“辉”》、反诈文章、答案页和下期要目等非小说内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "29185950c388e46cd7cb7935e5b2d5eddc3283871f0fda6e06d8ee45515cf1ad",
+    "evidence_only": true,
+    "duration_seconds": 86.4,
+    "generated_at": "2026-08-30T11:20:07+00:00"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-在尸体上爬行.md",
+  "source_sha256": "b7f36503dbed249bcf6fc76a0c4f7e45a19773e36ff19156910de796c75feb9e",
+  "line_count": 2518,
+  "stories": [
+    {
+      "title": "重逢",
+      "start_line": 187,
+      "end_line": 269,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，内容连续并以结局句收束。"
+    },
+    {
+      "title": "疯女人的坟",
+      "start_line": 273,
+      "end_line": 649,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，包含章节与后记；后记与前文情节连续，至下一篇内容前收束。"
+    },
+    {
+      "title": "皇族鬼",
+      "start_line": 651,
+      "end_line": 833,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文情节独立完整；标题主要由文末目录对应确认，正文处显示为版面通用标题。"
+    },
+    {
+      "title": "接生的鬼胎",
+      "start_line": 835,
+      "end_line": 957,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，内容连续并以鬼胎墓结局收束。"
+    },
+    {
+      "title": "漂亮可爱的鬼",
+      "start_line": 959,
+      "end_line": 1810,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，后续通用标题段与前文叙事连续，末行形成结局。"
+    },
+    {
+      "title": "我不就没腿嘛",
+      "start_line": 1814,
+      "end_line": 2352,
+      "confidence": 0.84,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，内容为恐怖小说，但证据段末为梦魇场景，未能确认是否为完整结尾。"
+    },
+    {
+      "title": "在尸体上爬行",
+      "start_line": 2354,
+      "end_line": 2494,
+      "confidence": 0.68,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "内容明显是独立恐怖故事且与尸体、掘墓和爬行意象对应，但从第(2)节开始，缺少本期故事开头；标题依据输入文件名和内容推断。"
+    }
+  ],
+  "document_notes": "首轮仅读取证据包，未打开或扫描原始 Markdown。已排除声明、目录、通用栏目标题、图片说明及刊后目录信息。证据显示后段至少有一篇从第(2)节开始的缺头故事，因此标为 installment；“皇族鬼”正文标题不显式，边界与标题置信度相应降低。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "b7f36503dbed249bcf6fc76a0c4f7e45a19773e36ff19156910de796c75feb9e",
+    "evidence_only": true,
+    "duration_seconds": 170.5,
+    "generated_at": "2026-08-31T05:48:05+00:00"
+  }
+}

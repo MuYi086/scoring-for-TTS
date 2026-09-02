@@ -1,0 +1,139 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2006年02.md",
+  "source_sha256": "d221abab78e592bd7dda60671445e0b43dd11202982401f3db0c5b6f50fbb87b",
+  "line_count": 4380,
+  "stories": [
+    {
+      "title": "蔓珠莎华",
+      "start_line": 153,
+      "end_line": 513,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含标题、作者署名、连续正文及明确结局；下一段为广告。"
+    },
+    {
+      "title": "人头风筝",
+      "start_line": 527,
+      "end_line": 791,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "章节一至尾声连续构成完整恐怖短篇，尾声后进入侦探栏目。"
+    },
+    {
+      "title": "白雪",
+      "start_line": 793,
+      "end_line": 1173,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含作者、连续章节及尾声，结尾形成悬疑余味；之后为其他栏目。"
+    },
+    {
+      "title": "东瀛情",
+      "start_line": 1183,
+      "end_line": 1351,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "连续叙事并有收束性结尾，属于奇幻爱情类，不属于目标类型。"
+    },
+    {
+      "title": "血腥玛丽",
+      "start_line": 1373,
+      "end_line": 1681,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从第一章至第八章结局连续；中段重复出现题名和署名，应视为同一篇小说内部版式重复。"
+    },
+    {
+      "title": "我的野蛮女友",
+      "start_line": 1683,
+      "end_line": 1721,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "连续的轻喜剧叙事，标题在版面中拆分；后续为其他娱乐文章。"
+    },
+    {
+      "title": "没掌",
+      "start_line": 2107,
+      "end_line": 2607,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含标题、作者及连续八章正文，结尾完成主要冲突；之后为其他短文。"
+    },
+    {
+      "title": "阁楼",
+      "start_line": 2611,
+      "end_line": 2962,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "上下部书信与对话连续组成完整灵异故事，结尾有明确收束；下一行进入玄异栏目。"
+    },
+    {
+      "title": "葛朵拉画像",
+      "start_line": 2966,
+      "end_line": 3412,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名及四章正文齐全，第四章标明完结并有结局。"
+    },
+    {
+      "title": "项圈",
+      "start_line": 3420,
+      "end_line": 3687,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "局部证据显示正文自3420行开始并连续至3686行的自缢结局；题名因版式顺序在正文中段及结尾处出现。3688行“八卦”为下一栏目，故不计入正文。"
+    },
+    {
+      "title": "失落人间的花火 2 花蕊未尝开",
+      "start_line": 3702,
+      "end_line": 3880,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "明确标为第二部/连载，结尾接下期预告，不能视为本期完整小说。"
+    },
+    {
+      "title": "迷魂记 CHAPTER 2 恶魔之人",
+      "start_line": 3892,
+      "end_line": 4194,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确为 Chapter 2 和连载内容，且结尾接下期预告，缺少完整开端。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍边界结果与局部风险证据包完成复核，未读取或扫描原始 Markdown。除“项圈”外均逐字段保留第一遍结果；“项圈”排除3688行的下一栏目，并根据局部证据改判为完整短篇。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "d221abab78e592bd7dda60671445e0b43dd11202982401f3db0c5b6f50fbb87b",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_f4c2267c676bc2bb.txt",
+    "duration_seconds": 103.7,
+    "generated_at": "2026-09-01T01:57:37+00:00"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2003年07.md",
+  "source_sha256": "dd7e6f0b1d7ac893fc52980325e835c39ed7f7305025aabe52a01161816a9670",
+  "line_count": 3571,
+  "stories": [
+    {
+      "title": "月之赫映姬",
+      "start_line": 190,
+      "end_line": 571,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题和署名相邻；局部尾部显示571为叙事结局最后一行，573起为图片及刊物内容。"
+    },
+    {
+      "title": "帝精石失窃之谜",
+      "start_line": 1078,
+      "end_line": 1176,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名与标题相邻，正文为完整宝石失窃推理故事，末尾明确收束。"
+    },
+    {
+      "title": "遇上我是你的",
+      "start_line": 1180,
+      "end_line": 1440,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者和连续正文明确；“劫难”“信”等为内部小节，结尾在1440完成揭示，后续为刊物内容。"
+    },
+    {
+      "title": "网络情缘",
+      "start_line": 1456,
+      "end_line": 1733,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "网络恋爱故事由多个小节组成，连续至1733，随后为刊物标识。"
+    },
+    {
+      "title": "我的恐怖之夜",
+      "start_line": 1944,
+      "end_line": 1990,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "恐怖经历叙事，含后记并在1990收束。"
+    },
+    {
+      "title": "吸灵魂的显示器",
+      "start_line": 1992,
+      "end_line": 2012,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整的电脑灵异短篇，结尾有明确警示收束。"
+    },
+    {
+      "title": "洋娃娃",
+      "start_line": 2020,
+      "end_line": 2068,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“那女人突然消失了……”为内部小节，故事在2068以反转笑点结束。"
+    },
+    {
+      "title": "生前吃苹果",
+      "start_line": 2070,
+      "end_line": 2090,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整出租车怪谈式短篇，2090为结局反转。"
+    },
+    {
+      "title": "厕所遇鬼",
+      "start_line": 2098,
+      "end_line": 2118,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整恐怖笑话式短篇，2118为结尾。"
+    },
+    {
+      "title": "惊",
+      "start_line": 2120,
+      "end_line": 2225,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续灵异叙事，2225后为作者署名，正文在此收束。"
+    },
+    {
+      "title": "躺在我的衣柜里",
+      "start_line": 2229,
+      "end_line": 2251,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整衣柜灵异短篇，2251后为作者署名。"
+    },
+    {
+      "title": "惊魂值班室",
+      "start_line": 2255,
+      "end_line": 2379,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整校园惊悚故事，2379为事件解释及结尾。"
+    },
+    {
+      "title": "假面舞会",
+      "start_line": 2385,
+      "end_line": 2467,
+      "confidence": 0.4,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2383行为栏目标题，2385行开始袁小绛的假面舞会叙事，2419行才出现版面后置的正式标题；2469行出现新的“惊悚时   刻”栏目节点，支持2467为保守终点，但局部包未提供该终点附近正文，无法确认故事是否完整收束。"
+    },
+    {
+      "title": "213号寝室",
+      "start_line": 2471,
+      "end_line": 2817,
+      "confidence": 0.2,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2469行的新栏目节点支持2471为保守起点，2585至2645行明确属于女寝213室叙事，2693行才出现版面后置的正式标   题；但局部尾窗2787至2817行已经转入《无法飞翔的鸟》的叙事，证明当前终点包含下一篇正文。证据包未覆盖两篇之间的准确切   换位置，无法安全修正终点。"
+    },
+    {
+      "title": "无法飞翔的鸟",
+      "start_line": 2819,
+      "end_line": 2847,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及连续正文明确，2847为完整结尾。"
+    },
+    {
+      "title": "骇客帝国",
+      "start_line": 2851,
+      "end_line": 3423,
+      "confidence": 0.87,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个小节和连载标题均围绕同一组人物与案件连续展开，至3423仍在推进，未见本期结局。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。《假面舞会》的栏目   交界可作保守推定，但缺少终点原文；《213号寝室》的尾窗已明确进入下一篇，却缺少准确切换位置，因此两项继续保留   uncertain 并降低置信度。",
+  "_provenance": {
+    "stage": "manual_story_boundaries_review",
+    "model": "manual-sol",
+    "reasoning_effort": "manual",
+    "speed": "standard",
+    "input_sha256": "dd7e6f0b1d7ac893fc52980325e835c39ed7f7305025aabe52a01161816a9670",
+    "imported_at": "2026-09-01T11:16:01+00:00"
+  }
+}

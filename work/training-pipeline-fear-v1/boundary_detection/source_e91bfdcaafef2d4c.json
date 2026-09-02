@@ -1,0 +1,99 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-邪恶的盆栽.md",
+  "source_sha256": "682b4c1221b108f2e2dc85b49aea3edbff395003a19d74799b99e0727ba20c74",
+  "line_count": 1734,
+  "stories": [
+    {
+      "title": "太平間裡的鏡子",
+      "start_line": 96,
+      "end_line": 110,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后紧接完整恐怖短篇，末行形成明确结局。"
+    },
+    {
+      "title": "缺月簪",
+      "start_line": 116,
+      "end_line": 187,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及后续分段正文连续，结尾为明确的恐怖收束。"
+    },
+    {
+      "title": "不要跟着我",
+      "start_line": 189,
+      "end_line": 311,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "根据目录标题与连续正文推断故事边界；中间存在运行标题干扰，但末段有完整收束。"
+    },
+    {
+      "title": "打赌",
+      "start_line": 313,
+      "end_line": 355,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文围绕地下仓库打赌展开，末段以发现尸体和明确惊悚结局收束。"
+    },
+    {
+      "title": "深井",
+      "start_line": 359,
+      "end_line": 432,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后为连续志怪叙事，下一段转入明显不同的蛀虫故事。"
+    },
+    {
+      "title": "蛀虫",
+      "start_line": 434,
+      "end_line": 617,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续围绕宿舍虫害展开，末段给出事件后的收束性说明。"
+    },
+    {
+      "title": "兰包枪鞋",
+      "start_line": 621,
+      "end_line": 661,
+      "confidence": 0.83,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据包显示该标题下为独立恐怖叙事，下一标题段转入另一篇长篇故事。"
+    },
+    {
+      "title": "鬼萧",
+      "start_line": 665,
+      "end_line": 1073,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "根据目录标题、鬼萧相关正文线索及连续分段推断；证据包显示内部存在多个运行标题，无法完全排除内部边界或刊载缺口。"
+    }
+  ],
+  "document_notes": "严格仅读取证据包，未打开或扫描原始 Markdown。证据显示 1075 行之后包含《邪恶的盆栽》及另一篇以“冤鬼路”为线索的连载内容，但关键故事转换发生在证据段内部，无法可靠确定完整边界，因此未伪造为 complete；末尾“未完待续”内容也未列入完整小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "682b4c1221b108f2e2dc85b49aea3edbff395003a19d74799b99e0727ba20c74",
+    "evidence_only": true,
+    "duration_seconds": 134.1,
+    "generated_at": "2026-08-31T05:54:26+00:00"
+  }
+}

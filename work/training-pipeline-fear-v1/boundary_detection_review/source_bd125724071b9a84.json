@@ -1,0 +1,118 @@
+{
+  "source_path": "悚族/《悚族》第二颗纽扣.md",
+  "source_sha256": "5eba3bf9672b6d0f704b767b0cad5fd47e837f6baf674160e597ed965e5fedb4",
+  "line_count": 2400,
+  "stories": [
+    {
+      "title": "比喻",
+      "start_line": 129,
+      "end_line": 161,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后即进入独立怪谈，161行为反转结局；标题由刊后篇目表确认，之后是栏目点评。"
+    },
+    {
+      "title": "双重谋杀",
+      "start_line": 167,
+      "end_line": 191,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，191行完成梦游反转，下一段为栏目点评。"
+    },
+    {
+      "title": "挂钟",
+      "start_line": 197,
+      "end_line": 223,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "197行开始新的独立复仇怪谈，223行以对应死亡收束；标题及作者由封面文字和刊后篇目表确认，版面抽取使作者署名落入正文中段。"
+    },
+    {
+      "title": "摇篮车",
+      "start_line": 229,
+      "end_line": 255,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "229行开始独立轮回怪谈，255行完成外婆显灵反转；标题因版面抽取错位出现在正文之后的257行。"
+    },
+    {
+      "title": "成双入对",
+      "start_line": 265,
+      "end_line": 599,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名明确，多个“故事”标题均为同一校园怪谈的内部小节；599行揭示形影不离的最终机制并结束全文。"
+    },
+    {
+      "title": "催眠术",
+      "start_line": 607,
+      "end_line": 705,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "607行人物、视角和情节全部切换，构成新篇开端；689行拼音标题是同篇页眉而非起点，705行以催眠杀人与鬼魂反转完整收束。标题及作者由目录和刊后篇目表确认。"
+    },
+    {
+      "title": "印钞机",
+      "start_line": 709,
+      "end_line": 885,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "709行标题被OCR误作“漫画机”，但目录、刊后篇目表、内部拼音页眉和全文情节均确认题名为《印钞机》；885行完成欲望反噬结局。"
+    },
+    {
+      "title": "小丑美甲",
+      "start_line": 889,
+      "end_line": 1129,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "889行虽有标题OCR错误，但保留作者署名，891行起的八个数字标题均为内部章节；1129行完成诅咒循环的最终反转。"
+    },
+    {
+      "title": "第二颗纽扣",
+      "start_line": 1137,
+      "end_line": 1554,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1137行残缺标题与目录相互印证；1353行拼音标题只是同篇页眉，1554行完成果果才是真凶的终局反转。"
+    },
+    {
+      "title": "第四维空间之亡灵世界",
+      "start_line": 1556,
+      "end_line": 2030,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者信息跨1556、1558两行分裂，后续引子及编号标题均为内部章节；2030行以双重身份和两个影子的场景完整收束。"
+    }
+  ],
+  "document_notes": "第二遍独立检查后再对照第一遍：补入了被遗漏的完整微型小说《比喻》《挂钟》《摇篮车》；将《成双入对》的结尾从687修正为599，并把607—705识别为完整的《催眠术》，其中689行只是内部页眉；将OCR误题《漫画机》修正为《印钞机》并判定为完整篇。封面、目录、栏目点评、编辑部轶事、留言、问卷、漫画、广告等均已排除。文件末行没有换行符，因此wc显示2399个换行符，但证据包及逻辑行号均为2400行。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "5eba3bf9672b6d0f704b767b0cad5fd47e837f6baf674160e597ed965e5fedb4",
+    "duration_seconds": 306.8,
+    "generated_at": "2026-08-31T11:16:54+00:00"
+  }
+}

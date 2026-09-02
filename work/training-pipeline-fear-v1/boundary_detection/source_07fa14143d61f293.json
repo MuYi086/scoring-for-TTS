@@ -1,0 +1,179 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-一双孤零零的小手.md",
+  "source_sha256": "2315d0ab84c4ad8d81d5a09be38b716ded316cfb91a5b6af12dc49c7f34cd87e",
+  "line_count": 1838,
+  "stories": [
+    {
+      "title": "神秘 309 宿舍",
+      "start_line": 200,
+      "end_line": 226,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有明确开端、发展和结局，末尾明确宣布事件告一段落。"
+    },
+    {
+      "title": "撞车事件",
+      "start_line": 230,
+      "end_line": 260,
+      "confidence": 0.73,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和正文边界明确，但证据显示正文从叙事中段开始，结尾也疑似未完。"
+    },
+    {
+      "title": "肉香",
+      "start_line": 262,
+      "end_line": 355,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有独立标题和明显结尾，但标题后的首段像前文续接，开端完整性无法确认。"
+    },
+    {
+      "title": "停尸间里的歌声",
+      "start_line": 427,
+      "end_line": 517,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文完整，结尾交代案件破获及人物后续。"
+    },
+    {
+      "title": "把血擦干",
+      "start_line": 521,
+      "end_line": 551,
+      "confidence": 0.65,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与正文起点明确，但末段与下一标题前后语义衔接，独立结局无法确认。"
+    },
+    {
+      "title": "猛鬼鸳鸯",
+      "start_line": 553,
+      "end_line": 633,
+      "confidence": 0.65,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文持续到活动叙事中段即被下一篇标题打断，未见本期结局。"
+    },
+    {
+      "title": "徘徊在床边 的幽魂",
+      "start_line": 635,
+      "end_line": 776,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文在关键呼唤处中断，下一标题开启新的故事段落。"
+    },
+    {
+      "title": "女孩发现 灵岩魅脸",
+      "start_line": 778,
+      "end_line": 887,
+      "confidence": 0.84,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含内部小节标题“方安琳!!”，但证据末尾仍在开学叙事中，未见结局。"
+    },
+    {
+      "title": "新娘红红的舌头",
+      "start_line": 889,
+      "end_line": 933,
+      "confidence": 0.86,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "恐怖故事正文明确，但末尾句意未收束，随后即进入医疗广告。"
+    },
+    {
+      "title": "凌晨两点准时赴约的女鬼",
+      "start_line": 935,
+      "end_line": 1019,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文在告别对白处截断，未出现完整结局。"
+    },
+    {
+      "title": "地上只印出一个人的影子",
+      "start_line": 1047,
+      "end_line": 1073,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有完整超自然情节和明确收束，末尾以星辰意象结束。"
+    },
+    {
+      "title": "他竟然是来提香的",
+      "start_line": 1077,
+      "end_line": 1177,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "故事有完整因果链，结尾明确交代王生落发并得法号。"
+    },
+    {
+      "title": "红红的眼睛模糊的血肉",
+      "start_line": 1181,
+      "end_line": 1249,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及正文明确，但末尾仍在新案件人物登场阶段，未见结局。"
+    },
+    {
+      "title": "池塘里竟然 生春草",
+      "start_line": 1251,
+      "end_line": 1299,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有完整恐怖事件、人物结局及后续处置。"
+    },
+    {
+      "title": "穿红衣服 的小鬼",
+      "start_line": 1301,
+      "end_line": 1549,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "包含重复标题和重复正文片段，可能是版面或采集重复；独立结尾边界无法可靠确认。"
+    },
+    {
+      "title": "一双孤零零 的小手",
+      "start_line": 1571,
+      "end_line": 1769,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、正文和明确结尾均在证据包中，末尾完成超自然事件收束。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。已排除目录、广告、栏目页、医疗宣传及刊后内容；部分故事因证据显示截断、续接或重复，按 installment 或 uncertain 标记。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2315d0ab84c4ad8d81d5a09be38b716ded316cfb91a5b6af12dc49c7f34cd87e",
+    "evidence_only": true,
+    "duration_seconds": 128.0,
+    "generated_at": "2026-08-31T05:45:03+00:00"
+  }
+}

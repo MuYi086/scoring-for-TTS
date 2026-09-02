@@ -1,0 +1,119 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼故事》僵尸怕火烧.md",
+  "source_sha256": "5e1753e496761857b2de5770ac4dd10504b7fc84dff21d01d804ad2dbceb7252",
+  "line_count": 2898,
+  "stories": [
+    {
+      "title": "等下一个轮回再爱她",
+      "start_line": 94,
+      "end_line": 240,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题从第94行起，后续章节均为同一故事，结尾明确写到等待下一轮回相遇。"
+    },
+    {
+      "title": "丢失的假眼球",
+      "start_line": 244,
+      "end_line": 419,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题和医院怪谈内容明确，但第397—419行附近疑似与下一篇佛教灵异叙事发生版面边界混杂，结尾边界无法完全确认。"
+    },
+    {
+      "title": "不要为难小孩",
+      "start_line": 497,
+      "end_line": 649,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第497行标题起始，内容围绕井中小孩展开，并在第649行完成收束。"
+    },
+    {
+      "title": "索命人",
+      "start_line": 651,
+      "end_line": 731,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题疑似OCR误识为“素命”，正文为医院索命鬼故事，第731行以报纸消息收尾。"
+    },
+    {
+      "title": "内脏被掏空了",
+      "start_line": 735,
+      "end_line": 963,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、法医与器官买卖线索明确，第963行完成案件及怪物来源的收束。"
+    },
+    {
+      "title": "你敢回头吗",
+      "start_line": 967,
+      "end_line": 1126,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题起于第967行，网络女鬼故事在第1126行以警告“千万莫回头”结束。"
+    },
+    {
+      "title": "杀了我",
+      "start_line": 1130,
+      "end_line": 1328,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1130行标题后接按日期推进的同一监视与杀人故事，第1328行明确完成枪击结局。"
+    },
+    {
+      "title": "我不是恶鬼",
+      "start_line": 1332,
+      "end_line": 1532,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及分章节内容均围绕白衣女鬼与白猫展开，第1532行完成托付、转世相关收束。"
+    },
+    {
+      "title": "夭折的孩子",
+      "start_line": 1534,
+      "end_line": 1647,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题起始明确，盼儿婚姻与夭折孩子线索在第1647行以证据揭示收尾。"
+    },
+    {
+      "title": "僵尸怕火烧",
+      "start_line": 1649,
+      "end_line": 2882,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇正文从第1649行开始，章节性分段均属同一僵尸故事，第2882行明确标注“全书完”。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始Markdown。第431—489行的“出家人与现代女鬼”属于带点评的佛教灵异叙事，未纳入独立小说列表；其与“丢失的假眼球”之间存在版面/边界混杂，因此该小说边界标为uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "5e1753e496761857b2de5770ac4dd10504b7fc84dff21d01d804ad2dbceb7252",
+    "evidence_only": true,
+    "duration_seconds": 137.9,
+    "generated_at": "2026-08-31T05:42:57+00:00"
+  }
+}

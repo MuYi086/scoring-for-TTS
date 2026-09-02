@@ -1,0 +1,118 @@
+{
+  "source_path": "悚族/《悚族》阴温度.md",
+  "source_sha256": "2f11dfc4e78f2706028528506ed1f0c9a953bed4b87e36b8467de19b93b27276",
+  "line_count": 2722,
+  "stories": [
+    {
+      "title": "挡鬼绳",
+      "start_line": 140,
+      "end_line": 433,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L140为目录后的正文题名页，后续重复题名和PART章节均属同一篇；六部分主线在L415完成阶段性解决，L425-L433以真凶反转作开放式结尾，仍构成完整短篇。"
+    },
+    {
+      "title": "猫头婴",
+      "start_line": 451,
+      "end_line": 776,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L451为正文题名，后续小节和重复页眉连续讲述同一事件；L770-L776揭示丑猫实为怪婴并以称呼主人公为母亲完成最终反转，并非缺失结尾。"
+    },
+    {
+      "title": "冥间有喜",
+      "start_line": 782,
+      "end_line": 1090,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L782为正文题名，各小节共同组成冥媒任务主线；任务、职位交接及张青云的后续处境均在L1084-L1090以喜剧性反转收束。"
+    },
+    {
+      "title": "亡人特效药",
+      "start_line": 1102,
+      "end_line": 1337,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1102题名及L1104作者署名构成正文起点，L1112只是题名页附近的残留短句，正式叙事从L1116完整展开；六个编号小节最终在L1335-L1337完成连续反转和结局。"
+    },
+    {
+      "title": "泪灵",
+      "start_line": 1351,
+      "end_line": 1391,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "该篇题名未被转写为Markdown标题，但目录列有《泪灵》，且L1351起的人物与情节和题名相互印证；L1391揭示泪灵身份并令其化作水珠，故事完整结束，下一篇从L1395另起。"
+    },
+    {
+      "title": "磨牙",
+      "start_line": 1395,
+      "end_line": 1413,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1395为独立题名，正文从牙医盗用死者牙齿展开，并在L1409-L1413以鬼魂实施对等报复完整收束。"
+    },
+    {
+      "title": "冰箱第三格",
+      "start_line": 1425,
+      "end_line": 1453,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1425为独立题名，合租和冰箱禁忌主线在L1451-L1453完成死亡反转；L1455是作者署名而非结局正文，L1457之后为刊面装饰及下一栏目内容。"
+    },
+    {
+      "title": "阴温度",
+      "start_line": 1469,
+      "end_line": 1781,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1469的英文题名与紧邻的L1471作者署名是实际正文题名页，应早于L1477的重复中文题名纳入；尾声在L1773-L1781完成阴间恋爱反转，L1783是下一篇《人生作弊器》的宣传引语。"
+    },
+    {
+      "title": "人生作弊器",
+      "start_line": 1787,
+      "end_line": 2050,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1787为正文题名，六章连续构成借未来电脑改变人生的完整故事；L2028以后揭示电脑可能并不存在，L2044-L2050以主人公面对自主选择的主题性疑问收束，并非连载中断。"
+    },
+    {
+      "title": "盗墓笔记之唤魂画【中】",
+      "start_line": 2052,
+      "end_line": 2467,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2052明确标注题名、【中】及作者，后续重复题名和页眉均属同一连载；正文在L2467停于铜三昏倒的危机，L2469-L2471预告明确说明大结局将在下一期揭晓。"
+    }
+  ],
+  "document_notes": "已先依据证据包独立定位，再抽查原文各候选题名页、结局和相邻栏目，最后对照第一遍结果。主要修正：补入第一遍漏掉的《泪灵》；将具有完整反转或主题性结尾的《猫头婴》《亡人特效药》《人生作弊器》判为complete；《冰箱第三格》结尾排除作者署名；《阴温度》起点纳入英文题名和作者栏，终点排除下一篇宣传引语。已排除目录、广告、知识与测试栏目、带答案的“黑猫侦探社”谜题，以及穿插在长篇正文版面中的“灵异教室”等栏目微文，避免与主体小说边界重叠。文件末尾无换行，因此wc显示2721个换行符，但按逻辑行计数为2722行；SHA-256与输入绑定一致。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2f11dfc4e78f2706028528506ed1f0c9a953bed4b87e36b8467de19b93b27276",
+    "duration_seconds": 350.2,
+    "generated_at": "2026-08-31T11:27:36+00:00"
+  }
+}

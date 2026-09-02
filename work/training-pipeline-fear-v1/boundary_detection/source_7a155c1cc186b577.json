@@ -1,0 +1,109 @@
+{
+  "source_path": "怖客/新锐阅读怖客2016年总第11期.md",
+  "source_sha256": "5278595f963649634ad056b2af6a7acc7181f7065c1ba75aafdc5de6990e37e6",
+  "line_count": 2844,
+  "stories": [
+    {
+      "title": "甜蜜",
+      "start_line": 20,
+      "end_line": 34,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题后有作者署名和连续叙事，L34为结局正文，L36为编辑信息；内容偏爱情题材。"
+    },
+    {
+      "title": "头顶裸草",
+      "start_line": 217,
+      "end_line": 523,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L217为实际正文标题，后续多个重复栏目标题属于同一故事；L523明确出现最终答案，L525为编辑信息。"
+    },
+    {
+      "title": "晴天娃娃",
+      "start_line": 595,
+      "end_line": 857,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L595开始连续恐怖叙事，L737的“乱力怪谈”是栏目性分段标题而非新故事；正文延续至作者署名前，证据支持本篇完整结束。"
+    },
+    {
+      "title": "剥皮进行时",
+      "start_line": 862,
+      "end_line": 1054,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L862开始实际故事正文，后续“夜市窥探”“反击”“尾声”均为内部小节；L1054为结局正文，L1056为编辑信息。"
+    },
+    {
+      "title": "认错人了",
+      "start_line": 1065,
+      "end_line": 1339,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1065为实际故事标题，后续重复的“聊斋制异”及章节标题均属同一篇；L1339为结局正文，L1341为编辑信息。"
+    },
+    {
+      "title": "几岁了",
+      "start_line": 1630,
+      "end_line": 2101,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1630为故事标题（证据包标题有OCR疑似误识别），后续章节连续推进并有“尾声”；L2101为结局正文，L2103为编辑信息。"
+    },
+    {
+      "title": "（标题未识别）",
+      "start_line": 2105,
+      "end_line": 2119,
+      "confidence": 0.63,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据包仅识别出作者署名“文/徐瑾”，未识别故事标题；正文有明确开端和死亡结局，但标题及精确起点证据不足。"
+    },
+    {
+      "title": "传说",
+      "start_line": 2127,
+      "end_line": 2415,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2127开始实际恐怖故事，后续重复的“夜半三惊”及英文标题为栏目/排版分段；L2415为结局正文，L2416-L2417为作者与配图信息。"
+    },
+    {
+      "title": "惊变12小时",
+      "start_line": 2431,
+      "end_line": 2619,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2431开始本期连载正文，L2491等为内部章节；证据明确显示“上期回顾”和“下期预告”，并称下期迎来全文终结，因此本期不是完整结局。"
+    }
+  ],
+  "document_notes": "仅读取并依据 boundary_evidence 证据包，未打开或扫描原始 Markdown。已排除目录、编辑信息、答案、作者介绍、栏目内容、猜谜/预告及其他非独立小说内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "5278595f963649634ad056b2af6a7acc7181f7065c1ba75aafdc5de6990e37e6",
+    "evidence_only": true,
+    "duration_seconds": 145.4,
+    "generated_at": "2026-08-31T05:23:43+00:00"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "source_path": "悚族/《悚族》柜子里的咀嚼声.md",
+  "source_sha256": "9185d3ce1261d20e09ba75ab676465e2892c980eedf9e76ed389e1ab5cabe7e9",
+  "line_count": 2520,
+  "stories": [
+    {
+      "title": "无形的铁钩",
+      "start_line": 111,
+      "end_line": 667,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L111为被OCR误识的篇名及“文/蓝鸿”，L117-L596的一至七章属于同一故事；L667完成父亲将女儿整形成故人容貌的结局，L669起转入《祖母绿戒指》。"
+    },
+    {
+      "title": "祖母绿戒指",
+      "start_line": 669,
+      "end_line": 1139,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L669起为新篇题图，L672为“文挡泥板”，L673含被截损的篇名及第一节；L983的“六、我说：都是命。”是内部章节，L1139揭示叙述者身份并完整收束。"
+    },
+    {
+      "title": "蜕皮",
+      "start_line": 1141,
+      "end_line": 1502,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，L1141-L1145为题图区域，L1147为引语，L1149“绑架”是篇内小节；L1502的表格正文完成蜕皮术、李坤动机和齐蕊结局的揭示。"
+    },
+    {
+      "title": "柜子里的咀嚼声",
+      "start_line": 1504,
+      "end_line": 1955,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1504-L1512为新篇题图区域，L1514开始阎鹏等人的独立叙事；L1686“天花板。”只是被错误标成标题的跨行正文，L1955以三人均无法逃脱蛆虫灾祸作结。"
+    },
+    {
+      "title": "鬼脸谱",
+      "start_line": 1959,
+      "end_line": 2275,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录和封面确认篇名为《鬼脸谱》，L1959是OCR受损的正文题名，后续数字标题及多次“GUILIANPU”均为篇内分节或页眉；L2275以唐娟祭奠小鹤完整收束。"
+    },
+    {
+      "title": "楼兰美女",
+      "start_line": 2277,
+      "end_line": 2344,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，L2277-L2283为新篇题图区域，L2284为导语、L2286进入正文；L2344揭明干尸以愿望诱骗人血并复活的真相，下一行已切换到《黑乐园（上）》漫画残片。"
+    }
+  ],
+  "document_notes": "第二遍核对修正了第一遍的严重合并错误：L983是《祖母绿戒指》的第六节，L1149是《蜕皮》的篇内小节，L1686则是《柜子里的咀嚼声》中被误标为标题的跨行句子。封面、目录、编辑栏目“黑猫外传”、刊后问卷和广告均已排除；L2346后为目录标明的《漫画—黑乐园（上）》且正文从残句开始、没有本期结局，未列为完整小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9185d3ce1261d20e09ba75ab676465e2892c980eedf9e76ed389e1ab5cabe7e9",
+    "duration_seconds": 306.3,
+    "generated_at": "2026-08-31T11:10:49+00:00"
+  }
+}

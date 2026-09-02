@@ -1,0 +1,158 @@
+{
+  "source_path": "悚族/《悚族》完美女友.md",
+  "source_sha256": "614512d0ab20974bda814a28145cb34f3e4b9fcd28193e8c41a5706b9812f808",
+  "line_count": 3532,
+  "stories": [
+    {
+      "title": "白天鹅，黑天鹅",
+      "start_line": 205,
+      "end_line": 351,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "黑童话专题正文包含童话版及黑天鹅、白天鹅、巫师等连续反转视角，至新婚夜预示完成最终反转；后续为《翡翠连环》的古代戏班场景。"
+    },
+    {
+      "title": "翡翠连环",
+      "start_line": 359,
+      "end_line": 651,
+      "confidence": 0.85,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从古代戏班的翡翠发簪事件展开，转入现代翡翠店并揭示姐妹试探男人的真相；结局完整保存在第651行的表格化正文中。"
+    },
+    {
+      "title": "姐妹易血",
+      "start_line": 657,
+      "end_line": 1160,
+      "confidence": 0.85,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者信息因分页解析混入上一篇末尾，实际正文从谭欣枚的异常感受开始，至她被迫留在何源村及皮肤吸血的结局结束。"
+    },
+    {
+      "title": "瘦衣",
+      "start_line": 1166,
+      "end_line": 1518,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "吕小囡借纤体内衣减肥的故事连续展开，最终揭示朱青借二十一个灵魂复活并复仇，情节和结局完整。"
+    },
+    {
+      "title": "请按时来做头",
+      "start_line": 1522,
+      "end_line": 1840,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "开篇人头理发场景与后续朱丽、蔡雯和5号理发师的连续小节属于同一篇；至理发师每日向亡魂鞠躬并挥剪的结局结束，未包含随后黑匣子栏目的寓言导语。"
+    },
+    {
+      "title": "相亲",
+      "start_line": 1860,
+      "end_line": 1902,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及咖啡座相亲情节完整，结尾以女子已死且被前夫杀害形成明确反转。"
+    },
+    {
+      "title": "变心",
+      "start_line": 1906,
+      "end_line": 1948,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "黑匣子系列标题、作者署名和完整正文连续，末尾以丈夫真正变心及离婚收束。"
+    },
+    {
+      "title": "电梯里的父子",
+      "start_line": 1950,
+      "end_line": 1992,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和电梯情节边界清楚，悬浮男孩留下与叙述者继续游戏构成完整惊悚结局。"
+    },
+    {
+      "title": "激励",
+      "start_line": 1996,
+      "end_line": 2080,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "系列篇名和署名之后为连续正文，结尾揭示儿子早已死亡、杀害学生的是母亲本人，反转完整。"
+    },
+    {
+      "title": "妻子",
+      "start_line": 2082,
+      "end_line": 2144,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "系列标识、篇名、署名及正文连续，最终交代妻子利用地洞和河流制造富豪自杀假象，结局闭合。"
+    },
+    {
+      "title": "魔婴",
+      "start_line": 2148,
+      "end_line": 2490,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题被识别为“愿见”，但目录、婴儿核心情节和栏目提纲共同表明篇名为《魔婴》；故事至谭彭接到妻子怀孕电话并回扣因果结束。"
+    },
+    {
+      "title": "抢到死",
+      "start_line": 2496,
+      "end_line": 2785,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从第一节“机会是抢来的”开始的抢板凳故事连续至第2785行；孕妇主办人、鬼魂参赛者和后续冠军赛均已揭示，属于开放式恐怖结局而非缺失结尾。"
+    },
+    {
+      "title": "完美女友",
+      "start_line": 2793,
+      "end_line": 3084,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2793行的电脑网站场景是实际开篇，分页产生的“悚族”标题不是新故事；最终以林美美和肖莉莉寄居男性身体及题旨句完成结局。"
+    },
+    {
+      "title": "考试倒计时",
+      "start_line": 3086,
+      "end_line": 3438,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题的中文 OCR 有误，但拼音及各个倒计时章节确认篇名；考试进行时揭示答案年份错误并由警方锁定叙述者，已形成完整犯罪惊悚结局，第3440行转入拍照禁忌知识文章。"
+    }
+  ],
+  "document_notes": "第二遍依据原文边界独立复核后再对照第一遍。主要修正：将第一遍合并到第1534行的大段拆分为五篇完整小说；把《请按时来做头》结尾从栏目寓言后的第1858行收回第1840行；将《抢到死》与《完美女友》在第2785/2793行分开；确认《考试倒计时》已有警方揭示的完整结局。目录标题用于校正明显 OCR 误识别。已排除封面、征稿、目录、公告、栏目导语、拍照禁忌、测试和作者简介。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "614512d0ab20974bda814a28145cb34f3e4b9fcd28193e8c41a5706b9812f808",
+    "duration_seconds": 433.5,
+    "generated_at": "2026-08-31T11:11:54+00:00"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "source_path": "怖客/《怖客》2012年8月C版-违章停人.md",
+  "source_sha256": "de9b82d2e003fab2478b4342884422157e871d4047b8f4efc8c5b3331f6c3be2",
+  "line_count": 3618,
+  "stories": [
+    {
+      "title": "故事",
+      "start_line": 188,
+      "end_line": 698,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "校园鬼故事，有明确开端、发展和结局；内部小节标题均属同一故事。"
+    },
+    {
+      "title": "布条儿惊悚日记（合集）",
+      "start_line": 702,
+      "end_line": 1117,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录对应栏目且内容为惊悚日记类文字，但证据包未揭示内部篇目边界及最终正文边界。"
+    },
+    {
+      "title": "还我笔记本",
+      "start_line": 1125,
+      "end_line": 1436,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名、故事标题及连续章节结构明确，结尾在编辑署名前。"
+    },
+    {
+      "title": "定时外卖",
+      "start_line": 1442,
+      "end_line": 1626,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确的校园惊悚故事，包含完整情节和结局。"
+    },
+    {
+      "title": "有车有房",
+      "start_line": 1630,
+      "end_line": 1790,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "黑段子栏目中的完整惊悚短篇，正文以编辑署名前结束。"
+    },
+    {
+      "title": "职业病",
+      "start_line": 1794,
+      "end_line": 1845,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和惊悚叙事明确，但结尾为悬置式后续线索，无法确认本期完整收束。"
+    },
+    {
+      "title": "诡路不可停",
+      "start_line": 1849,
+      "end_line": 2125,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文含“尾声”并形成完整犯罪惊悚情节，尾声后接编辑信息。"
+    },
+    {
+      "title": "告别",
+      "start_line": 2133,
+      "end_line": 2143,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，正文和结局边界清晰。"
+    },
+    {
+      "title": "追回",
+      "start_line": 2149,
+      "end_line": 2448,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者信息和完整惊悚情节明确，结局在编辑署名前。"
+    },
+    {
+      "title": "分你的头",
+      "start_line": 2677,
+      "end_line": 2679,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖微型短篇，正文仅一段且边界明确。"
+    },
+    {
+      "title": "吃花生",
+      "start_line": 2681,
+      "end_line": 2683,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖微型短篇，后续行转入征文广告。"
+    },
+    {
+      "title": "讲故事",
+      "start_line": 2691,
+      "end_line": 2695,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立怪谈微型短篇，结尾在下一篇标题前。"
+    },
+    {
+      "title": "大个珍珠",
+      "start_line": 2697,
+      "end_line": 2705,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立黑色幽默恐怖短篇，正文完整。"
+    },
+    {
+      "title": "珍珠后传",
+      "start_line": 2707,
+      "end_line": 2711,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题标明为前篇后的独立续作，作者署名和正文边界明确。"
+    },
+    {
+      "title": "美好的猪样年华",
+      "start_line": 2715,
+      "end_line": 2719,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者信息明确，证据显示其正文在编辑署名前结束。"
+    },
+    {
+      "title": "中考前摸底考试",
+      "start_line": 3073,
+      "end_line": 3101,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "校园惊悚短篇，作者、标题和结局边界清晰。"
+    },
+    {
+      "title": "布条儿惊悚日记",
+      "start_line": 3105,
+      "end_line": 3113,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚日记体短篇，正文结束后接编辑信息。"
+    },
+    {
+      "title": "标题未见（前文提示）",
+      "start_line": 3123,
+      "end_line": 3464,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据明确标注“前文提示”，虽有“全文终”，但说明其为跨期连载内容，不能标为本期完整小说。"
+    }
+  ],
+  "document_notes": "仅读取并依据证据包完成识别，未打开或扫描原始 Markdown。文档前部主要为刊务、目录和栏目内容；证据对 2715—3071 段存在正文内部边界不足，未将其中无法确认的部分另行拆分。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "de9b82d2e003fab2478b4342884422157e871d4047b8f4efc8c5b3331f6c3be2",
+    "evidence_only": true,
+    "duration_seconds": 130.1,
+    "generated_at": "2026-08-31T05:18:01+00:00"
+  }
+}

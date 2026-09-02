@@ -1,0 +1,159 @@
+{
+  "source_path": "怖客/《怖客》2012年6月A版-传说为什么那么恐怖.md",
+  "source_sha256": "4a88c15d8a36dea30ef6f8488683f74732a5ba8cdd51d13b023cda7d41e8fca0",
+  "line_count": 3569,
+  "stories": [
+    {
+      "title": "要你我",
+      "start_line": 52,
+      "end_line": 96,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文从标题及作者署名开始，结局完整。"
+    },
+    {
+      "title": "青梅竹马的陷阱",
+      "start_line": 247,
+      "end_line": 295,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "目录后的正文实际起点，独立短篇，内容偏校园/情感及写作趣味，不属于目标类型。"
+    },
+    {
+      "title": "睡在床下的人",
+      "start_line": 299,
+      "end_line": 672,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "后续章节“请帮我杀死那个我”“种下你的梦中情人”属于同一连续故事，结尾为完整恐怖收束。"
+    },
+    {
+      "title": "11月10日",
+      "start_line": 676,
+      "end_line": 1319,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续恐怖故事，包含多个小节；末尾仍留下明显未解决的生日赌局和后续悬念，不能确认本期完结。"
+    },
+    {
+      "title": "母亲的遗物",
+      "start_line": 1321,
+      "end_line": 1356,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，作者署名紧邻标题，正文以照片揭示作结。"
+    },
+    {
+      "title": "种老师",
+      "start_line": 1460,
+      "end_line": 1867,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“圣诞艳遇”“谁在控制？”“如影随形”“魅影魔踪”为同一连续故事的小节，末尾有编辑署名并形成阶段性结局。"
+    },
+    {
+      "title": "唇膏",
+      "start_line": 1875,
+      "end_line": 1889,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“女生物件·小惊悚”栏目中的独立完整微型恐怖故事。"
+    },
+    {
+      "title": "护手霜",
+      "start_line": 1893,
+      "end_line": 1915,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "栏目中的独立完整微型恐怖故事，以反转场景收束。"
+    },
+    {
+      "title": "落发",
+      "start_line": 1919,
+      "end_line": 1953,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "栏目中的独立完整微型恐怖故事，正文在下一篇作者署名前结束。"
+    },
+    {
+      "title": "谈谈恐惧",
+      "start_line": 1957,
+      "end_line": 2201,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖故事，正文以事件解释和恢复正常作结。"
+    },
+    {
+      "title": "折断你的手",
+      "start_line": 2210,
+      "end_line": 2430,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“接下来的内容”“吴菲菲的死”“折断你的身体”“最后的心愿”均为同一连续恐怖故事的小节，结尾完整。"
+    },
+    {
+      "title": "标题缺失的寻骨游戏续篇",
+      "start_line": 2689,
+      "end_line": 3243,
+      "confidence": 0.65,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示有“前情提要”和连续章节，明显是长篇恐怖故事续篇；证据包未显示正式故事标题，末尾疑似未完。"
+    },
+    {
+      "title": "富江・森田医院篇",
+      "start_line": 3251,
+      "end_line": 3367,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文明确以“富江・森田医院完”结束。"
+    },
+    {
+      "title": "梦想成真",
+      "start_line": 3375,
+      "end_line": 3391,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "以惊悚日记/亲历口吻呈现的完整灵异叙事，正文在读者问卷前结束。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。已排除封面、目录、栏目说明、编辑整理、作者资料、读者问卷、广告及下期预告；将连续故事的小节合并，并将证据显示未完或标题缺失的部分标为 installment/低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "4a88c15d8a36dea30ef6f8488683f74732a5ba8cdd51d13b023cda7d41e8fca0",
+    "evidence_only": true,
+    "duration_seconds": 250.1,
+    "generated_at": "2026-08-31T05:18:44+00:00"
+  }
+}

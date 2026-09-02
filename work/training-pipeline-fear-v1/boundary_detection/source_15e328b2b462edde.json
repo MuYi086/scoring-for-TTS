@@ -1,0 +1,99 @@
+{
+  "source_path": "悚族/《悚族》华尔兹尸舞.md",
+  "source_sha256": "6d9d0d862f0329a5c6fac7a3a98df568b6cdc61b95eae53a2b6ad0fa0ba1c64a",
+  "line_count": 3830,
+  "stories": [
+    {
+      "title": "我的笔友不是人",
+      "start_line": 225,
+      "end_line": 1181,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文段落首尾连续，结尾与目录中该篇局部正文相互印证；排除了前置目录条目。"
+    },
+    {
+      "title": "爱情魔典",
+      "start_line": 1191,
+      "end_line": 1540,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "以正文引子开始，后续章节连续至反转式结尾；目录中的同名条目不是正文起点。"
+    },
+    {
+      "title": "猫杀",
+      "start_line": 1546,
+      "end_line": 1811,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "实际正文从作者署名所在段开始，后续章节连续并在1811结束，内容为犯罪惊悚故事。"
+    },
+    {
+      "title": "陶人",
+      "start_line": 1815,
+      "end_line": 2041,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从作者署名段开始，章节连续至2041；标题主要依据目录与正文主题判定。"
+    },
+    {
+      "title": "芭蕉藏鬼",
+      "start_line": 2043,
+      "end_line": 2335,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文围绕徐驰等人物连续展开并在2335收束；2337为明显的非小说转换残留，未计入边界。"
+    },
+    {
+      "title": "脑虫",
+      "start_line": 2343,
+      "end_line": 2775,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "分段正文从Part.01连续至最终反转段，具备完整开端与结尾。"
+    },
+    {
+      "title": "罗生门",
+      "start_line": 2785,
+      "end_line": 3171,
+      "confidence": 0.87,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从实际故事标题段开始，包含楔子及后续章节，至3171明确收束；标题依据目录与正文标题段综合判定。"
+    },
+    {
+      "title": "青衣怨",
+      "start_line": 3179,
+      "end_line": 3579,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文在3579结束，但3581明确出现“下辑预告”，说明本期仅为连载片段，预告不计入故事终点。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。排除了目录、采访、声明、编辑部栏目、书目与其他刊后内容；目录中的“华尔兹尸舞”未发现对应正文段，因此未列入stories。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6d9d0d862f0329a5c6fac7a3a98df568b6cdc61b95eae53a2b6ad0fa0ba1c64a",
+    "evidence_only": true,
+    "duration_seconds": 174.8,
+    "generated_at": "2026-08-31T05:28:48+00:00"
+  }
+}

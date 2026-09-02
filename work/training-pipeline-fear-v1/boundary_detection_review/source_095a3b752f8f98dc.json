@@ -1,0 +1,86 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-杀戮地带.md",
+  "source_sha256": "6b4ca41b454f38e9250a819be2922620cd86d0aa005acf42c28e1d44b88ff057",
+  "line_count": 3505,
+  "stories": [
+    {
+      "title": "别浪费水呀！",
+      "start_line": 145,
+      "end_line": 153,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文有明确标题、完整叙事与结局。"
+    },
+    {
+      "title": "地下凶邻",
+      "start_line": 382,
+      "end_line": 727,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，后续无标题段落与前文连续，末尾为完整的灵异解释与警告。"
+    },
+    {
+      "title": "火车司机",
+      "start_line": 729,
+      "end_line": 978,
+      "confidence": 0.2,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "729行标题及火车司机正文起点明确；但局部尾窗948至978行已经转为夏洛特、未来测试机器和杀手的另一篇故事，所   谓死亡游戏倒计时并非《火车司机》的结局。证据包未覆盖两篇之间的准确切换位置，无法安全修正《火车司机》的终点或判断其   完整性。"
+    },
+    {
+      "title": "小玉的故事",
+      "start_line": 980,
+      "end_line": 1482,
+      "confidence": 0.86,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确且正文连续，但结尾以新的悬念对白收束，明显像连载片段。"
+    },
+    {
+      "title": "半魂",
+      "start_line": 1486,
+      "end_line": 1601,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题后开始，结尾回到现实并完成梦境经历的收束。"
+    },
+    {
+      "title": "慾心",
+      "start_line": 1925,
+      "end_line": 2327,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和正文边界明确；末段完成诺姬牺牲救回小宸的高潮与告别，随后即为广告，故可判为完整结局。"
+    },
+    {
+      "title": "日月潭惊魂记",
+      "start_line": 3085,
+      "end_line": 3107,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，正文包含完整经历、事后解释和结尾警告。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。《火车司机》的局部   尾窗明确属于另一篇未来测试机器故事，但证据未覆盖两篇之间的准确边界，因此保留 uncertain 并显著降低置信度；未凭猜测   新增证据包中没有明确边界的故事。",
+  "_provenance": {
+    "stage": "manual_story_boundaries_review",
+    "model": "manual-sol",
+    "reasoning_effort": "manual",
+    "speed": "standard",
+    "input_sha256": "6b4ca41b454f38e9250a819be2922620cd86d0aa005acf42c28e1d44b88ff057",
+    "imported_at": "2026-09-01T11:16:01+00:00"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.02.md",
+  "source_sha256": "70f2f3c23e52508fae4da677e861d9069da2122e575cc7e9bdfd6c3395507df3",
+  "line_count": 3143,
+  "stories": [
+    {
+      "title": "周法官的婚事",
+      "start_line": 796,
+      "end_line": 1582,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题及作者署名从796行开始，章节二至十三均为同一故事；1582行后仅见责任编辑和插图信息，故事正文边界清晰。"
+    },
+    {
+      "title": "轻舟已过",
+      "start_line": 1590,
+      "end_line": 2212,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及连续章节明确属于同一篇犯罪题材小说，但证据包显示末段混入王培东纪实文章内容，无法可靠确认小说结局行。"
+    },
+    {
+      "title": "AI 与四蛇文身",
+      "start_line": 2520,
+      "end_line": 2967,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名从2520行开始，第二至七节均为同一灵异犯罪故事；2967行完成案件破获叙述，下一标题从2969行开始。"
+    },
+    {
+      "title": "绝望的蜂房",
+      "start_line": 3075,
+      "end_line": 3087,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者及连续叙事明确表明为小说片段，但证据包末尾在句中截断，未显示完整结局。"
+    }
+  ],
+  "document_notes": "严格仅读取证据包，未打开或扫描原始 Markdown。目录中的“华东八室”之古城谍影、万竹山往事和峥嵘岁月仅在目录或导读中出现，证据包未显示对应正文，因此未列入。轻舟已过的末段存在明显跨文章污染，故标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "70f2f3c23e52508fae4da677e861d9069da2122e575cc7e9bdfd6c3395507df3",
+    "evidence_only": true,
+    "duration_seconds": 107.1,
+    "generated_at": "2026-08-30T11:18:48+00:00"
+  }
+}

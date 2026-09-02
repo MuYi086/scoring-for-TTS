@@ -1,0 +1,49 @@
+{
+  "source_path": "悚族/《悚族》柜子里的咀嚼声.md",
+  "source_sha256": "9185d3ce1261d20e09ba75ab676465e2892c980eedf9e76ed389e1ab5cabe7e9",
+  "line_count": 2520,
+  "stories": [
+    {
+      "title": "元形的生化",
+      "start_line": 111,
+      "end_line": 981,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L111为标题及作者署名，后续包含连续编号章节一至七，L981为故事收束性结尾；属于恐怖惊悚小说。"
+    },
+    {
+      "title": "我说：都是命。",
+      "start_line": 983,
+      "end_line": 1955,
+      "confidence": 0.76,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L983从“六”开始，明显缺少前文；后续“绑架”“天花板”属于同一连续叙事，L1955有阶段性结尾，但本期片段缺开头。"
+    },
+    {
+      "title": "鬼月龙语",
+      "start_line": 1959,
+      "end_line": 2457,
+      "confidence": 0.52,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1959为故事题名，L1961起为连续章节叙事，内容明显属于校园怪谈；但证据包显示L2455-L2457已混入读者来信等刊后内容，无法精确确认结局正文边界。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未打开或扫描原始 Markdown。目录、封面/栏目内容、广告及刊后内容已排除；第三篇的结尾边界证据不足，因此标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9185d3ce1261d20e09ba75ab676465e2892c980eedf9e76ed389e1ab5cabe7e9",
+    "evidence_only": true,
+    "duration_seconds": 126.6,
+    "generated_at": "2026-08-31T05:32:53+00:00"
+  }
+}

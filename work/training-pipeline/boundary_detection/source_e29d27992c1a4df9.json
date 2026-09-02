@@ -1,0 +1,69 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.01.md",
+  "source_sha256": "a96e2009ff6de5431eb87ff3b3e9cf80b7a1ef53ac996f6044f92cfea8d7c951",
+  "line_count": 6260,
+  "stories": [
+    {
+      "title": "峥嵘岁月",
+      "start_line": 188,
+      "end_line": 3011,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇小说连载，含第一至第七章但本期未见结局；章节标题均属同一小说。"
+    },
+    {
+      "title": "邮轮驰向夕阳",
+      "start_line": 3795,
+      "end_line": 4308,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有标题、作者署名及连续十三章正文，内容围绕退休刑警和案件线索展开；4308为刊后责任编辑信息前的结局正文。"
+    },
+    {
+      "title": "雪落黔西北",
+      "start_line": 4316,
+      "end_line": 4580,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有标题、作者署名及完整叙事，结尾完成追捕并收束人物关系；4580为责任编辑和插图信息前的正文末行。"
+    },
+    {
+      "title": "镜像",
+      "start_line": 4587,
+      "end_line": 6054,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "刑侦推理小说，含连续章节至第十七章，明确出现案件告破并完成后续收束；6054为刊后责任编辑信息前的正文末行。"
+    },
+    {
+      "title": "大饭店",
+      "start_line": 6152,
+      "end_line": 6184,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及疑似侦探俱乐部短篇正文明确，但证据包未展示结局正文，无法充分确认是否完整；6184为责任编辑信息前的推定正文末行。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未读取或扫描原始 Markdown。已排除杂志前置资料、目录、导读、公安纪实文章、讲话、答案、下期要目及刊后信息；责任编辑和插图信息未计入故事边界。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "a96e2009ff6de5431eb87ff3b3e9cf80b7a1ef53ac996f6044f92cfea8d7c951",
+    "evidence_only": true,
+    "duration_seconds": 129.2,
+    "generated_at": "2026-08-30T11:19:08+00:00"
+  }
+}

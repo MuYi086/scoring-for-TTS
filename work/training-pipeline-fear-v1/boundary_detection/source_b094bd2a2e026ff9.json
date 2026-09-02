@@ -1,0 +1,99 @@
+{
+  "source_path": "悚族/《悚族》换命骷髅花.md",
+  "source_sha256": "d1fa2a57ae9e997e0f3c1b08e24c31599b43b990482a83f9f5e16a3491f9f75e",
+  "line_count": 2465,
+  "stories": [
+    {
+      "title": "都是微博惹的祸",
+      "start_line": 22,
+      "end_line": 69,
+      "confidence": 0.77,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "有独立标题、作者署名及完整段落；证据显示以微博对话为主，未充分证明属于目标类型。"
+    },
+    {
+      "title": "头号粉丝",
+      "start_line": 73,
+      "end_line": 791,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名紧邻正文，正文跨多个页眉/小节并以恐怖情节收束；目录中的同名项仅作题名佐证。"
+    },
+    {
+      "title": "QQ头像",
+      "start_line": 797,
+      "end_line": 1108,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题起始明确，后续数字章节属于同一故事，末段完成情节收束。"
+    },
+    {
+      "title": "纸心",
+      "start_line": 1112,
+      "end_line": 1158,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名起始明确，正文以遗言和死亡情节结束；末尾署名/插图信息未计入边界。"
+    },
+    {
+      "title": "每个女孩都是一朵花，每朵花都是一个美丽的愿望。",
+      "start_line": 1164,
+      "end_line": 1452,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文连续跨多个内部小节，包含完整开端、发展与结局，末行回扣主题。"
+    },
+    {
+      "title": "电梯",
+      "start_line": 1454,
+      "end_line": 1490,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名紧邻，正文为独立恐怖短篇并在电梯事故后收束。"
+    },
+    {
+      "title": "蜜蜂",
+      "start_line": 1492,
+      "end_line": 1606,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，正文为独立怪谈短篇并以任务完成收束。"
+    },
+    {
+      "title": "索命咒（二）",
+      "start_line": 1608,
+      "end_line": 2148,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确标为《索命咒（二）》；正文以“四天之内必死”的悬念结束，且紧接下期预告，属于未完连载。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未打开或扫描原始 Markdown。已排除广告、栏目互动、调查表、目录、下期预告及其他刊后内容；页眉式重复标题和内部章节均并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "d1fa2a57ae9e997e0f3c1b08e24c31599b43b990482a83f9f5e16a3491f9f75e",
+    "evidence_only": true,
+    "duration_seconds": 176.5,
+    "generated_at": "2026-08-31T05:33:08+00:00"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼故事》军灯门口的石狮.md",
+  "source_sha256": "ddc1218ea7199ffcfb265c84c575f572181bd3da17e9c1e4d1620b1ffbb7e69c",
+  "line_count": 2364,
+  "stories": [
+    {
+      "title": "琴好",
+      "start_line": 83,
+      "end_line": 555,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含连续章节（二至五）及完整结尾；中间“无限刺激”是栏目插入，不构成新故事。"
+    },
+    {
+      "title": "我们学校发生的诡异事件",
+      "start_line": 561,
+      "end_line": 573,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "第一人称校园灵异事件叙述，文末明确收束；按其自述真实事件归为叙事非虚构。"
+    },
+    {
+      "title": "恐怖画室",
+      "start_line": 577,
+      "end_line": 651,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接正文及第二部分，末行明确完成故事收束。"
+    },
+    {
+      "title": "网吧里看鬼故事",
+      "start_line": 655,
+      "end_line": 663,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "短篇正文完整，末尾为明确的警示式结局。"
+    },
+    {
+      "title": "魔幻香薰",
+      "start_line": 665,
+      "end_line": 1085,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续叙事至完整收束段落，下一标题为另一篇内容。"
+    },
+    {
+      "title": "杀人电影录像带",
+      "start_line": 1091,
+      "end_line": 1378,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文连续，末尾事件与人物均完成收束。"
+    },
+    {
+      "title": "木头人",
+      "start_line": 1384,
+      "end_line": 1777,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "包含一至四章及中间栏目标题，末章以“向光明走去”收束。"
+    },
+    {
+      "title": "太平间的新娘",
+      "start_line": 1783,
+      "end_line": 1892,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题后的引子开始，末尾明确交代后续受害者，故事完整结束。"
+    },
+    {
+      "title": "蛇臭",
+      "start_line": 1896,
+      "end_line": 1956,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续灵异叙事，末行完成死亡结局。"
+    },
+    {
+      "title": "半夜之诡事－凌晨十二点",
+      "start_line": 1960,
+      "end_line": 1994,
+      "confidence": 0.76,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文尾部停在“几乎都能梦到……”的未完句，疑似缺少结尾，不能标为完整。"
+    },
+    {
+      "title": "军火厂门口的石狮",
+      "start_line": 2342,
+      "end_line": 2358,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "后段出现独立正文并有明确结尾；前部相近标题带目录/刊物元数据特征，未作为正文起点。"
+    }
+  ],
+  "document_notes": "仅依据边界证据包判定，未打开或扫描原始 Markdown。已排除目录、栏目知识内容及刊后元数据；前部“军灯门口的石狮”相近标题未采用，选择后段实际完整正文位置。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ddc1218ea7199ffcfb265c84c575f572181bd3da17e9c1e4d1620b1ffbb7e69c",
+    "evidence_only": true,
+    "duration_seconds": 121.7,
+    "generated_at": "2026-08-31T05:43:25+00:00"
+  }
+}

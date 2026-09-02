@@ -1,0 +1,149 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2002年04.md",
+  "source_sha256": "628887f82f60f7c828d1c1e15a35ea36fdd938f482d8f0a3c276643e56d8556e",
+  "line_count": 2837,
+  "stories": [
+    {
+      "title": "水孩子",
+      "start_line": 180,
+      "end_line": 365,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及连续叙事明确，末尾为故事结局。"
+    },
+    {
+      "title": "羊的悲剧",
+      "start_line": 369,
+      "end_line": 417,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "寓言式完整故事；L401为同一故事的续接标题，不是新故事。"
+    },
+    {
+      "title": "八戒的最后情书",
+      "start_line": 473,
+      "end_line": 501,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题与连续叙事明确，属于爱情/喜剧短篇。"
+    },
+    {
+      "title": "飞鹰行动",
+      "start_line": 503,
+      "end_line": 580,
+      "confidence": 0.72,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "多段章节组成同一喜剧性叙事；故事标题在正文中段出现，起点据前置章节推定。"
+    },
+    {
+      "title": "因为爱了。所以离开",
+      "start_line": 582,
+      "end_line": 658,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "六个小节连续组成同一爱情短篇，L658为结局。"
+    },
+    {
+      "title": "冰美人——可可",
+      "start_line": 678,
+      "end_line": 829,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、连续校园叙事和收束段明确。"
+    },
+    {
+      "title": "人生攻略",
+      "start_line": 831,
+      "end_line": 1213,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "多个小节围绕罗威的人生攻略连续展开，L1213为栏目页脚而非正文；故事在此前收束。"
+    },
+    {
+      "title": "我被枪毙三个月",
+      "start_line": 1627,
+      "end_line": 1739,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "警察视角的完整讽刺科幻故事；结尾位于答案表格前，具体末行依据证据包中的分隔位置推定。"
+    },
+    {
+      "title": "罗迪教授",
+      "start_line": 1767,
+      "end_line": 1933,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题排版有 OCR 分裂，但作者署名、连续科幻叙事及结局清楚。"
+    },
+    {
+      "title": "变声的嗓子",
+      "start_line": 1945,
+      "end_line": 2045,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "围绕车祸、异常嗓音和加密文本展开的悬疑/科幻短篇；L2048为作者署名，正文结局在L2045。"
+    },
+    {
+      "title": "复",
+      "start_line": 2050,
+      "end_line": 2110,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立短篇，围绕复仇幻想成真展开，L2110为结局。"
+    },
+    {
+      "title": "远古的遭遇",
+      "start_line": 2112,
+      "end_line": 2163,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立的荒诞科幻短篇，开端、反转和结局均在本期。"
+    },
+    {
+      "title": "谁摸了我一下",
+      "start_line": 2169,
+      "end_line": 2514,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "恐怖小说，多个章节连续构成同一故事；L2518为页脚，正文及结尾说明止于L2514。"
+    }
+  ],
+  "document_notes": "首轮仅依据完整证据包判定，未打开或扫描原始 Markdown。证据包显示本期包含多篇完整短篇；其中“飞鹰行动”和“我被枪毙三个月”的精确正文起止存在排版/分隔推定，因此置信度较低。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "628887f82f60f7c828d1c1e15a35ea36fdd938f482d8f0a3c276643e56d8556e",
+    "evidence_only": true,
+    "duration_seconds": 274.8,
+    "generated_at": "2026-08-30T13:26:36+00:00"
+  }
+}

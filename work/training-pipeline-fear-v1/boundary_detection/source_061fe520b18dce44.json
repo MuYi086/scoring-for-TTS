@@ -1,0 +1,69 @@
+{
+  "source_path": "悚族/《悚族》七日监禁.md",
+  "source_sha256": "8260a5e8cd9606bc6a0bbd184e32adf5ab785ed226fb1d1a52ec687e1df94142",
+  "line_count": 2162,
+  "stories": [
+    {
+      "title": "楼道里的白影",
+      "start_line": 14,
+      "end_line": 217,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题及作者署名后开始，持续为完整灵异故事，结尾在 L217 收束。"
+    },
+    {
+      "title": "七日监禁",
+      "start_line": 219,
+      "end_line": 413,
+      "confidence": 0.72,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文段以“第四天”开篇，明显缺少故事开头；标题依据正文后栏目索引中的“七日监禁”推定，结尾仍属悬疑收束，不能认定为完整篇目。"
+    },
+    {
+      "title": "凶稿",
+      "start_line": 417,
+      "end_line": 1044,
+      "confidence": 0.67,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从“嘲讽”段开始形成连续恐怖故事，并有“尾声”标记；标题依据后文栏目索引推定。L1044 末句在图片内容前截断，无法确认结尾是否完整。"
+    },
+    {
+      "title": "小开灯的寝室",
+      "start_line": 1050,
+      "end_line": 1440,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1050-L1054 构成故事标题，L1056 起为连续四章正文，L1440 为结局性收束。"
+    },
+    {
+      "title": "2 时白相机",
+      "start_line": 1444,
+      "end_line": 1795,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1444 标题及作者署名后开始连续相机题材惊悚故事，章节推进至 L1795 回环收束；L1797 起为刊后编辑部内容。"
+    }
+  ],
+  "document_notes": "本次仅读取 boundary_evidence 证据包，未打开或扫描原始 Markdown。证据覆盖全部标题及各段首尾正文；其中“七日监禁”“凶稿”的正文标题需依据后文索引推定，且前者明显从第四天开始、后者结尾在图片前截断，因此分别标为 installment 和 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "8260a5e8cd9606bc6a0bbd184e32adf5ab785ed226fb1d1a52ec687e1df94142",
+    "evidence_only": true,
+    "duration_seconds": 145.7,
+    "generated_at": "2026-08-31T05:26:06+00:00"
+  }
+}

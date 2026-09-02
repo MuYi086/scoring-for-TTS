@@ -1,0 +1,198 @@
+{
+  "source_path": "怖客/《怖客》2010年11月厄运连连看.md",
+  "source_sha256": "9f402c74a3b91fbc122e4ad5045a577478ef885df7b97b2055420f4099421886",
+  "line_count": 4303,
+  "stories": [
+    {
+      "title": "匣子里的爱",
+      "start_line": 11,
+      "end_line": 63,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录篇名与红木匣子情节相符；标题、署名及完整灵异爱情结局边界清楚，Markdown 标题“电子里的爱”应为识别误差。"
+    },
+    {
+      "title": "香水有毒",
+      "start_line": 224,
+      "end_line": 548,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录给出总篇名；“疯子妹妹”至“装疯才可怕”是同一小说的连续章节，最终以孙涵遇袭收束。"
+    },
+    {
+      "title": "瓜子脸",
+      "start_line": 554,
+      "end_line": 932,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从紧邻总标题的作者署名开始；“瓜子摊”等多个小节人物与情节连续，至张钰身份揭晓完整结束。"
+    },
+    {
+      "title": "不只是故事",
+      "start_line": 938,
+      "end_line": 1297,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "美容店框架及其中故事共同构成一篇小说，结尾回到框架叙事并在编辑信息前收束。"
+    },
+    {
+      "title": "亡灵牌局",
+      "start_line": 1303,
+      "end_line": 1666,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录和残缺标题共同确定总篇名；牌局各小节属于同一连续故事，结局完整。"
+    },
+    {
+      "title": "姥姥的电话",
+      "start_line": 1670,
+      "end_line": 1697,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "以读者亲历口吻讲述完整灵异经历，末句疑问为收束，编辑信息不计入正文。"
+    },
+    {
+      "title": "妻子",
+      "start_line": 1705,
+      "end_line": 1741,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由目录确定，正文从紧邻标题的作者署名开始，以报纸照片揭示妻子已死，结局完整。"
+    },
+    {
+      "title": "飘车",
+      "start_line": 1749,
+      "end_line": 1771,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“黑段子加工厂”下的第一篇独立微型小说；篇名来自目录，撞车亡魂追索的反转在编辑信息前结束。"
+    },
+    {
+      "title": "西装",
+      "start_line": 1779,
+      "end_line": 1819,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "与前后段人物和情节均独立；篇名来自目录，以人与塑料模特互换完成反转。"
+    },
+    {
+      "title": "证据",
+      "start_line": 1825,
+      "end_line": 1893,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从作者署名开始，麦冬及照片、血衣情节连续；中途“远摇”为错误标题识别，不是新故事。"
+    },
+    {
+      "title": "墨水",
+      "start_line": 1901,
+      "end_line": 1923,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名、篇名和独立恐怖反转均明确，编辑信息从结尾排除。"
+    },
+    {
+      "title": "厄运连连看",
+      "start_line": 1931,
+      "end_line": 2345,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总篇名由目录确定；“我在左边等你”“你看不见我”等均为白小白故事的连续章节，不能拆分。"
+    },
+    {
+      "title": "你还是没看透",
+      "start_line": 2458,
+      "end_line": 2710,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录校正了标题识别错误；各小节围绕赵晓蕊连续展开，最终揭示其阴谋并完整收束。"
+    },
+    {
+      "title": "不能得罪的财神爷",
+      "start_line": 2714,
+      "end_line": 2722,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "独立的第一人称亲历短篇，标题与署名同处起始行，在编辑信息前结束。"
+    },
+    {
+      "title": "鬼影",
+      "start_line": 2726,
+      "end_line": 2740,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "目录篇名、作者及亲历内容相符，Markdown 的“电影”应为“鬼影”的识别错误；该篇在编辑信息前独立结束。"
+    },
+    {
+      "title": "离开这所学校",
+      "start_line": 2748,
+      "end_line": 3302,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总篇名位于未转写的图文区域，目录可确认；“诡异纸条”“请你走开”至“尾声”是同一校园灵异小说。"
+    },
+    {
+      "title": "人头",
+      "start_line": 3308,
+      "end_line": 3443,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从总篇名附近的作者署名开始；“飞来人头”“水落石出”“疑神疑诡”是同一犯罪惊悚短篇的章节。"
+    },
+    {
+      "title": "转角凶灵（上）",
+      "start_line": 3447,
+      "end_line": 4090,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“上”，正文以“未完待续”结束；下期提要及编辑信息均未并入。"
+    }
+  ],
+  "document_notes": "第二遍独立裁决确认第一遍漏掉了《瓜子脸》，误将《厄运连连看》拆成两篇，误把《香水有毒》和《人头》的章节名当作总篇名，并错误合并了《鬼影》与《离开这所学校》。同时将“黑段子加工厂”下的《飘车》《西装》《证据》拆为独立微型小说，未把中途的错误标题“远摇”另立为故事。目录、广告、作者访谈、问卷、下期提要等非故事内容均已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9f402c74a3b91fbc122e4ad5045a577478ef885df7b97b2055420f4099421886",
+    "duration_seconds": 271.9,
+    "generated_at": "2026-08-30T13:30:48+00:00"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2012年08.md",
+  "source_sha256": "8ff574240bf6847a2453155ba20c3ed9e876f74c6228c098de11ce267662bcf1",
+  "line_count": 4778,
+  "stories": [
+    {
+      "title": "灵感",
+      "start_line": 23,
+      "end_line": 495,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "引言及“一”至“五”连续围绕同一案件与灵感主题展开，结局明确；章节标题属于同一小说。"
+    },
+    {
+      "title": "黑伞",
+      "start_line": 497,
+      "end_line": 605,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续的校园恐怖情节，含多个编号小节并在黑伞结局处收束。"
+    },
+    {
+      "title": "愚人",
+      "start_line": 607,
+      "end_line": 933,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "part 1至part 14构成连续故事，L933以托马斯引语和“愚人节礼物”呼应开篇并明确收束；L935已切换至下一篇《梳妆   台》的内容。"
+    },
+    {
+      "title": "梳妆台",
+      "start_line": 937,
+      "end_line": 1185,
+      "confidence": 0.83,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“梳妆台”“山”“五”段落围绕李维、曾佳丽及梳妆台连续展开，结局与后续询问形成收束。"
+    },
+    {
+      "title": "便宜鬼",
+      "start_line": 1187,
+      "end_line": 1437,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "三个同名段落连续讲述同一犯罪悬疑故事，L1437为案件处理后的收束。"
+    },
+    {
+      "title": "我最讨厌多嘴多舌的人",
+      "start_line": 2169,
+      "end_line": 2401,
+      "confidence": 0.2,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2169是正文标题，L2171起已进入该故事，故起点前移；局部证据显示L2371附近已切换到另一组人物和情节，但未包   含可确定精确切换行的证据，因此暂不猜测修正尾界，并将完整性保留为uncertain。"
+    },
+    {
+      "title": "错误的",
+      "start_line": 2403,
+      "end_line": 2525,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "犯罪悬疑连载，含01至06节，末尾停在进行中的场景，明显缺少结尾。"
+    },
+    {
+      "title": "死神的剧本",
+      "start_line": 2733,
+      "end_line": 3067,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "章节1至8及后记构成完整犯罪悬疑故事，案件审理和主题均已明确结束。"
+    },
+    {
+      "title": "夺命DNA",
+      "start_line": 3230,
+      "end_line": 3286,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立科幻惊悚短篇，结尾形成明确的悬念式收束。"
+    },
+    {
+      "title": "死神的伪装",
+      "start_line": 3288,
+      "end_line": 3326,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的死神主题惊悚短篇，首尾完整。"
+    },
+    {
+      "title": "七杀（一）",
+      "start_line": 3328,
+      "end_line": 3388,
+      "confidence": 0.84,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“（一）”；局部证据显示L3358后的“第二杀”仍属同一篇，至L3388完成该小节，故合并并保留连载属   性。"
+    },
+    {
+      "title": "夜营星云",
+      "start_line": 3413,
+      "end_line": 4059,
+      "confidence": 0.93,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含上期回顾及第八章后续小节，结尾接下期预告，且明显缺少完整开端与结局。"
+    },
+    {
+      "title": "夜营星云",
+      "start_line": 4065,
+      "end_line": 4759,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "CHAPTER 22至24为同一连载的后续章节，起点缺少本期小说标题和开端，末尾仍未结局。"
+    }
+  ],
+  "document_notes": "依据第一遍结果、自动复核结果及局部证据包复核；未读取原始整期Markdown。《愚人》的结尾已确定为   L933；《我最讨厌多嘴多舌的人》的起点修正为L2169，但局部包不足以确定其与后续故事的精确切换行，因此保留uncertain并降   低置信度。",
+  "_provenance": {
+    "stage": "manual_story_boundaries_review",
+    "model": "manual-sol",
+    "reasoning_effort": "manual",
+    "speed": "standard",
+    "input_sha256": "8ff574240bf6847a2453155ba20c3ed9e876f74c6228c098de11ce267662bcf1",
+    "imported_at": "2026-09-01T11:16:01+00:00"
+  }
+}

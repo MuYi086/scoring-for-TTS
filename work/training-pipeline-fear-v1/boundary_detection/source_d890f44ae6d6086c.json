@@ -1,0 +1,229 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-精变.md",
+  "source_sha256": "e0b17a5d0cadb178197b2f901bdd3e41236627bbb7d5c56e9efb9a832465a3bf",
+  "line_count": 1832,
+  "stories": [
+    {
+      "title": "午夜凶铃之 草娃娃",
+      "start_line": 178,
+      "end_line": 282,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题后开始，包含完整恐怖情节与收束性的尾声。"
+    },
+    {
+      "title": "桥下的白色人影",
+      "start_line": 284,
+      "end_line": 322,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异故事，首尾完整。"
+    },
+    {
+      "title": "不要背叛我",
+      "start_line": 324,
+      "end_line": 350,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立犯罪惊悚故事，结局明确。"
+    },
+    {
+      "title": "租屋里的诡异镜相",
+      "start_line": 352,
+      "end_line": 406,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与正文对应，但段尾为不完整句，疑似存在边界或排版错位。"
+    },
+    {
+      "title": "外婆带回家了",
+      "start_line": 408,
+      "end_line": 442,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立乡村灵异故事，结尾有明确回收与总结。"
+    },
+    {
+      "title": "死神之吻",
+      "start_line": 444,
+      "end_line": 472,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立校园恐怖故事，结尾完成事件收束。"
+    },
+    {
+      "title": "厕所里的尸体",
+      "start_line": 474,
+      "end_line": 535,
+      "confidence": 0.48,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和前部正文明确，但段尾内容为不完整句且与下一标题正文疑似连续，无法确认完整边界。"
+    },
+    {
+      "title": "夜半我等你",
+      "start_line": 537,
+      "end_line": 581,
+      "confidence": 0.55,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文开头承接上一段，疑似缺少故事开端；结尾虽有事件收束，整体完整性不能确认。"
+    },
+    {
+      "title": "最血腥的美容方法",
+      "start_line": 583,
+      "end_line": 619,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖故事，围绕血腥美容传说展开。"
+    },
+    {
+      "title": "五号病床",
+      "start_line": 621,
+      "end_line": 659,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立医院灵异故事，结局解释了死亡原因。"
+    },
+    {
+      "title": "解剖室的尸体",
+      "start_line": 661,
+      "end_line": 816,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇独立恐怖故事，末尾形成明确惊悚收束。"
+    },
+    {
+      "title": "鬼在你身边",
+      "start_line": 820,
+      "end_line": 856,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第一人称灵异故事，结尾回到叙述者经历并完成收束。"
+    },
+    {
+      "title": "鬼眼：阿路",
+      "start_line": 858,
+      "end_line": 942,
+      "confidence": 0.74,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“鬼眼”孤立标题与“阿路”标题及后续正文明显属于同一灵异故事；标题排版存在异常。"
+    },
+    {
+      "title": "雨伞的故事",
+      "start_line": 944,
+      "end_line": 1016,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“雨伞的”与“故事”应合并为同一标题，正文结尾略显截断，完整性保守标注。"
+    },
+    {
+      "title": "矮道士的酒量",
+      "start_line": 1018,
+      "end_line": 1044,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从对话中段开始，疑似缺少开头；无法确认是否为完整短篇。"
+    },
+    {
+      "title": "血丝 玉手镯",
+      "start_line": 1046,
+      "end_line": 1194,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异爱情故事，结尾明确完成重逢与情感收束。"
+    },
+    {
+      "title": "收拉圾的 女鬼",
+      "start_line": 1196,
+      "end_line": 1238,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立女鬼故事，结尾交代后续影响。"
+    },
+    {
+      "title": "半夜撞鬼",
+      "start_line": 1240,
+      "end_line": 1296,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立校园厕所惊悚故事，结尾揭示误会并完成反转。"
+    },
+    {
+      "title": "恶毒之女的赌注",
+      "start_line": 1298,
+      "end_line": 1518,
+      "confidence": 0.45,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题对应正文前部，但段尾为明显不完整句，且与下一标题正文疑似连续。"
+    },
+    {
+      "title": "呻吟之宅",
+      "start_line": 1520,
+      "end_line": 1546,
+      "confidence": 0.5,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文开头承接上一段残句，疑似缺少开端；结尾虽有收束，不能确认完整性。"
+    },
+    {
+      "title": "阴阳眼",
+      "start_line": 1548,
+      "end_line": 1595,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接章节“一”，内容完整并以明确结语结束；章节并入同一故事。"
+    }
+  ],
+  "document_notes": "本次严格仅依据证据包完成识别，未打开或扫描原始 Markdown。已排除封面、广告、目录及刊后广告内容。部分标题段存在句子截断、标题孤立或跨标题连续现象，因此相应故事标为 uncertain；这些边界无法仅凭证据包进一步确认。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "e0b17a5d0cadb178197b2f901bdd3e41236627bbb7d5c56e9efb9a832465a3bf",
+    "evidence_only": true,
+    "duration_seconds": 132.0,
+    "generated_at": "2026-08-31T05:50:14+00:00"
+  }
+}

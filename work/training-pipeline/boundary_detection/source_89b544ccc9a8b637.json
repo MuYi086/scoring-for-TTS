@@ -1,0 +1,79 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第10期.md",
+  "source_sha256": "144fb0714495e0d9683c4a73d3c94ba4bde649b31fc4fff473efbd9110ea58b8",
+  "line_count": 6410,
+  "stories": [
+    {
+      "title": "因果律自修正性的教学实例",
+      "start_line": 476,
+      "end_line": 1088,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示标题及作者署名位于476行，正文延续至1088行；1090行起为作者的话。"
+    },
+    {
+      "title": "查尔姆小镇——水晶城堡",
+      "start_line": 1098,
+      "end_line": 2108,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1098—1102行为正文标题与作者信息，后续章节均属同一故事，2108行为结局正文。"
+    },
+    {
+      "title": "九封信",
+      "start_line": 2115,
+      "end_line": 2797,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2115行作者署名、2117行标题，章节延续至2797行；2799行开始下一篇连载小说。"
+    },
+    {
+      "title": "谋杀传说（上）",
+      "start_line": 2799,
+      "end_line": 3463,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确标为“谋杀传说（上）”，正文从2799行章节标题开始，3463行注明下篇见银版；证据未显示正文标题或作者署名的实际位置。"
+    },
+    {
+      "title": "五个爱",
+      "start_line": 3615,
+      "end_line": 5213,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3615行标题后接1—7章连续正文，5213行为故事结语；前方411行仅为栏目预告，非正文起点。"
+    },
+    {
+      "title": "洗豆妖",
+      "start_line": 5242,
+      "end_line": 6162,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "5242行标题及作者、译者和绘者信息，后续章节构成完整怪谈故事，6162行为篇末出处说明。"
+    }
+  ],
+  "document_notes": "本轮仅依据边界证据包判定，未打开或扫描原始 Markdown。已排除目录、栏目文章、广告、作者评论、推理谜题、旅游文章、征稿及下期预告。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "144fb0714495e0d9683c4a73d3c94ba4bde649b31fc4fff473efbd9110ea58b8",
+    "evidence_only": true,
+    "duration_seconds": 91.1,
+    "generated_at": "2026-08-30T11:41:25+00:00"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "source_path": "悚族/《悚族》不能说的秘密.md",
+  "source_sha256": "a5b7dc09c865da01d805bb09031c834f89ba8e988d7d98d35e2836a1b10d2e8a",
+  "line_count": 3734,
+  "stories": [
+    {
+      "title": "杀手系列之地下三层",
+      "start_line": 317,
+      "end_line": 623,
+      "confidence": 0.46,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示该段为医院地下楼层的连续惊悚叙事，并以标题相关引文收束；但正文起点疑似早于 L317，当前证据无法确认完整开端。"
+    },
+    {
+      "title": "不能说的秘密",
+      "start_line": 625,
+      "end_line": 915,
+      "confidence": 0.72,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从“楔子”开始的独立恐怖故事段落，结尾仍在调查目击者，明显没有完整收束。"
+    },
+    {
+      "title": "小心你的车位",
+      "start_line": 917,
+      "end_line": 1380,
+      "confidence": 0.7,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "内容围绕医院车位及灵异事件展开，章节从“五”开始，表明本期缺少前置部分；L1380 接入下一故事的引句。"
+    },
+    {
+      "title": "消失的空间",
+      "start_line": 1382,
+      "end_line": 2062,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从第一章开始，连续包含五个章节，结尾以案件新闻交代后果，具有完整开端、发展和收束。"
+    },
+    {
+      "title": "把你的灵魂给我",
+      "start_line": 2068,
+      "end_line": 2331,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续六章围绕漂流瓶、灵魂和人物关系展开，L2331 为明确的结尾状态。"
+    },
+    {
+      "title": "死亡倒计时",
+      "start_line": 2339,
+      "end_line": 2711,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "按时间推进的校园惊悚故事，结尾明确回到死亡倒计时主题并完成收束；虽无显式第一章标题，叙事开端仍可辨认。"
+    },
+    {
+      "title": "多米诺效应",
+      "start_line": 2715,
+      "end_line": 3220,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及六段连续叙事均在证据中明确，L3220 完成因果与鬼魂线索的结局。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包判断，未读取原始 Markdown。文档包含目录/试读式标题、授权声明、专访、作者简介、八卦、测试题及答案等非故事内容；L3298 起的“蝴蝶”相关栏目与后续测试题混在同一标题段，证据无法确认小说结局与测试题的精确分界，故未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "a5b7dc09c865da01d805bb09031c834f89ba8e988d7d98d35e2836a1b10d2e8a",
+    "evidence_only": true,
+    "duration_seconds": 113.1,
+    "generated_at": "2026-08-31T05:25:57+00:00"
+  }
+}

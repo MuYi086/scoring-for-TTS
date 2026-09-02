@@ -1,0 +1,199 @@
+{
+  "source_path": "岁月推理/岁月推理记忆2期.md",
+  "source_sha256": "c0d21b50e0290088000ab409190bd4f4a9c166ee2f2c600a98909508d7388499",
+  "line_count": 7304,
+  "stories": [
+    {
+      "title": "蛇蝎心肠",
+      "start_line": 251,
+      "end_line": 533,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有明确标题、作者署名及六个连续章节，结局正文止于L533。"
+    },
+    {
+      "title": "蝴蝶是怎么死的",
+      "start_line": 535,
+      "end_line": 649,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，有作者署名和完整叙事，结局正文止于L649。"
+    },
+    {
+      "title": "我的生日",
+      "start_line": 651,
+      "end_line": 741,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接作者署名及连续故事正文，结局正文止于L741。"
+    },
+    {
+      "title": "遗书用短信发出",
+      "start_line": 743,
+      "end_line": 809,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立犯罪短篇，有作者署名和明确结尾反转，正文止于L809。"
+    },
+    {
+      "title": "一张发票",
+      "start_line": 1401,
+      "end_line": 1589,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，有作者署名，故事结局正文止于L1589。"
+    },
+    {
+      "title": "一条领带",
+      "start_line": 1591,
+      "end_line": 1835,
+      "confidence": 0.94,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有独立标题和连续犯罪叙事，但末尾停在人物等待电梯处，疑似缺少结局。"
+    },
+    {
+      "title": "偷窥惊魂",
+      "start_line": 1837,
+      "end_line": 2223,
+      "confidence": 0.9,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名和完整叙事框架，但末尾明确提示答案在书内找，故事解答边界不确定。"
+    },
+    {
+      "title": "血色情书",
+      "start_line": 2531,
+      "end_line": 2653,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立侦探短篇，有作者署名，末尾完成关键身份揭示，正文止于L2653。"
+    },
+    {
+      "title": "魔术师妻子的日记",
+      "start_line": 2655,
+      "end_line": 2845,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接作者署名、日记章节及完整结局，正文止于L2845。"
+    },
+    {
+      "title": "愚人节的真实",
+      "start_line": 3390,
+      "end_line": 3596,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文包含标题故事、书信段落及同篇后记；后记属于所属作品，结尾署名止于L3596。"
+    },
+    {
+      "title": "杀人计划的漏洞",
+      "start_line": 3598,
+      "end_line": 3736,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立犯罪短篇，有作者署名和案件揭示，正文止于L3736。"
+    },
+    {
+      "title": "目击证人",
+      "start_line": 3738,
+      "end_line": 3888,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接作者署名及分节正文，结案推理止于L3888。"
+    },
+    {
+      "title": "立体停车场血案",
+      "start_line": 4334,
+      "end_line": 4724,
+      "confidence": 0.93,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名和连续章节，但本段结束于调查对话，未见案件结局，按连载片段处理。"
+    },
+    {
+      "title": "错觉",
+      "start_line": 4726,
+      "end_line": 5030,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接作者署名及完整犯罪故事，正文结尾止于L5030。"
+    },
+    {
+      "title": "一夜惊魂",
+      "start_line": 5032,
+      "end_line": 5132,
+      "confidence": 0.91,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有标题、作者署名和连续叙事，但末尾句意明显未完，疑似缺少结尾。"
+    },
+    {
+      "title": "香水迷情",
+      "start_line": 5134,
+      "end_line": 5538,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名、连续章节及案件结局，正文止于L5538。"
+    },
+    {
+      "title": "窗外",
+      "start_line": 5776,
+      "end_line": 6422,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名、连续章节和尾声，完整正文止于L6422。"
+    },
+    {
+      "title": "“银河”号连环命案",
+      "start_line": 6424,
+      "end_line": 6600,
+      "confidence": 0.95,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有作者署名和连续章节，但末尾停在继续调查前，明显未见结局。"
+    }
+  ],
+  "document_notes": "已严格绑定指定 source_path、SHA-256 和 7304 行。首轮仅使用证据包，未打开或扫描原始 Markdown。排除了目录、广告、声明、测试、推理谜题、疑案侦破类知识文章、答案、调查表及其他非小说栏目；章节、后记和尾声均并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c0d21b50e0290088000ab409190bd4f4a9c166ee2f2c600a98909508d7388499",
+    "evidence_only": true,
+    "duration_seconds": 136.7,
+    "generated_at": "2026-08-30T11:26:35+00:00"
+  }
+}

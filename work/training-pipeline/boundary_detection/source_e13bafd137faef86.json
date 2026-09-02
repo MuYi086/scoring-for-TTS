@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第01期.md",
+  "source_sha256": "cf5099a4121423aa75650386302177d0608d0397d0cd877a74d55a1639c3b6c3",
+  "line_count": 7151,
+  "stories": [
+    {
+      "title": "超·作家连续杀人事件",
+      "start_line": 283,
+      "end_line": 926,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题始于 L283，分节内容连续至明确完结标记 L926。"
+    },
+    {
+      "title": "我的旅程",
+      "start_line": 928,
+      "end_line": 2278,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从 L928 开始，以多封信件和叙事章节组成连续故事，L2278 为本篇末封信日期，下一篇自 L2280 开始。"
+    },
+    {
+      "title": "怪奇绑架案",
+      "start_line": 2280,
+      "end_line": 2486,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及正文始于 L2280，叙事完整结束于 L2486，下一篇自 L2488 开始。"
+    },
+    {
+      "title": "探阴宅（下）",
+      "start_line": 2488,
+      "end_line": 3685,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "本期从明确的“（下）”及第六回开始，连续至第十回 L3685；缺少上篇开头，因此标为连载片段。"
+    },
+    {
+      "title": "郊外",
+      "start_line": 3687,
+      "end_line": 3809,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文始于 L3687，结尾明确注明“答案请见下期”，本期未给出完整解答。"
+    },
+    {
+      "title": "七宗罪之愤怒",
+      "start_line": 3930,
+      "end_line": 4584,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名在 L3930-L3932，书信、报道和调查叙事连续至 L4584；L4586 起为作者创作谈，不纳入故事。"
+    },
+    {
+      "title": "雪停之时",
+      "start_line": 4620,
+      "end_line": 5008,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及译者信息始于 L4620，分节正文连续至 L5008；L5010 为选书来源说明，不属于结局正文。"
+    },
+    {
+      "title": "肉色的月亮",
+      "start_line": 5012,
+      "end_line": 6706,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者译者信息始于 L5012，正文连续至 L6706；L6708 为选书来源说明，不属于结局正文。"
+    }
+  ],
+  "document_notes": "仅依据证据包完成识别，未打开或扫描原始 Markdown。已排除目录、封面与栏目内容、新闻报道、互动谜题说明、作者创作谈、下期预告、征文及订阅广告。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "cf5099a4121423aa75650386302177d0608d0397d0cd877a74d55a1639c3b6c3",
+    "evidence_only": true,
+    "duration_seconds": 99.1,
+    "generated_at": "2026-08-30T11:28:07+00:00"
+  }
+}

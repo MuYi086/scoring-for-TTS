@@ -1,0 +1,69 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.01.md",
+  "source_sha256": "a96e2009ff6de5431eb87ff3b3e9cf80b7a1ef53ac996f6044f92cfea8d7c951",
+  "line_count": 6260,
+  "stories": [
+    {
+      "title": "峥嵘岁月",
+      "start_line": 188,
+      "end_line": 3007,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后明确标注“长篇小说连载”，由多个章节组成，属于犯罪题材长篇连载，本期未提供完整结局。"
+    },
+    {
+      "title": "邮轮驰向夕阳",
+      "start_line": 3795,
+      "end_line": 4308,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及连续十三章正文构成独立故事，内容围绕退休刑警在邮轮上的案件展开；后接责任编辑和插图信息。"
+    },
+    {
+      "title": "雪落黔西北",
+      "start_line": 4316,
+      "end_line": 4580,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及六章连续叙事构成完整公安犯罪故事，末尾后接责任编辑和插图信息。"
+    },
+    {
+      "title": "镜像",
+      "start_line": 4587,
+      "end_line": 6054,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及连续章节围绕无名女尸、犯罪心理和案件侦破展开，章节至结尾后接责任编辑和插图信息，属于悬疑推理小说。"
+    },
+    {
+      "title": "大饭店",
+      "start_line": 6152,
+      "end_line": 6184,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "位于杂志末尾侦探栏目，标题和作者后接独立叙事，结尾紧邻责任编辑与插图信息，属于短篇侦探故事。"
+    }
+  ],
+  "document_notes": "首轮仅依据证据包识别，未读取或扫描原始 Markdown。各故事 end_line 按证据包中正文结束后紧邻的责任编辑、插图等刊后信息向前确定。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "a96e2009ff6de5431eb87ff3b3e9cf80b7a1ef53ac996f6044f92cfea8d7c951",
+    "evidence_only": true,
+    "duration_seconds": 261.2,
+    "generated_at": "2026-08-30T11:14:37+00:00"
+  }
+}

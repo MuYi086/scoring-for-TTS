@@ -1,0 +1,208 @@
+{
+  "source_path": "怖客/《怖客》2011年7月B版-地狱婚恋式.md",
+  "source_sha256": "3e6c41b512cfe465d41a809abe484f56b8af4bfb809a14e084809a1d35ae9961",
+  "line_count": 3302,
+  "stories": [
+    {
+      "title": "键",
+      "start_line": 54,
+      "end_line": 74,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文因版面抽取先于L60题名出现；L54-L74构成完整故事，L76为编辑信息。"
+    },
+    {
+      "title": "鸡飞蛋打",
+      "start_line": 266,
+      "end_line": 278,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "题名与署名同在L266，L278完成骗局反转；L280为正文外的作者提示。"
+    },
+    {
+      "title": "一字决定权",
+      "start_line": 282,
+      "end_line": 471,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L282为正文题名，L471为结局；L465-L467受到相邻栏《黑影子》文字串入，故边界置信度降低。"
+    },
+    {
+      "title": "魔术尸",
+      "start_line": 481,
+      "end_line": 613,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名页图像后正文始于L485，L613完成鬼求替反转，L615为编辑信息。"
+    },
+    {
+      "title": "它死以后变成什么",
+      "start_line": 617,
+      "end_line": 847,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名页从L617开始，正文情节完整收束于L847；L849已混入下一篇署名。"
+    },
+    {
+      "title": "走一个少一个",
+      "start_line": 849,
+      "end_line": 1258,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L849含本篇作者署名并与上一篇编辑信息粘连；故事连续至L1258结局，L1260为编辑信息。"
+    },
+    {
+      "title": "盒子",
+      "start_line": 1262,
+      "end_line": 1292,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名与情节相符；L1262起为独立微型小说，L1292完成死亡反转，L1294为编辑信息。"
+    },
+    {
+      "title": "纹身",
+      "start_line": 1298,
+      "end_line": 1314,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际位于L1298-L1314；题名和署名因栏面抽取被后置到L1318，L1316为编辑信息。"
+    },
+    {
+      "title": "生日会",
+      "start_line": 1322,
+      "end_line": 1340,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1322题名、L1324署名，L1340完成主角已经死亡的反转；L1342为编辑信息。"
+    },
+    {
+      "title": "能不累吗",
+      "start_line": 1344,
+      "end_line": 1402,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "故事从L1344题名图像附近开始并在L1402收束，但L1394-L1396已串入下一篇开头，边界受双栏抽取交错影响。"
+    },
+    {
+      "title": "抄袭",
+      "start_line": 1406,
+      "end_line": 1418,
+      "confidence": 0.55,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1406-L1418是本篇后半及结局；其开头L1394-L1396被抽取到上一篇结尾内部，为保持故事不重叠只能标为缺开头的不确定片段。"
+    },
+    {
+      "title": "问题学生",
+      "start_line": 1422,
+      "end_line": 1456,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1422为题名页图像、L1424为署名，L1456完成鬼教师反转；L1458为编辑信息。"
+    },
+    {
+      "title": "将死之人",
+      "start_line": 1460,
+      "end_line": 1870,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录总题为《将死之人》，L1460起为题名页；“骷髅阴影”等均属篇内小节，故事于L1870开放式收束，L1872为编辑信息。"
+    },
+    {
+      "title": "地狱婚恋式",
+      "start_line": 1874,
+      "end_line": 2056,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名页图像从L1874开始，正文于L2056交代婚后结局；L2058为编辑信息。"
+    },
+    {
+      "title": "压纸衣",
+      "start_line": 2060,
+      "end_line": 2078,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2060题名页后即为故事开头，L2070的署名因版面抽取落在正文中部，L2078完成结局。"
+    },
+    {
+      "title": "手机凶铃",
+      "start_line": 2082,
+      "end_line": 2405,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录总题为《手机凶铃》；“神秘的手机来电”“真实的故事”“另一个版本”等为篇内小节，L2405为结局，L2407为编辑信息。"
+    },
+    {
+      "title": "窗外",
+      "start_line": 2409,
+      "end_line": 2419,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名页图像及署名从L2409开始，L2419完成五楼窗外人影的恐怖反转；L2421为编辑信息。"
+    },
+    {
+      "title": "谁有我冤枉",
+      "start_line": 2423,
+      "end_line": 2575,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "目录总题为《谁有我冤枉》；“迟到”“分赃”“雪上加霜”是连续小节，L2575完成喜剧结局，L2577为编辑信息。"
+    },
+    {
+      "title": "幽冥医学院（大结局）",
+      "start_line": 2653,
+      "end_line": 3007,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2653起有作者、插图署名及“大结局”题名，L2659明确为前文提示，说明是连载末期；本期内容至L3007“全文终”结束。"
+    }
+  ],
+  "document_notes": "已排除封面、目录、版权页、广告、问卷、知识文章《传说中的七大蛊术》及刊后预告。第一遍误将《生日会》延伸至《问题学生》，把《将死之人》后的《地狱婚恋式》和《压纸衣》并入前篇，并把《窗外》并入《手机凶铃》，本次均已拆正。《黑影子》的开头L465与《一字决定权》结尾发生双栏抽取交错、结尾位于L477，无法生成不重叠且干净的完整边界，因此未单列；《能不累吗》《抄袭》也受同类交错影响，已降低置信度并标为uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3e6c41b512cfe465d41a809abe484f56b8af4bfb809a14e084809a1d35ae9961",
+    "duration_seconds": 335.3,
+    "generated_at": "2026-08-31T06:43:07+00:00"
+  }
+}

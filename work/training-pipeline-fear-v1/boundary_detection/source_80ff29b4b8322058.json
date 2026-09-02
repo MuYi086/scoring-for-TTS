@@ -1,0 +1,149 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2005年03.md",
+  "source_sha256": "5f74f22f4ff718e8bafbd92074087ac38f9a3e065ddfc794d47cfbfe3ab62ee3",
+  "line_count": 4215,
+  "stories": [
+    {
+      "title": "小玫瑰花妖的情事",
+      "start_line": 233,
+      "end_line": 681,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题段及数字章节连续，末尾明确收束为幸福结局。"
+    },
+    {
+      "title": "蚀心",
+      "start_line": 699,
+      "end_line": 857,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及后续章节属于同一校园惊悚故事，末段给出酸梅茶导致异常并尝试解决的收束。"
+    },
+    {
+      "title": "惊魂／褪色",
+      "start_line": 867,
+      "end_line": 1048,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "两标题之间人物与情节明显连续，证据包无法确认是同一篇的分段还是相邻篇章；末尾缺乏明确完整收束。"
+    },
+    {
+      "title": "续章",
+      "start_line": 1050,
+      "end_line": 1216,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含作者署名和连续章节，结尾明确揭示老太太将主人公制成新故事材料。"
+    },
+    {
+      "title": "爱你在背后",
+      "start_line": 1307,
+      "end_line": 1515,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续多个小节属于同一鬼故事，末节以墓碑揭示身份并完成结局。"
+    },
+    {
+      "title": "紫罗化蝶",
+      "start_line": 1517,
+      "end_line": 1609,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题段及后续精灵相关内容连续，末尾完成主人公走出创伤并重新开始的结局。"
+    },
+    {
+      "title": "伞下恋",
+      "start_line": 2434,
+      "end_line": 2869,
+      "confidence": 0.42,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题在证据中被拆分为“伞／下／恋”，长段连续且疑似小说，但尾部正文编码严重损坏，无法确认完整性和准确结局。"
+    },
+    {
+      "title": "女鬼雇佣兵团",
+      "start_line": 2871,
+      "end_line": 3037,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节明确为鬼故事；本期末尾仍停留在情节展开和人物感想，未见完整结局。"
+    },
+    {
+      "title": "风逝的菊花",
+      "start_line": 3047,
+      "end_line": 3221,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名、章节“三”“四”及连续情节表明为同一篇，末尾菊花坠落腐烂，完成超自然结局。"
+    },
+    {
+      "title": "最后一班地下铁",
+      "start_line": 3223,
+      "end_line": 3359,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及数字章节连续，末尾少女了结心愿并留下后续世界观收束。"
+    },
+    {
+      "title": "爬山虎",
+      "start_line": 3371,
+      "end_line": 3459,
+      "confidence": 0.92,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名及连续章节明确为怪谈小说，但正文在调查照片线索处中断，未见结局。"
+    },
+    {
+      "title": "承诺",
+      "start_line": 3469,
+      "end_line": 3960,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "“承诺”后的六个数字章节与后续“鸢尾花”等段落人物和情节连续，应合并为同一幻想爱情故事；末尾完成主要人物死亡后的悼念收束。"
+    },
+    {
+      "title": "北府诡事",
+      "start_line": 3987,
+      "end_line": 4209,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示为“精品连载”，末尾明确进入下期预告，属于未完连载；标题正文在证据中被拆分为“北府／诡”。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包判断，未读取原始 Markdown。已排除目录、导读、广告、爆笑段子、知识文章、测试、作者资料和下期预告；对正文编码损坏或章节归属存在疑问的段落降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "5f74f22f4ff718e8bafbd92074087ac38f9a3e065ddfc794d47cfbfe3ab62ee3",
+    "evidence_only": true,
+    "duration_seconds": 587.0,
+    "generated_at": "2026-08-31T06:09:44+00:00"
+  }
+}

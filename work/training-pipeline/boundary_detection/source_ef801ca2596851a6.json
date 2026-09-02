@@ -1,0 +1,69 @@
+{
+  "source_path": "岁月推理/岁月推理 推理XGirl原作集2013年第2期.md",
+  "source_sha256": "95e21f72f075262280540b8bbde54c90416c161c6142313b865d9a640ccd95c8",
+  "line_count": 4272,
+  "stories": [
+    {
+      "title": "紫色的电流",
+      "start_line": 45,
+      "end_line": 987,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从第45行开始，章节持续至第987行，包含完整案件发展与结案内容。"
+    },
+    {
+      "title": "不可饶恕",
+      "start_line": 993,
+      "end_line": 1583,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第993行起为小说标题，后续章节连续展开校园连环杀人案并在第1583行完成收束。"
+    },
+    {
+      "title": "青龙馆通灵谋杀案",
+      "start_line": 1595,
+      "end_line": 2040,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1595行标题及作者署名后进入通灵谋杀故事，第2040行以明确的恐怖悬念句收尾，未发现跨入下一篇正文。"
+    },
+    {
+      "title": "匿名来信",
+      "start_line": 2046,
+      "end_line": 2570,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2046行起为独立小说，正文至第2570行以完整的情节与结句结束。"
+    },
+    {
+      "title": "推理作家的游戏",
+      "start_line": 2578,
+      "end_line": 4240,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2578行标题及作者署名后，多个幕次属于同一部推理小说；第4240行为结局正文最后一行，第4248行起转为宣传内容。"
+    }
+  ],
+  "document_notes": "依据完整标题证据包识别出5篇独立推理/悬疑小说。目录、栏目标题、图片说明及刊后影视宣传内容均未纳入故事边界；同一小说内部的章节和幕次已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "95e21f72f075262280540b8bbde54c90416c161c6142313b865d9a640ccd95c8",
+    "evidence_only": true,
+    "duration_seconds": 70.1,
+    "generated_at": "2026-08-30T11:23:32+00:00"
+  }
+}

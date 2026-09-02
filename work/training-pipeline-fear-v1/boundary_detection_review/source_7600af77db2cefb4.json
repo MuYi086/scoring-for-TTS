@@ -1,0 +1,116 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼怪故事》电梯里的吊死鬼.md",
+  "source_sha256": "28ce1df392fd20c2611f76be037200525bbd36f83a09a37b97d3f25710019b79",
+  "line_count": 1509,
+  "stories": [
+    {
+      "title": "十三人头塚",
+      "start_line": 287,
+      "end_line": 457,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际开始于287行，叙事完整并在457行收束；前面的同名标题属于前置目录或导读片段。"
+    },
+    {
+      "title": "流血的水晶笔",
+      "start_line": 459,
+      "end_line": 523,
+      "confidence": 0.82,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "459行是正文标题，局部内容存在明显拼接，但495行后明确回到水晶笔及十一娘相关叙事；523行停在未完成对白，   525行已切换到“游艺室”栏目，因此可以确认该段缺尾，不能标为完整故事。"
+    },
+    {
+      "title": "莫兰姐姐",
+      "start_line": 527,
+      "end_line": 543,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "527行开始正文，543行句子在“我这辈子没指”处截断，545行即为作者署名，明确缺少结尾。"
+    },
+    {
+      "title": "电梯里的死鬼",
+      "start_line": 549,
+      "end_line": 719,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "549行开始实际正文，557行标题为内部小节并入同一故事；719行后出现署名或栏目性文字，故事边界在719行结束。"
+    },
+    {
+      "title": "百张",
+      "start_line": 723,
+      "end_line": 791,
+      "confidence": 0.97,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "723行开始正文，791行仍在人物行动和情节推进中，793行已切换为下一篇《悬魂條》；该篇缺少结局。"
+    },
+    {
+      "title": "悬魂條",
+      "start_line": 793,
+      "end_line": 893,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "793行开始正文，877行内部小节并入同一故事；893行完成恐怖场景收束，895行为作者署名。"
+    },
+    {
+      "title": "幽灵再现",
+      "start_line": 899,
+      "end_line": 1075,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "899行开始正文，919行内部小节标题并入同一故事；1075行形成明确的情节收束。"
+    },
+    {
+      "title": "血缎惊瞳",
+      "start_line": 1077,
+      "end_line": 1147,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1077行开始正文，1147行完成恐怖事件的揭示与收束。"
+    },
+    {
+      "title": "老君而思",
+      "start_line": 1149,
+      "end_line": 1247,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1149行开始正文，1247行完成主要人物重逢与情节收束，1249行为作者署名。"
+    },
+    {
+      "title": "第七个买戒指的人",
+      "start_line": 1253,
+      "end_line": 1434,
+      "confidence": 0.3,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1253行标题及正文起点明确，1435行起已经是商品广告，因此1434行是可确定的广告前上界；但局部包没有提供1434   行附近的故事原文，无法判断正文是否恰在此处结束，也无法确认结局是否完整。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。《流血的水晶笔》在   栏目切换前明确以未完成对白截断，已判为 installment；《第七个买戒指的人》虽可排除1435行后的广告，但缺少广告前结尾证   据，继续保留 uncertain 并降低置信度。",
+  "_provenance": {
+    "stage": "manual_story_boundaries_review",
+    "model": "manual-sol",
+    "reasoning_effort": "manual",
+    "speed": "standard",
+    "input_sha256": "28ce1df392fd20c2611f76be037200525bbd36f83a09a37b97d3f25710019b79",
+    "imported_at": "2026-09-01T11:16:01+00:00"
+  }
+}

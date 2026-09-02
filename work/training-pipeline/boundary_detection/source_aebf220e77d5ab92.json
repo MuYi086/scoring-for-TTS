@@ -1,0 +1,79 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第05期.md",
+  "source_sha256": "6043a6ffa4305166e0e08e23063366c08dde220aa0a40155b634a482fdb8f4d5",
+  "line_count": 5984,
+  "stories": [
+    {
+      "title": "时空监狱",
+      "start_line": 257,
+      "end_line": 594,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由“前篇—遗书全文—后篇”连续构成并在594行收束；正文标题未在该段直接出现，仅由目录标题对应，边界因此略降置信度。"
+    },
+    {
+      "title": "开棺发财摇钱树（上）",
+      "start_line": 596,
+      "end_line": 1775,
+      "confidence": 0.91,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从正文标题及作者署名开始，后续章节“一、开棺”至“四、合作”连续；标题明确标注“（上）”，本期无结局。"
+    },
+    {
+      "title": "醉推理",
+      "start_line": 1777,
+      "end_line": 1909,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "段落内容明显为推理小说叙事并与目录标题“醉推理”对应，1909行有收束语；但正文起点缺少明确故事标题或作者署名，且与前一篇的版面边界存在不确定性。"
+    },
+    {
+      "title": "冰之刃",
+      "start_line": 2268,
+      "end_line": 3612,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从数字章节“0”开始，经数字章节及嵌套叙事连续展开，正文在3612行结束；“冰之刃”标题在段内重复出现，已合并为同一故事。"
+    },
+    {
+      "title": "十八号球洞",
+      "start_line": 3643,
+      "end_line": 5008,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和译者信息从3643行开始，后续“[4]”“骗人！”属于同一故事内部章节；5008行为结局正文，5010行已是选载说明，故不计入。"
+    },
+    {
+      "title": "三点钟",
+      "start_line": 5012,
+      "end_line": 5414,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者信息明确，正文连续至5414行并完成结局。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未打开或扫描原始 Markdown。已排除目录、栏目、广告、征稿、预告、知识文章、作者介绍、谜题答案及其他非小说内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6043a6ffa4305166e0e08e23063366c08dde220aa0a40155b634a482fdb8f4d5",
+    "evidence_only": true,
+    "duration_seconds": 122.6,
+    "generated_at": "2026-08-30T11:30:07+00:00"
+  }
+}

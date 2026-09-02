@@ -1,0 +1,189 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2005年06.md",
+  "source_sha256": "d16792306b1ac134df82e8495bd310d7d24590d7d78c13393e618b8a83ce3a2b",
+  "line_count": 4441,
+  "stories": [
+    {
+      "title": "红菱艳",
+      "start_line": 349,
+      "end_line": 479,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题与作者署名在349—353行，后续为完整故事正文，至下一篇标题前结束。"
+    },
+    {
+      "title": "对面不相逢",
+      "start_line": 481,
+      "end_line": 773,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题、作者署名及连续章节明确，尾声在773行完成故事。"
+    },
+    {
+      "title": "日记",
+      "start_line": 777,
+      "end_line": 855,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，正文以“宽恕”收束。"
+    },
+    {
+      "title": "开水瓶里的房客",
+      "start_line": 863,
+      "end_line": 996,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题跨863—865行，章节3、4均属同一故事，996行为结局。"
+    },
+    {
+      "title": "迷情十字",
+      "start_line": 998,
+      "end_line": 1216,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "“迷情”与“十字”为同一分行标题，后续数字章节连续至1216行收束。"
+    },
+    {
+      "title": "桃心",
+      "start_line": 1222,
+      "end_line": 1452,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，数字章节和插入小栏均在同一正文范围内，1452行为结尾。"
+    },
+    {
+      "title": "相思玫瑰",
+      "start_line": 1454,
+      "end_line": 1606,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名和章节A—D连续，1606行为编者后语并明确故事结束。"
+    },
+    {
+      "title": "灵异拼图",
+      "start_line": 2576,
+      "end_line": 2908,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，数字章节虽有编号缺漏但正文连续，2908行为收束。"
+    },
+    {
+      "title": "月下烟雨",
+      "start_line": 2982,
+      "end_line": 3163,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "局部包明确给出分行标题“月下烟雨”、署名及“尾声”至3163行；但标题前已出现同一叙事的第二节正文，版面顺序导致起始完整性无法由局部证据确认。"
+    },
+    {
+      "title": "搓背",
+      "start_line": 3171,
+      "end_line": 3232,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题分行后直接进入校园鬼故事，3232行为故事收束。"
+    },
+    {
+      "title": "恐怖校园",
+      "start_line": 3234,
+      "end_line": 3278,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立标题与完整校园恐怖情节明确，3278行为结尾。"
+    },
+    {
+      "title": "彼岸迷",
+      "start_line": 3284,
+      "end_line": 3483,
+      "confidence": 0.87,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题分行且含后续章节，结尾停在开放式对话，明显未完结。"
+    },
+    {
+      "title": "腐蚀果",
+      "start_line": 3485,
+      "end_line": 3557,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，3557行为完整恐怖结局。"
+    },
+    {
+      "title": "孟婆汤",
+      "start_line": 3559,
+      "end_line": 3759,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "局部包显示标题及署名后正文连续，3751—3759行回环收束；3761行图片与3763行下一篇标题不属于本故事。"
+    },
+    {
+      "title": "神赐冤家",
+      "start_line": 3763,
+      "end_line": 3971,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及（一）至（六）连续，3971行为结尾。"
+    },
+    {
+      "title": "粉红小猪",
+      "start_line": 3981,
+      "end_line": 4115,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，JINGHUN为同一标题的英文分行，4115行为结局。"
+    },
+    {
+      "title": "爱在西元年",
+      "start_line": 4117,
+      "end_line": 4429,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "4117—4119行为分行总标题，随后明确标注“第六章”；4429行以“（待续）”结束，4431行起为下期预告及刊后内容。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未打开或扫描原始Markdown。已排除目录、广告、栏目、资讯、爆料、漫画介绍及其他非小说内容；同一小说的数字章节、分行标题和英文标题并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "d16792306b1ac134df82e8495bd310d7d24590d7d78c13393e618b8a83ce3a2b",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_f1c5281e06510350.txt",
+    "duration_seconds": 103.3,
+    "generated_at": "2026-09-01T01:57:31+00:00"
+  }
+}

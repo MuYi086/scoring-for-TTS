@@ -1,0 +1,49 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-我吃的都是坏人.md",
+  "source_sha256": "042dbd95a5c4aebb45994f4f96513603491ec156aefaaf79d8070d955a6d4cb1",
+  "line_count": 2294,
+  "stories": [
+    {
+      "title": "我吃的都是坏人",
+      "start_line": 1508,
+      "end_line": 1644,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从完整开端开始，但结尾在句中截断，下一段转入另一篇故事，无法确认本期结局。"
+    },
+    {
+      "title": "谊咒",
+      "start_line": 1650,
+      "end_line": 2068,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从祖父遗愿和寻找恶诅村的开端开始，至诅咒解除、清晨苏醒的结局结束；中间章节标题均属同一故事。"
+    },
+    {
+      "title": "王妃",
+      "start_line": 2074,
+      "end_line": 2272,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从生日和进入灵界的开端开始，至主人公答应成为魇靥的王妃并倒在其怀中结束。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。证据显示前部存在多个通用“鬼故事”标题及跨标题连续正文，部分故事的真实标题或边界无法可靠确认，因此未列入；目录、封面、声明及刊后图片/广告类内容已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "042dbd95a5c4aebb45994f4f96513603491ec156aefaaf79d8070d955a6d4cb1",
+    "evidence_only": true,
+    "duration_seconds": 97.6,
+    "generated_at": "2026-08-31T05:51:44+00:00"
+  }
+}

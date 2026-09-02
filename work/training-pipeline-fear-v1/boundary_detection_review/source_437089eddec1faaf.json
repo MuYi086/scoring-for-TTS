@@ -1,0 +1,138 @@
+{
+  "source_path": "悚族/《悚族》白雪公主.md",
+  "source_sha256": "6153ad8a6edeaed73497d9cfade25abbf131e564e9f67716864e03ff26dee713",
+  "line_count": 3259,
+  "stories": [
+    {
+      "title": "无题（文/黑妖狐鬼面）",
+      "start_line": 19,
+      "end_line": 57,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后是一篇独立的噩梦题材微型小说，第57行以死亡场景明确收束；Markdown 未保留可辨识的文字标题。"
+    },
+    {
+      "title": "惊悚童话系列之白雪公主",
+      "start_line": 235,
+      "end_line": 673,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "系列名与篇名分列第235、237行，作者署名和正文随后连续出现，第673行完成最终反转。"
+    },
+    {
+      "title": "黑暗向日葵",
+      "start_line": 675,
+      "end_line": 880,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题虽有 OCR 损坏，但可由目录确定篇名；故事连续至第880行完整收束。"
+    },
+    {
+      "title": "诺贝尔奖的秘方",
+      "start_line": 882,
+      "end_line": 1217,
+      "confidence": 0.91,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录可还原标题，八个小节属于同一故事；第1217行在句中突然中断，后面立即转为知识栏目，Markdown 明显缺失结尾。"
+    },
+    {
+      "title": "自杀代理",
+      "start_line": 1229,
+      "end_line": 1404,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和正文连续，第1404行以代理人再次招揽客户完成首尾呼应。"
+    },
+    {
+      "title": "恭喜发财，把命拿来",
+      "start_line": 1406,
+      "end_line": 1444,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "黑鸟倒数并预告死亡的独立微型小说，第1444行完成结局；第1446行已更换人物和情节，属于下一篇。"
+    },
+    {
+      "title": "差等生的礼物",
+      "start_line": 1446,
+      "end_line": 1784,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题在 Markdown 中缺失且作者署名被排到开篇数段之后，但第1446行已是完整开头；复仇情节及最终死因揭示持续至第1784行。"
+    },
+    {
+      "title": "死亡电台",
+      "start_line": 1786,
+      "end_line": 2016,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题被 OCR 截为“死亡电”，可由目录还原；数字段落均属同篇，第2016行明确结束。"
+    },
+    {
+      "title": "怪脾气的奶奶",
+      "start_line": 2020,
+      "end_line": 2366,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、署名和七个小节构成连续故事，第2366行完成悲剧结局，随后转入知识栏目。"
+    },
+    {
+      "title": "别追那个女生",
+      "start_line": 2380,
+      "end_line": 2594,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录提供总篇名，正文从“女孩”小节开始并包含多个小节及“结局”，第2594行完成最后揭示；第2596行是下一篇作者署名。"
+    },
+    {
+      "title": "猫咒",
+      "start_line": 2596,
+      "end_line": 2820,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总标题未被 Markdown 文本保留，但目录篇名、作者轩弦及随后六章能够对应；应从第2596行作者署名起算，第2820行以黑猫重现收束。"
+    },
+    {
+      "title": "妈妈，再爱我一次",
+      "start_line": 2822,
+      "end_line": 3066,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者信息位于第2822行，后续章节均属同篇，第3066行完成超自然余韵；第3068行已是答案栏目。"
+    }
+  ],
+  "document_notes": "第二遍独立核查后对第一遍作出关键修正：第3—15行是等待刊后答案的侦探谜题栏目，并非完整小说；其后第19—57行才是另一篇有独立结局的无题微型小说。第一遍还把《差等生的礼物》误并入《恭喜发财，把命拿来》，现按第1444/1446行切开；并将《别追那个女生》结束行修正为2594，将第2596行作者署名归入《猫咒》。排除了目录、采访、声明、知识栏目、答案、漫画回顾、投稿信息和作者简介。《诺贝尔奖的秘方》因原 Markdown 在句中截断，仅标为 uncertain。文件末尾没有换行，因此 wc 显示3258个换行符，但实际按1起始编号共有3259行。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6153ad8a6edeaed73497d9cfade25abbf131e564e9f67716864e03ff26dee713",
+    "duration_seconds": 521.9,
+    "generated_at": "2026-08-31T11:19:21+00:00"
+  }
+}

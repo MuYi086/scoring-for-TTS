@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "stage": "step_1_boundary_review",
+  "stage_label": "Terra 边界复核",
+  "status": "completed",
+  "total_items": 60,
+  "completed_items": 60,
+  "pending_items": 0,
+  "skipped_existing_items": 60,
+  "scheduled_this_run": 0,
+  "completed_this_run": 0,
+  "failed_this_run": 0,
+  "started_at": "2026-09-01T11:16:01+00:00",
+  "updated_at": "2026-09-01T11:16:01+00:00",
+  "last_error": null,
+  "resume_instruction": "重复同一条命令；不要添加 --overwrite 或刷新参数"
+}

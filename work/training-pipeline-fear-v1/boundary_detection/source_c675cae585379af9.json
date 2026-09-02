@@ -1,0 +1,109 @@
+{
+  "source_path": "悚族/《悚族》阴温度.md",
+  "source_sha256": "2f11dfc4e78f2706028528506ed1f0c9a953bed4b87e36b8467de19b93b27276",
+  "line_count": 2722,
+  "stories": [
+    {
+      "title": "挡鬼绳",
+      "start_line": 140,
+      "end_line": 433,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及连续多章节正文明确，人物冲突和驱鬼主线在L415-L433收束；L433虽提示故事仍会继续，但本期情节已有结局。"
+    },
+    {
+      "title": "猫头婴",
+      "start_line": 451,
+      "end_line": 776,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从标题页开始，正文持续至L776以“妈妈……”悬停，明显缺少结局。"
+    },
+    {
+      "title": "冥间有喜",
+      "start_line": 782,
+      "end_line": 1090,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、主线人物和冥媒情节明确，正文在L1090以喜剧性收束结束。"
+    },
+    {
+      "title": "亡人特效药",
+      "start_line": 1102,
+      "end_line": 1337,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者栏明确，正文延续至L1337；但证据包显示正文首句为“是说……”，疑似缺少开头，不能确认完整性。"
+    },
+    {
+      "title": "磨牙",
+      "start_line": 1395,
+      "end_line": 1413,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，标题、叙事开端和鬼魂复仇结局均明确，L1413为结局正文。"
+    },
+    {
+      "title": "冰箱第三格",
+      "start_line": 1425,
+      "end_line": 1455,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，故事从合租设定展开并在L1453完成反转收束，L1455为作者署名。"
+    },
+    {
+      "title": "阴温度",
+      "start_line": 1477,
+      "end_line": 1783,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及分段正文明确，阴温度传闻、人物冲突和鬼魂结局完整，尾声在L1771-L1783收束。"
+    },
+    {
+      "title": "人生作弊器",
+      "start_line": 1787,
+      "end_line": 2050,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇正文含六章，但结尾停在“我，该怎么选择？”的悬念处，缺少最终解决。"
+    },
+    {
+      "title": "盗墓笔记之唤魂画【中】",
+      "start_line": 2052,
+      "end_line": 2467,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者信息及连续盗墓冒险正文明确，L2467停在危机中；随后预告明确说明最终大结局将在下一期揭晓。"
+    }
+  ],
+  "document_notes": "本次严格仅依据指定证据包判断，未读取或扫描原始 Markdown。已排除目录、广告、栏目知识文章、黑猫侦探社谜题、禁忌小百科、测试题、调查表及下期预告；同一故事的章节和重复页眉已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2f11dfc4e78f2706028528506ed1f0c9a953bed4b87e36b8467de19b93b27276",
+    "evidence_only": true,
+    "duration_seconds": 168.3,
+    "generated_at": "2026-08-31T05:37:44+00:00"
+  }
+}

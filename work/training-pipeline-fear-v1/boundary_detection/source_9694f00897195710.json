@@ -1,0 +1,149 @@
+{
+  "source_path": "怖客/《怖客》2012年10月C版-跟我走吧.md",
+  "source_sha256": "7977501ec77dcd1ee1f663fd3f3310ff135d3df3abe7c730f9f982505fd4022a",
+  "line_count": 3673,
+  "stories": [
+    {
+      "title": "時光勿勿流走",
+      "start_line": 127,
+      "end_line": 364,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题后开始，后续章节“兄弟，我该怎样拯救你”属于同一故事，结尾位于编辑署名前。"
+    },
+    {
+      "title": "探险游戏",
+      "start_line": 388,
+      "end_line": 625,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“探险游戏”至“尾声”构成连续校园惊悚故事；尾声后转入作者个人经历。"
+    },
+    {
+      "title": "蟾蜍附身",
+      "start_line": 647,
+      "end_line": 655,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、完整叙事及结尾均有明确证据。"
+    },
+    {
+      "title": "楔子—尾声（主标题未见）",
+      "start_line": 661,
+      "end_line": 957,
+      "confidence": 0.72,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示“楔子”及连续章节至“尾声”构成完整灵异故事，但未见独立主标题。"
+    },
+    {
+      "title": "借皮",
+      "start_line": 965,
+      "end_line": 1247,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“借皮”“飞来横祸”“遗愿”“尾声”连续构成完整恐怖故事，结尾在编辑署名前。"
+    },
+    {
+      "title": "你眼睛里有什么？",
+      "start_line": 1311,
+      "end_line": 1569,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "后续多个章节围绕眼睛主题连续展开，并在“悲伤的眼睛”段落收束。"
+    },
+    {
+      "title": "悄悄话",
+      "start_line": 1763,
+      "end_line": 1836,
+      "confidence": 0.55,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示1765行起为连续恐怖叙事，1773行出现“悄悄话”标题，但标题与正文顺序异常，边界存在不确定性。"
+    },
+    {
+      "title": "还债",
+      "start_line": 1838,
+      "end_line": 1882,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，正文在下一篇作者署名之前结束。"
+    },
+    {
+      "title": "真假室友",
+      "start_line": 1890,
+      "end_line": 2135,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“真假室友”至“致命的错误”是连续校园怪谈，结尾在编辑署名前。"
+    },
+    {
+      "title": "一块春 爷爷送我",
+      "start_line": 2143,
+      "end_line": 2152,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和收束段落明确，篇幅较短但叙事完整。"
+    },
+    {
+      "title": "小儿你的手头",
+      "start_line": 2156,
+      "end_line": 2385,
+      "confidence": 0.68,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题后接“给我你的鼻子”“还差一双耳朵”等连续章节，明显属于同一恐怖故事；末尾紧邻编辑部栏目，精确结束行依赖段落间距推断。"
+    },
+    {
+      "title": "命运修改器",
+      "start_line": 2673,
+      "end_line": 3206,
+      "confidence": 0.69,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名后接“死人复活”“怀疑”“不可改变”“尾声”等连续章节，结局位于下一篇作者署名前；精确终止行证据略有缺口。"
+    },
+    {
+      "title": "拔苗助长",
+      "start_line": 3224,
+      "end_line": 3520,
+      "confidence": 0.7,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名后接连续章节至“结局”，随后转为赠刊清单；结尾行根据清单起始位置推断。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未打开或扫描原始 Markdown。已排除封面预告、通知、目录、作者档案、栏目页、编辑部故事、游乐园攻略、广告、问卷、书评及其他非小说内容。证据包中还存在若干正文片段缺少清晰主标题或起止标记，未纳入或已降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "7977501ec77dcd1ee1f663fd3f3310ff135d3df3abe7c730f9f982505fd4022a",
+    "evidence_only": true,
+    "duration_seconds": 131.1,
+    "generated_at": "2026-08-31T05:16:02+00:00"
+  }
+}

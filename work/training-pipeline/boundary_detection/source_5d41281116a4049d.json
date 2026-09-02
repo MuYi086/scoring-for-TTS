@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/岁月推理午夜场1期.md",
+  "source_sha256": "2e7677b3ef938fed3d7a8dd70f426437517e946583ad04a81550d345072e1b26",
+  "line_count": 5888,
+  "stories": [
+    {
+      "title": "迷夜惊情",
+      "start_line": 135,
+      "end_line": 529,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名明确，包含完整悬疑犯罪叙事并以结局段落收束。"
+    },
+    {
+      "title": "手拉手，背靠背",
+      "start_line": 531,
+      "end_line": 1437,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从作者署名和标题段开始，章节、前奏及尾声均属同一完整故事，尾声明确收束。"
+    },
+    {
+      "title": "夜·暗涌",
+      "start_line": 1439,
+      "end_line": 2293,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者署名及序章明确，数字章节和结尾段均连续属于同一推理犯罪故事。"
+    },
+    {
+      "title": "珠江魅影",
+      "start_line": 2295,
+      "end_line": 3143,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据包显示自“雨中的序幕”起连续出现神秘照片、厉鬼惩罚、不可能犯罪及星夜下的结局等完整叙事；正文主标题未在标题记录中明确出现，篇名依据目录信息推定，故降低边界置信度。"
+    },
+    {
+      "title": "欲望的北新地",
+      "start_line": 3145,
+      "end_line": 3669,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和分节明确，五个部分连续构成完整推理故事，末段为收束性结尾。"
+    },
+    {
+      "title": "拥抱暗夜的温柔",
+      "start_line": 3671,
+      "end_line": 4180,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，四个章节连续叙事，末段完成案件与人物关系的收束。"
+    },
+    {
+      "title": "超人归来",
+      "start_line": 4182,
+      "end_line": 4931,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、数字章节及尾声均明确，尾声交代犯罪动机和后续，故事完整结束。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未打开或扫描原始 Markdown。已排除目录、声明、创作谈、后记、征文、订阅及其他刊后内容。珠江魅影的正文起点缺少可明确识别的主标题记录，依据连续叙事段和目录信息推定为 L2295，因此置信度较低。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2e7677b3ef938fed3d7a8dd70f426437517e946583ad04a81550d345072e1b26",
+    "evidence_only": true,
+    "duration_seconds": 95.1,
+    "generated_at": "2026-08-30T11:24:59+00:00"
+  }
+}

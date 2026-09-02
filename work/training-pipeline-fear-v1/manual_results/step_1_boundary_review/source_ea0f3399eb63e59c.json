@@ -1,0 +1,108 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2007年06.md",
+  "source_sha256": "fa91260166074fa687afab43d36d7c26482ebd52e14c25a9111b2ed630c80d2b",
+  "line_count": 5170,
+  "stories": [
+  {
+  "title": "红线",
+  "start_line": 239,
+  "end_line": 639,
+  "confidence": 0.98,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题后连续包含第1至第9节，末段形成完整结局；目录标题未作为起点。"
+  },
+  {
+  "title": "合作游戏",
+  "start_line": 643,
+  "end_line": 858,
+  "confidence": 0.97,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "正文标题及一至四节连续出现，末段完成案件反转与结局。"
+  },
+  {
+  "title": "比翼鸟",
+  "start_line": 878,
+  "end_line": 1036,
+  "confidence": 0.96,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题、作者署名和连续叙事明确，末段以悬疑收束。"
+  },
+  {
+  "title": "女猎心师",
+  "start_line": 1204,
+  "end_line": 1734,
+  "confidence": 0.94,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题在相邻标题段中拆分为“女猎”“心师”，后续章节三至十三均属同一小说；末段为故事收束。"
+  },
+  {
+  "title": "真实的童话",
+  "start_line": 2476,
+  "end_line": 2979,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "局部包明确给出逐字拆分的正文标题与署名；L2979为故事结语，后续L2981为栏目字样、L2983为下一篇题记。"
+  },
+  {
+  "title": "天狐未离",
+  "start_line": 2985,
+  "end_line": 3410,
+  "confidence": 0.9,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "目录明确出现《天狐未离》，正文标题与连续章节内容相符，至下一独立故事《木牌》前收束。"
+  },
+  {
+  "title": "木牌",
+  "start_line": 3412,
+  "end_line": 3782,
+  "confidence": 0.98,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题和作者署名明确，后续一至六节连续，末段完成恐怖反转。"
+  },
+  {
+  "title": "似是故人来",
+  "start_line": 3784,
+  "end_line": 4172,
+  "confidence": 0.9,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题、作者署名、序言及一至五节和尾声连续，但序言明确承接上期，属于连载片段。"
+  },
+  {
+  "title": "血手印",
+  "start_line": 4182,
+  "end_line": 4597,
+  "confidence": 0.3,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "L4182为明确标题，后续具有第1至第15节；L4598已是天心、春日约等人物构成的另一篇连载。局部包未提供L4552至   L4597的原文，无法确认《血手印》的实际结局行或其是否完整，因此暂以异文出现前一行作为上限并保留uncertain。"
+  },
+  {
+  "title": "古玉幽魂",
+  "start_line": 4598,
+  "end_line": 5088,
+  "confidence": 0.45,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "L4598起的天心、春日约叙事与L4630“2、古玉幽魂”及后续章节连续，L5088明确标注“待续”。但“古玉幽魂”是第2节标   题，且局部包未覆盖本篇与《血手印》的精确切换处，也未给出整篇总标题，故暂保留Terra边界和标题并降低置信度。"
+  }
+  ],
+  "document_notes": "仅使用指定的第一遍结果、Terra复核结果及局部证据包，未读取原始整期Markdown。《真实的童话》已由局   部证据完整解决；《血手印》与其后天心连载之间的关键原文缺失，无法可靠确定精确切换行及后者总标题，故不猜测拆分或补充   故事，并降低相关置信度。其他条目逐字段保留Terra复核结果。"
+  }

@@ -1,0 +1,149 @@
+{
+  "source_path": "怖客/《怖客》2011年10月B版-好奇害死蛙.md",
+  "source_sha256": "7c66ae362bc287b1468f482e5155828051898f60f6b4b578efae10f06718c2bc",
+  "line_count": 3739,
+  "stories": [
+    {
+      "title": "便宜承诺",
+      "start_line": 194,
+      "end_line": 511,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续正文明确，包含完整的恐怖故事结尾；编辑信息从第513行开始。"
+    },
+    {
+      "title": "打鬼手",
+      "start_line": 515,
+      "end_line": 523,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录后正文中的独立短篇，故事在第523行结束，第525行为编辑信息。"
+    },
+    {
+      "title": "你在祭奠谁？",
+      "start_line": 527,
+      "end_line": 1173,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第527行起为故事总标题，后续楔子及多个章节属于同一篇；第1173行完成收束。"
+    },
+    {
+      "title": "尖叫",
+      "start_line": 1179,
+      "end_line": 1525,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续包含多个章节，结局正文至第1525行，第1527行为编辑信息。"
+    },
+    {
+      "title": "关沉声",
+      "start_line": 1529,
+      "end_line": 1537,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立校园灵异短篇，正文在第1537行收束，第1539行为编辑信息；标题字样据证据包记录。"
+    },
+    {
+      "title": "末班车",
+      "start_line": 1543,
+      "end_line": 1577,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者信息合并在栏目标题中，正文至第1577行结束，第1579行为编辑信息。"
+    },
+    {
+      "title": "西瓜",
+      "start_line": 1583,
+      "end_line": 1675,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，标题位于第1583行，正文至第1675行结束，第1677行为编辑信息。"
+    },
+    {
+      "title": "预约",
+      "start_line": 1679,
+      "end_line": 1711,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者信息明确，正文在第1711行结束；第1713行已进入下一栏目内容。"
+    },
+    {
+      "title": "嘲笑我的死",
+      "start_line": 1771,
+      "end_line": 2079,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1771行为总标题，后续章节属于同一故事，结局正文至第2079行，第2080行为作者署名。"
+    },
+    {
+      "title": "榴莲",
+      "start_line": 2084,
+      "end_line": 2332,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "以第2084行标题开始，内部多个故事段落构成同一完整叙事，正文至第2332行结束，第2334行为编辑信息。"
+    },
+    {
+      "title": "该死的含义",
+      "start_line": 2520,
+      "end_line": 2578,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及连续正文明确，故事在第2578行完成收束。"
+    },
+    {
+      "title": "死神来晚了",
+      "start_line": 2580,
+      "end_line": 2814,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立故事正文至第2814行结束，第2816行为编辑信息。"
+    },
+    {
+      "title": "死而复生（上）",
+      "start_line": 2818,
+      "end_line": 3347,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文明确标注“上”，并在第3349行标注“未完待续”；因此只能认定为本期连载片段，不能标为完整。"
+    }
+  ],
+  "document_notes": "仅依据证据包判断，未读取原始 Markdown。已排除封面、目录、声明、栏目页、作者简介、明星灵异事件、知识/调查内容、问卷广告、预告及征稿等非小说内容；同一故事的章节均已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "7c66ae362bc287b1468f482e5155828051898f60f6b4b578efae10f06718c2bc",
+    "evidence_only": true,
+    "duration_seconds": 112.7,
+    "generated_at": "2026-08-31T05:13:45+00:00"
+  }
+}

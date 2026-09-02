@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第04期.md",
+  "source_sha256": "b295d8ea87e0655648ff78cc16d07133c99c21256ff5e34d6df2f78743669c64",
+  "line_count": 5454,
+  "stories": [
+    {
+      "title": "彼岸·越人歌",
+      "start_line": 271,
+      "end_line": 909,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从主标题开始，包含连续八个章节，结尾为完整真相与人物收束。"
+    },
+    {
+      "title": "凶犯、记者和侦探",
+      "start_line": 911,
+      "end_line": 1291,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题下连续多个小节属于同一案件故事，末段完成主要冲突收束；重复标题为内部小节而非新故事。"
+    },
+    {
+      "title": "误入弄堂深处",
+      "start_line": 1293,
+      "end_line": 1890,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题下的章节、协查通报和尾声构成连续完整的都市怪谈推理短篇。"
+    },
+    {
+      "title": "新占星术杀人魔法（下）",
+      "start_line": 2142,
+      "end_line": 2529,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“下”，正文为“下篇：解谜篇”，且证据显示其承接前文，不能视为本期完整小说。"
+    },
+    {
+      "title": "偷窃蓝马",
+      "start_line": 2639,
+      "end_line": 3129,
+      "confidence": 0.82,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者译者信息和长篇连续叙事明确表明为推理小说；但证据段尾包含选载说明和注释，未能仅凭尾部摘要精确确认结局正文最后一行。"
+    },
+    {
+      "title": "庄助的夜着",
+      "start_line": 3131,
+      "end_line": 3586,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文以完整故事展开，末行完成情节收束；其后的出版信息不计入故事正文。"
+    },
+    {
+      "title": "失踪",
+      "start_line": 3590,
+      "end_line": 4807,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者信息后为连续完整的侦探小说正文，结尾完成案件与人物收束。"
+    }
+  ],
+  "document_notes": "仅检查了证据包，未打开或扫描原始 Markdown。已排除目录、广告、声明、新闻资讯、作者介绍、互动栏目、谜题答案、书评、征稿、订阅信息和下期预告；“试卷移位之谜”按推理栏目谜题而非独立小说排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "b295d8ea87e0655648ff78cc16d07133c99c21256ff5e34d6df2f78743669c64",
+    "evidence_only": true,
+    "duration_seconds": 96.9,
+    "generated_at": "2026-08-30T11:29:36+00:00"
+  }
+}

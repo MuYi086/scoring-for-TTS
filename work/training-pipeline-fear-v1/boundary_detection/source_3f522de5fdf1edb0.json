@@ -1,0 +1,99 @@
+{
+  "source_path": "悚族/《悚族》蜡人墓.md",
+  "source_sha256": "ab6bada9a68583b8ac4f7efbff951bb3eabe92c74a786089f15d203353fdded8",
+  "line_count": 2664,
+  "stories": [
+    {
+      "title": "去死吧，人渣！",
+      "start_line": 182,
+      "end_line": 655,
+      "confidence": 0.7,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题段及连续正文围绕方子、Michelle和秦雪展开惊悚故事；后续多个重复标题属于同一故事。段尾夹有版面混排内容，边界可靠度略降。"
+    },
+    {
+      "title": "骨生花",
+      "start_line": 659,
+      "end_line": 1207,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从连思云与骨裳相遇开始，连续包含多个章节和结局性冲突；中间重复标题、章节名及民俗知识属于版面混排或同篇附加内容。"
+    },
+    {
+      "title": "厄运体质",
+      "start_line": 1209,
+      "end_line": 1554,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名后开始，正文按楔子及六章展开，围绕灵异体质、女鬼和驱邪事件，至本段末形成收束。"
+    },
+    {
+      "title": "奸商",
+      "start_line": 1556,
+      "end_line": 1580,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，正文从李勇经商写起并以鬼魂反转收束。"
+    },
+    {
+      "title": "游泳",
+      "start_line": 1582,
+      "end_line": 1610,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，围绕苏小白和溺亡事件展开，末段揭示关键反转。"
+    },
+    {
+      "title": "字如其人",
+      "start_line": 1624,
+      "end_line": 1660,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立怪谈短篇，正文至李局长身份和身体异常揭示处结束；后续作者署名不计入故事。"
+    },
+    {
+      "title": "蜡人墓",
+      "start_line": 1668,
+      "end_line": 1953,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后的连续墓穴探险与尸油、蜡人冲突正文，在主人公面对大火并释然处形成结局；后续为另一篇《求生之行【下】》。"
+    },
+    {
+      "title": "求生之行【下】",
+      "start_line": 1959,
+      "end_line": 2521,
+      "confidence": 0.63,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确标有“上期精彩内容回顾”和“【下】”，属于连载续篇；证据显示本期有章节推进但无法确认完整结尾，且末段与调查表等刊后内容混排。"
+    }
+  ],
+  "document_notes": "证据包显示该期包含多篇惊悚、恐怖或怪谈小说，也包含黑猫侦探社、民俗知识、心理测试、调查表和广告等非小说内容，均未列入 stories。部分标题段存在版面混排，相关边界已降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ab6bada9a68583b8ac4f7efbff951bb3eabe92c74a786089f15d203353fdded8",
+    "evidence_only": true,
+    "duration_seconds": 173.0,
+    "generated_at": "2026-08-31T05:36:21+00:00"
+  }
+}

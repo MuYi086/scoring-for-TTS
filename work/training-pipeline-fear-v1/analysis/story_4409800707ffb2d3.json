@@ -1,0 +1,86 @@
+{
+  "source_id": "story_4409800707ffb2d3",
+  "characters": [
+    {
+      "name": "阿丽",
+      "aliases": [],
+      "role": "抱着刚满月孩子赶往工厂见丈夫的母亲"
+    },
+    {
+      "name": "丈夫",
+      "aliases": [],
+      "role": "在工厂加班并上夜班的阿丽丈夫"
+    },
+    {
+      "name": "婴儿",
+      "aliases": [
+        "孩子",
+        "小家伙"
+      ],
+      "role": "阿丽刚满月的孩子"
+    },
+    {
+      "name": "工友",
+      "aliases": [],
+      "role": "下班后进入工棚并误将西瓜当作食物切开的工人"
+    }
+  ],
+  "immutable_facts": [
+    "故事发生在夜间，阿丽的丈夫已连续在工厂加班约三天未回家。",
+    "阿丽抱着刚满月的孩子走夜路去工厂见丈夫。",
+    "阿丽踩到瓜皮摔倒后，手中只剩包裹孩子的棉布，孩子一度失踪。",
+    "阿丽循着婴儿哭声找到孩子，但到达工厂时怀中实际抱着的是棉布包裹的西瓜。",
+    "丈夫用手电筒在摔倒处找到婴儿，婴儿当时正在睡觉且看起来没有受伤。",
+    "摔倒处有各种形状的瓜皮，婴儿蜷缩起来像肉做的西瓜。",
+    "工棚桌上放着一个翠绿的西瓜。",
+    "工友用刀切入西瓜后听到婴儿啼哭。"
+  ],
+  "clues": [
+    "阿丽在摔倒后听到婴儿哭声，并据此找到手中的物体。",
+    "阿丽到达工厂时仍听见怀中有哭声，但怀中物体已经是西瓜。",
+    "婴儿的蜷缩形态被明确比作西瓜。",
+    "工友切入西瓜后听见与此前相似的婴儿啼哭。"
+  ],
+  "misdirection": [
+    "阿丽以为自己循着哭声找回的是孩子。",
+    "丈夫初见阿丽时也以为她抱着的是孩子。",
+    "找到婴儿后，丈夫认为只是及时找回孩子、并未察觉更大的异常。",
+    "“有惊无险”暂时淡化了婴儿与西瓜之间的异常转换。"
+  ],
+  "twist": "阿丽和丈夫找到的婴儿与工棚中的西瓜似乎发生了位置或身份交换；工友切西瓜时传出的婴儿哭声暗示孩子可能正处于刀下。",
+  "story_dna": {
+    "genre": "黑色幽默惊悚短故事",
+    "narrative_viewpoint": "第三人称叙述，前半段贴近阿丽的感知，结尾切换到工友视角形成并行揭示",
+    "timeline": "单一夜晚的线性时间，结尾以“同一时间”切换到工棚场景",
+    "suspense_mechanism": [
+      "感知与现实错位",
+      "婴儿哭声作为误导和回收线索",
+      "物体身份交换悬念",
+      "在关键动作处突然揭示危险"
+    ],
+    "audio_adaptation_risks": [
+      "婴儿哭声既可能来自孩子也可能来自西瓜，需清晰区分场景位置",
+      "瓜皮、摔倒、手电筒照明和切瓜声需要明确的音效层次",
+      "结尾切换到工棚时应避免听众误以为仍在原地点"
+    ]
+  },
+  "ocr_flags": [],
+  "difficulty": "normal",
+  "boundary_assessment": {
+    "status": "complete",
+    "confidence": 0.99,
+    "issues": [],
+    "suggested_start_line": null,
+    "suggested_end_line": null
+  },
+  "_provenance": {
+    "stage": "story_analysis",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4409800707ffb2d3.txt",
+    "input_sha256": "677cf959cd6b67cdd287532afd23bb300c4b0d03a1f865c7bce285a33eba9573",
+    "generated_at": "2026-09-01T12:58:50+00:00",
+    "codex_cwd": "/home/muyi086/github/scoring-for-TTS"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.09.md",
+  "source_sha256": "f5e5889f6b188fc00e76ba60986fb9fa0879274a38b746428f52c53d606fccb8",
+  "line_count": 3868,
+  "stories": [
+    {
+      "title": "暗斗",
+      "start_line": 1159,
+      "end_line": 1344,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立小说标题及作者署名明确，后续为连续叙事章节，至编辑信息前结束；内容具有历史犯罪与谍战悬疑特征。"
+    },
+    {
+      "title": "深圳式老友",
+      "start_line": 1352,
+      "end_line": 1942,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立小说标题、作者署名和连续章节明确，至下一篇作品前结束；主要为都市友情与婚姻题材，不属于目标类型。"
+    },
+    {
+      "title": "布条上的向日葵",
+      "start_line": 1950,
+      "end_line": 1980,
+      "confidence": 0.81,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及完整独立段落边界明确，编辑信息随后出现；证据包未提供足够结局语境，故降低置信度并标为 uncertain。"
+    },
+    {
+      "title": "无间月",
+      "start_line": 2753,
+      "end_line": 3765,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名明确，后续章节、日期小节和报案笔录均属同一案件叙事；第十二部分后出现编辑信息，前文已形成完整结局。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。已排除目录、声明、导读、纪实报道、人物通讯、知识性栏目、答案、下期要目及广告等非小说内容；章节标题、日期标题和笔录标题均并入所属小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "f5e5889f6b188fc00e76ba60986fb9fa0879274a38b746428f52c53d606fccb8",
+    "evidence_only": true,
+    "duration_seconds": 99.6,
+    "generated_at": "2026-08-30T11:22:27+00:00"
+  }
+}

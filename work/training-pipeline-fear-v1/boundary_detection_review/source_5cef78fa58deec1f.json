@@ -1,0 +1,198 @@
+{
+  "source_path": "怖客/《怖客》2010年12月请把心还给我.md",
+  "source_sha256": "3fb720d86ab2e1ac9d09863fd59e84bbcd9f53ce96f666de02cb6eb8b08579ac",
+  "line_count": 3856,
+  "stories": [
+    {
+      "title": "牵挂",
+      "start_line": 59,
+      "end_line": 79,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由刊后文章清单确认；正文从作者署名开始，以亡夫留言的灵异反转完整收束，后接编辑信息和目录。"
+    },
+    {
+      "title": "心里话",
+      "start_line": 197,
+      "end_line": 545,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“宅男偶遇”“山里话”是同一故事的连续章节；周平与交换秘密刊物的主线在第545行结束。"
+    },
+    {
+      "title": "一个故事一条命",
+      "start_line": 549,
+      "end_line": 800,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "因版面提取顺序，首节“镜子游戏”和开篇正文先于第553行总题名出现；“纸人”“给我十块钱”“长发”“选一个结尾”均为元小说内部片段，最终统一收束。"
+    },
+    {
+      "title": "水库的幽魂",
+      "start_line": 804,
+      "end_line": 819,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "以读者亲历口吻讲述水库见闻，并用九八年洪水死亡背景作结；属于完整灵异经历短记而非明确虚构小说。"
+    },
+    {
+      "title": "梦魇",
+      "start_line": 821,
+      "end_line": 831,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "作者以亲历口吻记录梦魇及后续怪事，篇幅虽短但叙述完整，随后是编辑信息。"
+    },
+    {
+      "title": "带我回家",
+      "start_line": 835,
+      "end_line": 1137,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题被OCR误作“荷耕回家”，目录可校正为《带我回家》；“阴魂不散”“幻影凶间”是同一露营故事的章节，结局完整。"
+    },
+    {
+      "title": "吃香蕉",
+      "start_line": 1145,
+      "end_line": 1161,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "以童年亲历口吻叙述笔仙和梦游吃香蕉事件，疑问式结尾后即接编辑信息。"
+    },
+    {
+      "title": "停尸驿站",
+      "start_line": 1167,
+      "end_line": 1319,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认真实篇名，正文标题被OCR误作“高望路”；故事完成失踪、追查和苏珊反转后结束。"
+    },
+    {
+      "title": "一根头发",
+      "start_line": 1323,
+      "end_line": 1369,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名被OCR拆成第1323、1325行两个标题；拔取墙中头发的故事在全班女生变成光头的反转处结束，不能与后篇合并。"
+    },
+    {
+      "title": "雪崩之后",
+      "start_line": 1375,
+      "end_line": 1427,
+      "confidence": 0.89,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名由目录和刊后文章清单确认，Markdown中由第1375行无替代文字的开篇图片承载；正文是独立雪崩求生惊悚故事，结尾揭示双腿只剩骨架。"
+    },
+    {
+      "title": "我不是苏小余",
+      "start_line": 1431,
+      "end_line": 1477,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立超自然黑色幽默短篇，在主人公对镜发誓不再投胎的结局处结束。"
+    },
+    {
+      "title": "请把心还给我",
+      "start_line": 1483,
+      "end_line": 1845,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“姻缘红线”“请收下我的心”“我们之间”“死人会……”均是同一项链诅咒故事的章节；亡心石被毁、三人脱险后完整收束。"
+    },
+    {
+      "title": "血手链",
+      "start_line": 1850,
+      "end_line": 2075,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1850行作者署名紧邻图片形式的总题名；“四合院”“陆非”是不同叙述视角而非新故事，最终以手链再次被取走的循环结局结束。"
+    },
+    {
+      "title": "飘移的尖叫",
+      "start_line": 2081,
+      "end_line": 2089,
+      "confidence": 0.85,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "原题末字被OCR为“04”，结合正文可校正为“尖叫”；读者以亲历口吻记录听到车祸死者消失尖叫的完整短记。"
+    },
+    {
+      "title": "不要打梦中的电话",
+      "start_line": 2093,
+      "end_line": 2262,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名由目录确认，Markdown正文从紧邻题名图片的作者署名开始；丁丁焚毁纸片、击败岳凡并与哥哥告别后结束。"
+    },
+    {
+      "title": "午夜不要去听讲座",
+      "start_line": 2270,
+      "end_line": 2654,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“上路”至“尾声”是同一校园军训怪谈的连续章节；一年后的循环尾声构成明确结局。"
+    },
+    {
+      "title": "转角凶灵（下）",
+      "start_line": 2658,
+      "end_line": 3296,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "刊后文章清单确认篇名；本期明确标注“下”并以“前情提要”代替开头，虽然第3296行标明全文终并完成结局，当前文本仍只是连载下篇。"
+    },
+    {
+      "title": "防空洞",
+      "start_line": 3576,
+      "end_line": 3590,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "读者以童年亲历口吻叙述防空洞中的异常女声，至无法解释声音来源处结束，随后进入编辑信息和问卷。"
+    }
+  ],
+  "document_notes": "第二遍依据原文纠正了第一遍的关键误判：《心里话》与《一个故事一条命》已拆分，《一根头发》与《雪崩之后》已拆分，《血手链》和《不要打梦中的电话》的题名已按目录复原；《转角凶灵（下）》实际在第3296行结束，第3301—3574行是以图片为主的后续漫画内容，不属于该连载。第175—191行嵌在刊头出版信息内且无独立题名或作者署名，按无题栏间黑段子排除；编辑署名、目录、问卷和广告均未并入故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3fb720d86ab2e1ac9d09863fd59e84bbcd9f53ce96f666de02cb6eb8b08579ac",
+    "duration_seconds": 571.9,
+    "generated_at": "2026-08-31T06:36:58+00:00"
+  }
+}

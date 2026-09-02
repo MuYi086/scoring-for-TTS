@@ -1,0 +1,248 @@
+{
+  "source_path": "怖客/《怖客》2014年07月B版-反省时间(T).md",
+  "source_sha256": "877b08afd2ba4eea15feff2e9da6742a81d69ed65cde5f0d52a763ebe4c84b3a",
+  "line_count": 3415,
+  "stories": [
+    {
+      "title": "记忆空白",
+      "start_line": 25,
+      "end_line": 43,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和结局均明确；以身份与记忆错位构成心理悬疑反转，下一行是编辑信息。"
+    },
+    {
+      "title": "父亲",
+      "start_line": 157,
+      "end_line": 179,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "目录可恢复篇名，正文因版面抽取而未保留标题；故事从第157行开始并在父子和解处完整结束。"
+    },
+    {
+      "title": "国王的驴耳朵",
+      "start_line": 187,
+      "end_line": 385,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "第187行是识别残缺的总标题，后续三个标题均为同篇章节；汇款谜团最终获得温情解释，属于普通校园励志故事。"
+    },
+    {
+      "title": "爆糗事",
+      "start_line": 391,
+      "end_line": 411,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题虽误识别为“爆粮事”，但目录和内容可确认篇名；爱情短篇在第411行完整收束。"
+    },
+    {
+      "title": "南神北探",
+      "start_line": 415,
+      "end_line": 660,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总标题后各小标题属于同一校园侦探故事，第660行揭示血手印案件全貌，后续仅为插图署名。"
+    },
+    {
+      "title": "图书馆失窃案",
+      "start_line": 667,
+      "end_line": 977,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录给出总篇名，正文从首章“盗书”开始，连续调查章节及尾声共同组成完整校园失窃案。"
+    },
+    {
+      "title": "最高的山",
+      "start_line": 981,
+      "end_line": 1007,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题和作者明确，故事以演讲揭示“最高的山”所指并完整结束，属于亲情励志短篇。"
+    },
+    {
+      "title": "反省时间",
+      "start_line": 1015,
+      "end_line": 1272,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1015行总标题识别残缺，后续“自私”“绝境”“蜕变”“脱险”均为同篇章节；洞穴求生情节和主题均完整收束。"
+    },
+    {
+      "title": "半张旧照片",
+      "start_line": 1276,
+      "end_line": 1426,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1276行是识别残缺的总标题及作者署名，多个调查小节连续，结尾保留诡异失踪与遗忘的怪谈反转。"
+    },
+    {
+      "title": "地穴狼蛛",
+      "start_line": 1436,
+      "end_line": 1628,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总篇名由目录恢复，正文从首节“寝室有毒”开始；多个调查章节最终揭露投放毒蛛的犯罪真相。"
+    },
+    {
+      "title": "愿望",
+      "start_line": 1634,
+      "end_line": 1650,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题由目录恢复，第1634行为作者署名；中间误识别的编辑标题不是边界，女鬼反转在第1650行结束。"
+    },
+    {
+      "title": "隔壁404",
+      "start_line": 1654,
+      "end_line": 1837,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总标题、作者及连续章节关系明确，故事完整调查并解释404寝室的疑似灵异现象。"
+    },
+    {
+      "title": "盗",
+      "start_line": 1859,
+      "end_line": 2141,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录中的总篇名为“盗”，正文从首章“盗者长忧”开始；后续对仗标题均为章节，超自然事件在第2141行完整收束。"
+    },
+    {
+      "title": "苦柠檬",
+      "start_line": 2145,
+      "end_line": 2375,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2145行是识别残缺的总标题，后续章节持续调查柠檬片与疑似命案，最终解释死亡真相。"
+    },
+    {
+      "title": "租男友",
+      "start_line": 2381,
+      "end_line": 2409,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "该篇仅到第2409行，以双方互相租作伴侣的喜剧反转结束；第2413行作者署名已属于下一篇《囚禁》。"
+    },
+    {
+      "title": "囚禁",
+      "start_line": 2413,
+      "end_line": 2451,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由目录恢复，第2413行为作者署名；器官盗取骗局转为复仇怪谈，并在编辑信息前完整结束。"
+    },
+    {
+      "title": "比聪明",
+      "start_line": 2455,
+      "end_line": 2489,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由目录恢复，第2455行为作者署名；露出大脑的怪人形成恐怖结尾，下一行之后进入编辑及讲堂内容。"
+    },
+    {
+      "title": "萤翅虫",
+      "start_line": 2559,
+      "end_line": 2752,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录给出总篇名，第2559行作者署名应纳入边界；“跟随”等小节组成同一盗墓求生故事，人物最终逃出墓穴。"
+    },
+    {
+      "title": "手电筒",
+      "start_line": 2758,
+      "end_line": 2778,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题和作者明确，父亲放置手电筒的原因在第2778行揭示；第2782行已经开始另一篇《大衣兜》。"
+    },
+    {
+      "title": "大衣兜",
+      "start_line": 2782,
+      "end_line": 2820,
+      "confidence": 0.85,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "篇名和作者由目录恢复，正文标题在版面抽取中缺失；故事从首句开始并以大衣口袋用途的温情反转结束。"
+    },
+    {
+      "title": "最喜欢的人",
+      "start_line": 2826,
+      "end_line": 2852,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "篇名由目录恢复，第2826行为作者署名；第2852行已完成班长误解小娟心意的喜剧反转。"
+    },
+    {
+      "title": "不讲普通话",
+      "start_line": 2856,
+      "end_line": 2876,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "篇名和作者由目录恢复，正文标题因版面抽取缺失；邹信故意说方言的原因在第2876行完整揭示。"
+    },
+    {
+      "title": "裂痕（下）",
+      "start_line": 2928,
+      "end_line": 3128,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确标为连载下篇，第2928行“上期回顾”属于本期内容；本期有结局，但缺少连载上篇的开端，因此标为installment。"
+    }
+  ],
+  "document_notes": "第二遍抽查原文后修正了第一遍的合并错误：将《租男友》《囚禁》《比聪明》拆分，将《手电筒》《大衣兜》拆分，将《最喜欢的人》《不讲普通话》拆分；补入标题缺失的《父亲》，并把《萤翅虫》起点前移至作者署名。《报警》和《用情猜谜》属于“猜猜看”栏目，正文明确要求读者等待下期答案，不列为完整小说。编辑信息、谜底、讲堂文章及第3132行开始的商品广告均已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "877b08afd2ba4eea15feff2e9da6742a81d69ed65cde5f0d52a763ebe4c84b3a",
+    "duration_seconds": 417.7,
+    "generated_at": "2026-08-31T07:13:09+00:00"
+  }
+}

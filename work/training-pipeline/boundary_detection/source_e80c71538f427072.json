@@ -1,0 +1,79 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第12期.md",
+  "source_sha256": "ba227b2e841e3421185d23509db872a169b51c753053b72cc5d8ea79b3e711e5",
+  "line_count": 7556,
+  "stories": [
+    {
+      "title": "哀伤的风铃",
+      "start_line": 438,
+      "end_line": 1611,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名位于 L438，后续为连续章节，结尾止于 L1611；目录标题未作为起点。"
+    },
+    {
+      "title": "那密室里，有尸体",
+      "start_line": 1613,
+      "end_line": 2123,
+      "confidence": 0.7,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录与正文内容可对应，但正文起始标题在证据中出现编码损坏；L2125 已明确进入下一篇《入我彀中》。"
+    },
+    {
+      "title": "入我彀中",
+      "start_line": 2125,
+      "end_line": 2363,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2125 为正文标题及作者署名，L2363 为故事正文结尾；L2365 起为编辑代后记，不计入故事。"
+    },
+    {
+      "title": "1Q84年的空气蛹",
+      "start_line": 2439,
+      "end_line": 3697,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2439 起为楔子，后续章节、尾声均属同一小说，L3697 结束；L3699 起进入下一篇《重影》。"
+    },
+    {
+      "title": "重影",
+      "start_line": 3699,
+      "end_line": 3945,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L3699 为标题、L3701 为作者署名，正文至 L3945，但明确注明解答篇见下一期银版，结局不完整。"
+    },
+    {
+      "title": "漫长的死亡（上）",
+      "start_line": 4065,
+      "end_line": 7370,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L4065 为篇名，L4067 为作者署名，Day 1、Day 2 及数字章节均属同一连载小说；L7372 起为推理创作文章，且本篇标明“上”，故不视为完整。"
+    }
+  ],
+  "document_notes": "依据证据包识别。目录、资讯、专栏、编辑内容、预告及广告均已排除；未打开或扫描原始 Markdown。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ba227b2e841e3421185d23509db872a169b51c753053b72cc5d8ea79b3e711e5",
+    "evidence_only": true,
+    "duration_seconds": 104.3,
+    "generated_at": "2026-08-30T11:42:36+00:00"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-半夜不要照镜子.md",
+  "source_sha256": "9c9a351ec4363d7bcf98c3602011164f3f7906f241c143a3e9a08304c5b4da6a",
+  "line_count": 2389,
+  "stories": [
+    {
+      "title": "原来我就是你的眼泪",
+      "start_line": 129,
+      "end_line": 147,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文完整，有明确开端和结尾，但属于爱情故事。"
+    },
+    {
+      "title": "作弊事件",
+      "start_line": 196,
+      "end_line": 246,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题开始，但末尾在广告前截断，后续相关内容与该故事的连续关系无法仅凭证据包确认。"
+    },
+    {
+      "title": "老婆你真的长高了",
+      "start_line": 384,
+      "end_line": 402,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明显为恐怖短篇，但尾部正文证据显示可能截断。"
+    },
+    {
+      "title": "“啊！大嫂，你好啊！”",
+      "start_line": 404,
+      "end_line": 489,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从标题对白开始，叙事连续，尾部有明确收束。"
+    },
+    {
+      "title": "墓妈妈",
+      "start_line": 493,
+      "end_line": 837,
+      "confidence": 0.9,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "章节标题均属同一墓穴故事，应合并；末尾证据停在未完对白处，无法确认结局。"
+    },
+    {
+      "title": "无脸鬼",
+      "start_line": 841,
+      "end_line": 849,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文短篇完整，结尾有故事说明和收束性忠告。"
+    },
+    {
+      "title": "至死不渝",
+      "start_line": 868,
+      "end_line": 1249,
+      "confidence": 0.86,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个分节和小标题明显属于同一故事；开头疑似承接缺失内容，故不能确认完整。"
+    },
+    {
+      "title": "晾衣架上的女孩",
+      "start_line": 1253,
+      "end_line": 1333,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "恐怖短篇叙事连续，尾部交代女鬼背景并形成结尾。"
+    },
+    {
+      "title": "狮子的颤栗",
+      "start_line": 1518,
+      "end_line": 2183,
+      "confidence": 0.65,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇恐怖叙事从标题开始，期间包含多个通栏式标题和疑似嵌套叙事；证据显示末尾仍有截断，边界可靠度较低。"
+    },
+    {
+      "title": "七月十五的白雨伞",
+      "start_line": 2185,
+      "end_line": 2233,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文连续，结尾形成明确的鬼故事收束。"
+    }
+  ],
+  "document_notes": "仅依据指定证据包判定，未打开或扫描原始 Markdown。已排除目录、广告、栏目宣传语、商品广告、征稿及其他非小说内容；对证据显示可能缺开头或结尾的篇目标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9c9a351ec4363d7bcf98c3602011164f3f7906f241c143a3e9a08304c5b4da6a",
+    "evidence_only": true,
+    "duration_seconds": 130.1,
+    "generated_at": "2026-08-31T05:45:58+00:00"
+  }
+}

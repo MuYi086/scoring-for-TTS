@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第03期.md",
+  "source_sha256": "6b93f19dab22fc5dfeb2156385fe3051762da66418d12ba3eeb15125259ef945",
+  "line_count": 5624,
+  "stories": [
+    {
+      "title": "私密空间",
+      "start_line": 156,
+      "end_line": 735,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名始于156—158行，后续“客户”至“尾记”为同一调查故事的连续章节；735行结束，下一篇《最美》始于737行。"
+    },
+    {
+      "title": "最美",
+      "start_line": 737,
+      "end_line": 1332,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "737行为正文标题，739行为作者署名，后续数字标题均为章节；1332行为结局正文，下一篇《白袜》始于1334行。含校园、情感与谋杀调查情节，属于明显相邻犯罪推理类型。"
+    },
+    {
+      "title": "白袜",
+      "start_line": 1334,
+      "end_line": 2188,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1334行为正文标题，1336行为作者署名，数字标题为同一故事章节；2188为结尾，下一篇《染血之夜》始于2190行。"
+    },
+    {
+      "title": "染血之夜",
+      "start_line": 2190,
+      "end_line": 3350,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2190行为正文标题及2192行为作者署名，第一章至第五章连续；3350行停在明显悬置的情节节点，未见本期结局，故标为连载片段。"
+    },
+    {
+      "title": "冬夜怪客谜案",
+      "start_line": 3352,
+      "end_line": 3520,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3352行为正文标题，3354行为作者署名，序曲及数字章节均属同一谜案；3520行明确写有“答案请见下期”，本期未完成。"
+    },
+    {
+      "title": "七宗罪之骄傲",
+      "start_line": 3692,
+      "end_line": 4720,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3692行为正文标题，3694行为作者署名，楔子及后续内容连续至4720行；4722行起为小说评论/作者谈，不属于正文。"
+    },
+    {
+      "title": "宝藏",
+      "start_line": 4748,
+      "end_line": 5154,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "4748行为正文标题，后续数字章节为同一故事；5154行明确写明案件圆满解决，5156行起为书评及栏目内容。"
+    }
+  ],
+  "document_notes": "严格仅依据边界证据包识别，未读取或扫描原始 Markdown。已排除目录、声明、栏目页、作者谈、书评、纪实犯罪文章、征稿、下期预告、投票及广告等内容；“染血之夜”和“冬夜怪客谜案”因本期未见完整结局标为 installment。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6b93f19dab22fc5dfeb2156385fe3051762da66418d12ba3eeb15125259ef945",
+    "evidence_only": true,
+    "duration_seconds": 108.6,
+    "generated_at": "2026-08-30T11:38:10+00:00"
+  }
+}

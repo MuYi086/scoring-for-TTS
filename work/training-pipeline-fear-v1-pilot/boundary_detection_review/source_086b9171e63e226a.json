@@ -1,0 +1,268 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼故事》不安分的眼睛.md",
+  "source_sha256": "d9afc6c261cc031516434866de51b1eafa837c9abf61a132dab36d64d8d455df",
+  "line_count": 1686,
+  "stories": [
+    {
+      "title": "死去的爱人",
+      "start_line": 150,
+      "end_line": 212,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后是连续的冥界寻爱故事，至梦境揭示处明确收束。"
+    },
+    {
+      "title": "你要宵夜么？",
+      "start_line": 214,
+      "end_line": 243,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "乱葬岗梦游食尸事件在两人退学并被送医处结局；245行已转入下一篇医学故事。"
+    },
+    {
+      "title": "我的生活、我的女友",
+      "start_line": 251,
+      "end_line": 379,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "解剖女尸与幽灵女友构成完整恐怖叙事，379行是明确尾句。"
+    },
+    {
+      "title": "我那神奇的姥姥",
+      "start_line": 385,
+      "end_line": 411,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "以亲属经历口吻讲述姥姥的通灵见闻，411行以人鬼有别的劝诫结束。"
+    },
+    {
+      "title": "不安分的眼睛",
+      "start_line": 415,
+      "end_line": 459,
+      "confidence": 0.86,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文围绕移植眼角膜和女友死亡疑案展开，但459行仍在陈述线索，后面已被其他短篇内容取代，未见结局。"
+    },
+    {
+      "title": "致命的谎言",
+      "start_line": 469,
+      "end_line": 503,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "医学生编造招鬼方法导致阿玲死亡并重现的故事止于503行；开头被版面错序及另一则红衣短篇插入，完整性无法保证。"
+    },
+    {
+      "title": "鬼狐一家亲",
+      "start_line": 557,
+      "end_line": 627,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "鬼母与义狐共同养育孩子的怪谈完整，末尾交代狐仙庙和孩子成年后的命运。"
+    },
+    {
+      "title": "感人的鬼魂附体",
+      "start_line": 629,
+      "end_line": 671,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "以亲历口吻叙述亡者借神婆附体与母亲告别，671行在神婆恢复后收束。"
+    },
+    {
+      "title": "一份爱情需要几生几世",
+      "start_line": 677,
+      "end_line": 699,
+      "confidence": 0.8,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“引子：两棵树”属于该篇开端，至三世赌约刚刚开始便转入另一篇，未出现赌约结果。"
+    },
+    {
+      "title": "前世今生的爱情",
+      "start_line": 711,
+      "end_line": 741,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "电子邮件引出的跨世灵魂爱情独立成篇，741行以桥消失并留下手帕明确结尾。"
+    },
+    {
+      "title": "索命电邮",
+      "start_line": 743,
+      "end_line": 807,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从镇长已知前情处切入，807行仍停留在男婴威胁后的事件现场，明显缺少开头和最终结局。"
+    },
+    {
+      "title": "学校里的恐怖走廊",
+      "start_line": 817,
+      "end_line": 879,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "校园走廊疑鬼事件经历解释与反转，879行以真正的红鞋女鬼出现和新传说诞生收束。"
+    },
+    {
+      "title": "狗真的能看到人看不到的东西",
+      "start_line": 881,
+      "end_line": 935,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "以朋友经历口吻完整叙述犬只预警、夜间遇灵及后续化解，935行交代此后恢复正常。"
+    },
+    {
+      "title": "幽灵人间",
+      "start_line": 939,
+      "end_line": 1023,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“扑朔迷离”“惊魂一瞥”“真相大白”均为内部小节；1023行以凶手跳窗结束。"
+    },
+    {
+      "title": "邪灵",
+      "start_line": 1027,
+      "end_line": 1080,
+      "confidence": 0.66,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录可确认篇名，正文讲述羽儿收藏邪物及罗汉像驱邪并有结局；正文标题遗失且1027行从句中切入，故降低置信度。"
+    },
+    {
+      "title": "自杀前那三天",
+      "start_line": 1084,
+      "end_line": 1124,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "校园女鬼故事具有发现、误导、真相揭示和循环式结尾，页眉未构成新篇。"
+    },
+    {
+      "title": "幽灵怪车",
+      "start_line": 1126,
+      "end_line": 1170,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "原文1170行完整给出奶奶已死亡三天的反转结局；其后死亡知识文章不属于小说。"
+    },
+    {
+      "title": "监狱里真实的灵异故事",
+      "start_line": 1186,
+      "end_line": 1264,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题被版面拆成两部分，正文连续讲述监狱异响及亡友吊坠事件，1264行以告别亡友结束。"
+    },
+    {
+      "title": "僵尸爱上鬼",
+      "start_line": 1268,
+      "end_line": 1304,
+      "confidence": 0.75,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录提供完整篇名，正文标题仅残留“她是个”；故事在女网友失联疑问处中断，未见结局。"
+    },
+    {
+      "title": "冰凉的太平间",
+      "start_line": 1312,
+      "end_line": 1412,
+      "confidence": 0.93,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个“精灵鬼怪”页眉及“缘，坚持不了多长时间……”均是篇内误识别标题；1412行仍处于厕所受困危机，正文无结局。"
+    },
+    {
+      "title": "部队中飘渺的灵异传闻",
+      "start_line": 1414,
+      "end_line": 1430,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "转述军营树林哭声事件，1430行交代士兵退伍且怪声从此消失。"
+    },
+    {
+      "title": "超精彩短篇鬼故事（三更系列）",
+      "start_line": 1436,
+      "end_line": 1498,
+      "confidence": 0.85,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“缘起”“见鬼”“见两女生”“宿命”从不同视角讲述同一循环事件，应合并；1498行完成宿命式回环。"
+    },
+    {
+      "title": "收垃圾的女鬼",
+      "start_line": 1502,
+      "end_line": 1552,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "以打工经历口吻叙述已死亡的收垃圾女子再次出现，末尾交代后门长期无人夜行。"
+    },
+    {
+      "title": "凶灵附体",
+      "start_line": 1560,
+      "end_line": 1592,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "亲历回忆解释为何敬畏灵堂遗像，末尾以阿唐嘲笑死者后突然发冷形成完整恐怖回扣。"
+    },
+    {
+      "title": "凌晨三点",
+      "start_line": 1596,
+      "end_line": 1631,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "明确自述实验楼夜遇白影、求医及求助法师的经历，1631行说明此后未再遇到异常。"
+    }
+  ],
+  "document_notes": "第二遍结合证据包和候选边界原文裁决。修正了第一遍将《你要宵夜么？》混入下一篇、把两篇转世爱情合并、未读到《幽灵怪车》完整反转，以及把“三更”内部小节误判为未完连载等问题；补入第一遍遗漏的有可靠边界篇目。吸血鬼考察、死亡变化、泰国炼尸油等知识或报道文章均排除。若干无标题微篇被 OCR 跨栏拼接到同一行或其他故事内部，无法形成可靠且互不重叠的线性边界，未伪造标题列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "d9afc6c261cc031516434866de51b1eafa837c9abf61a132dab36d64d8d455df",
+    "duration_seconds": 417.0,
+    "generated_at": "2026-08-30T13:33:03+00:00"
+  }
+}

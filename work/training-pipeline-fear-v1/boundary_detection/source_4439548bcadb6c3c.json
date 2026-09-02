@@ -1,0 +1,109 @@
+{
+  "source_path": "怖客/《怖客》2011年12月C版-有朋自地下来.md",
+  "source_sha256": "6c27521a88441afaabd3b298162b008db49f93093d543786f7c9aefecb65bc32",
+  "line_count": 3728,
+  "stories": [
+    {
+      "title": "眼药水",
+      "start_line": 191,
+      "end_line": 237,
+      "confidence": 0.79,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文段以“眼药小”出现，目录证据显示为“眼药水”；含作者署名和完整短篇正文，末尾编辑及图片署名排除。"
+    },
+    {
+      "title": "作业",
+      "start_line": 242,
+      "end_line": 250,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，正文从标题后开始并在L250形成收束；无后续章节或刊后内容混入。"
+    },
+    {
+      "title": "瞎子的恐怖电影",
+      "start_line": 252,
+      "end_line": 566,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L252为故事开篇，L280至L542为同一故事内部章节，L546-L566为尾段；L568为编辑信息，排除。"
+    },
+    {
+      "title": "诡村",
+      "start_line": 574,
+      "end_line": 1125,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“引子”“莫凯”“诡村”内容连续，应合并为同一恐怖故事；L1125为结局正文，L1127为编辑信息。"
+    },
+    {
+      "title": "乔迁之惊",
+      "start_line": 1133,
+      "end_line": 1615,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“乔迁之惊”“同租客”“秦冉”构成同一连续故事，后两者为内部章节；L1619为编辑信息，正文尾部在此前收束。"
+    },
+    {
+      "title": "车旁的人",
+      "start_line": 1621,
+      "end_line": 1633,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，L1623为作者署名，L1634起为编辑及下一篇署名信息。"
+    },
+    {
+      "title": "鬼磨坊",
+      "start_line": 1641,
+      "end_line": 2785,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“点名”及其后多个章节属于同一长篇；末章明确称“故事还在继续”，因此本期为连载片段，L2787为编辑信息。"
+    },
+    {
+      "title": "诡异的房子",
+      "start_line": 2789,
+      "end_line": 2807,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文后接编辑和图片署名；边界依据局部尾段证据，末尾空行位置存在轻微不确定性。"
+    },
+    {
+      "title": "抽签",
+      "start_line": 2815,
+      "end_line": 3426,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“抽签”至“破釜沉舟”的多个标题是同一连续故事的内部章节，L3426为结局正文，L3428为编辑信息。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未打开或扫描原始 Markdown。已排除封面、目录、广告、编读往来、问卷、声明、预告及其他非小说栏目；同一故事内部章节已合并。部分编辑/图片署名前的空行边界依据局部证据推定，因此个别边界置信度略低。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6c27521a88441afaabd3b298162b008db49f93093d543786f7c9aefecb65bc32",
+    "evidence_only": true,
+    "duration_seconds": 123.5,
+    "generated_at": "2026-08-31T05:14:36+00:00"
+  }
+}

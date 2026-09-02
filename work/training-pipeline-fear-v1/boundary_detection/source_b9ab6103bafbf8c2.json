@@ -1,0 +1,109 @@
+{
+  "source_path": "悚族/《悚族》备胎的自我修养.md",
+  "source_sha256": "cc2a95c7759de9c88d502e1cd2a99826a0252162199c272c36f6f11c7070ed08",
+  "line_count": 2735,
+  "stories": [
+    {
+      "title": "备胎的自我修养",
+      "start_line": 134,
+      "end_line": 541,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从实际故事标题开始，后续多次重复标题均为同一小说的分段，结尾形成完整收束。"
+    },
+    {
+      "title": "盗命",
+      "start_line": 551,
+      "end_line": 789,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从小说正文首段开始，包含分段标题、章节和尾声，末尾明确完成故事结局。"
+    },
+    {
+      "title": "QQ截人",
+      "start_line": 803,
+      "end_line": 1126,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "前置小节与后续多次QQ截人标题内容连贯，末段完成事件解释和收束；边界受版面插入内容影响，置信度略降。"
+    },
+    {
+      "title": "这张脸刚刚好",
+      "start_line": 1134,
+      "end_line": 1528,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "恐怖小说正文连续至1528，但结尾停在冲突发展中，下一标题为另一篇作品，明显缺少本期结局。"
+    },
+    {
+      "title": "向你证明",
+      "start_line": 1530,
+      "end_line": 1566,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，有明确标题、完整情节和结尾。"
+    },
+    {
+      "title": "最适合你的服装",
+      "start_line": 1570,
+      "end_line": 1606,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文从标题开始并在1606形成完整结局。"
+    },
+    {
+      "title": "逆生长",
+      "start_line": 1616,
+      "end_line": 1698,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确为恐怖小说并有独立标题，但证据包末段正文提纲停在场景发展中，无法可靠确认是否完整收束。"
+    },
+    {
+      "title": "雷王琴",
+      "start_line": 1708,
+      "end_line": 2060,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "盗墓惊悚小说，包含多段重复标题和插入栏目内容，后段补足身世与古琴结局，故事完整。"
+    },
+    {
+      "title": "日落西，剥人皮【上】",
+      "start_line": 2066,
+      "end_line": 2423,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“上”，正文在悬念处中止，之后紧接下期精彩内容预告，属于连载上篇。"
+    }
+  ],
+  "document_notes": "依据证据包识别。目录、封面栏目、黑猫侦探社谜题、奇风异俗、灵异教室、广告及刊后调查均已排除；同一小说的重复标题和章节已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "cc2a95c7759de9c88d502e1cd2a99826a0252162199c272c36f6f11c7070ed08",
+    "evidence_only": true,
+    "duration_seconds": 151.4,
+    "generated_at": "2026-08-31T05:28:35+00:00"
+  }
+}

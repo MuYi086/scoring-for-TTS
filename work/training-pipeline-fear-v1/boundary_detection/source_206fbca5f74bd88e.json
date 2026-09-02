@@ -1,0 +1,89 @@
+{
+  "source_path": "悚族/《悚族》高傲之罪.md",
+  "source_sha256": "6edf105645b546ebf3be91f163a4966e8069e4d417f3b0759283666f344427e9",
+  "line_count": 2273,
+  "stories": [
+    {
+      "title": "失踪的小孩",
+      "start_line": 108,
+      "end_line": 144,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立怪谈短篇，正文始于标题及作者署名，结局止于144行；后续为黑猫点评。"
+    },
+    {
+      "title": "玩笑",
+      "start_line": 150,
+      "end_line": 172,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚短篇，标题含作者署名，172行为结局；后续为栏目点评。"
+    },
+    {
+      "title": "有鬼",
+      "start_line": 178,
+      "end_line": 212,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立鬼故事，正文完整结束于212行；后续为黑猫点评。"
+    },
+    {
+      "title": "小白鼠",
+      "start_line": 222,
+      "end_line": 285,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "以小白鼠为题的独立恐怖故事，226行疑似版式或图片相关标题碎片，未视为新故事；285行为正文收束，后续为点评。"
+    },
+    {
+      "title": "美丽贩卖店",
+      "start_line": 293,
+      "end_line": 553,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "293行起出现与后续“Sell beauty shop／美丽店铺”连续的故事正文，553行为结尾；证据中故事起始标题疑似缺失或被版式分隔，因此边界置信度降低。"
+    },
+    {
+      "title": "恶魔吻过的孩子",
+      "start_line": 559,
+      "end_line": 1701,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇恐怖故事，内部数字章节均属同一作品，1703行进入下一篇《高傲之罪》；末段含备注说明，证据未能进一步拆分正文与备注。"
+    },
+    {
+      "title": "高傲之罪",
+      "start_line": 1703,
+      "end_line": 2054,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名始于1703行，内部“第一部分”等章节合并，2054行为结局；2056行起为编辑部栏目。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未读取或扫描原始 Markdown。已排除目录、黑猫点评、编辑部栏目、读者来信、问卷及刊后内容；《美丽贩卖店》的起始标题在证据中疑似被版式拆散，因此其起点标为较低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6edf105645b546ebf3be91f163a4966e8069e4d417f3b0759283666f344427e9",
+    "evidence_only": true,
+    "duration_seconds": 94.7,
+    "generated_at": "2026-08-31T05:39:18+00:00"
+  }
+}

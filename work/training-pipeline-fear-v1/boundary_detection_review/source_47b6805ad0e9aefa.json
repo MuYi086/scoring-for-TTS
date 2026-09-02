@@ -1,0 +1,78 @@
+{
+  "source_path": "悚族/《悚族》霸王别姬.md",
+  "source_sha256": "33b30f30eeb57dc1739623202826263840da0339b60e77b7dc351e5b66132e5d",
+  "line_count": 2198,
+  "stories": [
+    {
+      "title": "（篇名未提取：肖晴与李小东）",
+      "start_line": 60,
+      "end_line": 489,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L60进入肖晴受雇接近李小东的犯罪悬疑故事；“8”和“10”是内部章节。L485–489明确揭示叙述者之死并收束全文，L491起为下一篇标题和署名。"
+    },
+    {
+      "title": "古宅红瞳",
+      "start_line": 491,
+      "end_line": 816,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L491–492为篇名及作者署名，后续多个“GUZHAIHONGTONG”均是同篇版面标题。故事从葛家旧事写起，最终揭露红瞳与白虫真相，并在L816以古宅继续诱杀来客作结。"
+    },
+    {
+      "title": "（篇名未提取：苏珊与十三窟）",
+      "start_line": 822,
+      "end_line": 1108,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L822–824为新篇版面文字及作者署名，L826的“引子”和其后小节均围绕苏珊、外公与十三窟展开；L1094的“/七”是内部章节，L1106–1108完成多年后的照应。L1112为下一篇作者署名。"
+    },
+    {
+      "title": "鬼影",
+      "start_line": 1112,
+      "end_line": 1375,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1112为作者署名，L1118的“GUIYING”对应篇名“鬼影”。故事完整展开槐树鬼影与江盈命案，并在L1373–1375以真正致命凶手自白完成反转。"
+    },
+    {
+      "title": "（篇名未提取：首节“差点被雷劈”）",
+      "start_line": 1381,
+      "end_line": 1684,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1381起进入陈宇清遭遇连环索命的新故事；“当年事”“请你去死”“黑影现身”“追尾惊魂”“追杀”“逃生”和“尾声”均为同篇章节。L1684是尾声结论，L1686已转入戏班题材的下一篇。"
+    },
+    {
+      "title": "霸王别姬",
+      "start_line": 1686,
+      "end_line": 2080,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1686以《霸王别姬》唱词引入，L1692起讲述小赖子、段青衣和程一凡的戏班旧事；“反噬”“十年”“胡不归”是内部小节。L2064–2080交代戏班解散及班主结局，随后转为以图片为主的漫画内容。"
+    }
+  ],
+  "document_notes": "第二遍检查修正了第一遍的严重合并和拆分错误：L60–489是一篇完整小说，数字章节“8”“10”不能另立为连载；L491–816包含《古宅红瞳》的完整开端与结局；第一遍划作L822–2171的单篇实际包含四篇独立小说及后续漫画。L17–42是“笋子大讲堂”的读者亲历栏目和编辑点评，不按独立小说收录。L2089以后主要由漫画图片、零散对白及损坏的刊尾文字构成，未作为可确认的完整小说收录。部分篇名只存在于未保留文字的图片中，因此使用描述性占位标题，但正文边界仍较可靠。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "33b30f30eeb57dc1739623202826263840da0339b60e77b7dc351e5b66132e5d",
+    "duration_seconds": 610.1,
+    "generated_at": "2026-08-31T11:34:48+00:00"
+  }
+}

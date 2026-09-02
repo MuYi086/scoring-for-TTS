@@ -1,0 +1,78 @@
+{
+  "source_path": "悚族/《悚族》七日监禁.md",
+  "source_sha256": "8260a5e8cd9606bc6a0bbd184e32adf5ab785ed226fb1d1a52ec687e1df94142",
+  "line_count": 2162,
+  "stories": [
+    {
+      "title": "楼道里的白影",
+      "start_line": 14,
+      "end_line": 28,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "标题和作者署名后是一则自述式校园灵异经历，L28 完整结束；L30 起为插图及编辑、讲述者的栏目对话，不属于正文。"
+    },
+    {
+      "title": "七日监禁",
+      "start_line": 35,
+      "end_line": 413,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L35 已明确开始讲述七天监禁过程，随后包含前三天及“第四天”以后的连续情节，L413 以叙述者身份反转完成结局；标题由本期篇名及 L2110 的副册索引确认。"
+    },
+    {
+      "title": "凶稿",
+      "start_line": 417,
+      "end_line": 747,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L417 的“嘲讽”是篇内首节而非独立小说，后续多个小节及“尾声”均属于同一故事；L747 完成编辑读稿遇鬼的结局，L749 后仅有图片并转入下一篇。总篇名由正文 L739 和 L2111 索引确认。"
+    },
+    {
+      "title": "校园午夜巴士",
+      "start_line": 761,
+      "end_line": 1048,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L761 开始陈丽莎乘午夜巴士寻找亡者的独立故事；L1044 的断句在 L1048 的 HTML 表格正文中继续，并在沈天替换陈丽莎后完整收束。标题由 L2112 副册索引确认。"
+    },
+    {
+      "title": "不开灯的寝室",
+      "start_line": 1050,
+      "end_line": 1440,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1050-L1054 是被 OCR 拆分、误识为“小开灯的寝室”的总标题，正确篇名由 L2113 索引确认；四个数字章节属于同一小说，L1440 为完整结局。"
+    },
+    {
+      "title": "时间相机",
+      "start_line": 1444,
+      "end_line": 1795,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1444 是 OCR 受损的总标题，L1446 紧接作者署名；“神秘的包裹”等均为篇内章节，L1795 以再次拍摄挂钟形成回环结局，L1797 已转入编辑部栏目内容。"
+    }
+  ],
+  "document_notes": "已核验源文件哈希；文件末行无换行，因此 wc 显示 2161 个换行符，但实际为 2162 行。第二遍抽查纠正了第一遍的主要误判：将“楼道里的白影”截至其真实结尾；把 L35-L413 合并为完整的《七日监禁》；把《凶稿》截至 L747；恢复被漏掉的《校园午夜巴士》；并依据副册索引校正《不开灯的寝室》和《时间相机》的 OCR 标题。L1801 后的编辑部趣闻、问答、读者来信、调查表及广告均属栏目或刊后内容，未列为小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "8260a5e8cd9606bc6a0bbd184e32adf5ab785ed226fb1d1a52ec687e1df94142",
+    "duration_seconds": 225.3,
+    "generated_at": "2026-08-31T07:30:20+00:00"
+  }
+}

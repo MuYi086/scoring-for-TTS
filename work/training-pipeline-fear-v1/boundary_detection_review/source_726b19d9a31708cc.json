@@ -1,0 +1,218 @@
+{
+  "source_path": "怖客/《怖客》2013年11月B版-风村异事.md",
+  "source_sha256": "ddc75f97aa641e497bcff346d67e5d9d860ba9b725d79f87a299d8948b6cf059",
+  "line_count": 4073,
+  "stories": [
+    {
+      "title": "灵异手机",
+      "start_line": 22,
+      "end_line": 37,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文从拍照异象展开，至多年后的婚姻和祭拜完整收束。"
+    },
+    {
+      "title": "阴阳交易",
+      "start_line": 195,
+      "end_line": 637,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录篇名与交易、索取皮肉的主线吻合，195行附近为题图后的正文起点；结尾受双栏OCR影响，与639行开始的《黑狗》交错，为保持边界不重叠只能止于交错前，故不声称完整。"
+    },
+    {
+      "title": "黑狗",
+      "start_line": 639,
+      "end_line": 657,
+      "confidence": 0.55,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，栏目标题后写误杀黑狗及堂兄死亡，657行形成完整反问式结局；中间混入《阴阳交易》的错栏尾句，故边界置信度较低。"
+    },
+    {
+      "title": "你踩到我了",
+      "start_line": 663,
+      "end_line": 1006,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "663行是OCR略损的篇名，紧接作者署名；“地上的人形”等均为内部章节，1006行完成主角被恶鬼夺取头颅的结局，1008行为编辑信息。"
+    },
+    {
+      "title": "诡眼",
+      "start_line": 1014,
+      "end_line": 1324,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录主标题为《诡眼》，正文从“鬼眼”章节开始，后续小节及“尾声”属于同一故事，1324行明确收束。"
+    },
+    {
+      "title": "裙魔乱舞",
+      "start_line": 1328,
+      "end_line": 1592,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1328行篇名OCR受损但作者“十二天”与目录相符；“背鬼跑步”是内部小节，1592行以肖磊牺牲、小雅苏醒完成结局。"
+    },
+    {
+      "title": "看门",
+      "start_line": 1598,
+      "end_line": 1623,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，1623行揭示照片上的人变成小偷王军，完成独立惊悚短篇。"
+    },
+    {
+      "title": "报复",
+      "start_line": 1627,
+      "end_line": 1673,
+      "confidence": 0.52,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名及张小三埋尸主线与目录《报复》对应；其最后数行被排到《核桃》开篇之后，为维持非重叠边界止于下一篇开始前，结尾完整性不确定。"
+    },
+    {
+      "title": "核桃",
+      "start_line": 1675,
+      "end_line": 1707,
+      "confidence": 0.57,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从核桃提升智力的设定开始，至老鼠啃食核桃导致吴鑫剧痛昏厥完整收束；篇名被OCR排到1711行，且区间混入前篇错栏尾句，故置信度较低。"
+    },
+    {
+      "title": "不要和我抢",
+      "start_line": 1717,
+      "end_line": 1757,
+      "confidence": 0.48,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者明确，超市群鬼和食人副经理构成独立故事；正文在1757行被下一篇错栏插入，真正尾句后置，无法在不重叠条件下纳入，故标为不确定。"
+    },
+    {
+      "title": "回家",
+      "start_line": 1759,
+      "end_line": 1787,
+      "confidence": 0.55,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，赵阳逃亡回家至得知母亲早已去世形成完整短篇；区间夹有前篇两行错栏结尾，降低边界置信度。"
+    },
+    {
+      "title": "零团费",
+      "start_line": 1795,
+      "end_line": 1827,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题虽OCR成“零困费”，目录可校正为《零团费》；1827行以导游制作四十四个骷髅的反转完整结束。"
+    },
+    {
+      "title": "要金币请点我",
+      "start_line": 1829,
+      "end_line": 1839,
+      "confidence": 0.64,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "陈洛洛安装同名插件后收到冥币并被鬼入住家园，1839行完成反转；双栏OCR把标题排到了正文之后的1841行。"
+    },
+    {
+      "title": "我不是小偷",
+      "start_line": 1843,
+      "end_line": 2241,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1843行进入欧小米主线，1845行作者“村野夕”与目录相符；其后各标题均为章节，2241行完成两个女鬼重获人身的结局。"
+    },
+    {
+      "title": "借头还魂",
+      "start_line": 2243,
+      "end_line": 2557,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“真假人头”至“下一个人选”均为同一小说章节，目录给出主标题《借头还魂》；结局数行与2559行开始的《讲故事的人》发生错栏交错，为避免重叠只能在交错前截断。"
+    },
+    {
+      "title": "讲故事的人",
+      "start_line": 2559,
+      "end_line": 2579,
+      "confidence": 0.55,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，正文写太婆讲鬼故事并将糖果变成石头，2579行完整收束；区间混入《借头还魂》的错栏尾段，故置信度较低。"
+    },
+    {
+      "title": "风村异事",
+      "start_line": 2658,
+      "end_line": 2985,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认主标题，2658行“奇怪的留言”是正文首个小节，前文属于作者介绍；2985行以主人公困在棺材中的黑色幽默反转结尾。"
+    },
+    {
+      "title": "让梦想照进现实",
+      "start_line": 2989,
+      "end_line": 3287,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题和作者署名明确，后续小节均为同一组编辑部幽默故事，3287行完成最后一个救人梦想的笑料；属于普通娱乐喜剧而非目标惊悚类型。"
+    },
+    {
+      "title": "寂寞套餐（上）",
+      "start_line": 3388,
+      "end_line": 3732,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3388至3390行为OCR受损的主标题、上篇标记和作者署名；后续均为内部章节，3732行明确标注“未完待续”，下文另有下篇预告。"
+    },
+    {
+      "title": "裹霉",
+      "start_line": 3740,
+      "end_line": 3760,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录篇名与正文反复出现的“裹霉”习俗相符，题名主要位于图片中；3760行以解除弟弟霉运完整收束。"
+    }
+  ],
+  "document_notes": "已先独立检查证据包及原文候选边界，再对照第一遍结果。原文件末行无换行符，因此wc显示4072个换行，但逻辑行数为4073，SHA-256与输入绑定一致。第一遍将《阴阳交易》误名为《借头还魂》，把《鬼眼》《真假人头》等章节误作主标题，并把多篇相邻短篇合并；本次已纠正并补入《你踩到我了》《风村异事》等。原Markdown存在明显双栏OCR交错：前一篇尾段会落入后一篇区间。为满足stories不重叠，按后一篇实际开头切分，受截断的前篇标为uncertain，含错栏尾句的后一篇降低confidence。封面、目录、刊务、作者介绍、电视剧盘点、问卷、广告及下文提示均未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ddc75f97aa641e497bcff346d67e5d9d860ba9b725d79f87a299d8948b6cf059",
+    "duration_seconds": 2027.0,
+    "generated_at": "2026-08-31T07:31:30+00:00"
+  }
+}

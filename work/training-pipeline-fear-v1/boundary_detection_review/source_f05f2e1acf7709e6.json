@@ -1,0 +1,109 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2009年02.md",
+  "source_sha256": "26028739ef5ffca019ade55efc08e5f09d642fc24e98b351f999c6c1258733a3",
+  "line_count": 8190,
+  "stories": [
+    {
+      "title": "哭液的糖紙",
+      "start_line": 134,
+      "end_line": 511,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖小说，有明确标题、作者信息和完整结局。"
+    },
+    {
+      "title": "青花瓷",
+      "start_line": 513,
+      "end_line": 1022,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "由连续七章组成的悬疑灵异小说，结尾明确收束；主标题依据正文反复出现的《青花瓷》确定。"
+    },
+    {
+      "title": "与蛇共舞",
+      "start_line": 1074,
+      "end_line": 1747,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从序曲至尾声连续展开，包含命案、蛇和推理情节，故事有明确结尾；主标题依据正文核心剧本和书名推定。"
+    },
+    {
+      "title": "妖灵侦探社之 MISS丽娘",
+      "start_line": 1753,
+      "end_line": 2295,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "妖灵侦探社单篇故事，含楔子、多节及完整收束。"
+    },
+    {
+      "title": "剥皮",
+      "start_line": 2892,
+      "end_line": 3202,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚小说，章节连续并以“剥电脑的皮”作结。"
+    },
+    {
+      "title": "琴魔",
+      "start_line": 3206,
+      "end_line": 4132,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "由楔子、多个章节和尾声组成，围绕鬼曲、命案和古琴展开并完成收束；标题依据作者说明确定。"
+    },
+    {
+      "title": "字典",
+      "start_line": 4134,
+      "end_line": 4972,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题在紧邻署名后的编者文字中明确为《字典》；4146 是 OCR 占位标题。正文在4972完成父子关系的收束，之后为插图及下一篇标题。"
+    },
+    {
+      "title": "斯德哥尔摩综合征",
+      "start_line": 4980,
+      "end_line": 5596,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有明确标题和作者，包含连续章节，但本期结尾为分隔符且情节未明显完结，判为连载片段。"
+    },
+    {
+      "title": "恐怖电影",
+      "start_line": 5900,
+      "end_line": 7706,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "5900 的明确标题引出第一人称恐怖叙事；6840 的“如藤”后紧接同一叙事，不能作为新篇起点，故合并原误拆段，终点保留在刊后“恐怖电影”标题之前。"
+    }
+  ],
+  "document_notes": "仅复核并修正局部包标出的风险边界：将《字典》改以紧邻署名为起点并去除插图后的尾部；将被“如藤”误拆的连续叙事合并为《恐怖电影》。其余故事逐字段保留第一遍结果。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "26028739ef5ffca019ade55efc08e5f09d642fc24e98b351f999c6c1258733a3",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_f05f2e1acf7709e6.txt",
+    "duration_seconds": 178.9,
+    "generated_at": "2026-09-01T02:03:29+00:00"
+  }
+}

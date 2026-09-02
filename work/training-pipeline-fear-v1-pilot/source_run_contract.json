@@ -1,0 +1,5 @@
+{
+  "input_dir": "/home/muyi086/github/scoring-for-TTS/training/原始资源",
+  "source_manifest": "/home/muyi086/github/scoring-for-TTS/training/数据集规划/fear-suspense-v1/selected_sources.jsonl",
+  "source_manifest_sha256": "aadf9ce2781eb456cf4f47cd5c190bca15fed63961e422b294661bf9ec5c4637"
+}

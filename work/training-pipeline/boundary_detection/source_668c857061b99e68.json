@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第09期.md",
+  "source_sha256": "ed4eddd2c46b4c3a33e63929e91c14f6e8baa7f59db815c6f7601080ac592ba2",
+  "line_count": 5507,
+  "stories": [
+    {
+      "title": "弑母之病",
+      "start_line": 275,
+      "end_line": 1467,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后接连续章节，尾声明确交代案件告一段落；目录中的提前标题已排除。"
+    },
+    {
+      "title": "隔空之杀",
+      "start_line": 1469,
+      "end_line": 2309,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后接作者署名及连续故事正文，末尾有明确收束，下一篇为《飘血祝融》。"
+    },
+    {
+      "title": "飘血祝融（上）",
+      "start_line": 2311,
+      "end_line": 3004,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文明确标注“上”，结尾明确标注“未完待续”，本期无结局。"
+    },
+    {
+      "title": "雨夜怪谈",
+      "start_line": 3014,
+      "end_line": 3188,
+      "confidence": 0.65,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和故事正文明确，但证据包末尾混入读者投票获奖名单，无法精确隔离故事结局行。"
+    },
+    {
+      "title": "血红色的情书",
+      "start_line": 3242,
+      "end_line": 4051,
+      "confidence": 0.6,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及分章正文明确，但末段证据已混入作者简介，无法仅凭证据包精确确认小说结局行。"
+    },
+    {
+      "title": "恋人啊",
+      "start_line": 4073,
+      "end_line": 4392,
+      "confidence": 0.85,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、译者信息及连续分节均明确，后续标题“啊？！只送一半？！”仍属同一故事，至此后转入下一篇。"
+    },
+    {
+      "title": "地球上最安全的地方",
+      "start_line": 4394,
+      "end_line": 4814,
+      "confidence": 0.65,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及连续分节明确，但末段证据混入牧逸马作者介绍，无法精确确认故事结局行。"
+    },
+    {
+      "title": "世界怪奇实话之 楼门街的自杀旅馆",
+      "start_line": 4816,
+      "end_line": 5019,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、译者信息和连续分节明确；末尾仍有案件后续线索且紧接作者介绍，结局完整性与精确终止行无法仅凭证据包确认。"
+    }
+  ],
+  "document_notes": "仅读取并依据 boundary_evidence 证据包，未打开或扫描原始 Markdown。已排除目录、新闻、导读、作者简介、创作谈、互动栏目、征稿、广告及下期预告；同一故事的章节标题均合并处理。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ed4eddd2c46b4c3a33e63929e91c14f6e8baa7f59db815c6f7601080ac592ba2",
+    "evidence_only": true,
+    "duration_seconds": 125.8,
+    "generated_at": "2026-08-30T11:33:46+00:00"
+  }
+}

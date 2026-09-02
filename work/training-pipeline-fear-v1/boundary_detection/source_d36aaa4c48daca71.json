@@ -1,0 +1,259 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2014年04.md",
+  "source_sha256": "479737cf97591445da00ff470b5b9dddf1b8ec11d616ca58e979b49296ff9372",
+  "line_count": 5970,
+  "stories": [
+    {
+      "title": "尸妖新娘",
+      "start_line": 238,
+      "end_line": 340,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息明确，含壹至终完整章节，结尾为故事收束。"
+    },
+    {
+      "title": "故国三千里",
+      "start_line": 377,
+      "end_line": 1017,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、章节和结局正文明确；证据显示 L1019 起混入“正能量交流会”栏目，故将边界保守截于其前，但末尾精确边界仍有不确定性。"
+    },
+    {
+      "title": "有天赋",
+      "start_line": 1023,
+      "end_line": 1158,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "互动式短篇有明确开端、多个选项及测试结果收束。"
+    },
+    {
+      "title": "失衡",
+      "start_line": 1162,
+      "end_line": 1312,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题页、作者信息及连续四节正文明确，L1312完成故事收束。"
+    },
+    {
+      "title": "玫瑰园（标题未标明）",
+      "start_line": 1314,
+      "end_line": 1578,
+      "confidence": 0.65,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示从章节【一】开始的独立舞女犯罪故事，并在【七】后结束；标题未在证据包中明确出现，且末尾邻接电影栏目。"
+    },
+    {
+      "title": "妈妈说",
+      "start_line": 1680,
+      "end_line": 1829,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立故事正文完整，包含犯罪与真相揭示，并有结尾点评。"
+    },
+    {
+      "title": "偶人绮想",
+      "start_line": 1833,
+      "end_line": 2306,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、连续章节及故事结尾明确，含木偶与谋杀相关超自然推理情节。"
+    },
+    {
+      "title": "黑暗选修课",
+      "start_line": 2308,
+      "end_line": 2384,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "推理故事正文明确，但末尾明确标注下期预告，尸体和幕后真相尚未揭开。"
+    },
+    {
+      "title": "道団天团：九十八岁的正太",
+      "start_line": 2390,
+      "end_line": 2900,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续故事章节从楔子至尾声，但尾声明确接下期内容，属于连载片段。"
+    },
+    {
+      "title": "绯夜：复活瑞神之胆①",
+      "start_line": 2902,
+      "end_line": 3403,
+      "confidence": 0.97,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有上期回顾、连续章节及下期预告，明显为连载中段。"
+    },
+    {
+      "title": "睡美人",
+      "start_line": 3488,
+      "end_line": 3520,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立哥特恐怖短篇，结尾形成明确死亡倒计时收束。"
+    },
+    {
+      "title": "潘朵拉",
+      "start_line": 3522,
+      "end_line": 3556,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，结尾揭示人物身份并完成反转。"
+    },
+    {
+      "title": "吃祸",
+      "start_line": 3558,
+      "end_line": 3572,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚短篇，结尾与家庭事件形成完整因果闭合。"
+    },
+    {
+      "title": "怪病",
+      "start_line": 3574,
+      "end_line": 3588,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，情节在感染扩散的反转处收束。"
+    },
+    {
+      "title": "同样都是想要",
+      "start_line": 3590,
+      "end_line": 3610,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立寓言式短篇，叙事在“这时，我叫希望”处完成收束。"
+    },
+    {
+      "title": "赤桃（标题依据正文推定）",
+      "start_line": 3748,
+      "end_line": 3862,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示该版面包含连续叙事正文并以作者、页码结束；正文标题未清晰提取，仅依据正文反复出现的赤桃推定，边界可靠度有限。"
+    },
+    {
+      "title": "人面疮",
+      "start_line": 3864,
+      "end_line": 3894,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文有明确结尾及作者署名。"
+    },
+    {
+      "title": "读心术",
+      "start_line": 3896,
+      "end_line": 4083,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "互动式生存故事，包含关卡、答案判定及结局一和结局二。"
+    },
+    {
+      "title": "看一眼的杀意",
+      "start_line": 4085,
+      "end_line": 4357,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、连续推理章节及最终收束明确，包含校园谋杀、灵异和反转情节。"
+    },
+    {
+      "title": "三石街的秘密",
+      "start_line": 4364,
+      "end_line": 4683,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、连续章节和尾声明确，围绕图书馆命案完成推理闭合。"
+    },
+    {
+      "title": "圈圈诅咒你",
+      "start_line": 5049,
+      "end_line": 5087,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立短篇，标题及正文完整，情节在诅咒反转后结束。"
+    },
+    {
+      "title": "恶心沼泽",
+      "start_line": 5093,
+      "end_line": 5358,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇独立恐怖故事，标题、作者信息和完整正文段落明确。"
+    },
+    {
+      "title": "公交站 晚上十点——",
+      "start_line": 5360,
+      "end_line": 5391,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇版面，围绕公交站展开并在对话后收束；标题和结尾边界受版面 OCR 影响，置信度略低。"
+    },
+    {
+      "title": "完美设计",
+      "start_line": 5499,
+      "end_line": 5689,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题页、连续十一节正文及结局明确，包含完整犯罪动机、真相揭示和结尾。"
+    }
+  ],
+  "document_notes": "依据证据包识别；未打开原始 Markdown。排除了目录、广告、栏目说明、电影推荐、读者调查、约稿函及诡异经历投稿等非小说内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "479737cf97591445da00ff470b5b9dddf1b8ec11d616ca58e979b49296ff9372",
+    "evidence_only": true,
+    "duration_seconds": 407.7,
+    "generated_at": "2026-08-31T06:27:34+00:00"
+  }
+}

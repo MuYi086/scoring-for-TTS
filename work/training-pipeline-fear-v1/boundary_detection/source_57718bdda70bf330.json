@@ -1,0 +1,149 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2004年06.md",
+  "source_sha256": "67b99616b390da94d641624452e4bde478622c5128da058b9944c93cbbe0e3be",
+  "line_count": 3435,
+  "stories": [
+    {
+      "title": "如此冤魂",
+      "start_line": 332,
+      "end_line": 369,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的鬼故事，正文有完整情节和结局。"
+    },
+    {
+      "title": "可乐",
+      "start_line": 379,
+      "end_line": 389,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的微型恐怖短篇，结尾完整。"
+    },
+    {
+      "title": "手掌",
+      "start_line": 391,
+      "end_line": 397,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的微型怪谈，结尾完整。"
+    },
+    {
+      "title": "梦",
+      "start_line": 401,
+      "end_line": 415,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的微型恐怖短篇，结尾完整。"
+    },
+    {
+      "title": "睡在泥土中的人",
+      "start_line": 974,
+      "end_line": 1064,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者信息和叙事正文连续，结尾完成。"
+    },
+    {
+      "title": "四个好朋友",
+      "start_line": 1108,
+      "end_line": 1232,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的校园怪谈式故事，标题后正文连续，下一故事正文从1234行附近转入。"
+    },
+    {
+      "title": "一天一点网恋",
+      "start_line": 1420,
+      "end_line": 1502,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立的网恋题材短篇，结局正文明确。"
+    },
+    {
+      "title": "我等你",
+      "start_line": 1626,
+      "end_line": 1694,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的网络恐怖短篇，标题、正文和反转结尾完整。"
+    },
+    {
+      "title": "苏苏",
+      "start_line": 1698,
+      "end_line": 1895,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "以分节形式呈现的独立网络情感故事，章节应合并，正文在1895行收束。"
+    },
+    {
+      "title": "2",
+      "start_line": 1897,
+      "end_line": 2237,
+      "confidence": 0.72,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续的数字章节和情节构成同一怪谈，但本段从“2”开始，明显缺少开头。"
+    },
+    {
+      "title": "你的肩膀上有蝴蝶吗",
+      "start_line": 2305,
+      "end_line": 2315,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题明确但正文以“坠落下来”开头，疑似缺少前文，无法确认完整性。"
+    },
+    {
+      "title": "肉香",
+      "start_line": 2352,
+      "end_line": 2464,
+      "confidence": 0.7,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名和连续的恐怖叙事可确认属于独立故事，但标题/作者段位于已开始的叙事之后，边界存在版面顺序不确定。"
+    },
+    {
+      "title": "重回小镇",
+      "start_line": 2783,
+      "end_line": 2915,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的悬疑怪谈，正文有明确开端、发展和结局。"
+    }
+  ],
+  "document_notes": "严格仅读取证据包，未打开或扫描原始 Markdown。证据包显示部分故事标题与正文因版面/OCR顺序错位，或尾部混入广告，故未将“垃圾”“电梯停电的晚上”“流油的息肉”等边界无法可靠确认的段落强行标为完整故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "67b99616b390da94d641624452e4bde478622c5128da058b9944c93cbbe0e3be",
+    "evidence_only": true,
+    "duration_seconds": 210.9,
+    "generated_at": "2026-08-31T06:00:02+00:00"
+  }
+}

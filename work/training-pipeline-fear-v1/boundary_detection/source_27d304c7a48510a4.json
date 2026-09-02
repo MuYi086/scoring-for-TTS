@@ -1,0 +1,109 @@
+{
+  "source_path": "怖客/新锐阅读怖客2016年总第27期.md",
+  "source_sha256": "c01676712ded6cf6913ddae2d5bc5f44f1f08c0b790b434e237915b8ac809b43",
+  "line_count": 2794,
+  "stories": [
+    {
+      "title": "烈日",
+      "start_line": 210,
+      "end_line": 1149,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，后续章节标题连续展开，结尾正文止于1149，1151为编辑信息。"
+    },
+    {
+      "title": "转嫁雷运",
+      "start_line": 1453,
+      "end_line": 1480,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立鬼怪短篇，标题含作者信息，1480为完整结局，后续进入下一篇。"
+    },
+    {
+      "title": "同名同姓",
+      "start_line": 1482,
+      "end_line": 1524,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，1524为结局，1526为编辑信息。"
+    },
+    {
+      "title": "就是它",
+      "start_line": 1536,
+      "end_line": 1818,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "以“就是它”起始，后续多个章节标题明显属于同一校园恶鬼故事，1818为结局，1820为编辑信息。"
+    },
+    {
+      "title": "描魂阵",
+      "start_line": 1822,
+      "end_line": 1997,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者与插图信息，正文完整推进至阴阳锁魂阵解释，1997为结局，1999为编辑信息。"
+    },
+    {
+      "title": "爱的不是我",
+      "start_line": 2001,
+      "end_line": 2017,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚短篇，2017完成反转结局，后续为下一篇内容。"
+    },
+    {
+      "title": "在一起",
+      "start_line": 2019,
+      "end_line": 2223,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据包显示2019起为连续校园灵异叙事并在2223收束，但该段标题仅显示编辑信息，篇名依据正文主题推定，起点与篇名存在不确定性。"
+    },
+    {
+      "title": "鬼知道",
+      "start_line": 2227,
+      "end_line": 2257,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文为独立怪谈短篇，2257完成结尾，2258为栏目页信息。"
+    },
+    {
+      "title": "我可以帮你",
+      "start_line": 2266,
+      "end_line": 2494,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后为连续校园恐怖叙事，2494完成收束，2496为编辑信息；开头含[NO TEXT]标记，故边界置信度略低。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未读取原始 Markdown。已排除目录、编读往来、编辑部栏目、电影介绍、谜题、调查表及无正文的“烤兔肉”“血”等标题段。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c01676712ded6cf6913ddae2d5bc5f44f1f08c0b790b434e237915b8ac809b43",
+    "evidence_only": true,
+    "duration_seconds": 101.8,
+    "generated_at": "2026-08-31T05:24:05+00:00"
+  }
+}

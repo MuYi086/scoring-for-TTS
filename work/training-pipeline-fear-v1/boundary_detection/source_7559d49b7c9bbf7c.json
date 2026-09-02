@@ -1,0 +1,79 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2006年10.md",
+  "source_sha256": "dbedfdc76587f5a7374a2488c82b2f85d0b03b802c8ea534cfdba5468d264438",
+  "line_count": 6670,
+  "stories": [
+    {
+      "title": "婴儿面",
+      "start_line": 2208,
+      "end_line": 3064,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名位于正文前，后续为连续的校园恐怖小说；末尾紧邻的热线内容不属于小说。"
+    },
+    {
+      "title": "惩罚",
+      "start_line": 3883,
+      "end_line": 4559,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从正文标题开始，经（二）至（七）等内部章节连续展开，L4559明确收束于惩罚主题。"
+    },
+    {
+      "title": "断头",
+      "start_line": 4563,
+      "end_line": 5155,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，内部数字章节均属同一刑侦恐怖故事，L5155以案件后果收束。"
+    },
+    {
+      "title": "离桥——给我高中时代所爱的人们",
+      "start_line": 5159,
+      "end_line": 6032,
+      "confidence": 0.67,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和连续章节明确；证据包显示L6034起切换至另一部连载内容，因此暂以L6032为边界，但结尾处存在版面切换不确定性。"
+    },
+    {
+      "title": "失落人间的花火",
+      "start_line": 6034,
+      "end_line": 6228,
+      "confidence": 0.66,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文与下期预告明确指向《失落人间的花火》，本段从中途情节开始并以连载内容结束，缺少本期完整开端和结局。"
+    },
+    {
+      "title": "迷魂记",
+      "start_line": 6240,
+      "end_line": 6530,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及章节明确，内容连续但末尾明确出现“下期预告”和下期关注语，属于未完连载。"
+    }
+  ],
+  "document_notes": "严格仅读取证据包，未打开或扫描原始 Markdown。目录、广告、栏目、动漫评论、征稿启事、科普宣传及其他非小说内容均已排除；部分版面存在标题检测遗漏或广告与正文交错，因此对相应边界降低了置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "dbedfdc76587f5a7374a2488c82b2f85d0b03b802c8ea534cfdba5468d264438",
+    "evidence_only": true,
+    "duration_seconds": 190.1,
+    "generated_at": "2026-08-31T06:12:23+00:00"
+  }
+}

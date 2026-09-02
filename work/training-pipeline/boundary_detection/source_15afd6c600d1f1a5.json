@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第04期.md",
+  "source_sha256": "e3f468b75f982d2959e8606b83c15021a5b4f2bcc6eab896ac45988cb131ac62",
+  "line_count": 5986,
+  "stories": [
+    {
+      "title": "墙中的女人",
+      "start_line": 455,
+      "end_line": 590,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际起点为故事标题，后续章节标题属于同一故事；L590为结局段落。"
+    },
+    {
+      "title": "猎人笔记",
+      "start_line": 1342,
+      "end_line": 1826,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从L1342开始，数字章节均为同一故事，L1826明确收束。"
+    },
+    {
+      "title": "红醇之杀",
+      "start_line": 1828,
+      "end_line": 2589,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从L1828开始，数字章节属于同一推理故事，L2589为结尾。"
+    },
+    {
+      "title": "冬帽姐姐与笨蛋弟弟",
+      "start_line": 2591,
+      "end_line": 4058,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、序章、1至18章及尾声均连续属于同一故事，尾声在L4058结束。"
+    },
+    {
+      "title": "罪恶天使——沉默的同谋",
+      "start_line": 4190,
+      "end_line": 5236,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "排除了目录中的提前标题，采用正文实际起点L4190；1至7章连续，L5236为故事收束，之后为作者随笔。"
+    },
+    {
+      "title": "大收藏家的烦恼",
+      "start_line": 5254,
+      "end_line": 5617,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文明确为福尔摩斯推理小说，但证据包尾部显示故事后紧接出版宣传和作者简介，无法完全确认故事与刊后内容的精确分界，暂以广告前一行作为边界。"
+    },
+    {
+      "title": "世界怪奇实话之圣伊丽莎白的妒忌",
+      "start_line": 5627,
+      "end_line": 5848,
+      "confidence": 0.65,
+      "completeness": "uncertain",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "正文为犯罪案件叙事，包含第1至3部分；证据包显示L5849起为购买宣传，故事结尾与刊后宣传的精确分界仅能低置信度推定。"
+    }
+  ],
+  "document_notes": "已严格仅依据证据包识别，未打开或扫描原始 Markdown。已排除目录重复项、栏目文章、推理谜题解答、随笔、广告、征稿及下期预告。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "e3f468b75f982d2959e8606b83c15021a5b4f2bcc6eab896ac45988cb131ac62",
+    "evidence_only": true,
+    "duration_seconds": 149.1,
+    "generated_at": "2026-08-30T11:39:31+00:00"
+  }
+}

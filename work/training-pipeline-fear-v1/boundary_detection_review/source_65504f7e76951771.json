@@ -1,0 +1,89 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-在尸体上爬行.md",
+  "source_sha256": "b7f36503dbed249bcf6fc76a0c4f7e45a19773e36ff19156910de796c75feb9e",
+  "line_count": 2518,
+  "stories": [
+    {
+      "title": "重逢",
+      "start_line": 187,
+      "end_line": 269,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，内容连续并以结局句收束。"
+    },
+    {
+      "title": "疯女人的坟",
+      "start_line": 273,
+      "end_line": 620,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，包含章节与后记；后记与前文情节连续，至下一篇内容前收束。"
+    },
+    {
+      "title": "皇族鬼",
+      "start_line": 621,
+      "end_line": 833,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "局部证据显示第651行是插入叙事句中的通用版面标题，正文已在第621行开始；文末目录列有此标题，且第833行在下一篇标题前收束。"
+    },
+    {
+      "title": "接生的鬼胎",
+      "start_line": 835,
+      "end_line": 957,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，内容连续并以鬼胎墓结局收束。"
+    },
+    {
+      "title": "漂亮可爱的鬼",
+      "start_line": 959,
+      "end_line": 1810,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确，后续通用标题段与前文叙事连续，末行形成结局。"
+    },
+    {
+      "title": "我不就没腿嘛",
+      "start_line": 1814,
+      "end_line": 2340,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题明确；第2340行以人物融入下班人群收束，第2342行为图片，随后第2344行开始下一篇的第(1)节。"
+    },
+    {
+      "title": "在尸体上爬行",
+      "start_line": 2344,
+      "end_line": 2494,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "局部证据显示故事从第(1)节开始，连续至第(8)节，并在第2494行于下一则刊后内容前收束；标题由输入文件名绑定。"
+    }
+  ],
+  "document_notes": "仅复核指定的第一遍边界结果与局部原文包。第651行的通用版面标题位于一句话中，故将“皇族鬼”起点前移并相应缩短前篇；第2344行明确为下一篇第(1)节，故修正前篇终点及“在尸体上爬行”的起点、完整性。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "b7f36503dbed249bcf6fc76a0c4f7e45a19773e36ff19156910de796c75feb9e",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_65504f7e76951771.txt",
+    "duration_seconds": 100.5,
+    "generated_at": "2026-09-01T00:39:07+00:00"
+  }
+}

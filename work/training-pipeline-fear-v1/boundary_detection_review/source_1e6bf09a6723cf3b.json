@@ -1,0 +1,109 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2013年02.md",
+  "source_sha256": "5148bb469c37c83c7ed1e6c85113b7d31c82f979be7840fc06e4c62fb60d5297",
+  "line_count": 5478,
+  "stories": [
+    {
+      "title": "青衣",
+      "start_line": 74,
+      "end_line": 142,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有明确标题、作者署名及完整鬼宅故事结尾。"
+    },
+    {
+      "title": "虎克",
+      "start_line": 222,
+      "end_line": 338,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "封面故事，证据显示为完整叙事并有明确收束。"
+    },
+    {
+      "title": "纸人杀人案",
+      "start_line": 754,
+      "end_line": 1084,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从“楔子”至“伍：尾声”连续，正文在顾青冉写下“谁来替我”后结束；其后为创作谈及下一篇开头。"
+    },
+    {
+      "title": "纺院惊梦",
+      "start_line": 1445,
+      "end_line": 1691,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者明确，章节连续，末段为故事收束和创作谈前内容。"
+    },
+    {
+      "title": "山下岛·蛇夫座的秘密",
+      "start_line": 1715,
+      "end_line": 2007,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与九个连续章节明确；正文结局收束于童欣颜的结论，之后为创作谈、作者信息和下一栏目。"
+    },
+    {
+      "title": "夺舍",
+      "start_line": 2601,
+      "end_line": 3161,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题行明确含“是为夺舍”，正文自此开始；叙事在“再也没有撞过‘鬼’”处收束，之后为创作谈、作者信息和新刊快报。"
+    },
+    {
+      "title": "模仿者",
+      "start_line": 3279,
+      "end_line": 3559,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者及六个连续章节明确，结局在创作谈前结束，涉及绑架、替身和犯罪。"
+    },
+    {
+      "title": "死后嚼嚼",
+      "start_line": 3565,
+      "end_line": 3783,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者、楔子及连续章节明确，故事结局位于创作谈前。"
+    },
+    {
+      "title": "秋仙",
+      "start_line": 4267,
+      "end_line": 5428,
+      "confidence": 0.93,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确为既有连载的续篇，含上期提要和多章正文；末尾紧接下期预告，故本期不是完整结局。"
+    }
+  ],
+  "document_notes": "仅复核指定局部包标出的三项风险故事；其余 stories 逐字段保留第一遍结果。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "5148bb469c37c83c7ed1e6c85113b7d31c82f979be7840fc06e4c62fb60d5297",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_1e6bf09a6723cf3b.txt",
+    "duration_seconds": 82.3,
+    "generated_at": "2026-09-01T02:45:05+00:00"
+  }
+}

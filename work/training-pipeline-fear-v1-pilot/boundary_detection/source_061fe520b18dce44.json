@@ -1,0 +1,69 @@
+{
+  "source_path": "悚族/《悚族》七日监禁.md",
+  "source_sha256": "8260a5e8cd9606bc6a0bbd184e32adf5ab785ed226fb1d1a52ec687e1df94142",
+  "line_count": 2162,
+  "stories": [
+    {
+      "title": "时间相机",
+      "start_line": 1,
+      "end_line": 8,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与正文从第1行开始，正文结尾在第8行；第12行已转为栏目宣传内容。"
+    },
+    {
+      "title": "楼道里的白影",
+      "start_line": 14,
+      "end_line": 217,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续第一人称灵异叙述完整，结尾在第217行。"
+    },
+    {
+      "title": "七日监禁",
+      "start_line": 219,
+      "end_line": 1047,
+      "confidence": 0.72,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从“【第四天】”开始，后续章节及尾声连续至第1047行；明显缺少前段开头，因此标为连载片段。标题依据刊后目录识别，实际正文起点不取目录行。"
+    },
+    {
+      "title": "小开灯的寝室",
+      "start_line": 1050,
+      "end_line": 1440,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题在第1050—1054行分拆显示，四个章节连续至第1440行并有明确结尾。"
+    },
+    {
+      "title": "2 时白相机",
+      "start_line": 1444,
+      "end_line": 1795,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1444行提供标题及作者/配图信息，正文从第1450行开始，以相机回到挂钟的闭环结尾结束于第1795行；其后为黑猫栏目内容。"
+    }
+  ],
+  "document_notes": "仅依据证据包判断，未打开或扫描原始 Markdown。已排除目录、广告、图片说明、黑猫栏目及刊后调查内容；“七日监禁”因证据显示从第四天开始，未声称完整。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "8260a5e8cd9606bc6a0bbd184e32adf5ab785ed226fb1d1a52ec687e1df94142",
+    "evidence_only": true,
+    "duration_seconds": 94.9,
+    "generated_at": "2026-08-30T13:22:26+00:00"
+  }
+}

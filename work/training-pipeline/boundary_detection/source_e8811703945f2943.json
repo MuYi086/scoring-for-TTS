@@ -1,0 +1,89 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.06.md",
+  "source_sha256": "3b31efb796d71bd50d14043849b774df4083aa0c8aa26541e160725ee9b736f1",
+  "line_count": 2564,
+  "stories": [
+    {
+      "title": "竹海暗战",
+      "start_line": 214,
+      "end_line": 880,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "正文由标题、作者署名及“楔子—尾声”组成，完整讲述跨川渝制贩毒案件侦破经过；尾部编辑信息从约882行开始排除。"
+    },
+    {
+      "title": "父亲节",
+      "start_line": 888,
+      "end_line": 1218,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题后有作者署名和连续案件叙事，后续章节从案发、追查到判决及父亲节收束，1218行为结局正文，1220行为责任编辑。"
+    },
+    {
+      "title": "人民城市“护苗人”",
+      "start_line": 1224,
+      "end_line": 1334,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "人物纪实文章，包含标题、副标题、作者及三个完整叙事段落；末尾图片说明和责任编辑信息排除。"
+    },
+    {
+      "title": "更吹羌笛关山月",
+      "start_line": 1342,
+      "end_line": 1448,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": false,
+      "reason": "草原护边员人物纪实，含作者署名及四个连续部分，叙事在1448行收束；1450行为图片说明。"
+    },
+    {
+      "title": "扇底风雷",
+      "start_line": 1454,
+      "end_line": 2364,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立刑侦悬疑小说，标题后有作者署名，数字章节及尾声均属同一故事；结局位于责任编辑和插图信息之前。"
+    },
+    {
+      "title": "去老鹰山镇",
+      "start_line": 2372,
+      "end_line": 2452,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名和连续第一人称叙事构成独立短篇，结尾在刊后编辑信息之前；证据包未明确标注栏目类型，内容类型判断置信度略低。"
+    },
+    {
+      "title": "电梯恐惧症",
+      "start_line": 2460,
+      "end_line": 2488,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立推理短篇，标题后有作者署名和完整案件叙事；2490行起为侦探俱乐部提问及答案，不属于故事正文。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包识别，未读取或扫描原始 Markdown。对各篇末尾正文行依据证据包中的结局、图片说明、责任编辑及问答边界推断；未将目录中的重复标题计为正文起点。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3b31efb796d71bd50d14043849b774df4083aa0c8aa26541e160725ee9b736f1",
+    "evidence_only": true,
+    "duration_seconds": 180.0,
+    "generated_at": "2026-08-30T11:21:55+00:00"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第02期.md",
+  "source_sha256": "7089f54c04a05eded01c71446285ce01f7b6f9bbdabb7a25dc1ec005ab1fbddc",
+  "line_count": 5722,
+  "stories": [
+    {
+      "title": "鬼沼里的二表舅",
+      "start_line": 254,
+      "end_line": 861,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名始于254-256行，序章至尾声连续完整，861行为结局；后续为另一篇小说。"
+    },
+    {
+      "title": "忘情草",
+      "start_line": 863,
+      "end_line": 1630,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "863行起为同一侦探故事的序幕，后续少女委托、忘情草及各小节人物和情节连续，1630行为结局；987行标题属于故事内部结构。"
+    },
+    {
+      "title": "国会大厦的幽灵",
+      "start_line": 1632,
+      "end_line": 2658,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题始于1632行，后续章节和日记段落均属同一案件，2658行为故事结局；2660行起为作者的话，已排除。"
+    },
+    {
+      "title": "笑林外传",
+      "start_line": 2672,
+      "end_line": 3603,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题始于2672行，[1]-[5]及尾声均属同一推理故事，3603行为结局；3605行起为作者的话，已排除。"
+    },
+    {
+      "title": "西绪福斯诅咒之杀人事件",
+      "start_line": 3788,
+      "end_line": 4990,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及正文始于3788-3794行，按倒叙时间段连续展开，4990行为结局；4992行起为作者访谈，已排除。"
+    },
+    {
+      "title": "黑色记事本",
+      "start_line": 5036,
+      "end_line": 5303,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题和译者署名始于5036-5038行，5303行为故事结局；5305行出版说明不属于正文，已排除。"
+    }
+  ],
+  "document_notes": "证据包显示本期正文包含6篇完整的悬疑、推理或犯罪小说。目录中的提前标题未作为正文起点；章节、序章、尾声、日记日期段和作者说明均按所属故事处理或排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "7089f54c04a05eded01c71446285ce01f7b6f9bbdabb7a25dc1ec005ab1fbddc",
+    "evidence_only": true,
+    "duration_seconds": 114.5,
+    "generated_at": "2026-08-30T11:28:28+00:00"
+  }
+}

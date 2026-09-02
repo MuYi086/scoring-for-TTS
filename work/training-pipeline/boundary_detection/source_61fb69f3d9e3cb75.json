@@ -1,0 +1,149 @@
+{
+  "source_path": "岁月推理/岁月推理天使之祭.md",
+  "source_sha256": "d7fbea78178a35659bfbcf8f60e76f9bf3a892527e3d0835d8f3f310c201a728",
+  "line_count": 5819,
+  "stories": [
+    {
+      "title": "本能",
+      "start_line": 147,
+      "end_line": 303,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后立即进入第一人称悬疑犯罪叙事，证据包显示至303行形成结局；排除前置目录和系列页。"
+    },
+    {
+      "title": "花都迷雾",
+      "start_line": 307,
+      "end_line": 499,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从307行标题开始，内容为巴黎背景的推理犯罪故事，499行以情节收束；中间无下一篇标题。"
+    },
+    {
+      "title": "血色玫瑰",
+      "start_line": 503,
+      "end_line": 721,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从503行标题开始，证据显示东京拍卖会相关犯罪情节，并在721行完成收束。"
+    },
+    {
+      "title": "上帝的面纱",
+      "start_line": 725,
+      "end_line": 923,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从725行标题开始，围绕神秘狙击手与联邦调查展开，923行为注释及故事终止处。"
+    },
+    {
+      "title": "天网恢恢",
+      "start_line": 929,
+      "end_line": 1103,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从929行标题开始，内容为FBI讯问及犯罪侦查叙事，1103行为结尾。"
+    },
+    {
+      "title": "欲盖弥彰",
+      "start_line": 1109,
+      "end_line": 1293,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从1109行标题开始，涉及毒品网络和命案，1293行情节收束。"
+    },
+    {
+      "title": "釜底抽薪",
+      "start_line": 1297,
+      "end_line": 1540,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从1297行标题开始，围绕犯罪调查与布局展开，1540行明确以行动展开作为本篇结尾。"
+    },
+    {
+      "title": "假面人生",
+      "start_line": 1544,
+      "end_line": 1832,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从1544行标题开始，证据显示身份、绑架及犯罪情节，并在1830行收束，1832行为尾注。"
+    },
+    {
+      "title": "危险关系",
+      "start_line": 1838,
+      "end_line": 2578,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从1838行标题开始，围绕西双版纳、毒品网络和谋杀展开，2578行完成故事结尾。"
+    },
+    {
+      "title": "滴血钻石",
+      "start_line": 2580,
+      "end_line": 3246,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从2580行标题开始，围绕博览会、钻石与犯罪事件展开，3246行形成收束。"
+    },
+    {
+      "title": "他的ID叫刺客",
+      "start_line": 3248,
+      "end_line": 4279,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从3248行标题开始，证据显示网络身份与刺客相关的悬疑犯罪叙事，4279行为结尾。"
+    },
+    {
+      "title": "黑客",
+      "start_line": 4285,
+      "end_line": 5025,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从4285行标题开始，涉及黑客、珠宝店及犯罪调查，5025行以对话收束。"
+    },
+    {
+      "title": "七月七日晴",
+      "start_line": 5027,
+      "end_line": 5723,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从5027行标题开始，证据包显示连续完整叙事，并在5723行结束；后续为系列精彩回顾及刊后广告。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未读取或扫描原始 Markdown。排除了封面、版权声明、作者简介、目录、系列装帧标题、精彩回顾及刊后广告；各篇之间的“罪恶天使 DEVIL/ANGEL”装帧标题未作为独立故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "d7fbea78178a35659bfbcf8f60e76f9bf3a892527e3d0835d8f3f310c201a728",
+    "evidence_only": true,
+    "duration_seconds": 80.8,
+    "generated_at": "2026-08-30T11:25:13+00:00"
+  }
+}

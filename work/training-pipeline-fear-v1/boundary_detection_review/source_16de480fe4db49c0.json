@@ -1,0 +1,98 @@
+{
+  "source_path": "悚族/《悚族》人鱼的歌声.md",
+  "source_sha256": "eee66ff598a060e5924a698a57c453b183f811b8ea383334f95a0b2e0f72d9ef",
+  "line_count": 2518,
+  "stories": [
+    {
+      "title": "公交车上的女孩",
+      "start_line": 347,
+      "end_line": 361,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、署名和第一人称惊悚微篇边界清楚；故事正文止于L361，L365-L367是编辑与投稿者的栏目式点评，未并入正文。"
+    },
+    {
+      "title": "克夫女",
+      "start_line": 424,
+      "end_line": 760,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录中的“克夫女”对应苏琳琅与人体油脂肥皂故事；L397是目录条目而非正文标题，实际故事前导文字从L424开始，L760完成结局。"
+    },
+    {
+      "title": "左手怨灵",
+      "start_line": 768,
+      "end_line": 1073,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L768是首章“1、左手”，其后“掌印”“噩梦”“救赎”“真相”和“尾声”均属同篇；L1073明确完成母女与怨灵的结局。"
+    },
+    {
+      "title": "人鱼的歌声",
+      "start_line": 1077,
+      "end_line": 1456,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1077的“人曲的歌声”是OCR异文，随后从“半截手指”至“八、结局”为连续章节；L1456是结局最后一行。"
+    },
+    {
+      "title": "骨头饭",
+      "start_line": 1464,
+      "end_line": 1867,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名“骨头饭”对应洪磊故事；L1464的“疑惑”、L1558的“骨架”和L1699的“还原”是内部章节，L1867完成恐怖结局。"
+    },
+    {
+      "title": "数硬币",
+      "start_line": 1875,
+      "end_line": 1907,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "“编辑部囧事”中的独立幽默短篇，标题和笑点收束明确；不属于悬疑或恐怖类型。"
+    },
+    {
+      "title": "迷彩服",
+      "start_line": 1909,
+      "end_line": 1949,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "具有独立标题、人物情境和撞衫笑点结局的娱乐短篇；与前后小故事边界清楚。"
+    },
+    {
+      "title": "QQ号",
+      "start_line": 1951,
+      "end_line": 1977,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立校园幽默短篇，L1977以误填QQ号码的笑点结束；L1981起是另一则无标题栏目段落。"
+    }
+  ],
+  "document_notes": "第二遍复核修正了第一遍的两处题名判断：L397属于目录，后续故事实际为《克夫女》；L1464的“疑惑”是《骨头饭》的内部章节。另将《公交车上的女孩》的编辑点评排除出正文，并补入三个有独立标题和完整结局、但不属于目标惊悚类型的幽默短篇。封面摘句、目录、问答、读者互动、调查表、广告和预告均未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "eee66ff598a060e5924a698a57c453b183f811b8ea383334f95a0b2e0f72d9ef",
+    "duration_seconds": 211.3,
+    "generated_at": "2026-08-31T07:33:47+00:00"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.07.md",
+  "source_sha256": "f8a58c9aee2bb2a4881462b52be808cb83eaa41f772b1d4fb68c360f11a792c5",
+  "line_count": 5958,
+  "stories": [
+    {
+      "title": "暗河长明",
+      "start_line": 211,
+      "end_line": 2192,
+      "confidence": 0.97,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题始于 L211，后续包含多章连续叙事；证据明确标注“长篇小说连载”，本期未完结。"
+    },
+    {
+      "title": "戏场",
+      "start_line": 2781,
+      "end_line": 4700,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2781 标题、L2783 作者署名后进入连续小说正文，章节及后记均属同一故事；L4702 起为责任编辑信息，故事结局止于此前。"
+    },
+    {
+      "title": "未完成的向日葵",
+      "start_line": 4708,
+      "end_line": 5841,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L4708 标题、L4710 作者署名后为连续侦探犯罪小说，数字章节 1 至 14 属同一故事；L5843 起为责任编辑信息，结局止于此前。"
+    },
+    {
+      "title": "失败的零元购",
+      "start_line": 5849,
+      "end_line": 5887,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L5849 标题、L5851 作者署名后为独立侦探推理短篇，正文及参考答案在 L5887 结束，下一栏从 L5889 开始。"
+    }
+  ],
+  "document_notes": "依据证据包完成首轮边界识别，未打开原始 Markdown。已排除封面、目录、声明、导读、纪实作品、作者简介、刊后信息及下期要目。故事结束行依据证据包中责任编辑/插图等刊后内容的位置确定。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "f8a58c9aee2bb2a4881462b52be808cb83eaa41f772b1d4fb68c360f11a792c5",
+    "evidence_only": true,
+    "duration_seconds": 80.1,
+    "generated_at": "2026-08-30T11:20:55+00:00"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼故事》不安分的眼睛.md",
+  "source_sha256": "d9afc6c261cc031516434866de51b1eafa837c9abf61a132dab36d64d8d455df",
+  "line_count": 1686,
+  "stories": [
+    {
+      "title": "死去的爱人",
+      "start_line": 150,
+      "end_line": 212,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题开始，尾部有明确情节收束；中间无新的独立故事标题。"
+    },
+    {
+      "title": "我的生活、我的女友",
+      "start_line": 251,
+      "end_line": 379,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题至结局正文边界清晰，末行明确留下收束性的疑问。"
+    },
+    {
+      "title": "我那神奇的姥姥",
+      "start_line": 385,
+      "end_line": 411,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "民间灵异叙事，标题和结尾明确。"
+    },
+    {
+      "title": "不安分的眼睛",
+      "start_line": 415,
+      "end_line": 467,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L443 的“精灵鬼怪”为栏目分隔，正文实际延续至 L465；L467 开始下一篇。"
+    },
+    {
+      "title": "致命的谎言",
+      "start_line": 469,
+      "end_line": 505,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和情节开端明确，L501 为栏目分隔且 L503-L505 疑似续文；证据包无法完全确认其后是否仍属本篇。"
+    },
+    {
+      "title": "鬼狐一家荣",
+      "start_line": 557,
+      "end_line": 627,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整鬼怪故事，L627 为明确结尾。"
+    },
+    {
+      "title": "前世今生的爱情",
+      "start_line": 677,
+      "end_line": 741,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“引子:两棵树”是同一故事的序章，已与正文合并；L741 为离别结局。"
+    },
+    {
+      "title": "索命电邮",
+      "start_line": 743,
+      "end_line": 815,
+      "confidence": 0.55,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文段在 L815 截断于句中，后续同名片段位置遥远且无法据证据包安全拼接。"
+    },
+    {
+      "title": "学校里的恐怖走廊",
+      "start_line": 817,
+      "end_line": 879,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、连续正文和传说诞生式结尾边界清楚。"
+    },
+    {
+      "title": "狗真的能看到人看不到的东西",
+      "start_line": 881,
+      "end_line": 935,
+      "confidence": 0.7,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "跨越栏目分隔持续，但 L935 截断在未完句中。"
+    },
+    {
+      "title": "幽灵人间",
+      "start_line": 939,
+      "end_line": 1023,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "包含“扑朔迷离”“惊魂一瞥”“真相大白”等内部小节，L1023 为情节收束。"
+    },
+    {
+      "title": "自杀前那三天",
+      "start_line": 1084,
+      "end_line": 1124,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整校园灵异故事，末尾揭示循环性结局。"
+    },
+    {
+      "title": "幽灵怪车",
+      "start_line": 1126,
+      "end_line": 1170,
+      "confidence": 0.72,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际起点在此处而非前部同名提要；L1170 截断，未见结局。"
+    },
+    {
+      "title": "三更之缘起",
+      "start_line": 1436,
+      "end_line": 1498,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“三更之缘起/见鬼/见两女生/宿命”应为同一组连续小节，已合并；末尾仍带悬念，完整性不确定。"
+    },
+    {
+      "title": "收垃圾的女鬼",
+      "start_line": 1502,
+      "end_line": 1552,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题至故事收束完整，L1552 明确总结后门禁忌。"
+    },
+    {
+      "title": "凶灵附体",
+      "start_line": 1560,
+      "end_line": 1592,
+      "confidence": 0.7,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文在 L1592 句中截断，无法声称完整。"
+    },
+    {
+      "title": "凌晨三点",
+      "start_line": 1596,
+      "end_line": 1633,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "灵异经历叙事完整，L1631 交代处理后恢复正常，L1633 为分隔符。"
+    }
+  ],
+  "document_notes": "严格依据证据包完成识别，未读取原始 Markdown。已排除目录、封面/栏目标题、吸血鬼知识文章、死亡知识文章、纪实灵异报道及泰国巫术专题。对证据显示截断、标题缺失或无法确认完整结局的内容标为 installment 或 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "d9afc6c261cc031516434866de51b1eafa837c9abf61a132dab36d64d8d455df",
+    "evidence_only": true,
+    "duration_seconds": 171.4,
+    "generated_at": "2026-08-31T05:42:07+00:00"
+  }
+}

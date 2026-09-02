@@ -18,7 +18,6 @@ venv/
 env/
 
 # Local runtime outputs
-work/
 outputs/
 
 # TTS benchmark local assets and derived audio (large, machine-specific)

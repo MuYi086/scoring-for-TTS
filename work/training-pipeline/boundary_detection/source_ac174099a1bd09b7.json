@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第08期.md",
+  "source_sha256": "ae9ca4d00c0a84273d130674e828cbecb4b45e6ab774436437160d967dfa0ec5",
+  "line_count": 6066,
+  "stories": [
+    {
+      "title": "疑难杂症事务所Ⅱ—十二字批言",
+      "start_line": 305,
+      "end_line": 550,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题位于305行，后接作者署名及分章内容；550行为结局，下一篇从552行开始。"
+    },
+    {
+      "title": "银行大劫案",
+      "start_line": 552,
+      "end_line": 1329,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "552行是正文标题，554行为作者署名；后续时间地点标题均属同一故事，1329行为结尾，之后进入下一篇。"
+    },
+    {
+      "title": "撒旦之屋中的大铁锤",
+      "start_line": 1331,
+      "end_line": 2379,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1331行为正文标题，1333行为作者署名；数字章节连续至2379行结局，2381行起为作者的话。"
+    },
+    {
+      "title": "时之交错",
+      "start_line": 2403,
+      "end_line": 2845,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2403行为正文标题，2405行为署名；序段及1至6章属于同一故事，2845行为结尾，2847行起为下一篇。"
+    },
+    {
+      "title": "蜗涎",
+      "start_line": 2847,
+      "end_line": 3977,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2847行为标题，2849行为作者署名；楔子、八章及“尾声：没有结案的案件”均为同一推理故事，3977行为尾声末行。"
+    },
+    {
+      "title": "镜中噩梦",
+      "start_line": 3979,
+      "end_line": 4055,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3979行为正文标题，3981行为署名；4055行明确写有“答案请见下期”，属于未完待续片段。"
+    },
+    {
+      "title": "密室里的幽灵",
+      "start_line": 4078,
+      "end_line": 5536,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "4078行为正文标题，4080行为署名；数字章节连续至5536行结局，5538行起为创作谈。"
+    },
+    {
+      "title": "跟踪狂",
+      "start_line": 5560,
+      "end_line": 5943,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "5560行为正文标题，5562行为译者及作者信息；正文延续至5943行结尾，5945行起为作家介绍及刊后预告。"
+    }
+  ],
+  "document_notes": "仅依据证据包完成边界识别，未读取或扫描原始 Markdown。已排除目录、栏目页、广告、评论、作者介绍、答案及下期预告；章节标题、作者署名和尾声均并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ae9ca4d00c0a84273d130674e828cbecb4b45e6ab774436437160d967dfa0ec5",
+    "evidence_only": true,
+    "duration_seconds": 101.3,
+    "generated_at": "2026-08-30T11:40:25+00:00"
+  }
+}

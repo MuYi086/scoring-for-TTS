@@ -1,0 +1,178 @@
+{
+  "source_path": "悚族/《悚族》饕餮之戒.md",
+  "source_sha256": "9d019617ec522725b3c8687b1baa8a5ccf749433fff4c8329ba9480694fbcc3f",
+  "line_count": 3489,
+  "stories": [
+    {
+      "title": "不给糖就捣蛋",
+      "start_line": 144,
+      "end_line": 182,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L144为明确篇名，L182以食人反转收束；L184起是图片及万圣节知识说明。"
+    },
+    {
+      "title": "面具后是谁的脸",
+      "start_line": 194,
+      "end_line": 218,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，L218揭示魔鬼用人皮制作面具；之后转为万圣节知识内容。"
+    },
+    {
+      "title": "南瓜灯的泪水",
+      "start_line": 230,
+      "end_line": 260,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L230为标题，L260以苏苏变成的南瓜流泪作结；L264起是南瓜灯知识说明，并非小说正文。"
+    },
+    {
+      "title": "孤独病孩子",
+      "start_line": 272,
+      "end_line": 697,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L272开始陈蒙蒙的第一人称校园怪谈，后续GuDuBingHaiZi标题均为内部页眉或尾声；L697以猫叫完成收束。"
+    },
+    {
+      "title": "一瓦情深",
+      "start_line": 701,
+      "end_line": 1032,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L701是该篇题页引文，L705起进入连续章节；L1032以“一往情深”双关完成结局，L1036已是下一篇作者署名。"
+    },
+    {
+      "title": "莫名失踪",
+      "start_line": 1036,
+      "end_line": 1339,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1036-L1037是本篇作者和插图署名，主标题未被Markdown文字层保留，故以L1043首个可见章题代称；各章连续至L1339的虫躯反转结局。"
+    },
+    {
+      "title": "生死试",
+      "start_line": 1347,
+      "end_line": 1749,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题见目录，L1347开始完整校园灵异叙事；L1749以主人公考试失败的诙谐回应收束，L1751起为黑匣子栏目前导。"
+    },
+    {
+      "title": "恭喜你，中奖了",
+      "start_line": 1767,
+      "end_line": 1795,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，L1795完成中奖骗局的抢劫反转；L1797更换人物并进入下一篇。"
+    },
+    {
+      "title": "三个孩子的诅咒",
+      "start_line": 1797,
+      "end_line": 1825,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由目录确认，L1797起人物和情节独立，L1825以“一尸两命”实现诅咒作结。"
+    },
+    {
+      "title": "尺码",
+      "start_line": 1829,
+      "end_line": 1871,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1829含篇名和作者，L1871以老王继续从背包取出人体部位的暗示完成反转；L1873换为催眠诊室。"
+    },
+    {
+      "title": "催眠",
+      "start_line": 1873,
+      "end_line": 1911,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名由目录确认，L1873起是独立催眠诊所故事，L1911以医生迎接下一位受害者收束。"
+    },
+    {
+      "title": "病毒营销专家",
+      "start_line": 1915,
+      "end_line": 1961,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1915含篇名和作者，L1961以主人公自家防盗门被打开作反噬结局；L1965进入《黑玫瑰》。"
+    },
+    {
+      "title": "黑玫瑰",
+      "start_line": 1965,
+      "end_line": 2321,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1965为篇名，后续断裂标题只是排版误识别；L2321完成招聘考验及互害真相的结局。"
+    },
+    {
+      "title": "摄影惊魂论",
+      "start_line": 2325,
+      "end_line": 2734,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2325为Markdown正文标题，后续均为同一摄影节目鬼故事的章节；L2734以“从一开始就找错了人”完成最终反转。"
+    },
+    {
+      "title": "替身情人",
+      "start_line": 2736,
+      "end_line": 3096,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2736开始篇名，L2738为作者署名；后续重复题名均是页眉或章节间排版，L3096以女鬼找到替身情人完成收束。"
+    },
+    {
+      "title": "饕餮之戒",
+      "start_line": 3098,
+      "end_line": 3440,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L3098为紧邻题页的作者署名，L3102起进入饕餮私房菜馆与戒指故事；L3440明确标注“未完待续”。"
+    }
+  ],
+  "document_notes": "第二遍核验修正了第一遍的多处跨篇合并：三篇万圣节短篇分别止于L182、L218和L260；《孤独病孩子》实际从L272延续到尾声L697；五篇黑匣子微型小说必须分别切分；《病毒营销专家》不包含《黑玫瑰》，《尺码》不包含《催眠》，《摄影惊魂论》止于L2734，《替身情人》止于L3096，末篇《饕餮之戒》才是标注未完待续的连载。L1036一篇的主标题存在于未转录的题图中，暂以首个可见章题《莫名失踪》代称，因此该条标题置信度低于其正文边界置信度。文件末行无换行符，工具显示3488个换行符，但按1起始逻辑行计数为绑定要求的3489行。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9d019617ec522725b3c8687b1baa8a5ccf749433fff4c8329ba9480694fbcc3f",
+    "duration_seconds": 483.4,
+    "generated_at": "2026-08-31T11:39:27+00:00"
+  }
+}

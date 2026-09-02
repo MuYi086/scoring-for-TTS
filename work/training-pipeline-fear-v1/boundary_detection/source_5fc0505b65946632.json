@@ -1,0 +1,119 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2007年10.md",
+  "source_sha256": "c6659022c1d4e4c30d115d7ba7514c71d93076dc57b7d8bc421afc53794fe0fa",
+  "line_count": 4396,
+  "stories": [
+    {
+      "title": "穿过骨头抚摸你",
+      "start_line": 451,
+      "end_line": 795,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节明确；结尾正文完整收束。"
+    },
+    {
+      "title": "契丹王妃 雪域疆国的冰火之恋",
+      "start_line": 799,
+      "end_line": 1185,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文从章节（一）开始，标题在后续推荐段出现，疑似版面顺序导致标题缺失；末尾有明确情节收束。"
+    },
+    {
+      "title": "字符迷情",
+      "start_line": 1234,
+      "end_line": 1332,
+      "confidence": 0.95,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续章节明确；末章标为“最后还未完”，属于未完片段。"
+    },
+    {
+      "title": "白色曼珠沙华",
+      "start_line": 1336,
+      "end_line": 1769,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和正文起点明确，多个小节及灵异情节连续；证据显示故事在该段末收束，但中间夹有版面栏目。"
+    },
+    {
+      "title": "（标题缺失，星盘与傀儡师故事）",
+      "start_line": 2447,
+      "end_line": 2704,
+      "confidence": 0.58,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文为连续的校园灵异推理故事，但标题缺失、章节从1跳至3，且末尾无明确完结标记，按连载片段处理。"
+    },
+    {
+      "title": "睡",
+      "start_line": 2708,
+      "end_line": 2710,
+      "confidence": 0.55,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和恐怖叙事起点可见，但证据段极短且正文尾部疑似截断，无法确认完整性。"
+    },
+    {
+      "title": "异人",
+      "start_line": 2712,
+      "end_line": 3102,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及14个连续章节明确；法医调查与案件结局完整。"
+    },
+    {
+      "title": "陌生初熏",
+      "start_line": 3104,
+      "end_line": 3443,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、八章及后记连续，后记明确交代事件善后，故事完整结束。"
+    },
+    {
+      "title": "即使你的生活变成了噩梦也千万不要醒来",
+      "start_line": 3445,
+      "end_line": 3719,
+      "confidence": 0.7,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个小节围绕同一叙事线连续，结尾形成逃离与选择的收束；正式标题在证据中缺失，仅依据相邻正文语句推定。"
+    },
+    {
+      "title": "天心",
+      "start_line": 3725,
+      "end_line": 4229,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连载章节明确；末尾标注“待续”，不能视为完整小说。"
+    }
+  ],
+  "document_notes": "仅使用了证据包，未打开或扫描原始 Markdown。已排除目录、编辑部栏目、广告、知识文章、书评、预告、简介及刊后文摘。部分故事因标题缺失或版面栏目插入而降低了置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c6659022c1d4e4c30d115d7ba7514c71d93076dc57b7d8bc421afc53794fe0fa",
+    "evidence_only": true,
+    "duration_seconds": 172.4,
+    "generated_at": "2026-08-31T06:14:14+00:00"
+  }
+}

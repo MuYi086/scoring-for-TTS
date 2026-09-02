@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第06期.md",
+  "source_sha256": "ea71ced172e9882169310b238a4c1d61bf0f9ba3b477cfa70bc7680518158b8b",
+  "line_count": 6900,
+  "stories": [
+    {
+      "title": "下午4点32分",
+      "start_line": 326,
+      "end_line": 1300,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名始于326行，章节正文连续至1300行；1302行起为作者的话，表明故事已结束。"
+    },
+    {
+      "title": "旁观",
+      "start_line": 1318,
+      "end_line": 2068,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和题记始于1318行，后续章节连续至最终真相并于2068行收束；2070行起为作者的话。"
+    },
+    {
+      "title": "来自女大学生的挑战",
+      "start_line": 2080,
+      "end_line": 2291,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题与作者信息始于2080行，四章连续至2291行，以案件解决和收束性对白结束。"
+    },
+    {
+      "title": "长腿叔叔Online",
+      "start_line": 2293,
+      "end_line": 3887,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名始于2293行，正文连续至3887行并有明确结尾；下一篇故事从3889行开始。"
+    },
+    {
+      "title": "消失的半小时",
+      "start_line": 3889,
+      "end_line": 3951,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名始于3889行，正文至3951行以案件审判及主题性结语结束。"
+    },
+    {
+      "title": "R的悲剧",
+      "start_line": 4043,
+      "end_line": 5479,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题在排版证据中被HTML标签拆碎，但正文实际起点为4043行，含九个内部部分并于5479行结案；5481行起为后记。"
+    },
+    {
+      "title": "十五年后的回忆",
+      "start_line": 5515,
+      "end_line": 6818,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及译者、作者信息始于5515行，后续标题“是康孝干的吗？”属于同一书信体故事内部部分，正文至6818行结束；6820行起为书评。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始Markdown。排除了新闻、作家介绍、目录、广告、声明、后记、书评、征集及其他非小说内容；封面故事“夜半歌声”证据显示为短篇宣传/图文式文字，无法确认是完整小说，故未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ea71ced172e9882169310b238a4c1d61bf0f9ba3b477cfa70bc7680518158b8b",
+    "evidence_only": true,
+    "duration_seconds": 96.9,
+    "generated_at": "2026-08-30T11:38:51+00:00"
+  }
+}

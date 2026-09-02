@@ -1,0 +1,58 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-收音机的阴谋.md",
+  "source_sha256": "23d3765303b09e4603f15c56360a8c4e2878f216987ee3ca5d4355296139d9c2",
+  "line_count": 2407,
+  "stories": [
+  {
+  "title": "女孩的骨头",
+  "start_line": 107,
+  "end_line": 512,
+  "confidence": 0.25,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "107行标题和正文开头明确，但中间插入广告；局部尾窗482至512行已经转为堂哥中降头的另一段叙事。证据包未提供   《女孩的骨头》的准确结束位置，也未提供后续故事的正式起点，无法安全收紧边界。"
+  },
+  {
+  "title": "扭曲的",
+  "start_line": 514,
+  "end_line": 686,
+  "confidence": 0.35,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "514行标题及大花、老王故事的开头明确；687行出现新的独立标题并转入古墓叙事，但局部包没有提供686行附近原   文，无法确认《扭曲的》是否在此前完整收束。"
+  },
+  {
+  "title": "“棺盖还未盖上呢？”",
+  "start_line": 687,
+  "end_line": 753,
+  "confidence": 0.84,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "687行的标题后为连续古墓恐怖叙事；753行句子未完即进入广告，明确缺尾。"
+  },
+  {
+  "title": "第5部电梯",
+  "start_line": 1528,
+  "end_line": 1791,
+  "confidence": 0.95,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题后为完整的独立恐怖叙事，在行1787—1791完成事件收束；行1793起为吸血鬼知识性内容。"
+  },
+  {
+  "title": "（标题缺失，非人类故事片段）",
+  "start_line": 2033,
+  "end_line": 2304,
+  "confidence": 0.2,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "2033行“非人类？”是承接此前人物与事件的二级分节标题，2051行又直接进入第六节，证明当前起点缺头；局部尾窗   2274至2304行已经转为卢其、刘娜及贩婴案的另一段叙事。证据包未覆盖两段之间的切换位置，无法确定本故事的正式标题、准确   起点或终点。"
+  }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。已保留687行古墓故事   的拆分；《女孩的骨头》《扭曲的》及非人类故事片段因局部证据未覆盖准确切换或收束位置，继续标记为 uncertain 并降低置   信度。"
+  }

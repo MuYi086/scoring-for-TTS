@@ -1,0 +1,146 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2004年06.md",
+  "source_sha256": "67b99616b390da94d641624452e4bde478622c5128da058b9944c93cbbe0e3be",
+  "line_count": 3435,
+  "stories": [
+    {
+      "title": "如此冤魂",
+      "start_line": 332,
+      "end_line": 369,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的鬼故事，正文有完整情节和结局。"
+    },
+    {
+      "title": "可乐",
+      "start_line": 379,
+      "end_line": 389,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的微型恐怖短篇，结尾完整。"
+    },
+    {
+      "title": "手掌",
+      "start_line": 391,
+      "end_line": 397,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的微型怪谈，结尾完整。"
+    },
+    {
+      "title": "梦",
+      "start_line": 401,
+      "end_line": 415,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的微型恐怖短篇，结尾完整。"
+    },
+    {
+      "title": "睡在泥土中的人",
+      "start_line": 974,
+      "end_line": 1064,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者信息和叙事正文连续，结尾完成。"
+    },
+    {
+      "title": "四个好朋友",
+      "start_line": 1108,
+      "end_line": 1232,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的校园怪谈式故事，标题后正文连续，下一故事正文从1234行附近转入。"
+    },
+    {
+      "title": "一天一点网恋",
+      "start_line": 1420,
+      "end_line": 1502,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立的网恋题材短篇，结局正文明确。"
+    },
+    {
+      "title": "我等你",
+      "start_line": 1626,
+      "end_line": 1694,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的网络恐怖短篇，标题、正文和反转结尾完整。"
+    },
+    {
+      "title": "苏苏",
+      "start_line": 1698,
+      "end_line": 1895,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "以分节形式呈现的独立网络情感故事，章节应合并，正文在1895行收束。"
+    },
+    {
+      "title": "（标题缺失，从第2节开始的返乡怪谈）",
+      "start_line": 1897,
+      "end_line": 2237,
+      "confidence": 0.15,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1897行只是数字章节“2”，证明当前起点缺少标题和第1节；局部起点窗口显示大林返乡叙事实际在更早位置开始，而   尾窗2207至2237行已经转为猫鼠爱情故事。标题清单虽显示中间有第3至第8节，但未提供不同故事之间的准确切换原文，因此无法   安全修正起止边界或确认这些章节是否属于同一篇。"
+    },
+    {
+      "title": "你的肩膀上有蝴蝶吗",
+      "start_line": 2241,
+      "end_line": 2315,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "局部包显示2241行起为蝴蝶故事正文，2303行收束后，2305行标题及其后的残片与前文版面顺序错位；2315行是该故   事结尾，2317行已转入下一篇。"
+    },
+    {
+      "title": "肉香",
+      "start_line": 2319,
+      "end_line": 2464,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "局部包显示2319行起已进入连续叙事，2352行标题/署名嵌入同一句内容，属版面顺序错位；2464行完成结局，2466行   转入恋爱测验。"
+    },
+    {
+      "title": "重回小镇",
+      "start_line": 2783,
+      "end_line": 2915,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的悬疑怪谈，正文有明确开端、发展和结局。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。标题为“2”的条目已改   为缺题占位名；局部证据证明其缺头且尾部混入猫鼠爱情故事，但未覆盖准确切换位置，因此继续保留 uncertain 并降低置信   度。",
+  "_provenance": {
+    "stage": "manual_story_boundaries_review",
+    "model": "manual-sol",
+    "reasoning_effort": "manual",
+    "speed": "standard",
+    "input_sha256": "67b99616b390da94d641624452e4bde478622c5128da058b9944c93cbbe0e3be",
+    "imported_at": "2026-09-01T11:16:01+00:00"
+  }
+}

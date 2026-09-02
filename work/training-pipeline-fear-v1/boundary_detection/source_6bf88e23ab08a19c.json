@@ -1,0 +1,89 @@
+{
+  "source_path": "怖客/《怖客》2010年9月副刊都是无聊惹的祸.md",
+  "source_sha256": "777ff7513833ac69f3354e9ffcc72b721c6b674ef58280ca739652e2a8fc8ac5",
+  "line_count": 3244,
+  "stories": [
+    {
+      "title": "宿舍无人",
+      "start_line": 262,
+      "end_line": 1608,
+      "confidence": 0.83,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名位于262行；后续“三”“五”等章节标题显示为同一故事的内部章节。末尾仍呈明显悬置状态，无法确认本期完结。"
+    },
+    {
+      "title": "谁也活不了",
+      "start_line": 1610,
+      "end_line": 1992,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续包含李雷、赵晨等人物讲述的内部故事，1992行完成反转结局，1994行为编辑信息，故不计入边界。"
+    },
+    {
+      "title": "三笑拍案惊奇",
+      "start_line": 1998,
+      "end_line": 2100,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题与作者署名同段出现，正文至2100行结束，2102行为编辑信息；属于带惊悚元素的短篇段子，但主要为喜剧性故事。"
+    },
+    {
+      "title": "菜刀惊魂",
+      "start_line": 2108,
+      "end_line": 2130,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立标题及完整正文，2130行后出现编辑信息，故事内容具明显恐怖元素。"
+    },
+    {
+      "title": "学校区设",
+      "start_line": 2135,
+      "end_line": 2184,
+      "confidence": 0.72,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据包显示该标题段包含完整校园灵异故事，正文至2184行结束，2186行为编辑信息；标题疑似识别异常，故降低置信度。"
+    },
+    {
+      "title": "甲的故事（含后续乙、丙、丁及夺命故事）",
+      "start_line": 2192,
+      "end_line": 2640,
+      "confidence": 0.68,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "甲、乙、丙、丁及“夺命故事”构成同一框架故事的内部讲述，不应拆分；2640行为故事结尾，2642行为编辑信息。证据包未显示更明确的总标题，故标题与边界置信度较低。"
+    },
+    {
+      "title": "阴人（连载之二）",
+      "start_line": 2646,
+      "end_line": 3133,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2646行作者署名与2648—2650行连载标识表明正文起点；“5、他回来”“6、凶地”为内部章节。明确标注连载之二，不能视为完整故事；3134行起为刊后推荐内容。"
+    }
+  ],
+  "document_notes": "已严格仅依据证据包识别，未打开或扫描原始 Markdown。证据包未提供所有非标题行的完整上下文，因此对标题疑似异常或边界上下文不足的条目降低了置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "777ff7513833ac69f3354e9ffcc72b721c6b674ef58280ca739652e2a8fc8ac5",
+    "evidence_only": true,
+    "duration_seconds": 93.9,
+    "generated_at": "2026-08-31T05:12:33+00:00"
+  }
+}

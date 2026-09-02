@@ -1,0 +1,119 @@
+{
+  "source_path": "怖客/《怖客》2014年08月B版-请君珍惜(T).md",
+  "source_sha256": "65c4860f9bb0287fb3475ac59b6d5698ea6e794d665886205f74e267d6293958",
+  "line_count": 3469,
+  "stories": [
+    {
+      "title": "识到",
+      "start_line": 85,
+      "end_line": 105,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示为独立惊悚悬疑故事，正文以作者署名开始，L105为结局正文，L107为编辑信息；标题疑似截断，故置信度略低。"
+    },
+    {
+      "title": "陌生信件",
+      "start_line": 264,
+      "end_line": 477,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从陌生信件展开，经多个小节推进至L477明确收束；L479为编辑信息。"
+    },
+    {
+      "title": "异变",
+      "start_line": 489,
+      "end_line": 751,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个章节标题属于同一校园恐怖故事，L751完成叙事，L753为编辑信息。"
+    },
+    {
+      "title": "二十三封挂号信",
+      "start_line": 759,
+      "end_line": 1033,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续侦探怪谈故事，包含调查、冲突和结局；L1035为编辑信息。"
+    },
+    {
+      "title": "养魂",
+      "start_line": 1037,
+      "end_line": 1370,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "同一故事的分节从L1045延续至L1370明确结局，L1372为编辑信息。"
+    },
+    {
+      "title": "他被挤扁了",
+      "start_line": 1572,
+      "end_line": 1900,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续校园恐怖故事，章节标题均属同一叙事，L1900为结局正文，L1902为编辑信息。"
+    },
+    {
+      "title": "云山",
+      "start_line": 1918,
+      "end_line": 2208,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含作者署名及多个内部小节，正文在L2208完成，L2210为编辑信息。"
+    },
+    {
+      "title": "上身",
+      "start_line": 2441,
+      "end_line": 2774,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续食水鬼校园怪谈，多个小节属于同一故事，L2774完成收束。"
+    },
+    {
+      "title": "偷走你的黑夜",
+      "start_line": 2776,
+      "end_line": 3136,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文结尾明确标注“谜底见9月B版”，属于本期未完连载。"
+    },
+    {
+      "title": "逃跑的尸体",
+      "start_line": 3216,
+      "end_line": 3386,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文在悬念处中断，后续预告说明答案将在下一期，属于未完连载。"
+    }
+  ],
+  "document_notes": "已严格仅依据证据包识别，未读取或扫描原始 Markdown。已排除目录、栏目页、编辑部故事栏目、广告、答案、下文预告及无正文的条目；同一故事内部章节已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "65c4860f9bb0287fb3475ac59b6d5698ea6e794d665886205f74e267d6293958",
+    "evidence_only": true,
+    "duration_seconds": 129.2,
+    "generated_at": "2026-08-31T05:22:25+00:00"
+  }
+}

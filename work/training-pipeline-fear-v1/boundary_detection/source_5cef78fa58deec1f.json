@@ -1,0 +1,159 @@
+{
+  "source_path": "怖客/《怖客》2010年12月请把心还给我.md",
+  "source_sha256": "3fb720d86ab2e1ac9d09863fd59e84bbcd9f53ce96f666de02cb6eb8b08579ac",
+  "line_count": 3856,
+  "stories": [
+    {
+      "title": "宅男偶遇",
+      "start_line": 201,
+      "end_line": 800,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从正文标题开始，后续“山里话”“镜子游戏”“一个故事一条命”“纸人”等为同一元小说内部段落，至“选一个结尾”结束并出现编辑信息。"
+    },
+    {
+      "title": "水库的幽魂",
+      "start_line": 804,
+      "end_line": 819,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文在水库洪水往事处收束。"
+    },
+    {
+      "title": "梦魇",
+      "start_line": 821,
+      "end_line": 831,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，正文后接编辑信息。"
+    },
+    {
+      "title": "荷耕回家",
+      "start_line": 835,
+      "end_line": 1139,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“阴魂不散”“幻影凶间”为同一露营闹鬼故事的连续内部段落，至编辑信息前结束。"
+    },
+    {
+      "title": "吃香蕉",
+      "start_line": 1145,
+      "end_line": 1163,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文后接编辑信息。"
+    },
+    {
+      "title": "高望路",
+      "start_line": 1167,
+      "end_line": 1319,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立悬疑灵异短篇，结尾完成反转并接编辑信息。"
+    },
+    {
+      "title": "头发",
+      "start_line": 1325,
+      "end_line": 1427,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚短篇，正文以血腥现场收束并接编辑信息。"
+    },
+    {
+      "title": "我不是苏小余",
+      "start_line": 1431,
+      "end_line": 1477,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立灵异短篇，正文后接编辑信息。"
+    },
+    {
+      "title": "请把心还给我",
+      "start_line": 1483,
+      "end_line": 1846,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题虽在证据中分段显示，后续“姻缘红线”“请收下我的心”“我们之间”“死人会……”是同一故事的内部章节，至编辑信息前结束。"
+    },
+    {
+      "title": "四合院",
+      "start_line": 1854,
+      "end_line": 2075,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“陆非”为同一故事的后续叙述视角，至编辑信息前完成结局。"
+    },
+    {
+      "title": "飘移的尖04",
+      "start_line": 2081,
+      "end_line": 2089,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据标题疑似截断或 OCR 异常，但正文构成独立灵异短篇；边界可靠，题名不完全可靠。"
+    },
+    {
+      "title": "血手链",
+      "start_line": 2093,
+      "end_line": 2262,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文证据仅显示作者署名，题名依据目录中的对应条目推定；正文至编辑信息前结束。"
+    },
+    {
+      "title": "午夜不要去听讲座",
+      "start_line": 2270,
+      "end_line": 2654,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“上路”至“尾声”为同一校园恐怖故事的连续内部章节，尾声完成后接编辑信息。"
+    },
+    {
+      "title": "特急（下）",
+      "start_line": 2658,
+      "end_line": 3570,
+      "confidence": 0.97,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确标注“下”并含前情提要，正文在“九 对决”中途结束，属于连载片段，未声称本期完整。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包识别，未打开或扫描原始 Markdown。已排除封面、目录、征稿、编辑信息、广告、调查问卷及其他刊后内容；“镜子游戏”和“防空洞”因证据包未能可靠给出完整正文终点，未列入故事清单。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3fb720d86ab2e1ac9d09863fd59e84bbcd9f53ce96f666de02cb6eb8b08579ac",
+    "evidence_only": true,
+    "duration_seconds": 129.1,
+    "generated_at": "2026-08-31T05:11:50+00:00"
+  }
+}

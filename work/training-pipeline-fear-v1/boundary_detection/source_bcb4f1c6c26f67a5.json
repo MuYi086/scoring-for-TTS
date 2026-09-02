@@ -1,0 +1,109 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-妖楼.md",
+  "source_sha256": "a89d73dd32ab771db703b7cad435cd5fa512b8591883aa021bffa07867025225",
+  "line_count": 2241,
+  "stories": [
+    {
+      "title": "夜半菜板声",
+      "start_line": 103,
+      "end_line": 121,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后正文连续，开端、恐怖冲突与结局完整。"
+    },
+    {
+      "title": "阴间的电话号码",
+      "start_line": 123,
+      "end_line": 127,
+      "confidence": 0.93,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确的灵异小说片段，但证据包显示末尾停在情节推进中，缺少结局。"
+    },
+    {
+      "title": "玉美",
+      "start_line": 129,
+      "end_line": 194,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文连续，结尾明确收束并点明事件后果。"
+    },
+    {
+      "title": "黑暗",
+      "start_line": 196,
+      "end_line": 337,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后正文连续，包含完整恐怖情节并在末行收束。"
+    },
+    {
+      "title": "抉择",
+      "start_line": 339,
+      "end_line": 1121,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "长篇正文连续，末尾出现结局性段落，下一标题开启新篇。"
+    },
+    {
+      "title": "奇怪的脚印",
+      "start_line": 1123,
+      "end_line": 1333,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与正文起点明确，但后段出现“俞生”相关内容且末尾为省略式停顿，无法确认是否完整及是否混入相邻篇章。"
+    },
+    {
+      "title": "爱数楼梯的",
+      "start_line": 1335,
+      "end_line": 1957,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节均在同一故事内，末尾以情绪性结局收束。"
+    },
+    {
+      "title": "异录GX之千P",
+      "start_line": 1959,
+      "end_line": 2197,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由标题起始，后续通用栏目标题属于同一故事延续，末尾情节已收束。"
+    },
+    {
+      "title": "守死尸",
+      "start_line": 2201,
+      "end_line": 2221,
+      "confidence": 0.8,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确的恐怖短篇开头，但证据包末尾截断且后段存在重复文本，不能确认完整结局。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未扫描原始 Markdown。已排除目录、栏目标题、广告及局部重复/图片式片段；证据包中若正文在结局前截断，则标为 installment 或 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "a89d73dd32ab771db703b7cad435cd5fa512b8591883aa021bffa07867025225",
+    "evidence_only": true,
+    "duration_seconds": 124.8,
+    "generated_at": "2026-08-31T05:48:00+00:00"
+  }
+}

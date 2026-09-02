@@ -1,0 +1,146 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2005年03.md",
+  "source_sha256": "5f74f22f4ff718e8bafbd92074087ac38f9a3e065ddfc794d47cfbfe3ab62ee3",
+  "line_count": 4215,
+  "stories": [
+    {
+      "title": "小玫瑰花妖的情事",
+      "start_line": 233,
+      "end_line": 681,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题段及数字章节连续，末尾明确收束为幸福结局。"
+    },
+    {
+      "title": "蚀心",
+      "start_line": 699,
+      "end_line": 857,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及后续章节属于同一校园惊悚故事，末段给出酸梅茶导致异常并尝试解决的收束。"
+    },
+    {
+      "title": "惊魂／褪色",
+      "start_line": 867,
+      "end_line": 1048,
+      "confidence": 0.4,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "867行“惊魂”开启浩与青的校园失踪叙事，1048行以浩褪色透明形成明确收束；但局部包未提供951行“褪色”标题附近   的原文，无法确认它是同篇分节、改题续段还是应拆分的相邻篇章，因此不能安全确定完整边界。"
+    },
+    {
+      "title": "续章",
+      "start_line": 1050,
+      "end_line": 1216,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "含作者署名和连续章节，结尾明确揭示老太太将主人公制成新故事材料。"
+    },
+    {
+      "title": "爱你在背后",
+      "start_line": 1307,
+      "end_line": 1515,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续多个小节属于同一鬼故事，末节以墓碑揭示身份并完成结局。"
+    },
+    {
+      "title": "紫罗化蝶",
+      "start_line": 1517,
+      "end_line": 1609,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题段及后续精灵相关内容连续，末尾完成主人公走出创伤并重新开始的结局。"
+    },
+    {
+      "title": "伞下恋",
+      "start_line": 2434,
+      "end_line": 2864,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "2434至2436行的分行标题可还原为“伞下恋”；2864行以晓秋完成主人公所爱的执伞女子形象收束，之后仅有乱码和下   一篇标题。"
+    },
+    {
+      "title": "女鬼雇佣兵团",
+      "start_line": 2871,
+      "end_line": 3037,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节明确为鬼故事；本期末尾仍停留在情节展开和人物感想，未见完整结局。"
+    },
+    {
+      "title": "风逝的菊花",
+      "start_line": 3047,
+      "end_line": 3221,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名、章节“三”“四”及连续情节表明为同一篇，末尾菊花坠落腐烂，完成超自然结局。"
+    },
+    {
+      "title": "最后一班地下铁",
+      "start_line": 3223,
+      "end_line": 3359,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及数字章节连续，末尾少女了结心愿并留下后续世界观收束。"
+    },
+    {
+      "title": "爬山虎",
+      "start_line": 3371,
+      "end_line": 3459,
+      "confidence": 0.92,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名及连续章节明确为怪谈小说，但正文在调查照片线索处中断，未见结局。"
+    },
+    {
+      "title": "承诺",
+      "start_line": 3469,
+      "end_line": 3960,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "“承诺”后的六个数字章节与后续“鸢尾花”等段落人物和情节连续，应合并为同一幻想爱情故事；末尾完成主要人物死   亡后的悼念收束。"
+    },
+    {
+      "title": "北府诡影",
+      "start_line": 3987,
+      "end_line": 4205,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3987至3990行的分行标题明确为“北府诡影”，并标有“精品连载”；4205行仍在情节中，4209行已是下期预告。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果与局部证据包判定，未读取原始 Markdown。已保留“伞下恋”和“北   府诡影”的明确修正；“惊魂／褪色”因局部证据未覆盖第二标题附近，无法判断应合并还是拆分，继续保留 uncertain 并降低置信   度。",
+  "_provenance": {
+    "stage": "manual_story_boundaries_review",
+    "model": "manual-sol",
+    "reasoning_effort": "manual",
+    "speed": "standard",
+    "input_sha256": "5f74f22f4ff718e8bafbd92074087ac38f9a3e065ddfc794d47cfbfe3ab62ee3",
+    "imported_at": "2026-09-01T11:16:01+00:00"
+  }
+}

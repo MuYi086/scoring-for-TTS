@@ -1,0 +1,108 @@
+{
+  "source_path": "悚族/《悚族》夏枯藤.md",
+  "source_sha256": "98fb5987883aeed7b4d7b35c874f3daf15be9aabf18c8e95be2eb06e15bf7059",
+  "line_count": 3923,
+  "stories": [
+    {
+      "title": "狼奴",
+      "start_line": 206,
+      "end_line": 654,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后进入“勒索倒计时”等连续小节，最终揭示幽灵狼及小何的真相并完整收束；660行已切换为《纸人》。"
+    },
+    {
+      "title": "纸人",
+      "start_line": 660,
+      "end_line": 1032,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "660行从李丽丽祭父及结识于小伟写起，后续vol.02至vol.05均为内部章节，最终以一家三口和李丽丽焚化团聚作结；1036行署名属于下一篇。"
+    },
+    {
+      "title": "二十二号禁忌",
+      "start_line": 1036,
+      "end_line": 1397,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1036行是紧邻题目的作者署名，后续各括号标题均为内部小节；结尾由孙晓宁接管帽子店，形成与开头呼应的完整循环。"
+    },
+    {
+      "title": "绝望底线",
+      "start_line": 1401,
+      "end_line": 1957,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1401行是目录题名对应小说的题页引语，正文围绕赵若琳的旧日孽债展开，末段揭示凌虚写作测试故事的真实目的；1967行开始下一篇。"
+    },
+    {
+      "title": "无止尽的循环",
+      "start_line": 1967,
+      "end_line": 2202,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名被版面拆为1967和1972两行，作者署名位于其间；故事具有完整开端，并以真假韩晓涵同时出现的反转结束，2204行切换下一篇。"
+    },
+    {
+      "title": "头发里的真相",
+      "start_line": 2204,
+      "end_line": 2661,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2204行包含题名和署名，Three、Five至Eight等均为篇内小节；案件真相、凶手及断手消失均已交代，2661行为结局最后一句。"
+    },
+    {
+      "title": "毁不去的容颜",
+      "start_line": 2667,
+      "end_line": 3027,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2667行题名后连续展开Chapter 1至Chapter 5，最终揭示连体姐妹换取身体与皮肤的真相并完成报复；3031行已是《夏枯藤》的署名。"
+    },
+    {
+      "title": "杀手系列之夏枯藤",
+      "start_line": 3031,
+      "end_line": 3558,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3031行署名与3032行题名共同构成实际起点；潭西村事件在主人公取得夏枯藤并报告任务完成后收束，3562行开始另一篇的上辑回顾。"
+    },
+    {
+      "title": "蝴蝶（终）",
+      "start_line": 3562,
+      "end_line": 3878,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3562行明确以“上辑回顾”承接前期内容，属于缺少开头的终篇连载；本期内容至虫群涌向叙述者结束，3880行起为CIP出版信息。"
+    }
+  ],
+  "document_notes": "第二遍抽查纠正了第一遍的主要边界错误：《狼奴》止于654行，《纸人》实际从660行开始；《毁不去的容颜》止于3027行，后续另有《夏枯藤》和《蝴蝶（终）》。《狼奴》《纸人》《绝望底线》《无止尽的循环》《头发里的真相》等均具备本篇完整开端和结局，不应仅因内部编号、开放式反转或标题识别缺失而标为连载。仅《蝴蝶（终）》因明确承接“上辑回顾”标为installment。封面目录、专访、授权声明、图片行及刊后出版信息均未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "98fb5987883aeed7b4d7b35c874f3daf15be9aabf18c8e95be2eb06e15bf7059",
+    "duration_seconds": 283.4,
+    "generated_at": "2026-08-31T11:04:49+00:00"
+  }
+}

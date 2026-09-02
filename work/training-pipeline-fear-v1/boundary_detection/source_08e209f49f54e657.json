@@ -1,0 +1,109 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼故事》女鬼病毒.md",
+  "source_sha256": "061dd7f81377ed9c3d3ef3c5a8a6690f23414632eb9ddc82edcd19748956e382",
+  "line_count": 2007,
+  "stories": [
+    {
+      "title": "恐怖女厕所",
+      "start_line": 110,
+      "end_line": 233,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及正文均为校园恐怖故事，结尾完成事件收束。"
+    },
+    {
+      "title": "石缝里的女尸",
+      "start_line": 235,
+      "end_line": 430,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从标题开始，L354 的小节标题属于同一故事；L430 为结局性收束。"
+    },
+    {
+      "title": "爱听鬼故事",
+      "start_line": 432,
+      "end_line": 750,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、连续叙事及结尾情节完整，属于鬼故事。"
+    },
+    {
+      "title": "鬼故事",
+      "start_line": 754,
+      "end_line": 1143,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1139 的重复标题及后续段落承接前文，属于同一老宅鬼故事；L1143 为结尾。"
+    },
+    {
+      "title": "鬼故事",
+      "start_line": 1149,
+      "end_line": 1253,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "与前一篇同名但正文另起，内容围绕古董和失踪人物展开，并有明确结尾。"
+    },
+    {
+      "title": "黑暗鬼校",
+      "start_line": 1255,
+      "end_line": 1685,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和开端明确，正文为校园恐怖叙事；末尾虽简短但呈现故事收束。"
+    },
+    {
+      "title": "我好恨！",
+      "start_line": 1687,
+      "end_line": 1709,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖叙事的标题和开端明确，但结尾停在复仇即将发生处，无法确认是否完整。"
+    },
+    {
+      "title": "我恨！",
+      "start_line": 1711,
+      "end_line": 1859,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的古代背景鬼故事，L1859 明确标示篇末并完成轮回收束。"
+    },
+    {
+      "title": "鬼故事",
+      "start_line": 1861,
+      "end_line": 1941,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从故事叙事开始，包含完整冲突与结局，属于水鬼/冤魂类恐怖小说。"
+    }
+  ],
+  "document_notes": "依据证据包中的全部标题、段落首尾和精确行号识别。已排除广告、目录、医学宣传、增高宣传及其他刊后广告内容；未打开或扫描原始 Markdown。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "061dd7f81377ed9c3d3ef3c5a8a6690f23414632eb9ddc82edcd19748956e382",
+    "evidence_only": true,
+    "duration_seconds": 104.8,
+    "generated_at": "2026-08-31T05:43:50+00:00"
+  }
+}

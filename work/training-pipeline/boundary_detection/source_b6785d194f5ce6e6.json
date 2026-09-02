@@ -1,0 +1,109 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2010年第11期.md",
+  "source_sha256": "1ac106d1e8359c42a9acf1fcdcc9bf642c975d0a28c33009ec07b392ce2c8bf7",
+  "line_count": 6667,
+  "stories": [
+    {
+      "title": "最后一块蛋糕",
+      "start_line": 483,
+      "end_line": 1819,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者信息及连续章节明确，结局正文止于1819行。"
+    },
+    {
+      "title": "借刀杀人",
+      "start_line": 1821,
+      "end_line": 2265,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由标题和作者署名开始，章节连续至结尾。"
+    },
+    {
+      "title": "月光圆舞曲",
+      "start_line": 2267,
+      "end_line": 3246,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名明确，章节连续并以结尾正文收束。"
+    },
+    {
+      "title": "教授的烦恼",
+      "start_line": 3248,
+      "end_line": 4359,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "前后正文具有小说连续性并以结局场景收束，但证据中间出现“读者有奖调查表11”栏目标题，且章节编号从[1]跳至[5]，边界和内容完整性存在不确定性。"
+    },
+    {
+      "title": "时间逆流",
+      "start_line": 4361,
+      "end_line": 4479,
+      "confidence": 0.9,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文故事完整呈现至读者挑战部分，但后续明确写有“答案见下期”，结尾解答缺失，不能确认完整。"
+    },
+    {
+      "title": "一弯冷月空留",
+      "start_line": 4555,
+      "end_line": 4559,
+      "confidence": 0.45,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，证据仅显示极少正文，疑有缺失内容，无法确认是否完整。"
+    },
+    {
+      "title": "圣诞夜的诅咒（上）",
+      "start_line": 4591,
+      "end_line": 5147,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续章节明确，结尾标注“未完待续”，属于本期连载上篇。"
+    },
+    {
+      "title": "解体升降",
+      "start_line": 5149,
+      "end_line": 5638,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、译者及连续正文明确，结局推理正文止于5638行。"
+    },
+    {
+      "title": "浜田青年来访记",
+      "start_line": 5640,
+      "end_line": 6406,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者译者信息及连续章节明确，正文在6406行收束。"
+    }
+  ],
+  "document_notes": "仅依据指定边界证据包识别，未打开或扫描原始Markdown。已排除目录、广告、栏目文章、书评、征稿、预告及其他非小说内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "1ac106d1e8359c42a9acf1fcdcc9bf642c975d0a28c33009ec07b392ce2c8bf7",
+    "evidence_only": true,
+    "duration_seconds": 107.5,
+    "generated_at": "2026-08-30T11:26:53+00:00"
+  }
+}

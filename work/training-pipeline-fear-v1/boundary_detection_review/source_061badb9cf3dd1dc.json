@@ -1,0 +1,118 @@
+{
+  "source_path": "悚族/《悚族》美人鱼杀手.md",
+  "source_sha256": "0a35eaed6e230f3c8a9bee7b81ebe3785e9b68fb1a2993c9222d8052b550041b",
+  "line_count": 3882,
+  "stories": [
+    {
+      "title": "美人鱼杀手",
+      "start_line": 131,
+      "end_line": 489,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L131是目录外的实际开篇，L169起为内部章节；L489在“最后真相”后完成犯罪动机与赎罪主题的收束。"
+    },
+    {
+      "title": "分身术",
+      "start_line": 497,
+      "end_line": 931,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L497“失踪”是首章而非独立故事，后续章节至“秘密”均属同篇；L931以反讽完成结局。"
+    },
+    {
+      "title": "最完美的母亲",
+      "start_line": 1005,
+      "end_line": 1309,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L971-L995仍是作者访谈，小说实际从L1005的首节标记开始；L1309明确写出李梳子被困于替代身份的结局。"
+    },
+    {
+      "title": "粉红色信笺",
+      "start_line": 1311,
+      "end_line": 1455,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1311是虽有OCR错乱但可辨认的题名、作者及插图署名，L1315为重复题名；L1455句子完整并以新一轮信笺诅咒形成开放式结局。"
+    },
+    {
+      "title": "百度预测死亡",
+      "start_line": 1459,
+      "end_line": 1857,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1459为第一章“预测”，六章连续构成同一故事；L1857揭示死亡源于巧合并完成真相收束，L1865起已是下一篇的开篇判词。"
+    },
+    {
+      "title": "纸鱼",
+      "start_line": 1865,
+      "end_line": 2125,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1865-L1867的判词在本篇尾声中复现，属于《纸鱼》开篇；L1869起各编号章节及尾声连续，L2125为女主人公坠楼后的结局末句。"
+    },
+    {
+      "title": "发如魅",
+      "start_line": 2131,
+      "end_line": 2499,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2131“文考薇”是紧邻引子的本篇署名，L2133起为引子及连续章节；L2499以复仇假发转移到茹晓梦头上完成收束。"
+    },
+    {
+      "title": "还我2元钱",
+      "start_line": 2505,
+      "end_line": 2813,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2505是首章“女孩”，至L2791“结局”均属同篇；L2813交代为女孩下葬及偿还“2元钱”，故事完整结束。"
+    },
+    {
+      "title": "爱的迷失",
+      "start_line": 2819,
+      "end_line": 3401,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2819是目录外实际开篇，后续编号段落围绕韩海与张梅梅因爱犯罪的交错叙事展开；L3401以韩海继续误杀的循环完成惊悚结局。"
+    },
+    {
+      "title": "五官DIY",
+      "start_line": 3409,
+      "end_line": 3791,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L3409的“文/绯蓝扣”与目录作者一致且紧邻L3411楔子，属于本篇署名；各小节至“游戏永不终止”均属同篇，L3791为结局末句，L3795起是书目信息。"
+    }
+  ],
+  "document_notes": "第二遍按原文修正了第一遍的多处错位：排除L9-L23以提问结束、答案另置L3403后的“黑猫侦探社”互动栏目；补入《美人鱼杀手》L131-L165的章前正文；将作者访谈与《最完美的母亲》分开；确认《粉红色信笺》并非句中截断；把L1865-L2125正确识别为《纸鱼》；在L2813处分开《还我2元钱》，补出L2819-L3401的《爱的迷失》；并排除《五官DIY》之后的图片及CIP书目信息。全部十篇均有可辨认的开端、发展和结局，判为完整小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "0a35eaed6e230f3c8a9bee7b81ebe3785e9b68fb1a2993c9222d8052b550041b",
+    "duration_seconds": 300.9,
+    "generated_at": "2026-08-31T11:21:50+00:00"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.03.md",
+  "source_sha256": "afe5064796495713a923d28c873d2cafe1564a6c40f463e96d4b6d41ea63f34c",
+  "line_count": 2522,
+  "stories": [
+    {
+      "title": "幸福由谁接班",
+      "start_line": 655,
+      "end_line": 1017,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及连续十章正文构成完整故事，结尾位于责任编辑和插图信息之前。"
+    },
+    {
+      "title": "大雪将至",
+      "start_line": 1025,
+      "end_line": 1593,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名及连续六章正文构成完整故事，结尾位于责任编辑和插图信息之前；主题主要是现实困境与人物抉择。"
+    },
+    {
+      "title": "翻龙潭水怪",
+      "start_line": 1601,
+      "end_line": 2294,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续八章正文构成完整的悬疑怪谈故事，结尾位于责任编辑和插图信息之前。"
+    },
+    {
+      "title": "失踪的陪护",
+      "start_line": 2400,
+      "end_line": 2426,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "位于“侦探俱乐部”栏目，包含标题、作者署名和完整短篇正文，结尾位于责任编辑和插图信息之前。"
+    }
+  ],
+  "document_notes": "首轮仅依据指定边界证据包识别，未打开或扫描原始 Markdown。目录中的“尘封档案”“华东八室”仅为目录条目，未列入。各故事正文末行根据证据包显示的责任编辑、插图行进行边界判定。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "afe5064796495713a923d28c873d2cafe1564a6c40f463e96d4b6d41ea63f34c",
+    "evidence_only": true,
+    "duration_seconds": 76.9,
+    "generated_at": "2026-08-30T11:18:20+00:00"
+  }
+}

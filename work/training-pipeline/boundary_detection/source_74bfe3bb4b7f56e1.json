@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第01期.md",
+  "source_sha256": "fc8f2ae51c8be1a73327a62fd1a0ab1b4210b5f019e9b442d7c1da3ac6988642",
+  "line_count": 5984,
+  "stories": [
+    {
+      "title": "黄昏公园",
+      "start_line": 154,
+      "end_line": 1241,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后接连续分章内容，至L1241明确收束；目录标题已排除。"
+    },
+    {
+      "title": "缘分",
+      "start_line": 1243,
+      "end_line": 1318,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录标题为“缘分”，正文从L1243的第一章开始，尾声二于L1318结束；正文标题行未在证据中单独显示。"
+    },
+    {
+      "title": "檠花怒放",
+      "start_line": 1320,
+      "end_line": 2523,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者信息从L1320开始，后续章节连续至L2523尾声结束。"
+    },
+    {
+      "title": "夜蛾之梦（上）",
+      "start_line": 2525,
+      "end_line": 3175,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“上”，结尾注明答案尽在下篇并敬请期待，属于连载片段。"
+    },
+    {
+      "title": "黄色房间的秘密",
+      "start_line": 3177,
+      "end_line": 3353,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文分章至L3353，明确注明答案请看下期，缺少本期结局。"
+    },
+    {
+      "title": "第五大道谋杀案",
+      "start_line": 3583,
+      "end_line": 4679,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者信息从L3583开始，包含相关章节、挑战和破案部分，L4679明确标注“完”。"
+    },
+    {
+      "title": "当铺老板娘",
+      "start_line": 4707,
+      "end_line": 4995,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、译者信息和连续故事正文从L4707开始；证据显示L4997后出现系列推广、作者资料，故事边界只能据相邻内容推定至L4995。"
+    },
+    {
+      "title": "世界怪奇实话之双面兽",
+      "start_line": 5005,
+      "end_line": 5673,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "独立的犯罪实录类叙事，从L5005开始并连续至L5673，后接推理漫谈栏目；证据未显示连载或缺失标记。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。已排除目录、栏目说明、后记、征稿、下期预告、广告、订阅及其他非故事内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "fc8f2ae51c8be1a73327a62fd1a0ab1b4210b5f019e9b442d7c1da3ac6988642",
+    "evidence_only": true,
+    "duration_seconds": 116.2,
+    "generated_at": "2026-08-30T11:37:14+00:00"
+  }
+}

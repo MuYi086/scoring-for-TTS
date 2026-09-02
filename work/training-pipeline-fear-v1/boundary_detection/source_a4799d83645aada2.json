@@ -1,0 +1,209 @@
+{
+  "source_path": "怖客/《怖客》2014年07月B版-反省时间(T).md",
+  "source_sha256": "877b08afd2ba4eea15feff2e9da6742a81d69ed65cde5f0d52a763ebe4c84b3a",
+  "line_count": 3415,
+  "stories": [
+    {
+      "title": "记忆空白",
+      "start_line": 25,
+      "end_line": 43,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题及作者署名开始，结尾为完整反转情节，下一行是编辑信息。"
+    },
+    {
+      "title": "国王的驴耳朵",
+      "start_line": 187,
+      "end_line": 385,
+      "confidence": 0.76,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇，正文由“第三笔汇款”“墙角梧桐”“周家新的秘密”等连续章节组成；标题行存在识别异常，但故事结尾明确。"
+    },
+    {
+      "title": "爆糗事",
+      "start_line": 391,
+      "end_line": 411,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "目录标题与正文标题存在轻微识别差异，正文为完整短篇，结尾后为编辑信息。"
+    },
+    {
+      "title": "南神北探",
+      "start_line": 415,
+      "end_line": 660,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "栏目标题下连续展开“北神探”等章节，末尾有完整破案收束，随后为图片信息。"
+    },
+    {
+      "title": "图书馆失窃案",
+      "start_line": 667,
+      "end_line": 977,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇；正文首个识别标题为“盗书”，后续章节围绕同一案件连续展开并在“尾声”结束。"
+    },
+    {
+      "title": "最高的山",
+      "start_line": 981,
+      "end_line": 1007,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文短篇结构完整，结尾为演讲现场收束，下一行是编辑信息。"
+    },
+    {
+      "title": "反省时间",
+      "start_line": 1015,
+      "end_line": 1272,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇；正文标题行存在识别异常，后续章节连续讲述洞穴困境并以脱险和主题收束结束。"
+    },
+    {
+      "title": "半张旧照片",
+      "start_line": 1276,
+      "end_line": 1426,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇，正文标题行含识别异常但作者信息可见；故事以照片事件收束，随后为编辑信息。"
+    },
+    {
+      "title": "地穴狼蛛",
+      "start_line": 1436,
+      "end_line": 1628,
+      "confidence": 0.83,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇；正文以“寝室有毒”开篇、连续章节推进，并有明确结局。"
+    },
+    {
+      "title": "愿望",
+      "start_line": 1634,
+      "end_line": 1650,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇，正文开头标题识别不完整；内容包含女鬼反转并在末尾收束。"
+    },
+    {
+      "title": "隔壁404",
+      "start_line": 1654,
+      "end_line": 1837,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息明确，多个宿舍章节属于同一故事，结尾完整揭示秘密，下一行是编辑信息。"
+    },
+    {
+      "title": "盗者长忧",
+      "start_line": 1859,
+      "end_line": 2141,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续章节“失者长虑”“逝者何求”“知者勿言”“执者无悔”“浊者自浊”围绕同一故事展开，并有明确结局。"
+    },
+    {
+      "title": "苦柠檬",
+      "start_line": 2145,
+      "end_line": 2375,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇，正文标题行存在识别异常；连续章节完成案件调查并在“柠檬不要太苦”中收束。"
+    },
+    {
+      "title": "租男友",
+      "start_line": 2381,
+      "end_line": 2489,
+      "confidence": 0.82,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文为独立悬疑恐怖故事，但证据包末尾停在人物逼近的悬念处，未显示明确结局或编辑分隔。"
+    },
+    {
+      "title": "萤翅虫",
+      "start_line": 2564,
+      "end_line": 2752,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确列出该篇，正文标题为“跟随”并连续展开盗墓冒险，末尾以对话式悬念收束后接编辑信息。"
+    },
+    {
+      "title": "手电筒",
+      "start_line": 2758,
+      "end_line": 2820,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息明确，情节在结尾完成反转和收束，下一行是编辑信息。"
+    },
+    {
+      "title": "最喜欢的人",
+      "start_line": 2826,
+      "end_line": 2876,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "目录明确列出该篇，正文起始处仅识别出作者行；内容为完整校园情感短篇，结尾后为编辑信息。"
+    },
+    {
+      "title": "报警",
+      "start_line": 2880,
+      "end_line": 2918,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者信息明确，案件故事在答案揭示前完成，后续为编辑信息。"
+    },
+    {
+      "title": "裂痕（下）",
+      "start_line": 2932,
+      "end_line": 3128,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确归入“连载”，正文为《裂痕》下篇；本期片段有阶段性结尾，但作为连载整体不能标为完整小说。"
+    }
+  ],
+  "document_notes": "依据证据包识别；未打开或扫描原始 Markdown。已排除封面、目录、编辑部内容、谜题答案、广告及刊后商品信息。若标题因 Markdown 识别异常，则采用目录中可恢复的故事名，并相应降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "877b08afd2ba4eea15feff2e9da6742a81d69ed65cde5f0d52a763ebe4c84b3a",
+    "evidence_only": true,
+    "duration_seconds": 190.1,
+    "generated_at": "2026-08-31T05:23:06+00:00"
+  }
+}

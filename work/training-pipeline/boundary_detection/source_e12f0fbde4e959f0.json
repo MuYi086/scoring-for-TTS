@@ -1,0 +1,59 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第11期.md",
+  "source_sha256": "761771ed39569da37e1cfa0b876696fe77b52c3060962792368042cb5bb95b98",
+  "line_count": 6192,
+  "stories": [
+    {
+      "title": "罪恶天使",
+      "start_line": 448,
+      "end_line": 1535,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后接连续章节（含尾声），结局止于1535行；目录及栏目内容已排除。"
+    },
+    {
+      "title": "灰暗森林",
+      "start_line": 1537,
+      "end_line": 3005,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题后接1至9章，末章完成案件收束，下一篇从3009行序章开始。"
+    },
+    {
+      "title": "陪葬的雪花（上）",
+      "start_line": 3009,
+      "end_line": 3593,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文包含序章及第一至第八章，末尾明确标注“下篇请见11期银版《推理》”，属于未完连载。"
+    },
+    {
+      "title": "聪明反被聪明误",
+      "start_line": 5525,
+      "end_line": 6078,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "实际正文标题位于5525行，后接作者译者信息及完整菲尔博士案件，6078行以选载说明收束。"
+    }
+  ],
+  "document_notes": "依据证据包识别；未将目录标题、栏目导读、封面故事介绍、推理谜题、作者/作品介绍、广告及下期预告计入小说。UFO杀人事件段落证据显示为谜题/案件设定且结尾边界不完整，未列入独立完整小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "761771ed39569da37e1cfa0b876696fe77b52c3060962792368042cb5bb95b98",
+    "evidence_only": true,
+    "duration_seconds": 74.2,
+    "generated_at": "2026-08-30T11:41:36+00:00"
+  }
+}

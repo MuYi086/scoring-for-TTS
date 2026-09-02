@@ -1,0 +1,79 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2010年05.md",
+  "source_sha256": "0b85f5db8ce37eb2dddd7de56d3b6dcc760714a47151e3c2b124f4b39a5f47f1",
+  "line_count": 5888,
+  "stories": [
+    {
+      "title": "红本嫁衣",
+      "start_line": 884,
+      "end_line": 1389,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后正文自第1节展开，并在第1387—1389行以人物收束和结局性对话结束；第1391行已转入下一篇叙事，原先以第1411行的句中截断判断不完整属于跨篇误判。"
+    },
+    {
+      "title": "王恨为名",
+      "start_line": 1415,
+      "end_line": 2201,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、连续16章及案件收束均明确；后续为可乐测试与栏目内容，不属于小说正文。"
+    },
+    {
+      "title": "上篇—中篇—下篇（题名未标明）",
+      "start_line": 2795,
+      "end_line": 3175,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示为连续的上篇、中篇、下篇叙事，包含秘密杀手、复仇和死亡结局；正文题名未在证据包中明确出现。"
+    },
+    {
+      "title": "死亡围棋（题名未标明）",
+      "start_line": 3179,
+      "end_line": 4283,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从“1. 对弈”至“4.命运”形成连续长篇叙事，围绕死亡围棋、家庭秘密和命运展开，并有明确结局；正式题名未在证据包中明确出现。"
+    },
+    {
+      "title": "九出·阴月",
+      "start_line": 4285,
+      "end_line": 4785,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、上期回顾、第五章正文及“下期预告”明确表明这是连载片段；正文及作者的话止于第4785行，第4787行图片后已转入“叹息之墙”栏目。"
+    },
+    {
+      "title": "燕秀篇（含番外）",
+      "start_line": 5294,
+      "end_line": 5441,
+      "confidence": 0.88,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "有作者署名、连续叙事及番外内容，属于《七秀坊》相关衍生连载/番外；非悬疑、恐怖或推理类型。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍边界结果和局部复核包完成复核，未读取原始 Markdown。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "0b85f5db8ce37eb2dddd7de56d3b6dcc760714a47151e3c2b124f4b39a5f47f1",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_125666097ec96d5f.txt",
+    "duration_seconds": 95.4,
+    "generated_at": "2026-09-01T02:03:08+00:00"
+  }
+}

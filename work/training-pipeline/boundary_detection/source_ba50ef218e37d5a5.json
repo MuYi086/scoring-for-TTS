@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第07期.md",
+  "source_sha256": "22ec38579f363ba87a429d6965d75dfda7a64eff28cf586178f9855b22ad2da6",
+  "line_count": 6231,
+  "stories": [
+    {
+      "title": "罪恶天使——白玫瑰与黑名单",
+      "start_line": 305,
+      "end_line": 1391,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名始于305—307行，尾声属于同一故事并结束于1391行。"
+    },
+    {
+      "title": "最后一班慢车",
+      "start_line": 1393,
+      "end_line": 1739,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从1393行标题开始，章节标题均属同一故事；1739行形成结局，1741行献词不纳入。"
+    },
+    {
+      "title": "谋杀旅程",
+      "start_line": 1743,
+      "end_line": 2759,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1743行标题、1747行作者署名，后续各章及尾声连续至2759行并完成案件故事。"
+    },
+    {
+      "title": "倒霉的货车",
+      "start_line": 3099,
+      "end_line": 3115,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "推理总动员栏目中的独立完整推理小故事，标题始于3099行，正文及作者总结结束于3115行。"
+    },
+    {
+      "title": "铁兽",
+      "start_line": 3117,
+      "end_line": 4020,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "3117行标题、3121行作者署名；引子及连续章节属于同一小说，结局结束于4020行，4022行起为评论。"
+    },
+    {
+      "title": "黑白的反转",
+      "start_line": 4049,
+      "end_line": 5253,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "4049行标题、4051行译者信息，后续数字章节属于同一推理小说，正文结局至5253行。"
+    },
+    {
+      "title": "噩梦背后",
+      "start_line": 5255,
+      "end_line": 5665,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "5255行标题、5257行作者译者署名，正文连续至5665行并有完整收束。"
+    },
+    {
+      "title": "世界怪奇实话之 女王蜘蛛",
+      "start_line": 5726,
+      "end_line": 5896,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "世界怪奇实话系列中的完整犯罪纪实叙事，正文及后续章节至5896行结束；5898行起为下期预告。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别。目录、栏目说明、新闻、作者介绍、书评、广告、订阅和下期预告均已排除；同一故事的章节、尾声和作者署名已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "22ec38579f363ba87a429d6965d75dfda7a64eff28cf586178f9855b22ad2da6",
+    "evidence_only": true,
+    "duration_seconds": 311.4,
+    "generated_at": "2026-08-30T11:34:22+00:00"
+  }
+}

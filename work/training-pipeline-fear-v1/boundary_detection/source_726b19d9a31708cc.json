@@ -1,0 +1,119 @@
+{
+  "source_path": "怖客/《怖客》2013年11月B版-风村异事.md",
+  "source_sha256": "ddc75f97aa641e497bcff346d67e5d9d860ba9b725d79f87a299d8948b6cf059",
+  "line_count": 4073,
+  "stories": [
+    {
+      "title": "灵异手机",
+      "start_line": 22,
+      "end_line": 37,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题含作者署名，段首即故事开端，段尾形成完整结局。"
+    },
+    {
+      "title": "借头还魂",
+      "start_line": 113,
+      "end_line": 637,
+      "confidence": 0.52,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认篇名，正文包含连续叙事及章节标题“撒谎”；但证据包显示正文前段混有刊物信息，无法精确确认故事标题起点及结尾完整性。"
+    },
+    {
+      "title": "鬼眼",
+      "start_line": 1014,
+      "end_line": 1326,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续章节由“鬼眼”至“尾声”，末段明确收束并接编辑信息。"
+    },
+    {
+      "title": "胡麻鬼",
+      "start_line": 1328,
+      "end_line": 1594,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题段后连续展开单一灵异故事，末段为故事结局并接编辑信息。"
+    },
+    {
+      "title": "看门",
+      "start_line": 1598,
+      "end_line": 1707,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文连续，末段为冲突后的结局收束。"
+    },
+    {
+      "title": "不要和我抢",
+      "start_line": 1717,
+      "end_line": 1789,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，故事从开端推进至母亲亡灵揭示，末段完成情节收束。"
+    },
+    {
+      "title": "零团费",
+      "start_line": 1795,
+      "end_line": 1839,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文为独立灵异短篇，段尾完成结局。"
+    },
+    {
+      "title": "要金币请点我",
+      "start_line": 1841,
+      "end_line": 2241,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，后续小节均围绕同一人物和事件，末节完成故事结局。"
+    },
+    {
+      "title": "真假人头",
+      "start_line": 2243,
+      "end_line": 2594,
+      "confidence": 0.61,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续小节明显属于同一恐怖故事，但末段同时包含作者资料，证据包无法精确定位结局正文最后一行。"
+    },
+    {
+      "title": "寂寞套餐（上）",
+      "start_line": 3394,
+      "end_line": 3732,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续章节构成同一恐怖故事上篇，末段明确标注“未完待续”，且下文提示预告下篇。"
+    }
+  ],
+  "document_notes": "仅依据指定证据包完成识别，未打开或扫描原始 Markdown。目录、栏目页、编辑部故事、电视剧盘点、问卷、广告及其他非小说内容已排除。两篇正文存在起止边界证据不足，分别标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ddc75f97aa641e497bcff346d67e5d9d860ba9b725d79f87a299d8948b6cf059",
+    "evidence_only": true,
+    "duration_seconds": 118.8,
+    "generated_at": "2026-08-31T05:19:59+00:00"
+  }
+}

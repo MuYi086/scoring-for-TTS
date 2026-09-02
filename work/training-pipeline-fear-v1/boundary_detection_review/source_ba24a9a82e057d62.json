@@ -1,0 +1,129 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2002年09.md",
+  "source_sha256": "35ec033d94f8169e2e31bab88e001327209a654d656700dccb0f8093ef60334f",
+  "line_count": 2862,
+  "stories": [
+    {
+      "title": "看上去臭美",
+      "start_line": 21,
+      "end_line": 45,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者署名、完整叙事正文及结尾均明确。"
+    },
+    {
+      "title": "瓶中妖怪的爱情",
+      "start_line": 47,
+      "end_line": 164,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "L47、L59、L67为同一故事的标题/署名及续接段落，后续正文连贯至L164；未将章节性标题另列。"
+    },
+    {
+      "title": "悬念违生",
+      "start_line": 168,
+      "end_line": 270,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "悬疑、职业杀手和死亡主题明确，L168至L270包含章节正文及结尾。"
+    },
+    {
+      "title": "三世之赌",
+      "start_line": 276,
+      "end_line": 480,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "L276标题及作者署名明确，第一世、第二世、第三世和尾声均属同一完整故事。"
+    },
+    {
+      "title": "遭遇美食家",
+      "start_line": 484,
+      "end_line": 570,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "科幻讽刺短篇，L484标题起至L570结尾，章节数字标题均已合并。"
+    },
+    {
+      "title": "寒郊的蜡烛",
+      "start_line": 578,
+      "end_line": 702,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L702给出完整结局；L704为图片，L706已进入下一栏目，故正文止于L702。"
+    },
+    {
+      "title": "水蓝色情缘",
+      "start_line": 1373,
+      "end_line": 1521,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "L1373标题及L1375署名后正文连续，L1521完成日记体叙事；L1523起为后续题字/署名及图片，不计入本篇。"
+    },
+    {
+      "title": "老顽童陷入网恋，MM原来是瑛姑",
+      "start_line": 1529,
+      "end_line": 1665,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "作者署名与标题紧邻，后续网恋、见面及黑客情节连续，至L1665收束。"
+    },
+    {
+      "title": "小狗是这样／训练人的",
+      "start_line": 1797,
+      "end_line": 1827,
+      "confidence": 0.55,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "局部包仅能确认L1797至L1827仍为小狗拟人训练文本；L1859已转入另一篇科幻叙事，包内未提供两者之间的完整收束，故保守截至最后可证正文并保留uncertain。"
+    },
+    {
+      "title": "万年",
+      "start_line": 1891,
+      "end_line": 1913,
+      "confidence": 0.8,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "L1891标题、L1889紧邻署名，L1893至L1913形成明确结尾；但L1893承接L1885的同一科幻叙事，显示篇首在当前标题前已被截断。L1917起为下一篇惊悚引言。"
+    },
+    {
+      "title": "惊悚书客",
+      "start_line": 1917,
+      "end_line": 2776,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1917至L1958为同一惊悚叙事的引言、开场和署名，正文连续至L2776；L2778已进入数独栏目。"
+    }
+  ],
+  "document_notes": "仅依据指定的首遍边界 JSON 与局部复核包完成复核，未读取原始 Markdown。除局部包标出的低置信度或uncertain故事外，其余stories逐字段保留。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "35ec033d94f8169e2e31bab88e001327209a654d656700dccb0f8093ef60334f",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_ba24a9a82e057d62.txt",
+    "duration_seconds": 100.4,
+    "generated_at": "2026-09-01T00:54:51+00:00"
+  }
+}

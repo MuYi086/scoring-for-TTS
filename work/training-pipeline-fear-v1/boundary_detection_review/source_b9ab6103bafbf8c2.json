@@ -1,0 +1,118 @@
+{
+  "source_path": "悚族/《悚族》备胎的自我修养.md",
+  "source_sha256": "cc2a95c7759de9c88d502e1cd2a99826a0252162199c272c36f6f11c7070ed08",
+  "line_count": 2735,
+  "stories": [
+    {
+      "title": "备胎的自我修养",
+      "start_line": 124,
+      "end_line": 541,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际从“NO.1 新员工”开篇；总标题因版面提取顺序到第134行才出现。后续同名中英文标题均为续页，至第541行完整收束。"
+    },
+    {
+      "title": "盗命",
+      "start_line": 543,
+      "end_line": 789,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第543行是带作者署名的题头，第551行“融化的眼睛”只是首节标题；后续各Part属于同一故事，并以“尾声”完整结束。"
+    },
+    {
+      "title": "QQ截人",
+      "start_line": 803,
+      "end_line": 1126,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第803行“钻进去”是受版面错序影响而先于总标题出现的开篇小节；多次“QQ截人”标题均为续页，第1126行完成事件解释与主题收束。"
+    },
+    {
+      "title": "这张脸皮刚刚好",
+      "start_line": 1134,
+      "end_line": 1528,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从带作者署名的题头开始，重复的中英文标题和小节均属同一篇；第1528行以恶灵并未被消灭的反转作开放式恐怖结局，并非明确连载中断。"
+    },
+    {
+      "title": "向你证明",
+      "start_line": 1530,
+      "end_line": 1566,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有独立题头和作者署名，围绕鬼眼展开的短篇在第1566行完成揭示和惊悚收束。"
+    },
+    {
+      "title": "最适合你的服装",
+      "start_line": 1570,
+      "end_line": 1606,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立题头后情节连续，第1606行以模特夺取顾客五官并离店的反转结束。"
+    },
+    {
+      "title": "野味",
+      "start_line": 1610,
+      "end_line": 1614,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“灵异教室”栏目中的独立微型恐怖小说，以食用穿山甲者变成穿山甲的讽刺反转完整收束。"
+    },
+    {
+      "title": "逆生长",
+      "start_line": 1616,
+      "end_line": 1652,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立题头和作者署名明确；第1652行揭示陈美丽被作为他人逆生长药物，已形成完整结局，后文转入《雷王琴》。"
+    },
+    {
+      "title": "雷王琴",
+      "start_line": 1656,
+      "end_line": 2060,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1656行是排版破碎的英文题头，正文从第1662行开始；第1708行及其后同名标题只是续页，中间夹有栏目内容，最终在第2060行完成盗墓事件和雷王父子的真相收束。"
+    },
+    {
+      "title": "日落西，剥人皮【上】",
+      "start_line": 2062,
+      "end_line": 2423,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2062行是中英文题头并带题旨文字，第2066行明确标注“上”；正文在悬念处停止，第2427行起为下期预告，故属于未在本期完结的连载上篇。"
+    }
+  ],
+  "document_notes": "第二遍复核修正了第一遍遗漏的前置题头和开篇：将《备胎的自我修养》《盗命》《雷王琴》《日落西，剥人皮【上】》向前扩展到实际题头或开篇，并补入独立微型小说《野味》；《逆生长》在第1652行已有完整结局，不能与随后提前出现的《雷王琴》正文混合。《这张脸皮刚刚好》的末句属于反转式开放结局，未见“上篇”、待续或下期预告，裁定为完整短篇。长篇正文之间穿插的黑猫侦探社答案、奇风异俗、黑魔法、测试和灵异教室微篇因位于主故事连续边界内部，未另建会造成重叠的记录；目录、广告、调查表及预告均已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "cc2a95c7759de9c88d502e1cd2a99826a0252162199c272c36f6f11c7070ed08",
+    "duration_seconds": 344.7,
+    "generated_at": "2026-08-31T11:05:48+00:00"
+  }
+}

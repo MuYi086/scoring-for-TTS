@@ -1,0 +1,79 @@
+{
+  "source_path": "岁月推理/岁月推理 推理XGirl原作集2013年第3期.md",
+  "source_sha256": "b3fbb23c8517afa984fdd3bdf5d021a5970175bbb20d52ebfd93eb39ec598305",
+  "line_count": 2693,
+  "stories": [
+    {
+      "title": "芦苇塘里的浮尸",
+      "start_line": 43,
+      "end_line": 422,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者署名和完整推理结局边界清晰。"
+    },
+    {
+      "title": "无尽幽巷",
+      "start_line": 426,
+      "end_line": 676,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题及作者署名开始，章节[二]属于同一故事，末尾为故事收束。"
+    },
+    {
+      "title": "制药厂密室案",
+      "start_line": 686,
+      "end_line": 1094,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明显为推理小说正文，但证据包末尾句子截断，缺少完整结局。"
+    },
+    {
+      "title": "阿里巴巴和四十大盗",
+      "start_line": 1102,
+      "end_line": 1534,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明显为独立推理故事正文，但末尾句子截断，无法确认本期结局完整。"
+    },
+    {
+      "title": "赤色模特",
+      "start_line": 1542,
+      "end_line": 1926,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "数字小节[5]、[6]、[8]属于同一故事；1926行完成案件收束，后续为栏目页脚内容。"
+    },
+    {
+      "title": "不老歌",
+      "start_line": 1945,
+      "end_line": 2671,
+      "confidence": 0.84,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续章节[1]至[6]及后续推理均属于同一篇怪谈推理小说；末尾明确出现“敬请期待”，为连载未完。故事正文与刊后线上预告的精确分界证据不足，因此置信度降低。"
+    }
+  ],
+  "document_notes": "本轮仅读取证据包，未打开或扫描原始 Markdown。已排除目录、栏目页、广告/宣传、诗句装饰、以及其他非小说内容；章节标题、数字标题和作者署名均并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "b3fbb23c8517afa984fdd3bdf5d021a5970175bbb20d52ebfd93eb39ec598305",
+    "evidence_only": true,
+    "duration_seconds": 81.6,
+    "generated_at": "2026-08-30T11:24:00+00:00"
+  }
+}

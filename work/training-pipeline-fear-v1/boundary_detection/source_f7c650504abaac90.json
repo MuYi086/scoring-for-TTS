@@ -1,0 +1,159 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2002年04.md",
+  "source_sha256": "628887f82f60f7c828d1c1e15a35ea36fdd938f482d8f0a3c276643e56d8556e",
+  "line_count": 2837,
+  "stories": [
+    {
+      "title": "水孩子",
+      "start_line": 180,
+      "end_line": 365,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立幻想故事，含完整叙事与结局；365行以祥和场景收束。"
+    },
+    {
+      "title": "羊的悲剧",
+      "start_line": 369,
+      "end_line": 417,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "寓言式短篇；401行同名小节是前文延续，417行为正文收束，419行为版面标记。"
+    },
+    {
+      "title": "我是谁",
+      "start_line": 421,
+      "end_line": 469,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "有作者署名、连续第一人称叙事和收束句；非目标类型。"
+    },
+    {
+      "title": "八戒的最后情书",
+      "start_line": 473,
+      "end_line": 497,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题分行出现，正文以书信/情书形式完整结束；501行疑为后续栏目文字。"
+    },
+    {
+      "title": "飞鹰行动",
+      "start_line": 503,
+      "end_line": 580,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "证据显示503行已有“（一）好戏开场”正文，而标题“飞鹰行动”在537行出现，版面顺序异常；按连续情节合并，边界与起点置信度降低。"
+    },
+    {
+      "title": "因为爱了。所以离开",
+      "start_line": 582,
+      "end_line": 658,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "六个章节连续构成完整爱情短篇，658行为明确结尾。"
+    },
+    {
+      "title": "冰美人——可可",
+      "start_line": 678,
+      "end_line": 825,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立校园/爱情故事，含连续情节和结局；829行为插画说明。"
+    },
+    {
+      "title": "人生攻略",
+      "start_line": 831,
+      "end_line": 1157,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "罗威相关多个小节属于同一网络奇幻故事；1157行为故事及评析收束，1159行起为独立测试栏目。"
+    },
+    {
+      "title": "我被枪毙三个月",
+      "start_line": 1627,
+      "end_line": 1735,
+      "confidence": 0.6,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "明显为连续荒诞小说，1717行是标题续接；证据包显示后段接有表格和答案，正文精确结尾只能不确定估计。"
+    },
+    {
+      "title": "罗迪教授",
+      "start_line": 1767,
+      "end_line": 1933,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题及作者署名明确，多个小节均为同一科幻故事；1933行为结局，1935行为版面标记。"
+    },
+    {
+      "title": "密码",
+      "start_line": 1941,
+      "end_line": 2045,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "1941行为总标题，1945及2022行是内部小节；2045行为故事结局，2048行为作者署名。"
+    },
+    {
+      "title": "复",
+      "start_line": 2050,
+      "end_line": 2110,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立荒诞短篇，2110行为明确收束。"
+    },
+    {
+      "title": "远古的遭遇",
+      "start_line": 2112,
+      "end_line": 2163,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立科幻/荒诞短篇，2163行为完整反转结局。"
+    },
+    {
+      "title": "谁摸了我一下",
+      "start_line": 2169,
+      "end_line": 2486,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "周德东署名的连续恐怖故事，多个小节属于同一篇；2486行为结局，2488行起转为创作谈/说明。"
+    }
+  ],
+  "document_notes": "严格依据证据包识别，未读取原始 Markdown。排除了栏目、娱乐报道、知识文章、游戏介绍、征稿、插画说明和刊后内容。飞鹰行动与我被枪毙三个月的局部边界受版面/后续非正文内容影响，已降低置信度；其中我被枪毙三个月标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "628887f82f60f7c828d1c1e15a35ea36fdd938f482d8f0a3c276643e56d8556e",
+    "evidence_only": true,
+    "duration_seconds": 166.0,
+    "generated_at": "2026-08-31T05:56:15+00:00"
+  }
+}

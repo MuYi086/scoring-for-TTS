@@ -1,0 +1,29 @@
+{
+  "source_id": "story_8a18c328459436b7",
+  "input_sha256": "fd10e3ec533d757a98c512405792cd2e86047cea0ee4a58469bb2649870c8ab0",
+  "output_b": "赵飞新买了一部像素很高的手机。一时兴起，他给身边的女同事拍了一张照片。可手机屏幕上显示出来的，竟然是一张婚纱照。\n\n女同事看了，惊呼道：“这是我和男友。我们准备明年结婚，还没拍婚纱照呢。你这部手机有预测未来的功能啊！”\n\n其他同事听了，也纷纷过来要求拍照。一张张婚纱照显示出来，同事们看到了自己未来伴侣的模样，惊叹欢呼不已。\n\n赵飞心中一动，约了心爱的女友兰馨出来，用手机给她拍了一张照片。照片显示出来了，可站在兰馨身边的新郎，却是一个陌生的男人。\n\n这是怎么回事？难道兰馨将爱上别人，未来的丈夫不是我？赵飞沮丧极了，丢下满脸困惑的兰馨，独自驾着车在马路上乱奔。一不留神，他撞到了一辆货车的车尾，头狠狠地撞向了车窗。\n\n医院里，赵飞满头纱布。医生取出他脸上的玻璃碎片，给他做了面部修复手术。兰馨一直陪着他，照顾他。赵飞很感动，可是一想到她将嫁给别人，内心就痛苦无比。\n\n赵飞伤愈后，照镜子时发现，自己的脸变成了照片里的那个陌生男人。赵飞开心极了。他拿起手机，对着自己的新面孔拍了一张照片。可是，这一次照片上披着婚纱的新娘，却不是兰馨。\n\n兰馨这才含着泪对赵飞说出了真相。原来，她不久前被查出患了绝症，将不久于人世。在赵飞的坚持下，他和兰馨举行了婚礼。\n\n婚礼上，兰馨奄奄一息地躺在赵飞怀中，说：“答应我，我死后你一定要去找照片里的那个女子，和她结婚。答应我，你一定要幸福。”\n\n兰馨去世几年后，赵飞和照片上的那个女子相遇并结婚了。他把这件事告诉了新婚妻子。他们一起到兰馨的坟上祭拜，祝福她在天国也一切安好。",
+  "quality_flags": [
+    "source_contains_severe_ocr_corruption",
+    "post_surgery_mirror_sentence_reconstructed_from_context",
+    "wedding_dialogue_reconstructed_from_overlapped_source_text"
+  ],
+  "needs_human_review": true,
+  "_deterministic_checks": {
+    "forbidden_markers": [],
+    "new_name_candidates": [
+      "惊呼"
+    ]
+  },
+  "_provenance": {
+    "stage": "audio_rewrite",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_teacher",
+    "speed": "standard",
+    "local_provider": null,
+    "input_sha256": "fd10e3ec533d757a98c512405792cd2e86047cea0ee4a58469bb2649870c8ab0",
+    "analysis_sha256": "0fcf38c9df7bbc0e54d14350e4ffa07ffdccabefa73f327ddeaf389fd47b20d0",
+    "generated_at": "2026-09-02T11:48:28+00:00"
+  }
+}

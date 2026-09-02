@@ -1,0 +1,108 @@
+{
+  "source_path": "悚族/《悚族》蜡人墓.md",
+  "source_sha256": "ab6bada9a68583b8ac4f7efbff951bb3eabe92c74a786089f15d203353fdded8",
+  "line_count": 2664,
+  "stories": [
+    {
+      "title": "去死吧，人渣！",
+      "start_line": 114,
+      "end_line": 649,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、署名和开篇连续；报应式结局止于649行，后续无题栏间短文不属于本篇。"
+    },
+    {
+      "title": "骨生花",
+      "start_line": 659,
+      "end_line": 944,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录名及跨页页眉确认篇名，内部小节均属同篇；骨裳归体和恶魂获释后故事完整收束。"
+    },
+    {
+      "title": "妒蛊",
+      "start_line": 952,
+      "end_line": 1203,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题未转成文本，但目录和多个“DU GU”页眉确认篇名；952行为序幕开头，1203行为反转尾声。"
+    },
+    {
+      "title": "厄运体质",
+      "start_line": 1209,
+      "end_line": 1554,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主标题、署名、楔子及六章构成同一篇小说，灵异事件与人物关系均在1554行收束。"
+    },
+    {
+      "title": "奸商",
+      "start_line": 1556,
+      "end_line": 1580,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，短篇以冥币误会和鬼老人的讽刺台词完成结局。"
+    },
+    {
+      "title": "游泳",
+      "start_line": 1582,
+      "end_line": 1610,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立微型怪谈，以真正溺亡者身份揭晓完成反转；后置重复题名和署名不计入正文结尾。"
+    },
+    {
+      "title": "字如其人",
+      "start_line": 1624,
+      "end_line": 1660,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后为完整怪谈，至李局长显露车祸尸身的恐怖反转结束。"
+    },
+    {
+      "title": "蜡人墓",
+      "start_line": 1662,
+      "end_line": 1953,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1662行为紧邻标题的作者署名；后续同名页眉均属本篇，主人公引火赴死后完整收束。"
+    },
+    {
+      "title": "求生之行【下】",
+      "start_line": 1957,
+      "end_line": 2405,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“【下】”并以“上期精彩内容回顾”承接前文；本期虽在2405行以“完”结局，仍属缺少上期正文的连载下篇。"
+    }
+  ],
+  "document_notes": "第二遍修正了第一遍的主要边界错误：补回《去死吧，人渣！》114—180行的开头并删除尾部混入内容；将误并入《骨生花》的《妒蛊》独立拆出；排除民俗知识、心理测试、侦探问答、调查表和广告；将《蜡人墓》起点前移至作者署名，将《求生之行【下】》结尾收紧至明确的“完”。无题栏间微型怪谈因缺少独立篇名和栏目边界未收录。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "ab6bada9a68583b8ac4f7efbff951bb3eabe92c74a786089f15d203353fdded8",
+    "duration_seconds": 330.5,
+    "generated_at": "2026-08-31T11:24:48+00:00"
+  }
+}

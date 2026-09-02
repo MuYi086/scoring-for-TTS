@@ -1,0 +1,108 @@
+{
+  "source_path": "怖客/《怖客》2010年9月副刊都是无聊惹的祸.md",
+  "source_sha256": "777ff7513833ac69f3354e9ffcc72b721c6b674ef58280ca739652e2a8fc8ac5",
+  "line_count": 3244,
+  "stories": [
+    {
+      "title": "七步错",
+      "start_line": 272,
+      "end_line": 706,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第272行为首个内部小节“招魂游戏”，此前是下期内容简介；正文形成完整的招魂复仇故事并于706行反转收束，708行为编辑信息。"
+    },
+    {
+      "title": "别把时间租给死人",
+      "start_line": 714,
+      "end_line": 1030,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题在卷首提要及目录中出现，正文实际从714行刘倩进入老店开始；1030行以镜子再次破碎形成循环式结局，1032行为编辑信息。"
+    },
+    {
+      "title": "生死门",
+      "start_line": 1038,
+      "end_line": 1668,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1038行为紧邻正文的作者署名，1040行“死人讲的故事”及后续数字标题均为内部小节；1664—1668行点明生死门并完成结局，1670行为编辑信息。"
+    },
+    {
+      "title": "都是无聊惹的祸",
+      "start_line": 1674,
+      "end_line": 1992,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "卷首提要和目录可确认总标题，正文实际从1674行四人因无聊提议讲故事开始；李雷、赵晨等标题是嵌套讲述，1992行以无影者反转收束，1994行为编辑信息。"
+    },
+    {
+      "title": "三笑拍案惊奇",
+      "start_line": 1998,
+      "end_line": 2100,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "1998行同时包含作者署名与总标题，正文为三个完整的黑色幽默段子，至2100行结束；2102行为编辑信息。主要类型是喜剧性黑段子而非悬疑或恐怖小说。"
+    },
+    {
+      "title": "切西瓜",
+      "start_line": 2106,
+      "end_line": 2128,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "2106行总标题存在OCR误识，目录和正文内容可校正为“切西瓜”；“菜刀惊魂”是内部小节，两个相连段子至2128行结束，2130行为编辑信息。整体属于生活化黑色幽默。"
+    },
+    {
+      "title": "学校怪谈",
+      "start_line": 2133,
+      "end_line": 2184,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2133行为作者署名，2135行标题存在OCR误识但可由目录校正；其下两个校园灵异段子属于同一投稿，2184行完成末篇笑点，2186行为编辑信息。"
+    },
+    {
+      "title": "夺命故事",
+      "start_line": 2192,
+      "end_line": 2640,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总标题由目录及2522行正文标题确认，2192行“甲的故事”是开篇内部小节；甲、乙、丙、丁的讲述与后续框架结局构成同一完整小说，2640行结束，2642行为编辑信息。"
+    },
+    {
+      "title": "阴人（连载之二）",
+      "start_line": 2646,
+      "end_line": 3122,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "2646行为作者署名，2648行明确标注“连载之二”，其后的“5、他回来”和“6、凶地”均为内部章节；本期叙事正文止于3122行，3124行为“未完待续”标记，3128行起为图书广告。"
+    }
+  ],
+  "document_notes": "第二遍核对修正了第一遍的主要错误：将被编辑信息分隔的《七步错》《别把时间租给死人》《生死门》《都是无聊惹的祸》恢复为四篇独立小说；未把《生死门》的末节“谁也活不了”或《切西瓜》的小节“菜刀惊魂”误作总标题；《夺命故事》的甲、乙、丙、丁部分仍合并为同一框架小说；《阴人》边界截在本期正文末尾，未混入《极地恶灵》广告。卷首提要和目录中的标题仅用于校正OCR及确认篇名，未作为正文起点。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "777ff7513833ac69f3354e9ffcc72b721c6b674ef58280ca739652e2a8fc8ac5",
+    "duration_seconds": 268.1,
+    "generated_at": "2026-08-31T06:37:37+00:00"
+  }
+}

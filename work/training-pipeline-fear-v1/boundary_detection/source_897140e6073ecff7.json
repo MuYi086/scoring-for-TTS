@@ -1,0 +1,139 @@
+{
+  "source_path": "怖客/《怖客》2011年01月-布伞不散.md",
+  "source_sha256": "c4fdffac83d42f9309359f14cc49eda8967fefb470a290f121a9c537073eee7c",
+  "line_count": 3764,
+  "stories": [
+    {
+      "title": "坚守承诺",
+      "start_line": 127,
+      "end_line": 163,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立叙事短篇，有明确标题、正文和结局；163行后为编辑信息。"
+    },
+    {
+      "title": "屏幕大小",
+      "start_line": 300,
+      "end_line": 346,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇；证据显示350行已进入下一篇预告性内容，正文结尾位置略有不确定。"
+    },
+    {
+      "title": "都是木头人",
+      "start_line": 354,
+      "end_line": 595,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "354行标题起始，后续“鬼才和你玩”“我们都是木头人”“张素素”“张海宁”为同一故事内部章节，595行为结局正文。"
+    },
+    {
+      "title": "让开",
+      "start_line": 601,
+      "end_line": 1612,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接作者署名及连续章节、尾声，构成完整恐怖故事；1613行起为编辑信息，正文末行依据证据包推定。"
+    },
+    {
+      "title": "幽冥飞机",
+      "start_line": 1618,
+      "end_line": 1669,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇；1670行起为编辑信息，正文末行依据证据包推定。"
+    },
+    {
+      "title": "你就能π",
+      "start_line": 1676,
+      "end_line": 1741,
+      "confidence": 0.89,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立带惊悚/怪谈元素的短篇；1742行起为编辑信息，正文末行依据证据包推定。"
+    },
+    {
+      "title": "相约午夜",
+      "start_line": 1750,
+      "end_line": 1804,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，1804行为结局对白，1806行开始下一篇。"
+    },
+    {
+      "title": "模片",
+      "start_line": 1806,
+      "end_line": 1863,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，属于小说性叙事；证据尾部与专栏内容相邻，正文准确结束行无法完全确认。"
+    },
+    {
+      "title": "永难静息",
+      "start_line": 1872,
+      "end_line": 2263,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录对应的恐怖故事，包含连续小节并有结局；2265行起为编辑信息，正文末行依据证据包推定。"
+    },
+    {
+      "title": "布伞不散",
+      "start_line": 2273,
+      "end_line": 2621,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“画上的人在动”“送你一把‘不散’布伞”“身后响起了脚步声”为同一完整故事的内部段落，2621行为结局正文。"
+    },
+    {
+      "title": "男人",
+      "start_line": 2927,
+      "end_line": 3241,
+      "confidence": 0.97,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确标注“前情提要”和“大结局”，说明本期为连载收束段，开头承接前期内容，不能标为本期完整小说。"
+    },
+    {
+      "title": "背后的背后",
+      "start_line": 3245,
+      "end_line": 3495,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖叙事，有明确标题、完整正文和结局；3497行起为编辑信息。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未打开或扫描原始 Markdown。目录、栏目、广告、电影介绍、编辑部故事、读者问卷和明星布条儿等均已排除。部分正文末行因证据包尾部同时包含编辑信息而标为较低置信度或作边界推定。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c4fdffac83d42f9309359f14cc49eda8967fefb470a290f121a9c537073eee7c",
+    "evidence_only": true,
+    "duration_seconds": 122.2,
+    "generated_at": "2026-08-31T05:13:51+00:00"
+  }
+}

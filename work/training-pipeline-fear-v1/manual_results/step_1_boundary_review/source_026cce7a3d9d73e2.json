@@ -1,0 +1,108 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-第三具尸体.md",
+  "source_sha256": "712feb1fddb11949ad4befd25d13acd20434bc19e68e9a73d3dc8095f13f0ab9",
+  "line_count": 2289,
+  "stories": [
+  {
+  "title": "第三具尸体",
+  "start_line": 149,
+  "end_line": 386,
+  "confidence": 0.99,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "正文标题位于149行，215、239、247、267行的章节标题属于同一故事；末尾停在敲窗后的悬念处，明显未完。"
+  },
+  {
+  "title": "来自下水道的血手……",
+  "start_line": 390,
+  "end_line": 459,
+  "confidence": 0.98,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "390行进入正文并含作者署名，459行以事件回忆和恐惧感受收束，具有完整结尾。"
+  },
+  {
+  "title": "垃圾精",
+  "start_line": 461,
+  "end_line": 561,
+  "confidence": 0.96,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "461行是独立故事标题，465行作者署名，561行以故事感悟收束；属于怪谈类小说。"
+  },
+  {
+  "title": "雾中陌生人",
+  "start_line": 565,
+  "end_line": 868,
+  "confidence": 0.97,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "565行标题与567行署名标示独立故事；868行重现569行开篇导语中的第三个陌生人及菜刀，形成首尾呼应的悬念式结   局。872行已切换到文森特的另一篇故事残片，不属于本篇。"
+  },
+  {
+  "title": "一个杀手的神秘之死",
+  "start_line": 878,
+  "end_line": 1081,
+  "confidence": 0.97,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "878行是独立正文标题，1081行以事件结束并点出故事重启，结尾完整。"
+  },
+  {
+  "title": "影",
+  "start_line": 1087,
+  "end_line": 1125,
+  "confidence": 0.94,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "1087行标题后进入独立校园怪谈正文，但1125行在动作描写中断句，明显缺少结尾。"
+  },
+  {
+  "title": "1:50",
+  "start_line": 1137,
+  "end_line": 1549,
+  "confidence": 0.96,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "1137行标题、1139行作者署名后持续为同一故事，1549行以人物入睡收束，1553行署名不计入正文。"
+  },
+  {
+  "title": "已魔之蝶变",
+  "start_line": 1555,
+  "end_line": 1838,
+  "confidence": 0.9,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "1555行是故事标题，正文围绕灵异蝴蝶和凶案展开，1838行完成核心身份揭示并收束；标题疑似目录中的“退魔之蝶   变”异写。"
+  },
+  {
+  "title": "白马村的鬼故事",
+  "start_line": 1842,
+  "end_line": 2188,
+  "confidence": 0.98,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "1842行标题、1844行署名后为连续怪谈叙事，但2188行停在人物意外重逢的悬念处，未见结局。"
+  },
+  {
+  "title": "恐怖的火机",
+  "start_line": 2192,
+  "end_line": 2261,
+  "confidence": 0.98,
+  "completeness": "installment",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "2192行标题、2194行作者署名后为独立恐怖故事，2261行以未完成的省略句结束，明显缺结尾。"
+  }
+  ],
+  "document_notes": "依据指定的第一遍结果、Terra复核结果和局部证据包识别正文故事，未打开或扫描原始 Markdown。已确认   《雾中陌生人》以重复开篇导语的方式形成首尾呼应结局；目录、栏目页、广告、宣传语及其他故事残片均不计入其边界。"
+  }

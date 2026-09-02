@@ -1,0 +1,79 @@
+{
+  "source_path": "怖客/《怖客》2013年09月A版副刊-僵尸笔记.md",
+  "source_sha256": "147072c34e2e0f86b4e36d93c8e2d93b2ca117bbe91959aea3981cbea511ed4f",
+  "line_count": 2142,
+  "stories": [
+    {
+      "title": "标题未识别（公子楚作品）",
+      "start_line": 171,
+      "end_line": 197,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示这是从作者署名开始的独立鬼故事，正文有完整情节并以鬼先生留言收束；标题未在证据包中明确显示。"
+    },
+    {
+      "title": "搬家（含后续章节，整体标题未识别）",
+      "start_line": 201,
+      "end_line": 981,
+      "confidence": 0.95,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“搬家”至“倒卖文物”各段围绕李派、赵天等人物连续展开，属于同一部多章节故事；末尾以“僵尸就是赵天时，他忽然想起了什么……”悬置，明显缺少结局。"
+    },
+    {
+      "title": "坟头草",
+      "start_line": 983,
+      "end_line": 1311,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名明确，正文连续且以秦升被卖给鬼、保质期结束的反转结局收束。"
+    },
+    {
+      "title": "你想报复他吗",
+      "start_line": 1319,
+      "end_line": 1562,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确；后续章节“间歇性失踪”“我想让她消失”“谁让谁消失”“我想和你换”“我们永远在一起”构成同一完整故事，并有明确结尾。"
+    },
+    {
+      "title": "爱情测试题",
+      "start_line": 1570,
+      "end_line": 1826,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确，后续章节连续讲述同一鬼题事件；“正确答案”后完成故事收束，末行为编辑信息。"
+    },
+    {
+      "title": "性别提问",
+      "start_line": 1828,
+      "end_line": 2036,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和插画信息明确；“男寝里的红拖鞋”“男儿当自强”“快到碗里来”是同一故事的连续章节，结尾完成并以编辑信息结束。"
+    }
+  ],
+  "document_notes": "仅依据指定边界证据包判断，未打开或扫描原始 Markdown。目录、广告、栏目页和刊后宣传均已排除；第201—981行故事结尾明显悬置，因此标为 installment。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "147072c34e2e0f86b4e36d93c8e2d93b2ca117bbe91959aea3981cbea511ed4f",
+    "evidence_only": true,
+    "duration_seconds": 128.7,
+    "generated_at": "2026-08-31T05:18:10+00:00"
+  }
+}

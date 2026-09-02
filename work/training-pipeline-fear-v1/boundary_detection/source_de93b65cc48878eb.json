@@ -1,0 +1,169 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2003年09.md",
+  "source_sha256": "1ef9c284f77650e4660bd151408e386d8a1cb319d23abf56659f684cf6b837f7",
+  "line_count": 3312,
+  "stories": [
+    {
+      "title": "魔咒",
+      "start_line": 123,
+      "end_line": 323,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题开始，后续“灵异空间”及章节标题均为同一超自然故事的内部结构，至323行收束。"
+    },
+    {
+      "title": "无头相",
+      "start_line": 930,
+      "end_line": 1110,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、连续章节和结尾均完整，内容为校园灵异故事。"
+    },
+    {
+      "title": "为上帝而死的吸血鬼",
+      "start_line": 1116,
+      "end_line": 1312,
+      "confidence": 0.86,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "吸血鬼题材小说，内部章节连续；末行语义明显未完，不能判为完整。"
+    },
+    {
+      "title": "荷包蛋女孩",
+      "start_line": 1316,
+      "end_line": 1414,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者、章节及结尾完整；中间重复出现的“网络情缘”属于同一篇正文的版面标题或续接。"
+    },
+    {
+      "title": "网络情缘",
+      "start_line": 1418,
+      "end_line": 1448,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "与前一篇同名但正文实际从1418行重新开始，叙事独立并有完整收束。"
+    },
+    {
+      "title": "一线情缘",
+      "start_line": 1571,
+      "end_line": 1891,
+      "confidence": 0.75,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "标题、作者和连续章节明确，但末尾停在对话场景中，缺乏可靠的结局证据。"
+    },
+    {
+      "title": "懒狐",
+      "start_line": 1893,
+      "end_line": 1913,
+      "confidence": 0.88,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "短篇灵异故事，末行在句中截断，明显未完。"
+    },
+    {
+      "title": "精神分裂",
+      "start_line": 1917,
+      "end_line": 1925,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "短篇惊悚故事，含明确后记并在1925行结束。"
+    },
+    {
+      "title": "紫妍花",
+      "start_line": 1931,
+      "end_line": 2297,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "长篇幻想爱情故事的章节连续，但末尾仅以疑问句结束，无法仅凭证据确认是否为本期完整结局。"
+    },
+    {
+      "title": "新来的小白",
+      "start_line": 2305,
+      "end_line": 2485,
+      "confidence": 0.7,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文为医院超自然恐怖故事，标题和连续小节明确；后段版面衔接复杂且未见可靠结局，标为连载或未完。"
+    },
+    {
+      "title": "寝室卧谈惊魂记",
+      "start_line": 2487,
+      "end_line": 2507,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立校园怪谈，结尾明确解释为查寝造成的虚惊。"
+    },
+    {
+      "title": "停尸房里的敲门声",
+      "start_line": 2509,
+      "end_line": 2575,
+      "confidence": 0.72,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "内容连续且在2575行以青蛙造成敲门声的真相收束；标题位置与前置正文存在版面顺序不确定性。"
+    },
+    {
+      "title": "被忌讳的名字",
+      "start_line": 2581,
+      "end_line": 2749,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、章节和“恐怖校园”续接均属同一故事，结尾解释了灵异事件的真实原因。"
+    },
+    {
+      "title": "追梦人",
+      "start_line": 2753,
+      "end_line": 2981,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者、连续章节及末尾收束完整；“骇客帝国”是故事内部的续接标题，题材涉及电脑灵异与惊悚。"
+    },
+    {
+      "title": "火驭者",
+      "start_line": 2983,
+      "end_line": 3192,
+      "confidence": 0.91,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者明确，后续标有“精品连载”，正文在3192行中断，属于连载片段。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包识别，未打开或扫描原始 Markdown。已排除目录、栏目、测试题、星座、电脑问答、广告及推理题等非小说内容；重复标题和章节标题已并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "1ef9c284f77650e4660bd151408e386d8a1cb319d23abf56659f684cf6b837f7",
+    "evidence_only": true,
+    "duration_seconds": 573.2,
+    "generated_at": "2026-08-31T06:05:37+00:00"
+  }
+}

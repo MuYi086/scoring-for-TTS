@@ -1,0 +1,59 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-收音机的阴谋.md",
+  "source_sha256": "23d3765303b09e4603f15c56360a8c4e2878f216987ee3ca5d4355296139d9c2",
+  "line_count": 2407,
+  "stories": [
+    {
+      "title": "女孩的骨头",
+      "start_line": 107,
+      "end_line": 512,
+      "confidence": 0.55,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示该标题处出现恐怖故事开端，末尾仍为相关叙事，但中间夹有长篇广告标题段，且尾部未明确呈现结局，无法确认完整边界。"
+    },
+    {
+      "title": "扭曲的",
+      "start_line": 514,
+      "end_line": 753,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从标题开始为墓葬、尸体等恐怖叙事；末尾仍停留在探墓过程并以未完成描述结束，明显缺少结局。"
+    },
+    {
+      "title": "第5部电梯",
+      "start_line": 1528,
+      "end_line": 1791,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确为系列中的“第5部”，虽有独立情节和收束性结尾，但不能据此认定为完整小说。"
+    },
+    {
+      "title": "非人类？",
+      "start_line": 2033,
+      "end_line": 2304,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及正文属于恐怖故事，后续含分节和连续叙事；但证据显示故事前段可能从更早正文中间开始，且结尾邻近广告，无法确认开头和完整结局。"
+    }
+  ],
+  "document_notes": "仅依据证据包判断，未打开或扫描原始 Markdown。文档包含大量广告、产品宣传和吸血鬼知识类内容，已排除；未将目录性或广告标题列为小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "23d3765303b09e4603f15c56360a8c4e2878f216987ee3ca5d4355296139d9c2",
+    "evidence_only": true,
+    "duration_seconds": 123.1,
+    "generated_at": "2026-08-31T05:52:15+00:00"
+  }
+}

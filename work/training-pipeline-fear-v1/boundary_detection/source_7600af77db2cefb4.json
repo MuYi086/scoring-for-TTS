@@ -1,0 +1,119 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼怪故事》电梯里的吊死鬼.md",
+  "source_sha256": "28ce1df392fd20c2611f76be037200525bbd36f83a09a37b97d3f25710019b79",
+  "line_count": 1509,
+  "stories": [
+    {
+      "title": "十三人头塚",
+      "start_line": 287,
+      "end_line": 457,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际开始于287行，叙事完整并在457行收束；前面的同名标题属于前置目录或导读片段。"
+    },
+    {
+      "title": "流血的水晶笔",
+      "start_line": 459,
+      "end_line": 523,
+      "confidence": 0.86,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "459行是正文实际标题，523行仍有故事正文；后接栏目标题“游艺室”，但结尾句在证据包中显示不完整，无法确认是否为完整结局。"
+    },
+    {
+      "title": "莫兰姐姐",
+      "start_line": 527,
+      "end_line": 543,
+      "confidence": 0.84,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从527行开始，543行仍是叙事正文，545行为作者署名；证据包显示结尾语句未完整收束，因此不能确定为完整故事。"
+    },
+    {
+      "title": "电梯里的死鬼",
+      "start_line": 549,
+      "end_line": 719,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "549行开始实际正文，557行标题为内部小节并入同一故事；719行后出现署名或栏目性文字，故事边界在719行结束。"
+    },
+    {
+      "title": "百张",
+      "start_line": 723,
+      "end_line": 791,
+      "confidence": 0.78,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "723行开始正文，但791行仍停留在探险叙事过程中，未见明确结局，属于未完片段或连载节选。"
+    },
+    {
+      "title": "悬魂條",
+      "start_line": 793,
+      "end_line": 893,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "793行开始正文，877行内部小节并入同一故事；893行完成恐怖场景收束，895行为作者署名。"
+    },
+    {
+      "title": "幽灵再现",
+      "start_line": 899,
+      "end_line": 1075,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "899行开始正文，919行内部小节标题并入同一故事；1075行形成明确的情节收束。"
+    },
+    {
+      "title": "血缎惊瞳",
+      "start_line": 1077,
+      "end_line": 1147,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1077行开始正文，1147行完成恐怖事件的揭示与收束。"
+    },
+    {
+      "title": "老君而思",
+      "start_line": 1149,
+      "end_line": 1247,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1149行开始正文，1247行完成主要人物重逢与情节收束，1249行为作者署名。"
+    },
+    {
+      "title": "第七个买戒指的人",
+      "start_line": 1253,
+      "end_line": 1465,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1253行是正文标题，1466行明确进入机械设备广告；故事应在此前结束，但证据包未提供广告起始前的完整局部正文，故结束行和完整性只能谨慎判定。"
+    }
+  ],
+  "document_notes": "严格仅读取证据包，未打开或扫描原始 Markdown。证据显示95—283行主要为目录、栏目或导读性片段，未计入正文小说；1466行以后为广告及声明。部分故事结尾在证据包的局部提纲中呈现为截断或无法确认，因此已降低置信度并标为uncertain或installment。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "28ce1df392fd20c2611f76be037200525bbd36f83a09a37b97d3f25710019b79",
+    "evidence_only": true,
+    "duration_seconds": 125.6,
+    "generated_at": "2026-08-31T05:40:41+00:00"
+  }
+}

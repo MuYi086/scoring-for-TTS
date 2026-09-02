@@ -1,0 +1,108 @@
+{
+  "source_path": "悚族/《悚族》高傲之罪.md",
+  "source_sha256": "6edf105645b546ebf3be91f163a4966e8069e4d417f3b0759283666f344427e9",
+  "line_count": 2273,
+  "stories": [
+    {
+      "title": "失踪的小孩",
+      "start_line": 108,
+      "end_line": 144,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立怪谈短篇；108行为正文标题，144行为反转结局，146行起是栏目点评。"
+    },
+    {
+      "title": "玩笑",
+      "start_line": 150,
+      "end_line": 172,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名同在150行，172行完成惊悚反转，174行起是栏目点评。"
+    },
+    {
+      "title": "有鬼",
+      "start_line": 178,
+      "end_line": 212,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "178行含篇名和作者署名，212行揭示两名主角本身是鬼，214行起是栏目点评。"
+    },
+    {
+      "title": "小白鼠",
+      "start_line": 218,
+      "end_line": 285,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "故事开篇两段因版面抽取落在222行标题之前，故从218行纳入；226行为署名/OCR碎片而非新篇，285行是完整结局。"
+    },
+    {
+      "title": "美丽贩卖店",
+      "start_line": 293,
+      "end_line": 553,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文篇名疑似位于图片版面中，293行是可识别的最早故事文字；其后“美丽店铺”等均为内部小节，553行完成警示式收束。"
+    },
+    {
+      "title": "恶魔吻过的孩子",
+      "start_line": 559,
+      "end_line": 918,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "559行是独立篇名，918行结束温朗与苏叶的完整悲剧；922行已转入人物和情节完全不同的新故事。"
+    },
+    {
+      "title": "临时演员",
+      "start_line": 922,
+      "end_line": 1299,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名页疑似以图片呈现，922行第一章是可识别正文起点；数字标题均为内部章节，1299行交代陆北成名及《鬼葬礼》断更后故事结束。"
+    },
+    {
+      "title": "父亲的责任",
+      "start_line": 1307,
+      "end_line": 1697,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名疑似位于1301至1305行的图片版面，1307行是可识别的最早正文；1697行完成父子误解与谋杀反转，1699行起的疾病备注不属于小说正文。"
+    },
+    {
+      "title": "高傲之罪",
+      "start_line": 1703,
+      "end_line": 2054,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1703行是篇名，内部日记、课堂和往事均属同一小说；2054行为开放式结句，2056行起进入编辑部栏目。"
+    }
+  ],
+  "document_notes": "第二遍抽查原文后确认第一遍错误地把《恶魔吻过的孩子》《临时演员》和《父亲的责任》合并为一篇；本次已拆为三篇，并排除《父亲的责任》后的医学备注。《小白鼠》的两段开篇因杂志版面抽取顺序出现在标题之前，故起点前移至218行。目录中的《破晓安眠》在正文区域没有出现可识别的完整篇章，未仅凭目录收录。目录、栏目点评、图片页、编辑部趣闻、来信、广告和问卷均已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6edf105645b546ebf3be91f163a4966e8069e4d417f3b0759283666f344427e9",
+    "duration_seconds": 218.6,
+    "generated_at": "2026-08-31T11:38:23+00:00"
+  }
+}

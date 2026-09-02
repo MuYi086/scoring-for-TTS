@@ -1,0 +1,169 @@
+{
+  "source_path": "怖客/《怖客》2013年12月A版-直落地狱.md",
+  "source_sha256": "acaed45be77834b17e21688f396abdeb0addadb80cc8908ffce4383e5c8b53b7",
+  "line_count": 4033,
+  "stories": [
+    {
+      "title": "依墙的人",
+      "start_line": 266,
+      "end_line": 616,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从故事标题开始，连续包含多个章节，结尾为主角遭遇墙壁吸附的结局段落。"
+    },
+    {
+      "title": "地下九层（从“离奇死因”开始）",
+      "start_line": 622,
+      "end_line": 947,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文紧接前一篇后以新的角色、案件和情节展开，连续至“地下九层”的收束段落；目录标题与正文小节标题存在层级差异。"
+    },
+    {
+      "title": "阴兵借",
+      "start_line": 949,
+      "end_line": 1246,
+      "confidence": 0.84,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及正文明确属于阴兵题材小说，但末段仍停留在探头查看后的悬念场景，证据不足以确认本期有完整结局。"
+    },
+    {
+      "title": "无题短篇（文/子邢）",
+      "start_line": 1250,
+      "end_line": 1282,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后紧接完整叙事，结尾交代老婆婆的归宿；证据包未提供独立篇名。"
+    },
+    {
+      "title": "谁动了我的床单",
+      "start_line": 1290,
+      "end_line": 1643,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续包含多个情节小节，至夏冰事件处理和人物对话结束，形成完整故事收束。"
+    },
+    {
+      "title": "鬼看看片",
+      "start_line": 1647,
+      "end_line": 1715,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，正文为独立惊悚短篇，末尾以夫妻五官脱落的反转完成收束。"
+    },
+    {
+      "title": "床垫",
+      "start_line": 1723,
+      "end_line": 1795,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文围绕出租房床垫和王范展开，结尾以失踪者的诡异疑问完成短篇收束。"
+    },
+    {
+      "title": "谁还没来",
+      "start_line": 1801,
+      "end_line": 1849,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续正文明确，结尾交代恶作剧导致真实车祸，故事完整。"
+    },
+    {
+      "title": "无题短篇（文/高立良）",
+      "start_line": 1851,
+      "end_line": 1865,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后为独立墓地怪谈，末尾以人物把墓地当作住所的黑色反转结束；证据包未提供独立篇名。"
+    },
+    {
+      "title": "避邪",
+      "start_line": 1867,
+      "end_line": 2089,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续包含“阴谋”“翻盘”等小节，最终完成驱鬼和超度，具备完整结局。"
+    },
+    {
+      "title": "眼球在哪里",
+      "start_line": 2095,
+      "end_line": 2382,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文围绕黑色风铃、眼球和怨灵展开，至惊悚日记栏目结束，证据显示该篇独立收束。"
+    },
+    {
+      "title": "别让它出来",
+      "start_line": 2386,
+      "end_line": 2658,
+      "confidence": 0.86,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续包含“图书馆惊魂”“附身”等小节，情节在鬼魂揭露赵忠良罪行且话语未完处截断，明显缺少本期结尾。"
+    },
+    {
+      "title": "救命的声音",
+      "start_line": 2660,
+      "end_line": 2692,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名后为独立家庭惊悚短篇，结尾解释呼救者并完成叙事。"
+    },
+    {
+      "title": "眼球",
+      "start_line": 2700,
+      "end_line": 2896,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由“阴谋”“阳光”等小节组成，结尾揭示旅馆尸体身份，形成完整惊悚故事。"
+    },
+    {
+      "title": "引鬼上身",
+      "start_line": 3288,
+      "end_line": 3722,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续包含“他不是他”“别碰棺材”“三魂未断”等内部小节，但末行明确为“未完待续”，应标记为连载片段。"
+    }
+  ],
+  "document_notes": "严格依据证据包判断，未打开或扫描原始 Markdown。已排除广告、目录、编辑部栏目、法器知识文章、问卷及商品信息；目录中的预先标题未作为正文起点。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "acaed45be77834b17e21688f396abdeb0addadb80cc8908ffce4383e5c8b53b7",
+    "evidence_only": true,
+    "duration_seconds": 130.1,
+    "generated_at": "2026-08-31T05:20:18+00:00"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "source_path": "悚族/《悚族》夏枯藤.md",
+  "source_sha256": "98fb5987883aeed7b4d7b35c874f3daf15be9aabf18c8e95be2eb06e15bf7059",
+  "line_count": 3923,
+  "stories": [
+    {
+      "title": "狼奴",
+      "start_line": 212,
+      "end_line": 694,
+      "confidence": 0.82,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从“勒索倒计时”开始，连续包含多个章节，至下一篇《纸人》前结束；结尾线索仍明显延续，不能确认本期完整收束。"
+    },
+    {
+      "title": "纸人",
+      "start_line": 696,
+      "end_line": 1036,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从“vol.02她说她是纸人”开始，连续至“vol.05大团圆”；明确缺少vol.01，属于连载片段。"
+    },
+    {
+      "title": "二十二号禁忌",
+      "start_line": 1038,
+      "end_line": 1397,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从“不能接触的禁忌”开始，章节连续并在“你会像我一样悔恨”段落收束，下一内容为另一篇小说。"
+    },
+    {
+      "title": "绝望底线",
+      "start_line": 1401,
+      "end_line": 1957,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题行是故事开头的长句，目录对应标题为“绝望底线”；后续接入“丈夫的故事”，末尾停在等待测试结果，结局及1957行后的边界证据不足。"
+    },
+    {
+      "title": "无止尽的循环",
+      "start_line": 1967,
+      "end_line": 2202,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名从1967行开始，正文至“宝贝开门，是我——韩晓涵！”明显悬置，属于未完片段。"
+    },
+    {
+      "title": "头发里的真相",
+      "start_line": 2204,
+      "end_line": 2661,
+      "confidence": 0.93,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文章节从Three开始，缺少前面的章节；虽有阶段性收束，但不是完整开端。"
+    },
+    {
+      "title": "毁不去的容颜",
+      "start_line": 2667,
+      "end_line": 3887,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题行及作者署名从2667行开始，章节延续至Chapter 5；3888行起为CIP书目数据，证据无法确认3887行是否为结局正文最后一行，故标为uncertain。"
+    }
+  ],
+  "document_notes": "已按要求首轮仅依据证据包识别，未打开或扫描原始Markdown。证据包显示前部多个标题及正文片段属于目录或重复预览，未作为故事起点；刊后CIP、责任编辑、策划及定价信息已排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "98fb5987883aeed7b4d7b35c874f3daf15be9aabf18c8e95be2eb06e15bf7059",
+    "evidence_only": true,
+    "duration_seconds": 149.2,
+    "generated_at": "2026-08-31T05:30:49+00:00"
+  }
+}

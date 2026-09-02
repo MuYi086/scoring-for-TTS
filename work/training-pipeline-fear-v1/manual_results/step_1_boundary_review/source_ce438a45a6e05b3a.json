@@ -1,0 +1,108 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-半夜不要照镜子.md",
+  "source_sha256": "9c9a351ec4363d7bcf98c3602011164f3f7906f241c143a3e9a08304c5b4da6a",
+  "line_count": 2389,
+  "stories": [
+  {
+  "title": "原来我就是你的眼泪",
+  "start_line": 129,
+  "end_line": 147,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": false,
+  "reason": "正文完整，有明确开端和结尾，但属于爱情故事。"
+  },
+  {
+  "title": "作弊事件",
+  "start_line": 196,
+  "end_line": 272,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "正文从标题开始；广告插入后的第254至272行延续并完成故事，结局收束于沈老师走向树林。"
+  },
+  {
+  "title": "老婆你真的长高了",
+  "start_line": 384,
+  "end_line": 390,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题后短篇叙事连续，女主悬空的脚构成明确的恐怖反转结尾；第392行起为下一段无标题正文。"
+  },
+  {
+  "title": "“啊！大嫂，你好啊！”",
+  "start_line": 404,
+  "end_line": 489,
+  "confidence": 0.97,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "从标题对白开始，叙事连续，尾部有明确收束。"
+  },
+  {
+  "title": "墓妈妈",
+  "start_line": 493,
+  "end_line": 837,
+  "confidence": 0.98,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "493行标题及后续章节属于同一墓穴故事；陈二假死骗过母子后再次被冰冷的手搭上肩膀，837行以恐怖反转形成完整   的开放式结局，841行已进入下一篇《无脸鬼》。"
+  },
+  {
+  "title": "无脸鬼",
+  "start_line": 841,
+  "end_line": 849,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "正文短篇完整，结尾有故事说明和收束性忠告。"
+  },
+  {
+  "title": "至死不渝",
+  "start_line": 855,
+  "end_line": 1249,
+  "confidence": 0.2,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "855行的题记及858行第1节已开始网络网友叙事，868行正式标题嵌在被版面打断的句子中，因此正文起点应前移；但   局部尾窗1219至1249行已经转为苏苏、家明和红红的另一篇故事，证据包未覆盖两篇之间的准确切换位置，无法确定《至死不渝》   的终点和完整性。"
+  },
+  {
+  "title": "晾衣架上的女孩",
+  "start_line": 1253,
+  "end_line": 1333,
+  "confidence": 0.98,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "恐怖短篇叙事连续，尾部交代女鬼背景并形成结尾。"
+  },
+  {
+  "title": "狮子的颤栗",
+  "start_line": 1518,
+  "end_line": 2183,
+  "confidence": 0.15,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "1518行标题及机场叙事起点明确；但局部尾窗2153至2155行是浩与青的另一段故事，2157至2183行又完整讲述张大胆   遇鬼，证明当前范围误并了其他故事。局部包未提供《狮子的颤栗》与后续故事之间的准确切换位置，无法安全修正终点或判断完   整性。"
+  },
+  {
+  "title": "七月十五的白雨伞",
+  "start_line": 2185,
+  "end_line": 2233,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "正文连续，结尾形成明确的鬼故事收束。"
+  }
+  ],
+  "document_notes": "仅依据指定的第一遍结果、Terra复核结果和局部证据包判定，未读取原始 Markdown。《墓妈妈》已确认以   反转悬念完整收束；《至死不渝》和《狮子的颤栗》的局部尾窗均已转入其他故事，但证据未覆盖准确切换位置，因此保留   uncertain 并显著降低置信度。"
+  }

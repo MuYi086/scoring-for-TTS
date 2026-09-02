@@ -1,0 +1,89 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第09期.md",
+  "source_sha256": "3922d378bdd2a117fbb8b86815f9401814996b7c56ecb28b3983abf8aba03570",
+  "line_count": 6277,
+  "stories": [
+    {
+      "title": "林道与绑架者",
+      "start_line": 420,
+      "end_line": 1465,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从第420行开始，后接连续叙事，至第1465行收束；第1467行起为作者的话。"
+    },
+    {
+      "title": "紫菀盛开",
+      "start_line": 1479,
+      "end_line": 2449,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1479行是正文标题，后续交易、亡灵、置换、证人、异变、棋子、谎言及尾声均属同一故事，至第2449行结束。"
+    },
+    {
+      "title": "暴风雨之刃",
+      "start_line": 2451,
+      "end_line": 2824,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2451行标题及作者署名后开始序章和数字章节，至第2824行叙事结束；下一行是另一篇标题。"
+    },
+    {
+      "title": "罪恶天使——泸沽湖的眼泪",
+      "start_line": 2826,
+      "end_line": 4212,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2826行的“罪恶天使—”与第2828行“泸沽湖的眼泪”是同一标题的排版拆分；数字章节及尾声连续至第4212行，之后进入另一篇小说。"
+    },
+    {
+      "title": "镜中噩梦",
+      "start_line": 4214,
+      "end_line": 4288,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第4214行标题及作者署名后为连续恐怖短篇叙事，第4288行形成结尾，后续为互动栏目。"
+    },
+    {
+      "title": "月与人狼",
+      "start_line": 4430,
+      "end_line": 5563,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第4430行是正文实际标题位置，排除了第352行的目录/推荐性重复；后续数字章节属于同一故事，第5563行结束，之后为创作谈。"
+    },
+    {
+      "title": "第13页不见了",
+      "start_line": 5585,
+      "end_line": 6068,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第5585行开始正文标题及译者、插图署名，叙事延续至第6068行；证据中章节编号出现缺号（四、六、七），虽有明显结尾，但仅凭证据包无法完全确认是否存在缺失段落。"
+    }
+  ],
+  "document_notes": "严格仅依据 boundary_evidence 证据包判定，未打开或扫描原始 Markdown。已排除目录、栏目、广告、作者谈、互动空间、预告及其他非小说内容；同一故事的章节、尾声和拆分标题已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3922d378bdd2a117fbb8b86815f9401814996b7c56ecb28b3983abf8aba03570",
+    "evidence_only": true,
+    "duration_seconds": 94.6,
+    "generated_at": "2026-08-30T11:40:58+00:00"
+  }
+}

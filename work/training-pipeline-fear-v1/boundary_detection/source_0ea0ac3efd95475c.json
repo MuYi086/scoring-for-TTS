@@ -1,0 +1,129 @@
+{
+  "source_path": "猛鬼杂志故事/猛鬼故事-午夜的猫叫.md",
+  "source_sha256": "be61bd01519c2048ddb56315f686ab81e951fc035043f6e28b699388a57b54c2",
+  "line_count": 1678,
+  "stories": [
+    {
+      "title": "犟嘴",
+      "start_line": 15,
+      "end_line": 23,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题段包含完整的鬼故事叙事，结尾在下一篇宣传语前收束；后续同情节标题段疑似重复或残缺副本。"
+    },
+    {
+      "title": "谁帮我找回眼珠啊",
+      "start_line": 37,
+      "end_line": 73,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文有明确开端、仓库灵异事件和结局性收束，下一行标题段为宣传内容。"
+    },
+    {
+      "title": "房子里的鬼脸",
+      "start_line": 149,
+      "end_line": 183,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题及作者署名开始，结尾明确收束于鬼脸揭示。"
+    },
+    {
+      "title": "午夜的黑猫",
+      "start_line": 185,
+      "end_line": 275,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后含作者署名，正文叙事完整并以黑猫身份和窥视者揭示收束；第277行是刊后宣传语。"
+    },
+    {
+      "title": "女鬼缠身",
+      "start_line": 279,
+      "end_line": 474,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文具备完整起因、灵异冲突和结局，下一故事从第476行开始。"
+    },
+    {
+      "title": "肢解娃娃",
+      "start_line": 476,
+      "end_line": 644,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "明确的恐怖小说正文，但第644行仍处于砸门逃生场景中，明显在情节中途截断。"
+    },
+    {
+      "title": "公路车上的奇缘",
+      "start_line": 646,
+      "end_line": 814,
+      "confidence": 0.94,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名后为连续恐怖叙事，第814行仍是进行中的事件，缺少本段结局。"
+    },
+    {
+      "title": "血喙鸦",
+      "start_line": 818,
+      "end_line": 1348,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“上”“下”及后续无标题小节属于同一篇连续小说；第1285至1348行完成最终冲突和收束。"
+    },
+    {
+      "title": "猛鬼故事",
+      "start_line": 1350,
+      "end_line": 1484,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "虽使用栏目式通用标题，但标题段内包含独立完整的灵异短篇，结尾明确揭示身份。"
+    },
+    {
+      "title": "不要拉我的手",
+      "start_line": 1486,
+      "end_line": 1530,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文有完整校园女鬼故事结构，并以医院诊断及重复话语结尾。"
+    },
+    {
+      "title": "五",
+      "start_line": 1534,
+      "end_line": 1610,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文及后话完整，主要是带超自然元素的爱情故事，目标类型不明确且更接近爱情/奇幻。"
+    }
+  ],
+  "document_notes": "严格仅依据指定证据包判定，未读取或扫描原始 Markdown。已排除目录、栏目页、重复封面/刊后内容及广告宣传段。第1614行“只收脑白金”可见叙事开头，但证据未提供可靠的结局正文边界，因此未纳入；证据包本身不足以安全确认其完整性与结束行。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "be61bd01519c2048ddb56315f686ab81e951fc035043f6e28b699388a57b54c2",
+    "evidence_only": true,
+    "duration_seconds": 114.0,
+    "generated_at": "2026-08-31T05:45:17+00:00"
+  }
+}

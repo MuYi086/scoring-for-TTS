@@ -1,0 +1,129 @@
+{
+  "source_path": "悚族/《悚族》白雪公主.md",
+  "source_sha256": "6153ad8a6edeaed73497d9cfade25abbf131e564e9f67716864e03ff26dee713",
+  "line_count": 3259,
+  "stories": [
+    {
+      "title": "黑猫侦探社 凶罪的破绽",
+      "start_line": 3,
+      "end_line": 57,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从故事标题开始，具有完整侦探悬疑情节并在第57行收束。"
+    },
+    {
+      "title": "惊悚童话系列之白雪公主",
+      "start_line": 235,
+      "end_line": 673,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者署名及故事正文连续，结局明确位于第673行。"
+    },
+    {
+      "title": "黑暗",
+      "start_line": 675,
+      "end_line": 880,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者信息，正文连续至第880行并形成完整结尾。"
+    },
+    {
+      "title": "诺贝尔奖的秘方",
+      "start_line": 882,
+      "end_line": 1217,
+      "confidence": 0.74,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录提供完整标题，正文以“的秘方”及分章内容开始；但第1217行结尾为未完句，疑似缺少结尾。"
+    },
+    {
+      "title": "自杀代理",
+      "start_line": 1229,
+      "end_line": 1404,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和正文连续，结局在第1404行明确收束。"
+    },
+    {
+      "title": "恭喜发财，把命拿来",
+      "start_line": 1406,
+      "end_line": 1784,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者信息位于正文起点，故事完整结束于第1784行。"
+    },
+    {
+      "title": "死亡电台",
+      "start_line": 1786,
+      "end_line": 2016,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录和正文标题片段可对应“死亡电台”，正文从第1790行连续至明确结尾。"
+    },
+    {
+      "title": "怪脾气的奶奶",
+      "start_line": 2020,
+      "end_line": 2366,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名后接连续八章内容，结局在第2366行完成。"
+    },
+    {
+      "title": "别追那个女生",
+      "start_line": 2380,
+      "end_line": 2596,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录标题与正文“女孩”段落相符，正文含“结局”并在第2596行完成；标题表现存在版式差异。"
+    },
+    {
+      "title": "猫咒",
+      "start_line": 2597,
+      "end_line": 2820,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录提供标题及作者，正文从作者署名后的章节开始，连续至第2820行的收束场景。"
+    },
+    {
+      "title": "妈妈，再爱我一次",
+      "start_line": 2822,
+      "end_line": 3066,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者信息及正文连续，第二部分在第3066行形成明确结尾。"
+    }
+  ],
+  "document_notes": "依据完整标题边界证据包识别。已排除目录、封面与栏目、采访、声明、答案、投稿须知及作者简介等非小说内容；“诺贝尔奖的秘方”因结尾证据为未完句，标为 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "6153ad8a6edeaed73497d9cfade25abbf131e564e9f67716864e03ff26dee713",
+    "evidence_only": true,
+    "duration_seconds": 162.8,
+    "generated_at": "2026-08-31T05:33:30+00:00"
+  }
+}

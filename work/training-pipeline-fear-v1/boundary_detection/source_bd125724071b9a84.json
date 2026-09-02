@@ -1,0 +1,89 @@
+{
+  "source_path": "悚族/《悚族》第二颗纽扣.md",
+  "source_sha256": "5eba3bf9672b6d0f704b767b0cad5fd47e837f6baf674160e597ed965e5fedb4",
+  "line_count": 2400,
+  "stories": [
+    {
+      "title": "双重谋杀",
+      "start_line": 167,
+      "end_line": 191,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文有明确起承转合并以结局收束。"
+    },
+    {
+      "title": "成双入对",
+      "start_line": 265,
+      "end_line": 687,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从标题及作者署名开始，后续多个章节和故事小节均属于同一校园怪谈小说，末段形成结局。"
+    },
+    {
+      "title": "催眠术",
+      "start_line": 689,
+      "end_line": 705,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据中的标题为拼音形式“cuimianshu”，目录有对应中文标题；正文首尾完整度较高，但缺少清晰中文标题和作者信息，边界存在不确定性。"
+    },
+    {
+      "title": "漫画机",
+      "start_line": 709,
+      "end_line": 885,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题段明确标为“漫画机”并有作者署名，末尾有故事收束；但中间出现“YINCHAOJI”标题且与前后情节连续，疑似版面或标题错位，故不宣称完整。"
+    },
+    {
+      "title": "小丑美甲",
+      "start_line": 889,
+      "end_line": 1129,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题/作者信息后接连续八个章节，末段完成诅咒循环并形成结局。"
+    },
+    {
+      "title": "第二颗纽扣",
+      "start_line": 1137,
+      "end_line": 1554,
+      "confidence": 0.84,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录提供对应标题，1137段与1353段内容连续，后者是同一小说的延续而非新故事；1554后紧接下一篇标题。"
+    },
+    {
+      "title": "第四维空间之亡灵世界",
+      "start_line": 1556,
+      "end_line": 2030,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名在1556附近分裂为两段，后续引子及编号章节均属同一科幻恐怖故事，2030以最终场景收束。"
+    }
+  ],
+  "document_notes": "仅依据指定证据包识别，未打开或扫描原始 Markdown。部分标题存在拼音化、错位或标题段分裂现象，已相应降低置信度；封面、目录、栏目页、点评、留言、问卷及广告等均未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "5eba3bf9672b6d0f704b767b0cad5fd47e837f6baf674160e597ed965e5fedb4",
+    "evidence_only": true,
+    "duration_seconds": 125.2,
+    "generated_at": "2026-08-31T05:34:56+00:00"
+  }
+}

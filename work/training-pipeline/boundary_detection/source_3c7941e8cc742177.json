@@ -1,0 +1,49 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.10.md",
+  "source_sha256": "e89090402b606cc453212ae953f5500edc14443d6a8d74c6c2eeea6bc412e540",
+  "line_count": 3131,
+  "stories": [
+    {
+      "title": "锦瑟",
+      "start_line": 1531,
+      "end_line": 2611,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名后进入连续章节叙事，共十八章，末章后接编辑和插图署名；内容围绕扒窃、民警反扒和犯罪线索展开，边界完整。"
+    },
+    {
+      "title": "窒息之爱",
+      "start_line": 2619,
+      "end_line": 2961,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续多视角案件叙事明确，末尾在编辑和插图署名前结束；属于侦探推理类完整小说。"
+    },
+    {
+      "title": "N 的悲剧",
+      "start_line": 3052,
+      "end_line": 3076,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名后为独立短篇叙事，正文在编辑和插图署名前结束；题名及情节指向心理悬疑/悲剧性推理类型。"
+    }
+  ],
+  "document_notes": "仅列入证据包中可确认的独立小说或完整短篇。风起瓦罕走廊、经纬人生、逐梦喀喇昆仑之路等为纪实或叙事性非虚构，未列入；目录、导读、答案、下期要目及刊后内容均排除。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "e89090402b606cc453212ae953f5500edc14443d6a8d74c6c2eeea6bc412e540",
+    "evidence_only": true,
+    "duration_seconds": 88.9,
+    "generated_at": "2026-08-30T11:22:43+00:00"
+  }
+}

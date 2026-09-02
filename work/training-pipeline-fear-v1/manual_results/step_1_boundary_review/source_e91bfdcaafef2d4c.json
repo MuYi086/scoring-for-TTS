@@ -1,0 +1,88 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-邪恶的盆栽.md",
+  "source_sha256": "682b4c1221b108f2e2dc85b49aea3edbff395003a19d74799b99e0727ba20c74",
+  "line_count": 1734,
+  "stories": [
+  {
+  "title": "太平間裡的鏡子",
+  "start_line": 96,
+  "end_line": 110,
+  "confidence": 0.99,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题后紧接完整恐怖短篇，末行形成明确结局。"
+  },
+  {
+  "title": "缺月簪",
+  "start_line": 116,
+  "end_line": 187,
+  "confidence": 0.96,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题及后续分段正文连续，结尾为明确的恐怖收束。"
+  },
+  {
+  "title": "不要跟着我",
+  "start_line": 191,
+  "end_line": 289,
+  "confidence": 0.4,
+  "completeness": "uncertain",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "L189是刊物运行标题，正文从L191开始；L293已转入人物与情节均不同的橡皮故事，因此尾界最多到L289。局部包未   提供中段，无法判断L289的省略式通话是刻意结局还是正文缺尾，故保留uncertain并降低置信度。"
+  },
+  {
+  "title": "打赌",
+  "start_line": 313,
+  "end_line": 355,
+  "confidence": 0.94,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "正文围绕地下仓库打赌展开，末段以发现尸体和明确惊悚结局收束。"
+  },
+  {
+  "title": "深井",
+  "start_line": 359,
+  "end_line": 432,
+  "confidence": 0.9,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "标题后为连续志怪叙事，下一段转入明显不同的蛀虫故事。"
+  },
+  {
+  "title": "蛀虫",
+  "start_line": 434,
+  "end_line": 617,
+  "confidence": 0.86,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "连续围绕宿舍虫害展开，末段给出事件后的收束性说明。"
+  },
+  {
+  "title": "兰包枪鞋",
+  "start_line": 621,
+  "end_line": 661,
+  "confidence": 0.83,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "证据包显示该标题下为独立恐怖叙事，下一标题段转入另一篇长篇故事。"
+  },
+  {
+  "title": "閻楼",
+  "start_line": 665,
+  "end_line": 1043,
+  "confidence": 0.97,
+  "completeness": "complete",
+  "content_kind": "fiction",
+  "target_genre": true,
+  "reason": "665行有明确正文标题；局部证据显示叙事在1043行以主角回望尸体后飘走收束，1047行已开始另一篇盆栽故事。"
+  }
+  ],
+  "document_notes": "仅使用指定的第一遍结果、Terra复核结果和局部证据包，未读取原始Markdown。《不要跟着我》的正文边界   可限定为L191—L289，但局部证据不足以判定其是否具有完整结局，故保留uncertain并降低置信度；其余条目逐字段保留Terra复   核结果。"
+  }

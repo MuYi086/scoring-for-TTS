@@ -1,0 +1,92 @@
+{
+  "source_id": "story_b1dd416f4bdd6215",
+  "characters": [
+    {
+      "name": "魏明",
+      "aliases": [
+        "男伴之一"
+      ],
+      "role": "食用并处理被撞死的蛇，次日死亡"
+    },
+    {
+      "name": "项东",
+      "aliases": [
+        "男伴之一"
+      ],
+      "role": "驾车并与魏明共同烹食蛇，次日死亡"
+    },
+    {
+      "name": "刘菁",
+      "aliases": [
+        "女孩之一"
+      ],
+      "role": "害怕蛇和蛇汤，目睹两名男性死亡"
+    },
+    {
+      "name": "谭雅",
+      "aliases": [
+        "女孩之一"
+      ],
+      "role": "警告蛇有灵性并目睹两名男性死亡"
+    }
+  ],
+  "immutable_facts": [
+    "魏明、项东、刘菁、谭雅四人驾车前往河湾野炊。",
+    "路上有两条蛇横穿公路，其中一条被汽车碾死，另一条逃走。",
+    "魏明和项东将死蛇带到河边，剥皮、清洗、剁段并煮成蛇汤。",
+    "魏明和项东认为蛇汤鲜美，刘菁和谭雅却闻到恶臭并看到黑色浓稠的汤。",
+    "刘菁和谭雅入睡后，第二天被恶臭熏醒，发现魏明和项东身体发黑、满是牙痕，已经死亡。"
+  ],
+  "clues": [
+    "被撞死的蛇体型很大，蛇身金黄。",
+    "谭雅明确提到蛇可能有灵性，并警告会报复。",
+    "蛇汤在不同人物感知中呈现鲜美与腐尸恶臭两种相反状态。",
+    "汤呈黑色浓稠状，且两名男性食用后死亡。",
+    "死亡者身上出现与啃咬相关的牙痕。"
+  ],
+  "misdirection": [
+    "魏明和项东将女孩对蛇汤的反应视为害怕或过度敏感。",
+    "两名男性的嗅觉和味觉判断暂时让蛇汤看似只是正常食物。",
+    "谭雅关于美女蛇报仇的说法最初像是吓唬魏明的话。"
+  ],
+  "twist": "两名男性食用被撞死的蛇后，在夜间因不明的超自然报复死亡；此前被视为夸张反应的恶臭和异常汤色成为死亡预兆。",
+  "story_dna": {
+    "genre": "民俗超自然短篇恐怖",
+    "narrative_viewpoint": "第三人称全知叙述，穿插人物对白与感官描写",
+    "timeline": "单线顺叙，从驾车途中到河湾野炊，再到次日清晨",
+    "suspense_mechanism": [
+      "禁忌行为及报应预警",
+      "男女角色对同一食物的感知冲突",
+      "逐步升级的腐臭、异色汤汁与尸体线索",
+      "结尾集中揭示死亡结果"
+    ],
+    "audio_adaptation_risks": [
+      "多人对白较密集，需要清晰区分四名角色",
+      "臭味、黑色浓汤等视觉和嗅觉信息需转化为声音线索",
+      "男性认为鲜美、女性认为恶臭的感知反差需要明确表达",
+      "结尾尸体状态主要依赖叙述性描写"
+    ]
+  },
+  "ocr_flags": [
+    "正文中夹入“GUIGUSHI”字样，疑似页面装饰、水印或版面残留，不属于故事叙事。",
+    "“蛇身金黄，头被车轮压得稀烂”在局部原文中跨行显示，属于换行排版现象，未发现缺失内容。"
+  ],
+  "difficulty": "hard",
+  "boundary_assessment": {
+    "status": "complete",
+    "confidence": 0.99,
+    "issues": [],
+    "suggested_start_line": null,
+    "suggested_end_line": null
+  },
+  "_provenance": {
+    "stage": "story_analysis",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b1dd416f4bdd6215.txt",
+    "input_sha256": "e68146f9ac2970f66a933f0c05e8a3dc592ed6c65db6b2d2732c4149a9cb205e",
+    "generated_at": "2026-09-01T15:57:54+00:00",
+    "codex_cwd": "/home/muyi086/github/scoring-for-TTS"
+  }
+}

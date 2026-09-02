@@ -1,0 +1,159 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2004年12.md",
+  "source_sha256": "b8998da5cd6b019b1d2762cb88bdd0d4fd70d8af41eb5491e57a5ac452ff268e",
+  "line_count": 3030,
+  "stories": [
+    {
+      "title": "整骨",
+      "start_line": 130,
+      "end_line": 271,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题位于L130，后续章节连续至L271并形成完整的骷髅换骨惊悚结局。"
+    },
+    {
+      "title": "手机",
+      "start_line": 273,
+      "end_line": 364,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L273出现正文标题及作者署名，正文连续至L364并有完整结尾。"
+    },
+    {
+      "title": "红烧肉",
+      "start_line": 366,
+      "end_line": 418,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录和正文栏目标题对应，内容为校园恐怖短篇，L418明确收束。"
+    },
+    {
+      "title": "圣血灵",
+      "start_line": 420,
+      "end_line": 656,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L420为正文标题、L422为署名；L652-L656完成卡其恢复力量并返回圣殿的结局，L658已切换至章春的另一篇故事。"
+    },
+    {
+      "title": "狼影",
+      "start_line": 684,
+      "end_line": 792,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L684为正文标题，故事围绕恶狼影子展开，L792为明确的结局性收束。"
+    },
+    {
+      "title": "窗帘",
+      "start_line": 802,
+      "end_line": 945,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L802有标题，L804-L805有作者署名，正文至L945完成灵异故事并揭示叙述者身份。"
+    },
+    {
+      "title": "写恐怖小说吧",
+      "start_line": 947,
+      "end_line": 1017,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L947为标题，正文连续至L1017，以重复标题形成完整结尾。"
+    },
+    {
+      "title": "你的手绢找到了吗",
+      "start_line": 1019,
+      "end_line": 1137,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1019为篇名，L1021有作者署名；手绢、迷梦、失踪和电话等小节均属同一故事，L1135-L1137完成收束。"
+    },
+    {
+      "title": "世界上最遥远的距离",
+      "start_line": 1755,
+      "end_line": 1965,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1755出现篇名，后续章节连续至L1965，精灵世界爱情故事有明确结局。"
+    },
+    {
+      "title": "王族之剑",
+      "start_line": 1967,
+      "end_line": 2095,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1967的“神秘的杀手”为本篇首章正文，L1985标题及L1987署名因排版插入正文中；L2093“尾声”至L2095完成收束，之后为图片及下一篇标题。"
+    },
+    {
+      "title": "我想那是我的泪",
+      "start_line": 2102,
+      "end_line": 2122,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2102为篇名，L2122完成天使与守护妖精故事。"
+    },
+    {
+      "title": "水睛",
+      "start_line": 2124,
+      "end_line": 2388,
+      "confidence": 0.87,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2124有篇名和作者署名，正文围绕肉包子店和人肉线索展开，L2388为结局性收束。"
+    },
+    {
+      "title": "希夏邦玛",
+      "start_line": 2390,
+      "end_line": 2540,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2390起为金遥叙事，L2532-L2540完成其赴希夏邦玛的结局；L2542作者署名后，L2544-L2552转为下一篇《星之璀璨》的导语与连载提示。"
+    },
+    {
+      "title": "星之璀璨",
+      "start_line": 2554,
+      "end_line": 2730,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2554为正文标题，内容属于《四神天地书·青龙卷》连载收官，L2730明确标注完。"
+    }
+  ],
+  "document_notes": "仅复核局部风险证据包：修正《圣血灵》《王族之剑》《希夏邦玛》的结尾边界及相应完整性/置信度；其余故事逐字段保留第一遍结果。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "b8998da5cd6b019b1d2762cb88bdd0d4fd70d8af41eb5491e57a5ac452ff268e",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_9441338c396e2232.txt",
+    "duration_seconds": 144.6,
+    "generated_at": "2026-09-01T01:55:58+00:00"
+  }
+}

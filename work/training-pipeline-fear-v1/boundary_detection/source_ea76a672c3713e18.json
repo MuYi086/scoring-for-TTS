@@ -1,0 +1,109 @@
+{
+  "source_path": "怖客/《怖客》2011年7月B版-地狱婚恋式.md",
+  "source_sha256": "3e6c41b512cfe465d41a809abe484f56b8af4bfb809a14e084809a1d35ae9961",
+  "line_count": 3302,
+  "stories": [
+    {
+      "title": "键",
+      "start_line": 60,
+      "end_line": 74,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际起点，结尾为故事收束；L76为编辑信息。"
+    },
+    {
+      "title": "鸡飞蛋打",
+      "start_line": 266,
+      "end_line": 278,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立短篇，L278完成情节；L280为作者提示。"
+    },
+    {
+      "title": "一字决定权",
+      "start_line": 282,
+      "end_line": 471,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录同名标题后出现正文实际起点，L471为故事结尾；L473为编辑信息。"
+    },
+    {
+      "title": "生日会",
+      "start_line": 1322,
+      "end_line": 1456,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立校园恐怖短篇，L1456完成情节；L1458为编辑信息。"
+    },
+    {
+      "title": "骷髅阴影",
+      "start_line": 1466,
+      "end_line": 2066,
+      "confidence": 0.67,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及多个章节性小标题显示为同一故事，但证据包显示结尾处仍有叙述延续迹象，边界和完整性无法完全确认。"
+    },
+    {
+      "title": "压纸衣",
+      "start_line": 2070,
+      "end_line": 2078,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录列有该独立短篇；L2070为作者署名位置，L2072-L2078构成完整故事，L2080为编辑信息。"
+    },
+    {
+      "title": "神秘的手机来电",
+      "start_line": 2082,
+      "end_line": 2421,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文含章节性小标题“真实的故事”“另一个版本”，应合并为同一完整故事；L2421为结尾。"
+    },
+    {
+      "title": "编辑部的故事",
+      "start_line": 2427,
+      "end_line": 2575,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立栏目故事，含连续小节“迟到”“分赃”“雪上加霜”；L2575完成情节，L2577为编辑信息。"
+    },
+    {
+      "title": "幽冥医学院（大结局）",
+      "start_line": 2659,
+      "end_line": 3009,
+      "confidence": 0.82,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文明确以“前文提示”开篇，属于连载收束篇而非本期独立完整故事；证据尾部含编辑信息，末界线略有不确定。"
+    }
+  ],
+  "document_notes": "依据指定证据包识别。已排除封面预告、目录、版权页、问卷、广告、知识文章及刊后预告。L475-L1316段包含标题/作者信息不足且疑似多个短篇，无法可靠拆分，未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3e6c41b512cfe465d41a809abe484f56b8af4bfb809a14e084809a1d35ae9961",
+    "evidence_only": true,
+    "duration_seconds": 127.7,
+    "generated_at": "2026-08-31T05:15:53+00:00"
+  }
+}

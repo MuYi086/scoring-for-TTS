@@ -1,0 +1,169 @@
+{
+  "source_path": "怖客/《怖客》2010年11月厄运连连看.md",
+  "source_sha256": "9f402c74a3b91fbc122e4ad5045a577478ef885df7b97b2055420f4099421886",
+  "line_count": 4303,
+  "stories": [
+    {
+      "title": "电子里的爱",
+      "start_line": 11,
+      "end_line": 63,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者署名、完整叙事和结局边界清晰。"
+    },
+    {
+      "title": "疯子妹妹",
+      "start_line": 224,
+      "end_line": 548,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "包含多个章节小节，至结局正文结束；编辑信息从边界中排除。"
+    },
+    {
+      "title": "不只是故事",
+      "start_line": 938,
+      "end_line": 1297,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "框架故事内含多个小节，整体叙事在编辑信息前完整收束。"
+    },
+    {
+      "title": "亡灵牌局",
+      "start_line": 1303,
+      "end_line": 1666,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名与正文起点明确，多个牌局小节属于同一完整恐怖故事；标题依据正文标题片段及目录标题判定。"
+    },
+    {
+      "title": "姥姥的电话",
+      "start_line": 1670,
+      "end_line": 1697,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "短篇正文完整并在编辑信息前结束。"
+    },
+    {
+      "title": "妻子",
+      "start_line": 1705,
+      "end_line": 1741,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名和完整短篇正文边界明确；标题依据目录中的对应篇名，标题行未在本段标题证据中单独显示。"
+    },
+    {
+      "title": "飘车",
+      "start_line": 1747,
+      "end_line": 1859,
+      "confidence": 0.7,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "栏目标题下出现完整犯罪/惊悚叙事并在下一标题前收束；篇名依据目录对应项推定，边界和篇名存在一定不确定性。"
+    },
+    {
+      "title": "远摇",
+      "start_line": 1861,
+      "end_line": 1893,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立标题段，正文在编辑信息前完成。"
+    },
+    {
+      "title": "墨水",
+      "start_line": 1903,
+      "end_line": 1923,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、正文和死亡结局清晰，编辑信息从末尾排除。"
+    },
+    {
+      "title": "我在左边等你",
+      "start_line": 1931,
+      "end_line": 1977,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文在末句后结束。"
+    },
+    {
+      "title": "你看不见我",
+      "start_line": 1983,
+      "end_line": 2345,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个小节连续构成同一连连看恐怖故事，结局在编辑信息前完成。"
+    },
+    {
+      "title": "你还是没看透",
+      "start_line": 2458,
+      "end_line": 2710,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名与完整推理/灵异故事明确；标题依据标题段和目录文字校正。"
+    },
+    {
+      "title": "请你走开",
+      "start_line": 2726,
+      "end_line": 3302,
+      "confidence": 0.74,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“电影”段与后续“请你走开”段共享人物和连续情节，判断为同一完整故事；起点和合并范围受标题层级证据影响，标为较低置信度。"
+    },
+    {
+      "title": "飞来人头",
+      "start_line": 3310,
+      "end_line": 3443,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，结局正文明确。"
+    },
+    {
+      "title": "转角凶灵（上）",
+      "start_line": 3447,
+      "end_line": 4090,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文明确标注“上”，末尾写有“未完待续”，属于本期未完连载。"
+    }
+  ],
+  "document_notes": "依据完整标题证据包识别。已排除目录、刊务信息、作者简介、征稿/预告、读者问卷及其他非故事内容；未将目录中的重复篇名作为正文起点。部分黑段子栏目内篇名和“请你走开”的标题层级存在证据不完整情况，已相应降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9f402c74a3b91fbc122e4ad5045a577478ef885df7b97b2055420f4099421886",
+    "evidence_only": true,
+    "duration_seconds": 114.5,
+    "generated_at": "2026-08-30T13:22:42+00:00"
+  }
+}

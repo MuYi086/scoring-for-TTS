@@ -1,0 +1,89 @@
+{
+  "source_path": "怖客/新锐阅读怖客2018年总第18期.md",
+  "source_sha256": "f27e06a374734a2091cd7b40598caaaa1eb6bcd4b3dea902a7308b6231c2eff3",
+  "line_count": 1807,
+  "stories": [
+    {
+      "title": "抬头不现低头现",
+      "start_line": 402,
+      "end_line": 655,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题及作者署名开始，后续“糟了！”“惊变”等为同一故事内部小节；下一篇《浮屠劫》从第656行开始。"
+    },
+    {
+      "title": "浮屠劫",
+      "start_line": 656,
+      "end_line": 1157,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "包含标题、作者署名及连续章节“人头怪”至“尾声”，结局正文止于第1157行；第1159行为下一篇作者署名。"
+    },
+    {
+      "title": "美食照片",
+      "start_line": 1161,
+      "end_line": 1209,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整短篇，具有明确的怪谈结局；第1211行为编辑信息，未纳入边界。"
+    },
+    {
+      "title": "素岭吃饭",
+      "start_line": 1219,
+      "end_line": 1275,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从作者署名及标题开始，正文具有完整起承转合并以恐怖反转收束；第1277行为编辑信息。"
+    },
+    {
+      "title": "如你所愿",
+      "start_line": 1279,
+      "end_line": 1351,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "完整怪谈短篇，结局正文止于第1351行；第1353行为编辑信息。"
+    },
+    {
+      "title": "引盜灯",
+      "start_line": 1359,
+      "end_line": 1593,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名位于第1359行，后续“怪脸”“陷阱”“郭校尉之死”“自相残杀”“墓室”“坠入”为内部章节；第1593行为结局正文。"
+    },
+    {
+      "title": "记住你的恨",
+      "start_line": 1597,
+      "end_line": 1805,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及作者署名从第1597行开始，“三角关系”“杂志惠”“尾声”为同一故事内部小节；结局正文止于第1805行，第1807行为编辑信息。"
+    }
+  ],
+  "document_notes": "仅依据指定证据包识别，未打开或扫描原始 Markdown。已排除目录、编辑部栏目、广告、出版信息及编辑信息；同一小说的章节、小节和尾声已合并。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "f27e06a374734a2091cd7b40598caaaa1eb6bcd4b3dea902a7308b6231c2eff3",
+    "evidence_only": true,
+    "duration_seconds": 124.2,
+    "generated_at": "2026-08-31T05:25:08+00:00"
+  }
+}

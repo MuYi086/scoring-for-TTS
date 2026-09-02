@@ -1,0 +1,109 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2012年第07期.md",
+  "source_sha256": "29f447df2dd24a39c81c2815e95e74eb7ab813cf4ce57c8421bf0895ef5b49e7",
+  "line_count": 6884,
+  "stories": [
+    {
+      "title": "冰淇淋女孩",
+      "start_line": 413,
+      "end_line": 1500,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者署名及连续章节明确；以悬疑事件为主线，末段形成收束。"
+    },
+    {
+      "title": "搭桥",
+      "start_line": 1502,
+      "end_line": 1831,
+      "confidence": 0.82,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文边界明确，但末段停在医院场景和悬念性反应，证据包不足以确认是否完整收束。"
+    },
+    {
+      "title": "谋杀要启事",
+      "start_line": 1833,
+      "end_line": 2325,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从标题及作者署名开始，结局在L2325收束；L2327后的“再来是什么？”和“花絮”为刊后附文，未计入。"
+    },
+    {
+      "title": "天台上的死神",
+      "start_line": 2353,
+      "end_line": 3337,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节构成完整校园悬疑故事，末章后有闭合性结尾。"
+    },
+    {
+      "title": "密室谋杀案",
+      "start_line": 3339,
+      "end_line": 3929,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文含三位侦探、案件推理及“尾声”；尾声明确交代凶手认罪和案件真相。"
+    },
+    {
+      "title": "荒路惊魂",
+      "start_line": 3931,
+      "end_line": 4282,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文边界清楚，包含完整的追逐、调查和诡计揭示，末段给出密码反转。"
+    },
+    {
+      "title": "避雨",
+      "start_line": 4284,
+      "end_line": 4685,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续叙事明确，结尾以关门声完成故事收束，属于悬疑/怪谈相邻类型。"
+    },
+    {
+      "title": "象牙塔：博士的计划",
+      "start_line": 4687,
+      "end_line": 5771,
+      "confidence": 0.84,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及五个连续章节构成独立犯罪悬疑叙事，但证据包末段未显示明确结局，无法确认是否为完整篇。"
+    },
+    {
+      "title": "梦境",
+      "start_line": 5876,
+      "end_line": 6685,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及长篇叙事段明确，属于阿加莎·克里斯蒂推理小说；末尾夹有“祝阅读愉快”和署名，证据包无法精确区分结局正文与刊后署名。"
+    }
+  ],
+  "document_notes": "仅读取并依据边界证据包完成识别，未打开或扫描原始 Markdown。目录及栏目导读中的重复标题已排除；广告、声明、作者访谈、资讯和下期预告未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "29f447df2dd24a39c81c2815e95e74eb7ab813cf4ce57c8421bf0895ef5b49e7",
+    "evidence_only": true,
+    "duration_seconds": 119.3,
+    "generated_at": "2026-08-30T11:39:59+00:00"
+  }
+}

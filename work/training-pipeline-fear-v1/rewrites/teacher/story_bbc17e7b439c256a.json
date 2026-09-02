@@ -1,0 +1,27 @@
+{
+  "source_id": "story_bbc17e7b439c256a",
+  "input_sha256": "70bb98af81285a73b9f01a33e16dacdb777eb52ffd3bf88b6dad67d201055a9d",
+  "output_b": "恐怖电影",
+  "quality_flags": [
+    "source_contains_ambiguous_heading_or_author_mark:控哇吧",
+    "source_contains_ocr_process_noise",
+    "full_story_output_exceeds_available_response_capacity"
+  ],
+  "needs_human_review": true,
+  "_deterministic_checks": {
+    "forbidden_markers": [],
+    "new_name_candidates": []
+  },
+  "_provenance": {
+    "stage": "audio_rewrite",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_teacher",
+    "speed": "standard",
+    "local_provider": null,
+    "input_sha256": "70bb98af81285a73b9f01a33e16dacdb777eb52ffd3bf88b6dad67d201055a9d",
+    "analysis_sha256": "2e28a8c37c4fdb05d42703f4870559577307853f9c7910d12a662d10155b82bb",
+    "generated_at": "2026-09-02T13:28:52+00:00"
+  }
+}

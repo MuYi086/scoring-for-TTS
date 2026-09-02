@@ -1,0 +1,28 @@
+{
+  "source_id": "story_4409800707ffb2d3",
+  "input_sha256": "677cf959cd6b67cdd287532afd23bb300c4b0d03a1f865c7bce285a33eba9573",
+  "output_b": "阿丽的丈夫这几天连续在厂里加班，大概三天没回家了。\n\n今晚，阿丽抱着刚满月的孩子，去见丈夫一面。\n\n刚才在电话里，丈夫说他想看孩子一眼，想得要命。\n\n这一夜，天空无月，路上无灯。阿丽抱着孩子，摸着黑，小心走着夜路。突然，她踩到一块瓜皮，身子一下失去平衡，当场摔了一跤。\n\n等她爬起来，手里只剩一块棉布，孩子不知道掉哪儿了。\n\n阿丽急了，趴着身子，像扫落叶一样，在地上到处摸索。\n\n万幸的是，孩子哭得很及时。阿丽循着哭声，总算顺利摸到了孩子。\n\n有惊无险。\n\n等阿丽急匆匆赶到厂子，丈夫刚好下夜班。\n\n他一见抱着孩子的阿丽，就欢快地叫了一声：“哎哟，老婆，孩子，我可想死你们了。”\n\n他迫不及待地从阿丽手里接过孩子，一看，却惊奇地“咦”了一声。\n\n阿丽手里根本不是他的孩子，而是一个用棉布包着的西瓜。\n\n阿丽吓得连声尖叫：“我明明抱着的是孩子，怎么会变成西瓜呢？”\n\n丈夫赶紧翻出手电筒，和阿丽来到她原先摔跤的地方。\n\n他用手电筒一照，地上全是各种形状的瓜皮。当中有个小小的婴儿，正在睡觉。\n\n丈夫赶紧抱起孩子一看，见小家伙没事，一脸庆幸地说：“还好及时找到，不然就糟了。”\n\n可怜的小家伙蜷缩成一团，看上去像个肉做的西瓜。\n\n可阿丽还是很疑惑。刚才她明明是循着声音找的啊，她到厂子时，还听见怀中有哭声呢。\n\n她越想越摸不着头脑。\n\n同一时间，厂子里，一个下了班的工友进了工棚，看见桌子上放着一个翠绿的西瓜。\n\n工友嘴馋了。平时好东西都是大家分享，于是他找了把刀，对准西瓜就是一刀。\n\n在刀身陷进西瓜里时，他突然听到一声婴儿的啼哭。",
+  "quality_flags": [
+    "source_contains_post_story_appended_unrelated_text_after_editor_credit"
+  ],
+  "needs_human_review": true,
+  "_deterministic_checks": {
+    "forbidden_markers": [],
+    "new_name_candidates": [
+      "丈夫",
+      "就欢快地"
+    ]
+  },
+  "_provenance": {
+    "stage": "audio_rewrite",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_teacher",
+    "speed": "standard",
+    "local_provider": null,
+    "input_sha256": "677cf959cd6b67cdd287532afd23bb300c4b0d03a1f865c7bce285a33eba9573",
+    "analysis_sha256": "72beac7892fd57f44a59220b6bbf35261dfd7b1b62facd8b4ef459b8dbd9fbc7",
+    "generated_at": "2026-09-02T08:55:21+00:00"
+  }
+}

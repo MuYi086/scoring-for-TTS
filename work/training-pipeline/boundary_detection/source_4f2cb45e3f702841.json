@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第08期.md",
+  "source_sha256": "3b41981eb662294d79911cefe8a9080b1e31009b18b6b3c9bbc93ac23d0c4447",
+  "line_count": 6374,
+  "stories": [
+    {
+      "title": "U的悲剧",
+      "start_line": 298,
+      "end_line": 755,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文段落以相关作品介绍开头，随后出现连续章节[4]、[5]并在结尾明确提及《U的悲剧》；证据包未显示正文实际标题或开端，故起点和完整性保守标注。"
+    },
+    {
+      "title": "塞班悲歌",
+      "start_line": 757,
+      "end_line": 1312,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续正文明确，结尾为故事收束；后续“作者的话”从1314行开始，未纳入。"
+    },
+    {
+      "title": "意外",
+      "start_line": 1332,
+      "end_line": 1562,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、连续章节及结局正文边界明确。"
+    },
+    {
+      "title": "越过毁灭之地",
+      "start_line": 1564,
+      "end_line": 2938,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后接连续章节[1]、[2]、[4]及结尾后记说明，末行完成故事收束。"
+    },
+    {
+      "title": "灰姑娘",
+      "start_line": 3088,
+      "end_line": 4574,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、题记、连续章节及“尾声·真相·以及很多很多”构成完整故事，4576行起为作者手记，未纳入。"
+    },
+    {
+      "title": "空房间",
+      "start_line": 4600,
+      "end_line": 4931,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、译者信息和完整侦探故事正文明确，4933行是选载来源说明，未纳入。"
+    },
+    {
+      "title": "白色丑闻",
+      "start_line": 4935,
+      "end_line": 5649,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及连续章节明确，但正文在5649行句中截断，不能认定为本期完整结局。"
+    },
+    {
+      "title": "世界怪奇实话之 食女人肉的男人",
+      "start_line": 5736,
+      "end_line": 5910,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题、译者信息及犯罪实录性质正文明确，但5910行叙述未完即进入下期预告，属于本期刊载片段。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包判断，未打开或扫描原始Markdown。已排除目录、栏目页、新闻、作者手记、答案、预告、广告及其他非故事内容；《U的悲剧》实际正文起点在证据包中不够明确，因此降低置信度并标为uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "3b41981eb662294d79911cefe8a9080b1e31009b18b6b3c9bbc93ac23d0c4447",
+    "evidence_only": true,
+    "duration_seconds": 113.5,
+    "generated_at": "2026-08-30T11:31:50+00:00"
+  }
+}

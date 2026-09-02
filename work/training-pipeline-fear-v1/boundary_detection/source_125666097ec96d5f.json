@@ -1,0 +1,79 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2010年05.md",
+  "source_sha256": "0b85f5db8ce37eb2dddd7de56d3b6dcc760714a47151e3c2b124f4b39a5f47f1",
+  "line_count": 5888,
+  "stories": [
+    {
+      "title": "红本嫁衣",
+      "start_line": 884,
+      "end_line": 1411,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及连续分节正文明确属于悬疑/恐怖小说，但分节编号缺少第7节，末段证据显示正文在句中截断，无法确认完整性。"
+    },
+    {
+      "title": "王恨为名",
+      "start_line": 1415,
+      "end_line": 2201,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、连续16章及案件收束均明确；后续为可乐测试与栏目内容，不属于小说正文。"
+    },
+    {
+      "title": "上篇—中篇—下篇（题名未标明）",
+      "start_line": 2795,
+      "end_line": 3175,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示为连续的上篇、中篇、下篇叙事，包含秘密杀手、复仇和死亡结局；正文题名未在证据包中明确出现。"
+    },
+    {
+      "title": "死亡围棋（题名未标明）",
+      "start_line": 3179,
+      "end_line": 4283,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从“1. 对弈”至“4.命运”形成连续长篇叙事，围绕死亡围棋、家庭秘密和命运展开，并有明确结局；正式题名未在证据包中明确出现。"
+    },
+    {
+      "title": "九出·阴月",
+      "start_line": 4285,
+      "end_line": 4787,
+      "confidence": 0.76,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及第五章正文明确为超自然幻想小说，但含上期回顾且本期结尾后紧接“叹息之墙”栏目，属于连载片段；正文终止行依据相邻证据推定。"
+    },
+    {
+      "title": "燕秀篇（含番外）",
+      "start_line": 5294,
+      "end_line": 5441,
+      "confidence": 0.88,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "有作者署名、连续叙事及番外内容，属于《七秀坊》相关衍生连载/番外；非悬疑、恐怖或推理类型。"
+    }
+  ],
+  "document_notes": "仅依据证据包识别，未读取原始 Markdown。排除了目录、广告、编辑部栏目、影视/游戏介绍、书籍推荐、访谈、征稿及铃声广告等内容。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "0b85f5db8ce37eb2dddd7de56d3b6dcc760714a47151e3c2b124f4b39a5f47f1",
+    "evidence_only": true,
+    "duration_seconds": 206.1,
+    "generated_at": "2026-08-31T06:20:52+00:00"
+  }
+}

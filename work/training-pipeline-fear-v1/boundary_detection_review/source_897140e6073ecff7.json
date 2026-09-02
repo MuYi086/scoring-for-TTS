@@ -1,0 +1,168 @@
+{
+  "source_path": "怖客/《怖客》2011年01月-布伞不散.md",
+  "source_sha256": "c4fdffac83d42f9309359f14cc49eda8967fefb470a290f121a9c537073eee7c",
+  "line_count": 3764,
+  "stories": [
+    {
+      "title": "坚守承诺",
+      "start_line": 127,
+      "end_line": 163,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、署名和结局完整；死者持续发送生日短信，属于带怪谈色彩的惊悚爱情短篇。L165为编辑信息。"
+    },
+    {
+      "title": "屏幕太小",
+      "start_line": 300,
+      "end_line": 344,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名为《屏幕太小》，正文标题存在OCR误差。故事以贞子被小屏幕卡住收束，L346起为编辑信息。"
+    },
+    {
+      "title": "我们都是木头人",
+      "start_line": 354,
+      "end_line": 595,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名为《我们都是木头人》；“鬼才和你玩”“我们都是木头人”“张素素”“张海宁”均为内部章节，结局止于L595。"
+    },
+    {
+      "title": "让开",
+      "start_line": 601,
+      "end_line": 619,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的第一人称灵异短篇，露营者发现睡处原是坟地后明确收束；L621后的图片及L625署名属于下一篇。"
+    },
+    {
+      "title": "一杯茶换一个故事",
+      "start_line": 625,
+      "end_line": 919,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名由目录确认，L625为作者署名；春子与女友、鬼父亲的完整故事止于L919，L921为编辑信息。"
+    },
+    {
+      "title": "所有人都是小偷",
+      "start_line": 929,
+      "end_line": 1457,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名及作者由目录和尾声自指确认；L1003至L1429的多个标题是方向、顾小飞故事的内部小节，L1457为完整反转结尾。"
+    },
+    {
+      "title": "三三",
+      "start_line": 1466,
+      "end_line": 1611,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "题名及作者由目录确认，标题区域在Markdown中仅保留为图片；正文从L1466的引语导语开始，L1611以新的灵异伏笔收束，L1613为编辑信息。"
+    },
+    {
+      "title": "幽灵飞机",
+      "start_line": 1618,
+      "end_line": 1668,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名为《幽灵飞机》，正文标题存在近义OCR误差；跳机却忘带降落伞构成明确结局，L1670为编辑信息。"
+    },
+    {
+      "title": "你能解开鞋带吗",
+      "start_line": 1676,
+      "end_line": 1740,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录给出规范题名，L1676标题严重OCR损坏；鞋带异常新闻完成怪谈式反转，L1742起为编辑信息。"
+    },
+    {
+      "title": "相约午夜",
+      "start_line": 1748,
+      "end_line": 1804,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1748为紧邻标题的作者署名，应纳入边界；故事以女友鬼母现身的对白完整收束。"
+    },
+    {
+      "title": "模仿",
+      "start_line": 1806,
+      "end_line": 1856,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录题名为《模仿》，正文标题存在OCR误差；杨扬鬼魂宣布角色倒置后故事结束，L1858为编辑信息，L1860起为考薇专栏导语。"
+    },
+    {
+      "title": "永难静息",
+      "start_line": 1872,
+      "end_line": 2263,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认规范题名，L1872标题OCR损坏；后续五个小节属于同一故事，曲萌变鬼后寻找方慧形成闭合结局。"
+    },
+    {
+      "title": "布伞不散",
+      "start_line": 2269,
+      "end_line": 2621,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L2269为作者署名，题名由目录确认；“画上的人在动”等标题均为内部小节，L2621完成翟媛归来的结局。"
+    },
+    {
+      "title": "《怖客》运动会记事",
+      "start_line": 2799,
+      "end_line": 2919,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "L2799为作者署名，目录及L2801确认题名；这是具有完整起因、比赛过程和结尾的编辑部幻想喜剧，不属于目标惊悚类型。"
+    },
+    {
+      "title": "阴人（大结局）",
+      "start_line": 2927,
+      "end_line": 3493,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录确认题名，L2929明确为前情提要，故属于缺少前篇开头的连载终章。“背后的背后”是同一作品的收束章节，直至L3493“全文终”。"
+    }
+  ],
+  "document_notes": "第二遍依据原文边界复核后，纠正了第一遍的主要问题：将误合并的L601–1612拆分为《让开》《一杯茶换一个故事》《所有人都是小偷》《三三》；将“背后的背后”并回《阴人（大结局）》并延长至“全文终”；修正多处OCR题名和编辑信息混入；补入完整的编辑部幻想短篇《怖客》运动会记事。纯图片漫画、目录、专栏导语、礼物与电影介绍、问卷等均未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "c4fdffac83d42f9309359f14cc49eda8967fefb470a290f121a9c537073eee7c",
+    "duration_seconds": 347.2,
+    "generated_at": "2026-08-31T06:42:40+00:00"
+  }
+}

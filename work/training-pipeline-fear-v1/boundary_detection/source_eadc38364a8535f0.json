@@ -1,0 +1,159 @@
+{
+  "source_path": "怖客/《怖客》2010年11月厄运连连看.md",
+  "source_sha256": "9f402c74a3b91fbc122e4ad5045a577478ef885df7b97b2055420f4099421886",
+  "line_count": 4303,
+  "stories": [
+    {
+      "title": "电子里的爱",
+      "start_line": 11,
+      "end_line": 63,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名及完整结局明确，编辑信息在第65行排除。"
+    },
+    {
+      "title": "疯子妹妹",
+      "start_line": 224,
+      "end_line": 548,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个章节标题属于同一连续故事，结局止于第548行，编辑信息在第550行排除。"
+    },
+    {
+      "title": "瓜子摊",
+      "start_line": 558,
+      "end_line": 932,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续校园恐怖故事，章节合并，结局止于第932行。"
+    },
+    {
+      "title": "不只是故事",
+      "start_line": 938,
+      "end_line": 1297,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "外层叙事及其内部故事共同构成完整怪谈，结局止于第1297行。"
+    },
+    {
+      "title": "牌局",
+      "start_line": 1303,
+      "end_line": 1666,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者署名同段出现，后续章节连续展开并在第1666行收束。"
+    },
+    {
+      "title": "姥姥的电话",
+      "start_line": 1670,
+      "end_line": 1697,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "短篇标题和作者署名明确，结局止于第1697行，编辑信息在第1699行排除。"
+    },
+    {
+      "title": "妻子",
+      "start_line": 1705,
+      "end_line": 1741,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据包显示作者署名后紧接完整恐怖短篇；标题依据目录内容推断，正文在第1741行结束。"
+    },
+    {
+      "title": "远摇",
+      "start_line": 1861,
+      "end_line": 1893,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立标题段，正文形成完整悬疑恐怖短篇，编辑信息在第1895行排除。"
+    },
+    {
+      "title": "墨水",
+      "start_line": 1903,
+      "end_line": 1923,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，结局止于第1923行；第1925行包含编辑信息。"
+    },
+    {
+      "title": "我在左边等你",
+      "start_line": 1931,
+      "end_line": 2345,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "后续“你看不见我”等标题为同一故事内部小节，结局止于第2345行，编辑信息在第2347行排除。"
+    },
+    {
+      "title": "你还是没看透",
+      "start_line": 2458,
+      "end_line": 2710,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题行存在排版/识别异常，目录与正文语义支持该篇名；正文完整结束于第2710行。"
+    },
+    {
+      "title": "电影",
+      "start_line": 2726,
+      "end_line": 3302,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续校园怪谈，章节合并，尾声后正文在第3302行结束，编辑信息在第3304行排除。"
+    },
+    {
+      "title": "飞来人头",
+      "start_line": 3310,
+      "end_line": 3443,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，结局止于第3443行。"
+    },
+    {
+      "title": "转角凶灵（上）",
+      "start_line": 3447,
+      "end_line": 4090,
+      "confidence": 0.99,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文明确标注“上”，第4090行标注未完待续；下期提要从第4092行开始。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包判定，未读取或扫描原始 Markdown。已排除目录、广告、编辑信息、作者介绍、栏目说明、读者问卷、下期预告及其他非故事内容。第1705行短篇标题依据目录与局部正文推断；第2458行标题存在证据包中的排版/识别异常，因此相应降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "9f402c74a3b91fbc122e4ad5045a577478ef885df7b97b2055420f4099421886",
+    "evidence_only": true,
+    "duration_seconds": 78.6,
+    "generated_at": "2026-08-31T05:10:59+00:00"
+  }
+}

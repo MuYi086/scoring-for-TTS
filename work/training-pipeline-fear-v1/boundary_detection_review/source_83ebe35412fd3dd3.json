@@ -1,0 +1,258 @@
+{
+  "source_path": "怖客/《怖客》2012年8月C版-违章停人.md",
+  "source_sha256": "de9b82d2e003fab2478b4342884422157e871d4047b8f4efc8c5b3331f6c3be2",
+  "line_count": 3618,
+  "stories": [
+    {
+      "title": "轮回",
+      "start_line": 36,
+      "end_line": 58,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文因双栏排版穿插在目录区域，但具有完整的轮回式爱情怪谈情节；作者署名位于正文中部的第48行。"
+    },
+    {
+      "title": "请把答案写在脸上",
+      "start_line": 190,
+      "end_line": 418,
+      "confidence": 0.83,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录标题与脸上线性代数题的校园鬼故事相符；第209行以后均为内部小节，第418行为结局，下一行是编辑信息。"
+    },
+    {
+      "title": "枕头",
+      "start_line": 422,
+      "end_line": 426,
+      "confidence": 0.59,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名和结尾明确，但开头数句因双栏OCR交错出现在第406、412行，无法在不与上一篇重叠的情况下完整纳入。"
+    },
+    {
+      "title": "头后头",
+      "start_line": 432,
+      "end_line": 698,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录标题与后脑异脸情节吻合，故事从哲学课场景展开并在第698行完成反转结局；第684至686行夹有双栏OCR串入文字。"
+    },
+    {
+      "title": "痛脚",
+      "start_line": 702,
+      "end_line": 708,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名和收束明确，但开头被OCR交错到第684至686行，当前非重叠区间只保留后半部分。"
+    },
+    {
+      "title": "诡测答复日",
+      "start_line": 718,
+      "end_line": 1049,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "智商测试答复日构成连续的校园惊悚故事，第1049行是故事附言，第1051行转为编辑信息。"
+    },
+    {
+      "title": "笔心",
+      "start_line": 1123,
+      "end_line": 1436,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第1123行是总标题，第1125行是作者署名；其后多个笔记本相关标题均为内部小节，结局止于第1436行。"
+    },
+    {
+      "title": "肉香餐厅",
+      "start_line": 1442,
+      "end_line": 1626,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "总标题在Markdown中误识别为“内香餐厅”，目录可校正为“肉香餐厅”；内部小节连续，结局后紧接编辑信息。"
+    },
+    {
+      "title": "有车有房",
+      "start_line": 1630,
+      "end_line": 1674,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者同列第1630行，纸车纸房的反转在第1674行完成；第1676行是编辑信息。"
+    },
+    {
+      "title": "爱我就跟我走",
+      "start_line": 1678,
+      "end_line": 1716,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题由目录确认，正文标题图位于第1678行；故事以女鬼索命收束，第1720行已转为编辑信息。"
+    },
+    {
+      "title": "戒指",
+      "start_line": 1724,
+      "end_line": 1743,
+      "confidence": 0.61,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名和主体情节明确，但最终揭示与下一篇开头被OCR合并在第1744行；为避免混入下一篇而未纳入该行。"
+    },
+    {
+      "title": "自助火锅",
+      "start_line": 1745,
+      "end_line": 1772,
+      "confidence": 0.64,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "主体和恐怖反转完整可辨，但开头首句被拼接在第1744行前一篇的结尾之后，无法取得完全纯净的起点。"
+    },
+    {
+      "title": "违章停“人”",
+      "start_line": 1799,
+      "end_line": 2125,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题页图后从第1803行展开故事；“诡路不可停”和“尾声”都是内部章节，完整结局止于第2125行。"
+    },
+    {
+      "title": "告别",
+      "start_line": 2131,
+      "end_line": 2143,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名、标题及老人临终道别的灵异短篇边界清晰，下一行之后转为编辑信息。"
+    },
+    {
+      "title": "诅咒学概论",
+      "start_line": 2149,
+      "end_line": 2448,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2149行标题遭OCR破坏，但目录和正文反复出现的书名可确认正确标题；第2448行完成结局。"
+    },
+    {
+      "title": "主编的节水条约",
+      "start_line": 2452,
+      "end_line": 2675,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "编辑部人物的独立幽默故事，后续标题均为内部小节并含尾声；内容不属于悬疑恐怖目标类型。"
+    },
+    {
+      "title": "分你的头",
+      "start_line": 2677,
+      "end_line": 2679,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和单段恐怖微小说边界明确。"
+    },
+    {
+      "title": "吃花生",
+      "start_line": 2681,
+      "end_line": 2683,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖微小说，第2685行开始转入宣传和征文内容。"
+    },
+    {
+      "title": "讲故事",
+      "start_line": 2691,
+      "end_line": 2695,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和多重死亡反转均完整，下一篇标题始于第2697行。"
+    },
+    {
+      "title": "大个珍珠",
+      "start_line": 2697,
+      "end_line": 2705,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者和黑色恐怖反转边界明确。"
+    },
+    {
+      "title": "珍珠后传",
+      "start_line": 2707,
+      "end_line": 2711,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "虽承接前篇设定，但自身具有完整的新场景和反转结局，下一篇始于第2713行。"
+    },
+    {
+      "title": "宅女和腐女",
+      "start_line": 2713,
+      "end_line": 2717,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "第2713行是标题，第2715行是作者署名，正文单段完成双重反转；第2719行是编辑信息。"
+    },
+    {
+      "title": "出人头地",
+      "start_line": 2721,
+      "end_line": 3101,
+      "confidence": 0.7,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题由目录和正文第3085行确认，秦小川与薛旭的故事在第3101行完成结局；第3073至3083行夹入了双栏OCR错排的《作文题目》开头。"
+    },
+    {
+      "title": "七日冥（大结局）",
+      "start_line": 3117,
+      "end_line": 3464,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "以“前文提示”明确承接跨期内容，本期虽在第3464行标注全文终，仍应作为连载的结局篇而非本期独立完整小说。"
+    }
+  ],
+  "document_notes": "第二遍已纠正第一遍的主要误判：第188至698行不是单一《故事》，而是《请把答案写在脸上》《枕头》《头后头》的双栏OCR交错；第702至1117行也不是合集，而包含《痛脚》《诡测答复日》及非小说作者文字；第1630至1790行已拆分多篇黑段子并排除《职业病》专栏文章；“诡路不可停”并入《违章停“人”》；补入《轮回》《主编的节水条约》和《出人头地》。原文存在无法用单一连续且不重叠区间表达的双栏错排：《枕头》《痛脚》《戒指》《自助火锅》因此降低完整度或置信度；《作文题目》的开头位于第3073至3083行、结尾位于第3105至3113行，中间夹着《出人头地》的结局，无法在不重叠且不混入另一小说的条件下单列，故未收入stories。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "de9b82d2e003fab2478b4342884422157e871d4047b8f4efc8c5b3331f6c3be2",
+    "duration_seconds": 1413.2,
+    "generated_at": "2026-08-31T07:06:17+00:00"
+  }
+}

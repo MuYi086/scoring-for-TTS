@@ -1,0 +1,119 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2007年06.md",
+  "source_sha256": "fa91260166074fa687afab43d36d7c26482ebd52e14c25a9111b2ed630c80d2b",
+  "line_count": 5170,
+  "stories": [
+    {
+      "title": "红线",
+      "start_line": 239,
+      "end_line": 639,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后连续包含第1至第9节，末段形成完整结局；目录标题未作为起点。"
+    },
+    {
+      "title": "合作游戏",
+      "start_line": 643,
+      "end_line": 858,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及一至四节连续出现，末段完成案件反转与结局。"
+    },
+    {
+      "title": "比翼鸟",
+      "start_line": 878,
+      "end_line": 1036,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和连续叙事明确，末段以悬疑收束。"
+    },
+    {
+      "title": "女猎心师",
+      "start_line": 1204,
+      "end_line": 1734,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题在相邻标题段中拆分为“女猎”“心师”，后续章节三至十三均属同一小说；末段为故事收束。"
+    },
+    {
+      "title": "真实的…",
+      "start_line": 2476,
+      "end_line": 2983,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "证据显示多个重复的“真实的”页眉式标题段及连续犯罪悬疑叙事，但原标题后半部分和边界存在版面/OCR不确定性。"
+    },
+    {
+      "title": "天狐未离",
+      "start_line": 2985,
+      "end_line": 3410,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录明确出现《天狐未离》，正文标题与连续章节内容相符，至下一独立故事《木牌》前收束。"
+    },
+    {
+      "title": "木牌",
+      "start_line": 3412,
+      "end_line": 3782,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和作者署名明确，后续一至六节连续，末段完成恐怖反转。"
+    },
+    {
+      "title": "似是故人来",
+      "start_line": 3784,
+      "end_line": 4172,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名、序言及一至五节和尾声连续，但序言明确承接上期，属于连载片段。"
+    },
+    {
+      "title": "血手印",
+      "start_line": 4182,
+      "end_line": 4628,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题及一至十五节构成同一悬疑故事，但证据包显示末段附近出现与“天心”相关的内容混入，结尾边界无法完全确认。"
+    },
+    {
+      "title": "古玉幽魂",
+      "start_line": 4630,
+      "end_line": 5088,
+      "confidence": 0.63,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "从第2节开始，且末尾明确标注“待续”；起始标题和前文可能缺失，故标为连载并降低置信度。"
+    }
+  ],
+  "document_notes": "首轮仅依据证据包识别。已排除目录、栏目、广告、知识文章、预告及其他非小说内容；对标题拆分、重复页眉和疑似版面混入处降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "fa91260166074fa687afab43d36d7c26482ebd52e14c25a9111b2ed630c80d2b",
+    "evidence_only": true,
+    "duration_seconds": 146.2,
+    "generated_at": "2026-08-31T10:56:42+00:00"
+  }
+}

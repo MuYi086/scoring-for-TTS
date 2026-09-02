@@ -1,0 +1,119 @@
+{
+  "source_path": "猛鬼杂志故事/鬼故事-精华版-105号凶宅.md",
+  "source_sha256": "16dbfd8a0364275fb02c371e57fd29ba951b0204beeab55e6f7b138f29dd60cc",
+  "line_count": 2035,
+  "stories": [
+    {
+      "title": "真假鬼兵",
+      "start_line": 416,
+      "end_line": 664,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的历史背景灵异故事，有完整叙事和结局。"
+    },
+    {
+      "title": "凶通",
+      "start_line": 668,
+      "end_line": 734,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，包含冲突、灵异情节与完整结局。"
+    },
+    {
+      "title": "伤心枪声",
+      "start_line": 738,
+      "end_line": 798,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "第一人称历史见闻式鬼故事，正文在本段完整收束。"
+    },
+    {
+      "title": "古墓惊魂",
+      "start_line": 800,
+      "end_line": 878,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立的古墓恐怖短篇，有开端、惊险经过和结尾解释。"
+    },
+    {
+      "title": "遭遇女流尸",
+      "start_line": 882,
+      "end_line": 920,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "以历史亲历叙述和事后自然科学分析为主，段落完整结束。"
+    },
+    {
+      "title": "古宅鬼影",
+      "start_line": 922,
+      "end_line": 1024,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立古宅灵异故事，包含调查过程和谜底揭示。"
+    },
+    {
+      "title": "午夜咒语",
+      "start_line": 1026,
+      "end_line": 1080,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "后续“鬼故事”“他有点纳闷”等标题段是同一故事的续段，结尾给出完整真相。"
+    },
+    {
+      "title": "厕所的幽灵",
+      "start_line": 1084,
+      "end_line": 1102,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立校园厕所鬼故事，叙事后以传说说明收束。"
+    },
+    {
+      "title": "微笑的护士",
+      "start_line": 1104,
+      "end_line": 1237,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个“鬼故事”小标题段连续构成同一篇故事，结尾完成事件闭合。"
+    },
+    {
+      "title": "红色安全帽",
+      "start_line": 1239,
+      "end_line": 1331,
+      "confidence": 0.96,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文在广告前被截断，末行以“这是我的……”悬停，明显缺少本期结尾。"
+    }
+  ],
+  "document_notes": "依据完整标题与分段证据包判定；目录、封面/刊头、广告及其他非故事栏目均已排除。正文故事集中在第416至1331行；红色安全帽在第1333行广告前中断，因此未标为完整。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "16dbfd8a0364275fb02c371e57fd29ba951b0204beeab55e6f7b138f29dd60cc",
+    "evidence_only": true,
+    "duration_seconds": 130.1,
+    "generated_at": "2026-08-31T05:53:51+00:00"
+  }
+}

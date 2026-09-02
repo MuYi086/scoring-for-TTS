@@ -1,0 +1,189 @@
+{
+  "source_path": "悚族/《悚族特辑》复活的条件.md",
+  "source_sha256": "9068e78814b3cb734d64bf120d1618612cab6ffb6be384147af27f886fb3a7a9",
+  "line_count": 3470,
+  "stories": [
+    {
+      "title": "路口的三个死囚",
+      "start_line": 13,
+      "end_line": 19,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立惊悚短篇；后续“答案分析”未并入。"
+    },
+    {
+      "title": "完美的仓主",
+      "start_line": 31,
+      "end_line": 63,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "有明确标题、作者署名、完整叙事和结尾。"
+    },
+    {
+      "title": "死亡邀请",
+      "start_line": 196,
+      "end_line": 691,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L448为同一故事续章，结尾在L691。"
+    },
+    {
+      "title": "复活的条件",
+      "start_line": 697,
+      "end_line": 1078,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L697起为第一章，后续章节连续至L1078；末尾明显停在悬念处，疑为连载片段。"
+    },
+    {
+      "title": "眼泪王子",
+      "start_line": 1082,
+      "end_line": 1454,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多章连续组成一篇校园惊悚小说，L1454完成收束。"
+    },
+    {
+      "title": "纯天然美女",
+      "start_line": 1458,
+      "end_line": 1500,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题跨L1458、L1482，L1500为明确结尾。"
+    },
+    {
+      "title": "美人",
+      "start_line": 1502,
+      "end_line": 1522,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1504为作者署名，正文至L1522结束。"
+    },
+    {
+      "title": "毛茸茸的婴儿",
+      "start_line": 1524,
+      "end_line": 1560,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立怪谈短篇，L1560完成惊悚收尾。"
+    },
+    {
+      "title": "收音机",
+      "start_line": 1564,
+      "end_line": 1607,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名与标题分离，正文在L1607以反转结尾。"
+    },
+    {
+      "title": "溺水的女人",
+      "start_line": 1615,
+      "end_line": 1882,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1615标题后正文连续至L1882；L1884起为下一篇作者署名，L1882已完成叙事收束。"
+    },
+    {
+      "title": "爱情寄生虫",
+      "start_line": 1887,
+      "end_line": 2270,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "十个连续章节组成完整犯罪惊悚故事，L2270完成结局。"
+    },
+    {
+      "title": "美女模特",
+      "start_line": 2276,
+      "end_line": 3054,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "章节标题连续至L2986，L2988-L3054为同篇收尾；中间章节编号存在跳号。"
+    },
+    {
+      "title": "咸肥秘方",
+      "start_line": 3060,
+      "end_line": 3079,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L3060标题后内容延续至L3079的插图，L3081起为《木偶》；正文乱码且插图文字不可核，无法确认叙事是否完整。"
+    },
+    {
+      "title": "木偶",
+      "start_line": 3081,
+      "end_line": 3108,
+      "confidence": 0.82,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L3081的“木偶（1）”与L3083同篇标题应合并；末尾叙事中断。"
+    },
+    {
+      "title": "油渍",
+      "start_line": 3114,
+      "end_line": 3132,
+      "confidence": 0.7,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立怪谈标题明确，但末尾邻接“下水道（上）”且局部正文乱码，确切结尾不确定。"
+    },
+    {
+      "title": "下水道",
+      "start_line": 3134,
+      "end_line": 3157,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确标注“上”，且末尾没有结局。"
+    },
+    {
+      "title": "吃指甲的女人",
+      "start_line": 3159,
+      "end_line": 3408,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者、多个章节及“尾声”均属同一完整惊悚小说，结局至L3408。"
+    }
+  ],
+  "document_notes": "仅依据指定的第一遍边界结果和局部复核包。已确认《溺水的女人》在L1882完成收束；《咸肥秘方》末尾扩至紧邻下一篇前的L3079。其余风险项的局部证据不足以确认完整性，保留uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries_review",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "quality_fallback_used": false,
+    "speed": "standard",
+    "input_sha256": "9068e78814b3cb734d64bf120d1618612cab6ffb6be384147af27f886fb3a7a9",
+    "targeted_packet": "work/training-pipeline-fear-v1/boundary_review_packets/source_0cfea835e6b022fd.txt",
+    "duration_seconds": 64.3,
+    "generated_at": "2026-09-01T00:34:22+00:00"
+  }
+}

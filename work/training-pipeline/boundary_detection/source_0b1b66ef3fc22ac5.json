@@ -1,0 +1,99 @@
+{
+  "source_path": "岁月推理/推理金版MYSTERY2011年第11期.md",
+  "source_sha256": "f1c97eec479791aba1f610f165222a863a67c9516a10d5c6f4760c5d42623022",
+  "line_count": 6148,
+  "stories": [
+    {
+      "title": "罪恶天使——穿紫格子大衣的女人",
+      "start_line": 289,
+      "end_line": 1430,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从 L289 开始，后续 [5]、[6]、[尾声] 均为同一小说章节，结局正文止于 L1430。"
+    },
+    {
+      "title": "醉杀",
+      "start_line": 1432,
+      "end_line": 1830,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录标题位于前文，但正文实际从 L1432 的连续叙事开始，后续 [二] 至 [五] 和结尾说明均属于同一篇小说，正文止于 L1830。"
+    },
+    {
+      "title": "消失的北极星",
+      "start_line": 1836,
+      "end_line": 2783,
+      "confidence": 0.72,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题和作者署名从 L1836 开始，多个“嫌疑人/目击者/警察/神秘者/受害者”段落明显属于同一故事；但证据包末尾停在受害者叙事中，未能充分确认是否有完整结局。"
+    },
+    {
+      "title": "凶手车小春",
+      "start_line": 2785,
+      "end_line": 3557,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题、作者署名从 L2785 开始，车耀林、付长生等章节及 L3551 的尾声均属于同一小说，结局正文止于 L3557。"
+    },
+    {
+      "title": "公主亭密室案",
+      "start_line": 3559,
+      "end_line": 3793,
+      "confidence": 0.98,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文从 L3559 开始，但末尾明确写有“答案请见下期”，属于本期未完的谜题篇，不是完整结局。"
+    },
+    {
+      "title": "1/2模仿犯",
+      "start_line": 3859,
+      "end_line": 4861,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从 L3859 开始，章节、谈话记录和结尾场景均属于同一故事，结局正文止于 L4861。"
+    },
+    {
+      "title": "神秘来客",
+      "start_line": 4891,
+      "end_line": 5157,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名从 L4891 开始，证据显示该段包含英文推理小说正文，但末尾还混有投票、出版宣传和作者介绍，无法仅凭证据包精确确认小说结局行，边界暂标 uncertain。"
+    },
+    {
+      "title": "世界怪奇实话之 复活的战死者",
+      "start_line": 5167,
+      "end_line": 5281,
+      "confidence": 0.86,
+      "completeness": "uncertain",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题、作者和译者从 L5167 开始，属于犯罪纪实叙事；证据包显示末尾正文在 L5281 处语意未完，无法确认本期是否刊完整篇。"
+    }
+  ],
+  "document_notes": "严格仅读取 boundary_evidence 证据包，未打开或扫描原始 Markdown。目录中的重复标题未作为正文起点；章节、小节和尾声已并入所属故事。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "f1c97eec479791aba1f610f165222a863a67c9516a10d5c6f4760c5d42623022",
+    "evidence_only": true,
+    "duration_seconds": 107.5,
+    "generated_at": "2026-08-30T11:35:53+00:00"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "source_path": "啄木鸟/啄木鸟2025.08.md",
+  "source_sha256": "7948c09b7669fafa1af86ac3328d348f17eae76e1d09fa0b41770d88a89035f3",
+  "line_count": 3063,
+  "stories": [
+    {
+      "title": "打彩",
+      "start_line": 951,
+      "end_line": 1547,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题及作者署名位于951—953行，正文延续至编辑信息前；证据包显示该段为独立小说且本期有完整段落。"
+    },
+    {
+      "title": "耳光回响",
+      "start_line": 1555,
+      "end_line": 1781,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题及作者署名位于1555—1557行，正文止于编辑信息前；内容为情感关系题材，不属目标类型。"
+    },
+    {
+      "title": "醒酒",
+      "start_line": 1789,
+      "end_line": 1895,
+      "confidence": 0.97,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题及作者署名位于1789—1791行，正文止于编辑信息前；证据未显示其属于悬疑、推理或犯罪类型。"
+    },
+    {
+      "title": "错金环",
+      "start_line": 2249,
+      "end_line": 2799,
+      "confidence": 0.99,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文标题及作者署名位于2249—2251行，数字章节均并入同一故事，正文止于编辑信息前；情节明确涉及诈骗、赃款和犯罪链条。"
+    },
+    {
+      "title": "十年",
+      "start_line": 2807,
+      "end_line": 2937,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "正文标题及作者署名位于2807—2809行，数字章节均属于同一篇家庭叙事，正文止于编辑信息前。"
+    },
+    {
+      "title": "神探亨特",
+      "start_line": 2945,
+      "end_line": 2979,
+      "confidence": 0.86,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题、作者署名和正文段落明确构成侦探类小说，但证据包仅提供局部正文提纲，无法充分确认故事是否有完整结局。"
+    }
+  ],
+  "document_notes": "仅依据证据包判定，未打开或扫描原始 Markdown。已排除特稿、目录、导读、纪实报道、栏目页、答案、下期要目及广告等内容；重复标题“山海守护人”取正文实际开始位置但因属纪实报道未列入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "7948c09b7669fafa1af86ac3328d348f17eae76e1d09fa0b41770d88a89035f3",
+    "evidence_only": true,
+    "duration_seconds": 80.1,
+    "generated_at": "2026-08-30T11:21:22+00:00"
+  }
+}

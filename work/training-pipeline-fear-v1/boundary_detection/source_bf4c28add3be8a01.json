@@ -1,0 +1,89 @@
+{
+  "source_path": "男生女生金版/男生女生(金版)2011年01.md",
+  "source_sha256": "2b4e2d354a6067ceda68eacfd64a4687da4a25caa96cc9c026e2d9d439b8ab9c",
+  "line_count": 5135,
+  "stories": [
+    {
+      "title": "未识别标题（章节1—8）",
+      "start_line": 32,
+      "end_line": 464,
+      "confidence": 0.78,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续八章构成完整的绑架与家庭反转故事；证据包未提供可识别的正式标题，结局正文止于L464，L466为下载广告。"
+    },
+    {
+      "title": "未识别标题（章节1—6）",
+      "start_line": 468,
+      "end_line": 752,
+      "confidence": 0.8,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续六章围绕另一个“我”和灵魂异象展开，并在L752收束；正式标题在证据包中不可识别，L754为下载广告。"
+    },
+    {
+      "title": "恐怖预演",
+      "start_line": 756,
+      "end_line": 1717,
+      "confidence": 0.72,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L756起为连续恐怖推理叙事，L1417出现正式标题并与前文衔接，章节延续至L1717；结尾仍留下多个身份与案件谜团，判断为本期连载片段，L1719为下载广告。"
+    },
+    {
+      "title": "房东",
+      "start_line": 1801,
+      "end_line": 1835,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇恐怖故事，标题、作者署名和结局边界清晰。"
+    },
+    {
+      "title": "催眠",
+      "start_line": 1837,
+      "end_line": 1889,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇恐怖故事，标题与正文连续，L1889为结局对话。"
+    },
+    {
+      "title": "缠藤",
+      "start_line": 2902,
+      "end_line": 3134,
+      "confidence": 0.91,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续八节组成完整的家庭创伤、谋杀与诅咒故事；标题及作者署名在L2918、L3098出现，L3134为结局正文，L3136为下载广告。"
+    },
+    {
+      "title": "也许你会开始一段精彩的、崭新的人生！",
+      "start_line": 3138,
+      "end_line": 4215,
+      "confidence": 0.86,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "楔子、多个角色篇章及尾部收束构成同一部悬疑小说；重复标题和角色章节均已合并，L4215为小说正文结尾，L4217起为编辑访谈及刊后内容。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包识别，未打开或扫描原始 Markdown。排除了声明、栏目、电影推介、互动推理栏目、广告、征稿、作者简介及刊后内容。部分故事标题因证据包中的图片文字缺失而采用说明性标题；《还我钱包》因证据包无法精确确认广告与正文的终止行，未纳入。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2b4e2d354a6067ceda68eacfd64a4687da4a25caa96cc9c026e2d9d439b8ab9c",
+    "evidence_only": true,
+    "duration_seconds": 148.5,
+    "generated_at": "2026-08-31T06:20:53+00:00"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "source_path": "悚族/《悚族》青丝魅.md",
+  "source_sha256": "2cf4fe6f8e36226613cedabfe2058c8e51bda4093cb95b1cf63ddd24ccd12af6",
+  "line_count": 2053,
+  "stories": [
+    {
+      "title": "黑猫怪谈社（标题缺失，文 / 梁丙）",
+      "start_line": 91,
+      "end_line": 121,
+      "confidence": 0.62,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "作者署名后紧接完整叙事正文并形成收束，但证据包未提供明确篇名。"
+    },
+    {
+      "title": "青丝魅",
+      "start_line": 199,
+      "end_line": 576,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L199出现作者署名，随后为连续古代恐怖叙事；L290重复出现篇名式标题，属于同一篇内部排版重复，L576完成结局。"
+    },
+    {
+      "title": "多米诺空间",
+      "start_line": 580,
+      "end_line": 957,
+      "confidence": 0.94,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "目录篇名与正文篇名对应；L582为作者署名，L584至L878为连续章节，L880“尾声”属于同篇，L957为收束段落。"
+    },
+    {
+      "title": "眼中同志",
+      "start_line": 1158,
+      "end_line": 1531,
+      "confidence": 0.73,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "篇名标题后为连续恐怖叙事，但证据包末尾L1531句子明显未完，不能认定本期完整结尾。"
+    },
+    {
+      "title": "不向青人的风经",
+      "start_line": 1539,
+      "end_line": 1916,
+      "confidence": 0.68,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "L1539为疑似篇名且L1541有作者署名，L1545及后续多个标题更像同篇章节；L1916形成场景收束，但篇名本身疑似识别错误，完整性置信度有限。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包识别，未读取或扫描原始 Markdown。证据包中的若干标题疑似 OCR/排版识别异常，因此相应降低置信度。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "2cf4fe6f8e36226613cedabfe2058c8e51bda4093cb95b1cf63ddd24ccd12af6",
+    "evidence_only": true,
+    "duration_seconds": 116.7,
+    "generated_at": "2026-08-31T05:38:17+00:00"
+  }
+}

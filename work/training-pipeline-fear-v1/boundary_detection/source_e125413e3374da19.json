@@ -1,0 +1,199 @@
+{
+  "source_path": "怖客/《怖客》2014年02月A版-谎言识别者.md",
+  "source_sha256": "703ee1561fdbcf8904fdf160fa751752f3ede54f390baec36ab0519f4d948603",
+  "line_count": 3634,
+  "stories": [
+    {
+      "title": "布娃娃",
+      "start_line": 50,
+      "end_line": 74,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文有完整情节与结局，后接编辑信息。"
+    },
+    {
+      "title": "打酱油的",
+      "start_line": 215,
+      "end_line": 241,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立短篇，正文以完整反转结尾，后续进入下一篇。"
+    },
+    {
+      "title": "奇怪的姑娘",
+      "start_line": 247,
+      "end_line": 497,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题至编辑信息前由多个章节小节组成同一完整故事，结局明确。"
+    },
+    {
+      "title": "羽绒服里的巨款",
+      "start_line": 505,
+      "end_line": 730,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立悬疑故事，结局正文止于730行，732行为编辑信息。"
+    },
+    {
+      "title": "谎言",
+      "start_line": 736,
+      "end_line": 1078,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，多个章节连续构成完整推理故事，1078行为结局正文。"
+    },
+    {
+      "title": "神偷",
+      "start_line": 1082,
+      "end_line": 1105,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立犯罪反转短篇，1105行为结局正文，1107行为编辑信息。"
+    },
+    {
+      "title": "假期旧宅惊遇",
+      "start_line": 1109,
+      "end_line": 1400,
+      "confidence": 0.88,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "1109行为篇名和图片说明，正文从后续小节开始，至1400行完成收束，1402行为编辑信息。"
+    },
+    {
+      "title": "日换新",
+      "start_line": 1404,
+      "end_line": 1486,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题与作者信息混排，正文在1486行以明确忠告收束。"
+    },
+    {
+      "title": "大事件",
+      "start_line": 1490,
+      "end_line": 1660,
+      "confidence": 0.7,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "与前篇人物和事件连续，末尾留下明显后续悬念，不能判为完整。"
+    },
+    {
+      "title": "黑段子加工厂",
+      "start_line": 1680,
+      "end_line": 1712,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "独立轻讽刺短篇，结局明确，1714行为编辑信息。"
+    },
+    {
+      "title": "失踪",
+      "start_line": 1716,
+      "end_line": 1766,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立恐怖短篇，正文以完整怪诞结局结束，1768行为编辑信息。"
+    },
+    {
+      "title": "装死游戏",
+      "start_line": 1824,
+      "end_line": 1904,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，正文有完整起承转合与结局。"
+    },
+    {
+      "title": "友情赠送",
+      "start_line": 1908,
+      "end_line": 1968,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "独立犯罪/灵异反转短篇，1968行为结局正文。"
+    },
+    {
+      "title": "谁偷了我的哈尔",
+      "start_line": 1972,
+      "end_line": 2020,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者署名，独立怪谈式短篇，结局明确。"
+    },
+    {
+      "title": "洞穴",
+      "start_line": 2026,
+      "end_line": 2397,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文由“洞穴”“白裙女现身”两节组成同一故事，2397行为结局正文，2399行为编辑信息。"
+    },
+    {
+      "title": "海之炼",
+      "start_line": 2401,
+      "end_line": 2735,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": false,
+      "reason": "含多个连续小节和尾声的完整编辑部喜剧故事，2735行为正文末行。"
+    },
+    {
+      "title": "下人",
+      "start_line": 2741,
+      "end_line": 3099,
+      "confidence": 0.9,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个章节连续构成同一恐怖故事，但末尾停在明显悬念处，不能判为完整。"
+    },
+    {
+      "title": "练",
+      "start_line": 3129,
+      "end_line": 3477,
+      "confidence": 0.62,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题含作者和插画信息，正文为连续恐怖情节；证据显示末尾仍处于悬念/对话中，边界及是否与后续黑段子相连存在不确定性。"
+    }
+  ],
+  "document_notes": "严格仅依据证据包判定，未读取原始 Markdown。目录标题、约稿函、栏目说明、编辑信息及其他非小说内容均已排除。证据包中1662—1678行存在疑似无可靠篇名的完整短篇片段，因无法确认独立标题，未列入stories；3481—3509行“黑段子”从对话中段开始，疑似缺开头，未列为完整小说。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "703ee1561fdbcf8904fdf160fa751752f3ede54f390baec36ab0519f4d948603",
+    "evidence_only": true,
+    "duration_seconds": 157.6,
+    "generated_at": "2026-08-31T05:21:20+00:00"
+  }
+}

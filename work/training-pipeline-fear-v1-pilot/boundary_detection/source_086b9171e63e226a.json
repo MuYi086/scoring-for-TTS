@@ -1,0 +1,209 @@
+{
+  "source_path": "猛鬼杂志故事/《鬼故事》不安分的眼睛.md",
+  "source_sha256": "d9afc6c261cc031516434866de51b1eafa837c9abf61a132dab36d64d8d455df",
+  "line_count": 1686,
+  "stories": [
+    {
+      "title": "死去的爱人",
+      "start_line": 150,
+      "end_line": 212,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题后为连续的灵异爱情叙事，末尾有梦境揭示与收束。"
+    },
+    {
+      "title": "你要宵夜么？",
+      "start_line": 214,
+      "end_line": 249,
+      "confidence": 0.62,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题明确且内容为恐怖叙事，但段尾停在新情节展开处，证据不足以确认完整结局。"
+    },
+    {
+      "title": "我的生活、我的女友",
+      "start_line": 251,
+      "end_line": 379,
+      "confidence": 0.98,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "连续的医学与灵异恐怖故事，末尾明确回到事件真伪的收束。"
+    },
+    {
+      "title": "我那神奇的姥姥",
+      "start_line": 385,
+      "end_line": 411,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "第一人称讲述姥姥处理鬼魂的民间灵异故事，段尾有明确结语。"
+    },
+    {
+      "title": "不安分的眼睛",
+      "start_line": 415,
+      "end_line": 467,
+      "confidence": 0.58,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题和灵异情节明确，但后段在新叙事与未完句处截断，无法确认完整边界。"
+    },
+    {
+      "title": "鬼狐一家荣",
+      "start_line": 557,
+      "end_line": 627,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "鬼与狐共同抚养孩子的完整怪谈，末尾有后续命运与民间纪念的结局。"
+    },
+    {
+      "title": "前世今生的爱情",
+      "start_line": 677,
+      "end_line": 741,
+      "confidence": 0.76,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "引子、正文及续段构成同一灵异爱情故事，但末尾停在离别后的未完句，不能标为完整。"
+    },
+    {
+      "title": "学校里的恐怖走廊",
+      "start_line": 817,
+      "end_line": 879,
+      "confidence": 0.74,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "校园恐怖故事，末尾明确形成新的恐怖传说；标题附近存在跨段接续，边界置信度略降。"
+    },
+    {
+      "title": "幽灵人间",
+      "start_line": 939,
+      "end_line": 1023,
+      "confidence": 0.9,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "围绕未婚妻遇害、鬼魂查明凶手的连续推理灵异故事，末尾以凶手自杀收束。"
+    },
+    {
+      "title": "自杀前那三天",
+      "start_line": 1084,
+      "end_line": 1124,
+      "confidence": 0.96,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "校园女鬼故事，包含发现、冲突、真相揭示与循环式结尾。"
+    },
+    {
+      "title": "幽灵怪车",
+      "start_line": 1126,
+      "end_line": 1170,
+      "confidence": 0.78,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "正文实际起点明确，标题前的同名段为目录或提要；末段在急救场景处截断，无法完全确认结局。"
+    },
+    {
+      "title": "监狱里真实的灵异故事",
+      "start_line": 1186,
+      "end_line": 1264,
+      "confidence": 0.82,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "标题跨两个连续标题段，内容为监狱灵异见闻，末尾有缘字吊坠揭示与告别。"
+    },
+    {
+      "title": "她是个",
+      "start_line": 1268,
+      "end_line": 1304,
+      "confidence": 0.67,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "标题在证据中被截短，正文为阴阳眼相关灵异叙事并在人物失联处结束，标题及完整性均不完全确定。"
+    },
+    {
+      "title": "冰凉的太平间",
+      "start_line": 1312,
+      "end_line": 1412,
+      "confidence": 0.84,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "多个续段明显属于同一太平间恐怖故事，但末尾仍处于危机现场，未见完整结局。"
+    },
+    {
+      "title": "部队中飘渺的灵异传闻",
+      "start_line": 1414,
+      "end_line": 1430,
+      "confidence": 0.95,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "第一人称转述部队夜间哭声事件，末尾给出诊断、退伍及事件停止。"
+    },
+    {
+      "title": "三更之缘起",
+      "start_line": 1436,
+      "end_line": 1498,
+      "confidence": 0.7,
+      "completeness": "installment",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "“缘起”“见鬼”“见两女生”“宿命”为同一系列内部章节，应合并；末尾仍有悬念，不能确认完整。"
+    },
+    {
+      "title": "收垃圾的女鬼",
+      "start_line": 1502,
+      "end_line": 1552,
+      "confidence": 0.92,
+      "completeness": "complete",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "女鬼收垃圾与店铺后门传闻的完整怪谈，末尾明确交代后续影响。"
+    },
+    {
+      "title": "凶灵附体",
+      "start_line": 1560,
+      "end_line": 1592,
+      "confidence": 0.7,
+      "completeness": "uncertain",
+      "content_kind": "fiction",
+      "target_genre": true,
+      "reason": "灵堂照片引发附体的恐怖故事，段尾在阿唐出现异常处截断，结局不确定。"
+    },
+    {
+      "title": "凌晨三点",
+      "start_line": 1596,
+      "end_line": 1633,
+      "confidence": 0.93,
+      "completeness": "complete",
+      "content_kind": "narrative_nonfiction",
+      "target_genre": true,
+      "reason": "实验楼夜遇白影、求助法师并按法处理，末尾明确说明此后未再发生异常。"
+    }
+  ],
+  "document_notes": "仅依据指定证据包判定，未打开或扫描原始 Markdown。目录、栏目页、广告、科普文章、重复提要和刊后残片已排除；部分标题段存在正文跨段接续或证据显示截断，因此标为 installment 或 uncertain。",
+  "_provenance": {
+    "stage": "automatic_story_boundaries",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "profile": null,
+    "input_sha256": "d9afc6c261cc031516434866de51b1eafa837c9abf61a132dab36d64d8d455df",
+    "evidence_only": true,
+    "duration_seconds": 153.2,
+    "generated_at": "2026-08-30T13:23:18+00:00"
+  }
+}

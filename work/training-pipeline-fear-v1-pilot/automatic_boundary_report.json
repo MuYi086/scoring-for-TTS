@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-30T13:33:03+00:00",
+  "source_count": 4,
+  "completed_source_count": 4,
+  "failed_source_count": 0,
+  "second_pass_source_count": 2,
+  "candidate_count": 61,
+  "auto_approved_count": 23,
+  "excluded_count": 35,
+  "review_queue_count": 3,
+  "minimum_confidence": 0.8,
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "evidence_only": true,
+  "boundary_workers": 3,
+  "boundary_review_workers": 2,
+  "frozen_source_manifest": "/home/muyi086/github/scoring-for-TTS/training/数据集规划/fear-suspense-v1/selected_sources.jsonl",
+  "frozen_source_manifest_sha256": "aadf9ce2781eb456cf4f47cd5c190bca15fed63961e422b294661bf9ec5c4637",
+  "source_split_counts": {
+    "train": 4
+  },
+  "source_collection_counts": {
+    "怖客": 1,
+    "悚族": 1,
+    "猛鬼杂志故事": 1,
+    "男生女生金版": 1
+  },
+  "rights_status": "approved_for_cloud_training"
+}
