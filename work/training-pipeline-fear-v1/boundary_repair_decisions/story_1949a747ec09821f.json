@@ -1,0 +1,18 @@
+{
+  "source_id": "story_1949a747ec09821f",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "候选范围虽覆盖故事开头、结局与署名，但内部包含明显非正文栏目/版面串入文字（如L823“灵异”及多处页码样式行），无法确认其为无内部污染的连续独立故事。",
+  "unresolved_risks": [
+    "候选范围存在内部栏目或版面文字串入。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "de192f375ba068125bcf256a0e5e370867d7d5f279b3e0936bbc7c1f2f81c59f",
+    "generated_at": "2026-09-03T10:01:43+00:00"
+  }
+}

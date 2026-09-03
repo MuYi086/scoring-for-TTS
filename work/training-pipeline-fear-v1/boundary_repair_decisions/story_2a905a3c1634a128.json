@@ -1,0 +1,16 @@
+{
+  "source_id": "story_2a905a3c1634a128",
+  "decision": "approve",
+  "start_line": 1082,
+  "end_line": 1412,
+  "confidence": 0.99,
+  "rationale": "候选范围以“眼泪王子”标题及完整叙事开头起始，至夏末与莫言在医院的结局和收尾配图结束；L1414明确转入以张明为主角的相邻故事。范围内结尾完整，未见相邻故事、广告、栏目或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "aee0b83cd0ee45d44d91825050b3cb90ea914c5158aee8088167daeb08ca4fed",
+    "generated_at": "2026-09-03T10:04:24+00:00"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "story_54569f95b853bcd9",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.96,
+  "rationale": "候选范围的首尾与相邻故事边界可确认，但内部 L1052“雕刻时光”为脱离语义的版面标题残留，造成正文连续性污染；在严格的独立、无编辑文字条件下不能批准。",
+  "unresolved_risks": [
+    "L1052 存在疑似版面/栏目标题残留，夹在“我在旁观她”与“的一举一动。”之间，非连续正文。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "91225fe174925780fb24b72d5acd120ad956de28c3663de8809cee20553ccaac",
+    "generated_at": "2026-09-03T10:06:12+00:00"
+  }
+}

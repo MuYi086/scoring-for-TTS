@@ -1,0 +1,18 @@
+{
+  "source_id": "story_0724d37cccd1ce32",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "候选范围内部存在未解决的提取/版式顺序异常：L1249句子在“从云南到南林市只有这么一”处断开，L1251标题插入其间，至L1253才续为“辆列车”。因此L1247–L1299不能确认是无内部污染、连续完整的独立故事正文。",
+  "unresolved_risks": [
+    "L1249–L1253被标题打断，正文连续性无法满足。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "0b14f8dba25f0d662b40453daaeda1807c666310ccffee96b37a487272ced5aa",
+    "generated_at": "2026-09-03T10:00:10+00:00"
+  }
+}

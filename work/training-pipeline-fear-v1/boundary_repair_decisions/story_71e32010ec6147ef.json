@@ -1,0 +1,16 @@
+{
+  "source_id": "story_71e32010ec6147ef",
+  "decision": "approve",
+  "start_line": 235,
+  "end_line": 259,
+  "confidence": 0.99,
+  "rationale": "L235 标题起始，L237–L259 为连续完整的“石缝里的女尸”正文；L259 以警方发现女性尸骨完成结局，L263 明确转入露营框架的另一则故事。范围内图片为正文插图，未见相邻故事、广告、栏目或编辑文字污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "6d16cf3700c004848b5456f6fed94b31523e5cc6c103800912392c0653422545",
+    "generated_at": "2026-09-03T10:09:00+00:00"
+  }
+}

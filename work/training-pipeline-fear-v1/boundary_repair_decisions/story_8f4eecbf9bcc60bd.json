@@ -1,0 +1,16 @@
+{
+  "source_id": "story_8f4eecbf9bcc60bd",
+  "decision": "approve",
+  "start_line": 2783,
+  "end_line": 3175,
+  "confidence": 0.96,
+  "rationale": "候选范围以同一故事的“楔子”起始，接续上篇、中篇、下篇并在赵小落死亡处完整收束；前方为图书广告，后方从L3179起为下一篇《对弈》，边界清晰。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "777e03a1a9c403fdc7f13277154c240b3d7a2f372e0b9dae77c8297154222280",
+    "generated_at": "2026-09-03T10:16:03+00:00"
+  }
+}

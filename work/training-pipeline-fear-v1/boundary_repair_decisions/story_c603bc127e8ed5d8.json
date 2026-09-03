@@ -1,0 +1,20 @@
+{
+  "source_id": "story_c603bc127e8ed5d8",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "L467–L505 内部包含前一则红衣女子故事正文（L471–L473）、栏目字样（L477）及后一则故事标题（L501）；且开头句被标题和相邻正文拆断，结尾 L503–L505 亦有损坏与归属不明内容。因此不是完整、连续、无污染的独立故事单元。",
+  "unresolved_risks": [
+    "L467 与 L475 的开头句虽可拼接，但其间存在标题及相邻故事正文，连续性不成立。",
+    "L501 为“精灵鬼怪”标题，插入结局前，构成内部相邻故事污染。",
+    "L505“你吗？”语义和归属无法仅凭上下文确认。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "b565bc4a31d67446f3480f955f55726f8cc26b676e6aa3c2cc57e3c4d9e4a4b0",
+    "generated_at": "2026-09-03T10:22:10+00:00"
+  }
+}

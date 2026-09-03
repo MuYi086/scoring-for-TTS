@@ -1,0 +1,18 @@
+{
+  "source_id": "story_87049fc575f76e4d",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "L235–L334构成《手机》的完整正文，但L336起已进入下一篇《红烧肉》的正文预告，且其标题在L366出现；候选范围包含相邻故事内容，非独立连续单篇。",
+  "unresolved_risks": [
+    "《红烧肉》标题晚于其正文出现，造成内部串页式相邻故事污染。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "66fae09bc3fb7c41abd21696f138633079fd36a8ef2ce6b28b2cfba512ee8177",
+    "generated_at": "2026-09-03T10:12:57+00:00"
+  }
+}

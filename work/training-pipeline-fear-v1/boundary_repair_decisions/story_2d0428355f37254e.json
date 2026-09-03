@@ -1,0 +1,18 @@
+{
+  "source_id": "story_2d0428355f37254e",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围虽从独立标题开始且未混入下一篇正文，但 L1531 末句“他才知道原”明显截断；L1532 未提供续文，无法确认完整结局。",
+  "unresolved_risks": [
+    "结尾正文缺段，故事不完整。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "3a89f79ed681276810cf574e5600dcfa0259cdefcb538390a3c790e9e1c7a89f",
+    "generated_at": "2026-09-03T10:04:57+00:00"
+  }
+}

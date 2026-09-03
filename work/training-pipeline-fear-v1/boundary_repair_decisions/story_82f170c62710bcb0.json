@@ -1,0 +1,16 @@
+{
+  "source_id": "story_82f170c62710bcb0",
+  "decision": "approve",
+  "start_line": 3104,
+  "end_line": 3387,
+  "confidence": 0.97,
+  "rationale": "候选范围以《陌生初熏》标题和作者署名开始，前一故事在L3102结束；末尾包含本故事结局并以末尾图片收束。L3389起为新作者署名，L3391起明确进入相邻故事《第一封来信》正文，候选范围内未见相邻故事、广告、栏目或编辑文字混入。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "7d4719da05d4a232d7c6b592b71111207f410973133b4496d7b43fbb0694a1f1",
+    "generated_at": "2026-09-03T10:12:08+00:00"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "story_aca67e8635ce0e34",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内含内部串页文字：L2179–L2181和L2392为“夜半三惊/YEBANSANJING”页眉，非连续故事正文；不满足无内部串页的批准条件。",
+  "unresolved_risks": [
+    "候选范围存在内部版面串页污染。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "29c1317d9e1d52562c4d357565b4ee7d0bcc283aa8c5ae3db0ed27a6ba7c3dc6",
+    "generated_at": "2026-09-03T10:19:16+00:00"
+  }
+}

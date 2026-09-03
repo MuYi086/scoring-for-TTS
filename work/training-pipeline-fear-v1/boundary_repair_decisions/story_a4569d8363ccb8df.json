@@ -1,0 +1,16 @@
+{
+  "source_id": "story_a4569d8363ccb8df",
+  "decision": "approve",
+  "start_line": 856,
+  "end_line": 1258,
+  "confidence": 0.99,
+  "rationale": "候选范围以凌汛进入大厦的完整叙事开头起始，连续展开阿乔复仇与死亡真相，并在阿乔笑声中完成结局。前邻仅为上一篇的编辑署名和图片标记；后邻为编辑署名及下一篇故事，边界清晰。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "ba9063c7d62f5f0fbbd2909df5ac363ac898b1a216093d7e0b1d1c7971a0d3bd",
+    "generated_at": "2026-09-03T10:18:24+00:00"
+  }
+}

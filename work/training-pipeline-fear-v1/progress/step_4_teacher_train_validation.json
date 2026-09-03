@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "stage": "step_4_teacher_train_validation",
+  "stage_label": "Luna/Terra 独立复核",
+  "status": "running",
+  "total_items": 358,
+  "completed_items": 0,
+  "pending_items": 358,
+  "skipped_existing_items": 0,
+  "scheduled_this_run": 20,
+  "completed_this_run": 0,
+  "failed_this_run": 0,
+  "started_at": "2026-09-03T15:59:34+00:00",
+  "updated_at": "2026-09-03T16:00:04+00:00",
+  "last_error": null,
+  "resume_instruction": "重复同一条命令；不要添加 --overwrite 或刷新参数"
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "story_7afc066e8d40f353",
+  "decision": "approve",
+  "start_line": 1040,
+  "end_line": 1194,
+  "confidence": 0.96,
+  "rationale": "L1040 起为新故事的开场对白，随后标题与正文连续；L1194 完成事件收束，L1196 起为下一篇故事标题。范围内仅含正文及内嵌插图，无相邻故事或编辑内容混入。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "fa2e49310988ccc14a242b0b9ac758ab5e3f29ec3a5b6d5c2e1a42af54803690",
+    "generated_at": "2026-09-03T10:10:58+00:00"
+  }
+}

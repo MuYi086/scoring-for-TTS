@@ -1,0 +1,18 @@
+{
+  "source_id": "story_77b357076d72579b",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "L130 的《整骨》标题插在正文句子中，L128 的“我”与 L132 的“怒不可遏”构成跨候选起点的连续句子；候选范围缺少完整开头，不能确认其为独立完整故事。",
+  "unresolved_risks": [
+    "候选范围 L130–L233 的起始处存在正文被截断的证据。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "302a983a4e887cb530669adfdc7ba12c7954e0bc4ae81bd845cdf59bfbdf862f",
+    "generated_at": "2026-09-03T10:09:46+00:00"
+  }
+}

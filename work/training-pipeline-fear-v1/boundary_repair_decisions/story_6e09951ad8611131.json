@@ -1,0 +1,18 @@
+{
+  "source_id": "story_6e09951ad8611131",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.96,
+  "rationale": "候选范围虽在L116起有标题并在L157完成结局，但L134与L138之间夹入“## 猛鬼街”（L136），将同一句正文拆开，存在内部串页/栏目文字，未满足“没有内部串页或非连续正文”的批准条件。",
+  "unresolved_risks": [
+    "L136的“猛鬼街”是否为版面页眉而非正文无法在候选范围内消除；其存在已构成内部污染。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "83860142095051dfbaf1079bb0f9ceb84bed1fdff916941780d56d8f948d055a",
+    "generated_at": "2026-09-03T10:08:21+00:00"
+  }
+}

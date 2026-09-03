@@ -72,7 +72,7 @@ PY
 查看单项的 Step 2 判断和原始行号上下文。把 `ID` 替换为上一步的 `source_id`；此命令只读。
 
 ```bash
-ID='story_请替换为实际ID'
+ID='story_02b41ea93c5ba92d'
 
 python - "$ID" <<'PY'
 import json

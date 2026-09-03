@@ -1,0 +1,16 @@
+{
+  "source_id": "story_20b517bcd89d3fd4",
+  "decision": "approve",
+  "start_line": 497,
+  "end_line": 601,
+  "confidence": 0.93,
+  "rationale": "L497以“●1●怪人”完整开篇，L601完成黑衣女生复仇及叙述者死亡的结局。L519、L521与L601的图片/表格为同一故事的版式承载，语义连续；L603图片和L605刊后引语位于故事结束之后，L607开始下一篇。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "ea0e5f525eb737f60aca2a8287d8165529c19996bcf5d6506b4c989ecdcf3da6",
+    "generated_at": "2026-09-03T10:02:59+00:00"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "story_7aeb947c75adb989",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内存在两处“★★★ Sell beauty shop”广告标记，属于无法通过外边界调整消除的内部污染，未满足完整、连续且无广告/编辑文字的批准条件。",
+  "unresolved_risks": [
+    "候选范围 L297–L549 内含两处广告标记，无法确认其为纯净的连续独立故事正文。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "1b2831a8a6f2edf2a7eb45208f911811aec05bac7a2b71e2e10ff1035266aade",
+    "generated_at": "2026-09-03T10:10:18+00:00"
+  }
+}

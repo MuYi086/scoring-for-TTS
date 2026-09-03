@@ -1,0 +1,16 @@
+{
+  "source_id": "story_8b1f91e0cb9c86f8",
+  "decision": "approve",
+  "start_line": 1824,
+  "end_line": 1856,
+  "confidence": 0.99,
+  "rationale": "L1824 为《装死游戏》标题及署名，随后正文从崔健病情与表白动机完整展开；L1856 完成借命反转结局。L1823 是上一则故事结尾，L1858 已明确转入相邻故事《最后一班车》，范围内无相邻故事或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "74d9bed1228afd00b4727e502626397031934529faa401178deac6f41b6e7377",
+    "generated_at": "2026-09-03T10:14:30+00:00"
+  }
+}

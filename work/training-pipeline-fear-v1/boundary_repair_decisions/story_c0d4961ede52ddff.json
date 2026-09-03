@@ -1,0 +1,16 @@
+{
+  "source_id": "story_c0d4961ede52ddff",
+  "decision": "approve",
+  "start_line": 486,
+  "end_line": 745,
+  "confidence": 0.96,
+  "rationale": "L486以独立墓室危机开篇并建立叙述者、苏九渊和小五；L745完成血祖棺真相与父子关系的结局性揭示。L746起为编辑署名，L753起为另一故事，候选范围内未见相邻故事、广告、编辑文字、内部串页或未解决的文本缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "82b4626833662133b196613e3bfd08abfc4c866759d7c5d1372973b7d2a301b8",
+    "generated_at": "2026-09-03T10:22:28+00:00"
+  }
+}

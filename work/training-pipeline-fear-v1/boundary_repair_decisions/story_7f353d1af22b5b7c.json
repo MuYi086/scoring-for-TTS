@@ -1,0 +1,18 @@
+{
+  "source_id": "story_7f353d1af22b5b7c",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "L442在“地下凶邻”的未完成句子中直接混入以陈强为主角的相邻故事正文；候选范围无法同时保留完整结局并排除相邻故事污染。",
+  "unresolved_risks": [
+    "L442包含内部边界污染，且目标故事在该行处缺失可确认的完整结局。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "aea60dff12ecaf200477e25a28109dbd278c32c636dbff82ebd15f5bc7b0da1d",
+    "generated_at": "2026-09-03T10:11:44+00:00"
+  }
+}

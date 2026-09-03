@@ -1,0 +1,16 @@
+{
+  "source_id": "story_adf89a4d8e184305",
+  "decision": "approve",
+  "start_line": 878,
+  "end_line": 1049,
+  "confidence": 0.99,
+  "rationale": "L878 为独立标题，正文自 L880 连续展开文森特的犯罪与超自然报应，并在 L1047 死亡、L1049 总结句后完整收束。L1051 起明确切换为莹莹的另一篇故事，候选范围内未见相邻故事、广告、栏目或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "348f61ae23651e97426976de24f98f90afdc46d79e9a7fb52c6fe69baeb249ab",
+    "generated_at": "2026-09-03T10:19:49+00:00"
+  }
+}

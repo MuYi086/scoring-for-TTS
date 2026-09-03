@@ -1,0 +1,16 @@
+{
+  "source_id": "story_ffa22d8ce61aabef",
+  "decision": "approve",
+  "start_line": 1492,
+  "end_line": 1540,
+  "confidence": 0.99,
+  "rationale": "L1492–L1540 以《蜜蜂》标题和作者署名完整开篇，正文连续推进并在 L1540 以“蜂后”的揭示完成结局；前篇《电梯》已于 L1490 结束。其后 L1542 起为刊物宣传，L1556 起明确为“上期回顾”，均未混入候选范围。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "aec3c0c5b638eee59a24de43ceca824b6935510d1c27b4e22b139090ce83b49b",
+    "generated_at": "2026-09-03T10:28:12+00:00"
+  }
+}

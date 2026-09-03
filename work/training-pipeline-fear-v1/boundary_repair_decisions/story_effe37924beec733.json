@@ -1,0 +1,16 @@
+{
+  "source_id": "story_effe37924beec733",
+  "decision": "approve",
+  "start_line": 489,
+  "end_line": 725,
+  "confidence": 0.99,
+  "rationale": "候选范围从《异变》标题及完整开头开始，连续叙述至恶鬼命令杀死“最后一个人”的结局；其后行727起为编辑/作者信息，行731起为相邻《微故事》，均未包含在候选范围内。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "2b38e879460d91070a256a530fa77f4b4bdec87546f73e3cddf196385e0483cc",
+    "generated_at": "2026-09-03T10:27:36+00:00"
+  }
+}

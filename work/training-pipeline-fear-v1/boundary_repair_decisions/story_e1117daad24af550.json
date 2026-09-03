@@ -1,0 +1,18 @@
+{
+  "source_id": "story_e1117daad24af550",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "指定边界上下文在L609后直接跳至L659，未提供L610–L658（包括候选终点L657）的逐行证据，无法独立确认候选范围具备连续、完整的结局且无内部污染。",
+  "unresolved_risks": [
+    "L610–L657上下文缺失，无法核验故事结尾、相邻故事起点及内部连续性。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "192c84ad900d96f180f6eb3d13d68a24349b11a11db10b7bca8aaecbf13fb466",
+    "generated_at": "2026-09-03T10:25:57+00:00"
+  }
+}

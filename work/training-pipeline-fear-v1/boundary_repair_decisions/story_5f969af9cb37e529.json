@@ -1,0 +1,19 @@
+{
+  "source_id": "story_5f969af9cb37e529",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "提供的边界上下文未覆盖候选结尾 L1417 及其后 L1419 的实际文本，无法独立核验该处是否确为完整结局、后文是否为相邻故事而非连续正文；按证据不足原则拒绝。",
+  "unresolved_risks": [
+    "候选终点 L1417 的结局文本未提供。",
+    "L1419 起的叙事转换及相邻边界未能由上下文原文独立确认。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "dabf2d13f052218037405aa2a3c2b7a029fbc06327aa6520e92e6725e35270dc",
+    "generated_at": "2026-09-03T10:07:39+00:00"
+  }
+}

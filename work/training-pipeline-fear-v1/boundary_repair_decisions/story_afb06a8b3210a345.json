@@ -1,0 +1,18 @@
+{
+  "source_id": "story_afb06a8b3210a345",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选虽连续至 L1592 并在下一篇《凌晨三点》前结束，但 L1562 以“有说有笑的。”开篇，明显承接缺失的前文，无法确认包含完整开头。",
+  "unresolved_risks": [
+    "候选范围存在开头缺段。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f84cd6beb6af304e681168a9ee531cb48af2f1db3de31567d263ffd9c1ad1b8c",
+    "generated_at": "2026-09-03T10:20:54+00:00"
+  }
+}

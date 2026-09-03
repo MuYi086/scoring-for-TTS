@@ -1,0 +1,18 @@
+{
+  "source_id": "story_679d24e0be050979",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "边界上下文未覆盖候选范围内 L1020–L1088，无法独立确认该段不存在内部污染、串页或缺段；证据不足，不能批准。",
+  "unresolved_risks": [
+    "L1020–L1088 未提供，候选正文的连续性与完整性无法独立核实。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f7934f23debfc3340614b6d6e45b6023decdf55ee86d4725ec05ee3199e7ea6d",
+    "generated_at": "2026-09-03T10:08:21+00:00"
+  }
+}

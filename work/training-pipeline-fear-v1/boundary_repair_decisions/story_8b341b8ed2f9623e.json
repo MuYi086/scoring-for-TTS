@@ -1,0 +1,16 @@
+{
+  "source_id": "story_8b341b8ed2f9623e",
+  "decision": "approve",
+  "start_line": 2208,
+  "end_line": 3060,
+  "confidence": 0.99,
+  "rationale": "L2208起为完整标题与正文开头，紧接前篇末尾图片；L3060以故事结局收束，后续L3062起为图片及“华旗资讯”广告，候选范围内未见相邻故事或栏目污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f735ebc2ac15e6ca0dff2eba0b637977ed0b5360833c88d567a4e2b4c5b5ed27",
+    "generated_at": "2026-09-03T10:15:12+00:00"
+  }
+}

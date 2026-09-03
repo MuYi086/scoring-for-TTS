@@ -1,0 +1,18 @@
+{
+  "source_id": "story_5fd6ee2ec928dbe5",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.97,
+  "rationale": "指定的边界上下文未覆盖候选范围中 L762–L971，无法仅凭允许读取的证据确认该区段不存在内部串页、栏目文字或未解决缺段；因此不能确认 L705–L1032 整段为完整连续的独立故事。",
+  "unresolved_risks": [
+    "L762–L971 未在提供的边界上下文中出现，候选范围的中段连续性与内容纯净性无法核验。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "6dd041c4b50b90e4b73bf52f4ab8fcccc9d1720d0d2b2dd3e4c0dc5eb24782dd",
+    "generated_at": "2026-09-03T10:07:53+00:00"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "story_7377ed969ab1e5f3",
+  "decision": "approve",
+  "start_line": 4085,
+  "end_line": 4323,
+  "confidence": 0.99,
+  "rationale": "L4085 起包含标题、作者信息、导语与完整正文开端；L4323 完成辞夏身份反转并收束故事。相邻故事正文从 L4325 开始，候选范围内无相邻故事、广告、栏目或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "896c1b88c3a853df1fc4c99e67b03c61879facfee0161e9aa3a5d4a9d7c32fe8",
+    "generated_at": "2026-09-03T10:08:55+00:00"
+  }
+}

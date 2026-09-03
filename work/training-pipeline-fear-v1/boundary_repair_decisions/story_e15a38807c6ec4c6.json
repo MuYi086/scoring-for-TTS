@@ -1,0 +1,16 @@
+{
+  "source_id": "story_e15a38807c6ec4c6",
+  "decision": "approve",
+  "start_line": 922,
+  "end_line": 976,
+  "confidence": 0.96,
+  "rationale": "L922为《古宅鬼影》标题，前接L920上一故事结论；L926–L974叙事连续且在谜底揭开、游客持续前来处完整收束，L976为紧随结尾的配图。L978转入唐山地震与磨房人物的独立故事，边界明确。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "fc8b9b80f807360ca3f86ee9892d24596c716af2ca00e99853e4bda990db612d",
+    "generated_at": "2026-09-03T10:26:21+00:00"
+  }
+}

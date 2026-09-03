@@ -1,0 +1,16 @@
+{
+  "source_id": "story_11f6a43b90f1da03",
+  "decision": "approve",
+  "start_line": 402,
+  "end_line": 442,
+  "confidence": 0.99,
+  "rationale": "L402-L406 是《外婆带回家了》的前置引入，L406 与 L410 跨标题直接续接；L412-L442 构成完整叙事并在 L442 收束。前一篇于 L398 结束，L400 为其配图；L444 明确开始下一篇《死神之吻》。候选范围内仅含本故事标题及正文，无相邻故事、广告、栏目或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "689023d9d97f014ff80d853dd27f924749a2a48fba9bd6b2029a10843fa578dc",
+    "generated_at": "2026-09-03T10:01:23+00:00"
+  }
+}

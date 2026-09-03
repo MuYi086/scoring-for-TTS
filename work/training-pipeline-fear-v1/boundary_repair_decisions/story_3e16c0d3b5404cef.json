@@ -1,0 +1,16 @@
+{
+  "source_id": "story_3e16c0d3b5404cef",
+  "decision": "approve",
+  "start_line": 672,
+  "end_line": 916,
+  "confidence": 0.98,
+  "rationale": "L672 紧接标题、署名及“写手创作谈”后，以故事叙述自然开篇；L916 在揭示中国结亮片为妻子指甲后的情感收束处完整结束。L918 起为相邻内容的刊后说明，L920 起为下一篇故事标题，边界清晰。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "adab5780ad0e459559660855ea72635e72245e2afd3bf460738deb2f1d19be45",
+    "generated_at": "2026-09-03T10:05:34+00:00"
+  }
+}

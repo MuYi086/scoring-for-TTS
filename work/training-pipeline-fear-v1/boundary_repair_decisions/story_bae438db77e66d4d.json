@@ -1,0 +1,18 @@
+{
+  "source_id": "story_bae438db77e66d4d",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "候选范围虽包含完整正文及结局，但L3234插入“恐怖校园”栏目/内部串页文字，不满足“无栏目、内部串页”的批准条件。",
+  "unresolved_risks": [
+    "L3234是否为版面栏目眉/内部串页，不能视为故事连续正文。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f57e976adabe76c95d3d7cbf0da95fdb521eb674dcf49e1c35694a880790db82",
+    "generated_at": "2026-09-03T10:21:30+00:00"
+  }
+}

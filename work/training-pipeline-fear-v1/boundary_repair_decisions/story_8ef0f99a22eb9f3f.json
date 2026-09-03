@@ -1,0 +1,18 @@
+{
+  "source_id": "story_8ef0f99a22eb9f3f",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "边界上下文未提供候选终点 L2683 附近的连续正文与相邻边界证据（L2502–L2713 缺失），无法独立确认候选范围在 L2683 已完整结局且未含内部编辑文字或相邻故事。",
+  "unresolved_risks": [
+    "无法核验 L2683 是否为《上身》完整结局及其后是否紧接编辑信息或新故事。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "5e65eb233a6dec3de9e646c238ecc53d5f9eef6df2f687c816f0d731b8362934",
+    "generated_at": "2026-09-03T10:16:03+00:00"
+  }
+}

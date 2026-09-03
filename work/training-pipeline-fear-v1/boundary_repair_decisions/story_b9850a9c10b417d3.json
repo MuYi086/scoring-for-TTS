@@ -1,0 +1,19 @@
+{
+  "source_id": "story_b9850a9c10b417d3",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "指定的边界上下文只提供至 L1874，随后直接跳至 L2280，未包含候选范围 L1875–L1928 及其紧邻后续边界。因此无法独立确认候选段具有完整结局且 L1928 后紧接相邻故事，证据不足，按规则拒绝。",
+  "unresolved_risks": [
+    "缺少 L1875–L1928 的上下文，无法核验候选范围是否连续且包含完整结局。",
+    "缺少 L1929 附近的边界上下文，无法独立确认相邻故事从候选范围之后开始。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "d3333b7c8f08fe147b70d4058cda0568c4ed3a260970f5cef8a8eb2f5aeab1b8",
+    "generated_at": "2026-09-03T10:21:31+00:00"
+  }
+}

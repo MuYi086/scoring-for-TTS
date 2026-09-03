@@ -1,0 +1,18 @@
+{
+  "source_id": "story_87bbd1368aa2784b",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内部在L2342已转入陈阿三的新叙事，并在L2350出现标题《轮回》及署名；L2386是该相邻故事的结尾，不是《水睛》的结尾。候选范围不是连续、独立的《水睛》完整正文。",
+  "unresolved_risks": [
+    "边界上下文未展示L2185-L2327，无法仅凭允许材料确认《水睛》实际结尾及中段连续性。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "bd8e04e377c7f2ad5b32e8c504f8e62b50fe4d220f046de2307a6a3aa02ec8bf",
+    "generated_at": "2026-09-03T10:13:19+00:00"
+  }
+}

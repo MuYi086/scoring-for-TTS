@@ -1,0 +1,18 @@
+{
+  "source_id": "story_02b41ea93c5ba92d",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "指定边界上下文未提供L726–L1024，无法直接核实候选L665–L766是否连续包含完整结局，证据不足以批准。",
+  "unresolved_risks": [
+    "候选终点L766及其与相邻故事的边界未在所给上下文中可核验。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "bd97ff1976b3d409b0615c8206bd2ab86d71501f88d1b013cb0900a770a3501e",
+    "generated_at": "2026-09-03T09:59:55+00:00"
+  }
+}

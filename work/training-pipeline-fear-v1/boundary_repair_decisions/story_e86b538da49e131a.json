@@ -1,0 +1,19 @@
+{
+  "source_id": "story_e86b538da49e131a",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内部明确混入疑似相邻故事/栏目宣传语或串页文字（L206、L208、L247、L355），不满足“没有内部污染、连续独立故事”的批准条件；且L196以“她。”这一残缺句开头，无法确认已包含完整开头。",
+  "unresolved_risks": [
+    "L196可能承接候选范围之前的正文，存在未解决的缺头风险。",
+    "L206、L208、L247、L355为内部非正文污染，破坏候选范围的纯净连续性。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "60fe9edf85332a93389082e7b32b17b1d433192801ea533ccbfd02f596862fdf",
+    "generated_at": "2026-09-03T10:27:28+00:00"
+  }
+}

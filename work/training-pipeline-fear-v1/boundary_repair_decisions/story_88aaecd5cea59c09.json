@@ -1,0 +1,16 @@
+{
+  "source_id": "story_88aaecd5cea59c09",
+  "decision": "approve",
+  "start_line": 1517,
+  "end_line": 1637,
+  "confidence": 0.97,
+  "rationale": "候选范围以《紫罗化蝶》标题和完整开端起始，正文连续呈现乔的转变、全国表演、致谢与精灵花茶坊尾声；L1639起为独立“小贴士”，L1637前未见相邻故事或栏目混入。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "eea6583f61a596af9f4f57d02f436cc35ba8178ba6c245588348c649fed8a2e1",
+    "generated_at": "2026-09-03T10:14:19+00:00"
+  }
+}

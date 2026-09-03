@@ -1,0 +1,16 @@
+{
+  "source_id": "story_5a09e428995297bc",
+  "decision": "approve",
+  "start_line": 110,
+  "end_line": 148,
+  "confidence": 0.99,
+  "rationale": "L110 是《恐怖女厕所》的完整标题与开头；L112–L148 构成连续正文，包含琪琪死亡、旧案交代及老奶奶身份揭示后的结局。L149 为空行，L150 明确转入相邻故事《黄鬼花》，因此候选范围边界清晰且无相邻故事、广告、栏目或编辑文字混入。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "307a7487fc27362eda35cac8ed43223963623558363f9c8ff0bdd226d543e74d",
+    "generated_at": "2026-09-03T10:06:30+00:00"
+  }
+}

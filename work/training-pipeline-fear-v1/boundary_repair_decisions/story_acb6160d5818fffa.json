@@ -1,0 +1,16 @@
+{
+  "source_id": "story_acb6160d5818fffa",
+  "decision": "approve",
+  "start_line": 1716,
+  "end_line": 1752,
+  "confidence": 0.99,
+  "rationale": "标题、起因、搜寻过程与王晓明因思念母亲离队的结局均完整连续；前后均有明确相邻故事边界，范围内无编辑文字或串页污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "1dca0e6a81c802f16170df753d54047df47ffbbc0e82114538de77b3880f903a",
+    "generated_at": "2026-09-03T10:19:36+00:00"
+  }
+}

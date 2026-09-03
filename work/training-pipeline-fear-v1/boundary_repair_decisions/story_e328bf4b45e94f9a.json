@@ -1,0 +1,16 @@
+{
+  "source_id": "story_e328bf4b45e94f9a",
+  "decision": "approve",
+  "start_line": 4364,
+  "end_line": 4661,
+  "confidence": 0.99,
+  "rationale": "候选范围以《三石街的秘密》标题开始，正文从开端连续推进至“结局”，并在4661以摄像机镜头的悬念结尾完成闭合。4663后的图片及4665起“他对她一见钟情”的内容属于相邻故事，未包含在候选范围内。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f7f9b62d51b6a8630c22149147dcfb69f08fe1a0043d21e4aedb0362113886fe",
+    "generated_at": "2026-09-03T10:26:38+00:00"
+  }
+}

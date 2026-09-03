@@ -1,0 +1,18 @@
+{
+  "source_id": "story_92377ad15f9978db",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内部 L1798-L1800 混入与《爱情测试题》无关且断裂的老爷爷彩票片段，构成非连续正文污染；因此不满足完整、连续、独立故事的批准条件。",
+  "unresolved_risks": [
+    "L1798-L1800 的内部串页内容使候选范围不纯净。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "2adc7188e741f2c6bba5da8f191f14c7808fb44e19850bd633c4cb37bf8f16bc",
+    "generated_at": "2026-09-03T10:16:53+00:00"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "story_2831b9891ded51c5",
+  "decision": "approve",
+  "start_line": 1723,
+  "end_line": 1771,
+  "confidence": 0.99,
+  "rationale": "候选范围以《床垫》标题完整开篇，叙事连续推进至“人皮”揭示形成结局；其后L1773立即切换为王范的独立故事，候选内部未见相邻故事、栏目或编辑文字污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "3bd15816902fe84c548d778a2631ed2822842e13c6a4d592b75c99eac81a8d4a",
+    "generated_at": "2026-09-03T10:04:13+00:00"
+  }
+}

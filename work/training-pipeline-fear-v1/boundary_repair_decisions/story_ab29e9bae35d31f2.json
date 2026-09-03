@@ -1,0 +1,18 @@
+{
+  "source_id": "story_ab29e9bae35d31f2",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.97,
+  "rationale": "候选范围虽在 L3206 开始并于 L4114 前与相邻故事清晰分隔，且正文结局完整，但其开头 L3208–L3216 包含“挖哇吧”栏目及作者导语，并非独立故事正文。按“不得包含栏目、编辑文字”的批准条件，不能批准。",
+  "unresolved_risks": [
+    "L3208–L3216 的栏目/作者导语属于候选范围内部的非故事文本。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "9c5cd66fefe5995637bf0487bea72ef621935487cc2165c520ae233a6671c5eb",
+    "generated_at": "2026-09-03T10:19:01+00:00"
+  }
+}

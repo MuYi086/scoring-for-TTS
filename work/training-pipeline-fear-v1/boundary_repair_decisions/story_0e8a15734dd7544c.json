@@ -1,0 +1,16 @@
+{
+  "source_id": "story_0e8a15734dd7544c",
+  "decision": "approve",
+  "start_line": 2095,
+  "end_line": 2365,
+  "confidence": 0.98,
+  "rationale": "候选范围以独立标题《眼球在哪里》开始，叙事连续并在L2364的开放式结局结束；L2366起为作者署名，L2369起已进入相邻内容，未包含在候选范围内。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "e5c9b98a473fb5de57a3dae8fd06d1f468c3d1b07053904da0adfa146a398434",
+    "generated_at": "2026-09-03T10:01:03+00:00"
+  }
+}

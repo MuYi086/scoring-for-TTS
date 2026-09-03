@@ -1,0 +1,18 @@
+{
+  "source_id": "story_a0c0319ee70cb0ac",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.96,
+  "rationale": "候选范围虽覆盖故事开头与时间错位结局，且462行后可确认进入配图及相邻故事，但范围内部保留了多处杂志页眉/栏目文字（L374、L410“猛鬼街”，L434“恶鬼道”）。其中L434还嵌在一句话中间；此外L426句首残字及L458重复、断裂文本显示存在未清理的内部串页或OCR污染。依照“无栏目、编辑文字、内部串页或未解决缺段”的批准条件，不能确认其为纯净连续的独立故事文本。",
+  "unresolved_risks": [
+    "无法仅凭该候选确认内部页眉与断裂/重复文本已被安全排除，且不造成正文缺段。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "95d72cbc915525ecff4f9c59b5c9601527e6021691af08b0ae4e87795c562875",
+    "generated_at": "2026-09-03T10:17:33+00:00"
+  }
+}

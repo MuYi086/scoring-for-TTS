@@ -1,0 +1,16 @@
+{
+  "source_id": "story_dffd78f8a42e04e3",
+  "decision": "approve",
+  "start_line": 1328,
+  "end_line": 1564,
+  "confidence": 0.98,
+  "rationale": "候选范围以本故事标题及“背鬼跑步”开篇，人物与情节连续；第1564行以高木意识模糊完成收束。第1566行起人物和情节完全切换，且第1594行编辑信息佐证其为相邻内容。候选范围内未见相邻故事、编辑文字、广告、内部串页或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "afb5fbc712d0903be19401a2ccbc61a42b4c003b60ed9639b019780bd6cc9c9c",
+    "generated_at": "2026-09-03T10:25:05+00:00"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "story_0adf2d8e045aba22",
+  "decision": "approve",
+  "start_line": 197,
+  "end_line": 525,
+  "confidence": 0.99,
+  "rationale": "候选范围以《心里话》标题、作者和正文开头起始，并在故事结局处结束；编辑信息及相邻故事均位于范围之外。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "9cbf5d4cf2c1aa11d8c61365da7dc9600fada99ee9c21417255eb38cc55afc49",
+    "generated_at": "2026-09-03T10:00:48+00:00"
+  }
+}

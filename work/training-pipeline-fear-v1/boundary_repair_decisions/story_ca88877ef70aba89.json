@@ -1,0 +1,16 @@
+{
+  "source_id": "story_ca88877ef70aba89",
+  "decision": "approve",
+  "start_line": 753,
+  "end_line": 955,
+  "confidence": 0.95,
+  "rationale": "L753以独立故事的开篇场景起笔；L955完成周俊魂魄与寄生鬼魂同归于尽后的收束。前一故事在L747编辑信息处结束，L749–L751仅为图片标记；本故事结尾后L957为编辑信息、L959–L961为图片标记，L963开始另一篇新故事。所示边界未见广告、栏目、编辑文字或相邻正文混入。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "ad0df2a8b34f93ed2cf3eb65aa8be79920a4aa56bd0b9937bf19095e6f5b1da1",
+    "generated_at": "2026-09-03T10:23:44+00:00"
+  }
+}

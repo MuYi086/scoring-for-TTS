@@ -1,0 +1,16 @@
+{
+  "source_id": "story_87df4191bd052829",
+  "decision": "approve",
+  "start_line": 2169,
+  "end_line": 2502,
+  "confidence": 0.99,
+  "rationale": "L2169 起于故事标题与作者署名，承接前一故事结束后的插图；正文连续推进至 L2486 的情节结局，并在 L2488–L2502 以“结尾了”完成与故事主题直接相关的叙述者收束。L2503 起为页码及“BOYS GIRL”新栏目内容，边界清晰。候选范围内未见相邻故事、广告、栏目、编辑文字、内部串页或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "3b063de59edba368938406ff5c6d36d6b678f9c8ff49f939c9301a91627154f9",
+    "generated_at": "2026-09-03T10:13:48+00:00"
+  }
+}

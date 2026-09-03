@@ -1,0 +1,18 @@
+{
+  "source_id": "story_900d78c86f63a649",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.97,
+  "rationale": "候选虽包含完整开头与结局，且2915后可确认进入下一篇，但正文在L2797与L2801的同一句之间插入“文 / 杨承”（L2799）这一作者署名，存在内部非正文编辑文字，未满足无内部污染的严格条件。",
+  "unresolved_risks": [
+    "L2799的作者署名插入连续叙事句中，候选范围不是纯净、连续的独立故事正文。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f1f7999998092bbaed1615825ddcbadf8768c2532cd1f5dc52b613d2f6bdca5f",
+    "generated_at": "2026-09-03T10:16:46+00:00"
+  }
+}

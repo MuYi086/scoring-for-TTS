@@ -1,0 +1,18 @@
+{
+  "source_id": "story_d24111dd38c20d9e",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.96,
+  "rationale": "边界起止及相邻故事边界清晰，但 Step 2 分析明确标记正文内部存在疑似缺段或排版断裂，以及多处不完整句子和引号错配；现有上下文不足以排除候选范围内的未解决正文缺失。",
+  "unresolved_risks": [
+    "候选正文内部存在疑似缺段或排版断裂，无法确认其为无缺段的连续完整故事。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "908eabb68d617e27e7cf99e6a477027a7447b52f1ed8bccafc40eabb384eba45",
+    "generated_at": "2026-09-03T10:24:25+00:00"
+  }
+}

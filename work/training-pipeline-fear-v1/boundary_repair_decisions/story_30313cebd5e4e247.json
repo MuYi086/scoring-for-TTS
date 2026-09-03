@@ -1,0 +1,18 @@
+{
+  "source_id": "story_30313cebd5e4e247",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内 L1855 插入作者简介“文/麦尔班尼……”，L1867 插入插图署名“图/苍狼野兽”，均非连续故事正文；因此不满足无内部污染的 approve 条件。",
+  "unresolved_risks": [
+    "候选范围存在刊物版面署名/作者简介等非叙事文字的内部串入。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "88daf5d08751b42af7ba33b6d331a7cd274cd3cf19b7d95f70c49883367ca6f8",
+    "generated_at": "2026-09-03T10:05:00+00:00"
+  }
+}

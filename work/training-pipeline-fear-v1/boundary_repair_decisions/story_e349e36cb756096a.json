@@ -1,0 +1,18 @@
+{
+  "source_id": "story_e349e36cb756096a",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围虽以“坟头草”标题开始，但正文首句为承接性残句“干干净净。”，随后即出现“爹接口说”，缺少前置对话与完整开头，不能确认其为完整、连续的独立故事。",
+  "unresolved_risks": [
+    "起始处存在未解决的源文缺段、截断或串页风险。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "b4711ed912193e5bde1a94052be3869dd540bbb68b788939544f9c313467df59",
+    "generated_at": "2026-09-03T10:26:58+00:00"
+  }
+}

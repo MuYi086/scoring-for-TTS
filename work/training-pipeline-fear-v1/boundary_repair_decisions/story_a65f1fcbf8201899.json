@@ -1,0 +1,18 @@
+{
+  "source_id": "story_a65f1fcbf8201899",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围虽有正确起止边界并在L791形成故事结局，但Step 2分析明确确认其内部夹入两段无关“段子”文本，存在非连续正文污染，不能认定为完整、连续的独立故事。",
+  "unresolved_risks": [
+    "候选范围内部存在与本故事无关的“段子”文本，疑似相邻栏目或刊后内容串入。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "1aa2b690f5a3ef807cf6b1b9e26c6537b5363716e3db11a1d6d0e1a19c212ead",
+    "generated_at": "2026-09-03T10:18:41+00:00"
+  }
+}

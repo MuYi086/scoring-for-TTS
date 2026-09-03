@@ -1,0 +1,18 @@
+{
+  "source_id": "story_1d97e4066a7d34a8",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围虽覆盖完整开头与结局，但内部在 L4134–L4146 插入作者署名、标题、图片标记、编辑文字及英文测试句，打断 L4130 与 L4142 的同一正文句，无法满足“完整、连续且无内部污染”的批准条件。",
+  "unresolved_risks": [
+    "L4134–L4146 为内部非正文污染，导致候选范围不是连续的独立故事正文。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "c8cfc067a087b06c7e2d5081dfc90f2e5e911348a4e1aec434ef1f5277a37cfe",
+    "generated_at": "2026-09-03T10:02:36+00:00"
+  }
+}

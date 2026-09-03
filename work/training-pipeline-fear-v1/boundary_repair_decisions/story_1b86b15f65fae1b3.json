@@ -1,0 +1,19 @@
+{
+  "source_id": "story_1b86b15f65fae1b3",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.97,
+  "rationale": "候选虽有明确标题、结局及后续刊后内容边界，但 L1720-L1722 含多栏 HTML 串接、章节/页码残留，且出现“谁。晚前”等明显语义残缺，无法确认该范围正文连续且无未解决缺段。",
+  "unresolved_risks": [
+    "L1720-L1722 的多栏串接可能破坏原始正文阅读顺序。",
+    "“谁。晚前”显示存在 OCR 丢失或错分段，正文完整性无法确认。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "bccc4f557c2c2f76d067f4828cb59594f24664f5ec2180ba923284959c733c8b",
+    "generated_at": "2026-09-03T10:02:23+00:00"
+  }
+}

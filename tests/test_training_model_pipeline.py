@@ -21,6 +21,7 @@ try:
     import step_0_plan_sources as step_0
     import step_1_prepare_stories as step_1
     import step_2_analyze_stories as step_2
+    import step_2_auto_resolve_boundaries as step_2b
     import step_3_rewrite_stories as step_3
     import step_4_review_rewrites as step_4
     import step_5_adjudicate_stories as step_5
@@ -58,6 +59,42 @@ def frozen_source_record(source_root: Path, source: Path, split: str = "train"):
 
 
 class TrainingModelPipelineTests(unittest.TestCase):
+    def test_auto_boundary_repair_requires_exact_safe_suggestion(self):
+        repair = {
+            "source_id": SOURCE_ID_TRAIN,
+            "source_path": "刊物/一期.md",
+            "current_start_line": 10,
+            "current_end_line": 40,
+            "suggested_start_line": 8,
+            "suggested_end_line": 38,
+        }
+        approved = {
+            "source_id": SOURCE_ID_TRAIN,
+            "decision": "approve",
+            "start_line": 8,
+            "end_line": 38,
+            "confidence": 0.95,
+            "rationale": "完整且无相邻内容。",
+            "unresolved_risks": [],
+        }
+        step_2b.validate_decision(approved, repair)
+        unsafe = {**approved, "end_line": 39}
+        with self.assertRaisesRegex(step_1.PipelineError, "精确连续范围"):
+            step_2b.validate_decision(unsafe, repair)
+        rejected = {**approved, "decision": "reject", "start_line": None, "end_line": None}
+        step_2b.validate_decision(rejected, repair)
+
+    def test_auto_boundary_repair_skips_unchanged_ranges(self):
+        self.assertFalse(
+            step_2b.repair_has_changed_range(
+                {
+                    "current_start_line": 10,
+                    "current_end_line": 20,
+                    "suggested_start_line": 10,
+                    "suggested_end_line": None,
+                }
+            )
+        )
     def test_step_1_auto_boundary_dry_run_reports_success_without_writing(self):
         with tempfile.TemporaryDirectory(dir=REPO_ROOT) as directory:
             root = Path(directory)

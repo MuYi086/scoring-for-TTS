@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^story_[0-9a-f]{16}$"},
+    "decision": {"type": "string", "enum": ["approve", "reject"]},
+    "start_line": {"type": ["integer", "null"], "minimum": 1},
+    "end_line": {"type": ["integer", "null"], "minimum": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "rationale": {"type": "string"},
+    "unresolved_risks": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "source_id",
+    "decision",
+    "start_line",
+    "end_line",
+    "confidence",
+    "rationale",
+    "unresolved_risks"
+  ],
+  "additionalProperties": false
+}

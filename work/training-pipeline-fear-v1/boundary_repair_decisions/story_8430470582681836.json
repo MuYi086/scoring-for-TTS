@@ -1,0 +1,18 @@
+{
+  "source_id": "story_8430470582681836",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围 L1047–L1043 起始行晚于结束行，非连续范围；上下文仅显示《邪恶的盆栽》从 L1047 开始，未提供其结局，无法确认完整独立故事边界。",
+  "unresolved_risks": [
+    "缺少《邪恶的盆栽》结局及其后续相邻边界证据。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "024d73a74402325cd14fcf1de46fe04c5c29c3cb05b95f7cc732616e606402ae",
+    "generated_at": "2026-09-03T10:12:18+00:00"
+  }
+}

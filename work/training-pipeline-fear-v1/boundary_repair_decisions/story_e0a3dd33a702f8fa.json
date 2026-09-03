@@ -1,0 +1,18 @@
+{
+  "source_id": "story_e0a3dd33a702f8fa",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.97,
+  "rationale": "给定的边界上下文仅展示了候选范围的开头（L23–L83）和结尾（L435–L451），能够确认起止边界与刊后访谈的分隔，但未提供L84–L434的连续正文证据，无法独立确认候选范围内部不存在串页、栏目或缺段。",
+  "unresolved_risks": [
+    "L84–L434未在所给边界上下文中出现，内部连续性与正文纯净性无法核实。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "af8889cc002a042686ffdd5ae259a07e593d99dc8cda357e53621792ae0c6058",
+    "generated_at": "2026-09-03T10:25:25+00:00"
+  }
+}

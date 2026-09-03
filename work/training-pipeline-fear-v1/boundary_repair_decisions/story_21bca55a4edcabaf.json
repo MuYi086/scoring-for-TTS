@@ -1,0 +1,16 @@
+{
+  "source_id": "story_21bca55a4edcabaf",
+  "decision": "approve",
+  "start_line": 595,
+  "end_line": 853,
+  "confidence": 0.99,
+  "rationale": "L595为《晴天娃娃》标题，随后正文连续展开并在L853完成悬念结局；L855编辑邮箱、L857图片以及L859-L860署名均在候选范围外，L862才开始相邻故事。候选范围未见相邻故事、编辑文字或未解决缺段混入。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "2a352734bbac7bb187adc77f648d73d8c3466f4ed790d11da85f068c06988db9",
+    "generated_at": "2026-09-03T10:03:16+00:00"
+  }
+}

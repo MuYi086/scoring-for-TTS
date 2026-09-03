@@ -1,0 +1,18 @@
+{
+  "source_id": "story_7ba092559c67eed7",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.98,
+  "rationale": "候选范围虽从“诡异纸条”标题开始并在故事尾声结束，但 Step 2 明确记录正文中存在“铺／年夜凶灵／位前”的内部串页污染；因此无法确认 L2748–L3302 是无内部污染、完整连续的独立故事。",
+  "unresolved_risks": [
+    "候选正文存在版面小标题“年夜凶灵”串入“铺位前”的内部污染，破坏连续性。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "4496c5ee18fd28c7a2e352b271057d0822d45f801a28e2007704507424dcbda3",
+    "generated_at": "2026-09-03T10:11:05+00:00"
+  }
+}

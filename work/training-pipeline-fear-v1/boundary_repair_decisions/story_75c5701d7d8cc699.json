@@ -1,0 +1,18 @@
+{
+  "source_id": "story_75c5701d7d8cc699",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围内部 L2132 插入“# 鬼故事”标题，夹在“钥嬷嬷眼”与“里散落的灵花”之间，存在未消除的版面串入/内部污染，不能确认其为连续、无污染的独立故事。",
+  "unresolved_risks": [
+    "L2132 的“# 鬼故事”疑为相邻版面标题串入正文，候选范围包含非正文内容。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "f9ee9ba12256d014c78a29010472a70a13b78a0a844d74b1b0e8afe240e06e34",
+    "generated_at": "2026-09-03T10:09:45+00:00"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "story_24e103b32b857b7a",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围虽包含结局且下一篇从 L881 开始，但开头仍不连续：L813 以“里加班。”残缺起句，L815 以“样”断尾、L819 以“子。”补尾，且 L823 的“学生会”与 L813 才能拼接，说明正文发生跨页/版面错序。无法确认该范围具有完整、连续的独立开头。",
+  "unresolved_risks": [
+    "开头存在未解决的跨页或版面串接，L813–L825 的正文顺序不连续。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "0e95e1f479440fa1d0ff1a0be7cd7e3042191a6e1de659fef420c862c2148b94",
+    "generated_at": "2026-09-03T10:03:41+00:00"
+  }
+}

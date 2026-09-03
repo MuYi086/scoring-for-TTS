@@ -1,0 +1,16 @@
+{
+  "source_id": "story_41350da79ee21bd5",
+  "decision": "approve",
+  "start_line": 901,
+  "end_line": 1235,
+  "confidence": 0.99,
+  "rationale": "L901以本故事章节标题“第一天”及正文起始；L1207–L1235呈现“天亮了”后的完整结局与结尾插图。相邻故事“老北街”从L1237才开始，候选范围内未见相邻故事、广告、栏目、编辑文字、内部串页或未解决缺段。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "a15cbf98421886c7df0efb86fe898a04fcc30cf03c124232b3ef14e9760a3c82",
+    "generated_at": "2026-09-03T10:05:36+00:00"
+  }
+}

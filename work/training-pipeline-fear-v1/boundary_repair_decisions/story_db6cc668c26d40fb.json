@@ -1,0 +1,16 @@
+{
+  "source_id": "story_db6cc668c26d40fb",
+  "decision": "approve",
+  "start_line": 398,
+  "end_line": 489,
+  "confidence": 0.97,
+  "rationale": "L398–403提供抵达村庄、麦田、打谷场、石碾及中年女人的完整开端；L404–489叙事连续并在L489完成收束。L392属前篇结尾，L493明确开启下一篇《墓妈妈》；夹入的图片不构成正文污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "4cadb49ae109b11af25b9dcb60803d40ccfd552c827eb4557cead6ca73d050eb",
+    "generated_at": "2026-09-03T10:24:37+00:00"
+  }
+}

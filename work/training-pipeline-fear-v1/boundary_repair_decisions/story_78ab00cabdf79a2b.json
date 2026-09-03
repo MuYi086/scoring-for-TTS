@@ -1,0 +1,16 @@
+{
+  "source_id": "story_78ab00cabdf79a2b",
+  "decision": "approve",
+  "start_line": 432,
+  "end_line": 682,
+  "confidence": 0.98,
+  "rationale": "L432以完整叙事开头，L664–L678完成纵火复仇及反转结局；L680、L682仅为结尾图片标记。相邻故事从L684另起“有天晚上……”开始，未纳入候选范围。候选范围内未见编辑文字、栏目或串页正文污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "5e5bbd4e8fb10dc2dffdca48fc5b03f208cbc0afac0b1f5e9b45450002cd656e",
+    "generated_at": "2026-09-03T10:10:19+00:00"
+  }
+}

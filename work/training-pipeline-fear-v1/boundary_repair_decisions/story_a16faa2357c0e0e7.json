@@ -1,0 +1,16 @@
+{
+  "source_id": "story_a16faa2357c0e0e7",
+  "decision": "approve",
+  "start_line": 1972,
+  "end_line": 2000,
+  "confidence": 0.99,
+  "rationale": "L1972为标题及完整开头，L2000揭示并收束“偷走哈欠者”的真相；L2002起人物与情节明确切换为相邻独立故事，候选范围内无相邻内容或非正文污染。",
+  "unresolved_risks": [],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "37bcbdc81944440b5e171030b03936e68d56d99ad91080a3f0cda1ce3e19e686",
+    "generated_at": "2026-09-03T10:17:38+00:00"
+  }
+}

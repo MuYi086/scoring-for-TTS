@@ -1,0 +1,18 @@
+{
+  "source_id": "story_b0d789fd0ce710df",
+  "decision": "reject",
+  "start_line": null,
+  "end_line": null,
+  "confidence": 0.99,
+  "rationale": "候选范围L349–L471虽在L471形成结局且已排除L473起的相邻故事，但L349前L289–L348已是同一故事的连续正文与回忆；L349仅为篇名重现，候选范围缺少完整开头，不能确认为完整独立故事。",
+  "unresolved_risks": [
+    "真实故事起始位置不在提供的可确认候选范围内，无法确认完整开头。"
+  ],
+  "_provenance": {
+    "stage": "automatic_boundary_repair_decision",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "repair_sha256": "adab664d4a8edaad27257fd45f92b3c59ff74a5ed542f48d1b80f52fc1b22b51",
+    "generated_at": "2026-09-03T10:20:47+00:00"
+  }
+}
