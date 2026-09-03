@@ -1,0 +1,89 @@
+{
+  "source_id": "story_bf9bfdba32aee561",
+  "characters": [
+    {
+      "name": "小雯",
+      "aliases": [],
+      "role": "刚毕业进城打工、租住偏僻出租屋的年轻女子"
+    },
+    {
+      "name": "房东",
+      "aliases": [],
+      "role": "出租房屋并说明床垫来历的人"
+    },
+    {
+      "name": "同事",
+      "aliases": [],
+      "role": "陪小雯回出租屋检查床垫的人"
+    },
+    {
+      "name": "解梦先生",
+      "aliases": [],
+      "role": "建议小雯检查床垫的人"
+    },
+    {
+      "name": "梦中女人",
+      "aliases": [
+        "人皮中的女人脸"
+      ],
+      "role": "在梦中反复呼喊并最终以人皮形态出现的恐怖形象"
+    }
+  ],
+  "immutable_facts": [
+    "小雯刚从学校毕业，因经济拮据到城里打工并租住偏僻小巷中的房屋。",
+    "出租屋有四个空房间，其中一间包含一张看起来较新的弹簧床垫。",
+    "房东称床垫由上个房客留下，租住该房间无需另外付费。",
+    "小雯睡在床垫上后连续多次梦见一个穿睡衣的女人挣扎并呼喊“你压到我了”。",
+    "小雯与同事检查床垫底部时没有发现尸体，只看到弹簧钢架。",
+    "连续几天失眠后，小雯用刀割开床垫，并从内部扯出一张带有女人脸的惨白色人皮。"
+  ],
+  "clues": [
+    "床垫由上个房客留下且房东无法明确解释原因。",
+    "梦中女人反复说自己被压住、疲惫且难受。",
+    "床垫约30公分高，足以引发藏尸联想。",
+    "检查床垫底部没有尸体，但这并未排除床垫内部藏有异常物。",
+    "梦境在检查床垫后仍继续出现，提示问题不在床垫底部。"
+  ],
+  "misdirection": [
+    "小雯根据报纸上的出租屋藏尸新闻，先怀疑床垫底下藏着女尸。",
+    "床垫底部没有尸体，使小雯暂时认为只是自己疑神疑鬼。",
+    "解梦先生的建议和床垫高度强化了“藏尸”方向，但真正的异常物是床垫内部的人皮。"
+  ],
+  "twist": "小雯割开床垫后发现，反复出现在梦中的女人并非单纯幻觉；床垫内部藏着一张带女人脸的惨白人皮。",
+  "story_dna": {
+    "genre": "都市短篇恐怖故事",
+    "narrative_viewpoint": "第三人称叙述，主要跟随小雯的感知与恐惧展开",
+    "timeline": "线性时间，持续数个夜晚，从租房、反复做梦、检查床垫到割开床垫结束",
+    "suspense_mechanism": [
+      "重复梦境与固定呼喊形成听觉记忆点",
+      "通过藏尸假设制造错误搜索方向",
+      "先展示床垫底部无尸体，再延迟揭示床垫内部的人皮",
+      "现实与梦境逐步重叠，直到结尾证实异常来源"
+    ],
+    "audio_adaptation_risks": [
+      "梦中女人的呼喊需清晰区分于叙述与现实对白",
+      "重复台词较多，需保持递进的恐惧强度",
+      "割开床垫和扯出人皮的动作依赖音效表现",
+      "“床垫底部无尸体”与“床垫内部有人皮”的空间区别需通过叙述明确"
+    ]
+  },
+  "ocr_flags": [],
+  "difficulty": "hard",
+  "boundary_assessment": {
+    "status": "complete",
+    "confidence": 0.99,
+    "issues": [],
+    "suggested_start_line": null,
+    "suggested_end_line": null
+  },
+  "_provenance": {
+    "stage": "story_analysis",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_bf9bfdba32aee561.txt",
+    "input_sha256": "9f336b2181f47d93e05f3b2edc5419a2adfa734518af4a5e12b256fe496adae5",
+    "generated_at": "2026-09-03T01:48:40+00:00",
+    "codex_cwd": "/home/muyi086/github/scoring-for-TTS"
+  }
+}
