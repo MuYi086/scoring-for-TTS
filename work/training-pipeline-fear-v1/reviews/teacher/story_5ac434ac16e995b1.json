@@ -1,0 +1,57 @@
+{
+  "source_id": "story_5ac434ac16e995b1",
+  "factual_consistency": 0.91,
+  "audio_readability": 0.76,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "death_method",
+      "severity": "critical",
+      "evidence": "B 的“阿珍倒在血泊中”后紧接“那一砍…阿美…她…断了气”，死亡对象与斧击对象的指代无法确定；结尾又称“阿珍又不在了”。",
+      "suggestion": "人工裁定阿珍、阿美的受伤与死亡事实后再定稿；不得自行将死亡对象或斧击结果明确化。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“不能控制地大哄大叫”，该搭配疑为原稿/OCR 异常，朗读时语义突兀。",
+      "suggestion": "在不改变阿明失控吼叫这一事实的前提下，人工确认并修正为自然、可朗读的表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 的“接住‘当’一声，斧头应声掉了下来”语义不通，停连和动作关系无法自然朗读。",
+      "suggestion": "人工核对该处动作连接词；确认后改为能清楚表达斧头落地的表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“小心奕奕”，为明显的字词异常，会影响 TTS 文本质量。",
+      "suggestion": "在人工确认后规范为常用写法，同时保持阿美蹑手蹑脚、避免发声的动作。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_5ac434ac16e995b1.txt",
+    "input_sha256": "5d1d3703516e2d8c0770b8840989f41978a6b8ea799f6d8625d50186f6a330bb",
+    "analysis_sha256": "0a55dbf0fc7e8b5e4c9e110dc31e7480e56fdf70f443db60a400c0f33d158fa0",
+    "rewrite_sha256": "7fdc17f0c4e96ea4de8edd12d75fc63196321b4078149f31512a55ef72ee0935",
+    "generated_at": "2026-09-04T04:24:27+00:00"
+  }
+}

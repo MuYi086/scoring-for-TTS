@@ -1,0 +1,39 @@
+{
+  "source_id": "story_2b80d0fc0cdbc4da",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.97,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "原稿标题、署名后有结尾场景的预告；B从正式开场直接开始，删去了该预告。",
+      "suggestion": "确认这是有意删除重复导语；若需严格保留原稿叙事框架，应恢复为简短开场预告。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2b80d0fc0cdbc4da.txt",
+    "input_sha256": "87c28a5c4c0c19dc09310a0df33c83bf2f667e25ed4f658cdf2fdcfda3bef5cd",
+    "analysis_sha256": "b7c8bd40332c6a0adbace7077b39401c9ef06c390de71f5887349e0e84e9d267",
+    "rewrite_sha256": "2d231ebb71f16f1169e9e759dd8be846dd98328afba259ca5c3d077e65df1cae",
+    "generated_at": "2026-09-04T01:04:14+00:00"
+  }
+}

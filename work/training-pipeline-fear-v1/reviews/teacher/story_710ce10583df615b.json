@@ -1,0 +1,45 @@
+{
+  "source_id": "story_710ce10583df615b",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "范世杰发现同学漏报自己后，“眼瞎了，还是不认识我了？”一段未标示为内心独白，随后才出现“范世杰正想说”。",
+      "suggestion": "在该段开头补充简短的内心活动归属，避免有声听众误判为现场对白。"
+    },
+    {
+      "category": "other",
+      "severity": "minor",
+      "evidence": "“见人差不多到齐了”替换原文“见差不多了”，而尹玉生尚未到场。",
+      "suggestion": "改为不暗示全员到齐的中性表述，以完全保留原文状态。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_710ce10583df615b.txt",
+    "input_sha256": "7de8c95f2635809537367fc221b208e9d6072a838d87959ff02e3e4143eb5cb3",
+    "analysis_sha256": "0d39fe4c23c4e2e88dc0801cde29a627e73ccab270972b419e1810ab64f24498",
+    "rewrite_sha256": "6b1f81d9c2cbaf9f44daa2068e4af499cf843b992e1be508781586d62f7a714b",
+    "generated_at": "2026-09-04T06:25:25+00:00"
+  }
+}

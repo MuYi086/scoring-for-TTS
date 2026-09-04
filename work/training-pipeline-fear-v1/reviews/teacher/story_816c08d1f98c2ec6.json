@@ -1,0 +1,51 @@
+{
+  "source_id": "story_816c08d1f98c2ec6",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B“另一个真相”段：张成被称作“她”，与张成为男性及前后指代冲突。",
+      "suggestion": "将“她被妹妹的幻象引到了湖中淹死”改为“他被妹妹的幻象引到了湖中淹死”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B开篇尸检推断句保留“才会导致成这样”。",
+      "suggestion": "补全为“才会导致他变成这样”，使朗读语义完整。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B揭示宁兰死亡日期前保留“陈云已经吓得已经语无伦次了”。",
+      "suggestion": "删除重复的“已经”，避免有声朗读卡顿。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_816c08d1f98c2ec6.txt",
+    "input_sha256": "bf4436f7bf144b71bd46506656938f272d1aec9117bc854444ff7dc131602699",
+    "analysis_sha256": "f455b4114b2f5fc923913fa6d0f5fdf4908f79a590ded6daefb07fdd4bc5eb09",
+    "rewrite_sha256": "a6400bcfe2dc8078397435e2199d94d90ed0b97714813f9fa0313322c1f9f078",
+    "generated_at": "2026-09-04T08:23:47+00:00"
+  }
+}

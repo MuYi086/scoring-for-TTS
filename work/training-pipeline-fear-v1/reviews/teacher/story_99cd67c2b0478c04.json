@@ -1,0 +1,39 @@
+{
+  "source_id": "story_99cd67c2b0478c04",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "垃圾处理时间对白处写成“送到山下。时9点50”，其中“时”使句子断裂，朗读会产生明显歧义。",
+      "suggestion": "在不改变原稿时间信息的前提下，改为可朗读的完整表述，例如明确“送到山下是九点五十，十点会有垃圾车来接”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_99cd67c2b0478c04.txt",
+    "input_sha256": "05ea5d6bfbc16261b77e17a317b7fddfdbd8cfec64bd0676e1240d525c6f6049",
+    "analysis_sha256": "9cde08e245ffa4ab1dd78daa30f45771399e75f2036bf624ed4b57ec8f1bf304",
+    "rewrite_sha256": "e031393f13d77d1329af74370b3638d294b5be190f0a107323a4b0df71163b94",
+    "generated_at": "2026-09-04T12:11:17+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_994e0a8dfae0d9a2",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "易星决定做 DNA 鉴定前的内心独白仍含“那天昨晚”这一时间指代冲突。",
+      "suggestion": "改为单一明确的时间指代，保持其对父亲换药和布置现场的怀疑。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "父亲书信中“他的前夫”与前句女性母亲的指代不一致，朗读时易造成角色关系歧义。",
+      "suggestion": "在不改变亲属关系事实的前提下，统一为指向母亲的代词。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_994e0a8dfae0d9a2.txt",
+    "input_sha256": "85cdc972199eb0ae33d85a3be0dd32fe3c2bde55a288f934fde48cea77d408de",
+    "analysis_sha256": "8e4fdc819650215e2e87276b13d267e728a3e14984c907e9e5ca1cc0ceff87be",
+    "rewrite_sha256": "329831dff3faea8c7fdde988a80cc5bcf7d6381a427aaeb6f102c9ff7825a769",
+    "generated_at": "2026-09-04T12:10:08+00:00"
+  }
+}

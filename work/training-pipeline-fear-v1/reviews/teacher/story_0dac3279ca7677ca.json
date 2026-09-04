@@ -1,0 +1,57 @@
+{
+  "source_id": "story_0dac3279ca7677ca",
+  "factual_consistency": 0.3,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.18,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界包显示提取终点 L2225 后紧接同一叙事的续篇标题《躺在我的衣柜里》（L2229），并持续至 L2252；A 截止于 L2225。",
+      "suggestion": "停止改写验收并升级处理：将来源边界扩展至该故事真正结尾后，再重新执行后续步骤。"
+    },
+    {
+      "category": "twist",
+      "severity": "critical",
+      "evidence": "B 随截断的 A 结束于防虫剂和虫蛀解释，缺失边界包 L2231-L2252 对衣柜暗门、男友尸体、白围巾及叙述者欺骗的最终揭示。",
+      "suggestion": "在来源边界修复后，重新生成并核验完整有声稿；不可将当前结尾视为原作反转。"
+    },
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "B 的末尾将虫蛀解释呈现为完整收束，但原文后续揭示其与藏尸、围巾替换和欺骗前任女友相互关联。",
+      "suggestion": "待补全来源后恢复完整因果链，并在防虫剂揭示后保留足够停顿以承接终局反转。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在“就在我找钥匙时，我的衣柜最近总是锁着的。”处将原括注直接拆成独立陈述，句法和语义均不自然。",
+      "suggestion": "来源修复后的重写中，将其改为自然的旁白说明，并清晰连接“找钥匙”与“衣柜近期上锁”。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0dac3279ca7677ca.txt",
+    "input_sha256": "29b555a567dfcbadcf7a3cd44f12ee7d93aea5890f079dd28fb0958467bc17b1",
+    "analysis_sha256": "3d977130b72f9ef14a28ba2752aff1aea09a143a310e328a066c1649b42d2bf6",
+    "rewrite_sha256": "9c2434d81028351973575b54db2520e41dfc6a33c6a1aef08fae0627add0e153",
+    "generated_at": "2026-09-03T16:19:39+00:00"
+  }
+}

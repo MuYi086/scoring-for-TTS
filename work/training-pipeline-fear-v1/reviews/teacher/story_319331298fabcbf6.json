@@ -1,0 +1,45 @@
+{
+  "source_id": "story_319331298fabcbf6",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "表演段“乔一人同时演绎了两个角色：她的，还有已经去世的搭档林安的”句法残缺，角色关系无法顺畅朗读。",
+      "suggestion": "明确为乔分别演绎自己与林安对应的两个角色，不增添原文未证实的表演细节。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾连续三段引号对白未在对白前标注说话人；“失去了就是失去了”与其后的回应需靠上下文推断为阿紫、青的对话。",
+      "suggestion": "在不改变台词与剧情的前提下补足必要的说话人提示，便于配音切换声线。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_319331298fabcbf6.txt",
+    "input_sha256": "ec1c49fa6866e923ef470d5d0d75f366f718c38eb425531afcb08008db7f2f3d",
+    "analysis_sha256": "b63ec555052a894e1cd85487df62782d8e2e3ec507fe498f82b6e1dfabe0cb51",
+    "rewrite_sha256": "588bbf0110d02333c3f2daf8e30a99f97bbe63cb44f021bcf2a9b6f2b6995285",
+    "generated_at": "2026-09-04T01:09:41+00:00"
+  }
+}

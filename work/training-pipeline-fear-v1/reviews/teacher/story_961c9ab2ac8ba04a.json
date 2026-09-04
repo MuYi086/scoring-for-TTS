@@ -1,0 +1,39 @@
+{
+  "source_id": "story_961c9ab2ac8ba04a",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“永远的婴儿”邮件的前两段各以中文左引号开头，却未在段末闭合；仅第三段有右引号。",
+      "suggestion": "将整封邮件作为一个明确的引语块，或为每个邮件段落分别补全成对引号，避免朗读停顿和引语边界含混。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_961c9ab2ac8ba04a.txt",
+    "input_sha256": "a56b2f6ae0592b703f4e0c621c9d52910eec36baf6b39877309e7e3e237ac61d",
+    "analysis_sha256": "aa3e6384fab94cc9ffeeded3ba347d17b160f7004ab50d25e341d31f63687a42",
+    "rewrite_sha256": "7cdae02507b628e7b188c13d7be4afa174c0f2382da09387bf1c9425b00059ee",
+    "generated_at": "2026-09-04T11:12:16+00:00"
+  }
+}

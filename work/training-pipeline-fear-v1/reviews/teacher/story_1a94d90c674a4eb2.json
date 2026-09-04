@@ -1,0 +1,51 @@
+{
+  "source_id": "story_1a94d90c674a4eb2",
+  "factual_consistency": 0.91,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "B开篇称吴老太“死去多年的寡居”，后文又明确她新死、守灵当日为死后第三天。",
+      "suggestion": "统一为新近去世，避免破坏第三天守灵的核心时间条件。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "吴百万劝阻对白中“估计你生前就没跟她多讲过一句话吧”对活着的吴刚不通。",
+      "suggestion": "按上下文校正为指吴刚平日未与吴老太多说话的表达。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾酬金段先说吴百万给近两万元，随后“她通过吴百万手给我的两万元”中“她”指代不清。",
+      "suggestion": "明确款项支付者或保留原有不确定性但消除代词歧义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1a94d90c674a4eb2.txt",
+    "input_sha256": "f68d7d0f86bbc1ac8db6ec6db40d867f4e6c4dcddddf25df60cb2a4f53dcb4bd",
+    "analysis_sha256": "3800fdfe3475ccc9414110d15ab68039a016a0ba4ad22100256276b44f9892f9",
+    "rewrite_sha256": "1a77b4ef354468e56fa0c05f9e74ff8ce357494f74c5bca96f78267e6fd95d3e",
+    "generated_at": "2026-09-04T00:32:39+00:00"
+  }
+}

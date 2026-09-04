@@ -1,0 +1,51 @@
+{
+  "source_id": "story_78aa20a8fc157049",
+  "factual_consistency": 0.86,
+  "audio_readability": 0.74,
+  "suspense_preservation": 0.88,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "critical",
+      "evidence": "B 第225、229段将“谁默”作为独立说话者；B 第253、315、327段又出现“闻纺”“闻穿”，与既有谦默、闻窈的身份关系无法由 A 确认。Step 2 也标记为 OCR 疑点。",
+      "suggestion": "人工核定这些姓名是否分别应为“谦默”“闻窈”；在未核定前不能把它们作为可确定的人物事实用于有声稿。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 第223段把 A 中“图”后无署名的第二人称文字明确标为“阿衍说”；同类无署名段落也在第283、321、365段被归为阿衍发言。",
+      "suggestion": "保留为无署名的内心独白/转场文字，或待人工依据底本确认说话者后再添加归属。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第319段以“我把石头从窗户上取了下来，再也不敢。”结束，句意残缺，朗读会形成突兀断裂。",
+      "suggestion": "不要补写缺文；删除残句或以明确的朗读停顿提示处理，并保留来源缺段待核。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_78aa20a8fc157049.txt",
+    "input_sha256": "e478da233dc712f447de3c6eba0c00875166fc1e842b10b2733adfe87a25a42a",
+    "analysis_sha256": "5345035ee887be59c6b093a0c97b39ba318a0e8bd18804b1dcd93b4196f83c2b",
+    "rewrite_sha256": "0b85402783fb41a05f4ffcebc004d0754a07442e49f718461f10dcb0ea7e3c92",
+    "generated_at": "2026-09-04T06:32:39+00:00"
+  }
+}

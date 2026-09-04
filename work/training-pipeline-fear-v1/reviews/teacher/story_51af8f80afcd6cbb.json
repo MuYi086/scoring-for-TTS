@@ -1,0 +1,39 @@
+{
+  "source_id": "story_51af8f80afcd6cbb",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中检查陈阿婆东侧屋的段落仍写作“陆婷爹着胆子走进屋里”。",
+      "suggestion": "将疑似 OCR 错字“爹着胆子”校正为“鼓着胆子”，避免 TTS 误读并恢复语义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_51af8f80afcd6cbb.txt",
+    "input_sha256": "6d01c6c1b8e9ee32f696985af4ceda4e7030417ee02c9eaeea5d74b25f1bc64d",
+    "analysis_sha256": "e5bf5b6ac499db03e5ccc78b15de1eadfd3bd812577b0d3d58c7d7de97bb5982",
+    "rewrite_sha256": "9c3384a4acfe4779846b68b7298ed93b20e53c3f258f602effac8b282bddacf2",
+    "generated_at": "2026-09-04T04:13:56+00:00"
+  }
+}

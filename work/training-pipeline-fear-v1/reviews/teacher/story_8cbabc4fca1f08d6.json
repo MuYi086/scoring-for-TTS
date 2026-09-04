@@ -1,0 +1,39 @@
+{
+  "source_id": "story_8cbabc4fca1f08d6",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“我会觉得这一切都是在做梦”“我和他们起去了”等明显不顺的 OCR 语句。",
+      "suggestion": "在不改变事实的前提下，修正为自然口语并复核原句含义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8cbabc4fca1f08d6.txt",
+    "input_sha256": "b22166b13f34778c59993df0f70243ae5c76fc22c3b8df3d7b08aa20dedc1a03",
+    "analysis_sha256": "a4c78a34d2697c7bf430bdcab3b4b74f9ba8814f5091dd4db10eeb9995eac0f4",
+    "rewrite_sha256": "48389ea7e2d2005dd92d76ecc2107117c7420fe33d693e227b448fb3df7e4121",
+    "generated_at": "2026-09-04T08:34:03+00:00"
+  }
+}

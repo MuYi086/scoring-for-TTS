@@ -1,0 +1,45 @@
+{
+  "source_id": "story_68437f42a749694d",
+  "factual_consistency": 1,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾“头顶宣传到了茹晓梦的心底”保留了明显语义异常，朗读时无法形成可理解画面。",
+      "suggestion": "在不改变寒意蔓延含义的前提下，改正“宣传”这一异常词。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "茹晓梦临终自述段从“茹晓菲，你还记得”起连续多段使用开引号，直至末段才闭合，引号层级不一致。",
+      "suggestion": "统一这段连续独白的引号范围和段落标点，确保语音对白模式与停顿稳定。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_68437f42a749694d.txt",
+    "input_sha256": "5332e38e6bb8788071ec1000c8165ea2a8297061c73631b8ad36063843d331aa",
+    "analysis_sha256": "9decceb6646a0345c578965ee29824fc29d870f96038c4f413e712cd8d9224c9",
+    "rewrite_sha256": "f9c91bdf9ef6a687273535edb1033ed940f36921be9661126bd4d0ae28f61e20",
+    "generated_at": "2026-09-04T06:16:14+00:00"
+  }
+}

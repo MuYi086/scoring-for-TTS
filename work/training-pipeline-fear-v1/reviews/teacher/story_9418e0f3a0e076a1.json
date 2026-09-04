@@ -1,0 +1,51 @@
+{
+  "source_id": "story_9418e0f3a0e076a1",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "王峰回应陶菲菲处仍为“不能能讲出好故事”。",
+      "suggestion": "删去重复的“能”，避免朗读卡顿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "王峰首次开讲前保留“拭耳以待”。",
+      "suggestion": "改为通行表达“洗耳以待”，提升语义和朗读自然度。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "五人白天进入旧楼前，陶菲菲台词为“大白天的都疼得慌”。",
+      "suggestion": "该处疑为OCR语义异常；在不改变其恐惧反应的前提下改成可确认、可自然朗读的措辞。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_9418e0f3a0e076a1.txt",
+    "input_sha256": "c0d07d54423afffbaa56d802e22e528ce929ad472a7d8304330c3317336e41ca",
+    "analysis_sha256": "bb7f36afdb632b19ac5635a5bc56607222f25308b78e85c7f95bbdd077b892a7",
+    "rewrite_sha256": "69918f41c1c78968d739547128d1bcc8a7e142d4706373b0350d3c0275d55b39",
+    "generated_at": "2026-09-04T11:08:56+00:00"
+  }
+}

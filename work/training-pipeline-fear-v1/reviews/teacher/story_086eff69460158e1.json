@@ -1,0 +1,51 @@
+{
+  "source_id": "story_086eff69460158e1",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "教室初见三名女生段保留“初她们外教室空无一人”，句义无法确定。",
+      "suggestion": "人工核对原始 OCR 语义后，改为可朗读的完整叙述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "楼梯、阳台和优出现段仍有“零有打了一个寒颤”“唱着个”“这是灵唯一知道”“她毫无控制的身体”等不通顺表述。",
+      "suggestion": "在不改变事件、人物或因果的前提下，逐处修正为自然口语句。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "首段“零确定了下来”与浩死后“这可以说是零可想而知的”表意别扭，朗读时易造成理解停顿。",
+      "suggestion": "调整为明确的叙述表达，并保留歌声来源与零预见死亡的含义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_086eff69460158e1.txt",
+    "input_sha256": "039fd600f6713b68ebd7f666a2d1fd32309def832a4a0fb5968fc8a692df2827",
+    "analysis_sha256": "9c1a99d2acc91728369ef1c4dc5a6865f3edf54d3187781a15fec768e7f4c458",
+    "rewrite_sha256": "7264d6e227a76e3a16d8eb49ec6bca5a1d1d1dc6c8304b34acbabb207879ca4c",
+    "generated_at": "2026-09-03T16:13:00+00:00"
+  }
+}

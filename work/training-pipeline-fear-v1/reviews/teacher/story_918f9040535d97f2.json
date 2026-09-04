@@ -1,0 +1,51 @@
+{
+  "source_id": "story_918f9040535d97f2",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“晒天阳”这一明显词误，位于方慧电话传授避鬼方法处。",
+      "suggestion": "改为“晒太阳”，避免朗读出现不自然词汇。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“把这今天挺过去”，位于曲萌挂断方慧电话后的自语。",
+      "suggestion": "删去“这”，使句子为“把今天挺过去”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“发束的尽头的地板裂开了”，位于剪发后鬼脸出现处。",
+      "suggestion": "删去重复的“的”，使断句更顺畅。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_918f9040535d97f2.txt",
+    "input_sha256": "2c13cd21eb7ae2d0d5dc54f0d6f6422df501469cb3e29bd3f109af8664521fad",
+    "analysis_sha256": "c83ce7983414aa7c3a34bca1081e1076143211f9f9dbc11eefabf9eca682d184",
+    "rewrite_sha256": "4774459f940039179f82267f80e95cec05f82a5e691bdf13e5cde2cda19707d6",
+    "generated_at": "2026-09-04T11:06:37+00:00"
+  }
+}

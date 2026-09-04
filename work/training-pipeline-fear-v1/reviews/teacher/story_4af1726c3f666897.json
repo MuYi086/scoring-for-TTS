@@ -1,0 +1,39 @@
+{
+  "source_id": "story_4af1726c3f666897",
+  "factual_consistency": 1,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B保留“老鼠成群结队党”“购的此房”“做的车”“到在了血泊中”“停留在住”等明显OCR/病句位置。",
+      "suggestion": "在不改变事实的前提下校正这些词句；其余断句、对白归属和指代均清晰。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4af1726c3f666897.txt",
+    "input_sha256": "c2dab2768d672ff9bcf223c0191557b6e52c41b1fb75ae5e78f6fd6ef85698e6",
+    "analysis_sha256": "70a053db30ef0e728f87d5efef117525c0998dc544d76f2d23bf22e7fa4624e3",
+    "rewrite_sha256": "e459ecc436e85588e2dfdee0c642adedac74420e9e299c948b4f80ce7ec79e7f",
+    "generated_at": "2026-09-04T01:50:44+00:00"
+  }
+}

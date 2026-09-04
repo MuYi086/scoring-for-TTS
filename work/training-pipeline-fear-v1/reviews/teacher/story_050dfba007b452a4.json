@@ -1,0 +1,39 @@
+{
+  "source_id": "story_050dfba007b452a4",
+  "factual_consistency": 0.94,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 在提款机段将“学长，你本来就是坏人好吗？……”标为“我说”；原文该句承接女生的抗议，叙述者随后才“我无语”。",
+      "suggestion": "将该句说话人改为女生/莫安童，保留叙述者随后无语并出示余额的因果。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_050dfba007b452a4.txt",
+    "input_sha256": "7caf8540adf296ecdeaff6a8ba4dfffaef72e8740916b073f70c589613649788",
+    "analysis_sha256": "1e38ce16edca12d5b224ec3f96b3566e9cd4f044b73a674492a46535f26e7d47",
+    "rewrite_sha256": "208a7a79e2a1def37a3dfffc20963b3f3e8a78d50adc57192827c41f11f4015e",
+    "generated_at": "2026-09-03T16:09:05+00:00"
+  }
+}

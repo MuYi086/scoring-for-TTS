@@ -1,0 +1,39 @@
+{
+  "source_id": "story_09444a89545d434e",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.58,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "causality",
+      "severity": "critical",
+      "evidence": "卡车事故后林栋解释红衣女人与徐昌文下车动机的段落仍有“身……”“衣领子，一路把面”等断裂。",
+      "suggestion": "该处关系到事故因果，原文无法可靠复原；保留现状会造成有声理解中断，应人工核对可用来源后再处理。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_09444a89545d434e.txt",
+    "input_sha256": "9bd8ca38894619bf1989c0c40bfffe5d63ee947ef922e2781f3bb3ee8c1642e2",
+    "analysis_sha256": "ede76d7f8d6a2a3ef27cacc0f12a76b39a49fd605d25b8bb30050249baacdf65",
+    "rewrite_sha256": "afd75c8e6d562b9a0aee325cf588b83e031006b8bdb90f37cd75b0bd22c78496",
+    "generated_at": "2026-09-03T16:14:37+00:00"
+  }
+}

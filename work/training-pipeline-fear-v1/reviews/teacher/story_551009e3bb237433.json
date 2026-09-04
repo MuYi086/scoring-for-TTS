@@ -1,0 +1,51 @@
+{
+  "source_id": "story_551009e3bb237433",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.61,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "critical",
+      "evidence": "B 结尾保留“这□”“砰□□□”“吱嘎□□□”“自己□晃”等乱码；对应原文 L1550。",
+      "suggestion": "该段无法在不猜测原意的前提下形成可朗读文本；需人工核对可用来源或确认删改策略。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“我吃烧烤不了也拿不动”“织光路灯”“出现的后门的路口”等不通顺表述；对应原文 L1538、L1540、L1548。",
+      "suggestion": "在不改变食物、地点和到达顺序等事实的前提下，进行人工可读性校订；无法确认原意处应保守处理。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“你什么了，摔了一跤吗？”缺少关键谓语，女人对白的问答听感突兀；对应原文 L1536。",
+      "suggestion": "补足为不改变伤势含义的自然问句，并保持该句由叙述者发问。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_551009e3bb237433.txt",
+    "input_sha256": "af76f75a624a104c5dabc03c2569cdaa62bed54f135955a057208cdacd99671f",
+    "analysis_sha256": "b3024a613a8d558ff0a9b604479ca745a3eb62969fe4f914015adcc9a833a185",
+    "rewrite_sha256": "139f09e7fde24403a504d8107a068e7a03a54fe46a59bcc088f86e2e5dfb6b40",
+    "generated_at": "2026-09-04T04:18:26+00:00"
+  }
+}

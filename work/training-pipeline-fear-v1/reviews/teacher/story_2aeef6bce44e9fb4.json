@@ -1,0 +1,57 @@
+{
+  "source_id": "story_2aeef6bce44e9fb4",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "宴会描写仍保留“现在众人眼前”，语义不完整；“光芒。红色长裙”虽已断句但原词疑有缺字。",
+      "suggestion": "核对为“出现在众人眼前”等完整表达，并确认相关缺字。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "“竟然产生里一种”“拜倒在其石榴粥下”明显不通顺，影响朗读理解。",
+      "suggestion": "核对 OCR 文字，修正为语义明确的词语。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“凡蒂冈”和“耶路撒冷的大师?”保留异常专名与标点；“离它不远处？”也不符合陈述语气。",
+      "suggestion": "统一专名为规范写法，并将异常问号按语义处理。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "数字密集出现，包括 100、60、50 年、2800、70 高龄、400 年和 10 里，连续口播时节奏易拥挤。",
+      "suggestion": "保留事实数字，同时用短句和停顿分组呈现。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "model_route": "luna_default_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2aeef6bce44e9fb4.txt",
+    "input_sha256": "f7bfb5f3b630844c21a16d9afa2ccac2f4b13d320ede0aec9ffae6d80e63dda1",
+    "analysis_sha256": "3d5d9704b35108539f9fa3ef5bf36eacf70a9cab8c5032c7554122f52ff7b2d5",
+    "rewrite_sha256": "99a5cd5ea19187d09cfd69643db5a1e5dce9c7474a64a8eef887ff727ab56b19",
+    "generated_at": "2026-09-04T00:42:29+00:00"
+  }
+}

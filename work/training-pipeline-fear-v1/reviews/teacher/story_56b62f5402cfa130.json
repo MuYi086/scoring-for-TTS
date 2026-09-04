@@ -1,0 +1,45 @@
+{
+  "source_id": "story_56b62f5402cfa130",
+  "factual_consistency": 0.9,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "other",
+      "severity": "major",
+      "evidence": "老板娘履历段在 A 末段存在严重串字；B 将其整理为“一个人做些小买卖”及“第四个分店”。",
+      "suggestion": "这两项具体履历无法由 A 稳定确认，需人工核验后再决定是否保留。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头“冰凉的酸梅茶的客人渐渐稀少”搭配生硬。",
+      "suggestion": "改为语义更顺的朗读表达，并保留夏末酸梅茶顾客减少这一信息。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_56b62f5402cfa130.txt",
+    "input_sha256": "8a536da3e6bbf65088f081b796c0dae38b44bf951dead35a9863c485f6d6aac3",
+    "analysis_sha256": "49080f749a039b77ddfa95a2e890aa48162cb6e426758e80af30454810dc8b4f",
+    "rewrite_sha256": "cacfd1b78590ce5721c90085be39263744a52b7bf2a1e35638b0cab3a99f848f",
+    "generated_at": "2026-09-04T04:21:55+00:00"
+  }
+}

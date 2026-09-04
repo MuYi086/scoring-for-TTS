@@ -1,0 +1,57 @@
+{
+  "source_id": "story_0108d87d8ba46e35",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头谢俊台词仍为“看书吧！.下个星期”，保留异常连用标点。",
+      "suggestion": "改为自然停顿，如“看书吧，下个星期就要期中考试了”。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中点名段仍写“三人未来上课”，朗读会读作时间词“未来”，与“三人没来上课”不同。",
+      "suggestion": "核对原意后改为“三人没来上课”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“警察……事先回了警察局”“从他断颈出不断地冒出”等不通顺表述。",
+      "suggestion": "分别核对并调整为合乎语义和口语朗读的措辞，如“先回了警察局”“从他断颈处……”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 结尾仍为“对质的结果时”，句法不完整，TTS 停顿也不自然。",
+      "suggestion": "改为“对质时”或“对质的结果是”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0108d87d8ba46e35.txt",
+    "input_sha256": "96a69afd9a287f9665bf9fc4c748485d84a8ed4b941a1d12c555d48ec99ea422",
+    "analysis_sha256": "d23dfda6aa61799c8a6b270405f13fabbc9772ba3778e29c92a7488ab302d85d",
+    "rewrite_sha256": "be2fa3d91120ca791499cccdb8c6582d536dcd9cbbed35b79c314ee7436c0422",
+    "generated_at": "2026-09-03T16:05:22+00:00"
+  }
+}

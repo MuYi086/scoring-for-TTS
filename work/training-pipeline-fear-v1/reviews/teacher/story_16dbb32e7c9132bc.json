@@ -1,0 +1,45 @@
+{
+  "source_id": "story_16dbb32e7c9132bc",
+  "factual_consistency": 0.94,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "B 第77行保留“17时的电脑屏幕上”；前后是夜间宿舍停电、寒秋道晚安的连续场景。",
+      "suggestion": "该处疑为“此时”的 OCR/排版错误；时间事实无法由现有文本完全确认，应人工裁定后再修正。"
+    },
+    {
+      "category": "causality",
+      "severity": "critical",
+      "evidence": "天台决胜段原稿中“灵魂可就要归”与后续“我了。我倒想知道……”及翻牌动作发生断裂倒置；B 第221—227行据语义重组了顺序。",
+      "suggestion": "这是决定李秋寒灵魂被收走的关键因果段。请人工确认原始排版/正确顺序后再接受该重组，避免以推断覆盖不可确认的硬事实。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_16dbb32e7c9132bc.txt",
+    "input_sha256": "9919db25a9ba848644fe4833a9b5f39ccdee2d4602e61b63debc3d5e3b3ba856",
+    "analysis_sha256": "68d58d288cf177675057658aa1909b3121e6edafe7f7224a6f7cfd67f0e476f5",
+    "rewrite_sha256": "83dc9ead9476f355bca4a3d97b2b4b93f7d79491bad0d20091a91dd2246f92dc",
+    "generated_at": "2026-09-03T16:28:26+00:00"
+  }
+}

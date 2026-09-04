@@ -1,0 +1,51 @@
+{
+  "source_id": "story_48b39853122b6779",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“WC”缩写（五楼厕所、电梯后厕所两处），TTS 可能逐字母朗读，破坏紧张段落。",
+      "suggestion": "统一改为“卫生间”或“洗手间”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "电梯惊吓段仍有“双方紧紧摆住”“不断地战抖”等疑似 OCR/误字，动作含义不清。",
+      "suggestion": "在不改变人物动作和恐惧强度的前提下，改为可确认、自然的动作表述；若无法确认原词，保守处理该句。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "法师台词中 B 将原文“尽管做我的实验”改为“尽管做你的实验”，虽语义更顺，但属于未标明的代词改动。",
+      "suggestion": "复核该处说话人和代词；确认后统一为语义明确、归属无歧义的表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_48b39853122b6779.txt",
+    "input_sha256": "80a3f20b9b3e2e059151c88ca5f78aca4bffc7920ac988d55e1cdb032d5a1373",
+    "analysis_sha256": "fc5f731c5762d020ba3135526f281cf48359fb2699eb035b1fbac53497155798",
+    "rewrite_sha256": "5c65ce4caf2cd6e009eb1969eedcc804e7165c0d7534ac5b7807d8580a66038e",
+    "generated_at": "2026-09-04T01:46:20+00:00"
+  }
+}

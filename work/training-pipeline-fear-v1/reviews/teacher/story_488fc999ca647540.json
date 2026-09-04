@@ -1,0 +1,51 @@
+{
+  "source_id": "story_488fc999ca647540",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "“但是秦觉和王海宁开心不起来”处将既有角色王功成读作“王海宁”。",
+      "suggestion": "统一为王功成，避免听众误判出现新人物。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开篇“秦觉应为这个现象松一口气”语义不通。",
+      "suggestion": "依上下文校正为“秦觉应该为这个现象松一口气”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“张海宁想停下脚步……他讥笑着说”中“他”的说话人需回指判断。",
+      "suggestion": "明确为“秦觉讥笑着说”，提升对白归属的有声清晰度。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_488fc999ca647540.txt",
+    "input_sha256": "4bc64d47f5855faa09a8f801a48a7c3e879366e6051781c5de3cff9627d8dfe1",
+    "analysis_sha256": "eb37d54d466ca3d08e988bcf79a7a1631b52bb511dc67a4f55c564617b136158",
+    "rewrite_sha256": "cec4a6497506656db2995b047d5400cb1ae0aa79e26f6c284f3879d1579976cf",
+    "generated_at": "2026-09-04T01:44:59+00:00"
+  }
+}

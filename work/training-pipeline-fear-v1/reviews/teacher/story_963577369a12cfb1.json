@@ -1,0 +1,39 @@
+{
+  "source_id": "story_963577369a12cfb1",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 第41、741行将主角读作“白蓦然”，其余正文及事实清单均为“白暮然”；两者读音不同。",
+      "suggestion": "统一为“白暮然”，或采用不改变读音的替代指称，避免听众误认新增角色。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_963577369a12cfb1.txt",
+    "input_sha256": "fa708c88d98e10ffe50f1bc6a397c36a447eef6df68351cdea63832de08ae1ad",
+    "analysis_sha256": "2a50776b5f66135719a2d7a12cf0f540ff820abf1f30d4b3d3ed382df92c817e",
+    "rewrite_sha256": "3fa1e740aea4d7b071b64cc7021730a4c1a2cf20c4fd7c465896cacf6e6e8fb2",
+    "generated_at": "2026-09-04T12:07:50+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_554f5abb47c047db",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "球球盥洗室异变现场前保留“反正咱们寝室也没联网，电脑是不……”这一未完成句，且无说话者，朗读会突兀断裂。",
+      "suggestion": "明确该句的说话者并补全原意；若原稿无法确认，删除这句残片后直接衔接糖果昏倒。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_554f5abb47c047db.txt",
+    "input_sha256": "e55d8db0519aaa2290698142dab4f5be8d648c3e18a8d5e6b69244a085845263",
+    "analysis_sha256": "cb8d0401d26a1d22368cab4b74fc0faa628bfa7bb79d9bd58bb1f7fed6d34798",
+    "rewrite_sha256": "56904d62bb67b00bdd45f6813577cd27069fc1309caf25b4fe08d05f6007f6b5",
+    "generated_at": "2026-09-04T04:18:56+00:00"
+  }
+}

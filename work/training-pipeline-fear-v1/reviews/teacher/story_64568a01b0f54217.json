@@ -1,0 +1,39 @@
+{
+  "source_id": "story_64568a01b0f54217",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B省略【校园传说】及“第一个故事”至“最初的故事”六处原有分节标题。",
+      "suggestion": "保留或以简短口播标示各层校报故事与最终回溯段，方便听众辨别叙事层级。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_64568a01b0f54217.txt",
+    "input_sha256": "cdf67fde66d2dca83d8bf1d70924e1398808723440bc7cfa46715f554ec51ba0",
+    "analysis_sha256": "8450e8d3ecde3e6c564c97c2ffda4b6fa13f6e76505abf2d99bc903df937e629",
+    "rewrite_sha256": "d6c736869a37a615c6f34a15a5b8c2649b9cc849c066c22d67d3e5d0ce73ed2f",
+    "generated_at": "2026-09-04T06:12:46+00:00"
+  }
+}

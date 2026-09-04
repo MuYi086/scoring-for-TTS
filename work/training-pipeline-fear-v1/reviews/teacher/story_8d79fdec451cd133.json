@@ -1,0 +1,45 @@
+{
+  "source_id": "story_8d79fdec451cd133",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "买故事的人解释“秘密”本质的长段独白中，前段引号未收束，下一段又重新起引号。",
+      "suggestion": "将两段明确为同一位说话者的一段连续对白，并配对引号，避免朗读器误判停顿或说话人。"
+    },
+    {
+      "category": "time",
+      "severity": "minor",
+      "evidence": "男孩在宅院门口说“先生，他来了”后，叙事立即跳到“这几天，小九闭门不出”，随后才以“那天”回述进卧室。",
+      "suggestion": "补足简短的回溯提示，明确宅院场景是男孩接替小九前发生的事。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8d79fdec451cd133.txt",
+    "input_sha256": "f57b51f24b868d3cdcbde716660f942b549af3f07d66065b87124dd6562e79d0",
+    "analysis_sha256": "9aa77cee284bbcacdc24fe3e1cd971d389b9e429411b5c759160da789314ae24",
+    "rewrite_sha256": "5b7b902aa8f8af6bd9678cda7104da33706f1384a4fc7cd4eef83822530cf2b2",
+    "generated_at": "2026-09-04T08:37:03+00:00"
+  }
+}

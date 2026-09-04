@@ -1,0 +1,63 @@
+{
+  "source_id": "story_93436871f4be5733",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.76,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“抽素除了一下”“在这声音时在”等无法朗读理解的 OCR 串字。",
+      "suggestion": "按上下文修复为明确、可自然朗读的叙述，且不改变事件含义。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 在“唯一的线索”处仍写“二十十号帽子”，与全文反复出现的“二十二号帽子”不一致。",
+      "suggestion": "统一为“二十二号帽子”。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "嵌套爱情故事保留“声俱泪下”“一个大点的孩子”等错字或不通顺表述。",
+      "suggestion": "修正为清晰自然的口语化叙述，并明确该段仍是面具脸讲述的故事。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "身份反转段保留“假说是我怀学生下来的”，会遮蔽孙晓宁为抱养、孙晓静为亲生这一核心事实。",
+      "suggestion": "依据前后文明确表述为抱养孙晓宁并假称亲生，保留身份反转。"
+    },
+    {
+      "category": "death_method",
+      "severity": "minor",
+      "evidence": "结尾遗体描述写“指法发黑”，无法自然表达原有的中毒死亡线索。",
+      "suggestion": "修正为“指甲发黑”等明确表述，保留过量毒品导致死亡的因果。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_93436871f4be5733.txt",
+    "input_sha256": "7750f518b5f4923064595bc4aca5afbd1bbfa627aac291aaa413b81188b7c6b8",
+    "analysis_sha256": "117e5610813dfdc534679427c7779c40a216432eb2b9d6047cae35dbeab42366",
+    "rewrite_sha256": "94fea4b69549b50f879ff7ae1b98a129d6d36be5948a6ef157ed58c1d9d37bff",
+    "generated_at": "2026-09-04T11:07:47+00:00"
+  }
+}

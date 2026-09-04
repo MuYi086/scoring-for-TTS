@@ -1,0 +1,57 @@
+{
+  "source_id": "story_4158c7fea55294db",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "B 中丈夫自述“活了***十年”，年龄数字仍被遮挡；原稿同处亦无法辨认。",
+      "suggestion": "需人工核验原始可读文本后补全；未核验前不要猜测具体年龄。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“看来我的下身已经有了”，句意残缺，无法确认其描述的身体状态。",
+      "suggestion": "需人工确认原稿缺失词及所指状态后再修订，避免擅自补写为“化了”等事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "关于“如果我也喝了你的血呢”后的“会死的。”未标明说话者，紧接“必死无疑！我坚定地说”易造成对白归属停顿。",
+      "suggestion": "在不改变事实的前提下，明确该句由“我”回答，或与后一回答合并为同一轮对白。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "鬼王出场处“他的声音是空灵的那种，让人搞不清他的什么地方”保留了不完整表达。",
+      "suggestion": "人工确认原意后改为语法完整的短句；若无法确认，保持保守并标注待审。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4158c7fea55294db.txt",
+    "input_sha256": "b85558979c9110e3263296fa064f1b5b60766bb6c227ad1e645b64d3da5e20ba",
+    "analysis_sha256": "b9e919e5504ec4eb5223e90e21fa021bd13c3a79cc640fe803744087a876b728",
+    "rewrite_sha256": "ac61b492051af28ae2ba00e75b341228120c3a9c94c8cddca26d9f9e91dded31",
+    "generated_at": "2026-09-04T01:36:15+00:00"
+  }
+}

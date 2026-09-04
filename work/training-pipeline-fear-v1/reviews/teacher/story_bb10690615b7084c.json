@@ -1,0 +1,45 @@
+{
+  "source_id": "story_bb10690615b7084c",
+  "factual_consistency": 0.9,
+  "audio_readability": 0.62,
+  "suspense_preservation": 0.85,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在链子杀人段保留“温存地趴在戈莱迫不急待想知道结局。身上”，将戈莱的阅读反应误嵌进男孩受害情节。",
+      "suggestion": "将现实层的戈莱反应与书中男孩段落明确断开，恢复“链子附着于男孩”的可朗读指代关系。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在印刷机墨盒段保留“里面居然是不着说，撕又抓断搅动着的浓稠的血浆回来了”，语义无法成立。",
+      "suggestion": "仅保留原文可确认的墨盒、搅动、浓稠血浆等信息，删除或隔离不可确认的 OCR 残片，避免直接朗读乱码。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_bb10690615b7084c.txt",
+    "input_sha256": "2fc2369de54e9962aa784a41ea5de928a5d710e99919f51350b238649d373f69",
+    "analysis_sha256": "f663d1b014ace9f6cb211beca6c52d3b47fdd6624828e0d322225ac4e66a37ef",
+    "rewrite_sha256": "82944356a3295b3880f4065ec6be5cb783e6b6f1d96c209314ab0867fc8ecd0b",
+    "generated_at": "2026-09-04T13:04:25+00:00"
+  }
+}

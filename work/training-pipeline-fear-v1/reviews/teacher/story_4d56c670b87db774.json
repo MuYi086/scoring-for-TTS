@@ -1,0 +1,39 @@
+{
+  "source_id": "story_4d56c670b87db774",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.82,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界声明止于 L682，但边界上下文 L688-L698 仍续接刘晓菲的叙事，并以“还有一个！”完成结局；L684-L687 为相邻作品内容，显示来源发生交错。",
+      "suggestion": "先修复原稿边界：排除 L684-L687 的相邻作品内容，并将 L688-L698 归入本故事后再重新执行后续步骤。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4d56c670b87db774.txt",
+    "input_sha256": "cb490895cd5af3e4acbb8e61dd82fd4062f8f77843802bd4ae4b09132336a4b3",
+    "analysis_sha256": "e30d5f6eb6305b6860dfa21445ec8732396a19526fb1e895149c483304ab75b0",
+    "rewrite_sha256": "ff7ddd253282df3f4b669ef4d1bbc22789cfdeb4e38849fb110dcbb886a96611",
+    "generated_at": "2026-09-04T01:52:57+00:00"
+  }
+}

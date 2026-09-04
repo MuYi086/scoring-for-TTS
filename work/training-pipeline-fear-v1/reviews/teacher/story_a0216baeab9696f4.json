@@ -1,0 +1,45 @@
+{
+  "source_id": "story_a0216baeab9696f4",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第381行后张槿与其哥哥张锦在同一高潮段连续出现；两名同音姓名在纯音频中无法区分。",
+      "suggestion": "首次及关键对白归属处稳定使用“张槿的哥哥张锦”或明确的亲属称谓，避免仅靠同音姓名标示说话人。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第145—151行电话来电者先标为“那人”，随后才明确为晋安妈妈。",
+      "suggestion": "直接标明“电话那头的晋安妈妈”，使电话对白归属即时清楚。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a0216baeab9696f4.txt",
+    "input_sha256": "07ca972b3767d1c62d8c20de7afdf05818d0c12e3350ebaee0b210c19debc148",
+    "analysis_sha256": "814d708e720dc7da4800b6512005893b1db98d964b1ce6bcd644e26aa6eaa4de",
+    "rewrite_sha256": "157fa62c278267d646c8e3c81f78f19d81926edad4f437ad2910496368903456",
+    "generated_at": "2026-09-04T12:16:09+00:00"
+  }
+}

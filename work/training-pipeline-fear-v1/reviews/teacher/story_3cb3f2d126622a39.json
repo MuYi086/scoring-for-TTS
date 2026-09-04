@@ -1,0 +1,39 @@
+{
+  "source_id": "story_3cb3f2d126622a39",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "杨牧尸体蠕动段，“快跑！”单独成段，未明确喊话者；虽紧接前文可推知为钟守琛，但音频中对白归属略含混。",
+      "suggestion": "在不改变事件顺序的前提下补出“钟守琛喊道”或等价归属提示。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3cb3f2d126622a39.txt",
+    "input_sha256": "47b2dee1114b0a1e4d8303b7917041e5296913753b5fee7d3692d4f1c606e025",
+    "analysis_sha256": "42be1f7e9cfcdcb21f2e62cb91d5c34ed78c6f6d2d87b8242aa1bbed47ff4f17",
+    "rewrite_sha256": "26f5febf4f6a724ffaaa83c968bef630eecb0e401bbb385c25c46ad703409557",
+    "generated_at": "2026-09-04T01:29:48+00:00"
+  }
+}

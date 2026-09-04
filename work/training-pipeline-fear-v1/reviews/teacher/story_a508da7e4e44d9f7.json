@@ -1,0 +1,39 @@
+{
+  "source_id": "story_a508da7e4e44d9f7",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 结尾坦白段“我不过是一句玩笑话”缺少谓语，口播易被听成叙述者本身是“玩笑话”。",
+      "suggestion": "补足为“我不过是开了一句玩笑话”，保持果子原本只是戏言、苏生仍主动跳楼的因果。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a508da7e4e44d9f7.txt",
+    "input_sha256": "6f942ec61970ec33adfdd3bc5a9f1994dee347f4a89c17fe4cf5521d488a392d",
+    "analysis_sha256": "05ef90df122536acf4470b16b582714dccfc1e051e363c616eb68e2eace6125d",
+    "rewrite_sha256": "6a2278c878ec231db730219f35677dccfc314a5ac3615bda37b40f50ae45580e",
+    "generated_at": "2026-09-04T12:45:47+00:00"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "source_id": "story_9132ba6359a8825c",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第135行保留“经常停班主讲”，句法不通，朗读会产生错误停顿与词义。",
+      "suggestion": "按可确认语境修正为连贯表述，并保持小豆子回忆班主讲戏本的含义。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第207行“出了戏装什么都没有”“我看来见的地方”均为明显残缺，影响场景理解。",
+      "suggestion": "修复为可朗读的完整句，明确后台除戏装外空无一人，以及小赖子藏在自己看不见处。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 第263行“他霸王说”缺失动作或指代，吕四爷对白归属和所指对象不清。",
+      "suggestion": "补足可由上下文确认的叙述连接，使吕四爷对白及其指向的霸王清晰。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第253、333、399、431行分别保留“来，大家”“就次可以”“这腿和手了”“临近春节到时候”等明显残缺。",
+      "suggestion": "逐处修复 OCR 残字和缺字，避免 TTS 读出不通顺文本。"
+    },
+    {
+      "category": "time",
+      "severity": "minor",
+      "evidence": "B 删除“血祭、成名、反噬、十年、胡不归”等段落标题；虽保留部分过渡句，但长篇有声稿的时间跳转标记减弱。",
+      "suggestion": "以简短且不泄露后续真相的过渡提示保留冬季、十年后与十年前回溯的层次。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_9132ba6359a8825c.txt",
+    "input_sha256": "e46abd09f7138cae7808ddac7669d56ae6cab6603955c15f0b3a9d2e7d1bf3f3",
+    "analysis_sha256": "c5e8f9721e0ae631c3ec02ea3cf95557c6de0b5c694e62d1b011f739a5dff2d9",
+    "rewrite_sha256": "ab65dac4086687081a5db1a81831d962507470fa4f139508d746e08254ac95e2",
+    "generated_at": "2026-09-04T11:06:18+00:00"
+  }
+}

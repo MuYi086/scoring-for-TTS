@@ -1,0 +1,39 @@
+{
+  "source_id": "story_0533760e9acab95f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“男寝里的红拖鞋”但遗漏原稿总题“性别提问”，并省略“谁是第一个”“男儿当自强”“快到碗里来”“尾章”等段落标题。",
+      "suggestion": "保留总题，并将各段落标题改为简短、可朗读的转场提示，以明确视角和场景切换。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0533760e9acab95f.txt",
+    "input_sha256": "21bdb9d518652bb23d44ed68bcbe5eb811a2b6ee044f4f366ce91d69577ff4c9",
+    "analysis_sha256": "610b896fc6a2a2e9eb07f46b0fb47849246537259d6a9150ae26320d5a184bd3",
+    "rewrite_sha256": "c2816095d482390cbe05a482cf16da79fa06ef497c8ba8ef8dcbdd196705861c",
+    "generated_at": "2026-09-03T16:10:25+00:00"
+  }
+}

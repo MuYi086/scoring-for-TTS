@@ -1,0 +1,57 @@
+{
+  "source_id": "story_a9426f79f89a78e0",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“整盏节目”“砸厂”等疑似 OCR 标题或词语，脱离上下文且会被 TTS 直读成无意义内容。",
+      "suggestion": "依据上下文核校这些明显误识别词，并改为自然、可朗读的表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“我指着周围来来往往的人群问我”的叙述，主谓与对白归属矛盾。",
+      "suggestion": "明确说话者与动作归属，避免听众误判是谁提出问题。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾解释段仍有“苏苏她，是绝对不可能会李成洛的”“致死都不住地为什么”等缺字病句。",
+      "suggestion": "在不改变反转和因果的前提下补足语义，使关键真相揭示可被稳定朗读和理解。"
+    },
+    {
+      "category": "other",
+      "severity": "minor",
+      "evidence": "B 开头省略原稿署名“文/萧竟 图/宅宅米”。",
+      "suggestion": "若有声稿契约要求保留作品元数据，应补回署名；若仅朗读正文，可明确该省略规则。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a9426f79f89a78e0.txt",
+    "input_sha256": "750876f8f350bc5d8239d9b5f3fa85c96f8e1e60964b84b7ff3a632426d1dd26",
+    "analysis_sha256": "c8fd1333a829932e86de41ca7760fde13cb84e29b968a618e057297cb88fcf68",
+    "rewrite_sha256": "d6667fd3ff9286ac312b5131ad7a66ef191d058bbcc2ef8e238840cb01630d43",
+    "generated_at": "2026-09-04T12:48:07+00:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_id": "story_cbf973dd41c68e9c",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.7,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "B 开头将原稿未署名的“既来之，则安之”明确归为齐陆说。",
+      "suggestion": "删除该新增说话人归属，或仅保留未署名台词。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“们大都来自城市”这一缺主语残句，随后场景衔接不完整。",
+      "suggestion": "移除无法成句的残片；不要臆补缺失原文。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“说话间，其他人也赶到了这里，同学”单独断止，紧接老校区介绍。",
+      "suggestion": "删除孤立残片并做最小化断句处理；缺失情节不可凭空补写。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_cbf973dd41c68e9c.txt",
+    "input_sha256": "3dcfdeb901e8d158b4e55e7cf2a47c84f14a06abeb1bc25f82bb3de94c30e58a",
+    "analysis_sha256": "63909c5f7453d992672be6874d452775b829f1b6e67e5e7fac32952a70637542",
+    "rewrite_sha256": "94ac1175192f0ff674c83c9f8b552519623243d12e8912c7c57250943b5105d8",
+    "generated_at": "2026-09-04T13:23:53+00:00"
+  }
+}

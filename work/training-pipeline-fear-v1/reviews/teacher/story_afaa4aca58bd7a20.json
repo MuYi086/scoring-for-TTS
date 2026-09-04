@@ -1,0 +1,39 @@
+{
+  "source_id": "story_afaa4aca58bd7a20",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.97,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中班主任惊醒段仍为“从床上做起来”，沿用了原稿的疑似 OCR 错字。",
+      "suggestion": "改为“从床上坐起来”，以免有声朗读出现语义和措辞卡顿。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_afaa4aca58bd7a20.txt",
+    "input_sha256": "36d71f21e8216293395a9ba83dfff8c12f262bbcb1e5f3c41edde4cf024c02e8",
+    "analysis_sha256": "376fb9c3077d6c959bcbfd954052dbbb6a2a972aa58072b3abdb83f87bd68229",
+    "rewrite_sha256": "7e043e73b56790248d85c8eea99900e7de88dda2219c11ec30bbcbe4a665a8fd",
+    "generated_at": "2026-09-04T12:53:44+00:00"
+  }
+}

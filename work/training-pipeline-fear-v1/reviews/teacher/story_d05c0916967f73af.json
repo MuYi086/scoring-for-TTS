@@ -1,0 +1,45 @@
+{
+  "source_id": "story_d05c0916967f73af",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "朋友 C 的对白保留“他在‘洛肢兰村’”，为无法自然朗读的 OCR 残句。",
+      "suggestion": "人工核定原词或改为不改变玩笑含义的可朗读表述；不要将该残句直接用于配音。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "房东叙述退休工人捡钱时的“眼睛当时就闪电了”语义异常。",
+      "suggestion": "人工确认该 OCR 疑误的原意后再定稿，避免有声稿出现突兀病句。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d05c0916967f73af.txt",
+    "input_sha256": "7f9610f5eb4e20b35aa68adb9d14cde7bd1060e31ce6edcc5c39226a627ce376",
+    "analysis_sha256": "15e5477f0a4b500e85cbc50c88a4417e2d9be4663809793a3a476dbbcdf2c691",
+    "rewrite_sha256": "3b72953cb3e8bfbf0433e09e15febcf7b1a0f0d97f463d82736ef3ff87654b21",
+    "generated_at": "2026-09-04T13:25:23+00:00"
+  }
+}

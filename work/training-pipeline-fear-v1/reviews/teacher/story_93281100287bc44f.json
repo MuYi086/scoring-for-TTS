@@ -1,0 +1,57 @@
+{
+  "source_id": "story_93281100287bc44f",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开篇方位句仍为“隔着三间寝室、四道自墙”。",
+      "suggestion": "改为可自然朗读且不臆断具体字词的方位表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "事故前骑车段保留“两只手都放在车间上”。",
+      "suggestion": "改为与“捏闸”一致的清晰骑车动作表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "赶返校段保留“学校10点美大门”。",
+      "suggestion": "改为明确的校门关闭时间表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "车技描述保留“但还是面得很”。",
+      "suggestion": "删改为语义明确的车技生疏描述，避免朗读出无意义词语。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_93281100287bc44f.txt",
+    "input_sha256": "7c5e4927e402b31e593bc6f59e33a6a8427088472dceb26f3686e5b64bf7b40c",
+    "analysis_sha256": "dabfe81dc6997d4024b1e7e97da20befc72f5cfbe352dd9883104dd1adccfc1b",
+    "rewrite_sha256": "da65492452bc0ecc0a5b5781784c67580d0d732aba960a94bdb22b110bddb43c",
+    "generated_at": "2026-09-04T11:07:46+00:00"
+  }
+}

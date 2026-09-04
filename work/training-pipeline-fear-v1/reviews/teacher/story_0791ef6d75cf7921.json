@@ -1,0 +1,39 @@
+{
+  "source_id": "story_0791ef6d75cf7921",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第395行将关键误听直接读作“烧”与“捎”；二者普通话同音，纯音频无法区分。",
+      "suggestion": "将其改为可听辨的说明，如“燃烧的烧”与“捎带的捎”，并保留护士误解造成的线索效果。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0791ef6d75cf7921.txt",
+    "input_sha256": "e91a252bafe67e6148295a1b27804c722a21da615611ff68667b2f3582f23620",
+    "analysis_sha256": "434b0a9f763cd115575a64f8a63067376c546459aceb929d1e60de13b90867fe",
+    "rewrite_sha256": "53ada16149b2f4fa2d2d10fb5d1f8ce5bf89c6e7b79c1f1ab602523430237f20",
+    "generated_at": "2026-09-03T16:12:05+00:00"
+  }
+}

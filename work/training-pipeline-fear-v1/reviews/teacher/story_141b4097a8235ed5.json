@@ -1,0 +1,45 @@
+{
+  "source_id": "story_141b4097a8235ed5",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "B 在“之所以戴着痴情链死，是……”后直接转入“只有拿走我们的手链”，与 A 的冻结缺口一致。",
+      "suggestion": "该处关系到手链、离宅与左岸昏迷的因果；需先核回可确认原文后再定稿，不能凭空补写。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "“我是麦琪琪”自述段中，“因为我们希望到了阴间……我和左岸……”已实际转为陆非第一人称，但“陆非”分段标记在其后才出现。",
+      "suggestion": "在不增改事实的前提下，将陆非的说话人标记提前至视角转换处，避免有声听众误判麦琪琪与左岸的关系。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_141b4097a8235ed5.txt",
+    "input_sha256": "654e3bb2a99b16f8bff800e8dd385b4d94ac48ae189dfe4406139ebb0724c65c",
+    "analysis_sha256": "1d71aa818a9b66186e2b2ee29964c5d8f4c461bad5cda673db7b7a17888f41f8",
+    "rewrite_sha256": "09852542ee83ce01a81527c2761a8416ff5d8f104733046a999a1537553bebef",
+    "generated_at": "2026-09-03T16:24:56+00:00"
+  }
+}

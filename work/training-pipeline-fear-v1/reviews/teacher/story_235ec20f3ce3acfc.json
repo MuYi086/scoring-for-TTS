@@ -1,0 +1,45 @@
+{
+  "source_id": "story_235ec20f3ce3acfc",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.42,
+  "suspense_preservation": 0.48,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界上下文 L1034 以“朝村子方·64·”截断，L1036 随即无上下文转为“知道怎么的，门却开了”，并从英国历史段落跳至张丰一家情节。",
+      "suggestion": "先核验并修复原稿的页序/缺页与作品归属；确认完整、未混入相邻文本的 A 后，再重新执行后续改写与评测。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“·64·”页码残片，且以无主语的“知道怎么的”及未先引入的“他”开场现代段落。",
+      "suggestion": "来源修复后再处理朗读稿：删除非正文页码，并补足经核验的上下文与人物指代，避免擅自编造。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_235ec20f3ce3acfc.txt",
+    "input_sha256": "e4a0c3783b5b6ac974d93c68992f4960f59eac67dc00200a06eb10c913160ae0",
+    "analysis_sha256": "02219389fdc6a3644afcdd748658dca727bf7a1aec12b64e7fecce5311321f21",
+    "rewrite_sha256": "ba5f1ff160d80697ebeabb0ca4b4f4afe3e526bad1061b7561e2856750df6bb9",
+    "generated_at": "2026-09-04T00:38:58+00:00"
+  }
+}

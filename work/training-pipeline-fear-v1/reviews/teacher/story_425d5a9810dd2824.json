@@ -1,0 +1,39 @@
+{
+  "source_id": "story_425d5a9810dd2824",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 在老者打量主角处称其为“林生”，其余全篇均为“林子”；听觉上会被理解为新增人物。",
+      "suggestion": "依据事实清单将该处统一为“林子”，或先人工确认原稿此处异写后再处理。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_425d5a9810dd2824.txt",
+    "input_sha256": "5300eab4c388b2b5e3e6104f9a0e9bb299356f841693ac8e11598e3babc3f94c",
+    "analysis_sha256": "265969b91351c308937b75111e7a64c5aa8101a0c5ac46727277fb8a2dabcaf1",
+    "rewrite_sha256": "0b73cfcc34447b47084c4b59b24b51fa626ce0eb6e8f6e44aace4c02af9c2d05",
+    "generated_at": "2026-09-04T01:35:25+00:00"
+  }
+}

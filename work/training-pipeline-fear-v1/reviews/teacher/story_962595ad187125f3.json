@@ -1,0 +1,45 @@
+{
+  "source_id": "story_962595ad187125f3",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 开篇“货还够吗？”后紧接“孙管家……嗯了一声算是作答”，同一角色的问答归属自相矛盾；A 起始局部存在串行缺损。",
+      "suggestion": "不要擅定该句问话者；请人工核定原始对话归属后，改为明确的一问一答，或改成不涉及说话者的叙述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“让我出去，我要去找食物。”未标明是婴儿意念，位于婴儿扶门站起之后。",
+      "suggestion": "用明确的内心独白提示或引号标示其为苏锦心对婴儿眼神的理解，避免 TTS 将其误读为旁白事实。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_962595ad187125f3.txt",
+    "input_sha256": "c559169523a756c4bd670c50b66021a638d4365620fb8603b59420e17cefcc7c",
+    "analysis_sha256": "6b72e8a28d75c4ed7edeabda2497afb9d51dd08ed4a899a533a8c63d2af86ed9",
+    "rewrite_sha256": "a14c238fabbfffaaac731d3d2fb97241af3c43cbf55c9cc2ca4248d46075cf64",
+    "generated_at": "2026-09-04T12:07:56+00:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_id": "story_a335fecc23de37d6",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "开头电梯段将夹在“长发女／子”之间的“何莉丽”独立朗读为姓名。",
+      "suggestion": "删除该孤立片段；它在原稿中疑为页眉或 OCR 串入，不能作为已确认人物。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "医院走道段“她跑在白色的走道，着粉红的长裙”缺少谓语，朗读不通顺。",
+      "suggestion": "在不改变人物、场景与动作的前提下补足为自然句式，如“她跑在白色的走道上，穿着粉红的长裙”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "停尸间问话中“他是不是很喜欢这个肚兜”指代与性别不明。",
+      "suggestion": "人工核定指代后再消除歧义；未核定前不要擅自替换为具体人物。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a335fecc23de37d6.txt",
+    "input_sha256": "9eb3ce72b8db9b543989268e17f4dc41f096ce0b501147ca7566787c589cac9b",
+    "analysis_sha256": "89a12ed150e47d4b02488f9279f5d795fe155baf6e2c461bf9bafb9dc557ad85",
+    "rewrite_sha256": "19a4970ab06990833bd6c0b286af3c410ef54567805da7e5a655bfcab4caeb53",
+    "generated_at": "2026-09-04T12:44:21+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_c8db3277da4f4df9",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.98,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "causality",
+      "severity": "minor",
+      "evidence": "李森宇住处冲突段：B从邵薇薇质问后直接转入林筱雅被推倒，省略李森宇明确提出分手及邵薇薇对林筱雅的贬称。",
+      "suggestion": "补回简短、归属明确的分手表态；可删去重复辱骂，但应保留李森宇正式切断关系这一因果节点。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c8db3277da4f4df9.txt",
+    "input_sha256": "311574eac0a854b0d48ce57c864b07db68690d1de6c13766df0e0697dcec14ab",
+    "analysis_sha256": "fe5c90f6097244e6b287ae5ea2272aa8cbb35f50e78a0b38f04c7e319205711a",
+    "rewrite_sha256": "4137a167c3926f0b90614833242e435c66361265573b41652521d0351d549a6e",
+    "generated_at": "2026-09-04T13:21:47+00:00"
+  }
+}

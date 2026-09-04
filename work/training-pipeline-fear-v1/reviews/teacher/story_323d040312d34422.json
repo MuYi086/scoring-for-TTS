@@ -1,0 +1,63 @@
+{
+  "source_id": "story_323d040312d34422",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "农村往事段将刘宝根写作“赵宝根”，与其余叙述姓名冲突。",
+      "suggestion": "统一为刘宝根，避免听众误以为出现另一名男性。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "张英回家受伤后，紧接着被称为“刘英”。",
+      "suggestion": "统一为张英，避免凭空产生新人物。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "刘小刚提出三个条件处连续使用未闭合引号。",
+      "suggestion": "将三个条件整理为同一段完整引语或逐句闭合引号。"
+    },
+    {
+      "category": "twist",
+      "severity": "major",
+      "evidence": "结尾“当刘小刚来的时候，他写了《孽债》”中的“他”紧邻刘小刚，易使有声听众误判作者和测试者。",
+      "suggestion": "明确主语为凌虚，保留“凌虚才是作者、借此测试”的最终反转。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“确定下在汤里的安眠药生效后”语序生硬。",
+      "suggestion": "调整为“确认自己下在汤里的安眠药已经生效后”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_323d040312d34422.txt",
+    "input_sha256": "80ea7af2d44da04e969e1798ac598a1354d6df294782cf5ecf6a279519c46cf4",
+    "analysis_sha256": "6306b850a75418ca52543a0986c99b3a6fd523146287d9f3813ca0c82f8b38cf",
+    "rewrite_sha256": "c101214eb898b067319152f7a68c3cf83402ba1520ee4ea932091178c6e486b9",
+    "generated_at": "2026-09-04T01:12:00+00:00"
+  }
+}

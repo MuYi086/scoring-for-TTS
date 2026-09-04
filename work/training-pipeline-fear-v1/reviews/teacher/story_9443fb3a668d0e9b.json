@@ -1,0 +1,51 @@
+{
+  "source_id": "story_9443fb3a668d0e9b",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.89,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "古画背景服饰段将军装男子说为“二十一世纪六七十年代”；A 与 B 均如此，年代自相矛盾且无法据现有材料确认应为哪一世纪。",
+      "suggestion": "人工核定该年代原字；确认前不要擅自改写或补充时代信息。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "张亚明夜归段保留“已是太夜了”，语义和朗读停顿均不自然。",
+      "suggestion": "在不改变原意的前提下，待人工确认疑似 OCR 字词后再修订。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "张亚明数画中人数段保留“晓有幸致地”，发音和语义不成立。",
+      "suggestion": "人工确认疑似 OCR 字词后修订为可朗读表述，并保留二十二人的关键数字。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_9443fb3a668d0e9b.txt",
+    "input_sha256": "9617a71842d45d92fc5bd5df5370c779cb300144c1fd0cd12c388f611fb24f3d",
+    "analysis_sha256": "668404c439631314ea00b932e55749756c39803bda420b92df7510bfdcccd5ee",
+    "rewrite_sha256": "7e587907b777e17a574137a15d26450f2aceee7d1c2229d4745122c9593bdd82",
+    "generated_at": "2026-09-04T11:09:57+00:00"
+  }
+}

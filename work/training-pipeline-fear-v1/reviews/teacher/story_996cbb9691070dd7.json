@@ -1,0 +1,45 @@
+{
+  "source_id": "story_996cbb9691070dd7",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "B 删除了原稿中的五个分节标题，包括“间歇性失踪”至“我们永远在一起”。",
+      "suggestion": "恢复这些分节标题，作为有声版的章节停顿与悬念提示。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开头保留全大写英文“KISS”，中文 TTS 的读法可能不稳定。",
+      "suggestion": "在不改变情节的前提下改为“亲吻”或明确的中文读法。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_996cbb9691070dd7.txt",
+    "input_sha256": "5b9a914b40ecdf70a00897a50edecd89c43d5e9deac4da2ba6cd1d71a09c1cee",
+    "analysis_sha256": "b0be55af4c8f985710fffb97ea266752aebeca29b9afe2e1c66c14aec2ee8293",
+    "rewrite_sha256": "4bfc594aa27ccbe041699277761dffdbd64167e2b38ff9da695969d9d13eb12a",
+    "generated_at": "2026-09-04T12:11:09+00:00"
+  }
+}

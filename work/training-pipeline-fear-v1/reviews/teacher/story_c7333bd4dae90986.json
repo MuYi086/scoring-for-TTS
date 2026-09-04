@@ -1,0 +1,45 @@
+{
+  "source_id": "story_c7333bd4dae90986",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "B省略原稿中的两处章节标题“阴魂不散”“幻影凶间”。",
+      "suggestion": "保留章节标题，或以简短转场提示对应段落切换。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "陈姐揭露身世段中，“那意味着……她无法投胎，永不超生！”后的引号未闭合，下一段又直接开启引号。",
+      "suggestion": "统一该段引号边界，确保朗读脚本的对白归属清晰。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c7333bd4dae90986.txt",
+    "input_sha256": "0c5ed09e419828f87b51a4eb85725ca1b9f4941e5bf284936253b87cb99f18bb",
+    "analysis_sha256": "9717ee15e48aae6e7e28427fa4637e600ce1d06807bb53678a3595ce90ebc996",
+    "rewrite_sha256": "4396498cc4df51feabd77c560fce2a2f6a232c2dd1e723ec53a951f8f5f9eeff",
+    "generated_at": "2026-09-04T13:20:37+00:00"
+  }
+}

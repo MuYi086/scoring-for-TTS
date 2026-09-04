@@ -1,0 +1,63 @@
+{
+  "source_id": "story_84780c2b4a774ae9",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第一篇张启正死后遗体处理处保留“遗体捐现书”。",
+      "suggestion": "按语境校正为“遗体捐献书”，避免朗读出错字。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第一篇苏合获释后的法律说明处保留“法律的洞子”。",
+      "suggestion": "校正为通顺的“法律的漏洞”。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "第二篇宁薇查看血肉处出现“整个人都不了”。",
+      "suggestion": "补全缺失谓语（语境应为“整个人都动不了了”或等义表达），否则无法自然朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第三篇搭车人蛇皮袋描写保留“雨衣摸样”。",
+      "suggestion": "校正为“雨衣模样”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第三篇司机停车时间处保留“一个小时候后”。",
+      "suggestion": "校正为“一个小时后”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_84780c2b4a774ae9.txt",
+    "input_sha256": "0f752f20c9293558f7707fcec3302016f907b40a5e6a7eebdab62541e1067e14",
+    "analysis_sha256": "631cb3ba26d3853a519792b3e652990777e25e9b9037e2ccb642d0cea1db472e",
+    "rewrite_sha256": "6ba73e2550711d6d68cc88669b2ae2bfab6df56c013fc6f26e0c5a4ec13b271d",
+    "generated_at": "2026-09-04T08:26:15+00:00"
+  }
+}

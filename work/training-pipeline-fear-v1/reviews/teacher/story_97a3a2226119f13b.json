@@ -1,0 +1,39 @@
+{
+  "source_id": "story_97a3a2226119f13b",
+  "factual_consistency": 0.78,
+  "audio_readability": 0.95,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界包 L1650 后的 L1654-L1663 含图片打断及“中央，四面踪”等无归属残句；B 直接略过这些内容后续写。",
+      "suggestion": "先人工确认并修复该故事开头的冻结来源边界/正文，再重新执行改写与比较；不能以 B 的省略掩盖来源残缺。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_97a3a2226119f13b.txt",
+    "input_sha256": "b9c4951929ab874d374f8ab806c36a6e064626db3de526c17705c46ee8889887",
+    "analysis_sha256": "79dff14c7699aca1ffa45a57bc3ddc82fa5aaabd5840fb293665e6b49653b21a",
+    "rewrite_sha256": "c26202942329c1a90607b07f47c2a41825663926054cfd93eb6a9fe9c2e45167",
+    "generated_at": "2026-09-04T12:09:06+00:00"
+  }
+}

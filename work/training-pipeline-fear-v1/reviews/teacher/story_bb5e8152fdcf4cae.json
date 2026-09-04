@@ -1,0 +1,51 @@
+{
+  "source_id": "story_bb5e8152fdcf4cae",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.73,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“就不相信我送不走他。”为无说话人、无承接的孤立对白。",
+      "suggestion": "补足可由 A 确认的前后语境或说话人；若无法确认，应改为明确的叙述性过渡并标注来源残缺。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中石小倩说“这次，还是我吧。我……”后直接跳至返程回忆。",
+      "suggestion": "消除未完对白与场景跳接；仅保留 A 可确认的内容，避免为补全而臆造情节。"
+    },
+    {
+      "category": "clue",
+      "severity": "minor",
+      "evidence": "B 保留结尾“她的身后跟着四个看热闹的女生”，其中“她”仍无明确先行词。",
+      "suggestion": "为有声朗读改用可确认的明确指代；如来源无法判定所指，保留歧义时应加叙述性提示。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_bb5e8152fdcf4cae.txt",
+    "input_sha256": "1d841e6c9b16a47762f2d34cd44288e74625a04a65f880039b1b0a6cc404d66e",
+    "analysis_sha256": "0ac2fc3e4840b93a680bbdc5494f7eea01a072c865eb6528ca8480e2f3d27645",
+    "rewrite_sha256": "b66507c65e3dd2da2e25193a24f7fdb1d2ed920486ac832215bfd0d47c593144",
+    "generated_at": "2026-09-04T13:04:27+00:00"
+  }
+}

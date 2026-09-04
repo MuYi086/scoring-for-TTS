@@ -1,0 +1,39 @@
+{
+  "source_id": "story_4588c7ce64292f76",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "第二封信登山叙述中的“除了拉虎的四个人”与“除了他的四个人”均保留了原始 OCR 式歧义。",
+      "suggestion": "在不改变六人构成的前提下，明确为“拉虎之外的四人／其余四人”，使人物数量和死亡叙述可被听众即时理解。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4588c7ce64292f76.txt",
+    "input_sha256": "1bcd7e33c131b617c0ac2446c7c6d9590a12609a4dfc913d9e28a97c21ea8b8c",
+    "analysis_sha256": "3a8e7d55fe9f7a6ff4988f5043fb83b96f5e164125a35dc8870300fc6ae45c39",
+    "rewrite_sha256": "31f8081bef507ed6eee73c66a0f95fd1746a5e1bd7e5d446e3d98c8b37b07a1b",
+    "generated_at": "2026-09-04T01:41:29+00:00"
+  }
+}

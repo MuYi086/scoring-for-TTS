@@ -1,0 +1,45 @@
+{
+  "source_id": "story_300efa5b054020a3",
+  "factual_consistency": 0.88,
+  "audio_readability": 0.87,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "第二天赴约段：B将“我去图书馆”归给荻荻；结合其后荻荻留在家中梳妆、回应翔的车鸣，原文语境应为小漆外出。",
+      "suggestion": "更正该句的说话人为小漆，保持荻荻留在住处赴约的因果链。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "袭击段仍写“乡渐渐逼近”，与前后持续使用的角色名“翔”不一致，朗读会被理解为新增人物。",
+      "suggestion": "在保留原文疑似OCR信息的前提下，统一朗读文本中的角色称呼为“翔”，或用明确旁白消除同一人的歧义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_300efa5b054020a3.txt",
+    "input_sha256": "f64ea66bde7ccd9a4198af9414ae0bda2687560422632ce0485787efb3ba4aec",
+    "analysis_sha256": "20221a9542caf9387b0ce42ea6679a9ac24683c078b6c9010e6153a6663c2b69",
+    "rewrite_sha256": "e5af2112dace125f6ab653a026755a3100f3e7e07952847b9a86df475cb2aa5e",
+    "generated_at": "2026-09-04T01:07:51+00:00"
+  }
+}

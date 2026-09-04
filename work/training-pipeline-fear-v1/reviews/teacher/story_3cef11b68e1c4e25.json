@@ -1,0 +1,45 @@
+{
+  "source_id": "story_3cef11b68e1c4e25",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头将原题署名读作“你还是沉看语。文，昕新。”，署名标点不自然。",
+      "suggestion": "将题名与作者署名清晰分隔；保留疑似 OCR 的题名原样，并避免把署名读成正文。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在钱昊初次发言处省略原文的“你好”。",
+      "suggestion": "恢复简短问候，使人物首次开口和对白衔接完整。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3cef11b68e1c4e25.txt",
+    "input_sha256": "1c1a1550940b34ce5e469b0bd16e85aff69f22d62dd2b9d37be0c27a7bfb9037",
+    "analysis_sha256": "e8d721af68ae8def130fa68d258455ffa2291825b38b61d2fd64360e99937a59",
+    "rewrite_sha256": "2c5924ab4daf72a7f49d5cfe7043302499914ea640482ca8da920322b9474dca",
+    "generated_at": "2026-09-04T01:31:17+00:00"
+  }
+}

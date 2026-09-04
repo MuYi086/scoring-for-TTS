@@ -1,0 +1,45 @@
+{
+  "source_id": "story_186d7396f1d17d0e",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "location",
+      "severity": "major",
+      "evidence": "首信及第八信为“坤州”，叙述与第二、六、七信多处为“神州”；B忠实保留，无法确认是否两城或源文本讹误。",
+      "suggestion": "人工核验地名设定后再定稿；未核验前不可擅自统一为单一地点。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第三、四封信仍含“要子身一辈子”“被杀并给煮融了”等疑似OCR异常词。",
+      "suggestion": "人工确认原字后修正为可朗读词语；确认前保留原文并标注风险。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_186d7396f1d17d0e.txt",
+    "input_sha256": "6e4db6fe4d75f5baaf46cfbb95caa994ec63be547f49c73535f1787a937ff7c3",
+    "analysis_sha256": "a2dcfb822a3542077cdbbb4e425c2d73bd23914a5fcc85761dab025c49716d44",
+    "rewrite_sha256": "ee067b004a8e6c465e5dca25439ed245abda359843ad8ef59a359e4f35a21c96",
+    "generated_at": "2026-09-03T16:32:14+00:00"
+  }
+}

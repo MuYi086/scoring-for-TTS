@@ -1,0 +1,57 @@
+{
+  "source_id": "story_c61d34ce8ebe7e28",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“苏姗只到”保留了来源 OCR 异常，且同一人物另作“苏珊/姗姗”。",
+      "suggestion": "统一为“苏珊只道”，避免姓名与动词的朗读歧义。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“许久之后才到”位于外公提出条件的关键对白前。",
+      "suggestion": "修正为可自然朗读的“许久之后才道”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“年都在他们的归途中出现了”后接持表男孩，句首明显缺损。",
+      "suggestion": "补足或重组该句，使男孩、手表与其被风沙夺命的关联可听懂。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“允吸着”“被流沙掩盖的驱赶”“那那向导”等异常词组。",
+      "suggestion": "在不改变剧情的前提下作保守校订，消除错字、重复字和不可自然朗读的搭配。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c61d34ce8ebe7e28.txt",
+    "input_sha256": "5e44471980988408fbeb6ce2c0302553aaa1c84f7c49e73ddd5c719a79d0c994",
+    "analysis_sha256": "d9e9e49ec1e7d705b96eae8bd9e54ec57505e71e1ecc72ad250e6426cc5e2b59",
+    "rewrite_sha256": "6f617febdab040038352eb42777fbf911cdba699cdf64e29b02a7210ca92c13e",
+    "generated_at": "2026-09-04T13:18:43+00:00"
+  }
+}

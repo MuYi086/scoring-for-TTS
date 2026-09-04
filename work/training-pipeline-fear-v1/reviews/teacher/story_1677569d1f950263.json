@@ -1,0 +1,51 @@
+{
+  "source_id": "story_1677569d1f950263",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.76,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 开篇纸条称叙述者“赵宇”，实验楼及后续对白称其“周含”。",
+      "suggestion": "身份对应无法仅凭允许材料确认；保留原文属于忠实处理，但需人工确认后统一有声称呼。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 同一寝室成员依次出现“张易”“刘易”“张轩”，包括开篇、早餐和实验楼段。",
+      "suggestion": "无法确认这些是否为同一人或不同角色；需人工核定角色表后再统一称呼与声线。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 医院走廊长椅段将“我接过叼在嘴上说”与随后“周含，你看李轩的事该怎么办？”连在一起，问话者归属不清。",
+      "suggestion": "在不改变事实的前提下补明说话人或调整叙述切分，避免朗读时把刘易的问话误配给叙述者。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1677569d1f950263.txt",
+    "input_sha256": "4d3e92a3ba48c6010e7081823351669e961c955aa13864e5a0d42aaf9d13e92f",
+    "analysis_sha256": "921ad7f7170d6411c30d4479d9e4f84234e41ef915230ac9a5810191857c4efd",
+    "rewrite_sha256": "cfb2ad9a8005bfb812ac2d40178b987f8a382233852ce813f42d7a24cbe2a8f7",
+    "generated_at": "2026-09-03T16:26:27+00:00"
+  }
+}

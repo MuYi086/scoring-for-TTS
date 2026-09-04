@@ -1,0 +1,51 @@
+{
+  "source_id": "story_1ae495d96ea2ebb2",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 中“孙众兵”先后写作“孙从兵”“孙众生”，均出现在女鬼初遇段。",
+      "suggestion": "统一为“孙众兵”，避免朗读时被理解为新增人物。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "终局段同时出现“陈超明”与“陈明超”，上下文均指王仙燕的男友。",
+      "suggestion": "统一为“陈明超”，避免角色身份和对白归属混淆。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“气还没喘均”“未来得及”“一趟趄”“相仲伯”等不顺或疑似转写错误。",
+      "suggestion": "在不改变情节的前提下校正措辞与停顿，使有声朗读自然。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1ae495d96ea2ebb2.txt",
+    "input_sha256": "0be26e72215be8699a3c5974be714d8b7739602395ec7e8c4ab948f8884b5491",
+    "analysis_sha256": "652a56caca799adafbbb76ab768eee0224fcf3d712243af70bcb8a120d50555c",
+    "rewrite_sha256": "ad62ace4574ae067488b73d69cf5bfc5335b9b3afdd5262cf17ef94a7151ab31",
+    "generated_at": "2026-09-04T00:32:30+00:00"
+  }
+}

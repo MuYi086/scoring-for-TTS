@@ -1,0 +1,45 @@
+{
+  "source_id": "story_afe71cd6d8323320",
+  "factual_consistency": 0.88,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.86,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "结尾电话段：A 中来电者自称“刘晓圆的姨妈”，但叙述又写辛爱艾认为该女人叫刘晓圆；B 改为明确“电话里的女人是刘晓圆的姨妈”。",
+      "suggestion": "保留原稿的身份／姓名矛盾或疑点，不要将其消解为确定的亲属关系；该点需要人工确认原始设定。"
+    },
+    {
+      "category": "misdirection",
+      "severity": "major",
+      "evidence": "结尾的“刘晓满”与“刘晓圆”及来电者身份不一致，是原稿保留的悬疑疑点；B 的身份归并削弱了该不确定性。",
+      "suggestion": "恢复姓名与身份线索的原有不确定状态，避免替原稿裁定人物对应关系。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_afe71cd6d8323320.txt",
+    "input_sha256": "2da0f7af505a31773dfd689f895afae24098282d6cce7e2dfc636bb6f7909ee3",
+    "analysis_sha256": "935cf3de9af6c73041617023d1dcb66ba06cc9835806626fdaaf1334a98be976",
+    "rewrite_sha256": "6bf1bff5dc5d80e366ccfc519574e414007ee018ff894d0b6cda30db8e6de116",
+    "generated_at": "2026-09-04T12:53:49+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_505437be6b076747",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“鼻子随即一镇酸痒”保留了明显错字，朗读会产生不自然语义。",
+      "suggestion": "改为“一阵酸痒”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中短发女孩对白“走啦，比理他”存在明显错字，影响对白的自然可懂性。",
+      "suggestion": "按语境改为“走啦，别理他”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_505437be6b076747.txt",
+    "input_sha256": "7d6be10132d63e149eeb69d79614c98b0e05391e07e78872171ba8313df68825",
+    "analysis_sha256": "307b8cee3600b5ba852ff5d2fb845d97d5a2c5e4df1d138bdb1f4e47696e3639",
+    "rewrite_sha256": "9c46eb1140d6ef0ba18125106b0056e42726bab7fadafa3a1100113447ea9d17",
+    "generated_at": "2026-09-04T01:54:58+00:00"
+  }
+}

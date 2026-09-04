@@ -1,0 +1,39 @@
+{
+  "source_id": "story_acdff995e3538e10",
+  "factual_consistency": 1,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开篇帖子留言处仍为“只写了几个子”，与语境不通。",
+      "suggestion": "将“几个子”校正为“几个字”，其余内容保持不动。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_acdff995e3538e10.txt",
+    "input_sha256": "9a7c1a283ed586fd4208b9d47a78c2480693297352c3c79306e132dc9106a0be",
+    "analysis_sha256": "53c137be025353ac781f6d3445a0ec0b6169834a3e21cd8662b7e7b945ba69cf",
+    "rewrite_sha256": "216f7470b62f378c7650eeed121c93d5734f6793506d35884975a40d56b69cb0",
+    "generated_at": "2026-09-04T12:51:00+00:00"
+  }
+}

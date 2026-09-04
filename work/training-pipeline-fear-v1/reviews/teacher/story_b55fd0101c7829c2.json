@@ -1,0 +1,51 @@
+{
+  "source_id": "story_b55fd0101c7829c2",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "农场猪舍段保留“斜刺果向绯红冲来”，为无法朗读成义的 OCR 串字。",
+      "suggestion": "核对该处原字后修正为通顺的方位表达；无法确认时交由人工裁定。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "卧室幻觉段“当那些殷红的花尽可能快要将她埋没”语法不顺，朗读会明显卡顿。",
+      "suggestion": "在不改变花朵埋没绯红这一意象的前提下，改为自然、可停顿的句式。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "农场幻象对话中“她点头”紧接绯红发问，听觉上短暂不易判定指向绿。",
+      "suggestion": "首次改为“绿点了点头”或等效明确指代。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b55fd0101c7829c2.txt",
+    "input_sha256": "900f1cbf08c232f68c756cebd8bc2af46cd37fce235e0adcb10189d3d052e325",
+    "analysis_sha256": "a7b4cf75623a5d8b018ef71315f714374f0aee2bb255a26817c064ece02eafa1",
+    "rewrite_sha256": "d0dbd53b61e392eddeab1a0847d224225ede3102b1ea6a50dc3297d54a43eabf",
+    "generated_at": "2026-09-04T13:00:13+00:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_id": "story_37e2d05e2d4d8deb",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开头“首在深冬的夜风里”被原样保留，语义不通。",
+      "suggestion": "在不改变情节的前提下，修正或删除该疑似 OCR 残字。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“一屡”“身平”“录象”“一合带子”“我们向再跟进一下”“应付埃”等疑似 OCR 异常仍会被直接朗读。",
+      "suggestion": "逐处做最小文字校正，避免合成出现错误读音或不自然停顿。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "保安提示“注意看”后，文本直接切到阿正约小娜上楼的场景，缺少可听辨的场景转折。",
+      "suggestion": "以短暂停顿或明确的场景分段标记强化录像段与后续情节的切换。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_37e2d05e2d4d8deb.txt",
+    "input_sha256": "5077217019f7809c76b71573cc6c8843f3d29cc6c13d093646496be79b43bb29",
+    "analysis_sha256": "5de2374e5c3bd69e34d9c33e24aabb2e23ac38c0d0c79382cd71bd7bd7d21fac",
+    "rewrite_sha256": "6ec34d0c0cdc2458120744fd8eb12bd0e75a24cb14fb21cad0c7ce90432802f6",
+    "generated_at": "2026-09-04T01:21:32+00:00"
+  }
+}

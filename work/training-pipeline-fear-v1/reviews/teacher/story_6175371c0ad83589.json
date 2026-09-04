@@ -1,0 +1,45 @@
+{
+  "source_id": "story_6175371c0ad83589",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“声音在自己听来都都瘆人不已”的重复“都”，位于李伟回家后呼叫谭梅一段。",
+      "suggestion": "删除重复字，改为“声音在自己听来都瘆人不已”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“混身是血”这一原稿疑似 OCR 异体/错字，位于登山段子中男友出现处。",
+      "suggestion": "为稳定朗读与文本质量，规范为“浑身是血”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_6175371c0ad83589.txt",
+    "input_sha256": "be836f4f4e8e5fc2b17ccba58d32289439c1da3c74482ab770111a8e2687ae59",
+    "analysis_sha256": "ef293eb12c4474a516d6da3f29fe205c2a09c26607e1ef70dc29c5e95adc1e40",
+    "rewrite_sha256": "537892564e52504d18aa8f761a230e48b5fb442509df5013957f1eb2806ab866",
+    "generated_at": "2026-09-04T06:10:35+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_3ee628c0de24281b",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "尸妖查看断手骨处仍保留“颈见”的疑似 OCR 字样。",
+      "suggestion": "在不改变含义的前提下修正为可朗读的“颈间”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "尸妖自毁前的过渡句“孟知云与薛靖回过神来后，想不到的是”句式拗口。",
+      "suggestion": "拆分或改为直接叙述，明确两人惊讶地看见尸妖自行拿起降魔杵。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3ee628c0de24281b.txt",
+    "input_sha256": "6ecd810c90dab02c34ba3fd86fc88cebeb8635163ce63a35cd57e7ab48e0aaab",
+    "analysis_sha256": "05499bfdeea76cb3a71a540a628d43b604ee09d5d5d1541634491c58c58e0b9e",
+    "rewrite_sha256": "cc806b5f1ff867594ecff2f2880ad5a213fdde30038aa1c70766cdfa4adf08d0",
+    "generated_at": "2026-09-04T01:31:48+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_386cab67fbcca879",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.89,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "钱少轩死后，李灵询问赵小兵柳梦是否与王程程有关的对话处；B 将“那件事只有我们四个知道啊……小兵，你就别多疑了”标为赵小兵所说，随后又紧接赵小兵的回应。",
+      "suggestion": "该句应归属给李灵；现有归属会让赵小兵自称“小兵”并连续自答，破坏对白逻辑和朗读辨识度。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_386cab67fbcca879.txt",
+    "input_sha256": "994c1599e3e43ee2e47a1e1dd42953591718956b08ea59ab3063311cf7f87cc6",
+    "analysis_sha256": "030fd2b76a7aecb76445d2babbdaa9f89f05015c847d32feed6ab49dec76e8d0",
+    "rewrite_sha256": "214253639763320d05c6147cffe8131bfce17f0f26a1d29f81a137230df15813",
+    "generated_at": "2026-09-04T01:25:02+00:00"
+  }
+}

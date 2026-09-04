@@ -1,0 +1,39 @@
+{
+  "source_id": "story_a23177cf23de4703",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "辛菲电话结束后，B称“刚才拦住她的那个服务员”；服务员直到下一段大巴车门处才首次出场。",
+      "suggestion": "补足或调整该处过渡，避免听众在服务员首次登场前无法确定其所指；不改变其忧伤反应和后续陵园线索。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a23177cf23de4703.txt",
+    "input_sha256": "7fbe734d46082820b5e50b26939dee9bb51fb300884cec3853bc1af47212585a",
+    "analysis_sha256": "2eea5925d442c1036ec14d73a266566cef94c6ad42001166f72d6165b2666185",
+    "rewrite_sha256": "492dd29283101e3a13d1d3b98759aae2991b2453014be9b4a4cd8c67fd620cab",
+    "generated_at": "2026-09-04T12:18:03+00:00"
+  }
+}

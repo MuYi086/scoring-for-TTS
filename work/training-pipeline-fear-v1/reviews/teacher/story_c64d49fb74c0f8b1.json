@@ -1,0 +1,45 @@
+{
+  "source_id": "story_c64d49fb74c0f8b1",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界上下文 L174-L176 已出现草娃娃、时间及“然后我惊讶”，L180 却以“地听到了门铃声”续接；当前起点 L178 截断了同一故事的开场句与前置信息。L282 后紧接新标题《桥下的白色人影》，终点正确。",
+      "suggestion": "重新核定并提取故事起始边界，至少纳入能与 L180 连成完整叙述的 L174-L176；确认无相邻作品混入后，再生成和评估有声稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 开头保留“地听到了门铃声”这一无主语残句，朗读开场会明显断裂。",
+      "suggestion": "待来源边界修复后，以完整开场句重新生成 B；不要仅在现有 B 中臆补缺失内容。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c64d49fb74c0f8b1.txt",
+    "input_sha256": "91d04681511c5da418685e5827ba427007c28b96effce3bc121d11f688ad6c7b",
+    "analysis_sha256": "212f3f47268af26376df52daeffc0295436d45ba04dc1374c131578981ca9f66",
+    "rewrite_sha256": "e20206687d4bd1460f4fe2a777133e0601cb840fe4620c9d80e7e91549a9bd4d",
+    "generated_at": "2026-09-04T13:18:31+00:00"
+  }
+}

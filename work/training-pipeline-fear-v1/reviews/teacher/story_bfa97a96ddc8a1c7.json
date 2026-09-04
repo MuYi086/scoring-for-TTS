@@ -1,0 +1,57 @@
+{
+  "source_id": "story_bfa97a96ddc8a1c7",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.74,
+  "suspense_preservation": 0.92,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处会直接造成误读或语义中断的 OCR 文本，如“欢迎你来看星”“打扫指拭”“穿着睡饱”“看到了什么卜”“掏模”“啪啃”。",
+      "suggestion": "在可由上下文确定时做最小朗读修复；无法确定原词时提交人工核对，不应让 TTS 按乱码朗读。"
+    },
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "结尾关于肯德尔上校家庭的信息仍为“一家八日”，其具体人数无法从冻结原文可靠确认。",
+      "suggestion": "人工核对该 OCR 片段后再确定是否保留人数；这属于结尾人物家庭构成的硬事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "卡基克太太讲述旧房客的一长段对白中，多处引号未闭合，后续段落的说话归属容易混乱。",
+      "suggestion": "在不改变内容的前提下，按叙述与对白边界补足引号和段落归属。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中仍有“木萄”“酷可大醉”“做得很及寸”等明显异常词，影响合成发音与听者理解。",
+      "suggestion": "对可确认的 OCR 错字统一修复；不可确认者标记人工复核。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_bfa97a96ddc8a1c7.txt",
+    "input_sha256": "2ba86e02138a88f52ba1884b026559f3a8ff53f68f8c70fcb348d89544e85462",
+    "analysis_sha256": "a61533deff19a2ae8311d92f98925851232b074db20da2aeec34773ad7112e3f",
+    "rewrite_sha256": "8926ad58ad9bd032eb53a4cf6f1fccd346f5f5d134739a889ec2d6a83baa9aa1",
+    "generated_at": "2026-09-04T13:11:29+00:00"
+  }
+}

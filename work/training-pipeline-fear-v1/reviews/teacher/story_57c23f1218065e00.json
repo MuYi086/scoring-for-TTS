@@ -1,0 +1,57 @@
+{
+  "source_id": "story_57c23f1218065e00",
+  "factual_consistency": 0.82,
+  "audio_readability": 0.63,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "critical",
+      "evidence": "边界包显示故事从 L559 标题完整起始、至 L918 正文结束，后接新作标题；但 B 第287行保留“温安韵”，与全篇温安勤的身份关系无法可靠核定。",
+      "suggestion": "人工核验该姓名及其指代后再定稿，避免将 OCR 变体误朗读为新增人物。"
+    },
+    {
+      "category": "causality",
+      "severity": "critical",
+      "evidence": "B 第289、295行保留无法释义的遗书语句；该处关联温安勤与温朗路边冲突的动机和关键亲属关系。",
+      "suggestion": "人工依据可核来源确认原句；确认前不得把这些乱码当作确定事实或补写因果。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第135、273、275、291行含“如猜股”“很悲”“养想”“鞋鞋”等不可自然听辨的 OCR 残片。",
+      "suggestion": "人工标注并处理为可朗读的已核文本；若无法核实，应保留不确定性而非按字面朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第257行“因为天……”保留内部截断，遗书叙述在此处语义中断。",
+      "suggestion": "人工确认是否存在缺段；未确认前以明确停顿处理，避免误导为完整句。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_57c23f1218065e00.txt",
+    "input_sha256": "15ab07c390f587d38d36e350db33439c7790ab811a38fde7f4e6cd892eb655e9",
+    "analysis_sha256": "bd66f3a07363b6ec0ce8f034b5d0129f5bf8c4da97a4163149119402bb0bd5aa",
+    "rewrite_sha256": "7a3ed6307506dbb1217c433f96f0d8b6aaff5b139dcf014eb9404307eb2c9c0f",
+    "generated_at": "2026-09-04T04:22:17+00:00"
+  }
+}

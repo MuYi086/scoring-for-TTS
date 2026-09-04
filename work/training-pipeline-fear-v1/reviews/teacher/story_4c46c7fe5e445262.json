@@ -1,0 +1,39 @@
+{
+  "source_id": "story_4c46c7fe5e445262",
+  "factual_consistency": 0.92,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "A 的第121—129行在“咳”与“嗽着”之间混入“爆料／梁洛施被打”娱乐新闻片段；边界上下文对应故事范围内的 L3683—L3689。",
+      "suggestion": "先修复或重新提取该故事的权威边界内文本，并明确处理该插入片段后，再重新执行 A/B 比较。B 虽排除了该片段且其余叙事、人物、线索、反转和因果链均与可辨认正文一致，但不能据此掩盖来源污染。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4c46c7fe5e445262.txt",
+    "input_sha256": "febb337750697fc3fea3a2fc8145a000de17738bcf3a726b2f903d7ae4e18626",
+    "analysis_sha256": "bd38599c648ef951bcc1aa963bff547e2a106423812285e6e5edf774820632ce",
+    "rewrite_sha256": "f035f1afb6c01e06fed9f5dc77fca1bc35adfff9d496947a26b0f5888695e0a0",
+    "generated_at": "2026-09-04T01:52:06+00:00"
+  }
+}

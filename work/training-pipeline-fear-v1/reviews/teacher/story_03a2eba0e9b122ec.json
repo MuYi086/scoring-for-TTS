@@ -1,0 +1,32 @@
+{
+  "source_id": "story_03a2eba0e9b122ec",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.98,
+  "suspense_preservation": 0.99,
+  "problems": [],
+  "decision": "pass",
+  "_deterministic_gate": {
+    "decision": "pass",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_03a2eba0e9b122ec.txt",
+    "input_sha256": "452895f5b0ce969d7d1bc1c5e015a887449bd13e7b846da8a545016a0b5d3141",
+    "analysis_sha256": "5c5c7e42dce447a3923031fdff6b9d0825a3423aa1f0e086b7a983287fd55fa6",
+    "rewrite_sha256": "7d29d70d6e5892c212b14737601ddee7b276dcfacd8b540e0ed56d15b5f8f1fb",
+    "generated_at": "2026-09-03T16:08:03+00:00"
+  }
+}

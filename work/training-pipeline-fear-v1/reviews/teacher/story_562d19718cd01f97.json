@@ -1,0 +1,45 @@
+{
+  "source_id": "story_562d19718cd01f97",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 的真相揭示段保留“是一昨监狱”“向上怕上去”“警棍已经开始向他作用了”等无法自然朗读的 OCR 异常表达。",
+      "suggestion": "在不改变监狱、罪犯逃入下水道、警察追捕并制服这一因果链的前提下，进行人工校订或确认后规范化。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“守侯”“象发现”“能够够得着”“惊恐不能自己”等非规范或重复表述。",
+      "suggestion": "统一为适合 TTS 的规范词形，避免播报卡顿。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_562d19718cd01f97.txt",
+    "input_sha256": "f635abe14af94fbed77c2c55f424b26c8110a40c1451337b6b7ce3729b018912",
+    "analysis_sha256": "f0497f1547de2cc67902fb87f282d0a46516f0a796ee82126abea7be8d835cfb",
+    "rewrite_sha256": "cba5de51c305292ab1700f929266414a6e580d9f5212b36fc8dcfd688d23a885",
+    "generated_at": "2026-09-04T04:20:03+00:00"
+  }
+}

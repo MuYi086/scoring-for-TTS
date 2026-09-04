@@ -1,0 +1,45 @@
+{
+  "source_id": "story_7a73fd19972eda58",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "桥名揭示段保留“淦明桥”及“jin/gan”字母写法；这是解释徐畅未能赴约的核心线索。",
+      "suggestion": "为有声稿提供明确、可朗读的拼音/读音标注，并确保“金明桥”与“淦明桥”在语音中可稳定区分。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "陆筱昱讲述桥上目击经过处，续段在未闭合的直接引语前又出现一个开引号。",
+      "suggestion": "合并为同一段连续引语，或补齐前段引号，避免朗读系统错误切分说话人。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_7a73fd19972eda58.txt",
+    "input_sha256": "464fe02a2870251f5afcb6c9c0b74cb9954f0d89cfb8aa40951324eb88c7ad02",
+    "analysis_sha256": "6a0abe12c77578f36cb5bca546c7f31e3813aa503c8726cf247c4a06f1fb4f21",
+    "rewrite_sha256": "4f06dc6cd4f2bb4f05d19bf04acd7ca5e38f6dff2c3600a2cc985980eea4b734",
+    "generated_at": "2026-09-04T06:36:52+00:00"
+  }
+}

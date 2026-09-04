@@ -1,0 +1,39 @@
+{
+  "source_id": "story_b39264d6a1dfeaed",
+  "factual_consistency": 1,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开篇“跑到那座教学里去了”与紧接的“教学楼”表述不一致，朗读时像漏字。",
+      "suggestion": "在不改变地点事实的前提下，将“教学里”校正为“教学楼里”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b39264d6a1dfeaed.txt",
+    "input_sha256": "4b2abcf07f782b738341429bd6109b8542669565c82b052fb91ec9afd69399ca",
+    "analysis_sha256": "4f337a26b70a1c2c9acbbc5c18060122d35aa3960fc38a2d8309b514e4c417fb",
+    "rewrite_sha256": "8f6fa3df896ca18041659a894b1879bf800597a7a12897c7842ebf2dc35fae7f",
+    "generated_at": "2026-09-04T12:58:20+00:00"
+  }
+}

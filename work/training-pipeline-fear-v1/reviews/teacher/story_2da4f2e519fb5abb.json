@@ -1,0 +1,51 @@
+{
+  "source_id": "story_2da4f2e519fb5abb",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头丈夫触碰额头段保留“食指手指上”。",
+      "suggestion": "改为“食指上”，避免朗读时的重复与停顿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 书房段保留“纸鱼又名衣鱼，他竟然不是一种鱼”。",
+      "suggestion": "将指代改为“它”，使虫名指代在有声朗读中明确。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 丈夫返家前保留“继续谈听他们的对话”。",
+      "suggestion": "改为“继续听他们的对话”，消除明显病句。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2da4f2e519fb5abb.txt",
+    "input_sha256": "01cc36575fc33ef1edafcb4f145535e0918ff97120549f4d368e2eb94145289b",
+    "analysis_sha256": "4f43d858f6e013defd7f223cfd3002d03a4f6528d19d13c650347c450ece67fd",
+    "rewrite_sha256": "c3ddc56b4eadae8baa07c4eb20c64fa1a579283162aa7a1aeedf84616f25ab17",
+    "generated_at": "2026-09-04T01:08:38+00:00"
+  }
+}

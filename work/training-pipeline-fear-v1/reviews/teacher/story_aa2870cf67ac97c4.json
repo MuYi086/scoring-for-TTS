@@ -1,0 +1,51 @@
+{
+  "source_id": "story_aa2870cf67ac97c4",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "母亲转述中“像是一个形”保留了来源疑似转录残缺，无法自然成义。",
+      "suggestion": "在不补充新事实的前提下，改为可朗读的中性表述，并保留其仅为模糊白影的含义。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "迁墓段“请人带桥下去寻墓”语法不完整，TTS 听众难以判断行动主体和地点关系。",
+      "suggestion": "将句子规范为明确表示请人到桥下寻墓的说法，不改变找到浸水坟墓并迁葬的事实。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "哥哥发出苍老声音后使用“它说着妈妈的家乡话”，代词指向在有声播放中不清晰。",
+      "suggestion": "明确为哥哥口中传出的话或以旁白承接，避免听众误判说话者。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_aa2870cf67ac97c4.txt",
+    "input_sha256": "b2b47759c62972ca86afe42e17f807ddbce100f8ca585e29a949b57aeb700b4c",
+    "analysis_sha256": "560d1420fce7c4530fd036b10970fab1ae98526669b5275cd8cb0bcabaf0372b",
+    "rewrite_sha256": "d8b47b80c1cedbb8837e38ded55c6fb22171666edc20680da37e1be292d989db",
+    "generated_at": "2026-09-04T12:48:08+00:00"
+  }
+}

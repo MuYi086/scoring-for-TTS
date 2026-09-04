@@ -1,0 +1,39 @@
+{
+  "source_id": "story_4d17522c763a3c10",
+  "factual_consistency": 1,
+  "audio_readability": 0.96,
+  "suspense_preservation": 1,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾叙述保留“黑衣男生整个人突然得透明起来”，语法不顺，朗读停连与语义理解可能受阻。",
+      "suggestion": "在不改变透明化反转的前提下，人工确认该处是否应作最小化语病修正，例如“突然变得透明起来”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4d17522c763a3c10.txt",
+    "input_sha256": "366e82950408de0c3120361d127833e97caf59fcd215c6b8b9d75422d68b8af1",
+    "analysis_sha256": "0e4c47673663161b0c1e9c3d0de673e7d6c20eb8b4f375220dd3c91607a01cf1",
+    "rewrite_sha256": "2237f39670bcc0c4483964304170f33e793ee04e75b4be88853d9121572c5e27",
+    "generated_at": "2026-09-04T01:51:35+00:00"
+  }
+}

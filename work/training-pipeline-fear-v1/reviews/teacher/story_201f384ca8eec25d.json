@@ -1,0 +1,57 @@
+{
+  "source_id": "story_201f384ca8eec25d",
+  "factual_consistency": 0.9,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "location",
+      "severity": "major",
+      "evidence": "开篇同时保留“黄河城，南门”与“白城门口”；A 同样矛盾，Step 2 亦标为 OCR/用字异常。",
+      "suggestion": "人工核定开篇真实地名后统一；当前局部材料无法确认，勿擅自选择。"
+    },
+    {
+      "category": "other",
+      "severity": "major",
+      "evidence": "B 在同一故事内交替使用“干央山庄”“千虫山庄”“干虫山庄”。",
+      "suggestion": "待人工确认门派正式名称后统一读法；这会影响人物所属与有声稿专名一致性。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 删除了原稿的八个分节标题及“后记”提示，灯塔、夜探、血蛊、决战和数月后尾声仅靠段落切换。",
+      "suggestion": "保留简短章节提示或等效播报转场，增强长音频定位与节奏。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾任务分配段连续出现“我是十三”“我三十五”“我我我，七十六”等无说话人归属的对白。",
+      "suggestion": "在不新增人物的前提下，以“某位师兄弟”“另一人”等中性归属或停顿提示区分发言。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_201f384ca8eec25d.txt",
+    "input_sha256": "b7adbf16801cf5fe8581f82e481a9c3f13a49e9a96f1fb9188e57ad2ccee3f4c",
+    "analysis_sha256": "95705e6452a31525d508233f277647a5f86872f92c1c3cff26193aee1630af9f",
+    "rewrite_sha256": "a2de63015688b2838ffb1983b4f3b1a1fcfbed5dc6cee62f70387cf7e488259b",
+    "generated_at": "2026-09-04T00:36:28+00:00"
+  }
+}

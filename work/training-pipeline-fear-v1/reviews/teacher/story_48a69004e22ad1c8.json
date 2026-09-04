@@ -1,0 +1,51 @@
+{
+  "source_id": "story_48a69004e22ad1c8",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 开篇石碾描述保留“一磝硕大的石碾”。",
+      "suggestion": "核对该异常量词；改为可稳定朗读且仍指向石碾的表述。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 结尾回顾处为“打谷尝石碾”，与前文打谷场、石碾不一致。",
+      "suggestion": "恢复为“打谷场、石碾”，保持关键异常场景的前后对应。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中仍有“铁锹除下来”“不矢为”“旅店的摸样、愈是相象”等明显异常字词。",
+      "suggestion": "在不改变叙事含义的前提下校正为自然、可稳定朗读的词语。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_48a69004e22ad1c8.txt",
+    "input_sha256": "f7b32caa3492e060e59ab9f6a1d89c6d6762c0e8b12b9315b4eb2cf559340ec1",
+    "analysis_sha256": "e7014f60a5d5802882b280daec1997ce58f690d715ef8c934ca481255412059e",
+    "rewrite_sha256": "7e640e4a5212451537e7084f4b7082c2b395785420ca50a1a2d24105455fdc94",
+    "generated_at": "2026-09-04T01:45:40+00:00"
+  }
+}

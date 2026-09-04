@@ -1,0 +1,69 @@
+{
+  "source_id": "story_ab70049856e3b6cf",
+  "factual_consistency": 0.94,
+  "audio_readability": 0.57,
+  "suspense_preservation": 0.69,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中段保留“正午，套样肆无忌惮地散发属于它的能量”，主语与词义均无法朗读理解。",
+      "suggestion": "人工核对可还原词；无法确认时改为不改变事实的中性可朗读表述。"
+    },
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "B 冲突前蓝衣男子说“100万的时间”，随后漓说“100万年前”；前一句缺少时间单位。",
+      "suggestion": "核实前一句是否同为“100万年”；未能确认时保留悬置但补足可朗读的时间表达。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 冲突段含“有一种一样的熟悉”“当然提前是蓝衣男子是否是人”，语义残缺，打断对蓝衣男子身份与三人对峙的理解。",
+      "suggestion": "人工复核 OCR 残缺处，并以不新增身份信息的方式修复句法。"
+    },
+    {
+      "category": "death_method",
+      "severity": "major",
+      "evidence": "B 利刃场景写“漓转变了刀锋”及“倒在我的坏里”；前者动作不明，后者使深蓝替舞中刀、倒入舞怀中的关键过程无法清晰朗读。",
+      "suggestion": "人工核实原意后修复武器动作和“怀里”相关表述，不改变深蓝替舞受刃的事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 结局白色空间段保留“任使泪，六了满面”“票员的声音”“对了，吗”“似一团或”等不可理解短语。",
+      "suggestion": "逐处人工复核并修复；末句须保留宝石消失、舞胸前血红痕迹与火焰意象的悬念。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "上述残缺集中于身份揭示、受刃、白色空间和醒来结局，连续朗读时会削弱灵魂归属与结局悬念。",
+      "suggestion": "完成 OCR 复核后，以短句和明确说话者归属重排这些段落。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ab70049856e3b6cf.txt",
+    "input_sha256": "0b7b163980787eca08420ca20d2445c5931ae55d0fdca1413da1a11caaebdbf8",
+    "analysis_sha256": "d2e54f4ae14e472d449d017175c5590dbf1de3a439d0f93edeff46058aa3dd17",
+    "rewrite_sha256": "293fb36a89d4197355d3f5761b133dd168b2da734670ca29868b0adae1754b34",
+    "generated_at": "2026-09-04T12:49:32+00:00"
+  }
+}

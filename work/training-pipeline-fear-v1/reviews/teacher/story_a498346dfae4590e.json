@@ -1,0 +1,51 @@
+{
+  "source_id": "story_a498346dfae4590e",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处无法自然朗读的 OCR 残损，如“葬他娘的B，这么D远”“饿东西”“嘴完僵硬”“塑料袋斜眼看见”。",
+      "suggestion": "在不改变事件信息的前提下，逐处进行人工校勘；无法可靠还原的字词应以可朗读的中性表述处理。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 后段仍有“嗤蚩蚩”“再祭拜”“好几启”“呜呜奄奄”“老三的妈娘声”等异常词，影响 TTS 发音、语义和停顿。",
+      "suggestion": "统一拟声词写法，并人工修复明显错字、重复和缺字；尤其明确“老三的妈娘声”所指的说话动作或声音。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "掘墓队匿名对白在 B 中以“有人嚷道”“又有人说”“有人笑道”标示，虽未新增具体人物，但连续多人对白的声线归属仍不稳定。",
+      "suggestion": "保持匿名角色设定，同时用“队员甲/另一名队员”或一致的叙述性提示区分相邻发言，避免误归属给老三。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a498346dfae4590e.txt",
+    "input_sha256": "84ad7427f7ca74c0ea200d19107eb1c37626028ea285de7e7bfb9b49e6a27d2e",
+    "analysis_sha256": "54f1a2525ff66d64786e71698e7bf2489509839b8f0fb8240f15aee1b10c4bb6",
+    "rewrite_sha256": "9585b1c451fb67ebae6567e4561236a0d6b693b7acfd676b0f4c5c77c0cae7db",
+    "generated_at": "2026-09-04T12:45:22+00:00"
+  }
+}

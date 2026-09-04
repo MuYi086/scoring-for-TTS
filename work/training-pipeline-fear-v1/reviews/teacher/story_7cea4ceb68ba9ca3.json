@@ -1,0 +1,51 @@
+{
+  "source_id": "story_7cea4ceb68ba9ca3",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中西西说明“天堂”的对白段保留“我想我会到天”等不完整表达，听感易断裂。",
+      "suggestion": "在不改变其自称将去天堂这一信息的前提下，补足句式并保持西西为说话者。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“她笑笑说。”被单独置于已结束的长段对白之后，语序和说话归属不够自然。",
+      "suggestion": "将该叙述并入紧邻的西西对白或改为清晰的前置说话标记。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 的母亲遗言段虽保留全部因果，但单段超长且在叙述、回忆和对母亲说话之间转换密集。",
+      "suggestion": "按回忆节点分段，并用稳定的第一人称遗言语气承接，勿改变西西死亡、母亲阻拦和叙述者车祸的先后关系。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_7cea4ceb68ba9ca3.txt",
+    "input_sha256": "67f6c8ffeb5ee7362ac385d498dc5f039d69c4968900becdcd7e5816a0179c32",
+    "analysis_sha256": "d42bf4acec0fb2ed317924953706655da0d4e58c43e2205f4ce8ce6d8452cb86",
+    "rewrite_sha256": "d4ccbbf23d1d343da16e1c5c691c5e4005e2af684012ce91329ba7beab7f7222",
+    "generated_at": "2026-09-04T06:39:03+00:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_id": "story_15f3b0d5026100e5",
+  "factual_consistency": 0.93,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 与 A 一致地交替使用《画冢遗音》和《画家遗音》；后者出现在真迹揭示与结尾归还处。",
+      "suggestion": "核心宝物名称无法仅凭现有来源确认；人工核定后统一名称，再生成有声稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“陪葬坑里你把古琴是‘号钟’”，在关键古琴身份说明处明显不通顺。",
+      "suggestion": "人工确认原意后修正该 OCR/转写错误，保证号钟与绿绮的归属可听清。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“上古时期古琴只有无根琴弦”及“我们这趟就是来来找真迹”。",
+      "suggestion": "核定前者是否为“五根琴弦”，并删除重复的“来”，以避免朗读歧义和卡顿。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_15f3b0d5026100e5.txt",
+    "input_sha256": "98fd93109f44d33a56c347364fecb98c8b338ead21b8d1114536b7abd3eecc64",
+    "analysis_sha256": "e4ee1c67de53e495f911e97a180b4f8a3f51da045586532532292c61f0170d65",
+    "rewrite_sha256": "096e6a4e27b7bb7837f5cc787e1d6d2a126674dbf8d494150973fc11169f30f0",
+    "generated_at": "2026-09-03T16:26:50+00:00"
+  }
+}

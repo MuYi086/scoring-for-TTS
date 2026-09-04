@@ -1,0 +1,51 @@
+{
+  "source_id": "story_12b75908b93cde33",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中蓝天乐介绍阿慧的对白仍为“这个叫是阿慧”，语法残缺，TTS 朗读会明显卡顿。",
+      "suggestion": "在不改变人物关系的前提下，按语义修成自然介绍语句。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 末段仍保留“蓝天乐碘着一个大肚子”，其中“碘着”与语境不通，朗读语义突兀。",
+      "suggestion": "核对原文 OCR 后，采用与“挺着大肚子”相符的自然表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 将“仿佛野兽看向食物一样的眼神”独立成段，缺少明确主语，何若慧与罗阳的视线关系在有声中易短暂含混。",
+      "suggestion": "补出指代对象或将其并回前句，明确这是罗阳看向何若慧的眼神。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_12b75908b93cde33.txt",
+    "input_sha256": "aae1ccbfb30bffb78e63a2449a45772da3645cffef0f731d0c12097dbf9a7f8b",
+    "analysis_sha256": "27695642d18afaaaa2262dfad8e4d0121bcd596cf8619539d9c42c866e9e44aa",
+    "rewrite_sha256": "ebb166589c2da7e3e1f78fabaf92f68a3ce7b3690c18a09b3afba445062c089d",
+    "generated_at": "2026-09-03T16:23:24+00:00"
+  }
+}

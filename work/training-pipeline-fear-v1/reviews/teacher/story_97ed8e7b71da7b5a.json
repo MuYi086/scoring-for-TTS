@@ -1,0 +1,51 @@
+{
+  "source_id": "story_97ed8e7b71da7b5a",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中小王车祸段仍为“被喝得醉醺醺头过来的卡车撞了”。",
+      "suggestion": "保留“小王遭卡车撞击身亡”这一确定事实，重整无法朗读的 OCR 串句；不应臆定醉酒者身份。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在梅子沉默处保留“抿着嘴唇不啃声”。",
+      "suggestion": "更正为语义明确、适合朗读的“不吭声”。"
+    },
+    {
+      "category": "clue",
+      "severity": "minor",
+      "evidence": "A 开店后夹页处有红夜道谢并确认“这里是潭西村么”的对白，B 未保留。",
+      "suggestion": "补回这句简短对白，以维持红夜确认目的地的线索及纸巾交接的对话衔接。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_97ed8e7b71da7b5a.txt",
+    "input_sha256": "afc366a68708aecfccac7c5955fd3cc939d202bce7050a9e1979e0584a7197f7",
+    "analysis_sha256": "7f8b1c166ce008b4a97befe276d777b2482136015e73b6de95c8db6cdc6a1568",
+    "rewrite_sha256": "3b13a172ac4e82e34613def902df1444534d54b6c7ad184bc5c079a30f426d4a",
+    "generated_at": "2026-09-04T12:09:47+00:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_id": "story_a25b57f24419617f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.74,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在画室异象与小项赴艺术楼段保留“草系”“受机”“冲冲得一瞥”等错误词，TTS 会读出错误语义或发音。",
+      "suggestion": "在不改变情节的前提下校正为可确认的“草席”“手机”“匆匆地一瞥”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 多处仍有明显病句或缺字，如“他得非常清楚”“正他的背后”“按照非子给我的地址了找到了”。",
+      "suggestion": "补足虚词并调整句法，使旁白可一次听懂。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "非子回忆中的“强子”与当代室友“小强”读音相近，B 未在该处重申前者为王辉强。",
+      "suggestion": "在回忆转述首次出现时改用“王辉强”或加一次明确指代，避免朗读时混淆。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a25b57f24419617f.txt",
+    "input_sha256": "51886f5451dd703e535aede8f3810f27e0371dccd8f5ecca7ba4fd71d73089df",
+    "analysis_sha256": "ea4a0c2f0d9c95196630a16bc218a3ecec7f018a7e96a2f5478f5e19a8105d3c",
+    "rewrite_sha256": "cfd4c889062164b01b7ef576c013256f1a19c2c00ad24c03a3dcf6a2ba4adbf5",
+    "generated_at": "2026-09-04T12:19:06+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_29c5d2430185eaa9",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留多处明显错字或病句，如“好象”“看不道”“更本”“他地腿”“第三个坑了”。",
+      "suggestion": "修正为规范字词和语法，不改变情节事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“颤抖微弱地声音”“脚抖的互相碰撞了”“谈笑风声”等表述影响自然朗读。",
+      "suggestion": "适度润色语法和搭配，保留原有恐怖氛围。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "model_route": "luna_default_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_29c5d2430185eaa9.txt",
+    "input_sha256": "a3c691cbc752e689ae163fed722fa8be84af2f553c09a99cc4034a5898ca36f7",
+    "analysis_sha256": "db9b3ceb7bdaa4dc1e4f131e52d575eb5a696b5c298f6d0c5f7a2d58f6b9b741",
+    "rewrite_sha256": "f528e993e038529211cf4b8b352875f613a0e8d27035e19d223ef8930b390c25",
+    "generated_at": "2026-09-04T00:41:54+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_48ebb5064cfaf4e0",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "“夜半狼袭”段保留了“有胆子大的健身教练走上前去，看到于芳。让大家的神经一下收紧了”的断裂句，并与随后窗玻璃碎裂的叙述错序。",
+      "suggestion": "在不补造事实的前提下，重组该处已知动作与句子，或以明确的叙述停顿标注来源残缺，避免有声朗读出现无谓断裂和事件顺序混乱。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "狼影出现句仍为“这到一道矫健的绿影”，属于明显口播障碍。",
+      "suggestion": "更正为可朗读的“这时，一道矫健的绿影”，并保留原有狼影从卧室冲出、穿过破窗离开的事实。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_48ebb5064cfaf4e0.txt",
+    "input_sha256": "0fc85564c9cc6e38d0ef7ea39038cdbb9080da0bf3a53e1c3fcb1215fdf2e999",
+    "analysis_sha256": "db5607c5280b1421a57f872d5982fa478ee39575b771cc157f48ff6dece53f76",
+    "rewrite_sha256": "3f0e8c71d0b9f2ffd5b37a9b6c5a17f2d8f14bc888f5698b38ebae924d17e975",
+    "generated_at": "2026-09-04T01:47:02+00:00"
+  }
+}

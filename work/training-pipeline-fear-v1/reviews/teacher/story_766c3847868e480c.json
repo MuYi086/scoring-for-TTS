@@ -1,0 +1,45 @@
+{
+  "source_id": "story_766c3847868e480c",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“从到龙华以后”“洪晓几抱起”等来源残句，陈大伯事件复述和结尾问话处朗读不顺。",
+      "suggestion": "在不猜测缺失硬事实的前提下，改为语义完整的中性句式；无法确定的缺字可删去不影响事件的信息。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“挥之不去的梦寐”“脖子得酸痛不已”等明显搭配异常，神泉井等待段的听感会受阻。",
+      "suggestion": "仅做断句和措辞顺畅化，保持人物、地点、红线、玉坠、红光及结尾死亡信息不变。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_766c3847868e480c.txt",
+    "input_sha256": "ef58870e606bb4778ba9eb33540591651544de0cbe69882bd43ab34372894732",
+    "analysis_sha256": "2b8bffda8abb32d0b7411d098bfd6eba73116b236021da58e19e894927438f7e",
+    "rewrite_sha256": "b4d3d82f4fc586e8f990e9d1756005f7d5868a524efcd80d61d9f101efefc405",
+    "generated_at": "2026-09-04T06:29:24+00:00"
+  }
+}

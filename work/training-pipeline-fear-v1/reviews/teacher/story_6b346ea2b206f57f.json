@@ -1,0 +1,45 @@
+{
+  "source_id": "story_6b346ea2b206f57f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "文森特外貌段保留“很艮蓝”；“艮”在此语境语义不明，朗读会产生突兀词音。",
+      "suggestion": "核对可确认的原文后再修正；若无法确认，应采用明确的保留读法标记，避免擅自改写事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "矿工现身段保留“脸上有一个瘤了”，句法不完整，TTS 断句和语义均不自然。",
+      "suggestion": "在不改变“矿工面部有异常”的信息前提下，修正为可朗读的完整表述；无法确认原字时保守处理。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_6b346ea2b206f57f.txt",
+    "input_sha256": "dbfc13e400bf00afae9ec19d9449b6dbc72fe2c49c397a71a115631b521c32cd",
+    "analysis_sha256": "1c2ee2b847294562b168d91d639b0905afc3996e0f060fed55a21a46959d34c6",
+    "rewrite_sha256": "a4b61ec23914eda5c079250bf3b850afd819953300646dc717f9663215e0901f",
+    "generated_at": "2026-09-04T06:19:02+00:00"
+  }
+}

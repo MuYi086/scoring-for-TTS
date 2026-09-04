@@ -1,0 +1,39 @@
+{
+  "source_id": "story_539e0d7f37f55249",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第107行保留“第二天他请了假设去上班”，该短语语义不通且朗读会卡顿。",
+      "suggestion": "标注为来源 OCR 不确定处并人工核定后修正；不要擅自补写未获确认的情节。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_539e0d7f37f55249.txt",
+    "input_sha256": "fb56f95b56891c1f861ace369d7aa3bae2ecf7c14433957ccc4f15e801566693",
+    "analysis_sha256": "2cebb511b3d6001930b3d547e010747b10f95aa48680394c268b269d7343a36a",
+    "rewrite_sha256": "63458038cc32ad34454efa790d3605c6a5ed73110fb0065241b8413940e3e993",
+    "generated_at": "2026-09-04T04:16:37+00:00"
+  }
+}

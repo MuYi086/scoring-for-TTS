@@ -1,0 +1,39 @@
+{
+  "source_id": "story_c31b008da96db270",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 结尾“她答应他在她走时不哭”：紧接男主角说“我该走了”，代词指向与对白情境冲突。",
+      "suggestion": "改为“她答应他在他走时不哭”，使离别对象和朗读语义明确。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c31b008da96db270.txt",
+    "input_sha256": "3db1a821a230974d3e256b0ebb22139bb9b82f01c6fec919158766908abac319",
+    "analysis_sha256": "4ca835c270eb8769d3b4b6bfc95014703eecf79cf03bb78e9215aa9d609715f4",
+    "rewrite_sha256": "aa386c7e83206d03ad49d5a9747e957c579b26c61ff46c7fb12d76b9efd5db3e",
+    "generated_at": "2026-09-04T13:14:59+00:00"
+  }
+}

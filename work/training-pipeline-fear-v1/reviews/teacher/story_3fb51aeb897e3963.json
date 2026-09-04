@@ -1,0 +1,57 @@
+{
+  "source_id": "story_3fb51aeb897e3963",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.69,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在灌溉渠小桥段保留“主渠干、觉的、当是、能到”等异常词，连续影响朗读理解。",
+      "suggestion": "在不改变地点、停留和见到坟头等事实的前提下，校正为可自然朗读的表述。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 的筷子处理段写作“筷子竟比砍成两截”，关键动作缺少明确谓语。",
+      "suggestion": "明确为筷子被刀砍成两截，保留碗、筷子、刀及发生顺序。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 在结尾保留“筷子能竖在空碗里而不到”，使“直立不倒”的核心异象无法成立。",
+      "suggestion": "校正“不倒”的表达，勿改变叙述者仍无法解释该现象的立场。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“暖睡袋、脸个脖子擦了一边、大病初复”等明显不顺的词组。",
+      "suggestion": "分别改为自然、明确的口语表述，并保持母亲保暖、擦拭后恢复但虚弱的因果链。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3fb51aeb897e3963.txt",
+    "input_sha256": "f0068808e5337d1df5048cd2e1ba213ca4a955fe85b31c29da75ee0ed5a876ed",
+    "analysis_sha256": "eb3903ee2478d9f315a1a28a426efd4a68d7621db8c3a7a29fda06664baaa6c2",
+    "rewrite_sha256": "7793e7cfee4cd4d891b95df2f13fc772d59c82969779d776c1267e6417f7bc14",
+    "generated_at": "2026-09-04T01:32:55+00:00"
+  }
+}

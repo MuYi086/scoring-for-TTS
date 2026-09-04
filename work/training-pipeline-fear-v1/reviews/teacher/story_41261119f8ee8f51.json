@@ -1,0 +1,39 @@
+{
+  "source_id": "story_41261119f8ee8f51",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“只不过阿路的比我们的强”保留了原稿的残缺式比较，指代不清。",
+      "suggestion": "改为明确的口语表达，如“只不过阿路的这种能力，比我们强得多”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_41261119f8ee8f51.txt",
+    "input_sha256": "b4c86f5b7ff68050d793e95ba440dd376ca2d6f646d960b9c6a6bce51f247105",
+    "analysis_sha256": "f9fa68395ba213bc04c5ac47f3ce550a12cffe52d68778886a1df2f42edfa580",
+    "rewrite_sha256": "681d3c88bfaebf5fb073c63c9a46c6b755759bd18116fdc9c075448ee55e2983",
+    "generated_at": "2026-09-04T01:34:15+00:00"
+  }
+}

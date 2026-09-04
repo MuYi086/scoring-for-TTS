@@ -1,0 +1,39 @@
+{
+  "source_id": "story_5bd0a34a9885a10c",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留原稿中的“望像自己的手”“生世和背景”等疑似 OCR 词；前者在朗读中语义不通，后者易被读作不同于“身世”的词。",
+      "suggestion": "在不改变情节的前提下，分别校正为“望向自己的手”“身世和背景”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_5bd0a34a9885a10c.txt",
+    "input_sha256": "76bbc593c4464aa06a6d379625aa16bdbb8defc483fd19bd027d376a0e819077",
+    "analysis_sha256": "59a8bc0115b51f31902e7e9db69a6ed2e57c9a9b2aaf0747324839d62091048f",
+    "rewrite_sha256": "68ba3f18d6ab26d0856f758d8720f3ae833537d83f10cf1908e4d8749e7839e4",
+    "generated_at": "2026-09-04T06:08:05+00:00"
+  }
+}

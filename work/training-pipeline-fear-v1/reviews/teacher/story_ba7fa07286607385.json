@@ -1,0 +1,51 @@
+{
+  "source_id": "story_ba7fa07286607385",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.74,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中 412 女生段保留“3d点”，时间无法自然播报且含义不明。",
+      "suggestion": "标为待核 OCR；确认前不要将其当作确定时间朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中仍有“纷纷梦帅锅锅去了”“那女生都回穿着我”等明显异常措辞。",
+      "suggestion": "保留事实不变的前提下，人工核对并修正 OCR/语病后再用于有声稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“刚到走道，声控感应灯灭就灭了”重复且断句生硬。",
+      "suggestion": "按原意整理为自然的停顿与句式，避免朗读卡顿。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ba7fa07286607385.txt",
+    "input_sha256": "5574cc9a1b0dee20c12b16b97d4b1f32bb170a5c32dc7d0a38ea56461c55a6b3",
+    "analysis_sha256": "ee91ed3469ee90d14a258c01e0e6fb39dfd98e2fd9604a12e2afb556862e191c",
+    "rewrite_sha256": "244835b09c777a664ba4b512b7b1aa50c22ceb865842d386a195e99a168015af",
+    "generated_at": "2026-09-04T13:02:55+00:00"
+  }
+}

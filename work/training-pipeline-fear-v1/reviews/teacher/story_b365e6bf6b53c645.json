@@ -1,0 +1,57 @@
+{
+  "source_id": "story_b365e6bf6b53c645",
+  "factual_consistency": 0.95,
+  "audio_readability": 0.55,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“喝吧……”位于电话异声后的独立句。",
+      "suggestion": "该语句语义和发声主体均无法确认；需回查可验证底本后再决定保留、标注或修复。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "亡心山赴约段出现“恩弃”“殷恩冉”及“小四和周恩来不作声”。",
+      "suggestion": "这些疑似 OCR 人名/词语错误会被直接朗读，需按可验证来源统一角色名并修正句子。"
+    },
+    {
+      "category": "causality",
+      "severity": "critical",
+      "evidence": "结局对抗段保留“你送给我的这为这样我就会……”及“个项链是马恩准备送给周恩的……你以”。",
+      "suggestion": "该处缺失关键句首、句尾和对白归属，遮蔽项链、马恩之心与怨灵动机的因果；无法可靠修复，需人工核验底本。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "结局残句直接夹在怨灵施法与赵卓反击之间。",
+      "suggestion": "在核验原句前，当前断裂文本不适合有声朗读，也削弱最终反转与收束。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b365e6bf6b53c645.txt",
+    "input_sha256": "bcd19e14f05a88e59ea57190eaf5f2201d1a09e60ccc62faf9d95b2a67697b94",
+    "analysis_sha256": "4b377fef29d90afa777f2e01aa3e88cca986ea82f18b9084741270455dd89c59",
+    "rewrite_sha256": "8596b9bafc29ba43df999760cc63f2404a6491ef82b82e5c902bdca544e34da6",
+    "generated_at": "2026-09-04T12:57:40+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_59f70fd47a66fb45",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "锦囊内容中的“绿珠天生体制奇特”保留了原稿疑似错字，语义和朗读均不自然。",
+      "suggestion": "在不改变设定的前提下，核定后改为符合语境的“体质奇特”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_59f70fd47a66fb45.txt",
+    "input_sha256": "7db89843675679d70b58945e152774bac08ed82116265808d0d8ef168380b1de",
+    "analysis_sha256": "7c299d9dfaefc2649123d6797a5cbfc7855a727a5c8d53ccfde26e1f481feb22",
+    "rewrite_sha256": "4c77cd3aab9f843bbf0f8897fb3842f94cccb36eb42434d8237b4b91fcfebda3",
+    "generated_at": "2026-09-04T04:23:27+00:00"
+  }
+}

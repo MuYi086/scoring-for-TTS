@@ -1,0 +1,39 @@
+{
+  "source_id": "story_3329592598ec93d7",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.97,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "B 在老头开门段仍写“大铭”，与全篇主角“大明”不一致（对应原文 L111）。",
+      "suggestion": "统一为“大明”，避免文本层面被误判为新增人物；其余人物、事件与结局保持不动。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3329592598ec93d7.txt",
+    "input_sha256": "d97d0e15b4f5cdc71d6991a46e9e507539c62f164c601f859771c657bdf78c92",
+    "analysis_sha256": "f1feb4c3abd27082db90e2e63bd7a15340e6872c9069e6a27071b67a04fa040f",
+    "rewrite_sha256": "067d5785a6b9a19ca5ad369f0ddc4448c7faf47b65f9ba7c8b26c352ded7483a",
+    "generated_at": "2026-09-04T01:12:01+00:00"
+  }
+}

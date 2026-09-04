@@ -1,0 +1,45 @@
+{
+  "source_id": "story_668196812e882f06",
+  "factual_consistency": 0.94,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 第137段将王亚瑟最后一世托生称为“狭翰”；A 前段登记身份为“猥贪”，原文内部无从确认二者关系。",
+      "suggestion": "人工核定该专名/族类的正确写法及读音，并在 B 中统一；核定前不要将其作为确定人物事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第109、137段的“狭翰”无上下文释义，且与前文身份称谓不一致。",
+      "suggestion": "在完成原名核定后统一替换，并补足一次可听辨的身份说明。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_668196812e882f06.txt",
+    "input_sha256": "a4ab3a799dc9d31549d3cbc13750efa8f10ea25352777be66ac22b2317e8ef50",
+    "analysis_sha256": "67706b225c7602743c79f974f70793b3e04be3ac5ec58f59e26af2c12def3f00",
+    "rewrite_sha256": "0d3dd2c013e7e6119d1403770318a13331150740f7b64dd2dd44627fee904f24",
+    "generated_at": "2026-09-04T06:14:45+00:00"
+  }
+}

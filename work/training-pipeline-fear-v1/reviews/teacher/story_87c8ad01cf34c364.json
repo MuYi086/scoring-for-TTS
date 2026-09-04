@@ -1,0 +1,51 @@
+{
+  "source_id": "story_87c8ad01cf34c364",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处明显错词：如“吉他弹得有是超级棒”“谁有被想得到他”“你的不远出”。",
+      "suggestion": "校正为自然、可朗读的表达，且不改变人物、事件或结局。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 解剖室段仍写“用手去接那被单”，动词语义不通。",
+      "suggestion": "按上下文改为“揭开/掀起被单”等明确动作，以便朗读理解。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中萧寒送夏雪回家的一段，对白在段落间重新起引号，易使朗读时误判说话停顿。",
+      "suggestion": "统一该段的引号与段落归属，明确两句均为萧寒所说。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_87c8ad01cf34c364.txt",
+    "input_sha256": "728a55c75a9b49513175ebe154d8d4797d3afb5a48983da15eca40055c19eb8f",
+    "analysis_sha256": "5e1ea62c59a7acae1713849924507b687dee13f109a4e52648440f5f7a9fc8bc",
+    "rewrite_sha256": "69857a390ea673c2d18b501b7cfe6a367ade1abcc66f898a37be989d787184d3",
+    "generated_at": "2026-09-04T08:29:45+00:00"
+  }
+}

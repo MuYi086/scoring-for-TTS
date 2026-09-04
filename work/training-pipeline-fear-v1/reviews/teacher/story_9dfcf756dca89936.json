@@ -1,0 +1,57 @@
+{
+  "source_id": "story_9dfcf756dca89936",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.68,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“从破掉的……／风，不停地裤筒下、领灌入”的原始断裂，句意无法成立。",
+      "suggestion": "在不臆补情节的前提下，按可确认语义重整为完整句，或删除无法确认的残片。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“咳嗽的声音和——的脚步声”，破折号后缺失成分会被 TTS 直接读成突兀停顿。",
+      "suggestion": "删除无内容的破折号并调整断句，使声音描写可自然朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“电平车”“调整了下面部肌肉”“我不知错所地”“跌近柜子里”等 OCR 疑误仍直接进入朗读稿。",
+      "suggestion": "依据可确定的常用词进行保守校正，并复核不确定处后再出稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“南南走过来，摸了摸我的头说，你最近瘦了”未标示引语边界。",
+      "suggestion": "补足引号和停顿标点，明确南南的对白归属。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_9dfcf756dca89936.txt",
+    "input_sha256": "a02f234730b3eaa14496076fa6bb7ad8f464fc75cff4b0ae1dd86060133b3de9",
+    "analysis_sha256": "4babdaef96de5f3b7cfb029382c17e9640524a5ea09a6b865e59f125531b0f53",
+    "rewrite_sha256": "661fb6493af7a4b68f99d9fe22118f83ac3f556fbd9d249d1dba3e2179d4a166",
+    "generated_at": "2026-09-04T12:15:21+00:00"
+  }
+}

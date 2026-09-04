@@ -1,0 +1,45 @@
+{
+  "source_id": "story_68bdca6c42b11b70",
+  "factual_consistency": 0.91,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "原稿“骨架”段写作“祭拜一下洪磊”，B改为祭拜阮小亮；上下文支持后者，但原文与事实清单冲突。",
+      "suggestion": "人工确认此处原始作者意图后再定稿；确认前不可将改写视为已核实事实。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "B未保留原稿的分段标题“疑惑”“骨架”“还原”。",
+      "suggestion": "保留或以简短播报停顿标记三个叙事阶段，维持渐进揭示的节奏。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_68bdca6c42b11b70.txt",
+    "input_sha256": "53571cb736f918b6a9fa6d9fe337d571edf4ba0d2c4a7243ed4b124f415f81e5",
+    "analysis_sha256": "c1e056574d8a9c179f34822341dd17190d60f47c5d1d7c345c50526375bb0398",
+    "rewrite_sha256": "af5914c44cb0a897370508924b4324a62842bbd692466156dba6a5ecf1c63315",
+    "generated_at": "2026-09-04T06:17:26+00:00"
+  }
+}

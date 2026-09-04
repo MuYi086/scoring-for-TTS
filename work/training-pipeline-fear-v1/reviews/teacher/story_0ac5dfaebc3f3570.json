@@ -1,0 +1,45 @@
+{
+  "source_id": "story_0ac5dfaebc3f3570",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "309室内蜡烛描写保留“发着蜡烛的昏黄色光的蜡烛”，语法重复，朗读时难以理解。",
+      "suggestion": "在不改变蜡烛、昏黄烛光和桌上场景的前提下，改为清晰句式。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾灯光解释中“窗上以闪而过的灯光”存在明显漏字，影响有声理解。",
+      "suggestion": "核对原意后修正为通顺表述，保留“对面宿舍手电筒光”的解释。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0ac5dfaebc3f3570.txt",
+    "input_sha256": "36bba4a0cf627b5f01e5c5d4c7e472eca02f8b30dcc924226f5cefa73302b24f",
+    "analysis_sha256": "3b32c7adb88c3e481808af1281a44dc28b21f30debee021df8c967642beb8be2",
+    "rewrite_sha256": "36f50cf591282c246fd8b51dc307783584f14e8992fa0d45287a0372a8b08aaf",
+    "generated_at": "2026-09-03T16:15:29+00:00"
+  }
+}

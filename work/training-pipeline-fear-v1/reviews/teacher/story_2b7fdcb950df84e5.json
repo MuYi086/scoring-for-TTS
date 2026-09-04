@@ -1,0 +1,39 @@
+{
+  "source_id": "story_2b7fdcb950df84e5",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.95,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "原稿与 B 的肉店追逐段均为“拿着到的男人”；Step 2 标为疑似 OCR，无法确认是否应为“刀”。",
+      "suggestion": "保留 B 不变，需人工核对权威文本后再决定读法或订正。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2b7fdcb950df84e5.txt",
+    "input_sha256": "a57932ed895b62d8583ad24fd51e0b28792a197b27152bacac49642a187aabab",
+    "analysis_sha256": "db9c884389442c61bd035032a01e851d2571350b674e4b78eded2dfe6fe17bd6",
+    "rewrite_sha256": "964f51335d70b7d7822cfe896e7da5bbdb17eff3a9e7d2684d33e4ef4910a312",
+    "generated_at": "2026-09-04T00:43:03+00:00"
+  }
+}

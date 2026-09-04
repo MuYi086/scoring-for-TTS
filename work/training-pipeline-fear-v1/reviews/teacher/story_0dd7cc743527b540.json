@@ -1,0 +1,45 @@
+{
+  "source_id": "story_0dd7cc743527b540",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "教师在开头的嘟囔台词“笼子没头好吧？”语义不通，B原样口播。",
+      "suggestion": "将该句标记为待确认的OCR文本；确认前以不改变情节的模糊抱怨处理，避免听众误解。"
+    },
+    {
+      "category": "key_object",
+      "severity": "minor",
+      "evidence": "A中的篇名“小白鼠”未纳入B。",
+      "suggestion": "在有声稿开头补入篇名，便于音频节目定位。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0dd7cc743527b540.txt",
+    "input_sha256": "2440a9325bebbc5508604b830d3e15d05e97449ee80d63e5350818cbc38047e0",
+    "analysis_sha256": "4c35551644a49b540c7016fbc3d21ee1ee0ae56ec384a171a36e2304939b6647",
+    "rewrite_sha256": "740325400f10293599a565183a8501bc9033e896993047cae41277d9eddde363",
+    "generated_at": "2026-09-03T16:20:38+00:00"
+  }
+}

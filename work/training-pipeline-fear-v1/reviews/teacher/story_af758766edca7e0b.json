@@ -1,0 +1,51 @@
+{
+  "source_id": "story_af758766edca7e0b",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B仍保留“七俱”“面苍白”“告戒”“正直下班高峰”“忧郁”“捆饶”等明显错字或病句。",
+      "suggestion": "修正为“七具”“脸色苍白”“告诫”“正值下班高峰”“犹豫”“困扰”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "驾车人笑声改写为“嘿嘿，嘿嘿的干笑声”，重复感和原文拟声节奏不够自然。",
+      "suggestion": "统一为更适合朗读的笑声表达，并保留阴森递进感。"
+    },
+    {
+      "category": "other",
+      "severity": "minor",
+      "evidence": "B的quality_flags声称保留“相似一辆马车”等问题，但正文实际已改为“像是一辆马车”，元数据与正文不一致。",
+      "suggestion": "同步更新quality_flags，准确反映实际改写结果。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "model_route": "luna_default_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_af758766edca7e0b.txt",
+    "input_sha256": "b525877a8549ab51673f9daa32881cf8c878b5818c2d3fa5b785122531b19819",
+    "analysis_sha256": "d3d4b6169a157c137be7a521567777a1ce7c92c971c246b55b71f3abfcf73d68",
+    "rewrite_sha256": "0660ecac37f043ce3a912c5708bf4ec1690ecae4b61532678f95e604a9333a36",
+    "generated_at": "2026-09-04T12:51:54+00:00"
+  }
+}

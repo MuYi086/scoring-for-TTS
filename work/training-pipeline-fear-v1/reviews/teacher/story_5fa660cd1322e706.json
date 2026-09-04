@@ -1,0 +1,45 @@
+{
+  "source_id": "story_5fa660cd1322e706",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.92,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "B 在海底尸骨段写作“费思疑的尸骨”，与前后“费思颖”姓名不一致。",
+      "suggestion": "统一为“费思颖”，避免听众误判为新增人物。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在彭艳放血段保留“我松开了他的手臂”，与上下文女性指代冲突。",
+      "suggestion": "改为“她的手臂”，确保对白与叙述指代清晰。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_5fa660cd1322e706.txt",
+    "input_sha256": "4a893769a7c7897aa677465aa2cc37815578a21d8eb8de8339ef5a10ab86d890",
+    "analysis_sha256": "c3805343386eda2dc4a4bcce9243a4d469ced2c8c2f227887c73a0bf2d3ab53e",
+    "rewrite_sha256": "f156993bb43a88f5b741cfb29a884eda93812dcc8ad63346e5d76c61b3ff438b",
+    "generated_at": "2026-09-04T06:09:26+00:00"
+  }
+}

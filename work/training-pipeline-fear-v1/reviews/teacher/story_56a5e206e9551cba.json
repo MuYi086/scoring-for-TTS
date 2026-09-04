@@ -1,0 +1,57 @@
+{
+  "source_id": "story_56a5e206e9551cba",
+  "factual_consistency": 0.86,
+  "audio_readability": 0.7,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "小庙赴约段写为“李廷和魏强”，其余相关情节均为魏涛；A 本身亦无法确认是否同一人。",
+      "suggestion": "人工核验“魏强”是否为魏涛的 OCR 误写；确认前不能将其作为独立人物或直接替换。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "相机验证段在“九点三十分”后保留孤立句“时间却是九点二”。",
+      "suggestion": "人工核对原始文字或可审计证据后，确定该残片应删除、补全或保留；当前会破坏朗读节奏及时间规则理解。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "魏涛靠近灌木丛后，紧接着写“看着李廷走过来”，与前句动作主体冲突。",
+      "suggestion": "人工确认接近章晟者的身份后再处理指代，避免有声稿将威胁者误听为李廷。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“热平的鲜血”为明显异常词组，出现在白影误导段。",
+      "suggestion": "人工确认原词；在未确认前不要擅自替换，以免改变超自然误导细节。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_56a5e206e9551cba.txt",
+    "input_sha256": "37e0418ef5fda30ae52fbb81ffbd54d421eac0337a0724fc086d9ace5dfabb8a",
+    "analysis_sha256": "150f7c10c8376e3275759524ef10ac96b507d2735ceab722300f5274c25e4de7",
+    "rewrite_sha256": "6c249088da2e122b42682b8dc5544a61ac68274420a0cf71bd0c78235a344adf",
+    "generated_at": "2026-09-04T04:20:26+00:00"
+  }
+}

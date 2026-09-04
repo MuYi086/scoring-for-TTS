@@ -1,0 +1,45 @@
+{
+  "source_id": "story_4d1d454e17350036",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头“我蒙住了”沿用 A 的疑似 OCR 异常；“蒙”会造成朗读语义不通。",
+      "suggestion": "改为“我懵住了”或经人工确认的等义自然表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 前段“ 一步一趟趟地离开了半山腰”语法与朗读节奏不自然。",
+      "suggestion": "在不改变熙抱着叙述者离开半山腰这一事实的前提下，改为自然、可朗读的动作表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4d1d454e17350036.txt",
+    "input_sha256": "0431fed22a5c79e033769b4267bf917e134f52b239785933ef50dcbd430a17c0",
+    "analysis_sha256": "4e41298a55e4074d38e933a71ee6519379e644966467e3b8094f1630f130bebd",
+    "rewrite_sha256": "61c6b8b2ebb55ab92058ae992a72cf6c0c02702132b9d5273ca78f6bf7d0214e",
+    "generated_at": "2026-09-04T01:53:05+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_b639d105b89a71ef",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "房东电话段后，B 保留独立短句“同租客。”；其前后叙事已连续，作为朗读文本会形成无归属、无语义承接的突兀停顿。",
+      "suggestion": "删除该孤立短句；若确认它是原刊的小标题，则改为明确的章节提示并与前后留出一致的转场。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b639d105b89a71ef.txt",
+    "input_sha256": "644d822c308fd06e22d0c59180b6ae537e7df1e8afd800cc3bd6d7ed03dacb4c",
+    "analysis_sha256": "50d5c17df01474e7f8e39f3496d908636c0ea1610b2bbb8dafecd33c2ed2e20e",
+    "rewrite_sha256": "0588ac4cfd2b53b53e38a91a46e6f510c341f171c236c6a2c76e209ea7aae2ba",
+    "generated_at": "2026-09-04T13:02:08+00:00"
+  }
+}

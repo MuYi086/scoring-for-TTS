@@ -1,0 +1,45 @@
+{
+  "source_id": "story_9d75b664cbb75a01",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "标题仍为“尔喜欢什么鬼”；边界起点完整，但该标题疑似缺字，朗读时语义不完整。",
+      "suggestion": "人工确认标题的原始应有文字后再修正；不要据猜测擅自补字。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾保留“旗胜一招”等疑似OCR用词，虽不影响主线事实，但成语读感生硬。",
+      "suggestion": "人工核对该词后进行最小化文字校正。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_9d75b664cbb75a01.txt",
+    "input_sha256": "8995d1cdce25476eba7a7470e974d5d48d64cdd177b176bf53dce93e21212eb3",
+    "analysis_sha256": "52aef94033b40f0f61ceff5bf2c04debfe857ef51dfd04410f93f9d13c1e188c",
+    "rewrite_sha256": "6ecef1b7e83fc6a82edd79e1c3a27b419706d32ceb973aa8180f2f05a2b6a91e",
+    "generated_at": "2026-09-04T12:13:44+00:00"
+  }
+}

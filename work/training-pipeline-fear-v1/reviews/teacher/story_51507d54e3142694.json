@@ -1,0 +1,45 @@
+{
+  "source_id": "story_51507d54e3142694",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "A、B 后段 QQ 对话均在顾城“我还觉得陈然本来……”后突接“过什么了。”，缺少关键衔接，无法确认陈然相关推断。",
+      "suggestion": "保留为来源缺段待人工核验；不要臆补人物动机或推断内容。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 后段“赵元竟然有个秘密情人，而这……”后紧接无归属的“就计划杀了章成”，对白归属和句意均断裂。",
+      "suggestion": "需依据可验证的完整来源人工恢复；在无法确认前不可直接修订。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_51507d54e3142694.txt",
+    "input_sha256": "21f50834690e4c5f18c6a508470bf2427fe9071c456053eda6df80ec142be264",
+    "analysis_sha256": "320bef06f9079eda3ade54f71c378937e61168b1ff5a050dc75cb03d87a8001b",
+    "rewrite_sha256": "74ee82e72f60c4b4131b58a72bc505739bee301b98c9c0ac6115ed3c8a3e98b8",
+    "generated_at": "2026-09-04T04:13:47+00:00"
+  }
+}

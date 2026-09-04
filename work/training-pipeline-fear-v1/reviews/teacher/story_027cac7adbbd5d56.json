@@ -1,0 +1,45 @@
+{
+  "source_id": "story_027cac7adbbd5d56",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "共同生活、体重异常段保留“我也知道这样的胖是……有人说”，句意断裂。",
+      "suggestion": "在不补造事实的前提下，删去或重断这处残句，使“体重异常—医院检查”衔接清楚。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "早餐后牵手段仍有“她的手又始像以前一样”，有明显词语残缺。",
+      "suggestion": "修正为可朗读的完整表达，并保持手部恢复光滑这一线索。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_027cac7adbbd5d56.txt",
+    "input_sha256": "6bb992ef5d35cd34cca564a09733abb6a928ba3636a03463f2d0b8b46deaa079",
+    "analysis_sha256": "a7713dd91aa0c6bcf18993b54fac37a01069a2c25836648e68bba3e19e3d7747",
+    "rewrite_sha256": "35692fd024c4cf9f3592f8ae36285aa90375e693ccb8a64c5334ec04211f7023",
+    "generated_at": "2026-09-03T16:06:51+00:00"
+  }
+}

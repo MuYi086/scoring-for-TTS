@@ -1,0 +1,45 @@
+{
+  "source_id": "story_14e957337c743c1b",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B“醒后便感觉饿”段保留“于是那了一包方便面”；“那”会被朗读为指示词，句意断裂。",
+      "suggestion": "人工确认原意后校正该疑似 OCR 错字。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B积水至膝盖段保留“我把裤子扁得老高”，动词语义不明，影响听众理解动作。",
+      "suggestion": "人工核对原意后校正该疑似 OCR 或用字错误。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_14e957337c743c1b.txt",
+    "input_sha256": "0bed515f746f363b4d81fbc78f3e0cc0702677b2defc3d2e8b91ce56eac34a7a",
+    "analysis_sha256": "970481e81b876ad8171abe9c55f1aec098f44b58ba7ca413ce27a7175475b161",
+    "rewrite_sha256": "af1723aadd2461a8be736845bcdf3cd3c879aca175d6c9c6b0d6aa089ca0dedb",
+    "generated_at": "2026-09-03T16:25:07+00:00"
+  }
+}

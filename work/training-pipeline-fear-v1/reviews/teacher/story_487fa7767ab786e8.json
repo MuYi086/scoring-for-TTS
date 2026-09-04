@@ -1,0 +1,39 @@
+{
+  "source_id": "story_487fa7767ab786e8",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“当身体不再僵硬时”紧接狼狗僵硬的描述，未明确主语转回铁子。",
+      "suggestion": "改为“当铁子的身体不再僵硬时”，以免有声听众误判为狼狗恢复行动。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_487fa7767ab786e8.txt",
+    "input_sha256": "ea8f21508cccdaf3b4a10e795499d8bb67e83761ae59fb473bda2b52db1e5381",
+    "analysis_sha256": "fd2a1528ba4dd9b908808b90b2f3cb0714acba5a4f9e15be31abc843478c395e",
+    "rewrite_sha256": "192093cafc34192a37e16b0b6cfa4ed3541e41530d865d0c59c2b85f1d6b3a27",
+    "generated_at": "2026-09-04T01:43:53+00:00"
+  }
+}

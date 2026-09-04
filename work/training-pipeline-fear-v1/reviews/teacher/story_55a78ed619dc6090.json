@@ -1,0 +1,51 @@
+{
+  "source_id": "story_55a78ed619dc6090",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界包 L682 的句子在“全身各个关节都生”处被截断；A 却从其续句“了锈，动弹不得”开始。L658-L683 还包含同一故事的开场、人物背景和首轮狼影事件，未纳入 A。",
+      "suggestion": "停止使用该 A/B 进入后续训练；按边界包将本篇起点回溯至完整故事开头并重新提取，再重跑改写与核对。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 开头仍为“……了锈，动弹不得”，是无主语、无完整词语的残句，朗读无法自然进入。",
+      "suggestion": "在修复来源边界后，以完整首句替换该残缺开场；不要仅凭现有 A 猜补。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在“心跳一直保持在每分钟 !/0 以上”保留 OCR 符号，TTS 可能将其读成异常字符。",
+      "suggestion": "回查可确认的原始字符后规范为可朗读数值；无法确认则保留人工复核标记。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_55a78ed619dc6090.txt",
+    "input_sha256": "2c7200d031c87a55a4b3cb9d06b039369429ca2a18daa960fcce80d9f76ce746",
+    "analysis_sha256": "c688ba3700a3d93ed7d5e0dc63131e8d4a5b6a204d5dd7249041ffe24811888f",
+    "rewrite_sha256": "7530e2dc9f8059fd774b537ab755c635902a27912edeed3661b6bb415c21da72",
+    "generated_at": "2026-09-04T04:19:16+00:00"
+  }
+}

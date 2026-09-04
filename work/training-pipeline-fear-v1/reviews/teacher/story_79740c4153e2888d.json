@@ -1,0 +1,51 @@
+{
+  "source_id": "story_79740c4153e2888d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 开篇及后文反复保留“11”“第 ) 次追11行动”“漂亮的“””等 OCR 残片。",
+      "suggestion": "清理或以不引入新事实的中性称谓替换可确定的乱码；无法可靠判定的缺字请人工复核后再定稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中保留“早上!点多”“#$ %!”“&点多钟时”“! /0”等时间/符号串。",
+      "suggestion": "这些符号不应直接交给 TTS；删除不可读符号或经人工核对后恢复时间表达。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "电话段“天哪……作法呀！”与紧接的“我只是个恐怖小说家”均无明确说话者标记。",
+      "suggestion": "为吴朵朵与骆驼的连续对白补充简短归属，避免有声朗读时角色混淆。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_79740c4153e2888d.txt",
+    "input_sha256": "632c4a23df388e49ec7b17902df794456a1f5e43f6c9d8a223fb562f8e75ee53",
+    "analysis_sha256": "7cbefa2dcb052dc775da73973315b9c8de8576e471a68a94df14b2a72c22c908",
+    "rewrite_sha256": "9f915acb369021b4ecfa4ffe3d90d0faffaec8ca9513bbd8bbf1d7eb4f0698ed",
+    "generated_at": "2026-09-04T06:33:14+00:00"
+  }
+}

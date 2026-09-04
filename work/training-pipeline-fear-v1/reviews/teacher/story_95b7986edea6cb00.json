@@ -1,0 +1,51 @@
+{
+  "source_id": "story_95b7986edea6cb00",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B“与他同流一脉血，心灵相通”处保留原稿疑似缺字结构，朗读语义不顺。",
+      "suggestion": "在不改变血契设定的前提下补足语法连接，使其可自然朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B“身后一个迷幻的声音响起”后的对白未标明说话者；该段紧接小可离开，音频中易混淆。",
+      "suggestion": "补充为曼陀罗之王的声音或以等效提示明确对白归属。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B保留“黑超眼睛”“耳垂上的一小碗血”“看着拿株月桂”等疑似OCR异文，部分会造成听觉理解停顿。",
+      "suggestion": "逐处核对原意后做最小的文字校正，不改动人物、物件或情节。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_95b7986edea6cb00.txt",
+    "input_sha256": "7e798ca7d1833a150d4f6098709a988071e313dc6bd9c85c89bad0de389f52f6",
+    "analysis_sha256": "123c1985f8eb791fc19ee782a8ed5b47acbf822d84f1ecb7e204e99d91a92053",
+    "rewrite_sha256": "036f04511fe43c6818938cf05f9515b0d849f18d3b8adf025d38c33e865375a0",
+    "generated_at": "2026-09-04T11:11:53+00:00"
+  }
+}

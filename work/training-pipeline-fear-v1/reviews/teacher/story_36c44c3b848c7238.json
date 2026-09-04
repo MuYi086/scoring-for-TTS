@@ -1,0 +1,45 @@
+{
+  "source_id": "story_36c44c3b848c7238",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.84,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "结尾“许来有，45岁”与全文“许老师”对应关系仅能依赖疑似 OCR 名称，无法独立确认该硬姓名。",
+      "suggestion": "人工核验姓名；在确认前不要将“许来有”作为确定人物事实使用。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "第6节逃离工地的紧张行动中保留“段子／画皮鬼”独立笑话，随后才接回火星追击。",
+      "suggestion": "人工确认这是否为原刊插页；若非正文，应在音频版本中隔离或移除，以免打断因果与悬念。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_36c44c3b848c7238.txt",
+    "input_sha256": "5f190933037cea7b61439aae03da0130cbf9801875f4c5e4b6704902e9f8fefa",
+    "analysis_sha256": "f93657252d4e2663d0be5b8b2fd34ba3ec5b8ac179feef84022c21d162f17397",
+    "rewrite_sha256": "d9cb73fd9e4e115cf907a9e0822ea647a3cbbaa8b02211c98dd155e31e9a1baf",
+    "generated_at": "2026-09-04T01:20:07+00:00"
+  }
+}

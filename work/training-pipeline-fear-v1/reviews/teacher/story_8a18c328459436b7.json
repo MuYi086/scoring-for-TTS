@@ -1,0 +1,51 @@
+{
+  "source_id": "story_8a18c328459436b7",
+  "factual_consistency": 0.82,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "clue",
+      "severity": "critical",
+      "evidence": "原文 L34 的“面部变成照片中人物”句严重缺字、错序，无法独立确认镜子场景的完整表述。",
+      "suggestion": "人工核验该关键身份线索的原始版面；未核验前，不应将重建表述视为确定事实。"
+    },
+    {
+      "category": "causality",
+      "severity": "critical",
+      "evidence": "B 将 L34 重建为“伤愈后照镜子时发现”，但原文仅保留破碎的“赵飞伤…拿来镜子给他看”。",
+      "suggestion": "人工确认康复时点、镜子提供者与“发现”过程；确认后再决定是否保留该因果叙述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“他把这件事告诉了新婚妻子”中的“这件事”指代范围略泛。",
+      "suggestion": "可明确为“把手机预示的经历和兰馨的嘱托告诉了新婚妻子”，但仅在人工确认不扩写事实的前提下修改。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8a18c328459436b7.txt",
+    "input_sha256": "fd10e3ec533d757a98c512405792cd2e86047cea0ee4a58469bb2649870c8ab0",
+    "analysis_sha256": "0fcf38c9df7bbc0e54d14350e4ffa07ffdccabefa73f327ddeaf389fd47b20d0",
+    "rewrite_sha256": "b6a075cdc698338ca7be02f02e1b7fd398b0905102d85566dd57bedea49a404d",
+    "generated_at": "2026-09-04T08:30:50+00:00"
+  }
+}

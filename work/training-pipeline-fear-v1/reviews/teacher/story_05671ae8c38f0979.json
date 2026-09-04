@@ -1,0 +1,39 @@
+{
+  "source_id": "story_05671ae8c38f0979",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在“全身的骨头正已看得见的速度缩短”处保留了明显的 OCR 漏误，“正已”无法自然朗读。",
+      "suggestion": "改为“正以看得见的速度缩短”，保持原有异变信息与节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_05671ae8c38f0979.txt",
+    "input_sha256": "0a7dd54f1494d4820092a62e22a891db3092663bc183e8fd9fcb3c852b1545dd",
+    "analysis_sha256": "4fc5f55d02a66a2642fdbe6cb7f9e4b42689b4fb868ef1e262d89255572a1c99",
+    "rewrite_sha256": "d8ec007ea95ac0fdf659190c0d3f2cb122b42626871ffd25b5bde346e650103f",
+    "generated_at": "2026-09-03T16:10:07+00:00"
+  }
+}

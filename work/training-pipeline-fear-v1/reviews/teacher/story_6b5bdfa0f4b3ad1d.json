@@ -1,0 +1,39 @@
+{
+  "source_id": "story_6b5bdfa0f4b3ad1d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.87,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 省略原稿标题“山下岛·蛇夫座的秘密”及 Chapter 1—9 的全部章节标记。",
+      "suggestion": "保留标题和各章节标记，或以简短旁白明确章节转换；尤其在日记、回忆与调查推进的切换处补足可听的结构提示。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_6b5bdfa0f4b3ad1d.txt",
+    "input_sha256": "f2136ab3c319b444ca076ba19af612956267c2a416859ae787430067dec27ba5",
+    "analysis_sha256": "6708e14ac978f753078552a3946c27e00694e55a556aca01e8a40fde3e5e4e78",
+    "rewrite_sha256": "d9dbc3d4b05767c0cc74f8dcbf3f40eaf0547918e417f121560a78d0fab61d1f",
+    "generated_at": "2026-09-04T06:20:23+00:00"
+  }
+}

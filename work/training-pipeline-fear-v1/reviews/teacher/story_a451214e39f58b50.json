@@ -1,0 +1,39 @@
+{
+  "source_id": "story_a451214e39f58b50",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.98,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "A 的两个章节提示“死亡事件”“失控”未进入 B；其余正文情节连续。",
+      "suggestion": "保留为简短章节播报或明确的段落转场，强化从约会到灾祸、再到失控的悬疑节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a451214e39f58b50.txt",
+    "input_sha256": "22348c34df8b5d73dfade394ef68c72dfca63ea943cee0e9838bba3b40b45147",
+    "analysis_sha256": "87f46a77dcf9a762890b295a1f45deba584a11b3fd6ff9df4732b89a1bd7635f",
+    "rewrite_sha256": "9861f03a63ddf18c761e64932a6e791fe758f933ec35df276eadf55543941f40",
+    "generated_at": "2026-09-04T12:43:48+00:00"
+  }
+}

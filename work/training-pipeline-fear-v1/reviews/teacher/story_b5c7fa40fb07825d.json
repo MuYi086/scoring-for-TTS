@@ -1,0 +1,51 @@
+{
+  "source_id": "story_b5c7fa40fb07825d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "榴莲故事医院段保留“鬼迷心穿迷上了”，存在明显转写重复，朗读语义不顺。",
+      "suggestion": "核对并修正该处疑似OCR文本，保持“泰国留学、痴迷养鬼术”的事实不变。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "程超要求X光的句子保留“他夹求医生”，词语无法自然朗读。",
+      "suggestion": "核对原始字词后改为自然、等义的请求表达，不改动X光检查及腹内无物的情节。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "鬼胎叫声段使用“清清楚楚地发来了几声”，搭配生硬，影响有声连贯性。",
+      "suggestion": "在不改变声音来自程超腹中的线索前提下，核对并调整为自然搭配。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b5c7fa40fb07825d.txt",
+    "input_sha256": "d278ce37d696058fce2adac2a692ff9e5c47af6da57a6127bf6204155742a316",
+    "analysis_sha256": "1aa9cef58195ad4cf9b3cb42db0bca93c53d6da100d6a5a111f60474865e3a7e",
+    "rewrite_sha256": "7e741074f3abba48840e8ba9e9ea8cd0bf9b7c4b9535ae2cee9ae400fa37a217",
+    "generated_at": "2026-09-04T13:01:24+00:00"
+  }
+}

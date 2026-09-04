@@ -1,0 +1,39 @@
+{
+  "source_id": "story_ccae1751411ff72a",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "A 开头与中段分别称周俊二十岁、二十一岁生日；B 如实保留，两者无法由现有材料判定孰是。",
+      "suggestion": "人工确认周俊生日年龄及“十八年”计算基准后，再统一有声稿中的对应表述。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ccae1751411ff72a.txt",
+    "input_sha256": "5643bce9ce26a683dd4f3caa99fea6b14099039e5668643f2f8c72cf15c38ad6",
+    "analysis_sha256": "fa465f370fe0b4bc4e120b9c9729047994af20da3f20c875db22aec76c98328b",
+    "rewrite_sha256": "791d8b9f519fe075d7b345f2fe60e010d61b5ec7fd05ecfa33f5e765dd40080e",
+    "generated_at": "2026-09-04T13:23:05+00:00"
+  }
+}

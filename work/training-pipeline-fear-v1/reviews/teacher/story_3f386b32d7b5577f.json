@@ -1,0 +1,45 @@
+{
+  "source_id": "story_3f386b32d7b5577f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.83,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 电梯开门揭示段：“梯门外站着一个人。王颢锵，他正冷冷地盯着黄晓婷！”人名成为悬空短句。",
+      "suggestion": "将该处改为完整的有声句式，如“梯门外站着的人是王颢锵，他正冷冷地盯着黄晓婷”。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "B 将“黄晓婷……呆了——王颢锵！”断为“黄晓婷……呆了。王颢锵！”，削弱了认出对方时的突现感。",
+      "suggestion": "保留破折号式停顿，或改为“她呆住了。站在面前的，正是王颢锵”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3f386b32d7b5577f.txt",
+    "input_sha256": "5587afb76f1144b95ab7a0d1499e8fc04b8d70fb22da19af0a33a0d1329a64a8",
+    "analysis_sha256": "e507a2e7e83bf2457c66b7387fa54afd76037e0d64acc19148ad047b415252bb",
+    "rewrite_sha256": "fecf55681a16ec4b8c884105da764b5e5a8226dae82f2ce6d902577169619b40",
+    "generated_at": "2026-09-04T01:33:13+00:00"
+  }
+}

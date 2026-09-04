@@ -1,0 +1,51 @@
+{
+  "source_id": "story_c2c3e88008595f11",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.73,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“3d条狗”“5人3d狗”“浜的一声”“用尽权利地吼”“体抽了一下”“她妈M话”等不可自然朗读的 OCR 残片。",
+      "suggestion": "在不改变事件的前提下，修正可由上下文明确的数字、拟声和错字；对无法确定的残句改为语义中性的清晰表述。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "B 中“要他打电话给他妈妈”后紧接“她一听见她妈的声音”，呼叫对象归属互相矛盾。",
+      "suggestion": "改为不预设亲属归属的“要他打电话求助”，再明确由当事人的母亲接听。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 全文反复以“她BF”指称男友，并保留“PS”插入说明。",
+      "suggestion": "首处明确为“男友”，后续统一使用“男友”；将“PS”改为可直接朗读的旁白说明。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c2c3e88008595f11.txt",
+    "input_sha256": "09d18d47c4a1515ca1273cf15dd1983c8f13ea8b7ad52185fbae3b12c33f105a",
+    "analysis_sha256": "52fc9aae090dd7939048547ee4ebb97d4726210c84a07f8d84130a63353cead2",
+    "rewrite_sha256": "ba255b56dd574c1316b9461594738048b19deb3c3ff41700cd4708310fe22755",
+    "generated_at": "2026-09-04T13:14:00+00:00"
+  }
+}

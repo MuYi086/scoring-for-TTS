@@ -1,0 +1,39 @@
+{
+  "source_id": "story_a221cef4d78c7d75",
+  "factual_consistency": 1,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“因为真的真相的人早已不在这个世界上了”这一疑似缺字句，语义不通，朗读时易造成理解停顿。",
+      "suggestion": "核对原文后修正为语义完整的中性表述；不改变真相未明、知情者已不在场的悬疑含义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a221cef4d78c7d75.txt",
+    "input_sha256": "67be616db0e523a3485ccde495c42478108009f5e6cf5744a1370843ad604f52",
+    "analysis_sha256": "801376060e9518f8e9bb6c9c0c33cd373a680f1feb883df9803c39f3f78671d9",
+    "rewrite_sha256": "b0a42a3b0cf48bbdde459b3d86ae0912f69de2121185761edbcf2a6788a0e645",
+    "generated_at": "2026-09-04T12:17:31+00:00"
+  }
+}

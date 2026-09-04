@@ -1,0 +1,39 @@
+{
+  "source_id": "story_4409800707ffb2d3",
+  "factual_consistency": 1,
+  "audio_readability": 0.98,
+  "suspense_preservation": 1,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界包声明 story_boundary=L1583-L1675，但《西瓜》正文在 L1629 已结束；L1633 起已进入相邻“预约死亡”故事，且该故事未完整纳入。",
+      "suggestion": "修正上游边界记录为《西瓜》的实际终点 L1629，并重新完成边界审计后再进入后续步骤。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4409800707ffb2d3.txt",
+    "input_sha256": "677cf959cd6b67cdd287532afd23bb300c4b0d03a1f865c7bce285a33eba9573",
+    "analysis_sha256": "72beac7892fd57f44a59220b6bbf35261dfd7b1b62facd8b4ef459b8dbd9fbc7",
+    "rewrite_sha256": "48da48fc5dc59385d3ff379ba196caa337d58ee590b386f6c31e0e4a7ba19603",
+    "generated_at": "2026-09-04T01:39:26+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_737b1c5f5c49eb48",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "A 原文及 B 均为“93d年”，Step 2 亦标记为疑似 OCR 误识别。",
+      "suggestion": "人工核验该年份；在事实确认前不应擅自改写为具体年份。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 将“YAN(发烟的音)魂”拆为“YAN，也就是发烟的音，魂”，朗读时专名边界和读音不清。",
+      "suggestion": "人工确认“YAN魂”的准确字形与读音后，再以可朗读的专名形式处理。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_737b1c5f5c49eb48.txt",
+    "input_sha256": "9f1c4d3cf0826b7fd7398251419c212f9054617f6980dd5170c9a8f1c262a4b9",
+    "analysis_sha256": "68cee3fec02457a39932d3b745321576526088f0b0853f8e4b0a78b00d3c260c",
+    "rewrite_sha256": "9b3c3c2b231edce04f52519ba9f27ed2cbb6e661188932a25662e5e4a68942db",
+    "generated_at": "2026-09-04T06:28:13+00:00"
+  }
+}

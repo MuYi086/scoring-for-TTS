@@ -1,0 +1,45 @@
+{
+  "source_id": "story_1bbd343fb31a6fa9",
+  "factual_consistency": 1,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中保留了“沉浸'在”“一地道”“丧失贻尽”“死命地损在地上”等疑似 OCR 异常。",
+      "suggestion": "在不改变情节事实的前提下，校正或人工确认这些文本；否则会造成明显的朗读卡顿或语义不通。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾推断段仍为“我推测。昨夜……”，停顿断开了同一句因果说明。",
+      "suggestion": "改为自然的引出停顿，如“我推测：昨夜……”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1bbd343fb31a6fa9.txt",
+    "input_sha256": "6875095a2570f3abc6720bfa757e978a2b9206698a9805581f0031d3a9fb7fde",
+    "analysis_sha256": "b1a24e78ae0a6fc48b0b0e68c130ef7537c86b4c91a6d510ca7de26aa4c65160",
+    "rewrite_sha256": "ff4c5897e65f9f68567e57646a81026ff955a5e971f6114e6a427160f5d1f2ce",
+    "generated_at": "2026-09-04T00:34:50+00:00"
+  }
+}

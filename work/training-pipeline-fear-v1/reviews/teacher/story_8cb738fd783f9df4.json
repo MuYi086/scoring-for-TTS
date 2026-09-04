@@ -1,0 +1,45 @@
+{
+  "source_id": "story_8cb738fd783f9df4",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.83,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 中“尚妤”多次被写作“尚好”，如宿舍鬼影、抵达T市、最终遗言等段落；未建立别名关系。",
+      "suggestion": "统一为“尚妤”，避免听众误判为新增人物，同时保留原有案情与反转。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "微信推断段保留“他曾看过TA一眼”。",
+      "suggestion": "改用适合朗读的中性指代，如“对方”，以保留性别误导与悬念。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8cb738fd783f9df4.txt",
+    "input_sha256": "79c01c63dd0a59767026a7bec3b5d85c65b50152603b1e655f39f847139687da",
+    "analysis_sha256": "14e2fefe9fbfbbcf2781a2e97d9bd7f77cc08c0b9b785783ea99d26a9cc86bc5",
+    "rewrite_sha256": "f07410827a62566bc2964df6c1608ebad8dd0684199524397ecfbce138fbf890",
+    "generated_at": "2026-09-04T08:32:01+00:00"
+  }
+}

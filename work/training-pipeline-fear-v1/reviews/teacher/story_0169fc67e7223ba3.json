@@ -1,0 +1,45 @@
+{
+  "source_id": "story_0169fc67e7223ba3",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "三则独立故事的转换仅靠空行；原稿 L2030、L2054、L2058 的图片分隔在有声稿中不可感知，第二、三则起始缺少可听辨的段落提示。",
+      "suggestion": "在不新增情节的前提下，加入简短的朗读分隔或章节提示，使听众明确已切换至下一则故事。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第三则保留“头皮猛地一乍”（原稿 L2064），事实清单亦标为疑似 OCR 异常，朗读语义不清。",
+      "suggestion": "人工核定该短语的原意后，再决定是否作最小化的可朗读修正。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0169fc67e7223ba3.txt",
+    "input_sha256": "5df67955739bb88666a5625080efec5536ac2d049008af1c9b8bdaa0c669ce10",
+    "analysis_sha256": "100aa75982a0bf1ca6724fe2768e7409e2c7bed3c2f3045d179fc4914ae6eec1",
+    "rewrite_sha256": "8cd0afd9bfea409b12b2ba51333374e0f8f50a850bdb42dcbe8bdff8e98b4d80",
+    "generated_at": "2026-09-03T16:04:36+00:00"
+  }
+}

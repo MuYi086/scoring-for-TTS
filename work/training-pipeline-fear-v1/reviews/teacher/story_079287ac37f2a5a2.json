@@ -1,0 +1,39 @@
+{
+  "source_id": "story_079287ac37f2a5a2",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾“我叹了一口气，拉着肖飞晨快步离开了”中的“我”此前无明确对应，叙述由第三人称突变为第一人称。",
+      "suggestion": "保留陈小双离开的事实，但将末句主语明确为“陈小双”，避免听众误判叙述者身份。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_079287ac37f2a5a2.txt",
+    "input_sha256": "9f0cc14bfa4ae039e00093c36e52912e46046c1a07946c98c52dd269d405b43d",
+    "analysis_sha256": "a0a47b43a8fb37bfb3f43a015e8acf73de59360fd12d95bcf78d4dbe9838c9a7",
+    "rewrite_sha256": "6211c9e1a5f280902e3f9cbd7b88a77498e1ebe446d7def1b0eab45fc88a893d",
+    "generated_at": "2026-09-03T16:12:01+00:00"
+  }
+}

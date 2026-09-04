@@ -1,0 +1,45 @@
+{
+  "source_id": "story_78a172be959b45ed",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在逃脱动作处保留“输入，后一回车”，断句后仍无法明确“回车”的动作关系。",
+      "suggestion": "仅澄清该处的朗读停顿和动作表达，勿补写未获来源支持的情节。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 结尾“那以后，我再也不敢不关。”与 A 一致，但句子在“关”处悬断。",
+      "suggestion": "保留来源原状并在成稿前人工确认是否为原文缺字；未经确认不要擅自补成具体词语。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_78a172be959b45ed.txt",
+    "input_sha256": "9cfb380106bd2ac78bd2e6975e4b053d19abcaab9bb06f36c6018f642383cf13",
+    "analysis_sha256": "2468affa1087ec4bf8af646b37b000c907b999ba1560fc78404febe832f1fe59",
+    "rewrite_sha256": "76e87c9e28d3eae90c16ae72abf0b0de7cac5adf3ddb69079de539ba3fbde32e",
+    "generated_at": "2026-09-04T06:30:20+00:00"
+  }
+}

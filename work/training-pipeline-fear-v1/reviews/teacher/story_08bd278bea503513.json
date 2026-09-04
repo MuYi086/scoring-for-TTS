@@ -1,0 +1,45 @@
+{
+  "source_id": "story_08bd278bea503513",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B在葬地段保留“她喜欢双色球那里”（对应A/边界L593）。",
+      "suggestion": "删除明显OCR串入词“双色球”，保留“她喜欢那里”即可。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B保留“其实，满不是的”这一疑似OCR错词。",
+      "suggestion": "改为可自然朗读的否定表达，并保持鬼妈妈外貌不恐怖的原意。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_08bd278bea503513.txt",
+    "input_sha256": "71bfaf2ffdfbce33cc4af0fb51ce26542269068f1267a2d1d666fb383c158c6b",
+    "analysis_sha256": "27182f6036a1383593cff2d7da1fd42a91fd6506478b41f30a94af862101ef60",
+    "rewrite_sha256": "9e9e8e20e673b9089851eea6707e82d3dd128c0f5c7a80875deea9d133250e9d",
+    "generated_at": "2026-09-03T16:14:10+00:00"
+  }
+}

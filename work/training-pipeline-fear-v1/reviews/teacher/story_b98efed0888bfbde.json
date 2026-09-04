@@ -1,0 +1,39 @@
+{
+  "source_id": "story_b98efed0888bfbde",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“斯磨斯捆”“从着鬼卒”“股卵湿化”等原文疑似讹字仍直接保留，TTS 读音及听众理解可能受阻。",
+      "suggestion": "在不改变情节和专名指向的前提下，人工确认这些词的定稿字形与读音，并为罕见词配置朗读标注。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b98efed0888bfbde.txt",
+    "input_sha256": "baa6fc52934008bfeeb0d0457b6f4f633c4ac438d5cf1fd151b7493dffe165d5",
+    "analysis_sha256": "88e13c1a2fc56b0d4e13cf546e5246786b423e9dc47ce4037fdc75d51f5e4dc6",
+    "rewrite_sha256": "105f9c586ac3c75320460959f40c7f77e4181d949db237d2a33991875b6c383a",
+    "generated_at": "2026-09-04T13:03:01+00:00"
+  }
+}

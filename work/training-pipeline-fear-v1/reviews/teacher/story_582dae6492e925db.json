@@ -1,0 +1,39 @@
+{
+  "source_id": "story_582dae6492e925db",
+  "factual_consistency": 1,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开篇保留“李异还在盯着他运气”和“就算是新人的人会谈”两处原文 OCR 异常；前者句意不通，后者无法自然朗读。",
+      "suggestion": "在不补造剧情事实的前提下，改为语义明确、可朗读的中性表述；若无法可靠还原则删除异常残词或标记为待人工确认。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_582dae6492e925db.txt",
+    "input_sha256": "fbb95b5a16eed1559a5d67f574f6e73b5c2c987105eca41eb05b79b94f67e3b9",
+    "analysis_sha256": "cba93df59ede2a32170bcaafbe30f1684a28641850c2ce1ad984b4a18ab70a65",
+    "rewrite_sha256": "fdf10b9cc7f7f365642a6568c882ff324a861bbf5b5a3707a7f59b2a1e878d7c",
+    "generated_at": "2026-09-04T04:23:44+00:00"
+  }
+}

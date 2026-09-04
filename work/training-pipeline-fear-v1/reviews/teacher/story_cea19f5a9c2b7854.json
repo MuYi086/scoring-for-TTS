@@ -1,0 +1,39 @@
+{
+  "source_id": "story_cea19f5a9c2b7854",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "洛襄提出带诺诺找警察的对白中保留“: :”乱码，位于诺诺拒绝离开前。",
+      "suggestion": "将无法确认的乱码改为不含具体身份信息的自然停顿或“警察叔叔”，避免 TTS 朗读异常符号。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_cea19f5a9c2b7854.txt",
+    "input_sha256": "021cd64ec68d90c7983e126b4d0da189483ee80a97e9f3c019e5da102e732ae1",
+    "analysis_sha256": "b5b9f803c655349cbc0567c02e5ce926df19ed2c2729274fe5d3e4ba916fd60f",
+    "rewrite_sha256": "869243e46ff2d926c3270e3c3d00dd70fc320696eb09aac30c8e384f4e45aeba",
+    "generated_at": "2026-09-04T13:24:42+00:00"
+  }
+}

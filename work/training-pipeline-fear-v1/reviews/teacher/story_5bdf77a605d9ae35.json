@@ -1,0 +1,45 @@
+{
+  "source_id": "story_5bdf77a605d9ae35",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.92,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“妈妈难产”与“更严重的还有呢”两段对白被拆成连续的独立引号段，前段未闭合。",
+      "suggestion": "合并为同一段连续对白，或在前段补全引号并明确续说者仍为华绮缘。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "章节编号标题被删去，仅保留多段题词；从梦境、调查到回忆的转场缺少显式口播标记。",
+      "suggestion": "保留简短章节口播或在题词前加入一致的停顿标记，帮助听众辨认时间线切换。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_5bdf77a605d9ae35.txt",
+    "input_sha256": "3f829ac0b8dddf7107f9732957cf99150325df648cc7d507398b69f855dc63f2",
+    "analysis_sha256": "078d4891d624e8138e16a98cc4ef893b84a41c7d52e987395864faa45341d71e",
+    "rewrite_sha256": "965f31b2424487c450d32d7b7604d2e11be2b93e7ceeffa7373f5fc01c49081b",
+    "generated_at": "2026-09-04T06:07:44+00:00"
+  }
+}

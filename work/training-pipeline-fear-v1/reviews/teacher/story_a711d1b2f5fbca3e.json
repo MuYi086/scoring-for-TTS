@@ -1,0 +1,39 @@
+{
+  "source_id": "story_a711d1b2f5fbca3e",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.92,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "开头手机称“白色的话基亚”，后续同一承载陈慧魂魄的关键手机均称“白色的诺基亚”。",
+      "suggestion": "该关键物件品牌在 A 内部不一致，B 虽忠实保留但会造成有声理解混乱；需回查权威来源确认后再统一读法。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a711d1b2f5fbca3e.txt",
+    "input_sha256": "1dd66722763d78a4a6a9d9fd38eef7af23c4d4689631fba04be152ef434fde0d",
+    "analysis_sha256": "f59a61bd59452bfe9b688816c1f7c313d95370a2551897ca52e3850fd348dd13",
+    "rewrite_sha256": "1445d3703f5ec89f32f2804d01d7a893551dd70b2ca4bb27ca30b4aa635b9cc6",
+    "generated_at": "2026-09-04T12:47:09+00:00"
+  }
+}

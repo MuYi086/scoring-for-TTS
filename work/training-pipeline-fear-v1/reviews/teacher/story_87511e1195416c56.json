@@ -1,0 +1,39 @@
+{
+  "source_id": "story_87511e1195416c56",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.97,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "misdirection",
+      "severity": "minor",
+      "evidence": "开篇急诊室对峙处，B 将若芳父亲的“人模鬼样”改为“人模狗样”。",
+      "suggestion": "保留原句“人模鬼样”；该异常措辞可轻微强化灵异氛围与前段误导。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_87511e1195416c56.txt",
+    "input_sha256": "a93b33e845e077058b8cf7f2d2a5f1619d5041e06e1b8a1b932aa541738c487b",
+    "analysis_sha256": "b49e03c4ce2c830271f56bffae576ea6a5f42954b8ddcf16267c590426566c1f",
+    "rewrite_sha256": "45a05e3b069ccfe39def9e0534d1e84e8492b8682cf43aa62d510cc7238048e6",
+    "generated_at": "2026-09-04T08:28:57+00:00"
+  }
+}

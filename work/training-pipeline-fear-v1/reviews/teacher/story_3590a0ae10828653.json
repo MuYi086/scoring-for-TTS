@@ -1,0 +1,51 @@
+{
+  "source_id": "story_3590a0ae10828653",
+  "factual_consistency": 0.93,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B与A同样交替使用“张颖川/张颍川”，无法确认该工程师的规范姓名。",
+      "suggestion": "需以可核验权威文本确认姓名后统一；目前不应擅自选定其中一种。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "纸厂档案馆段保留“来到纸不到四十分钟，顾青厂”的重复乱码。",
+      "suggestion": "核验原始可确认文本后恢复为通顺地点表述；现有句子不适合有声朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "小赵鞋子推理段保留“在就在我快发现你的脚的时候”。",
+      "suggestion": "在确认原文后删除重复的“在”，避免朗读卡顿。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3590a0ae10828653.txt",
+    "input_sha256": "420deeb58df48aec48d2b6ff3ee48b0d4a69149fc31d5ecc220a39dcbd5a9b86",
+    "analysis_sha256": "cb489ca7b02ee5d50eb61a8270e070dc40e090f8f62d96256cd9427d00636888",
+    "rewrite_sha256": "6e1f7d603a401a7e1d7fb2fc9edc2822a6a2bb3b1149225202430d18e7e89e66",
+    "generated_at": "2026-09-04T01:18:08+00:00"
+  }
+}

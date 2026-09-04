@@ -1,0 +1,45 @@
+{
+  "source_id": "story_5233f6dbf4f30798",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B“大嘴女来历”段：黄老头的同一段引语在“仙丹”后断开，下一段又重复开启引号。",
+      "suggestion": "保持为同一段连续引语，或在断开处补足明确的叙述/引号闭合，避免朗读停顿误判。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B保留“莫明其妙”“情景萦彻脑海”“如是他真要杀掉金姑”等明显病句或错字。",
+      "suggestion": "在不改变情节含义的前提下校正为自然、可朗读的中文表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_5233f6dbf4f30798.txt",
+    "input_sha256": "bd13656b327a0958399d7dcd7600f8b5ff3428db77b8856b247a142938838582",
+    "analysis_sha256": "0202f403783a67dc54eaf4cbb22950d1aa01ae97638613c5eb615fa5ba8a1d37",
+    "rewrite_sha256": "548a905e23771616c22921b761481a257265a05734d8e4d17e73515f212c9020",
+    "generated_at": "2026-09-04T04:14:57+00:00"
+  }
+}

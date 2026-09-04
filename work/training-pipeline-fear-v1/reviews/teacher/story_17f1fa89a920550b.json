@@ -1,0 +1,39 @@
+{
+  "source_id": "story_17f1fa89a920550b",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 的 QQ 对话中写“破坏掉感恩者替身的身体”，全文其余处均为“报恩者”。",
+      "suggestion": "统一为“报恩者替身”，避免听众误以为出现了不同实体。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_17f1fa89a920550b.txt",
+    "input_sha256": "4debdc2b7aa539456a85ff389fd7c791c5b627d0e51110715dfd2e73e4d9a058",
+    "analysis_sha256": "ff442d392483602c8fd721f7c4c024fa60802329c40e80d9bb238ce8a6455f7f",
+    "rewrite_sha256": "30eeb34ce9eff1087719a3a5807deeee295fc90a761b607af7020946aa53894d",
+    "generated_at": "2026-09-03T16:30:24+00:00"
+  }
+}

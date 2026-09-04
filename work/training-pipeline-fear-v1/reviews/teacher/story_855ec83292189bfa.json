@@ -1,0 +1,45 @@
+{
+  "source_id": "story_855ec83292189bfa",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在“汪芸儿有个闺蜜……”后的“经过他们一番劝说，当了内线”未明确谁成为内线。",
+      "suggestion": "补出“闺蜜的男朋友”作为主语，避免朗读时人物指代悬空。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "A 的两处段落转场标题“阴谋”“阳光”在 B 中均被省略。",
+      "suggestion": "保留为简短场景转场提示，以维持浴室救援和父亲解谜两段的节奏层次。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_855ec83292189bfa.txt",
+    "input_sha256": "f36f1a96e032ff4970171398e43650f7b5279852aa4f45bd8daa17aa5de30bcf",
+    "analysis_sha256": "6e2d00445ba6f960802af6ecf789b045c8c39ca4040979e3bb811aeb4f1b9343",
+    "rewrite_sha256": "3ccde2439191153d49bd2eee66bcd22765a08a8d1f59596cdfb442342fd14e2c",
+    "generated_at": "2026-09-04T08:27:22+00:00"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_id": "story_0382f3ebb271e8cf",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.63,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处会被直接朗读的乱码或残缺短语：开头“无处可夫／达学”，以及“里紧身体”“籁绿地响”“伽 m 看”“Uq着说”。",
+      "suggestion": "在不改变情节的前提下校正可由上下文确定的 OCR 错误；对无法可靠还原的短语进行人工核对后再定稿。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "破汽车初遇段的“喝了问道”形成不存在的人名，咖啡馆段的“凯文门道”也会破坏对白归属。",
+      "suggestion": "核对并恢复说话者标记，确保该问句与凯文的后续对白一致。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "影片播放段“太沉闷了……她到底在干什么？”紧邻重复一次，B 原样保留。",
+      "suggestion": "删除明显的连续重复句，避免有声稿无意重复并保持紧张节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0382f3ebb271e8cf.txt",
+    "input_sha256": "f3b9c93b3aac95a55bb69b5dc99c37b92285b15dbf1d351bd1f5313bcd30f0d6",
+    "analysis_sha256": "83ddaed232c230a46861a511bfd5c525a0550226c0df2be0e38b2941731a90de",
+    "rewrite_sha256": "3cf41e1cddb9d8645992ca98c8c1d2d4247a64d8505437b2c4445ad42bbb21b5",
+    "generated_at": "2026-09-03T16:07:59+00:00"
+  }
+}

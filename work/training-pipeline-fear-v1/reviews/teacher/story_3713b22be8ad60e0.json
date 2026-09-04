@@ -1,0 +1,45 @@
+{
+  "source_id": "story_3713b22be8ad60e0",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.8,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "A 中段、刘管家讲述剥皮方法后，混入独立的“澳洲圣母像显神流泪”传言及人物碧堤；与郑宅主线无人物、地点或因果关联，B 亦完整保留。",
+      "suggestion": "将该独立传言从故事源边界中剔除后，重新执行后续分析与改写；不要仅在 B 中删除来掩盖来源混入。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "子颖准备剥白雪皮时，B 保留“笨拙地举起”这一无宾语残句，听众无法确认她举起何物。",
+      "suggestion": "待源文本人工核实缺失内容后再修复；未核实前不可臆补关键动作或物件。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3713b22be8ad60e0.txt",
+    "input_sha256": "26e46d9411461b179566fc06736aff72dce674132d553ce88a964ffda77bbc72",
+    "analysis_sha256": "85143448ab7d9d3cce11e72012f2356152139d256c071c32a3be683e2dd7d958",
+    "rewrite_sha256": "12f528adef160d0c85a053a43180421abddef65b679f28040162511d7e73aa29",
+    "generated_at": "2026-09-04T01:22:36+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_79950b44d9907b6e",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中李松脸色苍白段写作“他木讷的表情像是一尊雕塑，说”，语法上易误听为“表情”在说话。",
+      "suggestion": "将对白归属明确到李松本人，避免有声朗读时的主语歧义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_79950b44d9907b6e.txt",
+    "input_sha256": "dfd0b31f205257bdb65b366c039e2c0d1253b4873dbf3029fff6b7b86f9b2923",
+    "analysis_sha256": "48697a7cee5a056e2b1604dc84ba0ddd8460e1991fe84575f365389ee8c45227",
+    "rewrite_sha256": "e070ea0d8c1e8d28f1743faeaf140eb31a7d4c7e03f5e3a308ae6511effe539d",
+    "generated_at": "2026-09-04T06:33:59+00:00"
+  }
+}

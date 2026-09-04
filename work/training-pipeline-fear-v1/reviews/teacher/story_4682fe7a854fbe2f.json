@@ -1,0 +1,45 @@
+{
+  "source_id": "story_4682fe7a854fbe2f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“董天终于在几万年后依在提尔的怀里”保留了原文疑似 OCR 残词“依在”。",
+      "suggestion": "改为“依偎在提尔的怀里”，使朗读自然。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 将“其、其实我早就见过提尔叔叔了”单列为对白，未标明说话人。",
+      "suggestion": "补充“珊瑚说”或以紧邻叙述明确归属，避免多人对白时混淆。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4682fe7a854fbe2f.txt",
+    "input_sha256": "ad97c61fca0fa5e1a5454c1e99f0170021bda041f4a348e6cbdf00cec7b81090",
+    "analysis_sha256": "9c574fd8c0f688e10230bfe90e0f1bdb4504097eae26c0f0e5dffe9425a952d9",
+    "rewrite_sha256": "9c3ffaebbe9ec17158fa8021f2ea48cfcadfe15f60f3248ddd8ae3366b643cb6",
+    "generated_at": "2026-09-04T01:42:40+00:00"
+  }
+}

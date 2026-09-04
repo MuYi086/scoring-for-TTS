@@ -1,0 +1,45 @@
+{
+  "source_id": "story_37f0bd8fe27fbecd",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "A 的标题“肉香”位于开头两段之后；B 未包含该标题。",
+      "suggestion": "在有声稿开头保留标题，作为独立短句朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留了“一这堆纸”“天方夜潭”“来血”“月新”等明显 OCR/语义异常字串，分别位于开头、第三封信后及第七封信。",
+      "suggestion": "修复可由上下文明确判定的错字；“月新”需先核实是否为“月香”，避免朗读时造成角色混淆。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_37f0bd8fe27fbecd.txt",
+    "input_sha256": "2b3bfae2e6fc9bd48cdc71168be352ea16f494220c0f6e1b071e51be5992bb55",
+    "analysis_sha256": "16c2cb05685d28ffd813f6d039268b5948a9e2d98a8da1f3f768b267bb38c359",
+    "rewrite_sha256": "2413914ecf65d781c35eac6eb3dcd365125abe9b4c424b1c448ce96702ba8858",
+    "generated_at": "2026-09-04T01:25:08+00:00"
+  }
+}

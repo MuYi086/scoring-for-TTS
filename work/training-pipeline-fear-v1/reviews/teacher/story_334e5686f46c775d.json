@@ -1,0 +1,51 @@
+{
+  "source_id": "story_334e5686f46c775d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处会被 TTS 按错字直读的明显异常：开头“具无头女尸”；碟片段“迎面尔来”“再我的撕打中”；李光段“语无伦气”“铜罗”。",
+      "suggestion": "在不改变情节的前提下，校正为可自然朗读的词语，如“一具”“迎面而来”“在我的撕打中”“语无伦次”“铜锣”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "刘成揭示公寓异状段保留“很狠打了一巴掌”“糁人的声音”等不自然用字。",
+      "suggestion": "统一为“狠狠打了一巴掌”“瘆人的声音”，避免合成语音产生生硬或错误读音。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "李光后续段“胎儿快要出生了，他被送进了医院”中“他”的指代需依赖后文才可判定为李光。",
+      "suggestion": "改为“李光被送进了医院”，使有声朗读中的人物指向立即明确。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_334e5686f46c775d.txt",
+    "input_sha256": "a859c06673495e91430ca03e129bfb0cadf9e3ee807376e6af438c2f6217318f",
+    "analysis_sha256": "ee5043fc11fb2872c5234d8be3ce5ede5d1d44671a70ff3601eb1c1585137b16",
+    "rewrite_sha256": "7879f1382a40f8631c5d3ab72d3ccb631331b03648e572a5f98bcb6fa6a4fd44",
+    "generated_at": "2026-09-04T01:14:12+00:00"
+  }
+}

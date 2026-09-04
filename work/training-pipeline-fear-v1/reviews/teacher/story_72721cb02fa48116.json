@@ -1,0 +1,45 @@
+{
+  "source_id": "story_72721cb02fa48116",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.8,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "“我摇了摇头来愈晕沉的头”“我似乎翻开眼皮”“冲去出吐”“拍我了我的肩膀”等 OCR 病句被原样保留。",
+      "suggestion": "在不改变事实的前提下校正为自然、可朗读的句子。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "两处“**局”及一处“这***该死的日子”会被 TTS 逐个读出星号或形成停顿。",
+      "suggestion": "改为不影响情节的自然泛称或调整句式，避免朗读遮蔽符号。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_72721cb02fa48116.txt",
+    "input_sha256": "06e45d2e89d943c6c59c9c8e5dc17a3c9717823f6af8a5515fe5fb266d100700",
+    "analysis_sha256": "720ca92573a4eb0e355fe77cc8cce0210371644a3349c0a3fabd15855b1b4b55",
+    "rewrite_sha256": "c0e2a463039bc1aceac51136fd7de91453f1ef78f7a0ef19fd2c5176475ad393",
+    "generated_at": "2026-09-04T06:26:18+00:00"
+  }
+}

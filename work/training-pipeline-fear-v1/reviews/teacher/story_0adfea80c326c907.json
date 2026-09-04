@@ -1,0 +1,39 @@
+{
+  "source_id": "story_0adfea80c326c907",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "A 在本篇尾声后继续出现选题编者语，并从“我在街上开了一家心理诊所”转入含林医生、辛妮等人物的独立故事，后续又转入初初、陶锋故事；与边界局部标注的终点不一致。",
+      "suggestion": "停止以该 A 作为单篇对照源，人工重新切分并确认“坠落之前是更深的坠落”的终点；不要以 B 的现有截断掩盖来源混入相邻作品的问题。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0adfea80c326c907.txt",
+    "input_sha256": "bcdde69fd2dbe4704f8ce1a2bcabebc2346449370d0c6bce2bb7a8dc2e221f67",
+    "analysis_sha256": "b20c4368575e735b84605f07cd7aa2964a2d9fad048e2a6d00184972ccf082c3",
+    "rewrite_sha256": "63536f6c8133a7687ad827eeb2dbe9d31bb0ba06145427e25e7c742a6b59ce35",
+    "generated_at": "2026-09-03T16:16:47+00:00"
+  }
+}

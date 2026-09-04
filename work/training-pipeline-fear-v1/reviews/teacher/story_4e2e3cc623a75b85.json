@@ -1,0 +1,51 @@
+{
+  "source_id": "story_4e2e3cc623a75b85",
+  "factual_consistency": 0.48,
+  "audio_readability": 0.58,
+  "suspense_preservation": 0.31,
+  "problems": [
+    {
+      "category": "twist",
+      "severity": "major",
+      "evidence": "B 在“这是救命的话啊”后结束；A 此后仍有冯梦楠鬼魂身份、妍妍与丁广磊真实关系、妍妍装疯及最终袭击孙涵的完整结局。",
+      "suggestion": "补回 A 末段全部情节，保留鬼魂揭示、身份反转、丁广磊死亡结论和重物击头的开放式结尾。"
+    },
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "B 遗漏尾段，导致丁广磊被反制后的后果、妍妍为何装疯自保及其转而袭击孙涵的因果链均未交代。",
+      "suggestion": "恢复结局段落，并保持“联手除掉丁广磊→妍妍揭露装疯→因财产与嫉妒袭击孙涵”的顺序。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中香水与布料解释处仍有残句和无归属台词，如“她咬习惯了和那……”及紧随其后的“现在我最需要做的是……”。",
+      "suggestion": "依据可确认上下文补足或改为清晰、带说话人归属的句子；无法可靠还原的缺字须人工核对。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4e2e3cc623a75b85.txt",
+    "input_sha256": "9d6d2a11a1db2531345bca6e79da48c55f872522ae8248eb949bda237171938d",
+    "analysis_sha256": "ce61bef265ca29879157b7800dc67a2f6c0d90fa84b22b51281a20586228808d",
+    "rewrite_sha256": "3838f0c8d5c6daa12770e033a284092d8f2619c27107fd88f6ea8d4d696f30b2",
+    "generated_at": "2026-09-04T01:54:25+00:00"
+  }
+}

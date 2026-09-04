@@ -1,0 +1,39 @@
+{
+  "source_id": "story_03f65ab8e2cbe040",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 删除了 A 的全部分节标题，包括“嘲讽”、回溯段标题、五行杀人段标题及“尾声”。",
+      "suggestion": "保留为简短可朗读的章节提示，至少在回溯、五行预言和尾声前保留明确转场。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_03f65ab8e2cbe040.txt",
+    "input_sha256": "fa928bcf7fd090bcd2e7b12dee5b4996ec9c9d7a532591c7fa921b7e854cf682",
+    "analysis_sha256": "c931e8a50229c9254bcf059ea6d963c3dee89208c1666da844f7ad28301f5b8f",
+    "rewrite_sha256": "21407fe8857720cd1f1dc8094eebc454f0b3f03f582c90bde07ea168a708cd7a",
+    "generated_at": "2026-09-03T16:09:09+00:00"
+  }
+}

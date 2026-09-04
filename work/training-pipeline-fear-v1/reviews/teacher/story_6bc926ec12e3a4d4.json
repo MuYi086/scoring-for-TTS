@@ -1,0 +1,39 @@
+{
+  "source_id": "story_6bc926ec12e3a4d4",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头直接进入正文，且省略 A 中“邂逅、情困、蹊跷、醒觉、秘密、真相”六个分段标题。",
+      "suggestion": "保留作品标题及分段标题，作为朗读中的明确段落提示；其余正文可维持现有改写。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_6bc926ec12e3a4d4.txt",
+    "input_sha256": "437590d5d57c934d94684099cbc580a950d41e5ee0f34962b2de3ab427a39236",
+    "analysis_sha256": "9ad3e56c461fa4f0b3d9e32f1944c87589f5cbb337076d665b366a24e2a59fa6",
+    "rewrite_sha256": "dd17680d9d15e97d306ba2d34cd23ffc9f5162a022ee78d0e7e145fb6e35cc4b",
+    "generated_at": "2026-09-04T06:22:11+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_26c7523f3582fe52",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在袁云锦回忆初见正林的连续独白中，每个分段重复使用开引号，仅末段闭合；贺儿孩子身世揭露段亦同。",
+      "suggestion": "将每段独白作为独立、成对引号的对白，或只保留整段首尾一组配对引号，避免朗读器将其解析为多个未闭合发言。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_26c7523f3582fe52.txt",
+    "input_sha256": "8a351a273f887bbce40aaa148f8ca4cb5155f63a2215dcb873329581bf4e2c8d",
+    "analysis_sha256": "8d1b9a8910d354f9671cf0c804bd220c91bbf8b797207ba992ecf5eabe6d7419",
+    "rewrite_sha256": "9d58445876396986c85c4f42e545d8fc0b89a6bb7667ee820bc64f0576ff2ac6",
+    "generated_at": "2026-09-04T00:40:02+00:00"
+  }
+}

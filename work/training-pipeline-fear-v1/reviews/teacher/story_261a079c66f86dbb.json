@@ -1,0 +1,51 @@
+{
+  "source_id": "story_261a079c66f86dbb",
+  "factual_consistency": 0.9,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "原稿及B在年龄段同时出现“344岁”与“544岁”，无法确定哪一数字为正确硬事实。",
+      "suggestion": "需回查可授权的可靠底本后统一年龄；当前不可凭上下文猜改。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "原稿及B的登基处为“诺伊·卡尔”，婚礼遇刺处为“诺尔·卡尔”，两处是否同一国王无法确认。",
+      "suggestion": "需依据可靠底本确认王名；在确认前不要擅自合并或替换姓名。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "斯蓝遗言保留“死精的愿望，希望你能懂的心”，语义和朗读停连均不成立。",
+      "suggestion": "该处疑为OCR断裂；确认原句后再做口语化断句与指代修复。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_261a079c66f86dbb.txt",
+    "input_sha256": "7953a5ba5e77262c6e02799d743e9384f71af0705df949ebfe4d754cfbc894d5",
+    "analysis_sha256": "624992af30d43afcc9bc03141dba3c609465bde5cd81b755cd2df076dc5e79cd",
+    "rewrite_sha256": "e28c867440ce7163b3c4da231e39542735f949930bd3eda760f829197002f2ca",
+    "generated_at": "2026-09-04T00:40:10+00:00"
+  }
+}

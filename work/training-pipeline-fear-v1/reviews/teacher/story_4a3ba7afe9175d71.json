@@ -1,0 +1,45 @@
+{
+  "source_id": "story_4a3ba7afe9175d71",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "烟雨爱人在公园的连续独白：首段引语未闭合，下一段又以引号起始，音频中说话边界不清。",
+      "suggestion": "统一为同一段连续引语或补足标点边界，不增删台词。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "落落缝制布偶段保留“逢着”“逢进”等疑似错字，TTS 会读出不合语境的发音。",
+      "suggestion": "在不改变缝制情节的前提下，规范为“缝着”“缝进”。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_4a3ba7afe9175d71.txt",
+    "input_sha256": "8b06c6178ea982f35f0a23767e5368b44dfcc352560a3281522da3e5a389cce5",
+    "analysis_sha256": "87566d27b2009370ce66ec400e789b476794e0641e751fa30e9120a86a6f1779",
+    "rewrite_sha256": "b1877830ff81bf069187935e5d3a9c8b289dd8204b72051a82a561a0034cc9bd",
+    "generated_at": "2026-09-04T01:49:06+00:00"
+  }
+}

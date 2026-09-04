@@ -1,0 +1,51 @@
+{
+  "source_id": "story_c0c7fd8faf407edc",
+  "factual_consistency": 0.94,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "小佳死亡后、真相揭示前，原稿为主语残缺的“来，她缓缓走到曾尚面前”；B确定补为“老婆婆缓缓走到曾尚面前”。",
+      "suggestion": "该处涉及关键人物行动，现有来源无法确认主语；保留原有歧义或取得人工确认后再定稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾校门口店门描写保留“黑乎平的门”，有明显OCR/朗读歧义。",
+      "suggestion": "在不改变场景信息的前提下，人工确认并修正该疑似错字。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "张钰安慰曾尚的对白保留“发生了什么事请”，口播语义不顺。",
+      "suggestion": "人工确认后改为自然的“发生了什么事情”等等价表述。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c0c7fd8faf407edc.txt",
+    "input_sha256": "f560c8ad15122ff852ab3d0fe3892772bc78a2502acaebd8821561198fa64dfa",
+    "analysis_sha256": "04effa32bfe3ab403bbc3e7641f0d2acbff371e8cd0aa621fa8184557369566c",
+    "rewrite_sha256": "13775847f450c07a15e33f1ebb626bc43ddee9b0267ee5448ab2670c4675b87f",
+    "generated_at": "2026-09-04T13:13:00+00:00"
+  }
+}

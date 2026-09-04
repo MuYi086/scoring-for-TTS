@@ -1,0 +1,51 @@
+{
+  "source_id": "story_6d297b4e58987187",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.92,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B在于小伟母亲的段落中交替使用“于慧”和“于惠”，如她受邀到西蓝巷4号及随后书房、墓园段落。",
+      "suggestion": "统一为同一姓名，并在首次出现处保持与前文一致，避免有声稿把同一人物听成两人。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B在二十五年前的回忆中称婴孩为“李小伟”，其余主线及结局均为“于小伟”。",
+      "suggestion": "统一为于小伟，或以极简旁白明确“李小伟即后来的于小伟”，以保住父子身份反转的可理解性。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B保留“他是知道不起了”“铺子下面”“李丽丽开车车子”等明显病句或OCR残留。",
+      "suggestion": "分别改为语义明确的自然播讲表达，且不改变于小伟恐惧、发现相册、三人前往墓园的事实链。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_6d297b4e58987187.txt",
+    "input_sha256": "11bb7f84e6d7c74205a6f4a83c4fe58546305bd6ade0dff610e99d175cd778e8",
+    "analysis_sha256": "2a79539f215a3e0605a69f20bbf7f573cd323a2cd1e90e396309f10dabf410fd",
+    "rewrite_sha256": "65d0419bb1bd2baaa7e3fd2f1e498ad1c9d55227b0da5d889a1bf1dbdcaa4b96",
+    "generated_at": "2026-09-04T06:22:57+00:00"
+  }
+}

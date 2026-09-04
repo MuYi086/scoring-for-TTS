@@ -1,0 +1,39 @@
+{
+  "source_id": "story_2bf3feade196a8e9",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在苏珊揭示真相的连续三段台词处重复开启引号，前两段未闭合（对应 A 边界行 L1303-L1309）。",
+      "suggestion": "统一为同一位说话人的连续对白：首段开启、末段闭合，或每段各自成对闭合引号，以免朗读停顿和对白层级异常。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2bf3feade196a8e9.txt",
+    "input_sha256": "0ae3eed1cbe57bbedd582d3326ec0bd999f238e6c61a58c10a469aaf6c2505a3",
+    "analysis_sha256": "72312fea15092c36ff5a0836272f623abc2ba4d1499ad248280b2d951e764288",
+    "rewrite_sha256": "7b330a399c4c4a69006ed6d9b9bbd438167223f7bfd61d7ecf6ca754e4ef43c0",
+    "generated_at": "2026-09-04T01:03:54+00:00"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "source_id": "story_bbc17e7b439c256a",
+  "factual_consistency": 0,
+  "audio_readability": 1,
+  "suspense_preservation": 0,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "critical",
+      "evidence": "B仅保留标题《恐怖电影》；A中庄杰、李燕、康婕及大学生群像全部缺失。",
+      "suggestion": "恢复完整正文，保留人物关系、身份及对白归属。"
+    },
+    {
+      "category": "time",
+      "severity": "critical",
+      "evidence": "B无叙事内容，遗漏2006年龙树湾主线及前后回忆的时间信息。",
+      "suggestion": "恢复原有时间锚点与时序转换。"
+    },
+    {
+      "category": "location",
+      "severity": "critical",
+      "evidence": "B未包含龙树湾、相邻别墅、水库和坟场等主要场景。",
+      "suggestion": "恢复全部场景推进与空间关系。"
+    },
+    {
+      "category": "death_method",
+      "severity": "critical",
+      "evidence": "B遗漏曹金平失血死亡、庄杰被刺后遭手术刀割伤，以及康婕死亡的结局。",
+      "suggestion": "恢复死亡方式、伤害过程及结尾事件。"
+    },
+    {
+      "category": "key_object",
+      "severity": "critical",
+      "evidence": "B未包含手术刀、红裙面具、电脑、手机卡、伪造打印稿和和田玉挂件。",
+      "suggestion": "恢复关键物件及其证据作用。"
+    },
+    {
+      "category": "clue",
+      "severity": "critical",
+      "evidence": "B未包含别墅布局、旧情关系、邮件提纲与玉件物证等线索。",
+      "suggestion": "恢复线索的铺陈和验证过程。"
+    },
+    {
+      "category": "misdirection",
+      "severity": "critical",
+      "evidence": "B未包含康婕以DV计划、伪造证据和提纲嫁祸庄杰的误导链。",
+      "suggestion": "恢复虚构剧本与现实行动交叠造成的误导。"
+    },
+    {
+      "category": "twist",
+      "severity": "critical",
+      "evidence": "B只保留标题，遗漏庄杰与康婕的旧情、康婕操纵大学生及同归于尽的反转。",
+      "suggestion": "恢复反转揭示的完整顺序。"
+    },
+    {
+      "category": "causality",
+      "severity": "critical",
+      "evidence": "B没有任何情节，庄杰被误伤、康婕救治后杀害庄杰及警方到场的因果链完全断失。",
+      "suggestion": "恢复从嫁祸、误伤到最终死亡的因果衔接。"
+    },
+    {
+      "category": "suspense",
+      "severity": "critical",
+      "evidence": "B仅有标题，封闭山地、面具红裙、身份怀疑和结局揭示均不存在。",
+      "suggestion": "恢复完整叙事及悬念递进。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "《恐怖电影》作为标题可朗读，但不构成有声稿，无法核对断句、指代或对白归属。",
+      "suggestion": "在恢复正文后逐段检查朗读节奏、指代清晰度和对白说话人。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_bbc17e7b439c256a.txt",
+    "input_sha256": "70bb98af81285a73b9f01a33e16dacdb777eb52ffd3bf88b6dad67d201055a9d",
+    "analysis_sha256": "2e28a8c37c4fdb05d42703f4870559577307853f9c7910d12a662d10155b82bb",
+    "rewrite_sha256": "ae1118b24724ad2bfca94e308eeefb8b8a4a1a63565157716d52191b14e1aa88",
+    "generated_at": "2026-09-04T13:05:29+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_223881f2c0798d49",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "外框揭示段中“经过甲这么一提醒”前缺少明确对应动作，朗读时会造成短暂指代断裂。",
+      "suggestion": "补足或改写为能承接前文的提示语，且不改变后续身份揭示。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“神私人”“小树状”等原始疑似 OCR 词仍直接进入对白。",
+      "suggestion": "在不擅自确定原词的前提下，采用中性称谓或安排人工核对后修正。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_223881f2c0798d49.txt",
+    "input_sha256": "7af40ece59c5a2ac4b96852943e5df7335efb65be7dcb7870089e8baf832e019",
+    "analysis_sha256": "aeb7aa16ee6de5ab5e31f628db6c8c5e291f4e26db62509df87848e823c80765",
+    "rewrite_sha256": "4f357e99046addbdabc24867a13a0b6ed1634ae76369488b38410ee8e080de48",
+    "generated_at": "2026-09-04T00:37:48+00:00"
+  }
+}

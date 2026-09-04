@@ -1,0 +1,57 @@
+{
+  "source_id": "story_78e8ff2b1db01389",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.68,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B中“大家不要以为作一个故事”一句语义断裂，紧接油纸伞介绍处。",
+      "suggestion": "删除或依据可确认来源重述该断裂句，勿让其进入朗读稿。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B在道士接伞段保留“白动打开”，破坏油纸伞自行打开这一关键异常。",
+      "suggestion": "按上下文校正为“自动打开”。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B保留“最***”“更***”遮挡标记，分别位于阿芬梦中挣扎段和伞内飘发段。",
+      "suggestion": "移除遮挡标记；只保留来源可确认的动作与结果，不能确认的形容词不要补写。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B仍有“时间核定”“间竭性”“栖怨”“溪钱”“冥襁”等明显OCR或用词异常。",
+      "suggestion": "逐项做保守校对；无法由A及事实清单确认的词应改为不依赖该词的通顺表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_78e8ff2b1db01389.txt",
+    "input_sha256": "3fa9c0a3c09ffe7b8806eff196dd5789601b0af558e05ae07c2f401971268936",
+    "analysis_sha256": "48077a8a88fd0eb07fa239aef03e96c3044cf70519ccf6df53d2021c00ee2fb2",
+    "rewrite_sha256": "179bd36daa8a637c5846f004a5b2857839b641f2db098a47bc57dd713711fb13",
+    "generated_at": "2026-09-04T06:31:23+00:00"
+  }
+}

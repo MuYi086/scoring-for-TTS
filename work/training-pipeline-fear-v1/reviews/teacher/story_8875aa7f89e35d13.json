@@ -1,0 +1,39 @@
+{
+  "source_id": "story_8875aa7f89e35d13",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "结尾洛志国解释诅咒转移处保留“而他正是！”的未完成句和未闭合引号。",
+      "suggestion": "补全为可独立朗读的完整句，明确所指为卫元，并闭合对白；其余结尾因果保持不变。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8875aa7f89e35d13.txt",
+    "input_sha256": "ca92d7e8bc3bac53dfea0d449b5ad9042f2446035b9ed634bfbf5a7dc8be1f1a",
+    "analysis_sha256": "0c71d1b89deec02b7ee674f81eccd5b86d408bbc7664433106803d3ef28fb9e7",
+    "rewrite_sha256": "573429c86176cbf107ebcc4d493fa5ae37cf006380fef92c577fb513531cd629",
+    "generated_at": "2026-09-04T08:30:19+00:00"
+  }
+}

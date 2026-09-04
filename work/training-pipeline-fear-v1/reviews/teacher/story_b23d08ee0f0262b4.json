@@ -1,0 +1,45 @@
+{
+  "source_id": "story_b23d08ee0f0262b4",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“肆年少最大的好处…”，章节号与正文未断开。",
+      "suggestion": "在“肆”后加入明确的章节停顿或移除章节号，避免朗读成含混词组。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“十几人在那对方失踪”的歧义表述。",
+      "suggestion": "核对原始措辞后消除“那对方”的断句/词形歧义，保证可听懂。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b23d08ee0f0262b4.txt",
+    "input_sha256": "6aab450a719e65a66bd4eee8c0f92039df3edff55beba048978764154568a1f7",
+    "analysis_sha256": "d910729d15f228c4180b892476d6a727cd40eb43c9e3311ff60f136893f29cce",
+    "rewrite_sha256": "d336e91fc0d030a289a33914cacf6a1ad925824e69b0add17f94e20effe35cdf",
+    "generated_at": "2026-09-04T12:57:21+00:00"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "source_id": "story_618f4adf94b81d53",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在李三琼出场段保留“这本老实实”，句法残缺，听众难以判断修饰对象。",
+      "suggestion": "在不补造人物事实的前提下，整理为可朗读的完整句。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在影子与惨叫段保留“划破了字根表的夜晚”，语义不可解，会打断恐怖场景的听感。",
+      "suggestion": "依据可确认的上下文修正为通顺表述；若无法可靠判定原词，保留悬置并交人工核验。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 的王联兴人物介绍以“睁一只眼闭一。”结束，句子截断。",
+      "suggestion": "补足或改写为完整、自然的朗读句，同时不改变镇民纵容王汉双的含义。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在玉美人纸条中保留“与人交蚺”，该短语读音和语义均不明确。",
+      "suggestion": "核验该OCR词后再定稿；保留已明确的“调和阴阳”功能说明。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_618f4adf94b81d53.txt",
+    "input_sha256": "d7849362aaee376375bab811923bd9ab0113ba5265bfabec314cc8c3ee55934c",
+    "analysis_sha256": "087ecd2ed38d5f90cb76df3e96a47e7a90ed96acb6a6a75dbf4c4a98bdc84eb8",
+    "rewrite_sha256": "15fb1726872245ccffd35ea33a31cf08555199f8e36379d51dc1469a8800c8ea",
+    "generated_at": "2026-09-04T06:10:49+00:00"
+  }
+}

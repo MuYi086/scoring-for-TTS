@@ -1,0 +1,51 @@
+{
+  "source_id": "story_62447e5e1ddefe0e",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处无法自然朗读或语义断裂的 OCR 文本，如开篇“伸臂四一指”、赴台段“却曾经住过的屋子去”、追逐段“古不上披”。",
+      "suggestion": "在不推断或改动事实的前提下，对照人工可确认文本校正明显错漏；无法确认的词句应标为待人工核验。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "遇害梦境及问话段仍有“摔摔抓”“低上”“帖到”“意识的了”“逆先生”“生前往”等错误，TTS 会产生错误读音或不通顺停顿。",
+      "suggestion": "修复可明确判定的错别字、漏字和误识别词，并保留不确定处供人工复核。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "小扣井边自述被拆成连续多个引号起始段，且首段长句信息密度高，朗读中的对白延续关系不够清晰。",
+      "suggestion": "统一连续对白的引号与段落结构，适度按语义断句，但不改变小扣的陈述内容和揭示顺序。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_62447e5e1ddefe0e.txt",
+    "input_sha256": "ed6a135695e131350930569bba50a8f0e94052817979541a50c1f5ac29b006e5",
+    "analysis_sha256": "1310c4d0e19baf7d165b4df4b0e1d6209211ba0c2ecec189fb5f1911346b68b7",
+    "rewrite_sha256": "e0070c1ccd8c82f3a72a937896e75b70e886e4b0db6aa0122070a98ac0abbd4e",
+    "generated_at": "2026-09-04T06:11:41+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_8ac5fd360a9a592f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "结尾“刘莎”之后连续两句对白未标明说话者，且“欧小米的身子说”后的身份变化仅靠上下文推断。",
+      "suggestion": "在不改变人鬼合一与和解结局的前提下，为末段两句补充最少量说话者或动作归属，确保朗读时听众能辨明刘莎与苏苏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8ac5fd360a9a592f.txt",
+    "input_sha256": "b6e7249f9293b1ce0c0cb1634d1d46ef9cd6e4bad80fe9cfda1da7500e607aa2",
+    "analysis_sha256": "cbcf2cb479107399f6bfaadc46f85bfdd42cba79c7caabafcc7877cc5092c033",
+    "rewrite_sha256": "0806b6ee67387173b2b89504fd037137634638422910648a2f084efa1b25628b",
+    "generated_at": "2026-09-04T08:32:20+00:00"
+  }
+}

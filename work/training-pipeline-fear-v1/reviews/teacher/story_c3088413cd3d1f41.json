@@ -1,0 +1,45 @@
+{
+  "source_id": "story_c3088413cd3d1f41",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "海洋馆踩点段保留“我仔细勘察了内部情。”这一残句。",
+      "suggestion": "改为不补充具体事实的完整表述，如“我仔细勘察了海洋馆内部”，以免朗读出现突兀断裂。"
+    },
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "揭示王西布局处的“妄图引我上钩、被箱形水母毒死的人”并列结构存在施害对象歧义。",
+      "suggestion": "明确为王西意图诱使肖晴上钩并让肖晴被箱形水母毒死，避免朗读时误解为王西本人中毒。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c3088413cd3d1f41.txt",
+    "input_sha256": "467b40eca57af079a0ac794ed2e1559764c94ff2b5462b5434b0423b36db6f77",
+    "analysis_sha256": "5773d44188994538b3dc268b0c57938eba951f370b5462ce7f70718a03a62559",
+    "rewrite_sha256": "1ff39d969d708d5c1d5c95729fc53459b36be4e5959b7ca2364a593b348815ac",
+    "generated_at": "2026-09-04T13:14:09+00:00"
+  }
+}

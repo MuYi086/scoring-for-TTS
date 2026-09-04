@@ -1,0 +1,45 @@
+{
+  "source_id": "story_1f184cbbc44b45a4",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B《给我十块钱》末段保留“六孩飘到我面前”。",
+      "suggestion": "改为上下文明确指向的“女孩飘到我面前”，避免朗读成“六个孩子”并破坏指代。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B《长发》中保留“乌黑飘逸的长定”。",
+      "suggestion": "校正为“乌黑飘逸的长发”；“长发”是该嵌套故事的核心物件与动机，错字会影响语义和朗读。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1f184cbbc44b45a4.txt",
+    "input_sha256": "95ee2e2a6fe709c9820c3cad813b73adf0794545981b41ae729c598a89666036",
+    "analysis_sha256": "e70645ffe4333f85899d501e00887df02a8393a2aef60117256da7f04cb6e419",
+    "rewrite_sha256": "69d09211531da8fb3948d7b7366d7fc24baecb8c75bfe1e365ca3944a797d8df",
+    "generated_at": "2026-09-04T00:34:50+00:00"
+  }
+}

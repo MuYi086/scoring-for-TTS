@@ -1,0 +1,57 @@
+{
+  "source_id": "story_ab44d565cc75f6b0",
+  "factual_consistency": 1,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B“班长”回应段保留“我回过去头”。",
+      "suggestion": "改为“我回过头看着他”，使动作表达自然。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B解释莫凯社交处境时保留“我们不主动地话”。",
+      "suggestion": "补足为“我们不主动的话”，避免朗读卡顿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B柴房初见大叔处保留“打量起来我来”。",
+      "suggestion": "调整为“打量起我来”，消除语序错误。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B大叔拒绝逃离时保留“如果……我想逃话”。",
+      "suggestion": "补足为“如果……我想逃的话”，保证对白口语自然。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ab44d565cc75f6b0.txt",
+    "input_sha256": "f6790f2b1cf7c40371d08b5a9551a54f1fbfc898965f9218d100ff1335eb9082",
+    "analysis_sha256": "3a4f1dad7e6bcb4af92206dc1181cc988333df50e9765d8dd2606f17f5ff2e97",
+    "rewrite_sha256": "2bfa42b817d88ba738c48e583f1836e9326b011c00b3919bcb2a8a773ca533c1",
+    "generated_at": "2026-09-04T12:49:49+00:00"
+  }
+}

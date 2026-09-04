@@ -1,0 +1,45 @@
+{
+  "source_id": "story_b40eec7e662691e0",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“渐渐沥沥下着小雨”（雨中送档案夹段）；该词组疑似 OCR/用词错误，朗读时明显拗口。",
+      "suggestion": "在不改变场景和情绪的前提下，核对后改为自然、可朗读的雨声表达。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“每次一要钱，我看到为难的样子就难受”（方杰说明为儿子筹钱段）；宾语缺失，听者难以立刻判断“谁”为难。",
+      "suggestion": "核对原意后补足指代或调整断句，确保方杰、其儿子与叙述者的关系清楚。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b40eec7e662691e0.txt",
+    "input_sha256": "120609a448004e00253174f4c1ffa4ba0c8aab608b2923b981c4e74653432dfb",
+    "analysis_sha256": "728c6dea194a96754f65b560c03556f5e55f2aa796d7767c031d6ef8c6b85cab",
+    "rewrite_sha256": "21583cff4f6e976c8ac2b071d5982959661e3f79d626cec7a1a6906f8d18dfbb",
+    "generated_at": "2026-09-04T12:59:39+00:00"
+  }
+}

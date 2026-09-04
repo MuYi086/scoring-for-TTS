@@ -1,0 +1,39 @@
+{
+  "source_id": "story_6d9a3aea2f8569f4",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.98,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "other",
+      "severity": "minor",
+      "evidence": "开头标题处：A 为“黑暗 回目”，B 改为“黑暗。”，遗漏“回目”。",
+      "suggestion": "保留原题中的“回目”，仅按朗读需要调整停顿。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_6d9a3aea2f8569f4.txt",
+    "input_sha256": "5df7f2e3d1b3df434b09b822fefe9e72818c9d4353b62d25d70ca2287fe7395f",
+    "analysis_sha256": "88e3495845670222f2a2723fd8b67a2c3b471a912feb55d6314b5a82239b67b8",
+    "rewrite_sha256": "28645aeca8b0435851eaf7ff5d8782ad23dccf8f9557ad5e64a68b96defc6351",
+    "generated_at": "2026-09-04T06:23:02+00:00"
+  }
+}

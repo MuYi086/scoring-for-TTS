@@ -1,0 +1,57 @@
+{
+  "source_id": "story_9babfb509891f582",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.78,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在“没有冰洛……我是荣妃，我是皇后。”后未闭合引号，下一段又以开引号开始。",
+      "suggestion": "修正该处连续台词的引号和停连，确保均明确归属皇后。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在“忘了我吧，我们的缘分已经尽了。”后未闭合引号，随后“红线已经断了。”另起开引号。",
+      "suggestion": "将两句整理为同一位说话者的连续临终台词，补全引号与朗读停顿。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "早年宫女传说后的公主台词保留为“我才不会这么她仍是不满意，我做呢”，语义断裂。",
+      "suggestion": "在不臆造硬事实的前提下，人工核定并修复该 OCR 串句，使台词可朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾“他在临时之前还在微笑”与战死语境不通，朗读会产生歧义。",
+      "suggestion": "人工确认后修正疑似 OCR 字词，并复核“华锻”“落天”“嘎然”等异常措辞。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_9babfb509891f582.txt",
+    "input_sha256": "10cacbd941a9b931fa6e6782a0252b4fb3bcc52357b7b5dc390d77095a73bc6b",
+    "analysis_sha256": "162c99ca5451b1781a840cf1eaf2d40834ff8ca873fb29b7e9aba9b17a544d04",
+    "rewrite_sha256": "414b2b76781dc92634ea5e28167e9d51916b560526c581c517f1517b2c7bf8a8",
+    "generated_at": "2026-09-04T12:12:43+00:00"
+  }
+}

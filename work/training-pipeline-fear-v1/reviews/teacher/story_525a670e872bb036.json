@@ -1,0 +1,45 @@
+{
+  "source_id": "story_525a670e872bb036",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 中主角姓名“杜雨荨”与“杜雨尊”反复交替，如夏方莹死亡后的叙述、头七讨论及案发回溯段。",
+      "suggestion": "统一为一个朗读名，或首次明确二者为同一人的别名；避免听众误判为两名角色。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 头七讨论中“干吗……干吗提到头七啊……”和“因为……头七是回魂夜啊……”均未标明说话人。",
+      "suggestion": "补充简短说话人归属，保证多人对白的可听辨性。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_525a670e872bb036.txt",
+    "input_sha256": "b3804314147a23d4b44ef1c43df08440dede402dbd887e6c80fb29abd693a7a1",
+    "analysis_sha256": "56e8bf5eabf881e0898392f2e93d32f09c28c9d30b7e47957038b7f67d6a5e6f",
+    "rewrite_sha256": "be81a303e627fc15d6c2c6d0128aef791efcac87683d7f9f71a3996b6b44f6b0",
+    "generated_at": "2026-09-04T04:15:23+00:00"
+  }
+}

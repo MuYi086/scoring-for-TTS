@@ -1,0 +1,39 @@
+{
+  "source_id": "story_b5ab5a5fbebfbd34",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“你可以小心一点”后保留了“福特医生想了。”这一来源残句，朗读语义不完整。",
+      "suggestion": "删除该残句，或在不补充新事实的前提下改为自然的叙述停顿。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_b5ab5a5fbebfbd34.txt",
+    "input_sha256": "4702ba2d3853bcb732b024479c24f8cebd525f2c67cc123a52b44e80396f64be",
+    "analysis_sha256": "f76013db0518295edd11c5445efc172a9906963fbdfac0b770bdac15be08789c",
+    "rewrite_sha256": "08c071e0e0b67fa75286f71a17c874dd2cf4b02f28dac120a7ff17a1f9efd7b6",
+    "generated_at": "2026-09-04T13:00:35+00:00"
+  }
+}

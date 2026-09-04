@@ -1,0 +1,51 @@
+{
+  "source_id": "story_a496bd57c1419e39",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "开篇脚步声与云曦惊醒之间保留并口语化了孤立的几何公式。",
+      "suggestion": "删除该明显版面/OCR串入内容，避免有声稿突然出现无叙事关联的公式朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "梦醒段出现“梦明明知道是在梦中”。",
+      "suggestion": "恢复主语与停顿，使句子可自然朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "李然回宿舍段保留“死死地闲住眼睛”。",
+      "suggestion": "核定为“闭住眼睛”后修正；当前用词会造成听觉理解障碍。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_a496bd57c1419e39.txt",
+    "input_sha256": "a5a3bc96a5b0891ed8e11c34574c39b69dca4a9bb8fc20b129921baf8283abc3",
+    "analysis_sha256": "5c02d66143e0b4451e98ea84592a3a64e5b5c4680dc4dc39eb49178d8aa70061",
+    "rewrite_sha256": "d3bebd1d1813c505275228b5448bce8e27963f3742ca6096b297f0065fe2a6f1",
+    "generated_at": "2026-09-04T12:44:47+00:00"
+  }
+}

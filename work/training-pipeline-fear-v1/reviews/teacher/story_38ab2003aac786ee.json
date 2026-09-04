@@ -1,0 +1,45 @@
+{
+  "source_id": "story_38ab2003aac786ee",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "开篇主角已确立为“张莹莹”，紧接着出现“孙莹莹的心”；B原样保留该疑似源文/OCR人名冲突。",
+      "suggestion": "在允许按事实清单校勘时统一为“张莹莹”，避免听众误认新增人物。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "A中的阶段性小标题“难逃厄运”“痛苦的滋味”“最终结局”未进入B。",
+      "suggestion": "评估是否以简短章节提示或相应停顿保留段落转场，尤其避免结尾段落突兀衔接。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_38ab2003aac786ee.txt",
+    "input_sha256": "25fb175774e23f3a903645fa84a0ef1f5559a26af2cb22829828376f23a8badd",
+    "analysis_sha256": "4994c75f9e2297df642352eb693d79bcc4b202413c2c28dcaafb35aea87612f5",
+    "rewrite_sha256": "70cd6545c3c5cea4d9d9715e551bafb32471df0ec2a7c77e1c7d1fd145c59665",
+    "generated_at": "2026-09-04T01:27:47+00:00"
+  }
+}

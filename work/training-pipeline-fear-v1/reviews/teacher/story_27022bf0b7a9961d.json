@@ -1,0 +1,45 @@
+{
+  "source_id": "story_27022bf0b7a9961d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.92,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "狗叫段落中“也知道它在哪里叫”与前句“不知道”语义冲突，朗读会造成理解停顿。",
+      "suggestion": "核对该处疑似识别错误；在不改变可确认事实的前提下，改为语义明确的表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "发现窥视者前的“看了慕容太大家一眼”称谓串字，随后又写“慕容太太家”。",
+      "suggestion": "统一为可明确朗读的地点称谓，避免被听成新增人物。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_27022bf0b7a9961d.txt",
+    "input_sha256": "1056731ab290a7100826ebe4ae364180172c3550295cb2cd15f74d66720db226",
+    "analysis_sha256": "3c13db3f9d48464c7acfe1ea9e0cedef80b656212cc744bed3ea53273e7a6418",
+    "rewrite_sha256": "0d8508356e1832533c0f5da0407672ffd1ce2cef835f910c4e384d402435b19e",
+    "generated_at": "2026-09-04T00:41:01+00:00"
+  }
+}

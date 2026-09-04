@@ -1,0 +1,51 @@
+{
+  "source_id": "story_beaf0d01998639a4",
+  "factual_consistency": 0.86,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.72,
+  "problems": [
+    {
+      "category": "twist",
+      "severity": "major",
+      "evidence": "B 在“第二个秋天……安和是很好的哥们”处结束，遗漏 A 末尾的天文社对话与两人失忆后的认知反转。",
+      "suggestion": "补回 A 的结尾场景，明确封印删除记忆后的反转。"
+    },
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "B 保留了安和所说“删除我们的记忆”，但删去了 A 对仪式后记忆已被删除的结果性验证。",
+      "suggestion": "恢复结尾中杭小夕与安和否认占星术、以普通同学相处的后果呈现。"
+    },
+    {
+      "category": "suspense",
+      "severity": "major",
+      "evidence": "结尾缺少 A 对“最佳结局”及两种生活方式的收束，故事在反转揭示前提前停止。",
+      "suggestion": "保留原作收束段，并维持分段朗读节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_beaf0d01998639a4.txt",
+    "input_sha256": "28d5b0bf84ebf268874d5f211791355619d1dbc486e9b86d74a72065a7a6adb5",
+    "analysis_sha256": "7c1011a587c64384ad036585d2ade6de5c9c48a8e0e40c5399c41dc3cb9307a8",
+    "rewrite_sha256": "c89198fda78f813c609416745cb52162461d910c9e78f57f6350f41255a47981",
+    "generated_at": "2026-09-04T13:10:52+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_49cdf2aa77dcfb1e",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 从正文直接起笔，遗漏原稿标题“小开灯的寝室”及四个分节标题。",
+      "suggestion": "恢复标题和分节标题，作为有声稿的章节提示与自然停顿；无需改动正文事实。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_49cdf2aa77dcfb1e.txt",
+    "input_sha256": "bfe0742018fc89a98008f6a14a111264472ffe716ab6911749adea17293065f8",
+    "analysis_sha256": "8a696adc9922a920fbfbc8637bd23c9091ac3b0734e1bdbbd20caee9fa7cd0a2",
+    "rewrite_sha256": "7b7240907c6ddea33bde2f5983bba7ae23fc2c1d68d692ee51aabd0cda110505",
+    "generated_at": "2026-09-04T01:48:09+00:00"
+  }
+}

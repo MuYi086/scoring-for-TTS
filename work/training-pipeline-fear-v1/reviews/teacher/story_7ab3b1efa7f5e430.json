@@ -1,0 +1,51 @@
+{
+  "source_id": "story_7ab3b1efa7f5e430",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.76,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 开篇保留“鬼两棵树”这一疑似 OCR 串字，朗读语义不通。",
+      "suggestion": "人工核定该词后再修订；不可凭猜测补写。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“今天是愚人节的可能”与“我不知道他……”均为不完整或不通顺句。",
+      "suggestion": "保守处理这些断裂句，保证时间引入和叙述衔接可朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“没有觉到一点喜欢另一棵树的必要”“因为心灵和灵心”等明显异常措辞。",
+      "suggestion": "在不改变人物关系、赌约及结局的前提下，进行人工校对和断句润色。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_7ab3b1efa7f5e430.txt",
+    "input_sha256": "637ff2b7b08cb0a00503052d70ba22f97890ead61334036d230e93879ffb0a62",
+    "analysis_sha256": "b2db9b4bc9664545075aca1492e6c59ca84c17c92ce415842977bcd94bc36fd8",
+    "rewrite_sha256": "37210df5036e25c276c29215fa528eea2b318449cb465cd19eb98c8c12601cab",
+    "generated_at": "2026-09-04T06:37:13+00:00"
+  }
+}

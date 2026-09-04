@@ -1,0 +1,39 @@
+{
+  "source_id": "story_0ea5a00205921c75",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 开头直接进入正文，遗漏原稿标题“奇怪的姑娘”，并删去各段落小标题。",
+      "suggestion": "保留故事主标题；如需纯有声正文，可用简短口播或自然过渡替代小标题。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_0ea5a00205921c75.txt",
+    "input_sha256": "c9292676b3ea643b4b8c9a9ae13ababb567decf645cdcda1137328ed82409738",
+    "analysis_sha256": "89ae5695a8282bf5c6893aab85187a1b1657d3978271cdfe6f6cac6952221390",
+    "rewrite_sha256": "9c385363ee54d7ada67e59a8c164a0fc9bb6826a3dde0a19b8c95aa4c521b4d7",
+    "generated_at": "2026-09-03T16:22:25+00:00"
+  }
+}

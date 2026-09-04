@@ -1,0 +1,45 @@
+{
+  "source_id": "story_bbc05aa04df0a691",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中建强在升旗典礼哭泣一段：“在班主任老师走过来安慰他，而他接过……”句法断裂。",
+      "suggestion": "调整连接词与主谓关系，使动作顺序可被一次听懂。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中进入402寝室前“沾着霉味，抚过满室的符咒……”一长句主语和修饰关系不清。",
+      "suggestion": "保留意象与信息的前提下拆分短句，明确叙述者在衣柜通道中的动作和所见。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_bbc05aa04df0a691.txt",
+    "input_sha256": "bb6672046a631aad3547c47d3aa179e4ee5ec3d74ff6ed4318353abebf263f09",
+    "analysis_sha256": "d12585c7ff376b49f68708be8e63793eb1eb3c8ce250d05bdb3e73ee450582f2",
+    "rewrite_sha256": "d4f5535f717906e940c73830ccc0642e7b3d1eca580e0d6dcb619d8cc72ff2dc",
+    "generated_at": "2026-09-04T13:05:51+00:00"
+  }
+}

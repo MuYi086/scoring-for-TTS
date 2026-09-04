@@ -1,0 +1,39 @@
+{
+  "source_id": "story_499efe4b78f8f28d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中段、果果找希露后保留孤立字符串“dierkeniukou。”，与前后叙事无语义关联。",
+      "suggestion": "删除该非中文占位/转写字符串，避免 TTS 朗读字母打断恐怖氛围。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_499efe4b78f8f28d.txt",
+    "input_sha256": "cc4f71da80c381f2589a091f803fc88173b7d73c0d06d23095bbfd458cb0de69",
+    "analysis_sha256": "75555286661122dd44e854f0447dc8cfb7cf92b892afac1772c37eb939e58c8f",
+    "rewrite_sha256": "1a655327ca9fbf1e322a224086f5a8b6f9d05bb2cb8da955977de044a5fc5f43",
+    "generated_at": "2026-09-04T01:47:36+00:00"
+  }
+}

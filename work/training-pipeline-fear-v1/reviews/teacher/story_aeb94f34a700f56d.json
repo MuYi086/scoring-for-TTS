@@ -1,0 +1,45 @@
+{
+  "source_id": "story_aeb94f34a700f56d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.95,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "钱阔揭示诱导链一段仍保留“咽气吞声”，为明显 OCR/用词异常。",
+      "suggestion": "改为“忍气吞声”，不改变人物关系或因果。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "刘蕾分手往事开头“一个多月前，刘蕾生日的第二天。”被断成独立残句。",
+      "suggestion": "与后句合并或调整为完整时间状语，保证朗读自然。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_aeb94f34a700f56d.txt",
+    "input_sha256": "2ae4a0bc89c3c6a6d1d9a72290d307ab956265f997b207e92ad03ead7931b46a",
+    "analysis_sha256": "2f8d10e9989c9e9316a7734c69f6443e303e583ba93cc15e037c06d664df1d9c",
+    "rewrite_sha256": "0440ba9a97742325df915454ec393f485b381e34b4ea0cc5afaed71f3fe89c21",
+    "generated_at": "2026-09-04T12:50:41+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_1771a19cbbe74a3d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“这些幻想很快会变成现实。怎么一想，她心如刀绞。”保留了原文的异常措辞，“怎么一想”不符合自然口语。",
+      "suggestion": "在不补充情节的前提下，改为自然且语义等价的连接表达。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“你想的只是你的脸面，你有没有想过我？”独立成段，未标明是张梅梅的内心独白或对白。",
+      "suggestion": "补充最小的说话人或心理提示，避免有声朗读时归属不明。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1771a19cbbe74a3d.txt",
+    "input_sha256": "1d730f6686d9b8ea86bde97aba53b0dd50bc1613b4fcdadee3049fbc47512a89",
+    "analysis_sha256": "ec60e75fbd2e8921510f155bf1fb498ef9c49b5ae546691711a39a348a79ae19",
+    "rewrite_sha256": "741d9f5640846494eb22e739d0c4262841162d22fe8eccfec54c8b62907212a1",
+    "generated_at": "2026-09-03T16:28:57+00:00"
+  }
+}

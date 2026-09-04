@@ -1,0 +1,45 @@
+{
+  "source_id": "story_443b180f35b68a94",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "牡丹说明世界不会相信怪力乱神处保留“这世界大理性了”，语义不通。",
+      "suggestion": "在不改变原意的前提下校正为可自然朗读的表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "牡丹形容自己时保留“抚媚地笑”，读音与常用词不符。",
+      "suggestion": "校正该明显错字，避免合成朗读出现不自然读音。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_443b180f35b68a94.txt",
+    "input_sha256": "f33540147fb19b8ff3740484578f9973f578da77bf18b07cb5e200db42771c60",
+    "analysis_sha256": "d8bb3392ea0787723f666aa2424d1127132b356843e05b97a2eb1f9da0070abd",
+    "rewrite_sha256": "3becac340160fc50ad2c635f2327db7e54d9c86bf780326cb5a21bc7caa1d308",
+    "generated_at": "2026-09-04T01:40:26+00:00"
+  }
+}

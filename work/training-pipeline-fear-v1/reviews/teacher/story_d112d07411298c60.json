@@ -1,0 +1,45 @@
+{
+  "source_id": "story_d112d07411298c60",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 段落“赶紧给掏出杯具”保留疑似 OCR 异常词，朗读会产生“杯具/悲剧”的歧义。",
+      "suggestion": "人工确认原词；若确为 OCR，改为语义正确的器具名称。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 段落“从猫眼里外一看”语序不自然，影响自然朗读。",
+      "suggestion": "在不改变“从猫眼向外查看”事实的前提下，调整为自然语序。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d112d07411298c60.txt",
+    "input_sha256": "f0adf6a14730570dcecc216b7fd799d7fec43f67e1204d72701bed58e9570998",
+    "analysis_sha256": "f6990236c1ad7d8b8fdeb39c55b7514462cb46156f7cbfcb2d125cf43a816919",
+    "rewrite_sha256": "611b0e3193dc7901ff79c25c72681c8147675137a4d9924dd2f85c196f399366",
+    "generated_at": "2026-09-04T13:26:07+00:00"
+  }
+}

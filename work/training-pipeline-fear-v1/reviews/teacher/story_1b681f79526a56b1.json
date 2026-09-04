@@ -1,0 +1,45 @@
+{
+  "source_id": "story_1b681f79526a56b1",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界上下文显示正文止于 L3426“血，像花蕾绽放，仿若娇艳玫瑰，”；紧接 L3428 已为编辑署名、L3430 为下一篇内容，末句悬置且无收束。",
+      "suggestion": "停止下游定稿并人工核验该篇原始版面是否缺页或漏行；不得以改写补全结尾。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾张明明对白“我不可能宋一扬，我来救你”语义断裂，B虽忠实保留但朗读时指代和句意不清。",
+      "suggestion": "待来源核验后再决定是否能依据可靠原文修复；当前不要猜测补字。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_1b681f79526a56b1.txt",
+    "input_sha256": "b69d89e4b34843191120787cbbe05778f6bdffaa68dca7c0c709ee242038d87b",
+    "analysis_sha256": "7f348161937a3829717f322b84fb7a2d92d11a45bd61cf520b1053f2859aeeef",
+    "rewrite_sha256": "389ee652913d635cd7bbabbad5a01cd7b527687b8c4160a87b03bce65e9e43f9",
+    "generated_at": "2026-09-04T00:33:40+00:00"
+  }
+}

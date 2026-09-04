@@ -1,0 +1,45 @@
+{
+  "source_id": "story_c36ec7b79004be78",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "阴阳空间揭示段：“我只是因他从前对我的轻薄举动，已。”语义残缺，无法有声朗读。",
+      "suggestion": "暂停并人工核对缺失原文；未确认前不要补写该行为或动机。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "前段唤醒李胜的室友为“陈子龙”，尾声进入章未来空间者为“李子龙”。",
+      "suggestion": "人工确认两名是否为同一人及正式姓名；确认前不得在B中擅自统一。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c36ec7b79004be78.txt",
+    "input_sha256": "6b964e7ee08f35de03c14dec9ab9906e7ff34e5f2154caa4914ac7e3e601fed7",
+    "analysis_sha256": "12bfbb769b7292f39899edec78b6bc3e2d3909092f0394d2665951937328a507",
+    "rewrite_sha256": "f90062d2d05c51fb9cd204b2431fd68cc4ffdc18f244ee5d71207dcd3c669611",
+    "generated_at": "2026-09-04T13:16:27+00:00"
+  }
+}

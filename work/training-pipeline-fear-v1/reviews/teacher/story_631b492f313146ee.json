@@ -1,0 +1,39 @@
+{
+  "source_id": "story_631b492f313146ee",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.98,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "B 第3行称“陆教授”，第137行起及揭露段称“顾教授”；A 亦存在同样跳变。",
+      "suggestion": "需人工确认“陆教授”与“顾教授”是否为同一人；该身份直接关联主谋揭露，确认后再决定是否统一称谓。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_631b492f313146ee.txt",
+    "input_sha256": "ad614062533abe53c5b9fa2da7f9b92d64e3508576521e020b280f46cf50a892",
+    "analysis_sha256": "92cd8d38eaecf719d32d61870b3ef6b2b64bb99efeb83b52da15bce0998bde10",
+    "rewrite_sha256": "b2630710010c8a9d16a72e7e9c31dfa9ea2dad2744d84e9078a8eba674849c48",
+    "generated_at": "2026-09-04T06:12:25+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_af77df35624f77e1",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“方挖的，主要用来存放一些教学用品”句首残缺，位于叙述者进入洞内后。",
+      "suggestion": "保留为待人工核对的来源残缺点；在确认原始文字前，不能据此擅自补全。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中打更大爷开门处“一张打火机下，沟壑纵横的……脸，突无地出现”语法断裂。",
+      "suggestion": "核对可用来源文字后重断句或修正 OCR；需保持“打更大爷突然现身”的揭示和惊吓节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_af77df35624f77e1.txt",
+    "input_sha256": "4e14642d51684609857cf0d0653e08210509cafbe86b545e86e497b70e7c9b17",
+    "analysis_sha256": "ecbd3cd0dcb4e40bdf1cb2de965a0da63d3937b69bf2a7029fd23a6b540c9654",
+    "rewrite_sha256": "777b1103c46b7c695c81e151207bedfb27e9f8dae94934813fb8721fcb7ed636",
+    "generated_at": "2026-09-04T12:52:40+00:00"
+  }
+}

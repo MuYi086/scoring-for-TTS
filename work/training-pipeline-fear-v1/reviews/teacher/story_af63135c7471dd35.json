@@ -1,0 +1,39 @@
+{
+  "source_id": "story_af63135c7471dd35",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "互动题后的“愚人性地”保留了原文疑似断行/讹字，句义不通。",
+      "suggestion": "在不改变“观众代入题目而感到恐惧”含义的前提下，改为可自然朗读的明确表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_af63135c7471dd35.txt",
+    "input_sha256": "b0955883c1c4c1adabf1cdb3bb49a051e6ce4c80e9e0554c2d5f09f2a0d0f6e9",
+    "analysis_sha256": "2dbb7beb68d05155ecb23f89b6337b9ebfc9a2d0dae45f3bb2203721c2413a13",
+    "rewrite_sha256": "92a2d1a117fbb728db33d5b035ee66305c9eb945f0e4a10678eaad760ff325a2",
+    "generated_at": "2026-09-04T12:52:17+00:00"
+  }
+}

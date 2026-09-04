@@ -1,0 +1,39 @@
+{
+  "source_id": "story_690ebec63bf6cd8b",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开篇“虽然和他同学已经有几个月了”仍为缺字式病句，朗读时主谓关系不清。",
+      "suggestion": "保留原意的前提下补足或改写该句，使“我”和陆飞的同学关系可清楚朗读。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_690ebec63bf6cd8b.txt",
+    "input_sha256": "f1af7206d5aebb0185d043561c47859fa6076e75c32aa1a6a33a1b19bb5b7bed",
+    "analysis_sha256": "3a5125dd5538016c126704ff846310df01afb6a6594b51d4321ceca18abbb2ca",
+    "rewrite_sha256": "62102cae0c2afb525d06d26fffa990fa8c75a8ea1d0dba23e4706ea6912485bd",
+    "generated_at": "2026-09-04T06:18:03+00:00"
+  }
+}

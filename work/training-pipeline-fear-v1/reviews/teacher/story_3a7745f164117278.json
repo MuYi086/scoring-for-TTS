@@ -1,0 +1,45 @@
+{
+  "source_id": "story_3a7745f164117278",
+  "factual_consistency": 0.8,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.58,
+  "problems": [
+    {
+      "category": "twist",
+      "severity": "major",
+      "evidence": "A 末段（边界 L853）杂志新增“护士永远留在医院、等待下一个雷雨天”的结局；B 在杂志翻至结尾处即结束。",
+      "suggestion": "补回该末段，保留杂志文字与孟伟聪现实经历重合的最终开放式反转。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "A 的篇名“晴天娃娃”及明康故事后的结构性小标题“一个也活不了”均未出现在 B。",
+      "suggestion": "如成稿规范要求朗读标题，恢复篇名；至少保留或以明确停顿标示中段小标题，帮助听众识别叙事进入主线。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_3a7745f164117278.txt",
+    "input_sha256": "0aa6ab097df7a36771de33b4cca650f28c025cdd65977c8d713fca2d93a92aea",
+    "analysis_sha256": "ead17eeeea6040819a41738c0340ba01cce5953cb5e0f468cf7bdb35330c9fb5",
+    "rewrite_sha256": "ef632c300fd75063a01ec4baedd0eba69e8a632265ac5adcdfa4c57d6ec68165",
+    "generated_at": "2026-09-04T01:30:05+00:00"
+  }
+}

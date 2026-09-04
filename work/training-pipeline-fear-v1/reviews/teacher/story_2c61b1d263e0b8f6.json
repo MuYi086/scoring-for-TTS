@@ -1,0 +1,39 @@
+{
+  "source_id": "story_2c61b1d263e0b8f6",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "镜前揭示段保留“一摸一样”（原文同处亦如此；Step 2 已标记疑似 OCR）。",
+      "suggestion": "改为“一模一样”，避免朗读词义和观感异常。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2c61b1d263e0b8f6.txt",
+    "input_sha256": "84f36c6d9cdd199934d4620f18594c8ed09836379eaa660e11cb6579d719e89e",
+    "analysis_sha256": "739a701caf74399370ceacbf617a243eec0b1f79df3c6dafdc24a5851521fd56",
+    "rewrite_sha256": "fb0bbaed171d2270eeaa0d01aecd338d937efb09c631f773222846609d81ebb0",
+    "generated_at": "2026-09-04T01:06:41+00:00"
+  }
+}

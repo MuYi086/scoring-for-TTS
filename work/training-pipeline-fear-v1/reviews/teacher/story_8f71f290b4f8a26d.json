@@ -1,0 +1,45 @@
+{
+  "source_id": "story_8f71f290b4f8a26d",
+  "factual_consistency": 1,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第127行“蔡飞略加思索”截断了蔡飞飞的姓名，听感像新增或误称人物。",
+      "suggestion": "统一为“蔡飞飞略加思索”。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 末句“老板也换了主人”主谓关系倒置，难以听懂实际是理发店易主。",
+      "suggestion": "改为“店也换了主人”或等义清晰表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_8f71f290b4f8a26d.txt",
+    "input_sha256": "696d38f10accb0ed9d951157a506d0a420a29100373d7b4de47ef1fa1de769cc",
+    "analysis_sha256": "e0026abb65a5a890a12e10793941391c412ed1568fe4a4f77ea89d33676f5ade",
+    "rewrite_sha256": "fd7ba5611b1917d37f3a8baedf3b7c95ed8098b66940d90431cce0e4e0fa37e0",
+    "generated_at": "2026-09-04T08:37:45+00:00"
+  }
+}

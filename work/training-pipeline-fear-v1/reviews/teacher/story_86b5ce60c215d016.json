@@ -1,0 +1,57 @@
+{
+  "source_id": "story_86b5ce60c215d016",
+  "factual_consistency": 0.94,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "陵珑墓碑资料后的咖啡厅段写成“何鹏……承认了陵珑便是他母亲”。",
+      "suggestion": "改为曲周承认陵珑是其母亲；这与后文曲周的表述及既定亲属关系一致。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "多处保留明显乱码/病句，如“到得到了”“能像出下这样毒手”“空气与外界无大意”“买者”。",
+      "suggestion": "在不改变事实的前提下逐一校正为可自然朗读的句子。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "曲周体内虫子涌出的段落仍称“包围着她”，指代与现场人物不一致。",
+      "suggestion": "明确虫子包围的对象为何鹏或曲周，避免听众误判人物。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "QQ表情“= = Ⅱ”被朗读为“等于等于二”。",
+      "suggestion": "改为自然的情绪性停顿或可听懂的表情说明，避免机械读符号。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_86b5ce60c215d016.txt",
+    "input_sha256": "7dbff4707d453a78a435b93800fa4a61542596d5ced59c661a01ba271bff29a6",
+    "analysis_sha256": "e53a3ad308f1af297d51b4694812fa90854b782bdab5942e00ed3cccf81dfd0f",
+    "rewrite_sha256": "26e171208fa841314097655d779b9667d07de97779df3d1d5c199753c9bdbe35",
+    "generated_at": "2026-09-04T08:27:35+00:00"
+  }
+}

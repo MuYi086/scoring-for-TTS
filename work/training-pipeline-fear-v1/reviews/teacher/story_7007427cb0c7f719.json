@@ -1,0 +1,45 @@
+{
+  "source_id": "story_7007427cb0c7f719",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中老奶奶对白仍为“好自为知吧”；A 对应位置为明显 OCR 异文，朗读会产生不自然的语义与停顿。",
+      "suggestion": "按可确认的固定表达校正为“好自为之吧”，并保持原对白归属。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“躲做在床边”和“别人都任为她疯了”两处明显错字，分别位于珠儿哭泣、众人误解姗姗的段落。",
+      "suggestion": "分别校正为“躲坐在床边”和“别人都认为她疯了”，避免 TTS 读出错误词音。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_7007427cb0c7f719.txt",
+    "input_sha256": "9a3ced01e7e0c2eb46d69747a8880c4b53930bd23a199b2041488404018af2dc",
+    "analysis_sha256": "8ea8a4d6f3d681ace02c06c04033133f66facf821a9a70ade13a5146a9b4cddf",
+    "rewrite_sha256": "3c31a54f4f9d0c1e3ac22e47de2bd6e9127c7fa90045ab3c09a6051648cc77cb",
+    "generated_at": "2026-09-04T06:25:08+00:00"
+  }
+}

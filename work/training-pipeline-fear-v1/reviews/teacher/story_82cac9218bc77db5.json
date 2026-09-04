@@ -1,0 +1,39 @@
+{
+  "source_id": "story_82cac9218bc77db5",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.95,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "B 在发现大眼睛女孩未离开处，将原稿的破折号转为“我一惊，我没有看到……”。",
+      "suggestion": "恢复为破折号或拆成两句，以保留突然意识到危险的停顿与冲击。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_82cac9218bc77db5.txt",
+    "input_sha256": "fd2afaa0d5f3d671ba12aa9eb5071b25cfa58669900d64730afee414c1d5c408",
+    "analysis_sha256": "e0afc0f00381b220fe7a70b6298f61e2511ebb4a1a51c60ac6c325f701212844",
+    "rewrite_sha256": "65d24bc983a29e11373876995109ca7cf32718cba67fd0be34efb9868f4b28bf",
+    "generated_at": "2026-09-04T08:24:57+00:00"
+  }
+}

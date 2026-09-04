@@ -1,0 +1,51 @@
+{
+  "source_id": "story_c518195d46ad8292",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.84,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "minor",
+      "evidence": "结尾法医判断处：原稿“已经死了三天以上吧”，B删去了“吧”。",
+      "suggestion": "保留法医判断的叙述性不确定语气，避免将死亡时间从推断改成绝对断言。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "全文多次使用“高X”作为人物称呼。",
+      "suggestion": "为有声稿采用稳定、可自然朗读的遮蔽称呼，并保持“谈‘高’色变”等双关表达可辨。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第二户脚印段落中“另外一家邻居”后接“他家”。",
+      "suggestion": "改为“那户人家”或等价指代，避免听众误以为指向前文某位男性人物。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_c518195d46ad8292.txt",
+    "input_sha256": "3fc4886d0267d4d049b8f45cd921a0b86ea5a290c5e337ee69a73d409dd15c27",
+    "analysis_sha256": "2015191ea55c95b41310a975ff644ce7328c402021e72ca276209b4c104cf95c",
+    "rewrite_sha256": "c0bd304bfeaeb0c534f33fc97b5fdb976cd3f94df490cb1c1c1768bfe9fa5be9",
+    "generated_at": "2026-09-04T13:17:34+00:00"
+  }
+}
