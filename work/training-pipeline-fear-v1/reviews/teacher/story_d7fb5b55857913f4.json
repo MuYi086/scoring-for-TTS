@@ -1,0 +1,39 @@
+{
+  "source_id": "story_d7fb5b55857913f4",
+  "factual_consistency": 1,
+  "audio_readability": 0.98,
+  "suspense_preservation": 1,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "陆军揭露闹钟藏蛇时的“小人？NO！”保留英文单词，TTS 的中文朗读可能出现不稳定读音。",
+      "suggestion": "将该英文语气词改为明确的中文否定表达，并保留其突然揭露毒蛇的节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d7fb5b55857913f4.txt",
+    "input_sha256": "ecca3e1d673c23ee3c3e7e65fa620bf537f5aa836c6210834c881cd7fdd5d514",
+    "analysis_sha256": "1579e02cfab1b2c18e0b42c521cdff75a805a58537a6eecb1b73232cc4241c0e",
+    "rewrite_sha256": "992812730077b6e14019a1259ac68a74f668dc7de0565089fd38a45f388aaa87",
+    "generated_at": "2026-09-05T02:27:00+00:00"
+  }
+}

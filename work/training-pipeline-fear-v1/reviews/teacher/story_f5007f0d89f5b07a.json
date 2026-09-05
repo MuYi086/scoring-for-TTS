@@ -1,0 +1,45 @@
+{
+  "source_id": "story_f5007f0d89f5b07a",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "少女说明滞留期限处保留为“还没有超过 /. 天”。",
+      "suggestion": "原稿 OCR 缺失了具体天数，无法安全还原；请人工核对可读来源后再定稿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "终点站广播保留“车次列车的终点站”，报纸标题保留“近月前”。",
+      "suggestion": "两处疑似 OCR 异常，需人工确认原文措辞；确认前不应擅自改写。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f5007f0d89f5b07a.txt",
+    "input_sha256": "12e58371c3a93abbf89755d149070dc1fbfdef78f5002503bd09dfaac3f7caeb",
+    "analysis_sha256": "e69a672ab1284c22f3584e453b359fd3c79bd92c3e07876007bb47cd464342a0",
+    "rewrite_sha256": "f9b030e99f31a7d6f1d161f4a0bedb79eeeb9f2ba9f3edf48e117149055a6b67",
+    "generated_at": "2026-09-05T03:01:48+00:00"
+  }
+}

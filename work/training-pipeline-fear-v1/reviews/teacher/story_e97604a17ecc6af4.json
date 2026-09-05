@@ -1,0 +1,39 @@
+{
+  "source_id": "story_e97604a17ecc6af4",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "赵晨故事中，A 第81—85行明确将“嗯，也好”归于 C；B 第83行改归 D。",
+      "suggestion": "将该句说话者恢复为 C，以保持对白归属与原稿一致。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_e97604a17ecc6af4.txt",
+    "input_sha256": "2f176798eb9584f38f8b06446b0bb4e219ed87cd0d4ea3dbe932dff24561568c",
+    "analysis_sha256": "1be15a0e404aead8da3de15cd9f56520c218fd2c30ec065c51d0fd4fad62bda0",
+    "rewrite_sha256": "f7e62e80535baff69234a5faf29bc1e1b404e52392ce60900e7343484d428830",
+    "generated_at": "2026-09-05T02:32:38+00:00"
+  }
+}

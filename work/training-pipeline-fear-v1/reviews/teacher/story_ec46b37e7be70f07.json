@@ -1,0 +1,45 @@
+{
+  "source_id": "story_ec46b37e7be70f07",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "clue",
+      "severity": "minor",
+      "evidence": "B 的“没有……没有……”对应 A 第19行未完的“没有……没有”，补出了末尾停顿。",
+      "suggestion": "保留为可确认的截断重复，或在成稿标明该处为来源损坏，避免把未确认的语气闭合为确定文本。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“碍……”后紧接“一声尖叫”；该字在 A 第23行亦为疑似 OCR 损坏，朗读会形成不明的语义词。",
+      "suggestion": "先核实该损坏字符；无法核实时以不改变事件事实的非词汇化尖叫处理，并保留待审标记。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ec46b37e7be70f07.txt",
+    "input_sha256": "5db7083162cd20bad1bbbf283258c945496b6234df982531d3126e91734b35ed",
+    "analysis_sha256": "03c2eeed6ed43b2a61996221d89a3cab4a07d1a604c4529fd944c4c2219e43b8",
+    "rewrite_sha256": "55aa2c7b32e89b23f259c505437088ca535ecb74048a8a60ccffcd7145362ca8",
+    "generated_at": "2026-09-05T02:48:16+00:00"
+  }
+}

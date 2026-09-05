@@ -1,0 +1,39 @@
+{
+  "source_id": "story_debeaa99cc043856",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "石灰池追逐段保留“尺稠，白色”；该词组疑为 OCR 错字，朗读会产生无法理解的语义。",
+      "suggestion": "人工核定该描述的原意后，替换为明确、可朗读的质感描述；不要凭猜测改动其他情节。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_debeaa99cc043856.txt",
+    "input_sha256": "edec2a44ced776d1a60479946b82454d3840ba02f3bf3ec5d48a8a388f87f6c5",
+    "analysis_sha256": "21056ce4fe279aff4301b8136972df4a3a99e0eed3b9c2019deb19c18545bcfc",
+    "rewrite_sha256": "c1e77ae36a54445f1a124e96d36c245196f9a3bb17229da509fdb68e6580a34b",
+    "generated_at": "2026-09-05T02:30:42+00:00"
+  }
+}

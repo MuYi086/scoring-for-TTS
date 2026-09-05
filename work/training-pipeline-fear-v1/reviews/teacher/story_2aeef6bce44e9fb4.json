@@ -1,32 +1,38 @@
 {
   "source_id": "story_2aeef6bce44e9fb4",
   "factual_consistency": 0.97,
-  "audio_readability": 0.82,
+  "audio_readability": 0.7,
   "suspense_preservation": 0.96,
   "problems": [
     {
       "category": "readability",
       "severity": "major",
-      "evidence": "宴会描写仍保留“现在众人眼前”，语义不完整；“光芒。红色长裙”虽已断句但原词疑有缺字。",
-      "suggestion": "核对为“出现在众人眼前”等完整表达，并确认相关缺字。"
+      "evidence": "B 第6段保留“现在众人眼前”，句中缺少明确谓语。",
+      "suggestion": "核对 A 的 OCR 语义后改为可自然朗读的完整表达；不要改变宴会出场这一情节。"
     },
     {
       "category": "readability",
       "severity": "major",
-      "evidence": "“竟然产生里一种”“拜倒在其石榴粥下”明显不通顺，影响朗读理解。",
-      "suggestion": "核对 OCR 文字，修正为语义明确的词语。"
+      "evidence": "B 第11段“产生里一种”会被逐字朗读，语义和语音均明显不通。",
+      "suggestion": "修正该 OCR 错字，使“美貌与血腥气味结合形成妖异魅力”的线索可清晰朗读。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 第12段将惯用语读作“石榴粥下”，会把伯爵夫人令路易十四倾倒的表述变成无关物件。",
+      "suggestion": "核对原文 OCR 后修正该词，保留路易十四倾倒及“血腥玛丽”传闻的因果关系。"
     },
     {
       "category": "readability",
-      "severity": "minor",
-      "evidence": "“凡蒂冈”和“耶路撒冷的大师?”保留异常专名与标点；“离它不远处？”也不符合陈述语气。",
-      "suggestion": "统一专名为规范写法，并将异常问号按语义处理。"
+      "severity": "major",
+      "evidence": "B 第16—17段保留“大师?”和“离它不远处？当地政府”，异常问号造成口播突兀并切断叙述。",
+      "suggestion": "按上下文重整停顿和句界，保持驱魂失败、教皇封印及禁入告示的收束顺序。"
     },
     {
-      "category": "readability",
+      "category": "character",
       "severity": "minor",
-      "evidence": "数字密集出现，包括 100、60、50 年、2800、70 高龄、400 年和 10 里，连续口播时节奏易拥挤。",
-      "suggestion": "保留事实数字，同时用短句和停顿分组呈现。"
+      "evidence": "B 第16段仍为“凡蒂冈”，专名读音存在 OCR 疑义。",
+      "suggestion": "人工确认专名后统一为正确、可朗读的写法；若无法确认则升级人工复核。"
     }
   ],
   "decision": "revise",
@@ -44,14 +50,14 @@
   "_provenance": {
     "stage": "rewrite_review",
     "variant": "teacher",
-    "model": "gpt-5.6-luna",
+    "model": "gpt-5.6-terra",
     "reasoning_effort": "medium",
-    "model_route": "luna_default_review",
+    "model_route": "risk_or_audit_review",
     "speed": "standard",
     "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_2aeef6bce44e9fb4.txt",
     "input_sha256": "f7bfb5f3b630844c21a16d9afa2ccac2f4b13d320ede0aec9ffae6d80e63dda1",
     "analysis_sha256": "3d5d9704b35108539f9fa3ef5bf36eacf70a9cab8c5032c7554122f52ff7b2d5",
     "rewrite_sha256": "99a5cd5ea19187d09cfd69643db5a1e5dce9c7474a64a8eef887ff727ab56b19",
-    "generated_at": "2026-09-04T00:42:29+00:00"
+    "generated_at": "2026-09-05T03:38:17+00:00"
   }
 }

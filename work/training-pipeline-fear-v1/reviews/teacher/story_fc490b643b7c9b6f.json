@@ -1,0 +1,45 @@
+{
+  "source_id": "story_fc490b643b7c9b6f",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "何媛媛初次外貌描写处仍保留“整颗头像是和全世界有仇般地鲜艳”的异常句式。",
+      "suggestion": "在不改变其发色、妆容和朋克形象的前提下，改为自然、可顺畅朗读的完整句。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "结尾对白前的白袍象征说明中，“那是在地狱所有灵魂，还有冥王的希望”主谓关系不完整。",
+      "suggestion": "仅补足句法关系，使白袍代表冥府灵魂与冥王希望的含义可被听众一次听清。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_fc490b643b7c9b6f.txt",
+    "input_sha256": "a8dda1cdea65defd87986446742d4329c5e45c53a463aebfa9fbca3540db72d7",
+    "analysis_sha256": "2d5460ad8c21147a4d7fff72c95f182ea370510448b3ffdc9a6512ef903fc0d8",
+    "rewrite_sha256": "ac13a1d3f9cbebc970a9d48d9142a3ffc2a3d7220978fe2a19a58c428070d8e7",
+    "generated_at": "2026-09-05T03:09:44+00:00"
+  }
+}

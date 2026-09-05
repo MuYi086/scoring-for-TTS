@@ -1,0 +1,45 @@
+{
+  "source_id": "story_de42666cc56fab9d",
+  "factual_consistency": 0.88,
+  "audio_readability": 0.76,
+  "suspense_preservation": 0.86,
+  "problems": [
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "A/B 在刘琦化为粉尘、只剩头颅后，直接跳到“苏鹏……拧开盖子就喝了起来”；饮料递交、场景转换及何西下药的前因均缺失。",
+      "suggestion": "需人工核验缺段或源页内容后再补足过渡；不能仅凭后文推断自行补写具体情节。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 开篇保留“H太纳新的第一天”，其中“H太纳新”无法可靠朗读或理解。",
+      "suggestion": "人工确认该疑似 OCR 文本后再修正；未确认前不应猜测替换。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_de42666cc56fab9d.txt",
+    "input_sha256": "ca7f9403a981d860adf8d62268a67dc90619949938854b55ee23dc92a76ee7bd",
+    "analysis_sha256": "b6d45d393fb0188b0033d8bd8f392f6b895c3a93aa944c136f45012e4c87c93b",
+    "rewrite_sha256": "9c60bf4e21606fafe96de9e1a688b10366fe54fefc453b683954dd9d7028fc86",
+    "generated_at": "2026-09-05T02:30:11+00:00"
+  }
+}

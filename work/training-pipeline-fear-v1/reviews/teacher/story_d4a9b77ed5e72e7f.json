@@ -1,0 +1,45 @@
+{
+  "source_id": "story_d4a9b77ed5e72e7f",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界包起点 L73 为叶晴故事，但声明终点 L791 落在徐芳香、王升庆、宾萧婷的另一篇故事结尾；A 在叶晴故事结束后又从“文/聊聊”转入无关人物与情节。",
+      "suggestion": "停止使用当前 A 的边界，人工重新确认《头号粉丝》的独立终点并重新生成边界包、事实清单和改写输入。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 在李跃账号说明处保留残句“他的账。”，上下文语义中断。",
+      "suggestion": "来源边界修复后，依据可核验原文补全或删去该残句。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d4a9b77ed5e72e7f.txt",
+    "input_sha256": "a56dde84c9f5deef9acf492d77282b50b53a1569690eac1274f75da0849a90a4",
+    "analysis_sha256": "3bfa10c054f9f9d49d53c98c33056196f3f8f965f4f1a3766b112d11de8c3a71",
+    "rewrite_sha256": "478a3ab245e8da80d96f8eefef6fa1141ca06bcf3b22306eb9bf1004977f0beb",
+    "generated_at": "2026-09-05T02:25:34+00:00"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "story_d18ea2e00617a531",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "第二天奶奶交饭盒的对白仍含“你准愿吃”，语义不通，朗读会产生明显卡顿。",
+      "suggestion": "在不猜测原意的前提下改为中性、可朗读的表述，或提交人工确认原词。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d18ea2e00617a531.txt",
+    "input_sha256": "e4313fe8c1fcebb59e3113bb8892623f5dede344e742f4228b150d96a00eee73",
+    "analysis_sha256": "b85d2421e95be4f5b981a32856d0d322d704f97fc2a43fca29fbfdddae49d623",
+    "rewrite_sha256": "b3ec64cba825fb634415969f73cd9163d79b51e48e2ea2e5688df2c908a45ab6",
+    "generated_at": "2026-09-05T02:23:20+00:00"
+  }
+}

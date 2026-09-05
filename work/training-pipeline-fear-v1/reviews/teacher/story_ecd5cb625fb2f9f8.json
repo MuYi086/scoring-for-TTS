@@ -1,0 +1,45 @@
+{
+  "source_id": "story_ecd5cb625fb2f9f8",
+  "factual_consistency": 1,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "房东加租对白保留“想租，一你连下水道都租不到！想租，一口价”的重复串字。",
+      "suggestion": "仅修正该疑似 OCR 串字，保留加租至500元及房东态度突变的信息。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "电工抄表段保留“怎么会用了这么多电字？”。",
+      "suggestion": "将疑似错字处理为自然的用电量提问，避免朗读出“电字”而造成停顿和歧义。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ecd5cb625fb2f9f8.txt",
+    "input_sha256": "8a5bab92895803d3c1ae3821d8bd1c424385e7a346c9ec5b15fb72765d8813d0",
+    "analysis_sha256": "97ca6cf616326b94a1c2681bbbd658ef17cad6880f0a02f65bbc8afbe8cbe043",
+    "rewrite_sha256": "3c40d6b589ff30cd3efc5fadb51953351a991f64e9b8627eb1f6e570de40f178",
+    "generated_at": "2026-09-05T02:49:47+00:00"
+  }
+}

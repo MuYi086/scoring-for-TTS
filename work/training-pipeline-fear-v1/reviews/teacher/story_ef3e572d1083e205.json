@@ -1,0 +1,63 @@
+{
+  "source_id": "story_ef3e572d1083e205",
+  "factual_consistency": 0.58,
+  "audio_readability": 0.68,
+  "suspense_preservation": 0.3,
+  "problems": [
+    {
+      "category": "twist",
+      "severity": "major",
+      "evidence": "B 在林彦冷笑处结束；A 的 L2404-L2448 才揭示其购书、误投与最终死亡。",
+      "suggestion": "补全 A 结尾，保留林彦幕后身份与书继续流转的反转。"
+    },
+    {
+      "category": "key_object",
+      "severity": "major",
+      "evidence": "B 未包含 A L2416-L2446：书与持有者皮肤粘连、吸血、无法打开及新增诅咒条目的规则。",
+      "suggestion": "补入书的粘连、吸血和书页规则，避免关键物件机制缺失。"
+    },
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "B 未说明女生误收书、张海波和江沐澈连续死亡的根因，也未交代江沐澈断手的真正原因。",
+      "suggestion": "补全 A L2404-L2428 的投递失误、持书转移及死亡因果链。"
+    },
+    {
+      "category": "suspense",
+      "severity": "major",
+      "evidence": "B 停在“林彦冷笑”后，没有 A L2430-L2448 的反噬、林彦死亡和开放式尾声。",
+      "suggestion": "恢复完整结局，使前段误导得到回收并保留最终悬念。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 以未完成的反派台词和场景切换收束，听众无法获得明确结尾。",
+      "suggestion": "在补全结尾后，以叙述提示清楚标明视角已转至林彦。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ef3e572d1083e205.txt",
+    "input_sha256": "363e4cc0cd71b7e08d1d1baeecb93c84c05ea2a3db74fe57f8f2239d8efe1b13",
+    "analysis_sha256": "98b972ec199e94d86d527fa1760f564cb7c241f451182f7561b44b0f0b21ddd9",
+    "rewrite_sha256": "749fdbe98e0fa67de227310d4b0b483f6f3aee6582d57cf7eec42277b48e08d4",
+    "generated_at": "2026-09-05T02:53:27+00:00"
+  }
+}

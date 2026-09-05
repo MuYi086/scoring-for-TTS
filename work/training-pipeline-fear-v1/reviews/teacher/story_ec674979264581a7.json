@@ -1,0 +1,45 @@
+{
+  "source_id": "story_ec674979264581a7",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.9,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界前 L1135 是与正文同一第一人称、同一情人节独处看片场景的开场段，且直接衔接 L1141“已经是第三部电影了”。",
+      "suggestion": "将 L1135 纳入原稿 A 后重新执行后续步骤；不要以改写 B 补偿该缺失。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中“生日psny”保留了疑似 OCR 残词，朗读会产生不可理解的字母串。",
+      "suggestion": "在来源边界修复并确认该词原意后，使用可朗读的中文表述。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ec674979264581a7.txt",
+    "input_sha256": "34cb36fa92df46057e2cdccff38fa222ea7696acd9a6218538eba8ea4697dbfb",
+    "analysis_sha256": "79c9d854e4462bd14da231ebc20abe578e1de90262aa5c39e5d240f35c773ba4",
+    "rewrite_sha256": "d3bc778b4e34b7b39e570d862e1ce2dabf7ae9213e3bced7c24368f6351c5dde",
+    "generated_at": "2026-09-05T02:52:02+00:00"
+  }
+}

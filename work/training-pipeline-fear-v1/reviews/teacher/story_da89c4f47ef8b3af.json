@@ -1,0 +1,45 @@
+{
+  "source_id": "story_da89c4f47ef8b3af",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中段第二次 QQ 对话从“对，我想和你谈谈‘百度’的事”起，多个交替发言未标注“灵猫”或“冰女孩”。",
+      "suggestion": "为每轮在线对话补足稳定的说话者归属，尤其是连续短问答，避免有声听众混淆发言人。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 结尾《一念地狱》日记首段有起始引号，后两段又各自以引号开头，形成不一致的引号层级。",
+      "suggestion": "统一日记引用格式：使用完整引号包住全部日记，或改为无引号的叙述性分段。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_da89c4f47ef8b3af.txt",
+    "input_sha256": "eab15ca686f84f828f6656d6f1be9dfc90b6e494933f9b0e4a41c1af2d3ed5da",
+    "analysis_sha256": "928df1c748dc3c18c109c15305863c999eea58104ab2367b7ca6ccc94e90dd98",
+    "rewrite_sha256": "059913743bdd1c794548e8454b2813b0ed8c645b3bd2e331b2399fef2d0b33eb",
+    "generated_at": "2026-09-05T02:28:53+00:00"
+  }
+}

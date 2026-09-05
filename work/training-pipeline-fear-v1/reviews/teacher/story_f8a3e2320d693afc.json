@@ -1,0 +1,51 @@
+{
+  "source_id": "story_f8a3e2320d693afc",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.86,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第351行保留“忙不逃飞回了阿尔兹”，语义断裂，朗读无法自然理解。",
+      "suggestion": "在不改变“收到噩耗后匆忙返回阿尔兹”这一事实的前提下校正该 OCR 串字。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第73行保留“此间流过比间的风”，其中“比间”疑似错字，听感与语义均不通。",
+      "suggestion": "依据原稿上下文作最小化的可确认校正；若无法确认原意，提交人工复核。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第229行“类似于狼一样的、称为凶狠凄厉的目光”句法不顺，影响连续朗读。",
+      "suggestion": "仅调整停顿和句法，使“狼一样”与“凶狠凄厉的目光”的修饰关系清楚。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f8a3e2320d693afc.txt",
+    "input_sha256": "c63508bab9d45dc4d543b86d88992dc787ffa3b15e7184b7f8ba1c2a0b243e9a",
+    "analysis_sha256": "5e469fe941f79ce43cf89cbfb6a21f5794280b9a534527686e1bf6ee2dcd4112",
+    "rewrite_sha256": "628cb344b0a67afc3bb8478268c0286ce360d60b15186ddccec341a27dda54b2",
+    "generated_at": "2026-09-05T03:05:47+00:00"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "source_id": "story_f8ee41ee45474e53",
+  "factual_consistency": 0.82,
+  "audio_readability": 0.48,
+  "suspense_preservation": 0.8,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "第二次传送段仍出现“周溥阳”“韩骑酒”“韩晓娜”“韩骑涵”等姓名变体。",
+      "suggestion": "按 Step 2 已确认的别名关系统一为周博阳、韩晓涵，避免人物身份和对白归属混乱。"
+    },
+    {
+      "category": "location",
+      "severity": "major",
+      "evidence": "第二次电话后的地点同时含“XX路”和“八路”；Step 2 明确标注该地点无法可靠恢复。",
+      "suggestion": "该硬地点信息须人工核源或采用不宣称具体路名的处理；在未确认前不能作为确定事实朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "critical",
+      "evidence": "第二次传送电话段保留“究里的手机”“女衣梁荫”“跳洒”“什么时问”“梁蔚不就不毙”“黄色的物体敌人”等乱码。",
+      "suggestion": "清理可由上下文确认的 OCR 错误；其余无法可靠复原的句子应人工核定后再用于有声稿。"
+    },
+    {
+      "category": "clue",
+      "severity": "major",
+      "evidence": "窗户抛物这一香蕉皮因果线索被“黄色的物体敌人”遮蔽。",
+      "suggestion": "在不新增情节的前提下，恢复为可听懂的黄色物体/香蕉皮表述，确保事故因果链可辨。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "多处仍有“狐疑问”“韩晓涵地意念”“越来越愈近”“撒发出”等不自然或误识表述。",
+      "suggestion": "进行基础校对和断句清理，保留原有叙事节奏。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f8ee41ee45474e53.txt",
+    "input_sha256": "0283bdec463133cc9d1e277dd25939f083e03b9308aebfbe387f6e032bc8c517",
+    "analysis_sha256": "b3c2a07e4fdb2e3ad01ec446aab4cbeb0ab15fd3c51e3ab3ebf3411334a16f99",
+    "rewrite_sha256": "1dcba2688822ceed445b677d742d98b49d67ef1aa7a3999423455c54132ffb39",
+    "generated_at": "2026-09-05T03:06:00+00:00"
+  }
+}

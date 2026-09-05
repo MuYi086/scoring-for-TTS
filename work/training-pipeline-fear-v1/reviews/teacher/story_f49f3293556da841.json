@@ -1,0 +1,45 @@
+{
+  "source_id": "story_f49f3293556da841",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "location",
+      "severity": "major",
+      "evidence": "回忆开头中，天朗说“摩里岭”，叙述随后及其他位置均为“摩星岭”；A、B均保留该冲突。",
+      "suggestion": "无法确认正确地名；在核对原始可靠文本前不要擅自统一，需人工裁定。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "结尾“阿紫不在，却没有今天朗爱上阿雪”语义和停顿均不成立；B原样保留来源疑似OCR缺字。",
+      "suggestion": "该句承载天朗与阿雪关系的关键事实，无法从现有材料安全补字，需人工确认后修正。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f49f3293556da841.txt",
+    "input_sha256": "a59012b1b6a8de7712fac41fe05767ace84b7d2648fdcc9ddf18e44de1e76aad",
+    "analysis_sha256": "e51fda3819cb26840142f26d9afc181c2763a7da061dad35e6cd30b9978c3b05",
+    "rewrite_sha256": "e3c169f67150daa53945550c52ae96b77a86492a33c3f03257d7b44a36894899",
+    "generated_at": "2026-09-05T02:59:45+00:00"
+  }
+}

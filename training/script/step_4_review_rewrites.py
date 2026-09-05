@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import math
 from pathlib import Path
 import re
 import shlex
@@ -154,6 +155,18 @@ severity=critical 并 decision=escalate，不能靠重写 B 掩盖残缺来源�
 """
 
 
+def stable_terra_audit_source_ids(
+    source_ids: Sequence[str],
+    percent: int,
+) -> set[str]:
+    """稳定选择普通 train 的 Terra 抽检项，并向上取整保证非空批次有覆盖。"""
+
+    if percent <= 0 or not source_ids:
+        return set()
+    audit_count = min(len(source_ids), math.ceil(len(source_ids) * percent / 100))
+    return set(sorted(source_ids, key=sha256_text)[:audit_count])
+
+
 def build_parser() -> argparse.ArgumentParser:
     """构造 Step 4 命令行。"""
 
@@ -231,6 +244,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     split_scope = "_".join(sorted(include_splits))
     stories = eligible_story_records(manifest, include_splits)
+    candidates: list[tuple[dict[str, Any], Path, Path, dict[str, Any], dict[str, Any]]] = []
     pending: list[tuple[dict[str, Any], Path, Path, str, str, str, str, str]] = []
     skipped: list[dict[str, str]] = []
     for story in stories:
@@ -250,18 +264,37 @@ def main(argv: Sequence[str] | None = None) -> int:
             continue
         rewrite = read_json(rewrite_path)
         validate_rewrite(rewrite, source_id, str(story["sha256"]))
+        candidates.append((story, analysis_path, rewrite_path, analysis, rewrite))
+
+    normal_train_source_ids = []
+    for story, _, _, analysis, rewrite in candidates:
+        checks = rewrite.get("_deterministic_checks", {})
+        is_risk = (
+            analysis["difficulty"] == "hard"
+            or story.get("split") == "validation"
+            or rewrite["needs_human_review"]
+            or bool(checks.get("new_name_candidates", []))
+        )
+        if story.get("split") == "train" and not is_risk:
+            normal_train_source_ids.append(str(story["source_id"]))
+    terra_audit_source_ids = stable_terra_audit_source_ids(
+        normal_train_source_ids,
+        args.terra_audit_percent,
+    )
+
+    for story, analysis_path, rewrite_path, analysis, rewrite in candidates:
+        source_id = str(story["source_id"])
         analysis_sha256 = canonical_json_sha256(
             {key: value for key, value in analysis.items() if not key.startswith("_")}
         )
         rewrite_sha256 = sha256_text(rewrite["output_b"])
         checks = rewrite.get("_deterministic_checks", {})
-        audit_bucket = int(sha256_text(source_id)[:8], 16) % 100
         needs_terra = (
             analysis["difficulty"] == "hard"
             or story.get("split") == "validation"
             or rewrite["needs_human_review"]
             or bool(checks.get("new_name_candidates", []))
-            or audit_bucket < args.terra_audit_percent
+            or source_id in terra_audit_source_ids
         )
         model = args.review_model if needs_terra else args.model
         effort = (
@@ -277,6 +310,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 if (
                     provenance.get("rewrite_sha256") == rewrite_sha256
                     and provenance.get("analysis_sha256") == analysis_sha256
+                    and provenance.get("model") == model
+                    and provenance.get("reasoning_effort") == effort
+                    and provenance.get("model_route") == route
                 ):
                     continue
             except PipelineError:
@@ -293,7 +329,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 route,
             )
         )
-    candidate_count = len(stories) - len(skipped)
+    candidate_count = len(candidates)
     pending_total = len(pending)
     completed_before = candidate_count - pending_total
     pending = limit_pending_items(pending, args.limit)

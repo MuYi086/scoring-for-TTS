@@ -1,0 +1,45 @@
+{
+  "source_id": "story_e7450946b3300488",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 段落“他柔柔惺忪的睡眼，不满地说道”保留了原文疑似 OCR 异常，主谓搭配不通，朗读易卡顿。",
+      "suggestion": "确认原词后修正为自然的动作／状态表述，勿改变室友在做红烧肉梦及抱怨的情节。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“星辰代谢”“腹涨”“来不急”“楞”“咋吧”等疑似 OCR 异常词，部分会造成合成读音或语义突兀。",
+      "suggestion": "在不改动情节和因果的前提下，逐项人工核验并规范为确认后的词形。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_e7450946b3300488.txt",
+    "input_sha256": "fb02e31732281f661d237f60864a1a6dac85a99da3cc9e7fabae4bdd0c777ff9",
+    "analysis_sha256": "a879f2675cabe71e04a671589aa1ade279b0b9068ec57bb9d11d65729a5eb55e",
+    "rewrite_sha256": "d788049b06313d824075560447a477e193ef8695323cf27f2925004c398d7333",
+    "generated_at": "2026-09-05T02:31:30+00:00"
+  }
+}

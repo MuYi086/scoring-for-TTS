@@ -1,0 +1,57 @@
+{
+  "source_id": "story_f05d9eb222228ebf",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.62,
+  "suspense_preservation": 0.87,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第145、149、161、181、215、233、249、255行仍含“或许市想到”“先·78”“晓要好好的疯狂一个”“让凯不犯对方”“那生婴儿声”“双手来滴着水”“鄂然”“天那”等乱码或不通句。",
+      "suggestion": "在不猜测无法确认事实的前提下，删除明显页码/串页残片，并将可确定的错别字、病句和断句改为可朗读表达；语义无法确认处应提交人工复核。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 第137行“凯就轻清住她的嘴”语义不成立；第77行“如果孩子一生下来，就有了锁”会使听者无法理解心堕胎的理由。",
+      "suggestion": "核对上下文后改为明确动作和可理解因果；若原始 OCR 无法支持唯一修复，标记人工复核，避免让 TTS 直接朗读乱码。"
+    },
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "B 第25行将“看了一夜。”单独成段，但未明确是谁看了一夜，恐怖画面在朗读中会形成突兀歧义。",
+      "suggestion": "在不新增情节的条件下调整为与前句相连的停顿或补足可由上下文确认的主语指向。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 第181行“就像心形容给她听的一般”中“她”与当前视角中的凯不一致，影响指代和对白/叙述归属。",
+      "suggestion": "改为中性的“就像心形容的一般”或经核对后使用正确指代。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f05d9eb222228ebf.txt",
+    "input_sha256": "602838262082044edf8ae322a9c03168a199e15712a009e7c8f7459d51bd804e",
+    "analysis_sha256": "0a5b2a41b1808bbb75f7df0bc318d786a795c84dff8260c746c33dbf29ffaac8",
+    "rewrite_sha256": "a276d9bf0ba9eca185403f5171b476b83e1fe2a09050b21e315d7980b8737f7c",
+    "generated_at": "2026-09-05T02:57:01+00:00"
+  }
+}

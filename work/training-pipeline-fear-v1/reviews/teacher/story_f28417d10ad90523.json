@@ -1,0 +1,57 @@
+{
+  "source_id": "story_f28417d10ad90523",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.68,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "critical",
+      "evidence": "结局医院责任段仍含“洛 u 灾 v”乱码，谓语关系残缺，无法确认其所指违法事实。",
+      "suggestion": "人工核定该句的原始文字与责任关系后再修订；未核定前不可猜补。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B多处保留“奶觉不觉得”“奶之前”“陪奶查房”等，对白将被朗读为“奶”，明显妨碍理解与角色对白。",
+      "suggestion": "结合上下文统一核定为对应的第二人称说法，并复查这些对白的说话人归属。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "师父对白“杰，你是想问那妖魔的是什么，对吧！”缺少中心名词；“另一只手出现的是……劳力士”也缺乏可听懂的指代。",
+      "suggestion": "在不补造事实的前提下重断句或改为语义完整的中性表达，确保听众能判定询问对象和叙述主体。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B仍保留“响撤阒黑”“丰后奖金”“没些时候”“近来病房内”等疑似OCR词，TTS朗读生硬或失义。",
+      "suggestion": "逐处仅在可由邻近上下文确认时校正；无法确认者提交人工复核。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f28417d10ad90523.txt",
+    "input_sha256": "93335e65e0de67c98ad8b22b7e982fd8b9c94f58233058b8999fa4447426253c",
+    "analysis_sha256": "3937bfaa8157b8954f46979906ce7b1cc9fa67502d47e971912cea06fe303b02",
+    "rewrite_sha256": "02bf4b177dd78b4e6adb9da561e6b2fcc09dfbed624e64f610301c469c3a25e3",
+    "generated_at": "2026-09-05T02:58:45+00:00"
+  }
+}

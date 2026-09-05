@@ -1,0 +1,45 @@
+{
+  "source_id": "story_d80787267e68a55c",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 中“更***的是”仍含连续星号占位，TTS 可能逐字符朗读或造成明显停顿。",
+      "suggestion": "在不臆测被遮蔽原词的前提下，改为可朗读的中性表述，并保留该处源文不确定性记录。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“平时及少使用”“没寸肌肤”“不知明”“一炼”等疑似 OCR/录入异常。",
+      "suggestion": "对可依据上下文确定的明显错字作最小化校正；无法可靠确定者维持原意并采用自然、可朗读的替代表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d80787267e68a55c.txt",
+    "input_sha256": "3eb240fa1bd7d2156f8e60018a43e21464491056216f552e8f05063a8ab37dd2",
+    "analysis_sha256": "c59606279be8ae24e08d58cfbb2b9acd086ceca9218ea44d657baf9840b1b0a1",
+    "rewrite_sha256": "08737e23182098151d105c8c311f321b1b9f500cbee6a43fb4ba36a45484940e",
+    "generated_at": "2026-09-05T02:27:12+00:00"
+  }
+}

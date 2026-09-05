@@ -1,0 +1,51 @@
+{
+  "source_id": "story_eb10005f1fbaf676",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.82,
+  "suspense_preservation": 0.95,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "二叔死亡现场先称“红鹰”，紧接着又写“红魔”；后文“红魇”也与主称呼不一致。",
+      "suggestion": "统一为可确认的角色称呼，或在首次异名处补足同一人物提示，避免听众误判新增人物。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "二叔临死呼喊“荡儿”，与叙述者葛武殇／武殇不一致。",
+      "suggestion": "核对原始字形后统一称呼；无法确认时以明确的叙述提示消除指代歧义。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "厨房段“混迹于中的红宝石”、结尾“四只手都束缚上了绳子”等保留异常表述。",
+      "suggestion": "在不改变事件事实的前提下校正明显 OCR 或病句，使死亡画面可被稳定朗读。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_eb10005f1fbaf676.txt",
+    "input_sha256": "dec65a50493cb7e40cbb54c7af0ace8b1be786445182211ea989bbb3001d66d1",
+    "analysis_sha256": "cc02df34c76d353f98304c2bef5d32e560f978a67e5c5b0a5566701c3e6e7c36",
+    "rewrite_sha256": "41f8f9893fdad54dba90961c1222f1f174706d20340f93092f8c09439d651551",
+    "generated_at": "2026-09-05T02:34:08+00:00"
+  }
+}

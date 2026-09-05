@@ -1,0 +1,57 @@
+{
+  "source_id": "story_ef8d98e9b4af236d",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.93,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“厂房早的位置不对”，该处语义不通且位于高僧解释凶宅原因的关键对白。",
+      "suggestion": "依据 A 的上下文明确为厂址/厂房位置不对，避免朗读时产生无法理解的断句。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“一且”“变本加利”“就在也没开过工”“下家找到的就是你”等明显转写异常，集中在倒计时、对抗与结尾段。",
+      "suggestion": "修正为可确认的规范表述，尤其保证倒计时、石狮受伤后的后果和结尾威胁能自然朗读。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 保留“9华”“8字软”“费铁”等数字化或疑似错字写法。",
+      "suggestion": "分别规范为“九华”“八字软”“废铁”，以降低 TTS 数字读法和词义歧义风险。"
+    },
+    {
+      "category": "character",
+      "severity": "minor",
+      "evidence": "同一僧人在连续对白中先称“道长”，后称“高僧”，虽与 A 一致但有声稿中容易被误听为不同说话人。",
+      "suggestion": "统一叙述称谓，并在关键对白首句保留清晰说话人归属。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_ef8d98e9b4af236d.txt",
+    "input_sha256": "c80a8476d091aee2065c60240b64bf8183cb1402107ba9442187fcb295929eeb",
+    "analysis_sha256": "088ccb601f2156cc4a9c2406d5547bb7bea5291a5158729824ede0efc8fb7369",
+    "rewrite_sha256": "3629af77d48de07f5459962e63f6cc00d4786aa71dbe78e1fc202711d4426510",
+    "generated_at": "2026-09-05T02:53:27+00:00"
+  }
+}

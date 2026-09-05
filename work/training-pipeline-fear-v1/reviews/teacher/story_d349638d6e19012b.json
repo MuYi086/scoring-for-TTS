@@ -1,0 +1,51 @@
+{
+  "source_id": "story_d349638d6e19012b",
+  "factual_consistency": 0.98,
+  "audio_readability": 0.88,
+  "suspense_preservation": 0.91,
+  "problems": [
+    {
+      "category": "suspense",
+      "severity": "minor",
+      "evidence": "A 起始 L1079 的“海平面下山洞作为坟场”预示性开场未进入 B，仅保留了结尾重复句。",
+      "suggestion": "保留该开场预示句，作为标题后的独立旁白，以维持原有的倒叙悬念框架。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 在三人决定出海处仍为“这个建议得到了青芒的持”，其中“持”构成明显残缺短语。",
+      "suggestion": "在不改变含义的前提下补全为可朗读的“支持”，并复核相邻句的停顿。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "驰年解释鲛人历史的连续长段对白多次以新的左引号起句，但未形成清晰的对白收束。",
+      "suggestion": "统一为一段连续对白或为各段补齐一致的引号，避免朗读器将其误判为多名说话者。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d349638d6e19012b.txt",
+    "input_sha256": "7748fae93281180b3a3d3384fe768f8be04cb1e28a69bf6fa0dcd3caa2d644aa",
+    "analysis_sha256": "9d5b84bc9e4cf60fc499b92d9caa2a813b7daa24313fe18f7dbe46168ac508ad",
+    "rewrite_sha256": "612126a7b1a1f11bb936dac7780579db071cf0cf2409670a3b90ecdeb41c4cc4",
+    "generated_at": "2026-09-05T02:24:14+00:00"
+  }
+}

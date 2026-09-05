@@ -1,0 +1,39 @@
+{
+  "source_id": "story_e3b4bb5623506438",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.97,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B省略原稿中“诡路不可停”和“尾声”两个分段标题，分别位于叶亮消失后与结局前。",
+      "suggestion": "保留为简短章节提示或等效停顿，以明确叙事转场与尾声进入。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_e3b4bb5623506438.txt",
+    "input_sha256": "9044a5684542e91601d32c5ef38a8912a77bcf443b8317faef87c49d79281ca9",
+    "analysis_sha256": "abfcc5afcf109f771429ee5f588cc3ba953335fb69c8aea865c4751c88b566e2",
+    "rewrite_sha256": "ac90ea8ddf52410b5c4da38a652a7e7a090b8efab6094cbd41960f2ff7549629",
+    "generated_at": "2026-09-05T02:31:07+00:00"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "source_id": "story_f5e0034d740ac44a",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.96,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "方丈首次长段对白中保留“尽管你不爱如老来观自在嘛玛丽玛丽那我想那都可以容忍”。",
+      "suggestion": "该处为明显 OCR 串字，需依据可核实来源校正或以可朗读的明确措辞处理；当前无法自然朗读并中断语义。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "王生回家后的叙述仍为“再也人不了梦”“重生一便”。",
+      "suggestion": "校正为可辨识、可朗读的词语，避免听众将其理解为人物或动作。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "方丈交付经书处仍为“自从书架上拿了本般若心经”。",
+      "suggestion": "补足正确动词和主语关系，使方丈取书、交书的动作在音频中清楚。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "提香赠衣后仍为“于是边着新衣边笑着讲给提香听”。",
+      "suggestion": "校正“边着新衣”的疑似漏字，避免朗读歧义。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "旁人介绍提香处保留“得芳楼得头牌”。",
+      "suggestion": "核实并修正疑似重复字，保证场所与头牌身份介绍清晰。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f5e0034d740ac44a.txt",
+    "input_sha256": "caeb9c255d0aa8e9c091338991d3e0c84247005146bd03dc55f9d1b8ce654c48",
+    "analysis_sha256": "d6a2e859be72e1b38db9cfa138628f7e84358057da9732388de3beee87fe63c1",
+    "rewrite_sha256": "c8184eadb70b2f448979c59d3464ce0ff6e92098f08e31838e282e7fe2452044",
+    "generated_at": "2026-09-05T03:03:53+00:00"
+  }
+}

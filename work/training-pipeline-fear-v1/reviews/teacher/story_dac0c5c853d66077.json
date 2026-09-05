@@ -1,0 +1,57 @@
+{
+  "source_id": "story_dac0c5c853d66077",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.68,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "开头至进山段保留“熟中的我”“一止到”“转身那了”“有咱奇怪的光”“奔狂”等不通顺词句。",
+      "suggestion": "在不改变事件与信息的前提下，修正可明确判定的 OCR 错字和病句。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "难产判断处连续使用“横支卡住”，医学动作难以朗读和理解。",
+      "suggestion": "依据已确认的“胎儿横位、卡住并大出血”事实，统一为清晰、可朗读的表述。"
+    },
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "结尾“妇儿说着把手中的‘婴儿’替过去”保留了角色称谓和动作歧义。",
+      "suggestion": "明确说话者为妇女鬼魂，并将递交婴儿的动作改为自然、无歧义的口语表达。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "多处将完整对话拆成无引号短句，如“砰砰！有人敲打我家的门。于一场猛烈的暴风雨中。”",
+      "suggestion": "合并残句，并以稳定的停顿和说话人提示保持对白归属与恐怖节奏。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_dac0c5c853d66077.txt",
+    "input_sha256": "28a4b8a1d1ad3144b99e444aa0d0478385891b5dc32e5dd521253ebc4354d1fe",
+    "analysis_sha256": "091c8d833f34423cc92fb0f8ff75e6ec469af980786e44a80e1c67449c0d895a",
+    "rewrite_sha256": "1deb8d5644f7637fe932a260e7ac3be4a2ad0ad16d135d315f44bab5886b47a4",
+    "generated_at": "2026-09-05T02:29:01+00:00"
+  }
+}

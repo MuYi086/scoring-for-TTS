@@ -1,0 +1,51 @@
+{
+  "source_id": "story_d1ce15f67ffffa8a",
+  "factual_consistency": 0.92,
+  "audio_readability": 0.61,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "“星期五晚上约莫十一天不少地”保留了来源中的串字，死亡时刻无法被可靠朗读或确认。",
+      "suggestion": "人工核定该时间表述；在未核定前不要把它作为精确时间事实。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "开头“病床上滴人死了”及“第二个病人又……过去了”均保留 OCR 异常，朗读语义不通。",
+      "suggestion": "在不改变事实的前提下人工校订为可自然朗读的表述。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "“告诉？自惊心的听众们”含异常符号与断裂词组，旁白会明显卡顿。",
+      "suggestion": "人工恢复该句语法和标点。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d1ce15f67ffffa8a.txt",
+    "input_sha256": "e91306cb9ca981ba0c8012a1766a6382dc7d105c372b086379ab9459d0657c6e",
+    "analysis_sha256": "276652902724ace55c0d4a7c7760c4cbd03791677df20d6f409616336b783174",
+    "rewrite_sha256": "9fdc00526ad2b355e2f0ec901569605c08723eea4cce73b229feae41f82bbed4",
+    "generated_at": "2026-09-05T02:23:19+00:00"
+  }
+}

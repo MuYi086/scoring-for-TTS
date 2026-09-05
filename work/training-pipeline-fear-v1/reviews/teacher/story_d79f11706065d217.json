@@ -1,0 +1,39 @@
+{
+  "source_id": "story_d79f11706065d217",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "B 中叶诗琪说明布置猫叫声与猫毛时仍写“我悄悄着入你家”，该短语不通顺，朗读会明显卡顿。",
+      "suggestion": "在不改变其潜入许一家中布置线索这一事实的前提下，改为可自然朗读的表述。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d79f11706065d217.txt",
+    "input_sha256": "7a8fc1b41285e03b5567af12f2280e2d549a275a5adef1d19c8d1eccfe145316",
+    "analysis_sha256": "5daa71d6c1e875e159285ee75d110dabd8bec58b38a70eea96e5aa6b95178b6a",
+    "rewrite_sha256": "925d64ac3702f0fe1a467514c4c10525b9fe3775bef6ec6373f29fccfe95e589",
+    "generated_at": "2026-09-05T02:26:30+00:00"
+  }
+}

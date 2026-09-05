@@ -1,0 +1,45 @@
+{
+  "source_id": "story_fda0124abd1d37d3",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.72,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 删除六个分段标题；黄晓、古泽老师、林正义的第一人称自白在连续音频中缺少明确转场。",
+      "suggestion": "保留简短的章节或说话人提示，尤其在每次第一人称叙述者切换前。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留“了可以在深夜里偷偷审视的‘杰作’”及“没多久，我的手机里又有。”两处来源残句。",
+      "suggestion": "不要猜补硬事实；删除或改为不承载新事实的可朗读过渡，避免不完整句影响理解和朗读。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_fda0124abd1d37d3.txt",
+    "input_sha256": "e284135b6db6178515c9b0e5ad33f7ad04b23886c564ed587c5aa9c8595fcb1a",
+    "analysis_sha256": "91345b6c4010e5849ca6366d6e55c864a30d1cf28558a74740c437bf57a037ff",
+    "rewrite_sha256": "33c233295b06b4044014348a5c646336126762ec41a3324b05fed1e29aeec969",
+    "generated_at": "2026-09-05T03:10:21+00:00"
+  }
+}

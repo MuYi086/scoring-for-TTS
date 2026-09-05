@@ -1,0 +1,39 @@
+{
+  "source_id": "story_f05c0e25a67a0630",
+  "factual_consistency": 0.74,
+  "audio_readability": 0.91,
+  "suspense_preservation": 0.9,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界上下文 L2132-L2136 在短信后出现断裂与串接，L2142 亦出现“围城市对于我来说”等残缺拼接；B 据此补成了“直到午夜才勉强入睡”和三人聊天的完整场景。起止虽位于《同她》标题至编辑署名之间、未见相邻作品混入，但原稿正文并不完整。",
+      "suggestion": "暂停以该 A 作为训练来源；回溯并修复/重新抽取这两处缺失原文后，再重新生成和复核 B。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f05c0e25a67a0630.txt",
+    "input_sha256": "c019bbeb2b28351ae629578ac9482eae1e0dde04027c52aa1262ce8e9e6e8285",
+    "analysis_sha256": "0a56ea860378fcc1a67b3ddd3c9de67cf288a9677595c69d5c8a82324d99a51f",
+    "rewrite_sha256": "78502ae06fe9f50cd0438b6de553618fadc76f7f19f058a1dfe51f4cc03bd837",
+    "generated_at": "2026-09-05T02:55:42+00:00"
+  }
+}

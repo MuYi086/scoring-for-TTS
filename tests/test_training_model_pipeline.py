@@ -1211,6 +1211,18 @@ class TrainingModelPipelineTests(unittest.TestCase):
         review["factual_consistency"] = 0.90
         self.assertEqual(step_4.deterministic_gate(review)["decision"], "revise")
 
+    def test_step_4_terra_audit_stably_covers_small_normal_train_batch(self):
+        source_ids = ["story_c", "story_a", "story_b", "story_d", "story_e", "story_f", "story_g"]
+
+        selected = step_4.stable_terra_audit_source_ids(source_ids, 10)
+
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(
+            selected,
+            step_4.stable_terra_audit_source_ids(list(reversed(source_ids)), 10),
+        )
+        self.assertEqual(step_4.stable_terra_audit_source_ids(source_ids, 0), set())
+
     def test_export_matches_local_easy_dataset_and_protects_blind_split(self):
         with tempfile.TemporaryDirectory() as directory:
             work_dir = Path(directory) / "work"

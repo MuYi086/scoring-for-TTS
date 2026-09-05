@@ -1,0 +1,63 @@
+{
+  "source_id": "story_f0c0e3fe4b4415ff",
+  "factual_consistency": 0.18,
+  "audio_readability": 0.42,
+  "suspense_preservation": 0.31,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界上下文 L374 标题为《猛鬼街》，L432 句子以“踌躇之”未完；L434 虽插入“恶鬼道”页眉，随后以“间，忽听……”续接王师傅段落。A 第 1 行也从该残句开始。",
+      "suggestion": "停止使用该 A/B 作为单篇训练样本；重新分割来源，移除王师傅段，并以目标作品的真实起点重新建立 A、事实清单和 B。"
+    },
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "A 第 29 行结束王师傅跨越百年的结局，第 31 行无作品标题或叙事衔接即转为香天、茹故的校园虫害故事；边界上下文 L466 同样显示该突变。",
+      "suggestion": "将两个独立叙事拆为不同 source_id；不可通过在 B 中加过渡或章节名掩盖混入。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 把两个无关故事连续朗读：王师傅段结尾后直接进入“香天回到宿舍”，没有可辨识的篇章边界或关系说明。",
+      "suggestion": "待来源重新切分后，分别生成有声稿；不要把两段合并为同一篇。"
+    },
+    {
+      "category": "causality",
+      "severity": "major",
+      "evidence": "B 中“循声过去，原来是香天在呓语”之前没有保留明确的“茹故被声音惊醒并循声查看”的主语与动作起点，承接突兀。",
+      "suggestion": "在来源修复后按可确认原文补足主语和梦醒后的观察动作；无法确认时保留为人工复核项。"
+    },
+    {
+      "category": "readability",
+      "severity": "major",
+      "evidence": "B 保留多处 OCR 残缺并强行断句，例如“两人忙乎了一天，终于帮房，啊”以及梦境高潮“最终，所有的变成了那声尖……”。",
+      "suggestion": "对残句回查已重新取得的完整来源；不能确认的内容不得作为可直接合成的定稿。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": false,
+    "has_major_problem": true,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f0c0e3fe4b4415ff.txt",
+    "input_sha256": "65f3c790e13fbdd50d95efd43fc0bebc1118433890a2e1a5916d1596b5beeb6c",
+    "analysis_sha256": "78075d16f084ff661ee4fea8359dd7d4199f3237a67aba4538cf2bc59bf83bfe",
+    "rewrite_sha256": "18c1877c84311500fe3fff4a0cc91a2f9b3f1dfe8f9f660dbfeab58a008ccdca",
+    "generated_at": "2026-09-05T02:57:31+00:00"
+  }
+}

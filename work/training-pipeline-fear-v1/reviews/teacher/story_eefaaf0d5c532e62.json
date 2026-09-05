@@ -1,0 +1,39 @@
+{
+  "source_id": "story_eefaaf0d5c532e62",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.96,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "time",
+      "severity": "major",
+      "evidence": "开篇醒来后写“这天是周六”，张小易挑战后的同一叙事段又明确“今天是周一”。",
+      "suggestion": "这是原稿内在时间矛盾，B虽忠实保留但无法确认何者为准；应回到来源核定后再决定是否校正。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_eefaaf0d5c532e62.txt",
+    "input_sha256": "49a5609f43cb0b4803002464f1b80d373717f27946bf0cafd68a40499b99fa99",
+    "analysis_sha256": "e350de1545f216434ce27f44c9cdc8de5fb159a1a34ed53048fe17723a7b4c13",
+    "rewrite_sha256": "62ebe91212a1defb7df65debf96ee5730e69313f7c0e92cec4931824592f1d2f",
+    "generated_at": "2026-09-05T02:50:54+00:00"
+  }
+}

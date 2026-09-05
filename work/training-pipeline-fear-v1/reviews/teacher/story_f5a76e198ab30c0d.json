@@ -1,0 +1,45 @@
+{
+  "source_id": "story_f5a76e198ab30c0d",
+  "factual_consistency": 0.99,
+  "audio_readability": 0.94,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "身份揭示段保留“看见他……初恋女友曹音”的男性代词，与曹音的女性身份冲突。",
+      "suggestion": "改为中性指代，如“看见那个人”或直接点明曹音，避免听众在反转点误判人物。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "虫鬼真相段保留“地下躺着的那个‘唐心’的尸体”，与此前尸体位于血泊、地板上的叙述不一致。",
+      "suggestion": "核对并改为“地上躺着”，使空间关系在纯音频中明确。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f5a76e198ab30c0d.txt",
+    "input_sha256": "c6ace4f73549ddff487c050c6754386169d027c5b52dcc6ab0742233fdd5bb9f",
+    "analysis_sha256": "0bfc4293fad6adaff0c22a85b529a0102c7fdc4dea628af1f28d10410b5b10f6",
+    "rewrite_sha256": "cf50c00eb12a1d028d58e7f84dc1792571d4c5075b79d5ef14dcb26d977a3c2f",
+    "generated_at": "2026-09-05T03:00:52+00:00"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "source_id": "story_da2bd23b655a34b9",
+  "factual_consistency": 1,
+  "audio_readability": 0.93,
+  "suspense_preservation": 0.99,
+  "problems": [
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "医院门卫段保留“嗫嘘着”这一明显 OCR 词形，朗读词义和发音均不自然。",
+      "suggestion": "按原意校为“嗫嚅着”，不改变人物、情节或语气。"
+    },
+    {
+      "category": "readability",
+      "severity": "minor",
+      "evidence": "开篇泡泡糖来历段保留“有的吃就会很满足的伍武从来没有问过”的病句，断句后仍不适合自然朗读。",
+      "suggestion": "仅重组为清晰的主谓结构，保留伍武满足于有糖吃、从未追问来历这一信息。"
+    }
+  ],
+  "decision": "revise",
+  "_deterministic_gate": {
+    "decision": "revise",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_da2bd23b655a34b9.txt",
+    "input_sha256": "d673f8bdcec43b25f1d302756b39b9e2e67111583805e1903e1fb6b5f315244f",
+    "analysis_sha256": "fcf22e8ec8fc9845926865d4356b6d854a07c338bb284a5b4474256263321769",
+    "rewrite_sha256": "4eba948999abd54a04c6904791b9d04004b0da2ccd181f667cb987f8d5ffca18",
+    "generated_at": "2026-09-05T02:27:53+00:00"
+  }
+}

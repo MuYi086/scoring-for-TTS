@@ -1,0 +1,39 @@
+{
+  "source_id": "story_f03457f8d5414dab",
+  "factual_consistency": 0.97,
+  "audio_readability": 0.95,
+  "suspense_preservation": 0.94,
+  "problems": [
+    {
+      "category": "source_boundary",
+      "severity": "critical",
+      "evidence": "边界上下文 L2833-L2869 是同一故事的连续前情：海棠前往关山镇、遇见易天平、进入小姨家并首次看见姨父刮自行车漆；A 却从 L2892 的重复标题后开始，直接接续该场景。",
+      "suggestion": "停止以该 A 片段作为完整原稿处理；应恢复包含此前连续章节的完整《剥皮》文本并重新执行后续步骤，不能以改写 B 补偿。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": false,
+    "has_critical_problem": true
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_f03457f8d5414dab.txt",
+    "input_sha256": "8917d79fa1c02c7c6472f7e34597898336bd3514d60f1d71449c56a7887d3639",
+    "analysis_sha256": "74a896f63cad6c9e34f6b103bb20d4606355168937faed499f7023b2c8f20701",
+    "rewrite_sha256": "7a6614d9490d37983a08c71902798cbf37eaaf66ea591104badf8237a1375f0d",
+    "generated_at": "2026-09-05T02:55:20+00:00"
+  }
+}

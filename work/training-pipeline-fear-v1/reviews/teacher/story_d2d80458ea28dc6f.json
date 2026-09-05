@@ -1,0 +1,39 @@
+{
+  "source_id": "story_d2d80458ea28dc6f",
+  "factual_consistency": 0.96,
+  "audio_readability": 0.95,
+  "suspense_preservation": 0.98,
+  "problems": [
+    {
+      "category": "character",
+      "severity": "major",
+      "evidence": "陈友失踪后的电话段，A 与 B 均写作“拨打了陆友的电话”；此前未出现“陆友”，上下文疑似应指陈友。",
+      "suggestion": "人工确认该姓名；确认后在 B 中统一为正确人物名，以免有声稿凭空出现新人物。"
+    }
+  ],
+  "decision": "escalate",
+  "_deterministic_gate": {
+    "decision": "escalate",
+    "thresholds": {
+      "factual_consistency": 0.95,
+      "audio_readability": 0.85,
+      "suspense_preservation": 0.85
+    },
+    "thresholds_met": true,
+    "has_major_problem": true,
+    "has_critical_problem": false
+  },
+  "_provenance": {
+    "stage": "rewrite_review",
+    "variant": "teacher",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "medium",
+    "model_route": "risk_or_audit_review",
+    "speed": "standard",
+    "boundary_context": "work/training-pipeline-fear-v1/boundary_context/story_d2d80458ea28dc6f.txt",
+    "input_sha256": "992f9cc6ce0d6e15df706463ae69c7cf7782ae63ff06c9ff7f805495cefab9f5",
+    "analysis_sha256": "e3ce934699a48c66ccad923d8e5d2536adfe02a22e999ea3a4686d324cb74b81",
+    "rewrite_sha256": "37155f87240ae05b2f05f6e59fb2edeead33137d2beb6c501b965bbbfd0adc65",
+    "generated_at": "2026-09-05T02:24:11+00:00"
+  }
+}
